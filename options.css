@@ -1,0 +1,58 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  background: Canvas;
+  color: CanvasText;
+}
+
+main {
+  max-width: 720px;
+  margin: 48px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.card {
+  border: 1px solid color-mix(in srgb, CanvasText 18%, transparent);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 17px;
+}
+
+.switch-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.switch-row input {
+  margin-top: 4px;
+}
+
+.switch-row span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+small {
+  opacity: .68;
+}
+
+#saved {
+  min-height: 1.5em;
+  opacity: .72;
+}

@@ -234,13 +234,11 @@ function buildCard(card, where) {
   const bound = tokens.requiredChannels(card.tokens).length > 0;
   if (!bound) el.dataset.universal = "true";
 
-  // The pool is universal cards only, so a card bound to a channel has no pool
-  // to return to: for it, leaving the deck is deletion. It is only ever in
-  // that one deck, so nothing else loses anything either.
+  // Every card has a pool to fall back to now, so leaving a deck always means
+  // the same thing wherever you do it.
   if (where === "deck") {
-    el.appendChild(bound
-      ? cardAction("×", "この札を削除（メン限専用なのでプールには残りません）", () => removeCard(card))
-      : cardAction("⏏", "このデッキから外す（プールに戻ります）", () => ejectCard(card)));
+    el.appendChild(cardAction("⏏", "このデッキから外す（プールに戻ります）",
+      () => ejectCard(card)));
   } else {
     el.appendChild(cardAction("×", "この札を削除（すべてのデッキから消えます）",
       () => removeCard(card)));
@@ -309,7 +307,7 @@ function paintPool() {
   holder.replaceChildren();
   wirePoolDrop(document.querySelector("#pool"));
 
-  const all = store.universal(decks);
+  const all = selected ? store.poolFor(decks, selected) : store.universal(decks);
   const shown = query
     ? all.filter((card) => tokens.toPlainText(card.tokens || []).toLowerCase().includes(query))
     : all;
@@ -319,12 +317,19 @@ function paintPool() {
     ? `${shown.length} / ${all.length}枚`
     : `${all.length}枚 ・ 追加できる ${free}枚`;
 
+  const note = document.querySelector(".pool-note");
+  if (note) {
+    note.textContent = selected
+      ? "どのデッキでも使える札と、このチャンネル専用の札。デッキにドラッグすると入ります。"
+      : "どのデッキでも使える札。";
+  }
+
   if (!shown.length) {
     const empty = document.createElement("p");
     empty.className = "muted";
     empty.textContent = query
       ? "一致する札がありません。"
-      : "どのデッキでも使える札がまだありません。";
+      : "追加できる札がありません。";
     holder.appendChild(empty);
     return;
   }
@@ -427,7 +432,6 @@ async function dropOnDeck({ card, from }, { target, side }) {
 }
 
 async function ejectCard(card, deckId = selected) {
-  if (tokens.requiredChannels(card.tokens).length) return; // nowhere to eject to
   const at = store.removeFromDeck(decks, deckId, card.id);
   if (at < 0) return;
   await store.save(decks);

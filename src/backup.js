@@ -36,6 +36,21 @@
       if (!card || typeof card !== "object") return "札のデータが壊れています";
       if (typeof card.id !== "string" || !card.id) return "札にidがありません";
       if (!Array.isArray(card.tokens)) return "札に中身がありません";
+
+      // Anything reading these dereferences token.type; a null slips past an
+      // Array.isArray check and throws during the merge instead.
+      for (const token of card.tokens) {
+        if (!token || typeof token !== "object") return `札 ${card.id} に壊れた中身があります`;
+        if (token.type === "text") {
+          if (typeof token.value !== "string") return `札 ${card.id} のテキストが不正です`;
+        } else if (token.type === "youtubeEmoji") {
+          if (typeof token.emojiId !== "string" || !token.emojiId) {
+            return `札 ${card.id} のスタンプにidがありません`;
+          }
+        } else {
+          return `札 ${card.id} に未知の種類 (${token.type}) があります`;
+        }
+      }
     }
 
     // Two cards sharing an id collapse into one on lookup, and a repeated id
@@ -59,13 +74,21 @@
     // locked, or that no pool can show — so the file is rejected rather than
     // quietly producing state the app cannot represent.
     const owners = OD.tokens.requiredChannels;
+
+    // Every card, not just the ones a deck happens to point at: a card mixing
+    // two issuers can be sent nowhere and appears in no pool, so importing it
+    // would add something invisible and undeletable.
+    for (const card of raw.cards) {
+      if (owners(card.tokens).length > 1) {
+        return `札 ${card.id} が複数チャンネルのメン限スタンプを含んでいます`;
+      }
+    }
+
     const byId = new Map(raw.cards.map((card) => [card.id, card]));
     for (const [channelId, list] of Object.entries(raw.decks || {})) {
       for (const id of list) {
         const required = owners(byId.get(id).tokens);
-        if (!required.length) continue;
-        if (required.length > 1) return `札 ${id} が複数チャンネルのメン限スタンプを含んでいます`;
-        if (required[0] !== channelId) {
+        if (required.length && required[0] !== channelId) {
           return `札 ${id} は ${required[0]} のメン限スタンプですが ${channelId} のデッキにあります`;
         }
       }

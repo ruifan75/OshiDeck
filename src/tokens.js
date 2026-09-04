@@ -81,6 +81,10 @@
   // Stored CDN urls go stale. Whatever the live page is showing right now for
   // an emoji id is always fresher than what we saved months ago.
   const liveSrc = new Map();
+  // A long session hops channels and sees thousands of distinct emoji. Keep
+  // the most recent; a Map preserves insertion order, so the oldest key is
+  // the first one.
+  const LIVE_SRC_MAX = 500;
 
   function harvestEmoji(node) {
     if (!(node instanceof Element)) return;
@@ -88,7 +92,11 @@
     for (const img of images || []) {
       const id = img.getAttribute("data-emoji-id");
       const src = img.currentSrc || img.getAttribute("src");
-      if (id && src) liveSrc.set(id, src);
+      if (!id || !src) continue;
+
+      liveSrc.delete(id); // re-insert so a seen-again emoji counts as recent
+      liveSrc.set(id, src);
+      if (liveSrc.size > LIVE_SRC_MAX) liveSrc.delete(liveSrc.keys().next().value);
     }
   }
 

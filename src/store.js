@@ -100,10 +100,10 @@
       return null;
     }
 
+    // Read-only. Migration happens in memory and is persisted by the first
+    // operation the worker runs — a page context writing here would bypass the
+    // queue and could land after a worker mutation, erasing it.
     const { cards, decks } = migrate(raw);
-    const fresh = Array.isArray(raw[KEYS.CARDS]) && !!raw[KEYS.DECKS];
-    // Legacy keys are left in place as a backup.
-    if (!fresh && cards.length) await save({ cards, decks });
 
     return {
       settings: { ...DEFAULT_SETTINGS, ...(raw[KEYS.SETTINGS] || {}) },
@@ -170,8 +170,12 @@
   const inDeck = (data, channelId, cardId) =>
     (data.decks[channelId] || []).includes(cardId);
 
+  // The caller is a UI that may have been looking at a stale list: the card can
+  // have been deleted, or edited into something this channel cannot send.
   function addToDeck(data, channelId, cardId) {
     if (!channelId || inDeck(data, channelId, cardId)) return false;
+    const card = data.cards.find((c) => c.id === cardId);
+    if (!card || !usableOn(card, channelId)) return false;
     (data.decks[channelId] ||= []).push(cardId);
     return true;
   }
@@ -248,6 +252,9 @@
   }
 
   function restoreDeck(data, { channelId, ids, meta, exclusive }) {
+    // Only fill in metadata nobody has set since; the deck may have been
+    // recreated and renamed or recoloured while undo was still on screen.
+    if (data.channelMeta[channelId]) meta = null;
     for (const { card, index, strays } of exclusive || []) {
       data.cards.splice(Math.min(index, data.cards.length), 0, card);
       for (const [other, at] of Object.entries(strays || {})) {
@@ -306,14 +313,28 @@
   // extension where ordering can be guaranteed.
   const OPS = {
     addCard(data, { card, channelId }) {
+      // A card whose emoji come from two channels can be sent nowhere, and no
+      // pool would ever show it.
+      if (OD.tokens.requiredChannels(card.tokens).length > 1) return false;
+
+      // Two fast saves, or two tabs, can both decide there is no duplicate.
+      // Only here is that decision made against settled state.
+      const key = OD.tokens.cardKey(card.tokens);
+      const existing = data.cards.find((c) => OD.tokens.cardKey(c.tokens) === key);
+      if (existing) {
+        if (channelId) addToDeck(data, channelId, existing.id);
+        return { id: existing.id, duplicate: true };
+      }
+
       data.cards.push(card);
       if (channelId) addToDeck(data, channelId, card.id);
-      return card.id;
+      return { id: card.id, duplicate: false };
     },
 
     editCard(data, { id, tokens }) {
       const card = data.cards.find((c) => c.id === id);
       if (!card) return false;
+      if (OD.tokens.requiredChannels(tokens).length > 1) return false;
       card.tokens = tokens;
       // Editing can add member emoji, which pins the card to one channel.
       for (const channelId of Object.keys(data.decks)) {
@@ -336,10 +357,24 @@
     // Put a card back where it was, tolerating whatever happened meanwhile:
     // the other surface may have re-added it, or deleted it outright.
     insertIntoDeck(data, { channelId, cardId, at }) {
-      if (!data.cards.some((c) => c.id === cardId)) return false;
+      const card = data.cards.find((c) => c.id === cardId);
+      // It may have been deleted, or edited into a card this channel cannot
+      // send, while the undo button was still on screen.
+      if (!card || !usableOn(card, channelId)) return false;
+
       const list = (data.decks[channelId] ||= []);
       if (list.includes(cardId)) return true;
       list.splice(Math.min(at ?? list.length, list.length), 0, cardId);
+      return true;
+    },
+
+    // Add and position in one operation. Split across two messages, a failure
+    // between them left the card appended while the caller reported success.
+    addToDeckAt(data, { channelId, cardId, targetId, side }) {
+      if (!addToDeck(data, channelId, cardId)) return false;
+      if (targetId && targetId !== cardId) {
+        reorderDeck(data, channelId, cardId, targetId, side || "before");
+      }
       return true;
     },
 
@@ -358,10 +393,11 @@
       const since = [...(data.decks[snapshot.channelId] || [])];
       restoreDeck(data, snapshot);
 
-      const live = new Set(data.cards.map((c) => c.id));
+      const byId = new Map(data.cards.map((c) => [c.id, c]));
       const seen = new Set();
       data.decks[snapshot.channelId] = [...snapshot.ids, ...since].filter((id) => {
-        if (seen.has(id) || !live.has(id)) return false;
+        const card = byId.get(id);
+        if (seen.has(id) || !card || !usableOn(card, snapshot.channelId)) return false;
         seen.add(id);
         return true;
       });
@@ -377,13 +413,25 @@
       return true;
     },
 
-    replaceAll(data, { cards, decks, channelMeta }) {
-      data.cards = cards;
-      data.decks = decks;
-      data.channelMeta = channelMeta;
-      return true;
+    // Computed here, not by the caller. Merging against a snapshot read before
+    // the queue and then writing the result wholesale would roll back anything
+    // that committed in between.
+    importBackup(data, { raw, mode }) {
+      const next = mode === "replace"
+        ? OD.backup.replace(raw)
+        : OD.backup.merge(data, raw);
+
+      data.cards = next.cards;
+      data.decks = next.decks;
+      data.channelMeta = next.channelMeta;
+      if (mode === "replace" && next.settings) data.settings = next.settings;
+
+      return { count: next.cards.length, added: next.added, linked: next.linked };
     }
   };
+
+  // Operations that deliberately replace the settings object.
+  const writesSettings = new Set(["importBackup"]);
 
   // Runs inside the service worker only.
   async function runOp(name, args) {
@@ -394,12 +442,20 @@
     if (!data) return { ok: false };
 
     const value = op(data, args || {});
-    const written = await write({
+    if (value === false) return { ok: false, value };
+
+    const patch = {
       [KEYS.CARDS]: data.cards,
       [KEYS.DECKS]: data.decks,
       [KEYS.CHANNELS]: data.channelMeta
-    });
-    return { ok: written, value };
+    };
+    // read() always returns settings, so writing them unconditionally would
+    // let any card operation roll back a setting changed in between. Only an
+    // operation that deliberately replaces them says so — and then they ride
+    // the same write, which is what makes a restore all-or-nothing.
+    if (writesSettings.has(name)) patch[KEYS.SETTINGS] = data.settings;
+
+    return { ok: await write(patch), value };
   }
 
   // Called from the page contexts.

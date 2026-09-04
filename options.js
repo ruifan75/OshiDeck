@@ -50,6 +50,8 @@ function paint() {
 
 async function commit(patch) {
   settings = { ...settings, ...patch };
+  // Settings have a single writer — this form. No operation touches them
+  // except an import, which replaces the whole object inside the queue.
   await chrome.storage.local.set({ settings });
   paint();
 
@@ -148,7 +150,7 @@ function paintDecks() {
     drop.type = "button";
     drop.className = "deck-delete";
     drop.textContent = "×";
-    drop.title = "このデッキを削除（札はプールに残ります）";
+    drop.title = "このデッキを削除（このチャンネル専用の札も一緒に消えます）";
     drop.setAttribute("aria-label", `${nameOf(id)} のデッキを削除`);
     drop.addEventListener("click", (event) => {
       event.stopPropagation();
@@ -431,13 +433,18 @@ async function dropOnDeck({ card, from }, { target, side }) {
   const joined = from === "pool";
   const into = selected; // `selected` moves; the deck that took the card does not
 
-  if (joined && !(await mutate("addToDeck", { channelId: into, cardId: card.id })).ok) return;
-
-  if (target) {
+  // Add and position together: split across two messages, a failure between
+  // them left the card appended while this reported success.
+  if (joined) {
+    const { ok } = await mutate("addToDeckAt", {
+      channelId: into, cardId: card.id, targetId: target?.id, side: side || "before"
+    });
+    if (!ok) return;
+  } else if (target) {
     await mutate("reorderDeck", {
       channelId: into, movedId: card.id, targetId: target.id, side: side || "before"
     });
-  } else if (!joined) {
+  } else {
     // Dropped on the empty area: the holder offered itself as a target, so
     // send the card to the end rather than doing nothing.
     const list = decks.decks[into] || [];
@@ -523,7 +530,12 @@ function status(message, actionLabel) {
   }
 
   clearTimeout(status.timer);
-  status.timer = setTimeout(() => saved.replaceChildren(), 8000);
+  status.timer = setTimeout(() => {
+    saved.replaceChildren();
+    // The snapshot can hold a whole deck's worth of cards; once the button is
+    // gone there is nothing left to undo with it.
+    undo = null;
+  }, 8000);
 }
 
 // These two elements survive every repaint. Wiring them inside paint() added
@@ -616,31 +628,25 @@ async function readBackupFile(file) {
 
 async function applyImport() {
   const raw = pending;
+  // Captured before any await: clicking the other mode during the round trip
+  // could otherwise turn a started merge into a replacement.
+  const mode = importMode;
   pending = null;
   if (!raw) return;
 
-  const data = await store.read();
-  if (!data) return;
-
-  const next = importMode === "replace" ? backup.replace(raw) : backup.merge(data, raw);
-
-  // One operation: cards, decks and channel metadata land together or not at
-  // all, so a half-applied import cannot exist.
-  const { ok } = await store.apply("replaceAll", {
-    cards: next.cards, decks: next.decks, channelMeta: next.channelMeta
-  });
+  // The merge is computed inside the queued operation, against settled state.
+  // Computing it here and sending the result would roll back anything that
+  // committed while the message was in flight.
+  const { ok, value } = await store.apply("importBackup", { raw, mode });
   if (!ok) return importStatus("保存できませんでした");
 
-  if (importMode === "replace") {
-    if (next.settings) await chrome.storage.local.set({ settings: next.settings });
-    importStatus(`${next.cards.length}枚に置き換えました`);
-  } else {
-    importStatus(
-      next.added || next.linked
-        ? `新しい札 ${next.added}枚、デッキへの追加 ${next.linked}件`
+  importStatus(
+    mode === "replace"
+      ? `${value.count}枚に置き換えました`
+      : value.added || value.linked
+        ? `新しい札 ${value.added}枚、デッキへの追加 ${value.linked}件`
         : "すでに全部持っていました"
-    );
-  }
+  );
 
   await load();
   await loadDecks();

@@ -105,6 +105,15 @@
     }
 
     function start() {
+      // YouTube can replace the message list without touching the input, and
+      // the document observer only reacts to the input or our own root. A
+      // watcher left on a detached subtree sees nothing and never recovers.
+      if (host && !host.isConnected) {
+        observer?.disconnect();
+        observer = null;
+        host = null;
+      }
+
       const found = findHost();
       if (!found || found === host) return !!host;
 
@@ -120,7 +129,10 @@
       observer.observe(host, { childList: true });
 
       clearInterval(notifyTimer);
-      notifyTimer = setInterval(notify, NOTIFY_MS);
+      notifyTimer = setInterval(() => {
+        if (host && !host.isConnected) start(); // re-attach after a swap
+        notify();
+      }, NOTIFY_MS);
       return true;
     }
 

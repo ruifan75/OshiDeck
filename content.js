@@ -198,34 +198,41 @@
 
   /* ---------- playing a card ---------- */
 
+  let sending = false;
+
   async function playCard(card, { send }) {
     if (card.locked) {
       return showToast("他チャンネルのメン限スタンプです");
     }
+    // A click appends to the editor at once, but the send waits a beat for
+    // YouTube to enable its button. A second click in that gap appended to the
+    // same editor, and the first timer then sent both cards as one comment.
+    if (sending) return;
 
     const input = getChatInput();
     if (!input) return showToast("入力欄が見つかりません");
 
+    const willSend = send || settingsCache.autoSend;
+    sending = willSend;
+
     tokens.writeToInput(input, card.tokens || []);
+    if (willSend) submitChat(() => { sending = false; });
 
     await store.apply("markUsed", { id: card.id });
-
-    const data = await store.read();
-    if (!data) return shutdown();
-    if (send || data.settings.autoSend) submitChat();
   }
 
   // The renderer enables the button a beat after the input event lands.
-  function submitChat() {
+  function submitChat(done) {
     const started = performance.now();
     const attempt = () => {
       const button = getSendButton();
       if (button && !button.disabled && button.getAttribute("aria-disabled") !== "true") {
         button.click();
-        return;
+        return done?.();
       }
-      if (performance.now() - started < 800) setTimeout(attempt, 50);
-      else log("Send button never became available.");
+      if (performance.now() - started < 800) return setTimeout(attempt, 50);
+      log("Send button never became available.");
+      done?.();
     };
     setTimeout(attempt, 80);
   }
@@ -288,9 +295,18 @@
 
     // Saving puts the card in the pool and, when we know the channel, straight
     // into its deck — one action, not two.
-    if (!(await store.apply("addCard", { card, channelId: channel?.id })).ok) {
+    // The worker settles duplicates: two fast saves can both decide there is
+    // none, and only it sees settled state.
+    const added = await store.apply("addCard", { card, channelId: channel?.id });
+    if (!added.ok) {
       // Quota, or the context went away. Keep what was typed.
       return showToast("保存できませんでした。入力はそのままです");
+    }
+    if (added.value?.duplicate) {
+      clearInput(input);
+      showToast("同じ札がもうあります");
+      render();
+      return flashCard(added.value.id);
     }
     if (channel?.id) {
       await store.apply("setChannel", { channelId: channel.id, name: channel.name });

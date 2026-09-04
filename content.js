@@ -138,6 +138,11 @@
   function buildDeck(data, channelId) {
     const cards = store.deckOf(data, channelId).map((card) => ({ ...card }));
     markLocked(cards, channelId);
+    // The stripe had become the deck's colour on every card, which said
+    // nothing. It marks scope again: grey works anywhere, coloured is tied to
+    // this channel by its member emoji — and that is what makes deleting it
+    // feel different.
+    for (const card of cards) card.bound = tokens.requiredChannels(card.tokens).length > 0;
     return orderDeck(cards, data.settings);
   }
 
@@ -470,14 +475,15 @@
     const tools = document.createElement("div");
     tools.className = "od-card-tools";
     const back = () => cardPeek(card);
+    // Only reversible actions here. Deleting a card outright removes it from
+    // every deck at once, which is a management decision — it lives in the builder,
+    // not under your finger during a stream.
     tools.append(
-      // Two different removals: out of this deck, or out of the pool for good.
-      iconButton("eject", "デッキから外す（プールには残る）", (event) => {
+      iconButton("eject", "このデッキから外す", (event) => {
         event.stopPropagation();
         removeFromDeck(card);
       }, back),
-      iconButton("edit", "この札を編集", (event) => { event.stopPropagation(); beginEdit(card); }, back),
-      iconButton("delete", "プールから削除", (event) => { event.stopPropagation(); deleteCard(card); }, back)
+      iconButton("edit", "この札を編集", (event) => { event.stopPropagation(); beginEdit(card); }, back)
     );
     return tools;
   }
@@ -557,7 +563,8 @@
     const el = document.createElement("div");
     el.className = "od-card";
     el.dataset.size = size;
-    if (hue != null) el.style.setProperty("--od-scope-hue", hue);
+    el.dataset.scope = card.bound ? "channel" : "global";
+    if (card.bound && hue != null) el.style.setProperty("--od-scope-hue", hue);
     if (card.id === editingId) el.dataset.editing = "true";
     if (card.locked) el.dataset.locked = "true";
     if (card.hits > 0) el.dataset.trending = "true";
@@ -680,7 +687,8 @@
     for (const card of deck) {
       const el = document.createElement("div");
       el.className = "od-listcard";
-      if (hue != null) el.style.setProperty("--od-scope-hue", hue);
+      el.dataset.scope = card.bound ? "channel" : "global";
+      if (card.bound && hue != null) el.style.setProperty("--od-scope-hue", hue);
       if (card.id === editingId) el.dataset.editing = "true";
       if (card.locked) el.dataset.locked = "true";
       if (card.hits > 0) el.dataset.trending = "true";

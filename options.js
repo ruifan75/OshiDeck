@@ -144,7 +144,18 @@ function paintDecks() {
     count.className = "muted";
     count.textContent = cardsOf(id).length;
 
-    row.append(dot, name, count);
+    const drop = document.createElement("button");
+    drop.type = "button";
+    drop.className = "deck-delete";
+    drop.textContent = "×";
+    drop.title = "このデッキを削除（札はプールに残ります）";
+    drop.setAttribute("aria-label", `${nameOf(id)} のデッキを削除`);
+    drop.addEventListener("click", (event) => {
+      event.stopPropagation();
+      removeDeck(id);
+    });
+
+    row.append(dot, name, count, drop);
     row.addEventListener("click", () => { selected = id; paintDecks(); });
     list.appendChild(row);
   }
@@ -195,7 +206,6 @@ function buildCard(card, where) {
 
   const el = document.createElement("div");
   el.className = "browse-card";
-  el.dataset.where = where;
   el.dataset.state = state;
   el.draggable = state === "free" || where === "deck";
   if (where === "deck") el.style.setProperty("--hue", hueOf(selected));
@@ -221,16 +231,40 @@ function buildCard(card, where) {
 
   if (el.draggable) wireDrag(el, card, where);
 
+  const bound = tokens.requiredChannels(card.tokens).length > 0;
+  if (!bound) el.dataset.universal = "true";
+
+  // In the deck: take it out. A card bound to this channel has no pool to
+  // return to, so the only way out is deleting it — offer that rather than a
+  // button that would refuse.
+  if (where === "deck") {
+    el.appendChild(cardAction(
+      bound ? "×" : "⏏",
+      bound ? "この札を削除（メン限専用なので外す先がありません）" : "このデッキから外す",
+      () => (bound ? removeCard(card) : ejectCard(card))
+    ));
+  }
+
+  // In the pool: delete for good.
   if (where === "pool") {
-    const remove = document.createElement("button");
-    remove.type = "button";
-    remove.className = "browse-remove";
-    remove.textContent = "×";
-    remove.setAttribute("aria-label", "プールから削除");
-    remove.addEventListener("click", () => removeCard(card));
-    el.appendChild(remove);
+    el.appendChild(cardAction("×", "プールから削除（すべてのデッキから消えます）",
+      () => removeCard(card)));
   }
   return el;
+}
+
+function cardAction(glyph, label, onClick) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "browse-remove";
+  button.textContent = glyph;
+  button.title = label;
+  button.setAttribute("aria-label", label);
+  button.addEventListener("click", (event) => {
+    event.stopPropagation();
+    onClick();
+  });
+  return button;
 }
 
 function paintCards() {
@@ -412,6 +446,29 @@ async function ejectCard(card, deckId = selected) {
   };
 
   status(`「${label(card)}」をデッキから外しました（プールに残っています）`, "元に戻す");
+  paintDecks();
+}
+
+// Removing a deck keeps every card: they stay in the pool, and the deck comes
+// back whole if you undo.
+async function removeDeck(id) {
+  const removed = store.deleteDeck(decks, id);
+  if (!removed) return;
+  await store.save(decks);
+  await store.writeChannelMeta(decks.channelMeta);
+
+  const was = nameOf(id) || id;
+  if (selected === id) selected = deckIds()[0] ?? null;
+
+  undo = async () => {
+    store.restoreDeck(decks, removed);
+    await store.save(decks);
+    await store.writeChannelMeta(decks.channelMeta);
+    status("元に戻しました");
+    paintDecks();
+  };
+
+  status(`「${was}」のデッキを削除しました（札はプールに残っています）`, "元に戻す");
   paintDecks();
 }
 

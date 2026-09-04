@@ -201,6 +201,24 @@
     }
   }
 
+  // Removing a deck is not removing its cards: they stay in the pool, and a
+  // card that is only usable on that channel stays there too, ready if the
+  // deck comes back.
+  function deleteDeck(data, channelId) {
+    const ids = data.decks[channelId];
+    if (!ids) return null;
+    delete data.decks[channelId];
+
+    const meta = data.channelMeta[channelId];
+    delete data.channelMeta[channelId];
+    return { channelId, ids, meta };
+  }
+
+  function restoreDeck(data, { channelId, ids, meta }) {
+    data.decks[channelId] = ids;
+    if (meta) data.channelMeta[channelId] = meta;
+  }
+
   // Order lives per deck, so the same card can be first here and last there.
   function reorderDeck(data, channelId, movedId, targetId, side) {
     const list = data.decks[channelId];
@@ -243,7 +261,7 @@
     KEYS, DEFAULT_SETTINGS, alive, defaultHue,
     read, save, writeChannelMeta,
     deckOf, poolFor, universal, usableOn, inDeck, addToDeck, removeFromDeck,
-    deleteCard, restoreCard, reorderDeck,
+    deleteCard, restoreCard, deleteDeck, restoreDeck, reorderDeck,
     sortCards, markUsed
   };
 })();

@@ -210,15 +210,18 @@
 .od-card[data-size="medium"] { width: 66px; height: 72px; border-radius: 7px; }
 .od-card[data-size="large"]  { width: 74px; height: 92px; border-radius: 8px; }
 
-/* The stripe is the deck's colour. Every card in the hand belongs to this
-   deck, so it no longer encodes a scope — it just ties the hand together. */
+/* The stripe says where a card can go: grey works on any channel, coloured is
+   tied to this one by its member emoji. */
 .od-card::before,
 .od-listcard::before {
   content: "";
   position: absolute;
   z-index: 1;
-  background: var(--od-scope);
+  background: var(--od-common);
 }
+
+.od-card[data-scope="channel"]::before,
+.od-listcard[data-scope="channel"]::before { background: var(--od-scope); }
 
 .od-card::before {
   top: 0;

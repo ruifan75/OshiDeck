@@ -500,28 +500,6 @@ kbd {
 
 /* A card bound to one channel by its member emoji. */
 .browse-card[data-bound] { border-style: dashed; }
-.browse-card[data-where="pool"] { position: relative; border-top-color: #8a8a8a; }
-
-.browse-remove {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  width: 18px;
-  height: 18px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  font-size: 13px;
-  line-height: 1;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.browse-card:hover .browse-remove { opacity: .55; }
-.browse-remove:hover { opacity: 1; background: oklch(0.65 0.19 25 / .25); }
 
 /* ---------- pool card state ---------- */
 
@@ -543,3 +521,59 @@ kbd {
 
 .browse-card[data-state="in-deck"] .browse-badge { color: oklch(0.62 0.16 145); }
 .browse-card[data-state="free"] { cursor: grab; }
+
+/* ---------- removal controls ---------- */
+
+/* Every card carries one removal, and which one depends on where it is and
+   whether it could live anywhere else. The label says which. */
+.browse-card { position: relative; }
+
+.browse-remove {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.browse-card:hover .browse-remove,
+.browse-remove:focus-visible { opacity: .6; }
+
+.browse-remove:hover {
+  opacity: 1;
+  background: oklch(0.65 0.19 25 / .28);
+}
+
+.deck-delete {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.deck-row:hover .deck-delete,
+.deck-delete:focus-visible { opacity: .55; }
+.deck-delete:hover { opacity: 1; background: oklch(0.65 0.19 25 / .28); }
+
+/* Grey stripe means the card works on any channel — same meaning as the
+   chat panel, so the two read alike. */
+.browse-card[data-universal] { border-top-color: #8a8a8a; }

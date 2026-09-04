@@ -159,6 +159,22 @@
   // Cards that work anywhere — the pool proper, with nothing channel-bound.
   const universal = (data) => data.cards.filter((card) => usableOn(card, null));
 
+  const filedIds = (data) =>
+    new Set(Object.values(data.decks || {}).flat());
+
+  // What the pool pane shows: everything that can go into any deck, plus
+  // anything currently in no deck at all.
+  //
+  // The second half is not decoration. A card bound to one channel is not pool
+  // material, so taking it out of its deck used to leave it in storage with
+  // nowhere on screen to see it — gone, as far as anyone could tell. Every
+  // card is reachable from exactly one place now, and the set is the same
+  // whichever deck is selected.
+  function poolPane(data) {
+    const filed = filedIds(data);
+    return data.cards.filter((card) => usableOn(card, null) || !filed.has(card.id));
+  }
+
   const inDeck = (data, channelId, cardId) =>
     (data.decks[channelId] || []).includes(cardId);
 
@@ -260,7 +276,7 @@
   OD.store = {
     KEYS, DEFAULT_SETTINGS, alive, defaultHue,
     read, save, writeChannelMeta,
-    deckOf, poolFor, universal, usableOn, inDeck, addToDeck, removeFromDeck,
+    deckOf, poolFor, universal, poolPane, usableOn, inDeck, addToDeck, removeFromDeck,
     deleteCard, restoreCard, deleteDeck, restoreDeck, reorderDeck,
     sortCards, markUsed
   };

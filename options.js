@@ -211,6 +211,7 @@ function buildCard(card, where) {
   if (where === "deck") el.style.setProperty("--hue", hueOf(selected));
 
   if (state === "in-deck") el.title = "このデッキに入っています";
+  if (state === "bound") el.title = "別のチャンネル専用の札です。そのチャンネルのデッキでのみ使えます。";
 
   const body = document.createElement("div");
   body.className = "browse-body";
@@ -222,10 +223,10 @@ function buildCard(card, where) {
 
   el.append(body, meta);
 
-  if (state === "in-deck") {
+  if (state !== "free") {
     const badge = document.createElement("span");
     badge.className = "browse-badge";
-    badge.textContent = "✓";
+    badge.textContent = state === "in-deck" ? "✓" : "⌂";
     el.appendChild(badge);
   }
 
@@ -234,20 +235,13 @@ function buildCard(card, where) {
   const bound = tokens.requiredChannels(card.tokens).length > 0;
   if (!bound) el.dataset.universal = "true";
 
-  // In the deck: take it out. A card bound to this channel has no pool to
-  // return to, so the only way out is deleting it — offer that rather than a
-  // button that would refuse.
+  // Deck cards leave; pool cards are destroyed. Never both in one place, so
+  // there is no pair of similar buttons with wildly different consequences.
   if (where === "deck") {
-    el.appendChild(cardAction(
-      bound ? "×" : "⏏",
-      bound ? "この札を削除（メン限専用なので外す先がありません）" : "このデッキから外す",
-      () => (bound ? removeCard(card) : ejectCard(card))
-    ));
-  }
-
-  // In the pool: delete for good.
-  if (where === "pool") {
-    el.appendChild(cardAction("×", "プールから削除（すべてのデッキから消えます）",
+    el.appendChild(cardAction("⏏", "このデッキから外す（プールに戻ります）",
+      () => ejectCard(card)));
+  } else {
+    el.appendChild(cardAction("×", "この札を削除（すべてのデッキから消えます）",
       () => removeCard(card)));
   }
   return el;
@@ -304,15 +298,19 @@ function paintCards() {
 // not pool material and never appears here. What is left is the same list
 // whatever deck is selected; the only per-deck fact is whether a card is
 // already in it, and that is a mark on the card, not a reason to hide it.
-const poolState = (card) =>
-  selected && store.inDeck(decks, selected, card.id) ? "in-deck" : "free";
+function poolState(card) {
+  if (selected && store.inDeck(decks, selected, card.id)) return "in-deck";
+  // Unfiled but tied to another channel: it lives here so it is not lost, but
+  // it cannot join the deck on screen.
+  return selected && !store.usableOn(card, selected) ? "bound" : "free";
+}
 
 function paintPool() {
   const holder = document.querySelector("#poolCards");
   holder.replaceChildren();
   wirePoolDrop(document.querySelector("#pool"));
 
-  const all = store.universal(decks);
+  const all = store.poolPane(decks);
   const shown = query
     ? all.filter((card) => tokens.toPlainText(card.tokens || []).toLowerCase().includes(query))
     : all;
@@ -327,7 +325,7 @@ function paintPool() {
     empty.className = "muted";
     empty.textContent = query
       ? "一致する札がありません。"
-      : "どのデッキでも使える札がまだありません。メン限スタンプを含む札は、配っているチャンネルのデッキに固定されます。";
+      : "どのデッキでも使える札がまだありません。";
     holder.appendChild(empty);
     return;
   }
@@ -430,9 +428,6 @@ async function dropOnDeck({ card, from }, { target, side }) {
 }
 
 async function ejectCard(card, deckId = selected) {
-  if (tokens.requiredChannels(card.tokens).length) {
-    return status("メン限スタンプ入りの札はこのデッキ専用です。外すには削除してください。");
-  }
   const at = store.removeFromDeck(decks, deckId, card.id);
   if (at < 0) return;
   await store.save(decks);

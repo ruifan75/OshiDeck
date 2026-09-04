@@ -102,10 +102,8 @@
 
     const { cards, decks } = migrate(raw);
     const fresh = Array.isArray(raw[KEYS.CARDS]) && !!raw[KEYS.DECKS];
-    if (!fresh && cards.length) {
-      await write(KEYS.CARDS, cards); // legacy keys are left as a backup
-      await write(KEYS.DECKS, decks);
-    }
+    // Legacy keys are left in place as a backup.
+    if (!fresh && cards.length) await save({ cards, decks });
 
     return {
       settings: { ...DEFAULT_SETTINGS, ...(raw[KEYS.SETTINGS] || {}) },
@@ -115,20 +113,24 @@
     };
   }
 
-  async function write(key, value) {
+  async function write(patch) {
     if (!alive()) return false;
     try {
-      await chrome.storage.local.set({ [key]: value });
+      await chrome.storage.local.set(patch);
       return true;
     } catch (_) {
       return false;
     }
   }
 
-  const save = async (data) =>
-    (await write(KEYS.CARDS, data.cards)) && (await write(KEYS.DECKS, data.decks));
+  // Cards and decks refer to each other, so they are written in one operation.
+  // Split across two, a failure between them leaves cards whose scope has been
+  // stripped with no deck map to replace it — the next migration then reads
+  // every card as global and persists an empty deck map, losing every
+  // membership for good.
+  const save = (data) => write({ [KEYS.CARDS]: data.cards, [KEYS.DECKS]: data.decks });
 
-  const writeChannelMeta = (channelMeta) => write(KEYS.CHANNELS, channelMeta);
+  const writeChannelMeta = (channelMeta) => write({ [KEYS.CHANNELS]: channelMeta });
 
   /* ---------- decks ---------- */
 
@@ -149,11 +151,17 @@
     return !required.length || (!!channelId && required.every((id) => id === channelId));
   }
 
-  // Cards this deck could still take: not already in it, and actually sendable
-  // on this channel.
+  // Everything this channel could ever hold: universal cards plus its own
+  // member cards. Stable whatever is in the deck, which is what makes it a
+  // pool rather than a leftovers list.
+  const compatibleWith = (data, channelId) =>
+    data.cards.filter((card) => usableOn(card, channelId));
+
+  // The subset it could still take — used where offering a card already in the
+  // deck would be pointless.
   function poolFor(data, channelId) {
     const held = new Set(data.decks[channelId] || []);
-    return data.cards.filter((card) => !held.has(card.id) && usableOn(card, channelId));
+    return compatibleWith(data, channelId).filter((card) => !held.has(card.id));
   }
 
   // Cards that work anywhere — the pool proper, with nothing channel-bound.
@@ -211,10 +219,25 @@
 
     const meta = data.channelMeta[channelId];
     delete data.channelMeta[channelId];
-    return { channelId, ids, meta };
+
+    // Its member cards can belong to no other deck and appear in no other
+    // pool, so leaving them behind would strand them: paid for, invisible,
+    // impossible to delete. They go with the deck, and undo brings both back.
+    const exclusive = [];
+    for (let i = data.cards.length - 1; i >= 0; i--) {
+      if (usableOn(data.cards[i], null)) continue;
+      if (!usableOn(data.cards[i], channelId)) continue;
+      exclusive.unshift({ card: data.cards[i], index: i });
+      data.cards.splice(i, 1);
+    }
+
+    return { channelId, ids, meta, exclusive };
   }
 
-  function restoreDeck(data, { channelId, ids, meta }) {
+  function restoreDeck(data, { channelId, ids, meta, exclusive }) {
+    for (const { card, index } of exclusive || []) {
+      data.cards.splice(Math.min(index, data.cards.length), 0, card);
+    }
     data.decks[channelId] = ids;
     if (meta) data.channelMeta[channelId] = meta;
   }
@@ -260,7 +283,7 @@
   OD.store = {
     KEYS, DEFAULT_SETTINGS, alive, defaultHue,
     read, save, writeChannelMeta,
-    deckOf, poolFor, universal, usableOn, inDeck, addToDeck, removeFromDeck,
+    deckOf, poolFor, compatibleWith, universal, usableOn, inDeck, addToDeck, removeFromDeck,
     deleteCard, restoreCard, deleteDeck, restoreDeck, reorderDeck,
     sortCards, markUsed
   };

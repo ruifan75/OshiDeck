@@ -87,9 +87,21 @@
     }
 
     function notify() {
-      if (!dirty) return;
+      // Entries ageing out of the window changes the order just as much as new
+      // ones arriving. Without this the panel stayed sorted by a burst that
+      // ended minutes ago, because nothing else was going to trigger a render.
+      const before = recent.length;
+      const expired = prune() !== before;
+
+      if (!dirty && !expired) return;
       dirty = false;
       onChange?.();
+    }
+
+    function prune() {
+      const cutoff = Date.now() - WINDOW_MS;
+      recent = recent.filter((entry) => entry.at >= cutoff);
+      return recent.length;
     }
 
     function start() {
@@ -121,9 +133,7 @@
 
     // signature -> how many messages carried it inside the window
     function ranking() {
-      const cutoff = Date.now() - WINDOW_MS;
-      recent = recent.filter((entry) => entry.at >= cutoff);
-
+      prune();
       const counts = new Map();
       for (const entry of recent) counts.set(entry.sig, (counts.get(entry.sig) || 0) + 1);
       return counts;

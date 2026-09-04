@@ -254,6 +254,12 @@
       editingId = null;
       if (editing) {
         editing.tokens = captured;
+        // Editing can add member emoji, which pins the card to one channel.
+        // Any other deck still holding it would be holding something it can
+        // never send.
+        for (const id of Object.keys(data.decks)) {
+          if (!store.usableOn(editing, id)) store.removeFromDeck(data, id, editing.id);
+        }
         await store.save(data);
         clearInput(input);
         showToast("札を更新しました");
@@ -297,7 +303,10 @@
       rememberChannel(data, channel);
     }
 
-    await store.save(data);
+    if (!(await store.save(data))) {
+      // Quota, or the context went away. Keep what was typed.
+      return showToast("保存できませんでした。入力はそのままです");
+    }
     await store.writeChannelMeta(data.channelMeta);
 
     clearInput(input);
@@ -491,10 +500,12 @@
     const data = await store.read();
     if (!data) return shutdown();
 
-    const index = data.cards.findIndex((c) => c.id === card.id);
-    if (index < 0) return;
+    // Splicing the pool alone leaves the id dangling in every deck that held
+    // it: deckOf hides that, but an exported backup then points at a card
+    // that does not exist and will not import.
+    const removed = store.deleteCard(data, card.id);
+    if (!removed) return;
 
-    const [removed] = data.cards.splice(index, 1);
     await store.save(data);
     render();
 
@@ -506,7 +517,7 @@
       onAction: async () => {
         const fresh = await store.read();
         if (!fresh) return shutdown();
-        fresh.cards.splice(Math.min(index, fresh.cards.length), 0, removed);
+        store.restoreCard(fresh, removed);
         await store.save(fresh);
         render();
       }
@@ -1100,7 +1111,14 @@
   try {
     chrome.storage.onChanged.addListener((changes, area) => {
       if (area !== "local") return;
-        if (changes[store.KEYS.SETTINGS] || changes[store.KEYS.CARDS]) scheduleRender();
+        // decks, channelMeta and cards all change independently — a reorder in
+      // the builder rewrites only `decks`, and a colour change only
+      // `channelMeta`. Watching one key left the panel stale until something
+      // unrelated happened to write.
+      const watched = [
+        store.KEYS.SETTINGS, store.KEYS.CARDS, store.KEYS.DECKS, store.KEYS.CHANNELS
+      ];
+      if (watched.some((key) => changes[key])) scheduleRender();
     });
   } catch (_) {
     shutdown();

@@ -38,11 +38,20 @@
       if (!Array.isArray(card.tokens)) return "札に中身がありません";
     }
 
-    const ids = new Set(raw.cards.map((card) => card.id));
+    // Two cards sharing an id collapse into one on lookup, and a repeated id
+    // inside a deck makes every removal ambiguous. Reject rather than import
+    // something that cannot be reasoned about afterwards.
+    const ids = new Set();
+    for (const card of raw.cards) {
+      if (ids.has(card.id)) return `同じidの札が2枚あります: ${card.id}`;
+      ids.add(card.id);
+    }
+
     for (const [channelId, list] of Object.entries(raw.decks || {})) {
       if (!Array.isArray(list)) return `デッキ ${channelId} が配列ではありません`;
       if (list.some((id) => typeof id !== "string")) return `デッキ ${channelId} に不正なidがあります`;
       if (list.some((id) => !ids.has(id))) return `デッキ ${channelId} が存在しない札を指しています`;
+      if (new Set(list).size !== list.length) return `デッキ ${channelId} に同じ札が重複しています`;
     }
     return null;
   }

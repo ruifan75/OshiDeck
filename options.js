@@ -193,9 +193,28 @@ function paintHeader() {
   header.appendChild(swatches);
 }
 
+// Apply a change to the freshest stored state, never to the snapshot this page
+// has been holding. The chat panel writes usage counts as cards are played, so
+// saving a wholesale snapshot read minutes ago silently rolls them back.
+async function mutate(apply, { meta = false } = {}) {
+  const data = await store.read();
+  if (!data) return false;
+  if (apply(data) === false) return false;
+  if (!(await store.save(data))) return status("保存できませんでした"), false;
+  if (meta && !(await store.writeChannelMeta(data.channelMeta))) {
+    return status("保存できませんでした"), false;
+  }
+  decks = data;
+  paintDecks();
+  return true;
+}
+
 async function setHue(id, hue) {
-  decks.channelMeta[id] = { ...(decks.channelMeta[id] || {}), hue };
-  await store.writeChannelMeta(decks.channelMeta);
+  const data = await store.read();
+  if (!data) return;
+  data.channelMeta[id] = { ...(data.channelMeta[id] || {}), hue };
+  if (!(await store.writeChannelMeta(data.channelMeta))) return status("保存できませんでした");
+  decks = data;
   paintDecks();
 }
 
@@ -264,7 +283,6 @@ function paintCards() {
   const holder = document.querySelector("#deckCards");
   const hint = document.querySelector("#deckHint");
   holder.replaceChildren();
-  wireDeckDrop(holder);
 
   if (!selected) {
     hint.textContent = "";
@@ -305,9 +323,8 @@ const poolState = (card) =>
 function paintPool() {
   const holder = document.querySelector("#poolCards");
   holder.replaceChildren();
-  wirePoolDrop(document.querySelector("#pool"));
 
-  const all = selected ? store.poolFor(decks, selected) : store.universal(decks);
+  const all = selected ? store.compatibleWith(decks, selected) : store.universal(decks);
   const shown = query
     ? all.filter((card) => tokens.toPlainText(card.tokens || []).toLowerCase().includes(query))
     : all;
@@ -411,81 +428,86 @@ function wirePoolDrop(pane) {
 // from the pool, and moving one that is already there.
 async function dropOnDeck({ card, from }, { target, side }) {
   if (!selected) return;
+  // Bubbling means a drop on the dragged card itself also reaches the holder;
+  // reorderDeck would then fail to find its own target and append the card.
+  if (target?.id === card.id) return;
 
-  if (from === "pool" && !store.addToDeck(decks, selected, card.id)) return;
+  const joined = from === "pool";
+  const into = selected; // `selected` moves; the deck that took the card does not
 
-  if (target) store.reorderDeck(decks, selected, card.id, target.id, side || "before");
-  await store.save(decks);
+  const done = await mutate((data) => {
+    if (joined && !store.addToDeck(data, into, card.id)) return false;
+    if (target) {
+      store.reorderDeck(data, into, card.id, target.id, side || "before");
+    } else if (!joined) {
+      // Dropped on the empty area: the holder offered itself as a target, so
+      // send the card to the end rather than doing nothing.
+      const list = data.decks[into] || [];
+      store.reorderDeck(data, into, card.id, list[list.length - 1], "after");
+    }
+  });
+  if (!done) return;
 
-  if (from === "pool") {
-    undo = async () => {
-      store.removeFromDeck(decks, selected, card.id);
-      await store.save(decks);
-      status("元に戻しました");
-      paintDecks();
-    };
-    status(`「${label(card)}」を ${nameOf(selected)} に入れました`, "元に戻す");
+  if (joined) {
+    undo = () => mutate((data) => store.removeFromDeck(data, into, card.id))
+      .then((ok) => ok && status("元に戻しました"));
+    status(`「${label(card)}」を ${nameOf(into)} に入れました`, "元に戻す");
   } else if (settings.sortBy !== "manual") {
-    status(`並べ替えました（表示に反映するには並び順を「自分で並べた順」に）`);
+    status("並べ替えました（表示に反映するには並び順を「自分で並べた順」に）");
   }
-  paintDecks();
 }
 
 async function ejectCard(card, deckId = selected) {
-  const at = store.removeFromDeck(decks, deckId, card.id);
-  if (at < 0) return;
-  await store.save(decks);
+  let at = -1;
+  const done = await mutate((data) => {
+    at = store.removeFromDeck(data, deckId, card.id);
+    return at >= 0;
+  });
+  if (!done) return;
 
-  undo = async () => {
-    const list = (decks.decks[deckId] ||= []);
+  undo = () => mutate((data) => {
+    const list = (data.decks[deckId] ||= []);
     list.splice(Math.min(at, list.length), 0, card.id);
-    await store.save(decks);
-    status("元に戻しました");
-    paintDecks();
-  };
+  }).then((ok) => ok && status("元に戻しました"));
 
   status(`「${label(card)}」をデッキから外しました（プールに残っています）`, "元に戻す");
-  paintDecks();
 }
 
 // Removing a deck keeps every card: they stay in the pool, and the deck comes
 // back whole if you undo.
 async function removeDeck(id) {
-  const removed = store.deleteDeck(decks, id);
-  if (!removed) return;
-  await store.save(decks);
-  await store.writeChannelMeta(decks.channelMeta);
-
   const was = nameOf(id) || id;
-  if (selected === id) selected = deckIds()[0] ?? null;
+  let removed = null;
 
-  undo = async () => {
-    store.restoreDeck(decks, removed);
-    await store.save(decks);
-    await store.writeChannelMeta(decks.channelMeta);
-    status("元に戻しました");
-    paintDecks();
-  };
+  const done = await mutate((data) => {
+    removed = store.deleteDeck(data, id);
+    if (!removed) return false;
+    if (selected === id) selected = Object.keys(data.decks)[0] ?? null;
+  }, { meta: true });
+  if (!done) return;
 
-  status(`「${was}」のデッキを削除しました（札はプールに残っています）`, "元に戻す");
-  paintDecks();
+  undo = () => mutate((data) => store.restoreDeck(data, removed), { meta: true })
+    .then((ok) => ok && status("元に戻しました"));
+
+  const note = removed.exclusive?.length
+    ? `（このチャンネル専用の${removed.exclusive.length}枚も一緒に削除）`
+    : "（札はプールに残っています）";
+  status(`「${was}」のデッキを削除しました${note}`, "元に戻す");
 }
 
 // Deleting is from the pool, so it leaves every deck at once.
 async function removeCard(card) {
-  const removed = store.deleteCard(decks, card.id);
-  if (!removed) return;
-  await store.save(decks);
+  let removed = null;
+  const done = await mutate((data) => {
+    removed = store.deleteCard(data, card.id);
+    return !!removed;
+  });
+  if (!done) return;
 
-  undo = async () => {
-    store.restoreCard(decks, removed);
-    await store.save(decks);
-    status("元に戻しました");
-    paintDecks();
-  };
+  undo = () => mutate((data) => store.restoreCard(data, removed))
+    .then((ok) => ok && status("元に戻しました"));
 
   status(`「${label(removed.card)}」を削除しました`, "元に戻す");
-  paintDecks();
 }
 
 function label(card) {
@@ -515,6 +537,12 @@ function status(message, actionLabel) {
   clearTimeout(status.timer);
   status.timer = setTimeout(() => saved.replaceChildren(), 8000);
 }
+
+// These two elements survive every repaint. Wiring them inside paint() added
+// another set of listeners on every storage event, so one drop later fired a
+// pile of redundant saves.
+wireDeckDrop(document.querySelector("#deckCards"));
+wirePoolDrop(document.querySelector("#pool"));
 
 document.querySelector("#deckSearch").addEventListener("input", (event) => {
   query = event.target.value.trim().toLowerCase();
@@ -611,7 +639,7 @@ async function applyImport() {
     data.cards = next.cards;
     data.decks = next.decks;
     data.channelMeta = next.channelMeta;
-    await store.save(data);
+    if (!(await store.save(data))) return importStatus("保存できませんでした");
     await store.writeChannelMeta(data.channelMeta);
     if (next.settings) await chrome.storage.local.set({ settings: next.settings });
     importStatus(`${next.cards.length}枚に置き換えました`);
@@ -620,7 +648,7 @@ async function applyImport() {
     data.cards = merged.cards;
     data.decks = merged.decks;
     data.channelMeta = merged.channelMeta;
-    await store.save(data);
+    if (!(await store.save(data))) return importStatus("保存できませんでした");
     await store.writeChannelMeta(data.channelMeta);
     importStatus(
       merged.added || merged.linked

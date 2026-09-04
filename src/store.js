@@ -227,7 +227,20 @@
     for (let i = data.cards.length - 1; i >= 0; i--) {
       if (usableOn(data.cards[i], null)) continue;
       if (!usableOn(data.cards[i], channelId)) continue;
-      exclusive.unshift({ card: data.cards[i], index: i });
+
+      const card = data.cards[i];
+      // Older state — or an imported backup — can have filed this card under a
+      // channel that cannot send it. Clearing only this deck would leave that
+      // reference pointing at a card that no longer exists.
+      const strays = {};
+      for (const [other, list] of Object.entries(data.decks)) {
+        const at = list.indexOf(card.id);
+        if (at < 0) continue;
+        strays[other] = at;
+        list.splice(at, 1);
+      }
+
+      exclusive.unshift({ card, index: i, strays });
       data.cards.splice(i, 1);
     }
 
@@ -235,8 +248,12 @@
   }
 
   function restoreDeck(data, { channelId, ids, meta, exclusive }) {
-    for (const { card, index } of exclusive || []) {
+    for (const { card, index, strays } of exclusive || []) {
       data.cards.splice(Math.min(index, data.cards.length), 0, card);
+      for (const [other, at] of Object.entries(strays || {})) {
+        const list = (data.decks[other] ||= []);
+        if (!list.includes(card.id)) list.splice(Math.min(at, list.length), 0, card.id);
+      }
     }
     data.decks[channelId] = ids;
     if (meta) data.channelMeta[channelId] = meta;
@@ -280,9 +297,126 @@
     return card;
   }
 
+  /* ---------- mutations ---------- */
+
+  // Every change is a named operation applied to freshly-read state. Two
+  // contexts can both finish read() before either writes, and the loser's
+  // change is simply gone — so nobody writes directly. The service worker
+  // runs these one at a time (background.js), which is the only place in the
+  // extension where ordering can be guaranteed.
+  const OPS = {
+    addCard(data, { card, channelId }) {
+      data.cards.push(card);
+      if (channelId) addToDeck(data, channelId, card.id);
+      return card.id;
+    },
+
+    editCard(data, { id, tokens }) {
+      const card = data.cards.find((c) => c.id === id);
+      if (!card) return false;
+      card.tokens = tokens;
+      // Editing can add member emoji, which pins the card to one channel.
+      for (const channelId of Object.keys(data.decks)) {
+        if (!usableOn(card, channelId)) removeFromDeck(data, channelId, id);
+      }
+      return true;
+    },
+
+    markUsed(data, { id }) {
+      const card = data.cards.find((c) => c.id === id);
+      if (card) markUsed(card);
+      return !!card;
+    },
+
+    addToDeck: (data, { channelId, cardId }) => addToDeck(data, channelId, cardId),
+
+    removeFromDeck: (data, { channelId, cardId }) =>
+      removeFromDeck(data, channelId, cardId),
+
+    // Put a card back where it was, tolerating whatever happened meanwhile:
+    // the other surface may have re-added it, or deleted it outright.
+    insertIntoDeck(data, { channelId, cardId, at }) {
+      if (!data.cards.some((c) => c.id === cardId)) return false;
+      const list = (data.decks[channelId] ||= []);
+      if (list.includes(cardId)) return true;
+      list.splice(Math.min(at ?? list.length, list.length), 0, cardId);
+      return true;
+    },
+
+    reorderDeck: (data, { channelId, movedId, targetId, side }) =>
+      reorderDeck(data, channelId, movedId, targetId, side),
+
+    deleteCard: (data, { id }) => deleteCard(data, id),
+    restoreCard: (data, { snapshot }) => (restoreCard(data, snapshot), true),
+
+    deleteDeck: (data, { channelId }) => deleteDeck(data, channelId),
+
+    // Merge rather than overwrite. The deck can have been recreated during the
+    // undo window, and assigning the captured list back would silently drop
+    // everything added since — so the current list is read first and folded in.
+    restoreDeck(data, { snapshot }) {
+      const since = [...(data.decks[snapshot.channelId] || [])];
+      restoreDeck(data, snapshot);
+
+      const live = new Set(data.cards.map((c) => c.id));
+      const seen = new Set();
+      data.decks[snapshot.channelId] = [...snapshot.ids, ...since].filter((id) => {
+        if (seen.has(id) || !live.has(id)) return false;
+        seen.add(id);
+        return true;
+      });
+      return true;
+    },
+
+    setChannel(data, { channelId, hue, name }) {
+      const existing = data.channelMeta[channelId] || {};
+      data.channelMeta[channelId] = {
+        hue: hue ?? existing.hue ?? defaultHue(channelId),
+        name: name || existing.name || ""
+      };
+      return true;
+    },
+
+    replaceAll(data, { cards, decks, channelMeta }) {
+      data.cards = cards;
+      data.decks = decks;
+      data.channelMeta = channelMeta;
+      return true;
+    }
+  };
+
+  // Runs inside the service worker only.
+  async function runOp(name, args) {
+    const op = OPS[name];
+    if (!op) throw new Error(`unknown op: ${name}`);
+
+    const data = await read();
+    if (!data) return { ok: false };
+
+    const value = op(data, args || {});
+    const written = await write({
+      [KEYS.CARDS]: data.cards,
+      [KEYS.DECKS]: data.decks,
+      [KEYS.CHANNELS]: data.channelMeta
+    });
+    return { ok: written, value };
+  }
+
+  // Called from the page contexts.
+  async function apply(name, args) {
+    if (!alive()) return { ok: false };
+    try {
+      const reply = await chrome.runtime.sendMessage({ type: "mutate", op: name, args });
+      return reply || { ok: false };
+    } catch (_) {
+      return { ok: false };
+    }
+  }
+
   OD.store = {
+    OPS, runOp, apply,
     KEYS, DEFAULT_SETTINGS, alive, defaultHue,
-    read, save, writeChannelMeta,
+    read,
     deckOf, poolFor, compatibleWith, universal, usableOn, inDeck, addToDeck, removeFromDeck,
     deleteCard, restoreCard, deleteDeck, restoreDeck, reorderDeck,
     sortCards, markUsed

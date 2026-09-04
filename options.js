@@ -196,27 +196,21 @@ function paintHeader() {
 // Apply a change to the freshest stored state, never to the snapshot this page
 // has been holding. The chat panel writes usage counts as cards are played, so
 // saving a wholesale snapshot read minutes ago silently rolls them back.
-async function mutate(apply, { meta = false } = {}) {
-  const data = await store.read();
-  if (!data) return false;
-  if (apply(data) === false) return false;
-  if (!(await store.save(data))) return status("保存できませんでした"), false;
-  if (meta && !(await store.writeChannelMeta(data.channelMeta))) {
-    return status("保存できませんでした"), false;
+// Every change is a named operation sent to the service worker, which applies
+// them one at a time against freshly-read state. Nothing here writes storage.
+async function mutate(op, args) {
+  const reply = await store.apply(op, args);
+  if (!reply.ok) {
+    status("保存できませんでした");
+    return reply;
   }
-  decks = data;
+  const data = await store.read();
+  if (data) decks = data;
   paintDecks();
-  return true;
+  return reply;
 }
 
-async function setHue(id, hue) {
-  const data = await store.read();
-  if (!data) return;
-  data.channelMeta[id] = { ...(data.channelMeta[id] || {}), hue };
-  if (!(await store.writeChannelMeta(data.channelMeta))) return status("保存できませんでした");
-  decks = data;
-  paintDecks();
-}
+const setHue = (id, hue) => mutate("setChannel", { channelId: id, hue });
 
 // A card, rendered the same in either pane. `where` decides what dragging it
 // means and which actions it offers.
@@ -426,6 +420,8 @@ function wirePoolDrop(pane) {
 
 // One entry point for both meanings of a drop on the deck: bringing a card in
 // from the pool, and moving one that is already there.
+// One entry point for both meanings of a drop on the deck: bringing a card in
+// from the pool, and moving one that is already there.
 async function dropOnDeck({ card, from }, { target, side }) {
   if (!selected) return;
   // Bubbling means a drop on the dragged card itself also reaches the holder;
@@ -435,22 +431,25 @@ async function dropOnDeck({ card, from }, { target, side }) {
   const joined = from === "pool";
   const into = selected; // `selected` moves; the deck that took the card does not
 
-  const done = await mutate((data) => {
-    if (joined && !store.addToDeck(data, into, card.id)) return false;
-    if (target) {
-      store.reorderDeck(data, into, card.id, target.id, side || "before");
-    } else if (!joined) {
-      // Dropped on the empty area: the holder offered itself as a target, so
-      // send the card to the end rather than doing nothing.
-      const list = data.decks[into] || [];
-      store.reorderDeck(data, into, card.id, list[list.length - 1], "after");
+  if (joined && !(await mutate("addToDeck", { channelId: into, cardId: card.id })).ok) return;
+
+  if (target) {
+    await mutate("reorderDeck", {
+      channelId: into, movedId: card.id, targetId: target.id, side: side || "before"
+    });
+  } else if (!joined) {
+    // Dropped on the empty area: the holder offered itself as a target, so
+    // send the card to the end rather than doing nothing.
+    const list = decks.decks[into] || [];
+    const last = list[list.length - 1];
+    if (last && last !== card.id) {
+      await mutate("reorderDeck", { channelId: into, movedId: card.id, targetId: last, side: "after" });
     }
-  });
-  if (!done) return;
+  }
 
   if (joined) {
-    undo = () => mutate((data) => store.removeFromDeck(data, into, card.id))
-      .then((ok) => ok && status("元に戻しました"));
+    undo = () => mutate("removeFromDeck", { channelId: into, cardId: card.id })
+      .then((r) => r.ok && status("元に戻しました"));
     status(`「${label(card)}」を ${nameOf(into)} に入れました`, "元に戻す");
   } else if (settings.sortBy !== "manual") {
     status("並べ替えました（表示に反映するには並び順を「自分で並べた順」に）");
@@ -458,56 +457,45 @@ async function dropOnDeck({ card, from }, { target, side }) {
 }
 
 async function ejectCard(card, deckId = selected) {
-  let at = -1;
-  const done = await mutate((data) => {
-    at = store.removeFromDeck(data, deckId, card.id);
-    return at >= 0;
-  });
-  if (!done) return;
+  const { ok, value: at } = await mutate("removeFromDeck", { channelId: deckId, cardId: card.id });
+  if (!ok || at < 0) return;
 
-  undo = () => mutate((data) => {
-    const list = (data.decks[deckId] ||= []);
-    list.splice(Math.min(at, list.length), 0, card.id);
-  }).then((ok) => ok && status("元に戻しました"));
+  // insertIntoDeck tolerates whatever happened in the meantime: the card may
+  // have been re-added from the chat panel, or deleted outright.
+  undo = () => mutate("insertIntoDeck", { channelId: deckId, cardId: card.id, at })
+    .then((r) => r.ok && status("元に戻しました"));
 
   status(`「${label(card)}」をデッキから外しました（プールに残っています）`, "元に戻す");
 }
 
-// Removing a deck keeps every card: they stay in the pool, and the deck comes
-// back whole if you undo.
+// Removing a deck keeps universal cards in the pool; cards only this channel
+// can use go with it, since nothing else could ever show them.
 async function removeDeck(id) {
   const was = nameOf(id) || id;
-  let removed = null;
+  const { ok, value: snapshot } = await mutate("deleteDeck", { channelId: id });
+  if (!ok || !snapshot) return;
 
-  const done = await mutate((data) => {
-    removed = store.deleteDeck(data, id);
-    if (!removed) return false;
-    if (selected === id) selected = Object.keys(data.decks)[0] ?? null;
-  }, { meta: true });
-  if (!done) return;
+  if (selected === id) selected = Object.keys(decks.decks)[0] ?? null;
+  paintDecks();
 
-  undo = () => mutate((data) => store.restoreDeck(data, removed), { meta: true })
-    .then((ok) => ok && status("元に戻しました"));
+  undo = () => mutate("restoreDeck", { snapshot })
+    .then((r) => r.ok && status("元に戻しました"));
 
-  const note = removed.exclusive?.length
-    ? `（このチャンネル専用の${removed.exclusive.length}枚も一緒に削除）`
+  const note = snapshot.exclusive?.length
+    ? `（このチャンネル専用の${snapshot.exclusive.length}枚も一緒に削除）`
     : "（札はプールに残っています）";
   status(`「${was}」のデッキを削除しました${note}`, "元に戻す");
 }
 
 // Deleting is from the pool, so it leaves every deck at once.
 async function removeCard(card) {
-  let removed = null;
-  const done = await mutate((data) => {
-    removed = store.deleteCard(data, card.id);
-    return !!removed;
-  });
-  if (!done) return;
+  const { ok, value: snapshot } = await mutate("deleteCard", { id: card.id });
+  if (!ok || !snapshot) return;
 
-  undo = () => mutate((data) => store.restoreCard(data, removed))
-    .then((ok) => ok && status("元に戻しました"));
+  undo = () => mutate("restoreCard", { snapshot })
+    .then((r) => r.ok && status("元に戻しました"));
 
-  status(`「${label(removed.card)}」を削除しました`, "元に戻す");
+  status(`「${label(snapshot.card)}」を削除しました`, "元に戻す");
 }
 
 function label(card) {
@@ -634,25 +622,22 @@ async function applyImport() {
   const data = await store.read();
   if (!data) return;
 
+  const next = importMode === "replace" ? backup.replace(raw) : backup.merge(data, raw);
+
+  // One operation: cards, decks and channel metadata land together or not at
+  // all, so a half-applied import cannot exist.
+  const { ok } = await store.apply("replaceAll", {
+    cards: next.cards, decks: next.decks, channelMeta: next.channelMeta
+  });
+  if (!ok) return importStatus("保存できませんでした");
+
   if (importMode === "replace") {
-    const next = backup.replace(raw);
-    data.cards = next.cards;
-    data.decks = next.decks;
-    data.channelMeta = next.channelMeta;
-    if (!(await store.save(data))) return importStatus("保存できませんでした");
-    await store.writeChannelMeta(data.channelMeta);
     if (next.settings) await chrome.storage.local.set({ settings: next.settings });
     importStatus(`${next.cards.length}枚に置き換えました`);
   } else {
-    const merged = backup.merge(data, raw);
-    data.cards = merged.cards;
-    data.decks = merged.decks;
-    data.channelMeta = merged.channelMeta;
-    if (!(await store.save(data))) return importStatus("保存できませんでした");
-    await store.writeChannelMeta(data.channelMeta);
     importStatus(
-      merged.added || merged.linked
-        ? `新しい札 ${merged.added}枚、デッキへの追加 ${merged.linked}件`
+      next.added || next.linked
+        ? `新しい札 ${next.added}枚、デッキへの追加 ${next.linked}件`
         : "すでに全部持っていました"
     );
   }

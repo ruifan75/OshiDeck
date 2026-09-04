@@ -1,8 +1,37 @@
-// Content scripts cannot call chrome.runtime.openOptionsPage(), so they ask
-// the service worker to open it on their behalf.
-chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
+// The single writer.
+//
+// Content scripts and the options page both want to change stored state, and
+// chrome.storage has no compare-and-set: two contexts can each finish reading
+// before either writes, and the loser's change vanishes. So neither writes.
+// They send a named operation here, and this worker — one context, one queue —
+// applies them strictly one at a time.
+import "./src/tokens.js";
+import "./src/store.js";
+
+const { store } = globalThis.OshiDeck;
+
+let queue = Promise.resolve();
+
+// Serialises regardless of how the operation ends, so one failure cannot
+// wedge every later write.
+function enqueue(work) {
+  const result = queue.then(work, work);
+  queue = result.then(() => {}, () => {});
+  return result;
+}
+
+chrome.runtime.onMessage.addListener((message, _sender, respond) => {
   if (message?.type === "openOptions") {
     chrome.runtime.openOptionsPage();
-    sendResponse({ ok: true });
+    respond({ ok: true });
+    return false;
   }
+
+  if (message?.type === "mutate") {
+    enqueue(() => store.runOp(message.op, message.args))
+      .then(respond, (error) => respond({ ok: false, error: String(error) }));
+    return true; // respond asynchronously
+  }
+
+  return false;
 });

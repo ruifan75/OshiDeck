@@ -208,14 +208,10 @@
 
     tokens.writeToInput(input, card.tokens || []);
 
+    await store.apply("markUsed", { id: card.id });
+
     const data = await store.read();
     if (!data) return shutdown();
-    const stored = data.cards.find((c) => c.id === card.id);
-    if (stored) {
-      store.markUsed(stored);
-      await store.save(data);
-    }
-
     if (send || data.settings.autoSend) submitChat();
   }
 
@@ -250,21 +246,35 @@
     const channel = reconcileChannel(getChannel(), captured);
 
     if (editingId) {
-      const editing = data.cards.find((c) => c.id === editingId);
+      const id = editingId;
       editingId = null;
-      if (editing) {
-        editing.tokens = captured;
-        // Editing can add member emoji, which pins the card to one channel.
-        // Any other deck still holding it would be holding something it can
-        // never send.
-        for (const id of Object.keys(data.decks)) {
-          if (!store.usableOn(editing, id)) store.removeFromDeck(data, id, editing.id);
+      if (data.cards.some((c) => c.id === id)) {
+        // Nothing is cleared until the write is known to have landed.
+        if (!(await store.apply("editCard", { id, tokens: captured })).ok) {
+          return showToast("保存できませんでした。入力はそのままです");
         }
-        await store.save(data);
         clearInput(input);
         showToast("札を更新しました");
         return render();
       }
+    }
+
+    const duplicate = findDuplicate(data, channel?.id, captured);
+    if (duplicate?.exact) {
+      if (duplicate.inDeck || !channel?.id) {
+        clearInput(input);
+        showToast(duplicate.inDeck ? "同じ札がこのデッキにもうあります" : "同じ札がプールにもうあります");
+        return flashCard(duplicate.card.id);
+      }
+      // It exists in the pool already — draw it rather than make a second one.
+      const drawn = await store.apply("addToDeck", {
+        channelId: channel.id, cardId: duplicate.card.id
+      });
+      if (!drawn.ok) return showToast("保存できませんでした。入力はそのままです");
+      clearInput(input);
+      showToast("プールにあった同じ札をデッキに入れました");
+      render();
+      return flashCard(duplicate.card.id);
     }
 
     const card = {
@@ -276,38 +286,15 @@
       lastUsedAt: 0
     };
 
-    const duplicate = findDuplicate(data, channel?.id, captured);
-    if (duplicate?.exact) {
-      clearInput(input);
-      if (duplicate.inDeck) {
-        showToast("同じ札がこのデッキにもうあります");
-        return flashCard(duplicate.card.id);
-      }
-      if (!channel?.id) {
-        showToast("同じ札がプールにもうあります");
-        return flashCard(duplicate.card.id);
-      }
-      // It exists in the pool already — draw it rather than make a second one.
-      store.addToDeck(data, channel.id, duplicate.card.id);
-      await store.save(data);
-      showToast("プールにあった同じ札をデッキに入れました");
-      render();
-      return flashCard(duplicate.card.id);
-    }
-
     // Saving puts the card in the pool and, when we know the channel, straight
     // into its deck — one action, not two.
-    data.cards.push(card);
-    if (channel?.id) {
-      store.addToDeck(data, channel.id, card.id);
-      rememberChannel(data, channel);
-    }
-
-    if (!(await store.save(data))) {
+    if (!(await store.apply("addCard", { card, channelId: channel?.id })).ok) {
       // Quota, or the context went away. Keep what was typed.
       return showToast("保存できませんでした。入力はそのままです");
     }
-    await store.writeChannelMeta(data.channelMeta);
+    if (channel?.id) {
+      await store.apply("setChannel", { channelId: channel.id, name: channel.name });
+    }
 
     clearInput(input);
 
@@ -325,7 +312,27 @@
     render();
   }
 
-  // Search the whole pool, not just this deck: an identical card you saved on
+  function clearInput(input) {
+    input.innerHTML = "";
+    input.dispatchEvent(new InputEvent("input", { bubbles: true, composed: true }));
+  }
+
+  // A member emoji carries its home channel in its id, and YouTube only serves
+  // it on that channel. So when the emoji disagrees with what we scraped off
+  // the page, the emoji is right — this alone would have stopped the card that
+  // got filed under YouTube Music.
+  function reconcileChannel(channel, captured) {
+    const required = tokens.requiredChannels(captured);
+    if (required.length !== 1 || required[0] === channel?.id) return channel;
+
+    log("Channel corrected from member emoji:", channel?.id, "->", required[0]);
+    // Drop the scraped name with the scraped id — they came from one element,
+    // so a wrong id means the name is not trustworthy either. rememberChannel
+    // keeps whatever good name is already stored.
+    return { id: required[0], name: "" };
+  }
+
+  // Check the whole pool, not just this deck: an identical card saved on
   // another channel should be drawn from the pool rather than made again.
   function findDuplicate(data, channelId, captured) {
     const key = tokens.cardKey(captured);
@@ -353,34 +360,6 @@
     }, 1600);
   }
 
-  function clearInput(input) {
-    input.innerHTML = "";
-    input.dispatchEvent(new InputEvent("input", { bubbles: true, composed: true }));
-  }
-
-  // A member emoji carries its home channel in its id, and YouTube only serves
-  // it on that channel. So when the emoji disagrees with what we scraped off
-  // the page, the emoji is right — this alone would have stopped the card that
-  // got filed under YouTube Music.
-  function reconcileChannel(channel, captured) {
-    const required = tokens.requiredChannels(captured);
-    if (required.length !== 1 || required[0] === channel?.id) return channel;
-
-    log("Channel corrected from member emoji:", channel?.id, "->", required[0]);
-    // Drop the scraped name with the scraped id — they came from one element,
-    // so a wrong id means the name is not trustworthy either. rememberChannel
-    // keeps whatever good name is already stored.
-    return { id: required[0], name: "" };
-  }
-
-  function rememberChannel(data, channel) {
-    const existing = data.channelMeta[channel.id] || {};
-    data.channelMeta[channel.id] = {
-      hue: existing.hue ?? store.defaultHue(channel.id),
-      name: channel.name || existing.name || ""
-    };
-  }
-
   function beginEdit(card) {
     const input = getChatInput();
     if (!input) return;
@@ -394,24 +373,14 @@
     const channelId = getChannel()?.id;
     if (!channelId) return;
 
-    const data = await store.read();
-    if (!data) return shutdown();
-
-    const at = store.removeFromDeck(data, channelId, card.id);
-    if (at < 0) return;
-
-    await store.save(data);
+    const { ok, value } = await store.apply("removeFromDeck", { channelId, cardId: card.id });
+    if (!ok || value < 0) return;
     render();
 
-    // The card is still in the pool — say so, or this reads as a delete.
     showToast("デッキから外しました（プールに残っています）", {
       actionLabel: "元に戻す",
       onAction: async () => {
-        const fresh = await store.read();
-        if (!fresh) return shutdown();
-        const list = (fresh.decks[channelId] ||= []);
-        list.splice(Math.min(at, list.length), 0, card.id);
-        await store.save(fresh);
+        await store.apply("insertIntoDeck", { channelId, cardId: card.id, at: value });
         render();
       }
     });
@@ -420,13 +389,8 @@
   async function addToDeck(card) {
     const channelId = getChannel()?.id;
     if (!channelId) return showToast("チャンネルが分かりません");
-
-    const data = await store.read();
-    if (!data) return shutdown();
-    if (!store.addToDeck(data, channelId, card.id)) return;
-
-    await store.save(data);
-    render();
+    const { ok } = await store.apply("addToDeck", { channelId, cardId: card.id });
+    if (ok) render();
   }
 
   /* ---------- arranging by hand ---------- */
@@ -473,11 +437,10 @@
 
   async function arrange(moved, target, side) {
     const channelId = getChannel()?.id;
-    const data = await store.read();
-    if (!data) return shutdown();
-    if (!store.reorderDeck(data, channelId, moved.id, target.id, side)) return;
-    await store.save(data);
-    render();
+    const { ok, value } = await store.apply("reorderDeck", {
+      channelId, movedId: moved.id, targetId: target.id, side
+    });
+    if (ok && value) render();
   }
 
   function buildTools(card) {
@@ -497,16 +460,10 @@
   }
 
   async function deleteCard(card, { silent = false } = {}) {
-    const data = await store.read();
-    if (!data) return shutdown();
-
-    // Splicing the pool alone leaves the id dangling in every deck that held
-    // it: deckOf hides that, but an exported backup then points at a card
-    // that does not exist and will not import.
-    const removed = store.deleteCard(data, card.id);
-    if (!removed) return;
-
-    await store.save(data);
+    // Splicing the pool alone would leave the id dangling in every deck that
+    // held it, which an export then cannot import.
+    const { ok, value: snapshot } = await store.apply("deleteCard", { id: card.id });
+    if (!ok || !snapshot) return;
     render();
 
     if (silent) return; // the caller already explained what happened
@@ -515,10 +472,7 @@
     showToast("札を削除しました", {
       actionLabel: "元に戻す",
       onAction: async () => {
-        const fresh = await store.read();
-        if (!fresh) return shutdown();
-        store.restoreCard(fresh, removed);
-        await store.save(fresh);
+        await store.apply("restoreCard", { snapshot });
         render();
       }
     });

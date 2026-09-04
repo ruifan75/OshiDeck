@@ -89,20 +89,40 @@ OshiDeckはYouTubeの公開APIではなく、Live ChatのDOMを利用してい�
 メン限スタンプ入りの札は共通デッキに入れられません。配っているチャンネル以外では
 そもそも送信できないためで、「共通」ボタンは無効になり、理由がツールチップに出ます。
 
-## Two surfaces, one store
+## One writer
 
-チャット横のパネルと編成ページは同じ `chrome.storage.local` を書き換え、互いの変更を
-`storage.onChanged` で受け取って描き直します。そのため以下を守っています。
+チャット横のパネルと編成ページは同じデータを変更しますが、**どちらも直接は書きません**。
 
-- **書き込みは1回で** — `cards` と `decks` は互いを参照するので、`store.save()` は両方を
-  1回の `set()` に入れます。2回に分けると、片方だけ書けた状態で移行処理が走ったときに
-  すべてのデッキ所属が失われます
-- **書く直前に読み直す** — 編成ページは開いた時のスナップショットを持ち続けますが、
-  変更は必ず最新を読み直してから適用します（`mutate()`）。そうしないと、その間に
-  チャット側が書いた使用回数を丸ごと巻き戻します
-- **書き込み失敗を握りつぶさない** — 保存できなければ入力欄は消さず、成功したとも言いません
-- **監視するキーは4つ全部** — `settings` / `cards` / `decks` / `channelMeta`。
-  並べ替えは `decks` しか、色変更は `channelMeta` しか変えません
+`chrome.storage` には compare-and-set がありません。両方が read を終えてから
+どちらかが write すると、負けた側の変更は跡形もなく消えます。実際に測ると、
+使用回数の記録と並べ替えを同時に走らせただけで片方が失われます。
+
+そこで変更は「名前の付いた操作」として service worker に送り、worker が
+**1つずつ順番に**最新状態へ適用します（`background.js` のキュー、`src/store.js` の `OPS`）。
+
+```
+content.js ─┐
+            ├─→ chrome.runtime.sendMessage({ type: "mutate", op, args })
+options.js ─┘        ↓
+              background.js  … 直列キュー
+                     ↓
+              read → 適用 → 1回の set() で cards / decks / channelMeta
+```
+
+- 1操作 = 1回の `set()`。互いを参照する `cards` と `decks` が食い違う瞬間が存在しません
+- 取り消しも操作です。取り消しを押すまでの間に相手が動いていても、
+  `insertIntoDeck` は札が消えていれば何もせず、すでに戻っていれば二重に入れません。
+  `restoreDeck` はその間に増えた所属を残したまま合流します
+- 書き込みに失敗したら入力欄は消さず、成功したとも言いません
+
+`settings` だけは設定ページしか書かないので、この経路を通りません。
+
+## Tests
+
+`tools/run-tests.sh` — ブラウザなしで確認できる範囲：構文、存在しない関数の呼び出し
+（`tools/check-refs.mjs`）、そして `src/` の純粋なロジックを偽の `chrome.storage` で動かす
+一連のテスト（`tools/tests/`）。競合の直列化、取り消しの割り込み、署名の正規化、
+バックアップのマージなどを含みます。
 
 ## Pools are per channel
 

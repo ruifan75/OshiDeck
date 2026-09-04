@@ -65,6 +65,11 @@ function declared(src) {
   for (const m of src.matchAll(/catch\s*\(([^)]*)\)/g)) addPattern(m[1]);
   // Accessors read as calls at their definition site.
   for (const m of src.matchAll(/\b(?:get|set)\s+([A-Za-z_$][\w$]*)\s*\(/g)) addName(m[1]);
+  // Object-literal and class method shorthand: `name(args) {` defines, not calls.
+  for (const m of src.matchAll(/(?:^|[{,;])\s*(?:async\s+)?([A-Za-z_$][\w$]*)\s*\(([^)]*)\)\s*\{/gm)) {
+    addName(m[1]);
+    addPattern(m[2]);
+  }
 
   // Arrow parameters, both (a, b) => and a =>
   for (const m of src.matchAll(/\(([^()]*)\)\s*=>/g)) addPattern(m[1]);

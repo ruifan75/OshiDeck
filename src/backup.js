@@ -53,6 +53,23 @@
       if (list.some((id) => !ids.has(id))) return `デッキ ${channelId} が存在しない札を指しています`;
       if (new Set(list).size !== list.length) return `デッキ ${channelId} に同じ札が重複しています`;
     }
+
+    // A card carrying member emoji can only be sent on the channel that issues
+    // them. Filed anywhere else it would import as a card that is permanently
+    // locked, or that no pool can show — so the file is rejected rather than
+    // quietly producing state the app cannot represent.
+    const owners = OD.tokens.requiredChannels;
+    const byId = new Map(raw.cards.map((card) => [card.id, card]));
+    for (const [channelId, list] of Object.entries(raw.decks || {})) {
+      for (const id of list) {
+        const required = owners(byId.get(id).tokens);
+        if (!required.length) continue;
+        if (required.length > 1) return `札 ${id} が複数チャンネルのメン限スタンプを含んでいます`;
+        if (required[0] !== channelId) {
+          return `札 ${id} は ${required[0]} のメン限スタンプですが ${channelId} のデッキにあります`;
+        }
+      }
+    }
     return null;
   }
 

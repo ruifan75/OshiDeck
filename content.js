@@ -81,25 +81,42 @@
   const asChannelId = (value) =>
     typeof value === "string" && value.startsWith("UC") ? value : null;
 
-  function readChannel(doc) {
-    const meta = doc.querySelector('meta[itemprop="channelId"]');
-    const link = doc.querySelector(
-      'ytd-video-owner-renderer a[href^="/channel/"], ' +
-      '#owner a[href^="/channel/"], ' +
-      'a.yt-simple-endpoint[href^="/channel/"]'
-    );
+  const channelFromHref = (href) =>
+    asChannelId(href?.match(/^\/channel\/([^/?#]+)/)?.[1]);
 
-    const id =
-      asChannelId(meta?.content) ||
-      asChannelId(link?.getAttribute("href")?.match(/^\/channel\/([^/?#]+)/)?.[1]);
+  // Sources in priority order, tried one at a time.
+  //
+  // These were once a single comma-separated selector list, which does NOT
+  // mean "try each in turn": querySelector returns the first element in
+  // DOCUMENT ORDER matching any of them. YouTube's left guide links to its own
+  // auto-generated channels (Music, Gaming, …) and sits near the top of the
+  // DOM, so a broad `a.yt-simple-endpoint[href^="/channel/"]` beat the owner
+  // link every time the page was still filling in — and cards were filed under
+  // YouTube Music.
+  const OWNER_LINKS = [
+    "ytd-video-owner-renderer a[href^='/channel/']",
+    "#owner a[href^='/channel/']",
+    "ytd-channel-name a[href^='/channel/']"
+  ];
+
+  function readChannel(doc) {
+    // The owner link carries the id and the label together, so they can never
+    // describe two different channels — which is how one deck ended up with
+    // the right name and the wrong id.
+    for (const selector of OWNER_LINKS) {
+      const link = doc.querySelector(selector);
+      const id = channelFromHref(link?.getAttribute("href"));
+      if (id) return { id, name: link.textContent?.trim() || "" };
+    }
+
+    // Authoritative on a watch page, but it carries no name.
+    const id = asChannelId(doc.querySelector('meta[itemprop="channelId"]')?.content);
     if (!id) return null;
 
     const name =
       doc.querySelector("ytd-video-owner-renderer #channel-name a")?.textContent?.trim() ||
-      link?.textContent?.trim() ||
-      doc.querySelector('meta[itemprop="name"]')?.content?.trim() ||
+      doc.querySelector("ytd-channel-name #text")?.textContent?.trim() ||
       "";
-
     return { id, name };
   }
 
@@ -225,7 +242,7 @@
 
     const data = await store.read();
     if (!data) return shutdown();
-    const channel = getChannel();
+    const channel = reconcileChannel(getChannel(), captured);
 
     if (editingId) {
       const editing = data.cards.find((c) => c.id === editingId);
@@ -325,6 +342,21 @@
   function clearInput(input) {
     input.innerHTML = "";
     input.dispatchEvent(new InputEvent("input", { bubbles: true, composed: true }));
+  }
+
+  // A member emoji carries its home channel in its id, and YouTube only serves
+  // it on that channel. So when the emoji disagrees with what we scraped off
+  // the page, the emoji is right — this alone would have stopped the card that
+  // got filed under YouTube Music.
+  function reconcileChannel(channel, captured) {
+    const required = tokens.requiredChannels(captured);
+    if (required.length !== 1 || required[0] === channel?.id) return channel;
+
+    log("Channel corrected from member emoji:", channel?.id, "->", required[0]);
+    // Drop the scraped name with the scraped id — they came from one element,
+    // so a wrong id means the name is not trustworthy either. rememberChannel
+    // keeps whatever good name is already stored.
+    return { id: required[0], name: "" };
   }
 
   function rememberChannel(data, channel) {

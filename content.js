@@ -681,8 +681,8 @@
     bar.className = "od-bar";
     // Everything that would otherwise float over the chat lives here instead.
     if (notice) bar.append(noticeRow(notice));
-    else if (poolOpen) bar.append(poolBar(count));
     else if (peek) bar.append(peekReadout(peek));
+    else if (poolOpen) bar.append(poolBar(count));
     else bar.append(inputHasContent ? saveTargets(channel) : deckIdentity(channel, hue, count));
 
     if (poolOpen) {
@@ -815,6 +815,14 @@
     return group;
   }
 
+  function openOptions() {
+    try {
+      chrome.runtime.sendMessage({ type: "openOptions" });
+    } catch (_) {
+      shutdown();
+    }
+  }
+
   function buildAction(icon, text, title, onClick) {
     const button = document.createElement("button");
     button.type = "button";
@@ -943,7 +951,9 @@
     watchInput(input);
     inputHasContent = readInput(input);
 
-    const pool = channel?.id ? markLocked(store.poolFor(data, channel.id), channel.id) : [];
+    const pool = channel?.id
+      ? markLocked(store.poolFor(data, channel.id).map((card) => ({ ...card })), channel.id)
+      : [];
 
     keepChatPinned(() => {
       rootEl.replaceChildren();

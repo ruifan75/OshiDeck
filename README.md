@@ -247,4 +247,6 @@ src/trending.js    チャット監視と署名の正規化
 src/backup.js      書き出し・読み込み・検証・マージ
 options.html/js/css  設定ページ（デッキ一覧＋表示設定）
 design/            UI検討用のデザインキャンバス
+tools/selftest.js  YouTubeのDOMセレクタの自己診断
+tools/check-refs.mjs  存在しない関数の呼び出しを検出
 ```

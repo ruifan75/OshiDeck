@@ -518,13 +518,10 @@ kbd {
 
 /* The pool always shows the whole collection; these say where each card
    stands relative to the deck on screen. */
-.browse-card[data-state="in-deck"],
-.browse-card[data-state="bound"] {
+.browse-card[data-state="in-deck"] {
   opacity: .42;
   cursor: default;
 }
-
-.browse-card[data-state="bound"] { border-style: dashed; }
 
 .browse-badge {
   position: absolute;
@@ -536,5 +533,4 @@ kbd {
 }
 
 .browse-card[data-state="in-deck"] .browse-badge { color: oklch(0.62 0.16 145); }
-.browse-card[data-state="bound"] .browse-badge { color: oklch(0.65 0.14 25); }
 .browse-card[data-state="free"] { cursor: grab; }

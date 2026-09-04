@@ -201,7 +201,6 @@ function buildCard(card, where) {
   if (where === "deck") el.style.setProperty("--hue", hueOf(selected));
 
   if (state === "in-deck") el.title = "このデッキに入っています";
-  if (state === "bound") el.title = "他のチャンネルのメン限スタンプなので、このデッキには入れられません";
 
   const body = document.createElement("div");
   body.className = "browse-body";
@@ -213,10 +212,10 @@ function buildCard(card, where) {
 
   el.append(body, meta);
 
-  if (state === "in-deck" || state === "bound") {
+  if (state === "in-deck") {
     const badge = document.createElement("span");
     badge.className = "browse-badge";
-    badge.textContent = state === "in-deck" ? "✓" : "⛊";
+    badge.textContent = "✓";
     el.appendChild(badge);
   }
 
@@ -266,21 +265,20 @@ function paintCards() {
   for (const card of cards) holder.appendChild(buildCard(card, "deck"));
 }
 
-// The pool is your collection, so it does not change when you switch decks.
-// What changes is each card's standing in the deck you are looking at, and
-// that belongs on the card — filtering it out made the pool look empty.
-function poolState(card) {
-  if (!selected) return "free";
-  if (store.inDeck(decks, selected, card.id)) return "in-deck";
-  return store.usableOn(card, selected) ? "free" : "bound";
-}
+// The pool holds the cards that can go into any deck. A card carrying member
+// emoji cannot — it only sends on the channel that hands them out — so it is
+// not pool material and never appears here. What is left is the same list
+// whatever deck is selected; the only per-deck fact is whether a card is
+// already in it, and that is a mark on the card, not a reason to hide it.
+const poolState = (card) =>
+  selected && store.inDeck(decks, selected, card.id) ? "in-deck" : "free";
 
 function paintPool() {
   const holder = document.querySelector("#poolCards");
   holder.replaceChildren();
   wirePoolDrop(document.querySelector("#pool"));
 
-  const all = decks.cards;
+  const all = store.universal(decks);
   const shown = query
     ? all.filter((card) => tokens.toPlainText(card.tokens || []).toLowerCase().includes(query))
     : all;
@@ -293,7 +291,9 @@ function paintPool() {
   if (!shown.length) {
     const empty = document.createElement("p");
     empty.className = "muted";
-    empty.textContent = query ? "一致する札がありません。" : "まだ札がありません。";
+    empty.textContent = query
+      ? "一致する札がありません。"
+      : "どのデッキでも使える札がまだありません。メン限スタンプを含む札は、配っているチャンネルのデッキに固定されます。";
     holder.appendChild(empty);
     return;
   }
@@ -396,6 +396,9 @@ async function dropOnDeck({ card, from }, { target, side }) {
 }
 
 async function ejectCard(card, deckId = selected) {
+  if (tokens.requiredChannels(card.tokens).length) {
+    return status("メン限スタンプ入りの札はこのデッキ専用です。外すには削除してください。");
+  }
   const at = store.removeFromDeck(decks, deckId, card.id);
   if (at < 0) return;
   await store.save(decks);

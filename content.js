@@ -384,6 +384,8 @@
   async function removeFromDeck(card) {
     const channelId = getChannel()?.id;
     if (!channelId) return;
+    // Would leave it in storage with nowhere on screen to reach it.
+    if (tokens.requiredChannels(card.tokens).length) return deleteCard(card);
 
     const data = await store.read();
     if (!data) return shutdown();
@@ -475,14 +477,19 @@
     const tools = document.createElement("div");
     tools.className = "od-card-tools";
     const back = () => cardPeek(card);
-    // Only reversible actions here. Deleting a card outright removes it from
-    // every deck at once, which is a management decision — it lives in the builder,
-    // not under your finger during a stream.
+    // A card bound to this channel has no pool to fall back to, so leaving the
+    // deck is deletion. It is only ever in this one deck, so nothing elsewhere
+    // is affected either way — and both are undoable.
     tools.append(
-      iconButton("eject", "このデッキから外す", (event) => {
-        event.stopPropagation();
-        removeFromDeck(card);
-      }, back),
+      card.bound
+        ? iconButton("delete", "この札を削除", (event) => {
+            event.stopPropagation();
+            deleteCard(card);
+          }, back)
+        : iconButton("eject", "このデッキから外す", (event) => {
+            event.stopPropagation();
+            removeFromDeck(card);
+          }, back),
       iconButton("edit", "この札を編集", (event) => { event.stopPropagation(); beginEdit(card); }, back)
     );
     return tools;

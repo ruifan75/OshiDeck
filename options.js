@@ -211,7 +211,6 @@ function buildCard(card, where) {
   if (where === "deck") el.style.setProperty("--hue", hueOf(selected));
 
   if (state === "in-deck") el.title = "このデッキに入っています";
-  if (state === "bound") el.title = "別のチャンネル専用の札です。そのチャンネルのデッキでのみ使えます。";
 
   const body = document.createElement("div");
   body.className = "browse-body";
@@ -223,10 +222,10 @@ function buildCard(card, where) {
 
   el.append(body, meta);
 
-  if (state !== "free") {
+  if (state === "in-deck") {
     const badge = document.createElement("span");
     badge.className = "browse-badge";
-    badge.textContent = state === "in-deck" ? "✓" : "⌂";
+    badge.textContent = "✓";
     el.appendChild(badge);
   }
 
@@ -235,11 +234,13 @@ function buildCard(card, where) {
   const bound = tokens.requiredChannels(card.tokens).length > 0;
   if (!bound) el.dataset.universal = "true";
 
-  // Deck cards leave; pool cards are destroyed. Never both in one place, so
-  // there is no pair of similar buttons with wildly different consequences.
+  // The pool is universal cards only, so a card bound to a channel has no pool
+  // to return to: for it, leaving the deck is deletion. It is only ever in
+  // that one deck, so nothing else loses anything either.
   if (where === "deck") {
-    el.appendChild(cardAction("⏏", "このデッキから外す（プールに戻ります）",
-      () => ejectCard(card)));
+    el.appendChild(bound
+      ? cardAction("×", "この札を削除（メン限専用なのでプールには残りません）", () => removeCard(card))
+      : cardAction("⏏", "このデッキから外す（プールに戻ります）", () => ejectCard(card)));
   } else {
     el.appendChild(cardAction("×", "この札を削除（すべてのデッキから消えます）",
       () => removeCard(card)));
@@ -298,19 +299,17 @@ function paintCards() {
 // not pool material and never appears here. What is left is the same list
 // whatever deck is selected; the only per-deck fact is whether a card is
 // already in it, and that is a mark on the card, not a reason to hide it.
-function poolState(card) {
-  if (selected && store.inDeck(decks, selected, card.id)) return "in-deck";
-  // Unfiled but tied to another channel: it lives here so it is not lost, but
-  // it cannot join the deck on screen.
-  return selected && !store.usableOn(card, selected) ? "bound" : "free";
-}
+// The pool holds universal cards only, so the one per-deck fact is whether
+// this card is already in the deck on screen.
+const poolState = (card) =>
+  selected && store.inDeck(decks, selected, card.id) ? "in-deck" : "free";
 
 function paintPool() {
   const holder = document.querySelector("#poolCards");
   holder.replaceChildren();
   wirePoolDrop(document.querySelector("#pool"));
 
-  const all = store.poolPane(decks);
+  const all = store.universal(decks);
   const shown = query
     ? all.filter((card) => tokens.toPlainText(card.tokens || []).toLowerCase().includes(query))
     : all;
@@ -428,6 +427,7 @@ async function dropOnDeck({ card, from }, { target, side }) {
 }
 
 async function ejectCard(card, deckId = selected) {
+  if (tokens.requiredChannels(card.tokens).length) return; // nowhere to eject to
   const at = store.removeFromDeck(decks, deckId, card.id);
   if (at < 0) return;
   await store.save(decks);

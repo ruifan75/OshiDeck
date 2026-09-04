@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: Roboto, Arial, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; }
+    a { color: oklch(0.76 0.15 320); }
+    a:hover { color: oklch(0.85 0.12 320); }
+  </style>
+</helmet>
+
+<div style="width: 760px; height: 620px; background: #0f0f0f; color: #f1f1f1; display: flex; flex-direction: column; overflow: hidden;">
+
+  <div style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 16px; border-bottom: 1px solid rgba(255,255,255,.12); flex-shrink: 0;">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-8 8M10 6H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5"></path></svg>
+    <div style="font-size: 13px; font-weight: 500;">チャット（別ウィンドウ）</div>
+    <div style="margin-left: auto; font-size: 11px; color: #666;">幅 760px → 4欄</div>
+  </div>
+
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 9px; padding: 12px 16px; overflow: hidden; justify-content: flex-end;">
+    <div style="display: flex; gap: 8px;"><div style="width: 24px; height: 24px; border-radius: 50%; background: oklch(0.55 0.11 30); flex-shrink: 0;"></div><div style="font-size: 13px; line-height: 1.45;"><span style="color: #aaa; font-weight: 500;">たぬきち</span> 88888888</div></div>
+    <div style="display: flex; gap: 8px;"><div style="width: 24px; height: 24px; border-radius: 50%; background: oklch(0.55 0.11 150); flex-shrink: 0;"></div><div style="font-size: 13px; line-height: 1.45;"><span style="color: #2ba640; font-weight: 500;">ゆうき</span> 歌うますぎる…</div></div>
+    <div style="display: flex; gap: 8px;"><div style="width: 24px; height: 24px; border-radius: 50%; background: oklch(0.55 0.11 260); flex-shrink: 0;"></div><div style="font-size: 13px; line-height: 1.45;"><span style="color: #aaa; font-weight: 500;">ぽんず</span> わこつ〜</div></div>
+    <div style="display: flex; gap: 8px;"><div style="width: 24px; height: 24px; border-radius: 50%; background: oklch(0.55 0.11 330); flex-shrink: 0;"></div><div style="font-size: 13px; line-height: 1.45;"><span style="color: #2ba640; font-weight: 500;">みかん</span> かわいい</div></div>
+    <div style="display: flex; gap: 8px;"><div style="width: 24px; height: 24px; border-radius: 50%; background: oklch(0.55 0.11 200); flex-shrink: 0;"></div><div style="font-size: 13px; line-height: 1.45;"><span style="color: #aaa; font-weight: 500;">こんぶ</span> 今日も最高だった</div></div>
+  </div>
+
+  <div style="flex-shrink: 0; border-top: 1px solid rgba(255,255,255,.12); background: #131313; padding: 8px 12px 7px;">
+
+    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 7px; padding: 0 2px;">
+      <span style="width: 8px; height: 8px; border-radius: 50%; background: oklch(0.74 0.19 320); flex-shrink: 0;"></span>
+      <span style="font-size: 12px; font-weight: 500; color: #e6e6e6;">さくらチャンネル</span>
+      <span style="font-size: 11px; color: #666;">＋</span>
+      <span style="width: 7px; height: 7px; border-radius: 50%; background: #8a8a8a; flex-shrink: 0;"></span>
+      <span style="font-size: 11px; color: #999;">共通</span>
+      <span style="font-size: 11px; color: #666; margin-left: 6px;">22枚</span>
+      <div style="margin-left: auto; display: flex; align-items: center; gap: 9px;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="16" rx="1.5"></rect><rect x="14" y="4" width="7" height="16" rx="1.5"></rect></svg>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2px 8px;">
+      <div style="display: flex; align-items: center; gap: 7px; height: 28px; padding: 0 8px 0 9px; border-radius: 4px; background: rgba(255,255,255,.055); box-shadow: inset 3px 0 0 oklch(0.74 0.19 320);"><span style="flex: 1; min-width: 0; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">はい！はい！はい！は…</span><span style="font-size: 10px; color: #6f6f6f; flex-shrink: 0;">284</span></div>
+      <div style="display: flex; align-items: center; gap: 7px; height: 28px; padding: 0 8px 0 9px; border-radius: 4px; background: rgba(255,255,255,.028); box-shadow: inset 3px 0 0 #8a8a8a;"><span style="flex: 1; min-width: 0; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">わこつ</span><span style="font-size: 10px; color: #6f6f6f; flex-shrink: 0;">142</span></div>
+      <div style="display: flex; align-items: center; gap: 7px; height: 28px; padding: 0 8px 0 9px; border-radius: 4px; background: rgba(255,255,255,.028); box-shadow: inset 3px 0 0 oklch(0.74 0.19 320 / .5);"><span style="flex: 1; min-width: 0; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">88888888888888</span><span style="font-size: 10px; color: #6f6f6f; flex-shrink: 0;">196</span></div>
+      <div style="display: flex; align-items: center; gap: 7px; height: 28px; padding: 0 8px 0 9px; border-radius: 4px; background: rgba(255,255,255,.028); box-shadow: inset 3px 0 0 #8a8a8a;"><span style="flex: 1; min-width: 0; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">うぽつです</span><span style="font-size: 10px; color: #6f6f6f; flex-shrink: 0;">47</span></div>
+      <div style="display: flex; align-items: center; gap: 7px; height: 28px; padding: 0 8px 0 9px; border-radius: 4px; background: rgba(255,255,255,.028); box-shadow: inset 3px 0 0 oklch(0.74 0.19 320 / .5);"><span style="flex: 1; min-width: 0; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">🐦‍🔥⛩🔥🎶🐦‍🔥⛩🔥🎶</span><span style="font-size: 10px; color: #6f6f6f; flex-shrink: 0;">98</span></div>
+      <div style="display: flex; align-items: center; gap: 7px; height: 28px; padding: 0 8px 0 9px; border-radius: 4px; background: rgba(255,255,255,.028); box-shadow: inset 3px 0 0 oklch(0.74 0.19 320 / .5);"><span style="flex: 1; min-width: 0; display: flex; align-items: center; gap: 2px; overflow: hidden;"><span style="width: 22px; height: 22px; border-radius: 5px; background: oklch(0.62 0.15 320); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.7-9.3-9A5.2 5.2 0 0 1 12 6.6 5.2 5.2 0 0 1 21.3 12C19.5 16.3 12 21 12 21z"></path></svg></span><span style="width: 22px; height: 22px; border-radius: 5px; background: oklch(0.62 0.15 320); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.7-9.3-9A5.2 5.2 0 0 1 12 6.6 5.2 5.2 0 0 1 21.3 12C19.5 16.3 12 21 12 21z"></path></svg></span><span style="width: 22px; height: 22px; border-radius: 5px; background: oklch(0.62 0.15 320); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.7-9.3-9A5.2 5.2 0 0 1 12 6.6 5.2 5.2 0 0 1 21.3 12C19.5 16.3 12 21 12 21z"></path></svg></span><span style="width: 22px; height: 22px; border-radius: 5px; background: oklch(0.62 0.15 320); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.7-9.3-9A5.2 5.2 0 0 1 12 6.6 5.2 5.2 0 0 1 21.3 12C19.5 16.3 12 21 12 21z"></path></svg></span></span><span style="font-size: 10px; color: #6f6f6f; flex-shrink: 0;">153</span></div>
+      <div style="display: flex; align-items: center; gap: 7px; height: 28px; padding: 0 8px 0 9px; border-radius: 4px; background: rgba(255,255,255,.028); box-shadow: inset 3px 0 0 #8a8a8a;"><span style="flex: 1; min-width: 0; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">🎉🎉🎉おめでとう🎉…</span><span style="font-size: 10px; color: #6f6f6f; flex-shrink: 0;">54</span></div>
+      <div style="display: flex; align-items: center; gap: 7px; height: 28px; padding: 0 8px 0 9px; border-radius: 4px; background: rgba(255,255,255,.028); box-shadow: inset 3px 0 0 oklch(0.74 0.19 320 / .5);"><span style="flex: 1; min-width: 0; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">キタ━━━(ﾟ∀ﾟ)━━…</span><span style="font-size: 10px; color: #6f6f6f; flex-shrink: 0;">39</span></div>
+      <div style="display: flex; align-items: center; gap: 7px; height: 28px; padding: 0 8px 0 9px; border-radius: 4px; background: rgba(255,255,255,.028); box-shadow: inset 3px 0 0 #8a8a8a;"><span style="flex: 1; min-width: 0; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">ヽ(•̀ω•́ )ゝ✧ おつか…</span><span style="font-size: 10px; color: #6f6f6f; flex-shrink: 0;">61</span></div>
+      <div style="display: flex; align-items: center; gap: 7px; height: 28px; padding: 0 8px 0 9px; border-radius: 4px; background: rgba(255,255,255,.028); box-shadow: inset 3px 0 0 #8a8a8a;"><span style="flex: 1; min-width: 0; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">おやすみなさい🛏️</span><span style="font-size: 10px; color: #6f6f6f; flex-shrink: 0;">28</span></div>
+      <div style="display: flex; align-items: center; gap: 7px; height: 28px; padding: 0 8px 0 9px; border-radius: 4px; background: rgba(255,255,255,.028); box-shadow: inset 3px 0 0 oklch(0.74 0.19 320 / .5);"><span style="flex: 1; min-width: 0; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">ドンドンパフパフ🥁</span><span style="font-size: 10px; color: #6f6f6f; flex-shrink: 0;">25</span></div>
+      <div style="display: flex; align-items: center; gap: 7px; height: 28px; padding: 0 8px 0 9px; border-radius: 4px; background: rgba(255,255,255,.028); box-shadow: inset 3px 0 0 oklch(0.74 0.19 320 / .5);"><span style="flex: 1; min-width: 0; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">😭😭😭尊い😭😭😭</span><span style="font-size: 10px; color: #6f6f6f; flex-shrink: 0;">22</span></div>
+      <div style="display: flex; align-items: center; gap: 7px; height: 28px; padding: 0 8px 0 9px; border-radius: 4px; background: rgba(255,255,255,.028); box-shadow: inset 3px 0 0 #8a8a8a;"><span style="flex: 1; min-width: 0; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">GG！ナイスプレイ！</span><span style="font-size: 10px; color: #6f6f6f; flex-shrink: 0;">19</span></div>
+      <div style="display: flex; align-items: center; gap: 7px; height: 28px; padding: 0 8px 0 9px; border-radius: 4px; background: rgba(255,255,255,.028); box-shadow: inset 3px 0 0 oklch(0.74 0.19 320 / .5);"><span style="flex: 1; min-width: 0; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">💜💜💜</span><span style="font-size: 10px; color: #6f6f6f; flex-shrink: 0;">17</span></div>
+      <div style="display: flex; align-items: center; gap: 7px; height: 28px; padding: 0 8px 0 9px; border-radius: 4px; background: rgba(255,255,255,.028); box-shadow: inset 3px 0 0 #8a8a8a;"><span style="flex: 1; min-width: 0; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">おかえりなさい〜</span><span style="font-size: 10px; color: #6f6f6f; flex-shrink: 0;">12</span></div>
+      <div style="display: flex; align-items: center; gap: 7px; height: 28px; padding: 0 8px 0 9px; border-radius: 4px; background: rgba(255,255,255,.028); box-shadow: inset 3px 0 0 #8a8a8a;"><span style="flex: 1; min-width: 0; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">待機してます！</span><span style="font-size: 10px; color: #6f6f6f; flex-shrink: 0;">9</span></div>
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: center; gap: 4px; padding-top: 5px; font-size: 10px; color: #666;">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg>
+      <span>あと6枚</span>
+    </div>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-top: 1px solid rgba(255,255,255,.12); flex-shrink: 0;">
+    <div style="width: 24px; height: 24px; border-radius: 50%; background: oklch(0.58 0.12 210); flex-shrink: 0;"></div>
+    <div style="flex: 1; font-size: 13px; color: #717171;">チャットでメッセージを送信…</div>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.8" stroke-linejoin="round"><path d="M3.5 11.5 20.5 4l-7.5 17-2-7-7-2.5z"></path></svg>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

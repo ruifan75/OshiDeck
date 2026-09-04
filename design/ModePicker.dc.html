@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: Roboto, Arial, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; }
+    a { color: oklch(0.76 0.15 320); }
+    a:hover { color: oklch(0.85 0.12 320); }
+  </style>
+</helmet>
+
+<div style="width: 560px; height: 540px; background: #0f0f0f; color: #f1f1f1; box-sizing: border-box; padding: 26px 28px; display: flex; flex-direction: column; gap: 20px;">
+
+  <div style="display: flex; flex-direction: column; gap: 4px;">
+    <div style="font-size: 15px; font-weight: 700;">表示モード</div>
+    <div style="font-size: 12px; color: #888;">チャット横での見え方。いつでも切り替えられます。</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+
+    <div style="border-radius: 12px; border: 2px solid oklch(0.78 0.19 320); background: oklch(0.74 0.19 320 / .09); padding: 14px; display: flex; flex-direction: column; gap: 11px;">
+      <div style="height: 62px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;">
+        <span style="display: flex; align-items: flex-end;"><span style="width: 20px; height: 20px; border-radius: 3px; background: #2b2b2b; border: 1px solid rgba(255,255,255,.16); transform: rotate(-8deg) translateY(3px);"></span><span style="width: 20px; height: 20px; border-radius: 3px; background: #2b2b2b; border: 1px solid rgba(255,255,255,.16); transform: rotate(-5deg) translateY(1px); margin-left: -5px;"></span><span style="width: 20px; height: 20px; border-radius: 3px; background: #2b2b2b; border: 1px solid rgba(255,255,255,.16); transform: rotate(-2deg) translateY(0px); margin-left: -5px;"></span><span style="width: 22px; height: 22px; border-radius: 3px; background: #3a2733; border: 1px solid oklch(0.78 0.19 320 / .9); transform: translateY(-2px); margin-left: -5px; z-index: 2;"></span><span style="width: 20px; height: 20px; border-radius: 3px; background: #2b2b2b; border: 1px solid rgba(255,255,255,.16); transform: rotate(2deg) translateY(0px); margin-left: -5px;"></span><span style="width: 20px; height: 20px; border-radius: 3px; background: #2b2b2b; border: 1px solid rgba(255,255,255,.16); transform: rotate(5deg) translateY(1px); margin-left: -5px;"></span><span style="width: 20px; height: 20px; border-radius: 3px; background: #2b2b2b; border: 1px solid rgba(255,255,255,.16); transform: rotate(8deg) translateY(3px); margin-left: -5px;"></span></span>
+        <span style="display: flex; align-items: flex-end;"><span style="width: 20px; height: 20px; border-radius: 3px; background: #2b2b2b; border: 1px solid rgba(255,255,255,.16); transform: rotate(-8deg) translateY(3px);"></span><span style="width: 20px; height: 20px; border-radius: 3px; background: #2b2b2b; border: 1px solid rgba(255,255,255,.16); transform: rotate(-5deg) translateY(1px); margin-left: -5px;"></span><span style="width: 20px; height: 20px; border-radius: 3px; background: #2b2b2b; border: 1px solid rgba(255,255,255,.16); transform: rotate(-2deg) translateY(0px); margin-left: -5px;"></span><span style="width: 20px; height: 20px; border-radius: 3px; background: #2b2b2b; border: 1px solid rgba(255,255,255,.16); transform: rotate(0deg) translateY(-2px); margin-left: -5px;"></span><span style="width: 20px; height: 20px; border-radius: 3px; background: #2b2b2b; border: 1px solid rgba(255,255,255,.16); transform: rotate(2deg) translateY(0px); margin-left: -5px;"></span><span style="width: 20px; height: 20px; border-radius: 3px; background: #2b2b2b; border: 1px solid rgba(255,255,255,.16); transform: rotate(5deg) translateY(1px); margin-left: -5px;"></span><span style="width: 20px; height: 20px; border-radius: 3px; background: #2b2b2b; border: 1px solid rgba(255,255,255,.16); transform: rotate(8deg) translateY(3px); margin-left: -5px;"></span></span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="width: 16px; height: 16px; border-radius: 50%; border: 5px solid oklch(0.78 0.19 320); background: #0f0f0f; box-sizing: border-box; flex-shrink: 0;"></span>
+        <span style="font-size: 13px; font-weight: 700;">手札</span>
+      </div>
+      <div style="font-size: 11px; color: #999; line-height: 1.55;">札が扇状に並ぶ。14枚まで一目で見えるが、長文は途中で切れる。<br><span style="color: #6f6f6f;">58×58・2行 ／ 高さ 約180px</span></div>
+    </div>
+
+    <div style="border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.03); padding: 14px; display: flex; flex-direction: column; gap: 11px;">
+      <div style="height: 62px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: center; gap: 4px 6px; padding: 0 14px;">
+        <span style="height: 9px; border-radius: 2px; background: #2b2b2b; box-shadow: inset 3px 0 0 #6f6f6f;"></span>
+        <span style="height: 9px; border-radius: 2px; background: #2b2b2b; box-shadow: inset 3px 0 0 #6f6f6f;"></span>
+        <span style="height: 9px; border-radius: 2px; background: #2b2b2b; box-shadow: inset 3px 0 0 #6f6f6f;"></span>
+        <span style="height: 9px; border-radius: 2px; background: #2b2b2b; box-shadow: inset 3px 0 0 #6f6f6f;"></span>
+        <span style="height: 9px; border-radius: 2px; background: #2b2b2b; box-shadow: inset 3px 0 0 #6f6f6f;"></span>
+        <span style="height: 9px; border-radius: 2px; background: #2b2b2b; box-shadow: inset 3px 0 0 #6f6f6f;"></span>
+        <span style="height: 9px; border-radius: 2px; background: #2b2b2b; box-shadow: inset 3px 0 0 #6f6f6f;"></span>
+        <span style="height: 9px; border-radius: 2px; background: #2b2b2b; box-shadow: inset 3px 0 0 #6f6f6f;"></span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid #777; box-sizing: border-box; flex-shrink: 0;"></span>
+        <span style="font-size: 13px; font-weight: 500; color: #d5d5d5;">リスト</span>
+      </div>
+      <div style="font-size: 11px; color: #999; line-height: 1.55;">幅に合わせて欄が増える。400pxで2欄10枚、別ウィンドウなら4欄。<br><span style="color: #6f6f6f;">2欄 ／ 高さ 約200px</span></div>
+    </div>
+
+  </div>
+
+  <div style="height: 1px; background: rgba(255,255,255,.10);"></div>
+
+  <div style="display: flex; flex-direction: column; gap: 16px;">
+
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <div style="flex: 1;">
+        <div style="font-size: 13px;">札の大きさ</div>
+        <div style="font-size: 11px; color: #777;">小さいほど枚数が増え、長文は切れます</div>
+      </div>
+      <div style="display: flex; gap: 2px; background: rgba(255,255,255,.06); border-radius: 8px; padding: 2px;">
+        <span style="font-size: 12px; color: #999; padding: 5px 11px; border-radius: 6px;">大</span>
+        <span style="font-size: 12px; color: #999; padding: 5px 11px; border-radius: 6px;">中</span>
+        <span style="font-size: 12px; color: #0f0f0f; font-weight: 700; background: #f1f1f1; padding: 5px 11px; border-radius: 6px;">小</span>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <div style="flex: 1;">
+        <div style="font-size: 13px;">行数</div>
+        <div style="font-size: 11px; color: #777;">小 × 2行 = 最大14枚。残りはスクロール。</div>
+      </div>
+      <div style="display: flex; gap: 2px; background: rgba(255,255,255,.06); border-radius: 8px; padding: 2px;">
+        <span style="font-size: 12px; color: #999; padding: 5px 11px; border-radius: 6px;">1行</span>
+        <span style="font-size: 12px; color: #0f0f0f; font-weight: 700; background: #f1f1f1; padding: 5px 11px; border-radius: 6px;">2行</span>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <div style="flex: 1;">
+        <div style="font-size: 13px;">並び順</div>
+        <div style="font-size: 11px; color: #777;">手動にすると編成ページのドラッグ順になります</div>
+      </div>
+      <div style="display: flex; gap: 2px; background: rgba(255,255,255,.06); border-radius: 8px; padding: 2px;">
+        <span style="font-size: 12px; color: #0f0f0f; font-weight: 700; background: #f1f1f1; padding: 5px 11px; border-radius: 6px;">使用回数順</span>
+        <span style="font-size: 12px; color: #999; padding: 5px 11px; border-radius: 6px;">手動</span>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <div style="flex: 1;">
+        <div style="font-size: 13px;">クリックしたら自動送信する</div>
+        <div style="font-size: 11px; color: #777;">オフなら入力欄に入れるだけ（⇧クリックでその場送信）</div>
+      </div>
+      <div style="width: 38px; height: 22px; border-radius: 999px; background: rgba(255,255,255,.16); flex-shrink: 0; padding: 2px; box-sizing: border-box; display: flex;">
+        <span style="width: 18px; height: 18px; border-radius: 50%; background: #9a9a9a;"></span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

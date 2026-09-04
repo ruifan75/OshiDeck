@@ -114,9 +114,6 @@ const nameOf = (id) => (id ? decks.channelMeta[id]?.name || id : "");
 
 function paintDecks() {
   const ids = deckIds();
-  document.querySelector("#deckTotal").textContent = decks.cards.length
-    ? `プール ${decks.cards.length}枚 ・ ${ids.length}デッキ`
-    : "まだ札がありません";
 
   const list = document.querySelector("#deckList");
   list.replaceChildren();
@@ -174,7 +171,6 @@ function paintHeader() {
 
   const title = document.createElement("strong");
   title.textContent = nameOf(selected);
-  header.appendChild(title);
 
   const swatches = document.createElement("div");
   swatches.className = "swatches";
@@ -192,7 +188,7 @@ function paintHeader() {
     swatch.addEventListener("click", () => setHue(selected, hue));
     swatches.appendChild(swatch);
   }
-  header.appendChild(swatches);
+  header.append(title, swatches);
 }
 
 // Apply a change to the freshest stored state, never to the snapshot this page
@@ -279,7 +275,7 @@ function paintCards() {
   hint.textContent =
     settings.sortBy === "manual"
       ? "右のプールからドラッグして追加、札同士をドラッグで並べ替え。"
-      : `並べ替えはできますが、チャット横は「${SORT_LABEL[settings.sortBy]}」で表示中です。`;
+      : `並べ替えはできますが、配信ページは「${SORT_LABEL[settings.sortBy]}」で表示中です。`;
 
   const cards = cardsOf(selected);
   if (!cards.length) {
@@ -311,19 +307,12 @@ function paintPool() {
     ? `${shown.length} / ${all.length}枚`
     : `${all.length}枚`;
 
-  const note = document.querySelector(".pool-note");
-  if (note) {
-    note.textContent = selected
-      ? "どのデッキでも使える札と、このチャンネル専用の札。デッキにドラッグすると入ります。"
-      : "どのデッキでも使える札。";
-  }
-
   if (!shown.length) {
     const empty = document.createElement("p");
     empty.className = "muted";
     empty.textContent = query
       ? "一致する札がありません。"
-      : "追加できる札がありません。デッキの札を外すとここに戻ります。";
+      : "追加できる札がありません。";
     holder.appendChild(empty);
     return;
   }

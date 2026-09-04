@@ -505,22 +505,6 @@ kbd {
 
 /* The pool always shows the whole collection; these say where each card
    stands relative to the deck on screen. */
-.browse-card[data-state="in-deck"] {
-  opacity: .42;
-  cursor: default;
-}
-
-.browse-badge {
-  position: absolute;
-  top: 3px;
-  left: 5px;
-  font-size: 11px;
-  line-height: 1;
-  opacity: .9;
-}
-
-.browse-card[data-state="in-deck"] .browse-badge { color: oklch(0.62 0.16 145); }
-.browse-card[data-state="free"] { cursor: grab; }
 
 /* ---------- removal controls ---------- */
 

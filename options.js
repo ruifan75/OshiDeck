@@ -217,15 +217,10 @@ const setHue = (id, hue) => mutate("setChannel", { channelId: id, hue });
 // A card, rendered the same in either pane. `where` decides what dragging it
 // means and which actions it offers.
 function buildCard(card, where) {
-  const state = where === "pool" ? poolState(card) : "deck";
-
   const el = document.createElement("div");
   el.className = "browse-card";
-  el.dataset.state = state;
-  el.draggable = state === "free" || where === "deck";
+  el.draggable = true;
   if (where === "deck") el.style.setProperty("--hue", hueOf(selected));
-
-  if (state === "in-deck") el.title = "このデッキに入っています";
 
   const body = document.createElement("div");
   body.className = "browse-body";
@@ -236,15 +231,7 @@ function buildCard(card, where) {
   meta.textContent = card.uses ? `${card.uses}回` : "未使用";
 
   el.append(body, meta);
-
-  if (state === "in-deck") {
-    const badge = document.createElement("span");
-    badge.className = "browse-badge";
-    badge.textContent = "✓";
-    el.appendChild(badge);
-  }
-
-  if (el.draggable) wireDrag(el, card, where);
+  wireDrag(el, card, where);
 
   const bound = tokens.requiredChannels(card.tokens).length > 0;
   if (!bound) el.dataset.universal = "true";
@@ -311,24 +298,18 @@ function paintCards() {
 // not pool material and never appears here. What is left is the same list
 // whatever deck is selected; the only per-deck fact is whether a card is
 // already in it, and that is a mark on the card, not a reason to hide it.
-// The pool holds universal cards only, so the one per-deck fact is whether
-// this card is already in the deck on screen.
-const poolState = (card) =>
-  selected && store.inDeck(decks, selected, card.id) ? "in-deck" : "free";
-
 function paintPool() {
   const holder = document.querySelector("#poolCards");
   holder.replaceChildren();
 
-  const all = selected ? store.compatibleWith(decks, selected) : store.universal(decks);
+  const all = selected ? store.poolFor(decks, selected) : store.universal(decks);
   const shown = query
     ? all.filter((card) => tokens.toPlainText(card.tokens || []).toLowerCase().includes(query))
     : all;
 
-  const free = shown.filter((card) => poolState(card) === "free").length;
   document.querySelector("#poolCount").textContent = query
     ? `${shown.length} / ${all.length}枚`
-    : `${all.length}枚 ・ 追加できる ${free}枚`;
+    : `${all.length}枚`;
 
   const note = document.querySelector(".pool-note");
   if (note) {
@@ -342,7 +323,7 @@ function paintPool() {
     empty.className = "muted";
     empty.textContent = query
       ? "一致する札がありません。"
-      : "追加できる札がありません。";
+      : "追加できる札がありません。デッキの札を外すとここに戻ります。";
     holder.appendChild(empty);
     return;
   }

@@ -1,43 +1,3 @@
-// Dropping onto a deck draws the card from the pool; dropping onto the pool
-// takes it out of the deck it came from. Neither is a delete.
-async function moveTo(card, fromId, toId) {
-  if (toId === POOL) {
-    if (fromId === POOL) return;
-    return ejectCard(card, fromId);
-  }
-  if (!store.addToDeck(decks, toId, card.id)) {
-    return status(`「${label(card)}」は ${nameOf(toId)} にすでにあります`);
-  }
-  await store.save(decks);
-
-  undo = async () => {
-    store.removeFromDeck(decks, toId, card.id);
-    await store.save(decks);
-    status("元に戻しました");
-    paintDecks();
-  };
-
-  status(`「${label(card)}」を ${nameOf(toId)} に入れました`, "元に戻す");
-  paintDecks();
-}
-
-async function ejectCard(card, deckId = selected) {
-  const at = store.removeFromDeck(decks, deckId, card.id);
-  if (at < 0) return;
-  await store.save(decks);
-
-  undo = async () => {
-    const list = (decks.decks[deckId] ||= []);
-    list.splice(Math.min(at, list.length), 0, card.id);
-    await store.save(decks);
-    status("元に戻しました");
-    paintDecks();
-  };
-
-  status(`「${label(card)}」を ${nameOf(deckId)} から外しました（プールに残っています）`, "元に戻す");
-  paintDecks();
-}
-
 const { store, tokens } = globalThis.OshiDeck;
 
 const DEFAULTS = {
@@ -126,12 +86,11 @@ load();
 
 /* ---------------- deck browser ---------------- */
 
-const POOL = "__pool__";
 let decks = null;
-let selected = POOL;
+let selected = null;   // channel id, or null when nothing is saved yet
 let undo = null;
 let query = "";
-let dragging = null;
+let dragging = null;   // { card, from: "deck" | "pool" }
 
 const HUES = [320, 145, 250, 85, 25, 195, 290, 60];
 
@@ -141,32 +100,32 @@ async function loadDecks() {
 
   decks = data;
   const known = deckIds();
-  if (!known.includes(selected)) selected = known[0] || POOL;
+  if (!known.includes(selected)) selected = known[0] ?? null;
   paintDecks();
 }
 
-function deckIds() {
-  return [POOL, ...Object.keys(decks.decks || {})];
-}
+const deckIds = () => Object.keys(decks.decks || {});
 
-// The pool holds every card; a deck is the ordered subset you drew from it.
-const cardsOf = (id) =>
-  id === POOL ? decks.cards.slice() : store.deckOf(decks, id);
-
-const hueOf = (id) =>
-  id === POOL ? null : decks.channelMeta[id]?.hue ?? store.defaultHue(id);
-
-const nameOf = (id) =>
-  id === POOL ? "カードプール" : decks.channelMeta[id]?.name || id;
+const cardsOf = (id) => (id ? store.deckOf(decks, id) : []);
+const hueOf = (id) => (id ? decks.channelMeta[id]?.hue ?? store.defaultHue(id) : 320);
+const nameOf = (id) => (id ? decks.channelMeta[id]?.name || id : "");
 
 function paintDecks() {
   const ids = deckIds();
-  const total = decks.cards.length;
-  document.querySelector("#deckTotal").textContent =
-    total ? `プール ${total}枚 ・ ${ids.length - 1}デッキ` : "まだ札がありません";
+  document.querySelector("#deckTotal").textContent = decks.cards.length
+    ? `プール ${decks.cards.length}枚 ・ ${ids.length}デッキ`
+    : "まだ札がありません";
 
   const list = document.querySelector("#deckList");
   list.replaceChildren();
+
+  if (!ids.length) {
+    const empty = document.createElement("p");
+    empty.className = "muted";
+    empty.textContent = "配信ページで札を保存するとデッキができます。";
+    list.appendChild(empty);
+  }
+
   for (const id of ids) {
     const row = document.createElement("button");
     row.type = "button";
@@ -175,8 +134,7 @@ function paintDecks() {
 
     const dot = document.createElement("span");
     dot.className = "deck-dot";
-    if (id === POOL) dot.dataset.common = "true";
-    else dot.style.setProperty("--hue", hueOf(id));
+    dot.style.setProperty("--hue", hueOf(id));
 
     const name = document.createElement("span");
     name.className = "deck-name";
@@ -188,28 +146,22 @@ function paintDecks() {
 
     row.append(dot, name, count);
     row.addEventListener("click", () => { selected = id; paintDecks(); });
-    wireDeckDrop(row, id);
     list.appendChild(row);
   }
 
   paintHeader();
   paintCards();
+  paintPool();
 }
 
 function paintHeader() {
   const header = document.querySelector("#deckHeader");
   header.replaceChildren();
+  if (!selected) return;
 
   const title = document.createElement("strong");
   title.textContent = nameOf(selected);
   header.appendChild(title);
-
-  if (selected === POOL) {
-    const note = document.createElement("small");
-    note.textContent = "保存した札はすべてここに。デッキに落とすと使えるようになります";
-    header.appendChild(note);
-    return;
-  }
 
   const swatches = document.createElement("div");
   swatches.className = "swatches";
@@ -222,7 +174,7 @@ function paintHeader() {
     swatch.type = "button";
     swatch.className = "swatch";
     swatch.style.setProperty("--hue", hue);
-    swatch.title = `色を変える (${hue})`;
+    swatch.setAttribute("aria-label", `推し色 ${hue}`);
     if (hue === hueOf(selected)) swatch.dataset.on = "true";
     swatch.addEventListener("click", () => setHue(selected, hue));
     swatches.appendChild(swatch);
@@ -236,83 +188,208 @@ async function setHue(id, hue) {
   paintDecks();
 }
 
-function matches(card) {
-  if (!query) return true;
-  return tokens.toPlainText(card.tokens || []).toLowerCase().includes(query);
+// A card, rendered the same in either pane. `where` decides what dragging it
+// means and which actions it offers.
+function buildCard(card, where) {
+  const el = document.createElement("div");
+  el.className = "browse-card";
+  el.dataset.where = where;
+  el.draggable = true;
+  if (where === "deck") el.style.setProperty("--hue", hueOf(selected));
+  if (tokens.requiredChannels(card.tokens).length) el.dataset.bound = "true";
+
+  const body = document.createElement("div");
+  body.className = "browse-body";
+  body.appendChild(tokens.toFragment(card.tokens || [], { preview: true }));
+
+  const meta = document.createElement("div");
+  meta.className = "browse-meta";
+  meta.textContent = card.uses ? `${card.uses}回` : "未使用";
+
+  el.append(body, meta);
+  wireDrag(el, card, where);
+
+  if (where === "pool") {
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.className = "browse-remove";
+    remove.textContent = "×";
+    remove.setAttribute("aria-label", "プールから削除");
+    remove.addEventListener("click", () => removeCard(card));
+    el.appendChild(remove);
+  }
+  return el;
 }
 
 function paintCards() {
   const holder = document.querySelector("#deckCards");
   const hint = document.querySelector("#deckHint");
   holder.replaceChildren();
+  wireDeckDrop(holder);
 
-  // Stored order is what the deck actually is; sorting is a display choice.
-  // Dragging edits the stored order, so the grid has to show that order.
-  const all = cardsOf(selected);
-  const cards = all.filter(matches);
-
-  hint.textContent =
-    selected === POOL
-      ? "保存した札はすべてここに。左のデッキにドラッグすると、そのデッキで使えるようになります。"
-      : settings.sortBy === "manual"
-      ? "ドラッグで並べ替え。左のデッキに落とすと、そのデッキにも入ります。"
-      : `ドラッグで並べ替えできますが、チャット横は「${SORT_LABEL[settings.sortBy]}」で表示中です。`;
-
-  if (!all.length) {
+  if (!selected) {
+    hint.textContent = "";
     const empty = document.createElement("p");
     empty.className = "muted";
-    empty.textContent = "このデッキにはまだ札がありません。";
+    empty.textContent = "デッキがありません。";
     holder.appendChild(empty);
     return;
   }
 
+  hint.textContent =
+    settings.sortBy === "manual"
+      ? "右のプールからドラッグして追加、札同士をドラッグで並べ替え。"
+      : `並べ替えはできますが、チャット横は「${SORT_LABEL[settings.sortBy]}」で表示中です。`;
+
+  const cards = cardsOf(selected);
   if (!cards.length) {
     const empty = document.createElement("p");
     empty.className = "muted";
-    empty.textContent = `「${query}」に一致する札はありません。`;
+    empty.textContent = "右のプールから札をドラッグしてください。";
     holder.appendChild(empty);
     return;
   }
 
-  for (const card of cards) {
-    const el = document.createElement("div");
-    el.className = "browse-card";
-    el.draggable = !query || selected === POOL; // reordering needs the full order
-    if (selected !== POOL) el.style.setProperty("--hue", hueOf(selected));
-    else el.dataset.common = "true";
-    if (!query) wireDrag(el, card);
+  for (const card of cards) holder.appendChild(buildCard(card, "deck"));
+}
 
-    const body = document.createElement("div");
-    body.className = "browse-body";
-    body.appendChild(tokens.toFragment(card.tokens || [], { preview: true }));
+function paintPool() {
+  const holder = document.querySelector("#poolCards");
+  holder.replaceChildren();
+  wirePoolDrop(document.querySelector("#pool"));
 
-    const meta = document.createElement("div");
-    meta.className = "browse-meta";
-    meta.textContent = card.uses ? `${card.uses}回` : "未使用";
+  // Only what this deck could actually take: nothing already in it, and no
+  // member emoji from another channel — those can never be sent here.
+  const available = selected ? store.poolFor(decks, selected) : store.universal(decks);
+  const shown = query
+    ? available.filter((card) =>
+        tokens.toPlainText(card.tokens || []).toLowerCase().includes(query))
+    : available;
 
-    const actions = document.createElement("div");
-    actions.className = "browse-actions";
-    if (tokens.requiredChannels(card.tokens).length) el.dataset.pinned = "true";
+  document.querySelector("#poolCount").textContent = query
+    ? `${shown.length} / ${available.length}枚`
+    : `${available.length}枚`;
 
-    if (selected !== POOL) {
-      const eject = document.createElement("button");
-      eject.type = "button";
-      eject.textContent = "デッキから外す";
-      eject.title = "プールには残ります";
-      eject.addEventListener("click", () => ejectCard(card));
-      actions.appendChild(eject);
-    }
-
-    const remove = document.createElement("button");
-    remove.type = "button";
-    remove.className = "danger";
-    remove.textContent = selected === POOL ? "削除" : "完全に削除";
-    remove.title = "プールから消え、すべてのデッキから外れます";
-    remove.addEventListener("click", () => removeCard(card));
-    actions.appendChild(remove);
-    el.append(body, meta, actions);
-    holder.appendChild(el);
+  if (!shown.length) {
+    const empty = document.createElement("p");
+    empty.className = "muted";
+    empty.textContent = query ? "一致する札がありません。" : "追加できる札がありません。";
+    holder.appendChild(empty);
+    return;
   }
+
+  for (const card of shown) holder.appendChild(buildCard(card, "pool"));
+}
+
+/* ---------------- dragging ---------------- */
+
+function wireDrag(el, card, where) {
+  el.addEventListener("dragstart", (event) => {
+    dragging = { card, from: where };
+    el.dataset.dragging = "true";
+    event.dataTransfer.effectAllowed = "move";
+    event.dataTransfer.setData("text/plain", card.id); // Firefox needs a payload
+  });
+
+  el.addEventListener("dragend", () => {
+    dragging = null;
+    delete el.dataset.dragging;
+    for (const node of document.querySelectorAll("[data-drop]")) delete node.dataset.drop;
+  });
+
+  if (where !== "deck") return;
+
+  el.addEventListener("dragover", (event) => {
+    if (!dragging || dragging.card.id === card.id) return;
+    event.preventDefault();
+    event.dataTransfer.dropEffect = "move";
+    const box = el.getBoundingClientRect();
+    el.dataset.drop = event.clientX < box.left + box.width / 2 ? "before" : "after";
+  });
+
+  el.addEventListener("dragleave", () => delete el.dataset.drop);
+
+  el.addEventListener("drop", async (event) => {
+    if (!dragging) return;
+    event.preventDefault();
+    event.stopPropagation();
+    const side = el.dataset.drop || "before";
+    delete el.dataset.drop;
+    await dropOnDeck(dragging, { target: card, side });
+  });
+}
+
+function wireDeckDrop(holder) {
+  holder.addEventListener("dragover", (event) => {
+    if (!dragging || !selected) return;
+    event.preventDefault();
+    event.dataTransfer.dropEffect = "move";
+    holder.dataset.drop = "into";
+  });
+  holder.addEventListener("dragleave", () => delete holder.dataset.drop);
+  holder.addEventListener("drop", async (event) => {
+    delete holder.dataset.drop;
+    if (!dragging || !selected) return;
+    event.preventDefault();
+    await dropOnDeck(dragging, {});
+  });
+}
+
+function wirePoolDrop(pane) {
+  pane.addEventListener("dragover", (event) => {
+    if (dragging?.from !== "deck") return;
+    event.preventDefault();
+    event.dataTransfer.dropEffect = "move";
+    pane.dataset.drop = "into";
+  });
+  pane.addEventListener("dragleave", () => delete pane.dataset.drop);
+  pane.addEventListener("drop", async (event) => {
+    delete pane.dataset.drop;
+    if (dragging?.from !== "deck") return;
+    event.preventDefault();
+    await ejectCard(dragging.card);
+  });
+}
+
+// One entry point for both meanings of a drop on the deck: bringing a card in
+// from the pool, and moving one that is already there.
+async function dropOnDeck({ card, from }, { target, side }) {
+  if (!selected) return;
+
+  if (from === "pool" && !store.addToDeck(decks, selected, card.id)) return;
+
+  if (target) store.reorderDeck(decks, selected, card.id, target.id, side || "before");
+  await store.save(decks);
+
+  if (from === "pool") {
+    undo = async () => {
+      store.removeFromDeck(decks, selected, card.id);
+      await store.save(decks);
+      status("元に戻しました");
+      paintDecks();
+    };
+    status(`「${label(card)}」を ${nameOf(selected)} に入れました`, "元に戻す");
+  } else if (settings.sortBy !== "manual") {
+    status(`並べ替えました（表示に反映するには並び順を「自分で並べた順」に）`);
+  }
+  paintDecks();
+}
+
+async function ejectCard(card, deckId = selected) {
+  const at = store.removeFromDeck(decks, deckId, card.id);
+  if (at < 0) return;
+  await store.save(decks);
+
+  undo = async () => {
+    const list = (decks.decks[deckId] ||= []);
+    list.splice(Math.min(at, list.length), 0, card.id);
+    await store.save(decks);
+    status("元に戻しました");
+    paintDecks();
+  };
+
+  status(`「${label(card)}」をデッキから外しました（プールに残っています）`, "元に戻す");
+  paintDecks();
 }
 
 // Deleting is from the pool, so it leaves every deck at once.
@@ -360,92 +437,16 @@ function status(message, actionLabel) {
   status.timer = setTimeout(() => saved.replaceChildren(), 8000);
 }
 
+document.querySelector("#deckSearch").addEventListener("input", (event) => {
+  query = event.target.value.trim().toLowerCase();
+  paintPool();
+});
+
 chrome.storage.onChanged.addListener((_changes, area) => {
   if (area === "local") loadDecks();
 });
 
 loadDecks();
-
-/* ---------------- drag to arrange, drag to move ---------------- */
-
-function wireDrag(el, card) {
-  el.addEventListener("dragstart", (event) => {
-    dragging = { card, from: selected };
-    el.dataset.dragging = "true";
-    event.dataTransfer.effectAllowed = "move";
-    // Firefox refuses to start a drag without payload.
-    event.dataTransfer.setData("text/plain", card.id);
-  });
-
-  el.addEventListener("dragend", () => {
-    dragging = null;
-    delete el.dataset.dragging;
-    for (const node of document.querySelectorAll("[data-drop]")) delete node.dataset.drop;
-  });
-
-  el.addEventListener("dragover", (event) => {
-    if (!dragging || dragging.from !== selected || dragging.card.id === card.id) return;
-    event.preventDefault();
-    event.dataTransfer.dropEffect = "move";
-    // Drop before or after, depending on which half the pointer is over.
-    const box = el.getBoundingClientRect();
-    el.dataset.drop = event.clientX < box.left + box.width / 2 ? "before" : "after";
-  });
-
-  el.addEventListener("dragleave", () => delete el.dataset.drop);
-
-  el.addEventListener("drop", async (event) => {
-    if (!dragging || dragging.from !== selected) return;
-    event.preventDefault();
-    const side = el.dataset.drop || "before";
-    delete el.dataset.drop;
-    await reorder(dragging.card, card, side);
-  });
-}
-
-async function reorder(moved, target, side) {
-  if (selected === POOL) return; // the pool has no meaningful order
-  if (!store.reorderDeck(decks, selected, moved.id, target.id, side)) return;
-  await store.save(decks);
-  status(
-    settings.sortBy === "manual"
-      ? "並べ替えました"
-      : "並べ替えました（表示に反映するには並び順を「自分で並べた順」に）"
-  );
-  paintDecks();
-}
-
-function wireDeckDrop(row, id) {
-  row.addEventListener("dragover", (event) => {
-    if (!dragging || dragging.from === id) return;
-    if (!canMoveTo(dragging.card, id)) return;
-    event.preventDefault();
-    event.dataTransfer.dropEffect = "move";
-    row.dataset.drop = "into";
-  });
-
-  row.addEventListener("dragleave", () => delete row.dataset.drop);
-
-  row.addEventListener("drop", async (event) => {
-    delete row.dataset.drop;
-    if (!dragging || dragging.from === id || !canMoveTo(dragging.card, id)) return;
-    event.preventDefault();
-    await moveTo(dragging.card, dragging.from, id);
-  });
-}
-
-// A member emoji only sends on the channel that hands it out, so such a card
-// can only join that channel's deck. The pool holds everything, always.
-function canMoveTo(card, deckId) {
-  if (deckId === POOL) return true;
-  const required = tokens.requiredChannels(card.tokens);
-  return !required.length || required.every((owner) => owner === deckId);
-}
-
-document.querySelector("#deckSearch").addEventListener("input", (event) => {
-  query = event.target.value.trim().toLowerCase();
-  paintCards();
-});
 
 /* ---------------- backup ---------------- */
 

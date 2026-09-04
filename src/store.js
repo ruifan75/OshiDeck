@@ -141,11 +141,23 @@
     return (data.decks[channelId] || []).map((id) => lookup.get(id)).filter(Boolean);
   }
 
-  // Everything in the pool that this deck has not taken yet.
-  function poolFor(data, channelId) {
-    const inDeck = new Set(data.decks[channelId] || []);
-    return data.cards.filter((card) => !inDeck.has(card.id));
+  // A card carrying member emoji only sends on the channel that hands them
+  // out, so offering it anywhere else is offering something that cannot work.
+  // tokens.js loads after this file, so the lookup is deferred to call time.
+  function usableOn(card, channelId) {
+    const required = OD.tokens?.requiredChannels?.(card.tokens) || [];
+    return !required.length || (!!channelId && required.every((id) => id === channelId));
   }
+
+  // Cards this deck could still take: not already in it, and actually sendable
+  // on this channel.
+  function poolFor(data, channelId) {
+    const held = new Set(data.decks[channelId] || []);
+    return data.cards.filter((card) => !held.has(card.id) && usableOn(card, channelId));
+  }
+
+  // Cards that work anywhere — the pool proper, with nothing channel-bound.
+  const universal = (data) => data.cards.filter((card) => usableOn(card, null));
 
   const inDeck = (data, channelId, cardId) =>
     (data.decks[channelId] || []).includes(cardId);
@@ -230,7 +242,7 @@
   OD.store = {
     KEYS, DEFAULT_SETTINGS, alive, defaultHue,
     read, save, writeChannelMeta,
-    deckOf, poolFor, inDeck, addToDeck, removeFromDeck,
+    deckOf, poolFor, universal, usableOn, inDeck, addToDeck, removeFromDeck,
     deleteCard, restoreCard, reorderDeck,
     sortCards, markUsed
   };

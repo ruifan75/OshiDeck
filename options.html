@@ -21,8 +21,18 @@
 
       <div class="browser">
         <nav id="deckList" class="deck-list" aria-label="デッキ一覧"></nav>
+
         <div class="deck-main">
           <div id="deckHeader" class="deck-header"></div>
+          <div id="deckCards" class="deck-cards"></div>
+          <p id="deckHint" class="muted deck-hint"></p>
+        </div>
+
+        <aside id="pool" class="pool" aria-label="カードプール">
+          <div class="pool-head">
+            <strong>カードプール</strong>
+            <span id="poolCount" class="muted"></span>
+          </div>
           <label class="search">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                  stroke-linecap="round" aria-hidden="true">
@@ -30,9 +40,9 @@
             </svg>
             <input id="deckSearch" type="search" placeholder="中身で絞り込む" autocomplete="off">
           </label>
-          <div id="deckCards" class="deck-cards"></div>
-          <p id="deckHint" class="muted deck-hint"></p>
-        </div>
+          <div id="poolCards" class="pool-cards"></div>
+          <p class="muted pool-note">デッキにドラッグすると入ります。ここに戻すと外れます。</p>
+        </aside>
       </div>
     </section>
 

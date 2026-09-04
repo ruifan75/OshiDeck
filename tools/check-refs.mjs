@@ -7,6 +7,12 @@
 // in the file and flags bare calls to names that appear nowhere. Scope is
 // deliberately ignored — the failure worth catching is a name that does not
 // exist at all, which is what a bad edit leaves behind.
+//
+// Limit: call sites only. A dangling identifier that is merely *read*
+// (`if (POOL)`) slips through. Widening the scan to every identifier read was
+// tried and produced ~140 false positives on this codebase — keywords, object
+// keys, shorthand — because telling a read from a key needs a real parser. A
+// check nobody trusts is worse than a narrow one, so this stays narrow.
 import { readFileSync } from "node:fs";
 
 const GLOBALS = new Set([

@@ -13,7 +13,7 @@
 body { margin: 0; background: Canvas; color: CanvasText; }
 
 main {
-  max-width: 680px;
+  max-width: 1040px;
   margin: 48px auto 72px;
   padding: 0 20px;
   display: flex;
@@ -37,6 +37,7 @@ h2 { margin: 0 0 16px; font-size: 15px; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 12px;
+  max-width: 720px;
 }
 
 .mode input { position: absolute; opacity: 0; pointer-events: none; }
@@ -109,6 +110,7 @@ h2 { margin: 0 0 16px; font-size: 15px; }
   display: flex;
   align-items: center;
   gap: 20px;
+  max-width: 720px;
   padding: 14px 0;
   border-top: 1px solid var(--line);
 }
@@ -152,7 +154,7 @@ h2 { margin: 0 0 16px; font-size: 15px; }
 
 /* ---------- switch ---------- */
 
-.switch-row { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
+.switch-row { display: flex; align-items: flex-start; gap: 12px; max-width: 720px; cursor: pointer; }
 .switch-row input { margin-top: 3px; accent-color: var(--accent); }
 .switch-row span { display: flex; flex-direction: column; gap: 4px; }
 .switch-row strong { font-size: 13px; font-weight: 500; }
@@ -185,10 +187,6 @@ kbd {
   grid-template-columns: 190px minmax(0, 1fr);
   gap: 18px;
   align-items: start;
-}
-
-@media (max-width: 620px) {
-  .browser { grid-template-columns: minmax(0, 1fr); }
 }
 
 .deck-list {
@@ -240,17 +238,26 @@ kbd {
 .deck-header {
   display: flex;
   align-items: center;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 8px 12px;
   min-height: 26px;
   margin-bottom: 12px;
 }
 
-.deck-header strong { font-size: 14px; }
+.deck-header strong {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .deck-header small { font-size: 11px; opacity: .62; }
 
 .swatches {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 5px;
   margin-left: auto;
 }
@@ -271,7 +278,7 @@ kbd {
 
 .deck-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+  grid-template-columns: repeat(auto-fill, 104px);
   gap: 10px;
 }
 
@@ -419,17 +426,19 @@ kbd {
 
 /* ---------- three panes: decks, the selected deck, the pool ---------- */
 
+.decks { container-type: inline-size; }
+
 .browser {
   grid-template-columns: 180px minmax(0, 1fr) 236px;
 }
 
-@media (max-width: 900px) {
+@container (max-width: 820px) {
   .browser { grid-template-columns: 160px minmax(0, 1fr); }
   .pool { grid-column: 1 / -1; }
   .pool-cards { max-height: none; }
 }
 
-@media (max-width: 620px) {
+@container (max-width: 560px) {
   .browser { grid-template-columns: minmax(0, 1fr); }
 }
 
@@ -458,7 +467,7 @@ kbd {
 
 .pool-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+  grid-template-columns: repeat(auto-fill, 100px);
   gap: 8px;
   max-height: 420px;
   overflow-y: auto;
@@ -504,3 +513,28 @@ kbd {
 
 .browse-card:hover .browse-remove { opacity: .55; }
 .browse-remove:hover { opacity: 1; background: oklch(0.65 0.19 25 / .25); }
+
+/* ---------- pool card state ---------- */
+
+/* The pool always shows the whole collection; these say where each card
+   stands relative to the deck on screen. */
+.browse-card[data-state="in-deck"],
+.browse-card[data-state="bound"] {
+  opacity: .42;
+  cursor: default;
+}
+
+.browse-card[data-state="bound"] { border-style: dashed; }
+
+.browse-badge {
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  font-size: 11px;
+  line-height: 1;
+  opacity: .9;
+}
+
+.browse-card[data-state="in-deck"] .browse-badge { color: oklch(0.62 0.16 145); }
+.browse-card[data-state="bound"] .browse-badge { color: oklch(0.65 0.14 25); }
+.browse-card[data-state="free"] { cursor: grab; }

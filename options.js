@@ -191,12 +191,17 @@ async function setHue(id, hue) {
 // A card, rendered the same in either pane. `where` decides what dragging it
 // means and which actions it offers.
 function buildCard(card, where) {
+  const state = where === "pool" ? poolState(card) : "deck";
+
   const el = document.createElement("div");
   el.className = "browse-card";
   el.dataset.where = where;
-  el.draggable = true;
+  el.dataset.state = state;
+  el.draggable = state === "free" || where === "deck";
   if (where === "deck") el.style.setProperty("--hue", hueOf(selected));
-  if (tokens.requiredChannels(card.tokens).length) el.dataset.bound = "true";
+
+  if (state === "in-deck") el.title = "このデッキに入っています";
+  if (state === "bound") el.title = "他のチャンネルのメン限スタンプなので、このデッキには入れられません";
 
   const body = document.createElement("div");
   body.className = "browse-body";
@@ -207,7 +212,15 @@ function buildCard(card, where) {
   meta.textContent = card.uses ? `${card.uses}回` : "未使用";
 
   el.append(body, meta);
-  wireDrag(el, card, where);
+
+  if (state === "in-deck" || state === "bound") {
+    const badge = document.createElement("span");
+    badge.className = "browse-badge";
+    badge.textContent = state === "in-deck" ? "✓" : "⛊";
+    el.appendChild(badge);
+  }
+
+  if (el.draggable) wireDrag(el, card, where);
 
   if (where === "pool") {
     const remove = document.createElement("button");
@@ -253,27 +266,34 @@ function paintCards() {
   for (const card of cards) holder.appendChild(buildCard(card, "deck"));
 }
 
+// The pool is your collection, so it does not change when you switch decks.
+// What changes is each card's standing in the deck you are looking at, and
+// that belongs on the card — filtering it out made the pool look empty.
+function poolState(card) {
+  if (!selected) return "free";
+  if (store.inDeck(decks, selected, card.id)) return "in-deck";
+  return store.usableOn(card, selected) ? "free" : "bound";
+}
+
 function paintPool() {
   const holder = document.querySelector("#poolCards");
   holder.replaceChildren();
   wirePoolDrop(document.querySelector("#pool"));
 
-  // Only what this deck could actually take: nothing already in it, and no
-  // member emoji from another channel — those can never be sent here.
-  const available = selected ? store.poolFor(decks, selected) : store.universal(decks);
+  const all = decks.cards;
   const shown = query
-    ? available.filter((card) =>
-        tokens.toPlainText(card.tokens || []).toLowerCase().includes(query))
-    : available;
+    ? all.filter((card) => tokens.toPlainText(card.tokens || []).toLowerCase().includes(query))
+    : all;
 
+  const free = shown.filter((card) => poolState(card) === "free").length;
   document.querySelector("#poolCount").textContent = query
-    ? `${shown.length} / ${available.length}枚`
-    : `${available.length}枚`;
+    ? `${shown.length} / ${all.length}枚`
+    : `${all.length}枚 ・ 追加できる ${free}枚`;
 
   if (!shown.length) {
     const empty = document.createElement("p");
     empty.className = "muted";
-    empty.textContent = query ? "一致する札がありません。" : "追加できる札がありません。";
+    empty.textContent = query ? "一致する札がありません。" : "まだ札がありません。";
     holder.appendChild(empty);
     return;
   }

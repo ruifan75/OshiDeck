@@ -275,6 +275,11 @@
 }
 
 .od-card-body {
+  /* A flex item sizes to its content and will not shrink below min-content,
+     so without these a row of stamps grows past the card and gets cropped at
+     both edges instead of wrapping. */
+  max-width: 100%;
+  min-width: 0;
   max-height: 100%;
   font-size: 12px;
   line-height: 1.3;

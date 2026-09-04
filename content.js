@@ -1,538 +1,1065 @@
+// OshiDeck — card deck for YouTube Live Chat.
 (() => {
-  const STORAGE_KEYS = {
-    SETTINGS: "settings",
-    PRESETS: "presets"
-  };
+  const OD = globalThis.OshiDeck;
+  const { layout, store, tokens, trending } = OD;
 
-  const DEFAULT_SETTINGS = {
-    autoSend: false
-  };
+  const MAX_ROWS_CAP = 2;
+  const PANEL_PADDING = 24;    // matches #oshideck-root horizontal padding in content.css
+  const SCROLLBAR_GUTTER = 8;  // matches the ::-webkit-scrollbar width, plus slack
+  const LIST_VISIBLE = 12;     // rows shown before the list starts scrolling
 
-  let currentInput = null;
   let rootEl = null;
+  let currentInput = null;
   let refreshTimer = null;
+  let resizeObserver = null;
+  let lastWidth = 0;
+  let notice = null;
+  let inputHasContent = false;
+  let currentTokens = [];
+  let barEl = null;
+  let barContext = null;
+  let watchedInput = null;
+  let inputObserver = null;
+  let expanded = false;
+  let flashId = null;
+  let drag = null;
+  let poolOpen = false;
+  let peek = null;
+  let editingId = null;  // card being re-recorded, if any
+  let settingsCache = { ...store.DEFAULT_SETTINGS };
+  let frozen = false;    // pointer is over the deck — do not reorder under it
+  let pendingRender = false;
 
-  function log(...args) {
-    console.debug("[OshiDeck]", ...args);
-  }
+  // Always running: even outside trend mode it keeps emoji urls fresh.
+  const watcher = trending.createWatcher({
+    onChange: () => { if (settingsCache.sortBy === "trend") scheduleRender(); }
+  });
+
+  const log = (...args) => console.debug("[OshiDeck]", ...args);
+
+  /* ---------- YouTube DOM ---------- */
 
   function getChatInput() {
-    // Current YouTube Live Chat structure is typically:
-    // <yt-live-chat-text-input-field-renderer id="input">
-    //   <div id="input" contenteditable="true">...</div>
-    // </yt-live-chat-text-input-field-renderer>
     const renderer =
-      document.querySelector('yt-live-chat-text-input-field-renderer#input') ||
-      document.querySelector('yt-live-chat-text-input-field-renderer');
+      document.querySelector("yt-live-chat-text-input-field-renderer#input") ||
+      document.querySelector("yt-live-chat-text-input-field-renderer");
 
-    const editable =
+    return (
       renderer?.querySelector('[contenteditable="true"]') ||
-      renderer?.querySelector('[contenteditable]');
-
-    return (
-      editable ||
+      renderer?.querySelector("[contenteditable]") ||
       document.querySelector('yt-live-chat-message-input-renderer [contenteditable="true"]') ||
-      document.querySelector('yt-live-chat-message-input-renderer [contenteditable]')
+      document.querySelector("yt-live-chat-message-input-renderer [contenteditable]")
     );
   }
 
-  function getSendButton() {
-    return (
-      document.querySelector('yt-live-chat-message-input-renderer #send-button button') ||
-      document.querySelector('#send-button button') ||
-      document.querySelector('yt-button-renderer#send-button button')
-    );
+  const getScroller = () =>
+    document.querySelector("yt-live-chat-item-list-renderer #item-scroller") ||
+    document.querySelector("#item-scroller") ||
+    document.querySelector("#chat #item-scroller");
+
+  // Growing or shrinking the panel changes the scroller's viewport, and YouTube
+  // reads that as the reader having scrolled up: it stops following the chat.
+  // Put it back where it was so the stream keeps running.
+  function keepChatPinned(mutate) {
+    const scroller = getScroller();
+    const pinned =
+      scroller && scroller.scrollHeight - scroller.scrollTop - scroller.clientHeight < 40;
+
+    mutate();
+
+    if (!pinned || !scroller) return;
+    const stick = () => { scroller.scrollTop = scroller.scrollHeight; };
+    stick();
+    requestAnimationFrame(stick); // again after our own layout settles
   }
 
-  function normalizeChannelId(value) {
-    return typeof value === "string" && value.startsWith("UC") ? value : null;
-  }
+  const getSendButton = () =>
+    document.querySelector("yt-live-chat-message-input-renderer #send-button button") ||
+    document.querySelector("#send-button button") ||
+    document.querySelector("yt-button-renderer#send-button button");
 
-  function findChannelIdInDocument(doc) {
+  const asChannelId = (value) =>
+    typeof value === "string" && value.startsWith("UC") ? value : null;
+
+  function readChannel(doc) {
     const meta = doc.querySelector('meta[itemprop="channelId"]');
-    if (meta?.content) return normalizeChannelId(meta.content);
-
-    const ownerLink = doc.querySelector(
+    const link = doc.querySelector(
       'ytd-video-owner-renderer a[href^="/channel/"], ' +
       '#owner a[href^="/channel/"], ' +
       'a.yt-simple-endpoint[href^="/channel/"]'
     );
 
-    if (ownerLink) {
-      const match = ownerLink.getAttribute("href")?.match(/^\/channel\/([^/?#]+)/);
-      if (match) return normalizeChannelId(match[1]);
-    }
+    const id =
+      asChannelId(meta?.content) ||
+      asChannelId(link?.getAttribute("href")?.match(/^\/channel\/([^/?#]+)/)?.[1]);
+    if (!id) return null;
 
-    return null;
+    const name =
+      doc.querySelector("ytd-video-owner-renderer #channel-name a")?.textContent?.trim() ||
+      link?.textContent?.trim() ||
+      doc.querySelector('meta[itemprop="name"]')?.content?.trim() ||
+      "";
+
+    return { id, name };
   }
 
-  function getChannelId() {
-    let id = findChannelIdInDocument(document);
-    if (id) return id;
-
+  // The live chat runs in a same-origin iframe, so the owner details live in
+  // the parent document.
+  function getChannel() {
+    let found = readChannel(document);
+    if (found) return found;
     try {
-      if (window.top !== window) {
-        id = findChannelIdInDocument(window.top.document);
-        if (id) return id;
-      }
-    } catch (_) {}
-
-    return null;
+      if (window.top !== window) found = readChannel(window.top.document);
+    } catch (_) { /* cross-origin frame: nothing to read */ }
+    return found;
   }
 
-  async function getStoredData() {
-    const result = await chrome.storage.local.get([
-      STORAGE_KEYS.SETTINGS,
-      STORAGE_KEYS.PRESETS
-    ]);
+  /* ---------- deck assembly ---------- */
 
-    return {
-      settings: {
-        ...DEFAULT_SETTINGS,
-        ...(result[STORAGE_KEYS.SETTINGS] || {})
-      },
-      presets: result[STORAGE_KEYS.PRESETS] || {
-        global: [],
-        channels: {}
-      }
-    };
+  // Nothing appears here unless it was put here: the deck is an explicit list
+  // drawn from the pool.
+  function buildDeck(data, channelId) {
+    const cards = store.deckOf(data, channelId).map((card) => ({ ...card }));
+    markLocked(cards, channelId);
+    return orderDeck(cards, data.settings);
   }
 
-  async function savePresets(presets) {
-    await chrome.storage.local.set({
-      [STORAGE_KEYS.PRESETS]: presets
-    });
+  // Member emoji only send on the channel that hands them out. Lock only when
+  // we are sure: with no channel detected we cannot judge ownership, and a
+  // wrong lock is far worse than a card that fails to send.
+  function markLocked(cards, channelId) {
+    for (const card of cards) {
+      const required = channelId ? tokens.requiredChannels(card.tokens) : [];
+      card.locked = required.length > 0 && !required.every((id) => id === channelId);
+    }
+    return cards;
   }
 
-  function collectTokens(node) {
-    const tokens = [];
+  function orderDeck(cards, settings) {
+    if (settings.sortBy !== "trend") return store.sortCards(cards, settings.sortBy);
 
-    function pushText(text) {
-      if (!text) return;
-      const last = tokens[tokens.length - 1];
-      if (last?.type === "text") {
-        last.value += text;
-      } else {
-        tokens.push({ type: "text", value: text });
-      }
+    const ranking = watcher.ranking();
+    // Personal habit is the tiebreak, so a quiet chat still gives a sane order.
+    const fallback = new Map(
+      store.sortCards(cards, "heat").map((card, index) => [card.id, index])
+    );
+
+    return cards
+      .map((card) => {
+        card.signature ||= trending.signature(card.tokens || []);
+        card.hits = ranking.get(card.signature) || 0;
+        return card;
+      })
+      .sort((a, b) => b.hits - a.hits || fallback.get(a.id) - fallback.get(b.id));
+  }
+
+  /* ---------- notices ---------- */
+
+  let noticeTimer = null;
+
+  // A floating toast covers the chat, whichever way it is anchored — the panel
+  // sits at the very bottom, so anything above it lands on the messages. The
+  // bar already swaps between states, so a notice is just one more state.
+  function showToast(message, { actionLabel, onAction } = {}) {
+    clearTimeout(noticeTimer);
+    notice = { message, actionLabel, onAction };
+    refreshBar();
+    noticeTimer = setTimeout(clearNotice, 6000);
+  }
+
+  function clearNotice() {
+    clearTimeout(noticeTimer);
+    if (!notice) return;
+    notice = null;
+    refreshBar();
+  }
+
+  /* ---------- playing a card ---------- */
+
+  async function playCard(card, { send }) {
+    if (card.locked) {
+      return showToast("他チャンネルのメン限スタンプです");
     }
 
-    function readEmojiToken(element) {
-      if (!(element instanceof Element)) return null;
-
-      const img =
-        element.tagName === "IMG"
-          ? element
-          : element.querySelector?.("img[data-emoji-id]");
-
-      if (!img) return null;
-
-      const emojiId =
-        img.getAttribute("data-emoji-id") ||
-        img.dataset?.emojiId ||
-        null;
-
-      if (!emojiId) return null;
-
-      return {
-        type: "youtubeEmoji",
-        emojiId,
-        alt: img.getAttribute("alt") || "",
-        src: img.currentSrc || img.getAttribute("src") || "",
-        className: img.getAttribute("class") || "",
-        sharedTooltipText: img.getAttribute("shared-tooltip-text") || "",
-        ariaLabel: img.getAttribute("aria-label") || ""
-      };
-    }
-
-    function walk(current) {
-      if (current.nodeType === Node.TEXT_NODE) {
-        pushText(current.textContent || "");
-        return;
-      }
-
-      if (current.nodeType !== Node.ELEMENT_NODE) return;
-
-      const emoji = readEmojiToken(current);
-      if (emoji) {
-        tokens.push(emoji);
-        return;
-      }
-
-      if (current.tagName === "IMG") {
-        // Non-YouTube image: keep its textual fallback only.
-        pushText(current.getAttribute("alt") || "");
-        return;
-      }
-
-      if (current.tagName === "BR") {
-        pushText("\n");
-        return;
-      }
-
-      current.childNodes.forEach(walk);
-    }
-
-    node.childNodes.forEach(walk);
-
-    log("Collected preset tokens:", tokens);
-    return tokens;
-  }
-
-  function tokensToPlainText(tokens) {
-    return tokens.map(token => {
-      if (token.type === "text") return token.value;
-      if (token.type === "youtubeEmoji") return token.alt || "😀";
-      return "";
-    }).join("");
-  }
-
-  function shortLabel(tokens) {
-    const text = tokensToPlainText(tokens).replace(/\s+/g, " ").trim();
-    return text.length > 24 ? text.slice(0, 24) + "…" : (text || "絵文字プリセット");
-  }
-
-  function createEmojiNode(token, { preview = false } = {}) {
-    const img = document.createElement("img");
-
-    if (preview) {
-      img.className = "ytcp-preview-emoji";
-    } else {
-      // Match the markup YouTube itself puts into the chat editor.
-      img.className =
-        "emoji yt-formatted-string style-scope yt-live-chat-text-input-field-renderer";
-    }
-
-    if (token.src) img.setAttribute("src", token.src);
-    img.setAttribute("alt", token.alt || "");
-    img.setAttribute("data-emoji-id", token.emojiId || "");
-
-    return img;
-  }
-
-  function buildPresetHtml(tokens) {
-    const holder = document.createElement("div");
-
-    for (const token of tokens) {
-      if (token.type === "text") {
-        holder.appendChild(document.createTextNode(token.value || ""));
-      } else if (token.type === "youtubeEmoji") {
-        holder.appendChild(createEmojiNode(token));
-      }
-    }
-
-    return holder.innerHTML;
-  }
-
-  function placeCaretAtEnd(element) {
-    const range = document.createRange();
-    range.selectNodeContents(element);
-    range.collapse(false);
-
-    const selection = window.getSelection();
-    selection.removeAllRanges();
-    selection.addRange(range);
-  }
-
-  function fireInputEvents(input) {
-    // Keep this deliberately close to the common YouTube Live Chat technique:
-    // update the contenteditable DOM, then notify the renderer with InputEvent.
-    input.dispatchEvent(new InputEvent("input"));
-  }
-
-  function insertPreset(tokens) {
     const input = getChatInput();
-    if (!input) {
-      alert("チャット入力欄が見つかりませんでした。");
-      return false;
+    if (!input) return showToast("入力欄が見つかりません");
+
+    tokens.writeToInput(input, card.tokens || []);
+
+    const data = await store.read();
+    if (!data) return shutdown();
+    const stored = data.cards.find((c) => c.id === card.id);
+    if (stored) {
+      store.markUsed(stored);
+      await store.save(data);
     }
 
-    input.focus();
-
-    const html = buildPresetHtml(tokens);
-
-    // Set exactly the markup we want before YouTube observes the input event.
-    input.innerHTML = html;
-
-    log("HTML before InputEvent:", input.innerHTML);
-
-    placeCaretAtEnd(input);
-    fireInputEvents(input);
-
-    // Observe whether YouTube rewrites/sanitizes the editor DOM.
-    queueMicrotask(() => {
-      log("HTML after InputEvent (microtask):", input.innerHTML);
-    });
-
-    requestAnimationFrame(() => {
-      log("HTML after InputEvent (animation frame):", input.innerHTML);
-    });
-
-    return true;
+    if (send || data.settings.autoSend) submitChat();
   }
 
-  async function usePreset(preset) {
-    const ok = insertPreset(preset.tokens || []);
-    if (!ok) return;
-
-    const { settings } = await getStoredData();
-
-    if (settings.autoSend) {
-      const started = performance.now();
-
-      const trySend = () => {
-        const button = getSendButton();
-
-        if (button && !button.disabled &&
-            button.getAttribute("aria-disabled") !== "true") {
-          button.click();
-          return;
-        }
-
-        if (performance.now() - started < 800) {
-          setTimeout(trySend, 50);
-        } else {
-          log("Send button did not become available in time.");
-        }
-      };
-
-      setTimeout(trySend, 80);
-    }
+  // The renderer enables the button a beat after the input event lands.
+  function submitChat() {
+    const started = performance.now();
+    const attempt = () => {
+      const button = getSendButton();
+      if (button && !button.disabled && button.getAttribute("aria-disabled") !== "true") {
+        button.click();
+        return;
+      }
+      if (performance.now() - started < 800) setTimeout(attempt, 50);
+      else log("Send button never became available.");
+    };
+    setTimeout(attempt, 80);
   }
 
-  async function addCurrentInputPreset(scope) {
+  /* ---------- saving and editing ---------- */
+
+  async function saveCurrentInput() {
     const input = getChatInput();
     if (!input) return;
 
-    const tokens = collectTokens(input);
-    if (!tokens.length || !tokensToPlainText(tokens).trim()) {
-      alert("保存するコメントを入力してください。");
-      return;
+    const captured = tokens.collectTokens(input);
+    if (!tokens.hasSubstance(captured)) {
+      return showToast("保存する内容を入力してください");
     }
 
-    const channelId = getChannelId();
-    if (scope === "channel" && !channelId) {
-      alert("チャンネルIDを取得できませんでした。グローバル保存を使ってください。");
-      return;
+    const data = await store.read();
+    if (!data) return shutdown();
+    const channel = getChannel();
+
+    if (editingId) {
+      const editing = data.cards.find((c) => c.id === editingId);
+      editingId = null;
+      if (editing) {
+        editing.tokens = captured;
+        await store.save(data);
+        clearInput(input);
+        showToast("札を更新しました");
+        return render();
+      }
     }
 
-    const name = prompt("プリセット名（空欄なら自動）", shortLabel(tokens));
-    if (name === null) return;
-
-    const { presets } = await getStoredData();
-
-    const preset = {
+    const card = {
       id: crypto.randomUUID(),
-      name: name.trim() || shortLabel(tokens),
-      tokens,
-      createdAt: Date.now()
+      tokens: captured,
+      createdAt: Date.now(),
+      uses: 0,
+      heat: 0,
+      lastUsedAt: 0
     };
 
-    if (scope === "global") {
-      presets.global ||= [];
-      presets.global.push(preset);
+    const duplicate = findDuplicate(data, channel?.id, captured);
+    if (duplicate?.exact) {
+      clearInput(input);
+      if (duplicate.inDeck) {
+        showToast("同じ札がこのデッキにもうあります");
+        return flashCard(duplicate.card.id);
+      }
+      if (!channel?.id) {
+        showToast("同じ札がプールにもうあります");
+        return flashCard(duplicate.card.id);
+      }
+      // It exists in the pool already — draw it rather than make a second one.
+      store.addToDeck(data, channel.id, duplicate.card.id);
+      await store.save(data);
+      showToast("プールにあった同じ札をデッキに入れました");
+      render();
+      return flashCard(duplicate.card.id);
+    }
+
+    // Saving puts the card in the pool and, when we know the channel, straight
+    // into its deck — one action, not two.
+    data.cards.push(card);
+    if (channel?.id) {
+      store.addToDeck(data, channel.id, card.id);
+      rememberChannel(data, channel);
+    }
+
+    await store.save(data);
+    await store.writeChannelMeta(data.channelMeta);
+
+    clearInput(input);
+
+    const saved = channel?.id ? "デッキに入れました" : "プールに保存しました";
+    if (duplicate) {
+      // Same reaction, different wording — probably redundant, but only the
+      // user can say for sure, so keep it and make undoing it one click.
+      showToast(`${saved}（似た札がすでにあります）`, {
+        actionLabel: "取り消す",
+        onAction: () => deleteCard(card, { silent: true })
+      });
     } else {
-      presets.channels ||= {};
-      presets.channels[channelId] ||= [];
-      presets.channels[channelId].push(preset);
+      showToast(saved);
     }
-
-    await savePresets(presets);
-    await render();
+    render();
   }
 
-  async function removePreset(scope, presetId) {
-    const channelId = getChannelId();
-    const { presets } = await getStoredData();
+  // Search the whole pool, not just this deck: an identical card you saved on
+  // another channel should be drawn from the pool rather than made again.
+  function findDuplicate(data, channelId, captured) {
+    const key = tokens.cardKey(captured);
+    const sig = trending.signature(captured);
 
-    if (scope === "global") {
-      presets.global = (presets.global || []).filter(x => x.id !== presetId);
-    } else if (channelId) {
-      presets.channels ||= {};
-      presets.channels[channelId] = (presets.channels[channelId] || [])
-        .filter(x => x.id !== presetId);
-    }
-
-    await savePresets(presets);
-    await render();
-  }
-
-  function buildPresetButton(preset, scope) {
-    const wrap = document.createElement("div");
-    wrap.className = "ytcp-preset-wrap";
-
-    const button = document.createElement("button");
-    button.className = "ytcp-preset";
-    button.type = "button";
-    button.title = preset.name;
-    button.addEventListener("click", () => usePreset(preset));
-
-    for (const token of preset.tokens || []) {
-      if (token.type === "text") {
-        const span = document.createElement("span");
-        span.textContent = token.value || "";
-        button.appendChild(span);
-      } else if (token.type === "youtubeEmoji") {
-        const img = createEmojiNode(token, { preview: true });
-        button.appendChild(img);
+    let similar = null;
+    for (const card of data.cards) {
+      if (tokens.cardKey(card.tokens) === key) {
+        return { card, exact: true, inDeck: store.inDeck(data, channelId, card.id) };
+      }
+      if (!similar && trending.signature(card.tokens || []) === sig) {
+        similar = { card, exact: false };
       }
     }
+    return similar;
+  }
 
-    const remove = document.createElement("button");
-    remove.type = "button";
-    remove.className = "ytcp-remove";
-    remove.textContent = "×";
-    remove.title = "削除";
-    remove.addEventListener("click", async (event) => {
-      event.stopPropagation();
-      if (confirm(`「${preset.name}」を削除しますか？`)) {
-        await removePreset(scope, preset.id);
+  function flashCard(id) {
+    flashId = id;
+    render();
+    setTimeout(() => {
+      if (flashId !== id) return;
+      flashId = null;
+      render();
+    }, 1600);
+  }
+
+  function clearInput(input) {
+    input.innerHTML = "";
+    input.dispatchEvent(new InputEvent("input", { bubbles: true, composed: true }));
+  }
+
+  function rememberChannel(data, channel) {
+    const existing = data.channelMeta[channel.id] || {};
+    data.channelMeta[channel.id] = {
+      hue: existing.hue ?? store.defaultHue(channel.id),
+      name: channel.name || existing.name || ""
+    };
+  }
+
+  function beginEdit(card) {
+    const input = getChatInput();
+    if (!input) return;
+    editingId = card.id;
+    tokens.writeToInput(input, card.tokens || [], { replace: true });
+    showToast("直したら「更新」を押してください");
+    render();
+  }
+
+  async function removeFromDeck(card) {
+    const channelId = getChannel()?.id;
+    if (!channelId) return;
+
+    const data = await store.read();
+    if (!data) return shutdown();
+
+    const at = store.removeFromDeck(data, channelId, card.id);
+    if (at < 0) return;
+
+    await store.save(data);
+    render();
+
+    // The card is still in the pool — say so, or this reads as a delete.
+    showToast("デッキから外しました（プールに残っています）", {
+      actionLabel: "元に戻す",
+      onAction: async () => {
+        const fresh = await store.read();
+        if (!fresh) return shutdown();
+        const list = (fresh.decks[channelId] ||= []);
+        list.splice(Math.min(at, list.length), 0, card.id);
+        await store.save(fresh);
+        render();
       }
     });
-
-    wrap.append(button, remove);
-    return wrap;
   }
 
-  function buildSection(title, presets, scope, canSave) {
-    const section = document.createElement("section");
-    section.className = "ytcp-section";
+  async function addToDeck(card) {
+    const channelId = getChannel()?.id;
+    if (!channelId) return showToast("チャンネルが分かりません");
 
-    const header = document.createElement("div");
-    header.className = "ytcp-section-header";
+    const data = await store.read();
+    if (!data) return shutdown();
+    if (!store.addToDeck(data, channelId, card.id)) return;
 
-    const titleEl = document.createElement("div");
-    titleEl.className = "ytcp-section-title";
-    titleEl.textContent = title;
+    await store.save(data);
+    render();
+  }
 
-    header.appendChild(titleEl);
+  /* ---------- arranging by hand ---------- */
 
-    if (canSave) {
-      const save = document.createElement("button");
-      save.type = "button";
-      save.className = "ytcp-save";
-      save.textContent = "＋ 現在の入力を保存";
-      save.addEventListener("click", () => addCurrentInputPreset(scope));
-      header.appendChild(save);
-    }
+  // Only in manual mode: every other order is computed, so a drag would be
+  // undone by the next render.
+  const canArrange = () => settingsCache.sortBy === "manual";
 
-    const list = document.createElement("div");
-    list.className = "ytcp-list";
+  function wireCardDrag(el, card) {
+    el.draggable = true;
+    el.dataset.arrangeable = "true";
 
-    if (!presets.length) {
-      const empty = document.createElement("div");
-      empty.className = "ytcp-empty";
-      empty.textContent = "まだプリセットがありません";
-      list.appendChild(empty);
-    } else {
-      for (const preset of presets) {
-        list.appendChild(buildPresetButton(preset, scope));
+    el.addEventListener("dragstart", (event) => {
+      drag = card;
+      el.dataset.dragging = "true";
+      event.dataTransfer.effectAllowed = "move";
+      event.dataTransfer.setData("text/plain", card.id);
+    });
+
+    el.addEventListener("dragend", () => {
+      drag = null;
+      delete el.dataset.dragging;
+      for (const node of rootEl?.querySelectorAll("[data-drop]") || []) delete node.dataset.drop;
+    });
+
+    el.addEventListener("dragover", (event) => {
+      if (!drag || drag.id === card.id) return;
+      event.preventDefault();
+      event.dataTransfer.dropEffect = "move";
+      const box = el.getBoundingClientRect();
+      el.dataset.drop = event.clientX < box.left + box.width / 2 ? "before" : "after";
+    });
+
+    el.addEventListener("dragleave", () => delete el.dataset.drop);
+
+    el.addEventListener("drop", (event) => {
+      if (!drag) return;
+      event.preventDefault();
+      const side = el.dataset.drop || "before";
+      delete el.dataset.drop;
+      arrange(drag, card, side);
+    });
+  }
+
+  async function arrange(moved, target, side) {
+    const channelId = getChannel()?.id;
+    const data = await store.read();
+    if (!data) return shutdown();
+    if (!store.reorderDeck(data, channelId, moved.id, target.id, side)) return;
+    await store.save(data);
+    render();
+  }
+
+  function buildTools(card) {
+    const tools = document.createElement("div");
+    tools.className = "od-card-tools";
+    const back = () => cardPeek(card);
+    tools.append(
+      // Two different removals: out of this deck, or out of the pool for good.
+      iconButton("eject", "デッキから外す（プールには残る）", (event) => {
+        event.stopPropagation();
+        removeFromDeck(card);
+      }, back),
+      iconButton("edit", "この札を編集", (event) => { event.stopPropagation(); beginEdit(card); }, back),
+      iconButton("delete", "プールから削除", (event) => { event.stopPropagation(); deleteCard(card); }, back)
+    );
+    return tools;
+  }
+
+  async function deleteCard(card, { silent = false } = {}) {
+    const data = await store.read();
+    if (!data) return shutdown();
+
+    const index = data.cards.findIndex((c) => c.id === card.id);
+    if (index < 0) return;
+
+    const [removed] = data.cards.splice(index, 1);
+    await store.save(data);
+    render();
+
+    if (silent) return; // the caller already explained what happened
+
+    // Undo instead of a blocking confirm() — the whole page freezes on those.
+    showToast("札を削除しました", {
+      actionLabel: "元に戻す",
+      onAction: async () => {
+        const fresh = await store.read();
+        if (!fresh) return shutdown();
+        fresh.cards.splice(Math.min(index, fresh.cards.length), 0, removed);
+        await store.save(fresh);
+        render();
       }
+    });
+  }
+
+  /* ---------- rendering ---------- */
+
+  // What the bar should say while this card is under the pointer. A native
+  // tooltip would float over the chat; the bar is space we already occupy.
+  function cardPeek(card) {
+    if (card.locked) {
+      return { text: "別チャンネルのメン限スタンプ — この配信では送れません", warning: true };
+    }
+    const text = tokens.toPlainText(card.tokens || []).trim();
+    const stamps = (card.tokens || []).filter((t) => t.type === "youtubeEmoji").length;
+    const body = text || (stamps ? `スタンプ ${stamps}個` : "");
+    return { text: card.hits > 0 ? `${body}  ・ いまチャットで${card.hits}回` : body };
+  }
+
+  function trackPeek(el, card) {
+    el.addEventListener("pointerenter", () => setPeek(cardPeek(card)));
+    el.addEventListener("pointerleave", () => setPeek(null));
+  }
+
+  // Native tooltips float over the chat wherever they are attached, so nothing
+  // in this UI gets a `title`. The name goes to assistive tech, and the same
+  // text shows in our own bar on hover.
+  function describe(el, text, options = {}) {
+    el.setAttribute("aria-label", text);
+    // pointerenter/leave do not bubble, so entering a control inside a card
+    // leaves the card's own peek alone; restore() puts it back on the way out.
+    el.addEventListener("pointerenter", () => setPeek({ text, warning: options.warning }));
+    el.addEventListener("pointerleave", () =>
+      setPeek(options.restore ? options.restore() : null));
+    return el;
+  }
+
+  function cardBody(card, size) {
+    const body = document.createElement("div");
+    body.className = "od-card-body";
+    body.appendChild(tokens.toFragment(card.tokens || [], { preview: true }));
+
+    // Long text shrinks a step and fades out rather than overflowing.
+    const length = tokens.toPlainText(card.tokens || []).trim().length;
+    const budget = size === "small" ? 6 : size === "medium" ? 9 : 12;
+    if (length > budget * 3) body.dataset.length = "long";
+    else if (length > budget) body.dataset.length = "medium";
+    return { body, truncated: length > budget * 3 };
+  }
+
+  function buildCard(card, { size, hue }) {
+    const el = document.createElement("div");
+    el.className = "od-card";
+    el.dataset.size = size;
+    if (hue != null) el.style.setProperty("--od-scope-hue", hue);
+    if (card.id === editingId) el.dataset.editing = "true";
+    if (card.locked) el.dataset.locked = "true";
+    if (card.hits > 0) el.dataset.trending = "true";
+    if (card.id === flashId) el.dataset.flash = "true";
+
+    const { body } = cardBody(card, size);
+
+    const play = document.createElement("button");
+    play.type = "button";
+    play.className = "od-card-play";
+    play.addEventListener("click", (event) =>
+      poolOpen ? addToDeck(card) : playCard(card, { send: event.shiftKey }));
+    play.appendChild(body);
+    el.appendChild(play);
+    trackPeek(el, card);
+    if (canArrange() && !poolOpen) wireCardDrag(el, card);
+
+    if (!poolOpen) el.appendChild(buildTools(card));
+    return el;
+  }
+
+  const ICONS = {
+    chevron: "M6 9l6 6 6-6",
+    close: "M6 6l12 12M18 6L6 18",
+    edit: "M4 20h4L19 9l-4-4L4 16v4z",
+    delete: "M5 7h14M6 7l1 13h10l1-13M9 7V4h6v3",
+    eject: "M12 4l7 8H5l7-8M5 19h14",
+    deck: null,
+    plus: "M12 5v14M5 12h14"
+  };
+
+  function iconButton(name, label, onClick, restore) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "od-icon-button";
+    describe(button, label, { restore });
+    button.appendChild(svgIcon(name));
+    button.addEventListener("click", onClick);
+    return button;
+  }
+
+  function svgIcon(name) {
+    const NS = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("fill", "none");
+    svg.setAttribute("stroke", "currentColor");
+    svg.setAttribute("stroke-width", "2");
+    svg.setAttribute("stroke-linecap", "round");
+    svg.setAttribute("stroke-linejoin", "round");
+
+    if (name === "deck") {
+      for (const x of [3, 14]) {
+        const rect = document.createElementNS(NS, "rect");
+        rect.setAttribute("x", x);
+        rect.setAttribute("y", "4");
+        rect.setAttribute("width", "7");
+        rect.setAttribute("height", "16");
+        rect.setAttribute("rx", "1.5");
+        svg.appendChild(rect);
+      }
+      return svg;
     }
 
-    section.append(header, list);
-    return section;
+    const path = document.createElementNS(NS, "path");
+    path.setAttribute("d", ICONS[name]);
+    svg.appendChild(path);
+    return svg;
+  }
+
+  function renderHand(container, deck, settings, hue) {
+    const width = container.clientWidth || 400;
+    const size = settings.cardSize;
+    const cardWidth = layout.CARD_SIZE[size] || layout.CARD_SIZE.small;
+    // Leave room for a scrollbar: when the deck overflows, the gutter eats
+    // into the row and the last card would push a horizontal bar into view.
+    const perRow = layout.cardsPerRow(width - PANEL_PADDING - SCROLLBAR_GUTTER, cardWidth);
+    const visibleRows = Math.min(MAX_ROWS_CAP, Math.max(1, settings.rows));
+
+    // Lay out every card. The row setting caps how many rows are *shown*, not
+    // how many exist — cards past the cap used to be unreachable.
+    const allRows = Math.max(1, Math.ceil(deck.length / perRow));
+    const { rows } = layout.splitRows(deck.length, perRow, allRows);
+
+    const hand = document.createElement("div");
+    hand.className = "od-hand";
+    hand.style.setProperty("--od-visible-rows", visibleRows);
+    if (expanded) hand.dataset.expanded = "true";
+    // Only cap and scroll when there is genuinely more than fits; otherwise a
+    // hovered card would be clipped by an overflow container it never needed.
+    else if (rows.length > visibleRows) hand.dataset.scrollable = "true";
+
+    let cursor = 0;
+    for (const rowLength of rows) {
+      const row = document.createElement("div");
+      row.className = "od-row";
+
+      for (let i = 0; i < rowLength; i++) {
+        const card = deck[cursor++];
+        const el = buildCard(card, { size, hue });
+        const { rot, lift } = layout.tilt(i, rowLength);
+        el.style.setProperty("--od-rot", `${rot.toFixed(2)}deg`);
+        el.style.setProperty("--od-lift", `${lift.toFixed(2)}px`);
+        if (i > 0) el.style.setProperty("--od-overlap", `-${layout.OVERLAP}px`);
+        row.appendChild(el);
+      }
+      hand.appendChild(row);
+    }
+
+    container.appendChild(hand);
+    return Math.max(0, deck.length - perRow * visibleRows);
+  }
+
+  function renderList(container, deck, settings, hue) {
+    const list = document.createElement("div");
+    list.className = "od-list";
+    if (expanded) list.dataset.expanded = "true";
+    else if (deck.length > LIST_VISIBLE) list.dataset.scrollable = "true";
+
+    for (const card of deck) {
+      const el = document.createElement("div");
+      el.className = "od-listcard";
+      if (hue != null) el.style.setProperty("--od-scope-hue", hue);
+      if (card.id === editingId) el.dataset.editing = "true";
+      if (card.locked) el.dataset.locked = "true";
+      if (card.hits > 0) el.dataset.trending = "true";
+      if (card.id === flashId) el.dataset.flash = "true";
+
+      const play = document.createElement("button");
+      play.type = "button";
+      play.className = "od-listcard-play";
+      play.appendChild(tokens.toFragment(card.tokens || [], { preview: true }));
+      play.addEventListener("click", (event) =>
+        poolOpen ? addToDeck(card) : playCard(card, { send: event.shiftKey }));
+
+      el.appendChild(play);
+      if (!poolOpen) el.appendChild(buildTools(card));
+      trackPeek(el, card);
+      if (canArrange() && !poolOpen) wireCardDrag(el, card);
+      list.appendChild(el);
+    }
+
+    container.appendChild(list);
+    return Math.max(0, deck.length - LIST_VISIBLE);
+  }
+
+  // The bar has two states. Idle it identifies the deck; the moment there is
+  // something worth keeping it becomes the destination picker, so choosing
+  // where a card goes is one click on a labelled button — never a guess
+  // followed by a correction.
+  function buildBar(channel, hue, count) {
+    const bar = document.createElement("div");
+    bar.className = "od-bar";
+    // Everything that would otherwise float over the chat lives here instead.
+    if (notice) bar.append(noticeRow(notice));
+    else if (poolOpen) bar.append(poolBar(count));
+    else if (peek) bar.append(peekReadout(peek));
+    else bar.append(inputHasContent ? saveTargets(channel) : deckIdentity(channel, hue, count));
+
+    if (poolOpen) {
+      bar.appendChild(buildAction("close", "閉じる", "プールを閉じる", () => {
+        poolOpen = false;
+        render();
+      }));
+    } else {
+      bar.appendChild(buildAction("deck", "編成", "デッキ編成をひらく", () => openOptions()));
+    }
+    return bar;
+  }
+
+  function noticeRow({ message, actionLabel, onAction }) {
+    const row = document.createElement("div");
+    row.className = "od-notice";
+
+    const text = document.createElement("span");
+    text.className = "od-notice-text";
+    text.textContent = message;
+    row.appendChild(text);
+
+    if (actionLabel) {
+      const action = document.createElement("button");
+      action.type = "button";
+      action.className = "od-notice-action";
+      action.textContent = actionLabel;
+      action.addEventListener("click", () => {
+        const run = onAction;
+        clearNotice();
+        run?.();
+      });
+      row.appendChild(action);
+    }
+    return row;
+  }
+
+  function peekReadout({ text, warning }) {
+    const readout = document.createElement("div");
+    readout.className = "od-peek";
+    if (warning) readout.dataset.warning = "true";
+    readout.textContent = text;
+    return readout;
+  }
+
+  function setPeek(next) {
+    const changed = (peek?.text || null) !== (next?.text || null);
+    peek = next;
+    if (changed && !notice) refreshBar();
+  }
+
+  function poolBar(poolCount) {
+    const group = document.createElement("div");
+    group.className = "od-bar-identity";
+
+    const label = document.createElement("span");
+    label.className = "od-save-label";
+    label.textContent = "プールから追加";
+
+    const total = document.createElement("span");
+    total.className = "od-count";
+    total.textContent = `${poolCount}枚`;
+
+    group.append(label, total);
+    return group;
+  }
+
+  function deckIdentity(channel, hue, count) {
+    const group = document.createElement("div");
+    group.className = "od-bar-identity";
+
+    if (channel?.id) {
+      const dot = document.createElement("span");
+      dot.className = "od-dot";
+      dot.style.setProperty("--od-scope-hue", hue);
+      const name = document.createElement("span");
+      name.className = "od-channel";
+      name.textContent = channel.name || "このチャンネル";
+      const plus = document.createElement("span");
+      plus.className = "od-plus-sign";
+      plus.textContent = "＋";
+      group.append(dot, name, plus);
+    }
+
+    const commonDot = document.createElement("span");
+    commonDot.className = "od-dot od-dot-common";
+    const commonLabel = document.createElement("span");
+    commonLabel.className = "od-common";
+    commonLabel.textContent = "共通";
+
+    const total = document.createElement("span");
+    total.className = "od-count";
+    total.textContent = `${count}枚`;
+
+    group.append(commonDot, commonLabel, total);
+    return group;
+  }
+
+  function saveTargets(channel) {
+    const group = document.createElement("div");
+    group.className = "od-bar-save";
+
+    if (editingId) {
+      const label = document.createElement("span");
+      label.className = "od-save-label";
+      label.textContent = "編集中";
+
+      const update = buildAction("plus", "更新", "編集中の札を更新", () => saveCurrentInput());
+      update.dataset.primary = "true";
+
+      const cancel = buildAction("close", "やめる", "編集をやめる", () => {
+        editingId = null;
+        const input = getChatInput();
+        if (input) clearInput(input);
+        render();
+      });
+
+      group.append(label, update, cancel);
+      return group;
+    }
+
+    const save = buildAction(
+      "plus",
+      channel?.id ? "デッキに入れる" : "プールに保存",
+      channel?.id ? "プールに入れて、このデッキにも入れます" : "プールに保存します",
+      () => saveCurrentInput()
+    );
+    save.dataset.primary = "true";
+    group.appendChild(save);
+    return group;
+  }
+
+  function buildAction(icon, text, title, onClick) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "od-text-button";
+    button.setAttribute("aria-label", title);
+    button.appendChild(svgIcon(icon));
+    const label = document.createElement("span");
+    label.textContent = text;
+    button.appendChild(label);
+    button.addEventListener("click", onClick);
+    return button;
+  }
+
+  // Cheap enough to run on every keystroke: the editor holds one comment.
+  function readInput(input) {
+    currentTokens = input ? tokens.collectTokens(input) : [];
+    return tokens.hasSubstance(currentTokens);
+  }
+
+  function watchInput(input) {
+    if (watchedInput === input) return;
+    watchedInput = input;
+
+    function onEditorChanged() {
+      const filled = readInput(input);
+
+      // Emptying the editor means you are no longer editing anything. Without
+      // this the flag survives with no visible way to clear it.
+      if (!filled && editingId) {
+        editingId = null;
+        inputHasContent = false;
+        return render();
+      }
+
+      if (filled === inputHasContent) return; // only the transition moves the bar
+      inputHasContent = filled;
+      refreshBar();
+    }
+
+    input.addEventListener("input", onEditorChanged);
+
+    // Typing fires "input"; picking an emoji does not. YouTube's picker writes
+    // the <img> into the editor directly, so watching the DOM is the only way
+    // to notice a comment that is nothing but stamps.
+    inputObserver?.disconnect();
+    inputObserver = new MutationObserver(onEditorChanged);
+    inputObserver.observe(input, { childList: true, subtree: true, characterData: true });
+
+    input.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape" || !editingId) return;
+      event.stopPropagation();
+      editingId = null;
+      clearInput(input);
+      render();
+      showToast("編集をやめました");
+    });
+  }
+
+  function refreshBar() {
+    if (!barEl?.isConnected || !barContext) return;
+    const next = buildBar(barContext.channel, barContext.hue, barContext.count);
+    barEl.replaceWith(next);
+    barEl = next;
+  }
+
+  function mount(input) {
+    const panel =
+      input.closest("yt-live-chat-message-input-renderer") ||
+      document.querySelector("yt-live-chat-message-input-renderer");
+    const host = document.querySelector("#input-panel") || panel || input.parentElement;
+    if (!host) return null;
+
+    const el = document.createElement("div");
+    el.id = "oshideck-root";
+    host.appendChild(el);
+    lastWidth = 0;
+
+    // Cards must not shuffle out from under the pointer mid-stream. Hold any
+    // reorder until the pointer leaves; deliberate actions still render.
+    el.addEventListener("pointerenter", () => { frozen = true; });
+    el.addEventListener("pointerleave", () => {
+      frozen = false;
+      if (pendingRender) { pendingRender = false; scheduleRender(); }
+    });
+
+    // The fan re-lays out on width, so watch the panel rather than the window:
+    // the popped-out chat and the sidebar are different widths. Only width
+    // matters — reacting to height would loop, since rendering changes it.
+    resizeObserver?.disconnect();
+    resizeObserver = new ResizeObserver(([entry]) => {
+      const width = Math.round(entry.contentRect.width);
+      if (width === lastWidth) return;
+      lastWidth = width;
+      scheduleRender();
+    });
+    resizeObserver.observe(el);
+
+    return el;
   }
 
   async function render() {
+    if (stopped) return;
+    if (!store.alive()) return shutdown();
+
     const input = getChatInput();
     if (!input) return;
-
     currentInput = input;
 
     if (!rootEl || !rootEl.isConnected) {
-      rootEl = document.createElement("div");
-      rootEl.id = "ytcp-root";
+      rootEl = mount(input);
+      if (!rootEl) return log("Chat input found, but no place to mount.");
+      log("Mounted.");
+    }
 
-      const messageInput =
-        input.closest("yt-live-chat-message-input-renderer") ||
-        document.querySelector("yt-live-chat-message-input-renderer");
+    const data = await store.read();
+    if (!data) return shutdown();
+    settingsCache = data.settings;
+    watcher.start(); // no-op once attached; retries while chat is still loading
 
-      const inputPanel =
-        document.querySelector("#input-panel") ||
-        messageInput ||
-        input.parentElement;
+    const channel = getChannel();
+    const hue = channel?.id
+      ? data.channelMeta[channel.id]?.hue ?? store.defaultHue(channel.id)
+      : null;
+    const deck = buildDeck(data, channel?.id);
 
-      if (!inputPanel) {
-        log("Input found, but insertion container was not found.");
+    watchInput(input);
+    inputHasContent = readInput(input);
+
+    const pool = channel?.id ? markLocked(store.poolFor(data, channel.id), channel.id) : [];
+
+    keepChatPinned(() => {
+      rootEl.replaceChildren();
+      rootEl.dataset.mode = data.settings.mode;
+      rootEl.dataset.pool = String(poolOpen);
+
+      const shown = poolOpen ? pool : deck;
+      barContext = { channel, hue, count: shown.length };
+      barEl = buildBar(channel, hue, shown.length);
+      rootEl.appendChild(barEl);
+
+      if (!shown.length) {
+        const empty = document.createElement("div");
+        empty.className = "od-empty";
+        empty.textContent = poolOpen
+          ? "プールに追加できる札がありません"
+          : "コメントを入力して保存すると札になります";
+        rootEl.appendChild(empty);
+        if (!poolOpen) appendPoolToggle(pool.length);
         return;
       }
 
-      inputPanel.appendChild(rootEl);
-      log("Preset UI mounted.", { input, inputPanel });
+      const hidden =
+        data.settings.mode === "list"
+          ? renderList(rootEl, shown, data.settings, hue)
+          : renderHand(rootEl, shown, data.settings, hue);
+
+      if (hidden > 0 || expanded) {
+        const more = document.createElement("button");
+        more.type = "button";
+        more.className = "od-more";
+        more.dataset.expanded = String(expanded);
+        more.setAttribute("aria-label", expanded ? "たたむ" : "残りの札を出す");
+        more.append(svgIcon("chevron"));
+
+        const label = document.createElement("span");
+        label.textContent = expanded ? "たたむ" : `あと${hidden}枚`;
+        more.appendChild(label);
+
+        more.addEventListener("click", () => { expanded = !expanded; render(); });
+        rootEl.appendChild(more);
+      }
+
+      if (!poolOpen) appendPoolToggle(pool.length);
+    });
+  }
+
+  // Nothing joins a deck on its own, so there has to be a way in from here.
+  function appendPoolToggle(poolCount) {
+    if (!poolCount) return;
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "od-more";
+    button.append(svgIcon("plus"));
+    const label = document.createElement("span");
+    label.textContent = `プールから追加（${poolCount}枚）`;
+    button.appendChild(label);
+    button.setAttribute("aria-label", "プールから札を追加する");
+    button.addEventListener("click", () => { poolOpen = true; render(); });
+    rootEl.appendChild(button);
+  }
+
+  // Once the context is gone nothing can be read, written or re-rendered.
+  // Tear down rather than throwing on every chat message, and say why the
+  // deck vanished — the page has to be reloaded to get it back.
+  let stopped = false;
+
+  function shutdown() {
+    if (stopped) return;
+    stopped = true;
+
+    observer.disconnect();
+    resizeObserver?.disconnect();
+    inputObserver?.disconnect();
+    watcher.stop();
+    clearTimeout(refreshTimer);
+    clearTimeout(noticeTimer);
+
+    if (rootEl?.isConnected) {
+      rootEl.replaceChildren();
+      const notice = document.createElement("div");
+      notice.className = "od-empty";
+      notice.textContent = "OshiDeck を更新しました。ページを再読み込みしてください";
+      rootEl.appendChild(notice);
     }
-
-    const channelId = getChannelId();
-    const { presets, settings } = await getStoredData();
-
-    const globalPresets = presets.global || [];
-    const channelPresets =
-      channelId && presets.channels?.[channelId]
-        ? presets.channels[channelId]
-        : [];
-
-    rootEl.replaceChildren();
-
-    const topbar = document.createElement("div");
-    topbar.className = "ytcp-topbar";
-
-    const title = document.createElement("div");
-    title.className = "ytcp-title";
-    title.textContent = "チャットプリセット";
-
-    const status = document.createElement("div");
-    status.className = "ytcp-status";
-    status.textContent = settings.autoSend
-      ? "クリックで送信"
-      : "クリックで入力";
-
-    const optionsLink = document.createElement("button");
-    optionsLink.type = "button";
-    optionsLink.className = "ytcp-options";
-    optionsLink.textContent = "設定";
-    optionsLink.addEventListener("click", () => chrome.runtime.openOptionsPage());
-
-    topbar.append(title, status, optionsLink);
-    rootEl.appendChild(topbar);
-
-    rootEl.appendChild(buildSection("共通", globalPresets, "global", true));
-
-    const channelTitle = channelId
-      ? `このチャンネル`
-      : "このチャンネル（ID取得待ち）";
-
-    rootEl.appendChild(
-      buildSection(channelTitle, channelPresets, "channel", !!channelId)
-    );
+    log("Stopped: extension context invalidated.");
   }
 
   function scheduleRender() {
+    if (stopped) return;
+    if (frozen) { pendingRender = true; return; }
     clearTimeout(refreshTimer);
-    refreshTimer = setTimeout(render, 250);
+    refreshTimer = setTimeout(render, 200);
   }
 
+  /* ---------- wiring ---------- */
+
+  // Live chat mutates constantly, so keep the hot path to one cheap lookup.
   const observer = new MutationObserver(() => {
     const input = getChatInput();
-    if (input && (input !== currentInput || !rootEl?.isConnected)) {
-      scheduleRender();
-    }
+    if (input && (input !== currentInput || !rootEl?.isConnected)) scheduleRender();
   });
+  observer.observe(document.documentElement, { childList: true, subtree: true });
 
-  observer.observe(document.documentElement, {
-    childList: true,
-    subtree: true
-  });
-
-  chrome.storage.onChanged.addListener((changes, area) => {
-    if (area === "local" &&
-        (changes[STORAGE_KEYS.SETTINGS] || changes[STORAGE_KEYS.PRESETS])) {
-      scheduleRender();
-    }
-  });
+  try {
+    chrome.storage.onChanged.addListener((changes, area) => {
+      if (area !== "local") return;
+        if (changes[store.KEYS.SETTINGS] || changes[store.KEYS.CARDS]) scheduleRender();
+    });
+  } catch (_) {
+    shutdown();
+  }
 
   window.addEventListener("yt-navigate-finish", scheduleRender);
   window.addEventListener("load", scheduleRender);
 
-  log("Content script loaded.", location.href);
+  log("Loaded.", location.href);
   scheduleRender();
 })();

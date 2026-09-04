@@ -8,22 +8,148 @@
 </head>
 <body>
   <main>
-    <h1>OshiDeck</h1>
+    <header>
+      <h1>OshiDeck</h1>
+      <p class="lede">保存した札の確認と、チャット横での見え方の設定。</p>
+    </header>
+
+    <section class="card decks">
+      <div class="decks-head">
+        <h2>デッキ</h2>
+        <span id="deckTotal" class="muted"></span>
+      </div>
+
+      <div class="browser">
+        <nav id="deckList" class="deck-list" aria-label="デッキ一覧"></nav>
+        <div class="deck-main">
+          <div id="deckHeader" class="deck-header"></div>
+          <label class="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path>
+            </svg>
+            <input id="deckSearch" type="search" placeholder="中身で絞り込む" autocomplete="off">
+          </label>
+          <div id="deckCards" class="deck-cards"></div>
+          <p id="deckHint" class="muted deck-hint"></p>
+        </div>
+      </div>
+    </section>
 
     <section class="card">
-      <h2>送信設定</h2>
+      <h2>表示モード</h2>
+
+      <div class="modes">
+        <label class="mode">
+          <input type="radio" name="mode" value="hand" checked>
+          <span class="mode-body">
+            <span class="thumb thumb-hand" aria-hidden="true">
+              <span class="thumb-row"><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i></span>
+              <span class="thumb-row"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            </span>
+            <strong>手札</strong>
+            <small>札が扇状に並びます。幅に合わせて1行の枚数が増減。</small>
+          </span>
+        </label>
+
+        <label class="mode">
+          <input type="radio" name="mode" value="list">
+          <span class="mode-body">
+            <span class="thumb thumb-list" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </span>
+            <strong>リスト</strong>
+            <small>1行1枚。幅が広いほど欄が増え、中身を長く読めます。</small>
+          </span>
+        </label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>手札の並べ方</h2>
+
+      <div class="row">
+        <div class="row-label">
+          <strong>札の大きさ</strong>
+          <small>小さいほど枚数が増え、長い札は途中で薄くなります。</small>
+        </div>
+        <div class="segmented" data-setting="cardSize">
+          <button type="button" value="large">大</button>
+          <button type="button" value="medium">中</button>
+          <button type="button" value="small">小</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-label">
+          <strong>行数</strong>
+          <small><span id="capacity">小 × 2行 = 最大14枚</span>。あふれた札は編成でしか出てきません。</small>
+        </div>
+        <div class="segmented" data-setting="rows">
+          <button type="button" value="1">1行</button>
+          <button type="button" value="2">2行</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-label">
+          <strong>並び順</strong>
+          <small id="sortNote">「最近よく使う順」は、古い使用ほど軽く数えます（半減期1週間）。</small>
+        </div>
+        <div class="segmented segmented-wide" data-setting="sortBy">
+          <button type="button" value="trend">チャット連動</button>
+          <button type="button" value="heat">最近よく使う順</button>
+          <button type="button" value="uses">使った回数順</button>
+          <button type="button" value="manual">自分で並べた順</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>送信</h2>
       <label class="switch-row">
         <input id="autoSend" type="checkbox">
         <span>
-          <strong>プリセットをクリックしたら自動送信する</strong>
-          <small>オフの場合はチャット入力欄に挿入するだけです。</small>
+          <strong>札をクリックしたら自動で送信する</strong>
+          <small>オフなら入力欄に入れるだけです。オフのままでも <kbd>⇧</kbd> ＋ クリックでその場から送信できます。</small>
         </span>
       </label>
+    </section>
+
+    <section class="card">
+      <h2>バックアップ</h2>
+
+      <div class="row">
+        <div class="row-label">
+          <strong>書き出す</strong>
+          <small>プール・デッキ・チャンネル設定・表示設定をまとめてJSONにします。</small>
+        </div>
+        <button id="exportBtn" type="button" class="action">ファイルに保存</button>
+      </div>
+
+      <div class="row">
+        <div class="row-label">
+          <strong>読み込む</strong>
+          <small id="importNote">同じ内容の札は重複しません。同じファイルを2回読んでも増えません。</small>
+        </div>
+        <div class="segmented" data-choice="importMode">
+          <button type="button" value="merge">追加</button>
+          <button type="button" value="replace">全部置き換え</button>
+        </div>
+        <button id="importBtn" type="button" class="action">ファイルを選ぶ</button>
+        <input id="importFile" type="file" accept="application/json,.json" hidden>
+      </div>
+
+      <p id="importStatus" class="import-status" aria-live="polite"></p>
     </section>
 
     <p id="saved" aria-live="polite"></p>
   </main>
 
+  <script src="src/layout.js"></script>
+  <script src="src/store.js"></script>
+  <script src="src/tokens.js"></script>
+  <script src="src/backup.js"></script>
   <script src="options.js"></script>
 </body>
 </html>

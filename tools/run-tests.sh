@@ -13,8 +13,9 @@ echo "undefined calls"
 node tools/check-refs.mjs content.js options.js background.js src/*.js tools/check-refs.mjs
 echo
 
-echo "duplicate css properties"
+echo "css traps"
 node tools/check-css.mjs content.css options.css
+node tools/check-var-timing.mjs content.css options.css
 echo
 
 echo "logic"

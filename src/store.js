@@ -30,13 +30,17 @@
 
   const blank = () => ({ uses: 0, heat: 0, lastUsedAt: 0, createdAt: Date.now() });
 
+  // Cards saved before scope existed take the scope their content implies:
+  // member emoji pin them to their channel, everything else was universal.
+  const withScope = (card) => ({ ...card, scope: card.scope || forcedScope(card.tokens) || GLOBAL });
+
   // A card lives in the pool once. A deck is an ordered list of ids drawn from
   // it, so the same card can sit in several decks and hold a different place
   // in each — which a single shared ordering could never express.
   function migrate(raw) {
     if (Array.isArray(raw[KEYS.CARDS]) && raw[KEYS.DECKS]) {
       return {
-        cards: raw[KEYS.CARDS].map((card) => ({ ...blank(), ...card })),
+        cards: raw[KEYS.CARDS].map((card) => withScope({ ...blank(), ...card })),
         decks: raw[KEYS.DECKS]
       };
     }
@@ -50,7 +54,7 @@
       const commons = [];
       for (const card of raw[KEYS.CARDS]) {
         const { scope, ...rest } = card;
-        cards.push({ ...blank(), ...rest });
+        cards.push(withScope({ ...blank(), ...rest }));
         if (scope && scope !== "global") add(scope, card.id);
         else commons.push(card.id);
       }
@@ -67,13 +71,13 @@
 
     for (const [channelId, list] of Object.entries(legacy.channels || {})) {
       for (const card of list || []) {
-        cards.push({ ...blank(), ...card });
+        cards.push(withScope({ ...blank(), ...card, scope: forcedScope(card.tokens) || GLOBAL }));
         add(channelId, card.id);
       }
     }
     const commons = [];
     for (const card of legacy.global || []) {
-      cards.push({ ...blank(), ...card });
+      cards.push(withScope({ ...blank(), ...card }));
       commons.push(card.id);
     }
     for (const channelId of Object.keys(decks)) {
@@ -143,12 +147,31 @@
     return (data.decks[channelId] || []).map((id) => lookup.get(id)).filter(Boolean);
   }
 
-  // A card carrying member emoji only sends on the channel that hands them
-  // out, so offering it anywhere else is offering something that cannot work.
+  const GLOBAL = "global";
+
+  // Member emoji only send on the channel that hands them out, so a card
+  // carrying them can only be that channel's. Everything else is the user's
+  // choice, which is why scope is stored rather than read back off the tokens.
   // tokens.js loads after this file, so the lookup is deferred to call time.
+  function forcedScope(tokenList) {
+    const required = OD.tokens?.requiredChannels?.(tokenList) || [];
+    return required.length === 1 ? required[0] : null;
+  }
+
+  const scopeOf = (card) => card.scope || forcedScope(card.tokens) || GLOBAL;
+
+  // A universal card belongs to every channel; a channel-only one to just its own.
   function usableOn(card, channelId) {
-    const required = OD.tokens?.requiredChannels?.(card.tokens) || [];
-    return !required.length || (!!channelId && required.every((id) => id === channelId));
+    const scope = scopeOf(card);
+    return scope === GLOBAL || (!!channelId && scope === channelId);
+  }
+
+  // What a card may be set to: forced when it carries member emoji, otherwise
+  // either.
+  function allowedScope(tokenList, wanted, channelId) {
+    const forced = forcedScope(tokenList);
+    if (forced) return forced;
+    return wanted && wanted !== GLOBAL ? channelId || GLOBAL : GLOBAL;
   }
 
   // Everything this channel could ever hold: universal cards plus its own
@@ -164,8 +187,8 @@
     return compatibleWith(data, channelId).filter((card) => !held.has(card.id));
   }
 
-  // Cards that work anywhere — the pool proper, with nothing channel-bound.
-  const universal = (data) => data.cards.filter((card) => usableOn(card, null));
+  // Cards that work anywhere.
+  const universal = (data) => data.cards.filter((card) => scopeOf(card) === GLOBAL);
 
   const inDeck = (data, channelId, cardId) =>
     (data.decks[channelId] || []).includes(cardId);
@@ -188,6 +211,13 @@
     list.splice(index, 1);
     return index;
   }
+
+  // Which decks hold this card — so deleting a universal card can say what
+  // else it is about to vanish from.
+  const decksHolding = (data, cardId) =>
+    Object.entries(data.decks)
+      .filter(([, ids]) => ids.includes(cardId))
+      .map(([channelId]) => channelId);
 
   // Deleting is from the pool, so it leaves every deck at once.
   function deleteCard(data, cardId) {
@@ -229,8 +259,9 @@
     // impossible to delete. They go with the deck, and undo brings both back.
     const exclusive = [];
     for (let i = data.cards.length - 1; i >= 0; i--) {
-      if (usableOn(data.cards[i], null)) continue;
-      if (!usableOn(data.cards[i], channelId)) continue;
+      // Only cards scoped to this channel: they can belong nowhere else and
+      // appear in no other pool.
+      if (scopeOf(data.cards[i]) !== channelId) continue;
 
       const card = data.cards[i];
       // Older state — or an imported backup — can have filed this card under a
@@ -312,10 +343,15 @@
   // runs these one at a time (background.js), which is the only place in the
   // extension where ordering can be guaranteed.
   const OPS = {
-    addCard(data, { card, channelId }) {
+    addCard(data, { card, channelId, scope }) {
       // A card whose emoji come from two channels can be sent nowhere, and no
       // pool would ever show it.
       if (OD.tokens.requiredChannels(card.tokens).length > 1) return false;
+
+      // The user picks universal or channel-only; member emoji override that,
+      // because such a card physically cannot be sent elsewhere.
+      card.scope = allowedScope(card.tokens, scope, channelId);
+      if (card.scope !== GLOBAL && card.scope !== channelId) return false;
 
       // Two fast saves, or two tabs, can both decide there is no duplicate.
       // Only here is that decision made against settled state.
@@ -336,6 +372,8 @@
       if (!card) return false;
       if (OD.tokens.requiredChannels(tokens).length > 1) return false;
       card.tokens = tokens;
+      // An edit can add member emoji, which pins a previously universal card.
+      card.scope = allowedScope(tokens, card.scope, card.scope);
       // Editing can add member emoji, which pins the card to one channel.
       for (const channelId of Object.keys(data.decks)) {
         if (!usableOn(card, channelId)) removeFromDeck(data, channelId, id);
@@ -402,6 +440,27 @@
         return true;
       });
       return true;
+    },
+
+    // Changing scope can strand a card: made channel-only, it leaves every
+    // other deck, since those decks could no longer send it.
+    setScope(data, { id, scope, channelId }) {
+      const card = data.cards.find((c) => c.id === id);
+      if (!card) return false;
+
+      const next = allowedScope(card.tokens, scope, channelId);
+      if (next !== GLOBAL && next !== channelId) return false;
+
+      const dropped = {};
+      card.scope = next;
+      for (const [deckId, list] of Object.entries(data.decks)) {
+        if (usableOn(card, deckId)) continue;
+        const at = list.indexOf(id);
+        if (at < 0) continue;
+        dropped[deckId] = at;
+        list.splice(at, 1);
+      }
+      return { scope: next, dropped };
     },
 
     setChannel(data, { channelId, hue, name }) {
@@ -471,9 +530,10 @@
 
   OD.store = {
     OPS, runOp, apply,
-    KEYS, DEFAULT_SETTINGS, alive, defaultHue,
+    KEYS, GLOBAL, DEFAULT_SETTINGS, alive, defaultHue, scopeOf, allowedScope,
     read,
-    deckOf, poolFor, compatibleWith, universal, usableOn, inDeck, addToDeck, removeFromDeck,
+    deckOf, poolFor, compatibleWith, universal, usableOn, inDeck, decksHolding,
+    addToDeck, removeFromDeck,
     deleteCard, restoreCard, deleteDeck, restoreDeck, reorderDeck,
     sortCards, markUsed
   };

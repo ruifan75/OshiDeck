@@ -424,7 +424,7 @@ kbd {
 
 .browser {
   display: grid;
-  grid-template-columns: 170px minmax(0, 1fr) 240px;
+  grid-template-columns: 170px minmax(0, 1fr) 252px;
   grid-template-areas: "list deck pool";
   gap: 18px;
   align-items: start;
@@ -475,10 +475,15 @@ kbd {
 
 .pool-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 100px);
+  /* Fixed at two. With auto-fill the scrollbar took just enough width to drop
+     the second column, so the layout changed the moment the pool filled up. */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
   max-height: 320px;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  /* Reserve the gutter so appearing and disappearing does not shift anything. */
+  scrollbar-gutter: stable;
   scrollbar-width: thin;
 }
 

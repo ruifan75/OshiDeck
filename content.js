@@ -142,7 +142,7 @@
     // nothing. It marks scope again: grey works anywhere, coloured is tied to
     // this channel by its member emoji — and that is what makes deleting it
     // feel different.
-    for (const card of cards) card.bound = tokens.requiredChannels(card.tokens).length > 0;
+    for (const card of cards) card.bound = store.scopeOf(card) !== store.GLOBAL;
     return orderDeck(cards, data.settings);
   }
 
@@ -297,10 +297,10 @@
     // into its deck — one action, not two.
     // The worker settles duplicates: two fast saves can both decide there is
     // none, and only it sees settled state.
-    const intoDeck = target !== "pool" && !!channel?.id;
-    const added = await store.apply("addCard", {
-      card, channelId: intoDeck ? channel.id : null
-    });
+    // Saving here always puts the card in this channel's deck; `target` says
+    // whether it is this channel's card or one that works anywhere.
+    const scope = target === "channel" && channel?.id ? channel.id : store.GLOBAL;
+    const added = await store.apply("addCard", { card, channelId: channel?.id, scope });
     if (!added.ok) {
       // Quota, or the context went away. Keep what was typed.
       return showToast("保存できませんでした。入力はそのままです");
@@ -311,13 +311,17 @@
       render();
       return flashCard(added.value.id);
     }
-    if (intoDeck) {
+    if (channel?.id) {
       await store.apply("setChannel", { channelId: channel.id, name: channel.name });
     }
 
     clearInput(input);
 
-    const saved = intoDeck ? "デッキに入れました" : "プールに保存しました";
+    const saved = !channel?.id
+      ? "プールに保存しました"
+      : scope === store.GLOBAL
+        ? "通用の札として保存しました"
+        : "このチャンネル専用の札として保存しました";
     if (duplicate) {
       // Same reaction, different wording — probably redundant, but only the
       // user can say for sure, so keep it and make undoing it one click.
@@ -827,29 +831,39 @@
       return group;
     }
 
-    // Two targets whenever the channel is known. Saving into this channel's
-    // deck is the common case, but a card meant for every channel should not
-    // have to be saved here and moved later.
+    // The choice is what kind of card this is, not whether it joins the deck
+    // — you are saving it here because you want it here. A card carrying
+    // member emoji has no choice: it can only ever be this channel's.
     if (!channel?.id) {
-      const only = buildAction("plus", "プールに保存", "どのデッキにも入れず、プールに置きます",
-        () => saveCurrentInput("pool"));
+      const only = buildAction("plus", "プールに保存",
+        "チャンネルが分からないので、通用の札としてプールに置きます", () => saveCurrentInput("global"));
       only.dataset.primary = "true";
       group.appendChild(only);
       return group;
     }
 
-    const toDeck = buildAction("plus", channel.name || "このチャンネル",
-      "プールに入れて、このチャンネルのデッキにも入れます", () => saveCurrentInput("deck"));
-    toDeck.dataset.primary = "true";
-    toDeck.classList.add("od-save-channel");
-    if (hue != null) toDeck.style.setProperty("--od-scope-hue", hue);
+    const forced = tokens.requiredChannels(currentTokens).length > 0;
 
-    const toPool = buildAction("plus", "プールだけ",
-      "どのデッキにも入れません。あとでどのチャンネルにも足せます", () => saveCurrentInput("pool"));
+    const toChannel = buildAction("plus", channel.name || "このチャンネル専用",
+      forced
+        ? "メン限スタンプ入りなので、このチャンネル専用にしかできません"
+        : "このチャンネルのデッキだけに出る札にします",
+      () => saveCurrentInput("channel"));
+    toChannel.dataset.primary = "true";
+    toChannel.classList.add("od-save-channel");
+    if (hue != null) toChannel.style.setProperty("--od-scope-hue", hue);
 
-    group.append(toDeck, toPool);
+    const toGlobal = buildAction("plus", "通用",
+      forced
+        ? "メン限スタンプ入りの札は通用にできません"
+        : "どのチャンネルのデッキにも入れられる札にします",
+      () => saveCurrentInput("global"));
+    if (forced) toGlobal.disabled = true;
+
+    group.append(toChannel, toGlobal);
     return group;
   }
+
 
 
 

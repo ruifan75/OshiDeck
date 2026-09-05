@@ -466,6 +466,11 @@ async function removeDeck(id) {
 
 // Deleting is from the pool, so it leaves every deck at once.
 async function removeCard(card) {
+  // A universal card can sit in several decks, and deleting it empties all of
+  // them — say so before it happens, not after.
+  const held = store.decksHolding(decks, card.id).filter((id) => id !== selected);
+  if (held.length && !confirmDelete(card, held)) return;
+
   const { ok, value: snapshot } = await mutate("deleteCard", { id: card.id });
   if (!ok || !snapshot) return;
 
@@ -475,6 +480,21 @@ async function removeCard(card) {
   status(`「${label(snapshot.card)}」を削除しました`, "元に戻す");
 }
 
+// An in-page confirmation rather than confirm(), which freezes the tab.
+let pendingDelete = null;
+
+function confirmDelete(card, held) {
+  const names = held.map((id) => nameOf(id)).join("、");
+  if (pendingDelete === card.id) {
+    pendingDelete = null;
+    return true;
+  }
+  pendingDelete = card.id;
+  status(`「${label(card)}」は ${names} のデッキにもあります。削除すると全部から消えます。`,
+    "それでも削除", () => removeCard(card));
+  return false;
+}
+
 function label(card) {
   const text = tokens.toPlainText(card.tokens || []).trim();
   if (text) return text.length > 18 ? text.slice(0, 18) + "…" : text;
@@ -482,20 +502,17 @@ function label(card) {
   return stamps ? `スタンプ${stamps}個` : "空の札";
 }
 
-function status(message, actionLabel) {
+function status(message, actionLabel, action) {
   const saved = document.querySelector("#saved");
   saved.replaceChildren(document.createTextNode(message));
 
-  if (actionLabel && undo) {
+  const run = action || (actionLabel && undo ? () => { const u = undo; undo = null; u?.(); } : null);
+  if (actionLabel && run) {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "link";
     button.textContent = actionLabel;
-    button.addEventListener("click", () => {
-      const run = undo;
-      undo = null;
-      run?.();
-    });
+    button.addEventListener("click", run);
     saved.appendChild(button);
   }
 
@@ -505,6 +522,7 @@ function status(message, actionLabel) {
     // The snapshot can hold a whole deck's worth of cards; once the button is
     // gone there is nothing left to undo with it.
     undo = null;
+    pendingDelete = null;
   }, 8000);
 }
 

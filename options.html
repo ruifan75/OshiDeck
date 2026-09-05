@@ -74,7 +74,8 @@
     <section class="card">
       <h2>手札の並べ方</h2>
 
-      <div class="row">
+      <div class="rows">
+        <div class="row">
         <div class="row-label">
           <strong>札の大きさ</strong>
           <small>小さいほど枚数が増え、長い札は途中で薄くなります。</small>
@@ -109,6 +110,7 @@
           <button type="button" value="manual">自分で並べた順</button>
         </div>
       </div>
+      </div>
     </section>
 
     <section class="card">
@@ -125,7 +127,8 @@
     <section class="card">
       <h2>バックアップ</h2>
 
-      <div class="row">
+      <div class="rows">
+        <div class="row">
         <div class="row-label">
           <strong>書き出す</strong>
           <small>プール・デッキ・チャンネル設定・表示設定をまとめてJSONにします。</small>
@@ -144,6 +147,7 @@
         </div>
         <button id="importBtn" type="button" class="action">ファイルを選ぶ</button>
         <input id="importFile" type="file" accept="application/json,.json" hidden>
+      </div>
       </div>
 
       <p id="importStatus" class="import-status" aria-live="polite"></p>

@@ -49,10 +49,11 @@ function paint() {
 }
 
 async function commit(patch) {
-  settings = { ...settings, ...patch };
-  // Settings have a single writer — this form. No operation touches them
-  // except an import, which replaces the whole object inside the queue.
-  await chrome.storage.local.set({ settings });
+  // Through the worker like everything else. Written directly, a settings
+  // click racing a replace import lost whichever set() landed second.
+  const { ok, value } = await store.apply("setSettings", { patch });
+  if (!ok) return;
+  settings = value;
   paint();
 
   const saved = document.querySelector("#saved");

@@ -30,9 +30,13 @@
 
   const blank = () => ({ uses: 0, heat: 0, lastUsedAt: 0, createdAt: Date.now() });
 
-  // Cards saved before scope existed take the scope their content implies:
-  // member emoji pin them to their channel, everything else was universal.
-  const withScope = (card) => ({ ...card, scope: card.scope || forcedScope(card.tokens) || GLOBAL });
+  // Scope survives every earlier format, because every earlier format recorded
+  // the same distinction under a different name. Deriving it from the content
+  // instead would quietly broaden a channel-only card to every pool.
+  const withScope = (card, implied) => ({
+    ...card,
+    scope: forcedScope(card.tokens) || card.scope || implied || GLOBAL
+  });
 
   // A card lives in the pool once. A deck is an ordered list of ids drawn from
   // it, so the same card can sit in several decks and hold a different place
@@ -53,9 +57,9 @@
     if (Array.isArray(raw[KEYS.CARDS])) {
       const commons = [];
       for (const card of raw[KEYS.CARDS]) {
-        const { scope, ...rest } = card;
-        cards.push(withScope({ ...blank(), ...rest }));
-        if (scope && scope !== "global") add(scope, card.id);
+        // v0.3 stored the same idea in the same field.
+        cards.push(withScope({ ...blank(), ...card }));
+        if (card.scope && card.scope !== GLOBAL) add(card.scope, card.id);
         else commons.push(card.id);
       }
       // Commons used to appear everywhere; keep them visible where they were.
@@ -71,7 +75,8 @@
 
     for (const [channelId, list] of Object.entries(legacy.channels || {})) {
       for (const card of list || []) {
-        cards.push(withScope({ ...blank(), ...card, scope: forcedScope(card.tokens) || GLOBAL }));
+        // presets.channels[X] meant "this card is X's" — that is the scope.
+        cards.push(withScope({ ...blank(), ...card }, channelId));
         add(channelId, card.id);
       }
     }
@@ -84,6 +89,19 @@
       for (const id of commons) add(channelId, id);
     }
     return { cards, decks };
+  }
+
+  // A deck holding a card it cannot send is state the app has no way to show
+  // and no way to act on. Older builds could produce it; drop it on the way in
+  // rather than carrying it forward.
+  function pruneImpossible(cards, decks) {
+    const byId = new Map(cards.map((card) => [card.id, card]));
+    for (const [channelId, ids] of Object.entries(decks)) {
+      decks[channelId] = ids.filter((id) => {
+        const card = byId.get(id);
+        return card && usableOn(card, channelId);
+      });
+    }
   }
 
   const alive = () => {
@@ -108,6 +126,7 @@
     // operation the worker runs — a page context writing here would bypass the
     // queue and could land after a worker mutation, erasing it.
     const { cards, decks } = migrate(raw);
+    pruneImpossible(cards, decks);
 
     return {
       settings: { ...DEFAULT_SETTINGS, ...(raw[KEYS.SETTINGS] || {}) },
@@ -158,7 +177,10 @@
     return required.length === 1 ? required[0] : null;
   }
 
-  const scopeOf = (card) => card.scope || forcedScope(card.tokens) || GLOBAL;
+  // The forced scope wins. A stored value can be wrong — an old build, a
+  // hand-edited backup — and a member-emoji card marked global would be
+  // offered in every pool and sent nowhere.
+  const scopeOf = (card) => forcedScope(card.tokens) || card.scope || GLOBAL;
 
   // A universal card belongs to every channel; a channel-only one to just its own.
   function usableOn(card, channelId) {
@@ -238,7 +260,10 @@
   function restoreCard(data, { card, index, memberships }) {
     data.cards.splice(Math.min(index, data.cards.length), 0, card);
     for (const [channelId, at] of Object.entries(memberships)) {
+      // Undo restores what was deleted, not state that was already impossible.
+      if (!usableOn(card, channelId)) continue;
       const list = (data.decks[channelId] ||= []);
+      if (list.includes(card.id)) continue;
       list.splice(Math.min(at, list.length), 0, card.id);
     }
   }
@@ -289,6 +314,9 @@
     for (const { card, index, strays } of exclusive || []) {
       data.cards.splice(Math.min(index, data.cards.length), 0, card);
       for (const [other, at] of Object.entries(strays || {})) {
+        // These were references a deck could never send. Deleting the deck
+        // cleared them; undo brings the cards back, not the broken references.
+        if (!usableOn(card, other)) continue;
         const list = (data.decks[other] ||= []);
         if (!list.includes(card.id)) list.splice(Math.min(at, list.length), 0, card.id);
       }
@@ -358,8 +386,17 @@
       const key = OD.tokens.cardKey(card.tokens);
       const existing = data.cards.find((c) => OD.tokens.cardKey(c.tokens) === key);
       if (existing) {
-        if (channelId) addToDeck(data, channelId, existing.id);
-        return { id: existing.id, duplicate: true };
+        // The existing card keeps its own scope — silently re-scoping it would
+        // change what every other deck holding it can do. Report what it is so
+        // the caller can say why the chosen kind was not applied.
+        const added = channelId ? addToDeck(data, channelId, existing.id) : false;
+        return {
+          id: existing.id,
+          duplicate: true,
+          added,
+          scope: scopeOf(existing),
+          wanted: allowedScope(card.tokens, scope, channelId)
+        };
       }
 
       data.cards.push(card);
@@ -420,6 +457,10 @@
       reorderDeck(data, channelId, movedId, targetId, side),
 
     deleteCard: (data, { id }) => deleteCard(data, id),
+
+    // Answered by the worker, so the page cannot decide from a snapshot taken
+    // before the other surface changed something.
+    decksHolding: (data, { id }) => decksHolding(data, id),
     restoreCard: (data, { snapshot }) => (restoreCard(data, snapshot), true),
 
     deleteDeck: (data, { channelId }) => deleteDeck(data, channelId),
@@ -463,6 +504,13 @@
       return { scope: next, dropped };
     },
 
+    // Settings were the last thing writing storage from a page, which a
+    // replace import could race.
+    setSettings(data, { patch }) {
+      data.settings = { ...data.settings, ...patch };
+      return data.settings;
+    },
+
     setChannel(data, { channelId, hue, name }) {
       const existing = data.channelMeta[channelId] || {};
       data.channelMeta[channelId] = {
@@ -490,7 +538,8 @@
   };
 
   // Operations that deliberately replace the settings object.
-  const writesSettings = new Set(["importBackup"]);
+  const writesSettings = new Set(["importBackup", "setSettings"]);
+  const readOnly = new Set(["decksHolding"]);
 
   // Runs inside the service worker only.
   async function runOp(name, args) {
@@ -502,6 +551,8 @@
 
     const value = op(data, args || {});
     if (value === false) return { ok: false, value };
+    // A question, not a change: answering it should not rewrite storage.
+    if (readOnly.has(name)) return { ok: true, value };
 
     const patch = {
       [KEYS.CARDS]: data.cards,

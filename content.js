@@ -266,19 +266,35 @@
       }
     }
 
+    // Scope is settled first: the duplicate shortcut used to run before it and
+    // silently ignore which kind you asked for.
+    const scope = target === "channel" && channel?.id ? channel.id : store.GLOBAL;
+
     const duplicate = findDuplicate(data, channel?.id, captured);
     if (duplicate?.exact) {
+      const existingScope = store.scopeOf(duplicate.card);
+      clearInput(input);
+
+      if (existingScope !== scope) {
+        // Re-scoping it would change what every other deck holding it can do,
+        // so say what it already is instead of quietly deciding.
+        showToast(existingScope === store.GLOBAL
+          ? "同じ札が通用の札としてもうあります"
+          : "同じ札がこのチャンネル専用としてもうあります");
+        if (channel?.id) await store.apply("addToDeck", { channelId: channel.id, cardId: duplicate.card.id });
+        render();
+        return flashCard(duplicate.card.id);
+      }
+
       if (duplicate.inDeck || !channel?.id) {
-        clearInput(input);
         showToast(duplicate.inDeck ? "同じ札がこのデッキにもうあります" : "同じ札がプールにもうあります");
         return flashCard(duplicate.card.id);
       }
-      // It exists in the pool already — draw it rather than make a second one.
+
       const drawn = await store.apply("addToDeck", {
         channelId: channel.id, cardId: duplicate.card.id
       });
-      if (!drawn.ok) return showToast("保存できませんでした。入力はそのままです");
-      clearInput(input);
+      if (!drawn.ok) return showToast("保存できませんでした");
       showToast("プールにあった同じ札をデッキに入れました");
       render();
       return flashCard(duplicate.card.id);
@@ -297,9 +313,8 @@
     // into its deck — one action, not two.
     // The worker settles duplicates: two fast saves can both decide there is
     // none, and only it sees settled state.
-    // Saving here always puts the card in this channel's deck; `target` says
-    // whether it is this channel's card or one that works anywhere.
-    const scope = target === "channel" && channel?.id ? channel.id : store.GLOBAL;
+    // Saving here always puts the card in this channel's deck; the kind was
+    // settled above.
     const added = await store.apply("addCard", { card, channelId: channel?.id, scope });
     if (!added.ok) {
       // Quota, or the context went away. Keep what was typed.
@@ -307,7 +322,12 @@
     }
     if (added.value?.duplicate) {
       clearInput(input);
-      showToast("同じ札がもうあります");
+      // It says what it is and whether the deck actually took it, so this can
+      // stop claiming a success that did not happen.
+      const { scope: had, added: joined } = added.value;
+      showToast(had !== scope
+        ? (had === store.GLOBAL ? "同じ札が通用の札としてもうありました" : "同じ札がこのチャンネル専用としてもうありました")
+        : joined ? "プールにあった同じ札をデッキに入れました" : "同じ札がこのデッキにもうあります");
       render();
       return flashCard(added.value.id);
     }

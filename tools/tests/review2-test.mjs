@@ -31,7 +31,9 @@ check("stray reference cleared from the other deck", !disk.decks[YUMENO].include
 check("universal card untouched", disk.decks[YUMENO].includes("u"));
 await store.runOp("restoreDeck", { snapshot: r.value });
 check("undo restores the card", disk.cards.some((c) => c.id === "s"));
-check("undo restores the stray reference too", disk.decks[YUMENO].includes("s"));
+// The stray was a reference yumeno could never send. Undo restores what was
+// deleted, not state that was already impossible.
+check("undo does not restore the impossible reference", !disk.decks[YUMENO].includes("s"));
 
 console.log("");
 console.log("--- undo after the other surface moved on ---");

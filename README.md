@@ -127,10 +127,15 @@ options.js ─┘        ↓
 
 ## Tests
 
-`tools/run-tests.sh` — ブラウザなしで確認できる範囲：構文、存在しない関数の呼び出し
-（`tools/check-refs.mjs`）、そして `src/` の純粋なロジックを偽の `chrome.storage` で動かす
-一連のテスト（`tools/tests/`）。競合の直列化、取り消しの割り込み、署名の正規化、
-バックアップのマージなどを含みます。
+`tools/run-tests.sh` — ブラウザなしで確認できる範囲。
+
+- 構文
+- 存在しない関数の呼び出し（`tools/check-refs.mjs`）。`node --check` は構文しか見ないので、
+  消えた関数は「押しても何も起きないボタン」として出てきます
+- 同じセレクタが同じプロパティを2回書いていないか（`tools/check-css.mjs`）。
+  どちらが勝つかがファイル順で決まる状態は、見た目が正しいまま残ります
+- `src/` の純粋なロジックを偽の `chrome.storage` で動かすテスト（`tools/tests/`）。
+  競合の直列化、取り消しの割り込み、署名の正規化、バックアップのマージなど
 
 ## Pools are per channel
 

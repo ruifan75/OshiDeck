@@ -177,13 +177,6 @@ kbd {
 
 .muted { font-size: 11px; opacity: .62; }
 
-.browser {
-  display: grid;
-  grid-template-columns: 190px minmax(0, 1fr);
-  gap: 18px;
-  align-items: start;
-}
-
 .deck-list {
   display: flex;
   flex-direction: column;
@@ -430,8 +423,10 @@ kbd {
 .decks { container-type: inline-size; }
 
 .browser {
+  display: grid;
   grid-template-columns: 170px minmax(0, 1fr) 240px;
   grid-template-areas: "list deck pool";
+  gap: 18px;
   align-items: start;
 }
 

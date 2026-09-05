@@ -13,6 +13,10 @@ echo "undefined calls"
 node tools/check-refs.mjs content.js options.js background.js src/*.js tools/check-refs.mjs
 echo
 
+echo "duplicate css properties"
+node tools/check-css.mjs content.css options.css
+echo
+
 echo "logic"
 fail=0
 for t in tools/tests/*.js tools/tests/*.mjs; do

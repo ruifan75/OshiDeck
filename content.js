@@ -239,7 +239,7 @@
 
   /* ---------- saving and editing ---------- */
 
-  async function saveCurrentInput() {
+  async function saveCurrentInput(target) {
     const input = getChatInput();
     if (!input) return;
 
@@ -297,7 +297,10 @@
     // into its deck — one action, not two.
     // The worker settles duplicates: two fast saves can both decide there is
     // none, and only it sees settled state.
-    const added = await store.apply("addCard", { card, channelId: channel?.id });
+    const intoDeck = target !== "pool" && !!channel?.id;
+    const added = await store.apply("addCard", {
+      card, channelId: intoDeck ? channel.id : null
+    });
     if (!added.ok) {
       // Quota, or the context went away. Keep what was typed.
       return showToast("保存できませんでした。入力はそのままです");
@@ -308,13 +311,13 @@
       render();
       return flashCard(added.value.id);
     }
-    if (channel?.id) {
+    if (intoDeck) {
       await store.apply("setChannel", { channelId: channel.id, name: channel.name });
     }
 
     clearInput(input);
 
-    const saved = channel?.id ? "デッキに入れました" : "プールに保存しました";
+    const saved = intoDeck ? "デッキに入れました" : "プールに保存しました";
     if (duplicate) {
       // Same reaction, different wording — probably redundant, but only the
       // user can say for sure, so keep it and make undoing it one click.
@@ -703,7 +706,7 @@
     if (notice) bar.append(noticeRow(notice));
     else if (peek) bar.append(peekReadout(peek));
     else if (poolOpen) bar.append(poolBar(count));
-    else bar.append(inputHasContent ? saveTargets(channel) : deckIdentity(channel, hue, count));
+    else bar.append(inputHasContent ? saveTargets(channel, hue) : deckIdentity(channel, hue, count));
 
     if (poolOpen) {
       bar.appendChild(buildAction("close", "閉じる", "プールを閉じる", () => {
@@ -801,7 +804,7 @@
     return group;
   }
 
-  function saveTargets(channel) {
+  function saveTargets(channel, hue) {
     const group = document.createElement("div");
     group.className = "od-bar-save";
 
@@ -824,16 +827,31 @@
       return group;
     }
 
-    const save = buildAction(
-      "plus",
-      channel?.id ? "デッキに入れる" : "プールに保存",
-      channel?.id ? "プールに入れて、このデッキにも入れます" : "プールに保存します",
-      () => saveCurrentInput()
-    );
-    save.dataset.primary = "true";
-    group.appendChild(save);
+    // Two targets whenever the channel is known. Saving into this channel's
+    // deck is the common case, but a card meant for every channel should not
+    // have to be saved here and moved later.
+    if (!channel?.id) {
+      const only = buildAction("plus", "プールに保存", "どのデッキにも入れず、プールに置きます",
+        () => saveCurrentInput("pool"));
+      only.dataset.primary = "true";
+      group.appendChild(only);
+      return group;
+    }
+
+    const toDeck = buildAction("plus", channel.name || "このチャンネル",
+      "プールに入れて、このチャンネルのデッキにも入れます", () => saveCurrentInput("deck"));
+    toDeck.dataset.primary = "true";
+    toDeck.classList.add("od-save-channel");
+    if (hue != null) toDeck.style.setProperty("--od-scope-hue", hue);
+
+    const toPool = buildAction("plus", "プールだけ",
+      "どのデッキにも入れません。あとでどのチャンネルにも足せます", () => saveCurrentInput("pool"));
+
+    group.append(toDeck, toPool);
     return group;
   }
+
+
 
   function openOptions() {
     try {

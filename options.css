@@ -32,9 +32,9 @@ h2 { margin: 0 0 16px; font-size: 15px; }
   padding: 20px;
 }
 
-/* Only the builder earns the full width. The rest are a label and a control
-   per row, which read better at a column's width than stretched across one. */
-.card:not(.decks) { max-width: 720px; }
+/* Sections all share the page width so their edges line up. Rows inside stay
+   a single column — folding them made the longest one (並び順, with the most
+   text and the most choices) the worst off. */
 
 /* ---------- mode picker ---------- */
 

@@ -99,40 +99,97 @@
   // that carries a channel id keeps up. Both `ytInitialPlayerResponse` and the
   // `itemprop="author"` microdata still describe the PREVIOUS video after an
   // in-page navigation, so neither may be believed unguarded.
-  const OWNER_BLOCK = "ytd-video-owner-renderer, ytd-watch-metadata #owner, #owner";
+  // One selector at a time, in order. A comma-separated list would NOT mean
+  // "try each in turn": querySelector returns whichever matched first in
+  // DOCUMENT ORDER, and `#owner` appears in more than one place on a watch
+  // page — that is how an empty one won and detection gave up entirely.
+  const OWNER_BLOCKS = [
+    "ytd-video-owner-renderer",
+    "ytd-watch-metadata #owner",
+    "#owner"
+  ];
 
-  const ownerName = (owner) =>
-    owner.querySelector(
-      "ytd-channel-name a, #channel-name a, ytd-channel-name #text, #channel-name #text"
-    )?.textContent?.trim() || "";
+  // Buttons sit inside the owner block and link to the channel too: the
+  // membership button is `/channel/UC…/join`. Its id is the right one, but
+  // reading its label put 「メンバー特典」 on screen where the channel name
+  // belongs — so ids may come from any link here, names never do.
+  const NOT_A_NAME =
+    "#sponsor-button, #subscribe-button, ytd-button-renderer, yt-button-shape," +
+    " tp-yt-paper-button, button, yt-subscribe-button-view-model";
+
+  const NAME_IN_OWNER = [
+    "ytd-channel-name #text",
+    "#channel-name #text",
+    "ytd-channel-name a",
+    "#channel-name a"
+  ];
+
+  function ownerName(owner) {
+    for (const selector of NAME_IN_OWNER) {
+      for (const el of owner.querySelectorAll(selector)) {
+        if (el.closest(NOT_A_NAME)) continue;
+        const text = el.textContent?.trim();
+        if (text) return text;
+      }
+    }
+    return "";
+  }
 
   // `/@` plus a short name, and nothing else. Checked rather than escaped, so
   // an href of an unexpected shape is skipped instead of being smuggled into
-  // the attribute selector built from it below.
+  // the attribute selector built from it.
   const HANDLE_PATH = /^\/@[\w.-]{1,64}$/;
 
-  // The owner block now names its channel by handle (`/@name`), which carries
-  // no id at all. The description's info cards pair that same handle with a
-  // `/channel/UC…` link, so matching on the handle converts one into the other
-  // without guessing from position — channels the video only mentions get
-  // their own cards, and they are exactly what position-guessing picks up.
-  function idFromInfocards(doc, handle) {
-    const names = `a[href="${handle}"], a[href^="${handle}/"], a[href^="${handle}?"]`;
-    for (const section of doc.querySelectorAll(
-      "ytd-video-description-infocards-section-renderer"
-    )) {
-      if (!section.querySelector(names)) continue;
-      for (const link of section.querySelectorAll("a[href^='/channel/']")) {
-        const id = channelFromHref(link.getAttribute("href"));
-        if (id) return id;
-      }
+  function ownerHandle(doc) {
+    for (const selector of OWNER_BLOCKS) {
+      const owner = doc.querySelector(selector);
+      const href = owner?.querySelector("a[href^='/@']")?.getAttribute("href");
+      const handle = href?.split(/[?#]/)[0];
+      if (handle && HANDLE_PATH.test(handle)) return handle;
     }
     return null;
   }
 
+  const cardName = (section) =>
+    section.querySelector("#title, h3")?.textContent?.trim() || "";
+
+  // The owner block often names its channel only by handle, and on some
+  // layouts — a collaboration, a members-only premiere — it carries no link at
+  // all. The description's info cards describe the video's own channel and
+  // pair its handle with a `/channel/UC…` link, so they can supply the id when
+  // the owner block cannot. A channel the description merely mentions is NOT
+  // here; it appears inline in the description text.
+  //
+  // Matching the owner's handle is the strong form. Without a handle the cards
+  // are believed only when they all name one channel, so a layout that ever
+  // lists a second one refuses rather than guesses.
+  function fromInfocards(doc, handle) {
+    const wanted = handle
+      ? `a[href="${handle}"], a[href^="${handle}/"], a[href^="${handle}?"]`
+      : null;
+    const seen = [];
+
+    for (const section of doc.querySelectorAll(
+      "ytd-video-description-infocards-section-renderer"
+    )) {
+      for (const link of section.querySelectorAll("a[href^='/channel/']")) {
+        const id = channelFromHref(link.getAttribute("href"));
+        if (!id) continue;
+        if (wanted && section.querySelector(wanted)) {
+          return { id, name: cardName(section), byHandle: true };
+        }
+        seen.push({ id, name: cardName(section), byHandle: false });
+        break;
+      }
+    }
+
+    return new Set(seen.map((card) => card.id)).size === 1 ? seen[0] : null;
+  }
+
   // Authoritative — but only while it still describes the video in the address
   // bar. After an in-page navigation this script is left over from whichever
-  // video was loaded first, so a mismatch means "no answer", never "keep it".
+  // video was loaded first, and often removed outright, so a mismatch means
+  // "no answer", never "keep it".
   function fromPlayerResponse(doc) {
     const video = new URLSearchParams(doc.defaultView?.location.search || "").get("v");
     if (!video) return null;
@@ -147,24 +204,31 @@
   }
 
   function readChannel(doc) {
-    const owner = doc.querySelector(OWNER_BLOCK);
-    const name = owner ? ownerName(owner) : "";
+    const cards = fromInfocards(doc, ownerHandle(doc));
 
-    if (owner) {
-      // Older layouts still link the owner by id, which settles it outright.
+    let ownerId = null;
+    let label = "";
+    for (const selector of OWNER_BLOCKS) {
+      const owner = doc.querySelector(selector);
+      if (!owner) continue;
+      label = label || ownerName(owner);
       for (const link of owner.querySelectorAll("a[href^='/channel/']")) {
-        const id = channelFromHref(link.getAttribute("href"));
-        if (id) return { id, name };
+        ownerId = ownerId || channelFromHref(link.getAttribute("href"));
+        if (ownerId) break;
       }
-      const handle = owner
-        .querySelector("a[href^='/@']")
-        ?.getAttribute("href")
-        ?.split(/[?#]/)[0];
-      const paired = handle && HANDLE_PATH.test(handle) && idFromInfocards(doc, handle);
-      if (paired) return { id: paired, name };
+      if (ownerId && label) break;
     }
 
-    // Present on some layouts, absent on others, and it carries no name.
+    // The card's title is the channel's own, while the owner row can summarise
+    // a collaboration ("REVERBERATION和2"), so it is the better label.
+    const name = cards?.name || label;
+
+    // A card matched by the owner's own handle is the most direct evidence
+    // there is; otherwise a link in the owner block outranks unanimity.
+    if (cards?.byHandle) return { id: cards.id, name };
+    if (ownerId) return { id: ownerId, name };
+    if (cards) return { id: cards.id, name };
+
     const meta = asChannelId(doc.querySelector('meta[itemprop="channelId"]')?.content);
     if (meta) return { id: meta, name };
 

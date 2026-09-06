@@ -55,31 +55,62 @@
   const fromHref = (href) =>
     /^\/channel\/(UC[A-Za-z0-9_-]{22})(?:[/?#]|$)/.exec(href || "")?.[1] || null;
 
-  const owner = top.querySelector("ytd-video-owner-renderer, ytd-watch-metadata #owner, #owner");
-  const name = owner?.querySelector(
-    "ytd-channel-name a, #channel-name a, ytd-channel-name #text, #channel-name #text"
-  )?.textContent?.trim();
-  const handle = owner?.querySelector('a[href^="/@"]')?.getAttribute("href")?.split(/[?#]/)[0];
+  // One at a time: a comma-separated list returns whichever matched first in
+  // DOCUMENT ORDER, and #owner appears more than once on a watch page.
+  const BLOCKS = ["ytd-video-owner-renderer", "ytd-watch-metadata #owner", "#owner"];
+  const NOT_A_NAME =
+    "#sponsor-button, #subscribe-button, ytd-button-renderer, yt-button-shape," +
+    " tp-yt-paper-button, button, yt-subscribe-button-view-model";
+  const NAMES = [
+    "ytd-channel-name #text", "#channel-name #text",
+    "ytd-channel-name a", "#channel-name a"
+  ];
 
+  let owner = null;
+  let name = "";
+  let handle = null;
   let id = null;
   let via = null;
 
-  for (const a of owner?.querySelectorAll('a[href^="/channel/"]') || []) {
-    id = fromHref(a.getAttribute("href"));
-    if (id) { via = "オーナー欄のリンク"; break; }
-  }
-
-  if (!id && handle && /^\/@[\w.-]{1,64}$/.test(handle)) {
-    const names = `a[href="${handle}"], a[href^="${handle}/"], a[href^="${handle}?"]`;
-    for (const sec of top.querySelectorAll("ytd-video-description-infocards-section-renderer")) {
-      if (!sec.querySelector(names)) continue;
-      for (const a of sec.querySelectorAll('a[href^="/channel/"]')) {
-        id = fromHref(a.getAttribute("href"));
-        if (id) { via = "説明欄のカード（ハンドル一致）"; break; }
+  for (const sel of BLOCKS) {
+    const el = top.querySelector(sel);
+    if (!el) continue;
+    owner = owner || el;
+    for (const s of NAMES) {
+      if (name) break;
+      for (const n of el.querySelectorAll(s)) {
+        if (n.closest(NOT_A_NAME)) continue;      // 「メンバー特典」は名前ではない
+        if (n.textContent?.trim()) { name = n.textContent.trim(); break; }
       }
-      if (id) break;
+    }
+    const h = el.querySelector('a[href^="/@"]')?.getAttribute("href")?.split(/[?#]/)[0];
+    if (!handle && h && /^\/@[\w.-]{1,64}$/.test(h)) handle = h;
+    for (const a of el.querySelectorAll('a[href^="/channel/"]')) {
+      id = id || fromHref(a.getAttribute("href"));
+      if (id) { via = "オーナー欄のリンク"; break; }
     }
   }
+
+  // 説明欄のカードは動画自身のチャンネルだけを指す（言及しただけの
+  // チャンネルは説明文の中に出る）。ハンドル一致が最も強く、ハンドルが
+  // 無い場合は全カードが一致したときだけ信じる。
+  const cards = [];
+  for (const sec of top.querySelectorAll("ytd-video-description-infocards-section-renderer")) {
+    const title = sec.querySelector("#title, h3")?.textContent?.trim() || "";
+    const matched = handle && sec.querySelector(
+      `a[href="${handle}"], a[href^="${handle}/"], a[href^="${handle}?"]`
+    );
+    for (const a of sec.querySelectorAll('a[href^="/channel/"]')) {
+      const cid = fromHref(a.getAttribute("href"));
+      if (!cid) continue;
+      cards.push({ cid, title, matched: !!matched });
+      break;
+    }
+  }
+  const byHandle = cards.find((c) => c.matched);
+  const agreed = new Set(cards.map((c) => c.cid)).size === 1 ? cards[0] : null;
+  if (byHandle) { id = byHandle.cid; via = "説明欄のカード（ハンドル一致）"; name = byHandle.title || name; }
+  else if (!id && agreed) { id = agreed.cid; via = "説明欄のカード（全カード一致）"; name = agreed.title || name; }
 
   const meta = top.querySelector('meta[itemprop="channelId"]')?.content;
   if (!id && CHANNEL_ID.test(meta || "")) { id = meta; via = "meta[itemprop=channelId]"; }

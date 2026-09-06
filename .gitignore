@@ -5,5 +5,8 @@ design/oshideck-card-deck-ui.html
 # Exported backups
 oshideck-*.json
 
-# Pasted screenshots
+# Pasted screenshots — macOS names these by locale, so match those too
 image*.png
+截圖*.png
+Screenshot*.png
+スクリーンショット*.png

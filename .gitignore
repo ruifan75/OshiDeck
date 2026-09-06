@@ -10,3 +10,6 @@ image*.png
 截圖*.png
 Screenshot*.png
 スクリーンショット*.png
+
+# the maintainer's own requirements notes — his working file, not a project artefact
+note

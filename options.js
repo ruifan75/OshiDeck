@@ -538,8 +538,12 @@ document.querySelector("#deckSearch").addEventListener("input", (event) => {
   paintPool();
 });
 
-chrome.storage.onChanged.addListener((_changes, area) => {
-  if (area === "local") loadDecks();
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area !== "local") return;
+  // The journal is written while a stream is open. Only the keys the builder
+  // actually draws from should redraw it.
+  const watched = [store.KEYS.SETTINGS, store.KEYS.CARDS, store.KEYS.DECKS, store.KEYS.CHANNELS];
+  if (watched.some((key) => changes[key])) loadDecks();
 });
 
 loadDecks();
@@ -667,3 +671,49 @@ document.querySelector("#importFile").addEventListener("change", (event) => {
   event.target.value = ""; // so re-picking the same file fires again
   if (file) readBackupFile(file);
 });
+
+/* ---------------- diagnostics ---------------- */
+
+const { journal } = globalThis.OshiDeck;
+
+const journalStatus = (text) => {
+  document.querySelector("#journalStatus").textContent = text;
+};
+
+async function showJournalCount() {
+  const entries = await journal.read();
+  journalStatus(entries.length ? `${entries.length}件を記録しています` : "まだ記録はありません");
+}
+
+async function saveJournal() {
+  const entries = await journal.read();
+  if (!entries.length) return journalStatus("まだ記録がないので、書き出すものがありません");
+
+  const text = journal.format(entries, chrome.runtime.getManifest().version);
+  const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+
+  const stamp = new Date().toISOString().slice(0, 10);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `oshideck-log-${stamp}.txt`;
+  a.click();
+  // Revoking immediately can cancel the download in some builds.
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+
+  journalStatus(`${entries.length}件を書き出しました`);
+}
+
+async function clearJournal() {
+  // The worker owns the write, here as everywhere else.
+  try {
+    await chrome.runtime.sendMessage({ type: "journal", clear: true });
+  } catch (_) {
+    return journalStatus("消せませんでした");
+  }
+  journalStatus("記録を消しました");
+}
+
+document.querySelector("#journalBtn").addEventListener("click", saveJournal);
+document.querySelector("#journalClear").addEventListener("click", clearJournal);
+showJournalCount();

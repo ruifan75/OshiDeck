@@ -1,7 +1,7 @@
 // OshiDeck — card deck for YouTube Live Chat.
 (() => {
   const OD = globalThis.OshiDeck;
-  const { layout, store, tokens, trending } = OD;
+  const { journal, layout, store, tokens, trending } = OD;
 
   const MAX_ROWS_CAP = 2;
   const PANEL_PADDING = 24;    // matches #oshideck-root horizontal padding in content.css
@@ -225,15 +225,49 @@
 
     // A card matched by the owner's own handle is the most direct evidence
     // there is; otherwise a link in the owner block outranks unanimity.
-    if (cards?.byHandle) return { id: cards.id, name };
-    if (ownerId) return { id: ownerId, name };
-    if (cards) return { id: cards.id, name };
+    if (cards?.byHandle) return { id: cards.id, name, via: "card-by-handle" };
+    if (ownerId) return { id: ownerId, name, via: "owner-link" };
+    if (cards) return { id: cards.id, name, via: "cards-agree" };
 
     const meta = asChannelId(doc.querySelector('meta[itemprop="channelId"]')?.content);
-    if (meta) return { id: meta, name };
+    if (meta) return { id: meta, name, via: "meta" };
 
     const player = fromPlayerResponse(doc);
-    return player ? { id: player.id, name: name || player.name } : null;
+    return player ? { id: player.id, name: name || player.name, via: "player-response" } : null;
+  }
+
+  // Only built when detection failed, and only shapes — which sources existed,
+  // never anything anyone wrote. This is precisely the list that had to be
+  // gathered by hand, on the live page, to explain the last two bad channels.
+  function describeSources() {
+    let doc = document;
+    try {
+      if (window.top !== window && window.top.document) doc = window.top.document;
+    } catch (_) { /* cross-origin frame: describe what this one had */ }
+
+    const block = OWNER_BLOCKS.find((selector) => doc.querySelector(selector));
+    const owner = block ? doc.querySelector(block) : null;
+    const sections = doc.querySelectorAll(
+      "ytd-video-description-infocards-section-renderer"
+    );
+
+    const ids = new Set();
+    for (const section of sections) {
+      for (const link of section.querySelectorAll("a[href^='/channel/']")) {
+        const id = channelFromHref(link.getAttribute("href"));
+        if (id) { ids.add(id); break; }
+      }
+    }
+
+    return {
+      ownerBlock: block || "none",
+      ownerLink: !!owner?.querySelector("a[href^='/channel/']"),
+      handle: !!ownerHandle(doc),
+      cards: sections.length,
+      cardIds: [...ids],
+      meta: !!doc.querySelector('meta[itemprop="channelId"]'),
+      player: fromPlayerResponse(doc) ? "fresh" : "stale-or-absent"
+    };
   }
 
   // The live chat runs in a same-origin iframe, so the video in the address
@@ -373,6 +407,7 @@
       }
       if (performance.now() - started < 800) return setTimeout(attempt, 50);
       log("Send button never became available.");
+      journal.record({ kind: "error", what: "no-send-button" });
       done?.();
     };
     setTimeout(attempt, 80);
@@ -510,6 +545,9 @@
     if (required.length !== 1 || required[0] === channel?.id) return channel;
 
     log("Channel corrected from member emoji:", channel?.id, "->", required[0]);
+    journal.record({
+      kind: "note", what: "emoji-corrected", from: channel?.id || "none", to: required[0]
+    });
     // Drop the scraped name with the scraped id — they came from one element,
     // so a wrong id means the name is not trustworthy either. rememberChannel
     // keeps whatever good name is already stored.
@@ -1146,7 +1184,10 @@
 
     if (!rootEl || !rootEl.isConnected) {
       rootEl = mount(input);
-      if (!rootEl) return log("Chat input found, but no place to mount.");
+      if (!rootEl) {
+        journal.record({ kind: "error", what: "no-mount-point" });
+        return log("Chat input found, but no place to mount.");
+      }
       log("Mounted.");
     }
 
@@ -1156,7 +1197,16 @@
     watcher.start(); // no-op once attached; retries while chat is still loading
 
     const channel = getChannel();
-    if (!channel) retryUnresolved(currentVideo());
+    const video = currentVideo();
+    if (!channel) retryUnresolved(video);
+
+    if (channel) {
+      journal.record({ kind: "channel", video, id: channel.id, name: channel.name, via: channel.via });
+    } else if (video) {
+      // Without a video there is nothing to explain: a popped-out chat window
+      // has no owner to find, and saying so every render would bury the log.
+      journal.record({ kind: "unresolved", video, ...describeSources() });
+    }
     const hue = channel?.id
       ? data.channelMeta[channel.id]?.hue ?? store.defaultHue(channel.id)
       : null;

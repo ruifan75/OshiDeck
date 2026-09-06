@@ -314,6 +314,30 @@ uuidが違うので、idで見ると同じ札が二重になってしまうた�
 
 実装は `src/backup.js`（純粋関数）と、設定ページ側の配線です。
 
+## Reporting a problem
+
+Options → 診断ログ → ファイルに保存 writes a text file of what the panel decided
+and, when it decided nothing, what the page gave it to work with:
+
+```
+2026-09-06 18:52:04  channel ×9   video=Gv0g2GYipSM id=UCPb47… name=REVERBERATION via=card-by-handle
+2026-09-06 18:52:23  unresolved   video=1nIxe0Gd7ZE ownerBlock=ytd-video-owner-renderer
+                                  ownerLink=false handle=false cards=2 cardIds=["UCPb47…"]
+                                  meta=false player=stale-or-absent
+```
+
+Every wrong-channel report so far arrived as a screenshot, and answering it
+meant reopening the stream and reconstructing by hand what the page had looked
+like at the time — which is exactly the line above. `via` names the source that
+answered, so a channel that is merely *wrong* is as diagnosable as one that is
+missing.
+
+It holds the newest 300 entries; an observation repeated during a stream is
+counted (`×9`), not copied, so an hour of watching cannot push the interesting
+line off the end. Clearing it first and then reproducing gives the shortest
+file. Channel ids, video ids and which selectors resolved are all it carries —
+no card contents and no chat.
+
 ## Cards clip, never spill
 
 札の中身は長さがまちまちです。スタンプ5個なら 110px 必要ですが、104pxの札に使える幅は
@@ -385,7 +409,7 @@ uuidが違うので、idで見ると同じ札が二重になってしまうた�
 
 ```
 manifest.json      MV3 マニフェスト
-background.js      設定ページを開くためのサービスワーカー
+background.js      唯一の書き手（操作を一列に並べるサービスワーカー）
 content.js         DOM配線・描画・イベント
 content.css        配信ページ側のUI
 src/layout.js      扇の幾何と行分割（純粋関数）
@@ -393,6 +417,7 @@ src/store.js       保存・移行・並び順
 src/tokens.js      入力欄の読み取りと書き戻し・メン限スタンプの判定
 src/trending.js    チャット監視と署名の正規化
 src/backup.js      書き出し・読み込み・検証・マージ
+src/journal.js     診断ログ（判定の経路と、判定できなかったときの手掛かり）
 options.html/js/css  設定ページ（デッキ一覧＋表示設定）
 design/            UI検討用のデザインキャンバス
 tools/selftest.js  YouTubeのDOMセレクタの自己診断

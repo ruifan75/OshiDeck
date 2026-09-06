@@ -8,8 +8,9 @@
 import "./src/tokens.js";
 import "./src/backup.js";
 import "./src/store.js";
+import "./src/journal.js";
 
-const { store } = globalThis.OshiDeck;
+const { store, journal } = globalThis.OshiDeck;
 
 let queue = Promise.resolve();
 
@@ -26,6 +27,19 @@ chrome.runtime.onMessage.addListener((message, _sender, respond) => {
     chrome.runtime.openOptionsPage();
     respond({ ok: true });
     return false;
+  }
+
+  // Through the same queue as everything else: a log entry written beside a
+  // card operation could otherwise drop it.
+  if (message?.type === "journal") {
+    enqueue(async () => {
+      if (message.clear) return chrome.storage.local.remove(journal.KEY);
+      const raw = await chrome.storage.local.get(journal.KEY);
+      return chrome.storage.local.set({
+        [journal.KEY]: journal.append(raw[journal.KEY], message.entry)
+      });
+    }).then(() => respond({ ok: true }), (error) => respond({ ok: false, error: String(error) }));
+    return true; // respond asynchronously
   }
 
   if (message?.type === "mutate") {

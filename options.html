@@ -149,6 +149,29 @@
       <p id="importStatus" class="import-status" aria-live="polite"></p>
     </section>
 
+    <section class="card">
+      <h2>診断ログ</h2>
+
+      <div class="row">
+        <div class="row-label">
+          <strong>書き出す</strong>
+          <small>どのチャンネルをどう判定したかの記録です。うまくいかないときは、
+            このファイルを一緒に送ってください。札やチャットの中身は入っていません。</small>
+        </div>
+        <button id="journalBtn" type="button" class="action">ファイルに保存</button>
+      </div>
+
+      <div class="row">
+        <div class="row-label">
+          <strong>消す</strong>
+          <small>記録は新しい300件だけ残ります。手前で消してから再現させると読みやすくなります。</small>
+        </div>
+        <button id="journalClear" type="button" class="action">記録を消す</button>
+      </div>
+
+      <p id="journalStatus" class="import-status" aria-live="polite"></p>
+    </section>
+
     <p id="saved" aria-live="polite"></p>
   </main>
 
@@ -156,6 +179,7 @@
   <script src="src/store.js"></script>
   <script src="src/tokens.js"></script>
   <script src="src/backup.js"></script>
+  <script src="src/journal.js"></script>
   <script src="options.js"></script>
 </body>
 </html>

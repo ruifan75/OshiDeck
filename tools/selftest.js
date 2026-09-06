@@ -48,12 +48,66 @@
 
   // Channel id and name come from the parent document.
   const top = frame ? document : (() => { try { return window.top.document; } catch { return document; } })();
+  //
+  // Same order OshiDeck itself uses, and it reports which source answered —
+  // the wrong channel on screen is almost always the wrong source winning.
+  const CHANNEL_ID = /^UC[A-Za-z0-9_-]{22}$/;
+  const fromHref = (href) =>
+    /^\/channel\/(UC[A-Za-z0-9_-]{22})(?:[/?#]|$)/.exec(href || "")?.[1] || null;
+
+  const owner = top.querySelector("ytd-video-owner-renderer, ytd-watch-metadata #owner, #owner");
+  const name = owner?.querySelector(
+    "ytd-channel-name a, #channel-name a, ytd-channel-name #text, #channel-name #text"
+  )?.textContent?.trim();
+  const handle = owner?.querySelector('a[href^="/@"]')?.getAttribute("href")?.split(/[?#]/)[0];
+
+  let id = null;
+  let via = null;
+
+  for (const a of owner?.querySelectorAll('a[href^="/channel/"]') || []) {
+    id = fromHref(a.getAttribute("href"));
+    if (id) { via = "オーナー欄のリンク"; break; }
+  }
+
+  if (!id && handle && /^\/@[\w.-]{1,64}$/.test(handle)) {
+    const names = `a[href="${handle}"], a[href^="${handle}/"], a[href^="${handle}?"]`;
+    for (const sec of top.querySelectorAll("ytd-video-description-infocards-section-renderer")) {
+      if (!sec.querySelector(names)) continue;
+      for (const a of sec.querySelectorAll('a[href^="/channel/"]')) {
+        id = fromHref(a.getAttribute("href"));
+        if (id) { via = "説明欄のカード（ハンドル一致）"; break; }
+      }
+      if (id) break;
+    }
+  }
+
   const meta = top.querySelector('meta[itemprop="channelId"]')?.content;
-  const link = top.querySelector('ytd-video-owner-renderer a[href^="/channel/"], #owner a[href^="/channel/"]');
-  const id = meta || link?.getAttribute("href")?.match(/^\/channel\/([^/?#]+)/)?.[1];
-  const name = top.querySelector("ytd-video-owner-renderer #channel-name a")?.textContent?.trim();
-  add("チャンネルID", id, id || "");
+  if (!id && CHANNEL_ID.test(meta || "")) { id = meta; via = "meta[itemprop=channelId]"; }
+
+  // Only believed while it still describes the video in the address bar: after
+  // an in-page navigation this script is left over from the video loaded first.
+  const video = new URLSearchParams(top.defaultView?.location.search || "").get("v");
+  let staleScript = null;
+  if (video) for (const s of top.querySelectorAll("script")) {
+    const text = s.textContent;
+    if (!text || !text.startsWith("var ytInitialPlayerResponse")) continue;
+    const scriptVideo = /"videoId"\s*:\s*"([\w-]{11})"/.exec(text)?.[1];
+    const scriptId = /"channelId"\s*:\s*"(UC[A-Za-z0-9_-]{22})"/.exec(text)?.[1];
+    if (scriptVideo !== video) staleScript = { scriptVideo, scriptId };
+    else if (!id && CHANNEL_ID.test(scriptId || "")) { id = scriptId; via = "ytInitialPlayerResponse"; }
+    break;
+  }
+
+  add("チャンネルID", id, id ? `${id}（${via}）` : "どの手段でも取れませんでした");
   add("チャンネル名", name, name || "");
+  if (handle) rows.push({ "": "OK", 対象: "オーナーのハンドル", メモ: handle });
+  if (staleScript) {
+    rows.push({
+      "": "OK",
+      対象: "ページ内遷移を検出",
+      メモ: `埋め込みスクリプトは ${staleScript.scriptVideo} のまま（古いので不使用）`
+    });
+  }
 
   // This is what OshiDeck uses to decide whether a card is sendable here.
   const OWNER = /^(UC[A-Za-z0-9_-]{22})\//;

@@ -13,6 +13,13 @@
 // tried and produced ~140 false positives on this codebase — keywords, object
 // keys, shorthand — because telling a read from a key needs a real parser. A
 // check nobody trusts is worse than a narrow one, so this stays narrow.
+//
+// Limit: strings are blanked before regex literals, so a quote *inside* a
+// regex opens a string that closes on some later quote and blanks the code
+// in between. Usually that reports a real function as undefined; it can also
+// hide a bad call. Write such a pattern without the bare quote \u2014 check a
+// value's shape rather than escaping it, and match with `.{0,n}?` rather
+// than a negated class that names the quote.
 import { readFileSync } from "node:fs";
 
 const GLOBALS = new Set([

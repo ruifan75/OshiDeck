@@ -78,57 +78,134 @@
     document.querySelector("#send-button button") ||
     document.querySelector("yt-button-renderer#send-button button");
 
+  const CHANNEL_ID = /^UC[A-Za-z0-9_-]{22}$/;
+
   const asChannelId = (value) =>
-    typeof value === "string" && value.startsWith("UC") ? value : null;
+    typeof value === "string" && CHANNEL_ID.test(value) ? value : null;
 
   const channelFromHref = (href) =>
-    asChannelId(href?.match(/^\/channel\/([^/?#]+)/)?.[1]);
+    asChannelId(/^\/channel\/(UC[A-Za-z0-9_-]{22})(?:[/?#]|$)/.exec(href || "")?.[1]);
 
-  // Sources in priority order, tried one at a time.
+  // Every source below has to be owner-scoped AND has to be checked for
+  // freshness. Both rules were learned from a wrong channel on screen.
   //
-  // These were once a single comma-separated selector list, which does NOT
-  // mean "try each in turn": querySelector returns the first element in
-  // DOCUMENT ORDER matching any of them. YouTube's left guide links to its own
-  // auto-generated channels (Music, Gaming, …) and sits near the top of the
-  // DOM, so a broad `a.yt-simple-endpoint[href^="/channel/"]` beat the owner
-  // link every time the page was still filling in — and cards were filed under
-  // YouTube Music.
-  const OWNER_LINKS = [
-    "ytd-video-owner-renderer a[href^='/channel/']",
-    "#owner a[href^='/channel/']",
-    "ytd-channel-name a[href^='/channel/']"
-  ];
+  // Owner-scoped: these were once a single comma-separated selector list,
+  // which does NOT mean "try each in turn" — querySelector returns the first
+  // element in DOCUMENT ORDER matching any of them. So a broad
+  // `ytd-channel-name a[href^="/channel/"]` beat the owner and filed cards
+  // under whichever channel the video merely mentioned.
+  //
+  // Fresh: YouTube navigates without reloading, and not every part of the page
+  // that carries a channel id keeps up. Both `ytInitialPlayerResponse` and the
+  // `itemprop="author"` microdata still describe the PREVIOUS video after an
+  // in-page navigation, so neither may be believed unguarded.
+  const OWNER_BLOCK = "ytd-video-owner-renderer, ytd-watch-metadata #owner, #owner";
 
-  function readChannel(doc) {
-    // The owner link carries the id and the label together, so they can never
-    // describe two different channels — which is how one deck ended up with
-    // the right name and the wrong id.
-    for (const selector of OWNER_LINKS) {
-      const link = doc.querySelector(selector);
-      const id = channelFromHref(link?.getAttribute("href"));
-      if (id) return { id, name: link.textContent?.trim() || "" };
+  const ownerName = (owner) =>
+    owner.querySelector(
+      "ytd-channel-name a, #channel-name a, ytd-channel-name #text, #channel-name #text"
+    )?.textContent?.trim() || "";
+
+  // `/@` plus a short name, and nothing else. Checked rather than escaped, so
+  // an href of an unexpected shape is skipped instead of being smuggled into
+  // the attribute selector built from it below.
+  const HANDLE_PATH = /^\/@[\w.-]{1,64}$/;
+
+  // The owner block now names its channel by handle (`/@name`), which carries
+  // no id at all. The description's info cards pair that same handle with a
+  // `/channel/UC…` link, so matching on the handle converts one into the other
+  // without guessing from position — channels the video only mentions get
+  // their own cards, and they are exactly what position-guessing picks up.
+  function idFromInfocards(doc, handle) {
+    const names = `a[href="${handle}"], a[href^="${handle}/"], a[href^="${handle}?"]`;
+    for (const section of doc.querySelectorAll(
+      "ytd-video-description-infocards-section-renderer"
+    )) {
+      if (!section.querySelector(names)) continue;
+      for (const link of section.querySelectorAll("a[href^='/channel/']")) {
+        const id = channelFromHref(link.getAttribute("href"));
+        if (id) return id;
+      }
     }
-
-    // Authoritative on a watch page, but it carries no name.
-    const id = asChannelId(doc.querySelector('meta[itemprop="channelId"]')?.content);
-    if (!id) return null;
-
-    const name =
-      doc.querySelector("ytd-video-owner-renderer #channel-name a")?.textContent?.trim() ||
-      doc.querySelector("ytd-channel-name #text")?.textContent?.trim() ||
-      "";
-    return { id, name };
+    return null;
   }
 
-  // The live chat runs in a same-origin iframe, so the owner details live in
-  // the parent document.
-  function getChannel() {
-    let found = readChannel(document);
-    if (found) return found;
+  // Authoritative — but only while it still describes the video in the address
+  // bar. After an in-page navigation this script is left over from whichever
+  // video was loaded first, so a mismatch means "no answer", never "keep it".
+  function fromPlayerResponse(doc) {
+    const video = new URLSearchParams(doc.defaultView?.location.search || "").get("v");
+    if (!video) return null;
+    for (const script of doc.querySelectorAll("script")) {
+      const text = script.textContent;
+      if (!text || !text.startsWith("var ytInitialPlayerResponse")) continue;
+      if (/"videoId"\s*:\s*"([\w-]{11})"/.exec(text)?.[1] !== video) return null;
+      const id = asChannelId(/"channelId"\s*:\s*"(UC[A-Za-z0-9_-]{22})"/.exec(text)?.[1]);
+      return id && { id, name: /"ownerChannelName"\s*:\s*"(.{0,80}?)"/.exec(text)?.[1] || "" };
+    }
+    return null;
+  }
+
+  function readChannel(doc) {
+    const owner = doc.querySelector(OWNER_BLOCK);
+    const name = owner ? ownerName(owner) : "";
+
+    if (owner) {
+      // Older layouts still link the owner by id, which settles it outright.
+      for (const link of owner.querySelectorAll("a[href^='/channel/']")) {
+        const id = channelFromHref(link.getAttribute("href"));
+        if (id) return { id, name };
+      }
+      const handle = owner
+        .querySelector("a[href^='/@']")
+        ?.getAttribute("href")
+        ?.split(/[?#]/)[0];
+      const paired = handle && HANDLE_PATH.test(handle) && idFromInfocards(doc, handle);
+      if (paired) return { id: paired, name };
+    }
+
+    // Present on some layouts, absent on others, and it carries no name.
+    const meta = asChannelId(doc.querySelector('meta[itemprop="channelId"]')?.content);
+    if (meta) return { id: meta, name };
+
+    const player = fromPlayerResponse(doc);
+    return player ? { id: player.id, name: name || player.name } : null;
+  }
+
+  // The live chat runs in a same-origin iframe, so the video in the address
+  // bar is the parent's.
+  function currentVideo() {
     try {
-      if (window.top !== window) found = readChannel(window.top.document);
-    } catch (_) { /* cross-origin frame: nothing to read */ }
-    return found;
+      const top = window.top !== window ? window.top : window;
+      return new URLSearchParams(top.location.search).get("v");
+    } catch (_) {
+      return null; // cross-origin frame: nothing to read
+    }
+  }
+
+  // An answer is kept only for the video it was found on. Keeping it any
+  // longer is how the panel came to name a channel the viewer had already
+  // left: the page moved on, detection came up empty for a moment, and the
+  // previous answer was still sitting there looking current.
+  let lastSeen = { video: null, channel: null };
+
+  function getChannel() {
+    const video = currentVideo();
+    let found = readChannel(document);
+    if (!found) {
+      try {
+        if (window.top !== window) found = readChannel(window.top.document);
+      } catch (_) { /* cross-origin frame: nothing to read */ }
+    }
+
+    if (found) {
+      lastSeen = { video, channel: found };
+      return found;
+    }
+
+    // The info cards that carry the id fill in after the rest of the page, so
+    // a blank answer for the video we already identified is a gap, not a move.
+    return video && video === lastSeen.video ? lastSeen.channel : null;
   }
 
   /* ---------- deck assembly ---------- */
@@ -1015,6 +1092,7 @@
     watcher.start(); // no-op once attached; retries while chat is still loading
 
     const channel = getChannel();
+    if (!channel) retryUnresolved(currentVideo());
     const hue = channel?.id
       ? data.channelMeta[channel.id]?.hue ?? store.defaultHue(channel.id)
       : null;
@@ -1119,6 +1197,21 @@
     if (frozen) { pendingRender = true; return; }
     clearTimeout(refreshTimer);
     refreshTimer = setTimeout(render, 200);
+  }
+
+  // The parts of a watch page that carry a channel id can arrive after the
+  // chat does, and nothing already watched here would fire again once they
+  // do. Bounded, so a page that genuinely has no channel — a popped-out chat
+  // window — settles instead of retrying forever.
+  let retry = { video: null, left: 0 };
+
+  function retryUnresolved(video) {
+    if (!video) return;
+    if (retry.video !== video) retry = { video, left: 5 };
+    if (retry.left <= 0) return;
+    retry.left -= 1;
+    clearTimeout(refreshTimer);
+    refreshTimer = setTimeout(render, 600);
   }
 
   /* ---------- wiring ---------- */

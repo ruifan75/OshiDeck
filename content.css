@@ -32,6 +32,40 @@
   padding-bottom: 7px;
 }
 
+/* Taking someone else's comment.
+
+   YouTube keeps a 32px gutter at the right of every chat row for its own ⋮,
+   absolutely positioned and invisible (opacity .0001) until the row is
+   hovered. This sits just inside that gutter and follows the same rule: it is
+   only in the DOM while the pointer is on that row, and being absolute it
+   never reflows the comment or covers it while idle. */
+.od-grab {
+  position: absolute;
+  top: 2px;
+  right: 32px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .14);
+  color: var(--yt-live-chat-primary-text-color, #f1f1f1);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.od-grab:hover { background: rgba(255, 255, 255, .26); }
+
+.od-grab:focus-visible {
+  outline: 2px solid #3ea6ff;
+  outline-offset: 1px;
+}
+
 /* ---------- top bar ---------- */
 
 .od-bar {

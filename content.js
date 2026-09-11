@@ -22,6 +22,8 @@
   let inputObserver = null;
   let panelObserver = null;
   let watchedRenderer = null;
+  let grabEl = null;
+  let grabRow = null;
   let expanded = false;
   let flashId = null;
   let drag = null;
@@ -441,6 +443,67 @@
       done?.();
     };
     setTimeout(attempt, 80);
+  }
+
+  /* ---------- taking a comment from the chat ---------- */
+
+  // Only the kinds that carry a comment anyone could say themselves. A
+  // membership or gift announcement has no `#message` worth keeping.
+  const COMMENT_ROWS =
+    "yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer";
+
+  // The button rides in the same right-hand gutter YouTube keeps for its own
+  // per-message menu, just inside it. That gutter is absolutely positioned, so
+  // nothing reflows and the comment itself is never covered while idle — the
+  // button exists only on the row under the pointer, which is exactly how
+  // YouTube's own ⋮ behaves.
+  function grabButton() {
+    if (grabEl) return grabEl;
+
+    grabEl = document.createElement("button");
+    grabEl.type = "button";
+    grabEl.className = "od-grab";
+    grabEl.textContent = "＋";
+    grabEl.setAttribute("aria-label", "このコメントを入力欄に入れる");
+    grabEl.addEventListener("click", (event) => {
+      // The row underneath opens YouTube's own menus on click.
+      event.preventDefault();
+      event.stopPropagation();
+      takeComment(grabRow);
+    });
+    return grabEl;
+  }
+
+  function offerGrab(row) {
+    if (row === grabRow && grabEl?.isConnected) return;
+    grabRow = row;
+    if (!row) return grabEl?.remove();
+    row.appendChild(grabButton());
+  }
+
+  function takeComment(row) {
+    const message = row?.querySelector("#message");
+    if (!message) return;
+
+    // Same reader as the editor uses: a comment and a draft have the same
+    // shape — text with <img data-emoji-id> among it.
+    const captured = tokens.collectTokens(message);
+    if (!tokens.hasSubstance(captured)) return showToast("入れられる中身がありません");
+
+    // Emoji from two channels can be sent nowhere, so such a card could never
+    // exist. Say so here rather than at the save button.
+    if (tokens.requiredChannels(captured).length > 1) {
+      return showToast("複数チャンネルのメン限が混ざっています");
+    }
+
+    const input = getChatInput();
+    if (!input) return showToast("入力欄が見つかりません");
+
+    // Into the editor, not straight into the deck. The two save targets are
+    // already in the bar, and they are the choice this has to offer — which
+    // also means a member emoji still pins it to this channel, and saving
+    // still puts it in the deck. Appending matches what clicking a card does.
+    tokens.writeToInput(input, captured);
   }
 
   /* ---------- saving and editing ---------- */
@@ -1334,6 +1397,7 @@
     resizeObserver?.disconnect();
     inputObserver?.disconnect();
     panelObserver?.disconnect();
+    grabEl?.remove();
     watcher.stop();
     clearTimeout(refreshTimer);
     clearTimeout(noticeTimer);
@@ -1395,6 +1459,14 @@
   } catch (_) {
     shutdown();
   }
+
+  // Delegated, so a chat that adds a row a second costs nothing: one button
+  // moves to whichever comment the pointer is on.
+  document.addEventListener("pointerover", (event) => {
+    if (stopped || !rootEl || rootEl.hidden) return offerGrab(null);
+    const row = event.target instanceof Element ? event.target.closest(COMMENT_ROWS) : null;
+    offerGrab(row?.querySelector("#message") ? row : null);
+  }, true);
 
   window.addEventListener("yt-navigate-finish", scheduleRender);
   window.addEventListener("load", scheduleRender);

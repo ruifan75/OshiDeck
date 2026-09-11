@@ -80,8 +80,24 @@
     if (!renderer || renderer === watchedRenderer) return;
     panelObserver?.disconnect();
     watchedRenderer = renderer;
-    panelObserver = new MutationObserver(() => scheduleRender());
+    panelObserver = new MutationObserver(syncVisibility);
     panelObserver.observe(renderer, { attributes: true });
+  }
+
+  // Hiding is not reordering. The freeze exists so cards cannot move out from
+  // under the pointer, and routing this through it left the deck drawn over
+  // the Super Chat panel for as long as the pointer stayed on the deck.
+  function syncVisibility() {
+    if (stopped || !rootEl?.isConnected) return;
+
+    const hide = !getChatInput();
+    if (rootEl.hidden === hide) return;
+    rootEl.hidden = hide;
+
+    if (!hide) return scheduleRender();
+    // Nothing is under the pointer any more, and no pointerleave is owed.
+    frozen = false;
+    journal.record({ kind: "note", what: "stepped-aside", reason: "input-not-rendered" });
   }
 
   const getScroller = () =>
@@ -167,20 +183,33 @@
     return "";
   }
 
-  // `/@` plus a short name, and nothing else. Checked rather than escaped, so
-  // an href of an unexpected shape is skipped instead of being smuggled into
-  // the attribute selector built from it.
-  const HANDLE_PATH = /^\/@[\w.-]{1,64}$/;
+  // `/@name`, with query and fragment dropped and percent-escapes undone so an
+  // encoded handle and a plain one compare equal. Nothing here restricts the
+  // character set: YouTube supports handles outside ASCII, and `\w` quietly
+  // rejected them — which on a layout whose owner block carries no id link
+  // meant no identification at all.
+  function handleOf(href) {
+    const path = (href || "").split(/[?#]/)[0];
+    if (!path.startsWith("/@") || path.length < 3) return null;
+    try {
+      return decodeURIComponent(path).toLowerCase();
+    } catch (_) {
+      return path.toLowerCase(); // malformed escape: compare it as written
+    }
+  }
 
   function ownerHandle(doc) {
     for (const selector of OWNER_BLOCKS) {
       const owner = doc.querySelector(selector);
-      const href = owner?.querySelector("a[href^='/@']")?.getAttribute("href");
-      const handle = href?.split(/[?#]/)[0];
-      if (handle && HANDLE_PATH.test(handle)) return handle;
+      const handle = handleOf(owner?.querySelector("a[href^='/@']")?.getAttribute("href"));
+      if (handle) return handle;
     }
     return null;
   }
+
+  const namesHandle = (section, handle) =>
+    [...section.querySelectorAll("a[href^='/@']")]
+      .some((link) => handleOf(link.getAttribute("href")) === handle);
 
   const cardName = (section) =>
     section.querySelector("#title, h3")?.textContent?.trim() || "";
@@ -196,24 +225,25 @@
   // are believed only when they all name one channel, so a layout that ever
   // lists a second one refuses rather than guesses.
   function fromInfocards(doc, handle) {
-    const wanted = handle
-      ? `a[href="${handle}"], a[href^="${handle}/"], a[href^="${handle}?"]`
-      : null;
     const seen = [];
 
     for (const section of doc.querySelectorAll(
       "ytd-video-description-infocards-section-renderer"
     )) {
+      const isOwner = !!handle && namesHandle(section, handle);
       for (const link of section.querySelectorAll("a[href^='/channel/']")) {
         const id = channelFromHref(link.getAttribute("href"));
         if (!id) continue;
-        if (wanted && section.querySelector(wanted)) {
-          return { id, name: cardName(section), byHandle: true };
-        }
+        if (isOwner) return { id, name: cardName(section), byHandle: true };
         seen.push({ id, name: cardName(section), byHandle: false });
         break;
       }
     }
+
+    // Knowing the owner handle and finding no card for it means these cards
+    // describe somebody else. Unanimity answers only the case the owner block
+    // gave no handle at all — a collaboration, where it carries no link.
+    if (handle) return null;
 
     return new Set(seen.map((card) => card.id)).size === 1 ? seen[0] : null;
   }
@@ -235,7 +265,21 @@
     return null;
   }
 
+  // During an in-page navigation the address bar changes about a second before
+  // the page does — measured, not assumed. `ytd-watch-flexy` carries the video
+  // the DOM is actually showing, so while the two disagree every source below
+  // still describes the video we just left. Reading anyway paired the previous
+  // owner with the new video, and that pairing outlived the DOM that made it.
+  function showsCurrentVideo(doc) {
+    const shown = doc.querySelector("ytd-watch-flexy")?.getAttribute("video-id");
+    if (!shown) return true; // a popped-out chat has no player to disagree with
+    const video = new URLSearchParams(doc.defaultView?.location.search || "").get("v");
+    return !video || shown === video;
+  }
+
   function readChannel(doc) {
+    if (!showsCurrentVideo(doc)) return null;
+
     const cards = fromInfocards(doc, ownerHandle(doc));
 
     let ownerId = null;

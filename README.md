@@ -159,6 +159,7 @@ options.js ─┘        ↓
 `tools/run-tests.sh` — ブラウザなしで確認できる範囲。
 
 - 構文
+- チャンネル判定（`channel-test.mjs`：ページ内遷移の途中・ハンドル不一致・非ASCIIハンドル・文書順）
 - 存在しない関数の呼び出し（`tools/check-refs.mjs`）。`node --check` は構文しか見ないので、
   消えた関数は「押しても何も起きないボタン」として出てきます
 - 同じセレクタが同じプロパティを2回書いていないか（`tools/check-css.mjs`）。

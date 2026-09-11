@@ -705,13 +705,17 @@ async function saveJournal() {
 }
 
 async function clearJournal() {
-  // The worker owns the write, here as everywhere else.
+  // The worker owns the write, here as everywhere else. It reports a failed
+  // write by resolving with ok:false — not by rejecting — so awaiting without
+  // reading the answer announced success while the log still stood.
+  let reply = null;
   try {
-    await chrome.runtime.sendMessage({ type: "journal", clear: true });
+    reply = await chrome.runtime.sendMessage({ type: "journal", clear: true });
   } catch (_) {
-    return journalStatus("消せませんでした");
+    reply = null; // no worker to ask
   }
-  journalStatus("記録を消しました");
+
+  journalStatus(reply?.ok ? "記録を消しました" : "消せませんでした");
 }
 
 document.querySelector("#journalBtn").addEventListener("click", saveJournal);

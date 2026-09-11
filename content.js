@@ -20,6 +20,8 @@
   let barContext = null;
   let watchedInput = null;
   let inputObserver = null;
+  let panelObserver = null;
+  let watchedRenderer = null;
   let expanded = false;
   let flashId = null;
   let drag = null;
@@ -39,7 +41,7 @@
 
   /* ---------- YouTube DOM ---------- */
 
-  function getChatInput() {
+  function findChatInput() {
     const renderer =
       document.querySelector("yt-live-chat-text-input-field-renderer#input") ||
       document.querySelector("yt-live-chat-text-input-field-renderer");
@@ -50,6 +52,34 @@
       document.querySelector('yt-live-chat-message-input-renderer [contenteditable="true"]') ||
       document.querySelector("yt-live-chat-message-input-renderer [contenteditable]")
     );
+  }
+
+  // Rendered, not merely present. A collapsed element still answers
+  // querySelector, which is how the deck came to be drawn over the Super Chat
+  // panel: YouTube hides the input rather than removing it, so "found" was
+  // read as "usable" and rendering carried on into the same corner.
+  const isRendered = (el) => !!el && el.getClientRects().length > 0;
+
+  // The input anyone can actually type into. Measuring forces a layout, so
+  // this belongs in render() and in deliberate actions — never in the mutation
+  // hot path, which runs on every chat message.
+  function getChatInput() {
+    const input = findChatInput();
+    return isRendered(input) ? input : null;
+  }
+
+  // YouTube marks the input renderer while its own panel occupies that corner
+  // (`product-picker-open` today) and collapses the input inside it. Watching
+  // one element's attributes is cheap and, by not naming the attribute, keeps
+  // working if YouTube renames it — this only says "look again", and render()
+  // decides by measuring.
+  function watchInputPanel() {
+    const renderer = document.querySelector("yt-live-chat-message-input-renderer");
+    if (!renderer || renderer === watchedRenderer) return;
+    panelObserver?.disconnect();
+    watchedRenderer = renderer;
+    panelObserver = new MutationObserver(() => scheduleRender());
+    panelObserver.observe(renderer, { attributes: true });
   }
 
   const getScroller = () =>
@@ -1178,8 +1208,18 @@
     if (stopped) return;
     if (!store.alive()) return shutdown();
 
+    watchInputPanel(); // so the panel opening and closing both reach us
+
     const input = getChatInput();
-    if (!input) return;
+    if (!input) {
+      // The chat input is there but collapsed: YouTube is showing Super Chat
+      // over it. Staying put would draw the deck on top of that panel.
+      if (rootEl && !rootEl.hidden) {
+        rootEl.hidden = true;
+        journal.record({ kind: "note", what: "stepped-aside", reason: "input-not-rendered" });
+      }
+      return;
+    }
     currentInput = input;
 
     if (!rootEl || !rootEl.isConnected) {
@@ -1190,6 +1230,7 @@
       }
       log("Mounted.");
     }
+    rootEl.hidden = false;
 
     const data = await store.read();
     if (!data) return shutdown();
@@ -1292,11 +1333,13 @@
     observer.disconnect();
     resizeObserver?.disconnect();
     inputObserver?.disconnect();
+    panelObserver?.disconnect();
     watcher.stop();
     clearTimeout(refreshTimer);
     clearTimeout(noticeTimer);
 
     if (rootEl?.isConnected) {
+      rootEl.hidden = false; // the notice below is the whole point of this path
       rootEl.replaceChildren();
       const notice = document.createElement("div");
       notice.className = "od-empty";
@@ -1332,7 +1375,7 @@
 
   // Live chat mutates constantly, so keep the hot path to one cheap lookup.
   const observer = new MutationObserver(() => {
-    const input = getChatInput();
+    const input = findChatInput(); // existence only: measuring here costs a layout
     if (input && (input !== currentInput || !rootEl?.isConnected)) scheduleRender();
   });
   observer.observe(document.documentElement, { childList: true, subtree: true });

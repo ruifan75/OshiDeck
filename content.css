@@ -22,6 +22,11 @@
   color: var(--od-text);
 }
 
+/* YouTube opens Super Chat over this same corner. The deck steps aside for it
+   — and has to say so loudly, because `display: block !important` above would
+   otherwise beat the browser's own [hidden] rule and leave it drawn on top. */
+#oshideck-root[hidden] { display: none !important; }
+
 #oshideck-root[data-mode="list"] {
   background: var(--od-surface);
   padding-bottom: 7px;

@@ -4,9 +4,27 @@
   const OD = (globalThis.OshiDeck ||= {});
   const { collectTokens, harvestEmoji } = OD.tokens;
 
+  // How far back messages are kept at all. With the decay below, anything
+  // this old is worth about 8% of a message arriving now, so falling out of
+  // the window is no longer a visible event — it is a bound on memory.
   const WINDOW_MS = 90_000;
+
+  // What actually decides the order. A wave loses half its weight every
+  // half-life, so one that ended a minute ago cannot hold the front against
+  // one happening now: 40 claps from 80 seconds ago are worth about 4.4, so
+  // five fresh messages overtake them. A flat count could not do that — after
+  // a burst of applause the next song would start and the applause was still
+  // first, because every message in the window counted the same right up to
+  // the moment it fell off the end.
+  const HALF_LIFE_MS = 25_000;
+
   const RECENT_MAX = 600;
-  const NOTIFY_MS = 8_000; // reordering more often than this is just noise
+
+  // Reordering is throttled because cards moving is disruptive, not because it
+  // is expensive — and the pointer is protected separately, by freezing while
+  // it rests on the deck. Each tick costs a storage read and a relayout, and
+  // only in chat-driven mode.
+  const NOTIFY_MS = 4_000;
 
   const DECORATION = /[!\uFF01?\uFF1F~\u301C\u30FC\u30FB.\u3002,\u3001;\uFF1B:\uFF1A\u266A\u2606\u2605\u5F61*_+\-()\uFF08\uFF09\u300C\u300D]+/g;
   const SPACES = /[\s\u3000]+/g;
@@ -143,16 +161,30 @@
       host = null;
     }
 
-    // signature -> how many messages carried it inside the window
+    // signature -> { score, count }
+    //
+    // `score` orders the deck: every message is worth 2^(-age/half-life), so
+    // recency is weighed rather than merely admitted.
+    //
+    // `count` is the plain number of messages, kept because that is what the
+    // bar shows the viewer — 「いまチャットで4.35回」 is not a thing.
     function ranking() {
       prune();
-      const counts = new Map();
-      for (const entry of recent) counts.set(entry.sig, (counts.get(entry.sig) || 0) + 1);
-      return counts;
+      const now = Date.now();
+      const out = new Map();
+
+      for (const entry of recent) {
+        const seen = out.get(entry.sig) || { score: 0, count: 0 };
+        seen.score += 2 ** (-(now - entry.at) / HALF_LIFE_MS);
+        seen.count += 1;
+        out.set(entry.sig, seen);
+      }
+
+      return out;
     }
 
     return { start, stop, ranking, get attached() { return !!host; } };
   }
 
-  OD.trending = { signature, createWatcher, WINDOW_MS };
+  OD.trending = { signature, createWatcher, WINDOW_MS, HALF_LIFE_MS };
 })();

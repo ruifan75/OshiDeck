@@ -25,12 +25,19 @@ globalThis.document = {
 };
 let fire = null;
 const host = new El("DIV");
+
+// Decay is about elapsed time, so the test needs to move time rather than
+// wait for it.
+let clock = 1_700_000_000_000;
+Date.now = () => clock;
+const wait = (ms) => { clock += ms; };
 globalThis.MutationObserver = class { constructor(cb) { fire = cb; } observe() {} disconnect() {} };
 
 require("/Users/maintainer/OshiDeck/src/layout.js");
 require("/Users/maintainer/OshiDeck/src/store.js");
 require("/Users/maintainer/OshiDeck/src/tokens.js");
-require("/Users/maintainer/OshiDeck/src/trending.js");
+// OD_TRENDING lets the mutation checker swap in a deliberately broken copy.
+require(process.env.OD_TRENDING || "/Users/maintainer/OshiDeck/src/trending.js");
 
 const { trending, store, tokens } = globalThis.OshiDeck;
 const CH = "UCsakura0000000000000000";
@@ -54,9 +61,10 @@ send(msg(text("今日の歌よかったね")), 3);
 const rank = watcher.ranking();
 const sig = (t) => trending.signature(t);
 console.log("\n--- ranking (90s window) ---");
-console.log("拍手 (8*)     :", rank.get(sig([{ type: "text", value: "888" }])), "  期待 17");
-console.log("メン限ハート  :", rank.get(sig([{ type: "youtubeEmoji", emojiId: CH + "/heart" }])), "   期待 7");
-console.log("わこつ        :", rank.get(sig([{ type: "text", value: "わこつ" }])), "   期待 2");
+const countOf = (t) => rank.get(sig(t))?.count ?? 0;
+console.log("拍手 (8*)     :", countOf([{ type: "text", value: "888" }]), "  期待 17");
+console.log("メン限ハート  :", countOf([{ type: "youtubeEmoji", emojiId: CH + "/heart" }]), "   期待 7");
+console.log("わこつ        :", countOf([{ type: "text", value: "わこつ" }]), "   期待 2");
 
 // My deck: the clap card should rise even though I rarely use it.
 const day = 864e5, now = Date.now();
@@ -69,9 +77,16 @@ const deck = [
 
 const ranking = watcher.ranking();
 const fallback = new Map(store.sortCards(deck, "heat").map((c, i) => [c.id, i]));
+const score = (c, rank) => {
+  c.signature ||= trending.signature(c.tokens);
+  const seen = rank.get(c.signature);
+  c.hits = seen?.count || 0;
+  c.trend = seen?.score || 0;
+  return c;
+};
 const ordered = deck
-  .map((c) => { c.signature ||= trending.signature(c.tokens); c.hits = ranking.get(c.signature) || 0; return c; })
-  .sort((a, b) => b.hits - a.hits || fallback.get(a.id) - fallback.get(b.id));
+  .map((c) => score(c, ranking))
+  .sort((a, b) => b.trend - a.trend || fallback.get(a.id) - fallback.get(b.id));
 
 console.log("\n--- deck order ---");
 console.log("chat-driven :", ordered.map((c) => `${c.id}(${c.hits})`).join(" > "));
@@ -91,5 +106,40 @@ const expect = (label, got, want) => {
   console.log(`${ok ? "\nok  " : "\nFAIL"} ${label}: ${JSON.stringify(got)}${ok ? "" : " != " + JSON.stringify(want)}`);
 };
 expect("clap rises to front on chat wave", ordered[0].id, "clap");
+
+/* ---------- a wave that ended does not hold the front ---------- */
+
+// The reported case: a long burst of applause, then the next song starts and
+// a different reaction begins — the applause was still first, because a flat
+// window counted every message in it the same.
+const later = trending.createWatcher({ onChange: () => {} });
+later.start();
+
+const burst = msg(text("8888"));
+const fresh = msg(text("かわいい"));
+
+for (let i = 0; i < 40; i++) fire([{ addedNodes: [item(burst)] }]);
+wait(80_000);
+for (let i = 0; i < 5; i++) fire([{ addedNodes: [item(fresh)] }]);
+
+const late = later.ranking();
+const clapSig = sig([{ type: "text", value: "8" }]);
+const freshSig = sig([{ type: "text", value: "かわいい" }]);
+
+console.log("\n--- 80 秒前の拍手 40 回 vs いまの 5 回 ---");
+console.log("拍手   count:", late.get(clapSig).count, " score:", late.get(clapSig).score.toFixed(2));
+console.log("かわいい count:", late.get(freshSig).count, " score:", late.get(freshSig).score.toFixed(2));
+
+expect("the old burst still counts 40 for the viewer", late.get(clapSig).count, 40);
+expect("but scores below a small fresh wave", late.get(clapSig).score < late.get(freshSig).score, true);
+
+const two = [
+  { id: "clap",  tokens: [{ type: "text", value: "8888" }],   uses: 9, heat: 9, lastUsedAt: clock },
+  { id: "kawaii", tokens: [{ type: "text", value: "かわいい" }], uses: 0, heat: 0, lastUsedAt: 0 }
+];
+const order2 = two
+  .map((c) => score(c, late))
+  .sort((a, b) => b.trend - a.trend);
+expect("so the new reaction takes the front", order2[0].id, "kawaii");
 expect("other channel's stamp is locked", deck.find((c) => c.id === "far").tokens.length && true, true);
 process.exit(fail);

@@ -437,10 +437,12 @@
     return cards
       .map((card) => {
         card.signature ||= trending.signature(card.tokens || []);
-        card.hits = ranking.get(card.signature) || 0;
+        const seen = ranking.get(card.signature);
+        card.hits = seen?.count || 0;   // what the bar tells the viewer
+        card.trend = seen?.score || 0;  // what decides the order
         return card;
       })
-      .sort((a, b) => b.hits - a.hits || fallback.get(a.id) - fallback.get(b.id));
+      .sort((a, b) => b.trend - a.trend || fallback.get(a.id) - fallback.get(b.id));
   }
 
   /* ---------- notices ---------- */

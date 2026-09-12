@@ -2,7 +2,7 @@
 // so cards matching the current wave can float to the front.
 (() => {
   const OD = (globalThis.OshiDeck ||= {});
-  const { collectTokens, harvestEmoji } = OD.tokens;
+  const { cardKey, collectTokens, harvestEmoji } = OD.tokens;
 
   // How far back messages are kept at all. With the decay below, anything
   // this old is worth about 8% of a message arriving now, so falling out of
@@ -19,6 +19,14 @@
   const HALF_LIFE_MS = 25_000;
 
   const RECENT_MAX = 600;
+
+  // A burst is not the same as popular. Offering a card is about catching a
+  // wave as it breaks, so it counts plain repetitions over a few seconds
+  // rather than the decayed weight above — and it counts them by exact
+  // wording, because `きちゃ` and `きちゃきちゃ` are not the same thing to say
+  // even though the ordering deliberately treats them as one reaction.
+  const BURST_MS = 12_000;
+  const BURST_MIN = 4;
 
   // Reordering is throttled because cards moving is disruptive, not because it
   // is expensive — and the pointer is protected separately, by freezing while
@@ -102,7 +110,7 @@
       const sig = signature(captured);
       if (!sig) return;
 
-      recent.push({ sig, at: Date.now(), tokens: captured });
+      recent.push({ sig, key: cardKey(captured), at: Date.now(), tokens: captured });
       if (recent.length > RECENT_MAX) recent = recent.slice(-RECENT_MAX);
       dirty = true;
     }
@@ -192,8 +200,32 @@
       return out;
     }
 
-    return { start, stop, ranking, get attached() { return !!host; } };
+    // The strongest thing being said over and over right now, by exact
+    // wording. `accept` decides what is worth offering at all — the caller
+    // knows about member emoji and about what the deck already holds.
+    function burst(accept) {
+      const since = Date.now() - BURST_MS;
+      const counts = new Map();
+
+      for (const entry of recent) {
+        if (entry.at < since || !entry.key) continue;
+        const seen = counts.get(entry.key) || { key: entry.key, count: 0, tokens: null };
+        seen.count += 1;
+        seen.tokens = entry.tokens || seen.tokens;
+        counts.set(entry.key, seen);
+      }
+
+      let best = null;
+      for (const seen of counts.values()) {
+        if (seen.count < BURST_MIN) continue;
+        if (accept && !accept(seen)) continue;
+        if (!best || seen.count > best.count) best = seen;
+      }
+      return best;
+    }
+
+    return { start, stop, ranking, burst, get attached() { return !!host; } };
   }
 
-  OD.trending = { signature, createWatcher, WINDOW_MS, HALF_LIFE_MS };
+  OD.trending = { signature, createWatcher, WINDOW_MS, HALF_LIFE_MS, BURST_MS, BURST_MIN };
 })();

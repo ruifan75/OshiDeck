@@ -106,16 +106,24 @@ const MUTATIONS = [
     "seen.score += 1;"],
 
   [DRAW, CONTENT, "member emoji offered as a drawn card",
-    "if (tokens.requiredChannels(seen.tokens).length) continue;",
-    "if (false) continue;"],
+    "    !tokens.requiredChannels(seen.tokens).length;",
+    "    true;"],
 
   [DRAW, CONTENT, "a reaction already in the deck offered again",
-    "if (!signature || held.has(signature)) continue;",
-    "if (!signature) continue;"],
+    "    !mine.has(seen.key) &&",
+    "    true &&"],
 
-  [DRAW, CONTENT, "an old burst offered as though it were a wave",
-    "if (seen.count < DRAW_MIN_COUNT || seen.score < DRAW_MIN_SCORE) continue;",
-    "if (seen.count < DRAW_MIN_COUNT) continue;"],
+  [DRAW, CONTENT, "a drawn card replaced the moment anything louder arrives",
+    "    if (drawn) return drawn.card;",
+    "    if (false) return drawn.card;"],
+
+  [TREND, TRENDING, "a burst that never has to be a burst",
+    "        if (seen.count < BURST_MIN) continue;",
+    "        if (false) continue;"],
+
+  [TREND, TRENDING, "bursts counted by the loose signature",
+    "recent.push({ sig, key: cardKey(captured), at: Date.now(), tokens: captured });",
+    "recent.push({ sig, key: sig, at: Date.now(), tokens: captured });"],
 
   [DRAW, LAYOUT, "a hand that refuses to squeeze",
     "return Math.min(MAX_OVERLAP, Math.max(OVERLAP, cardWidth - step));",

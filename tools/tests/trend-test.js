@@ -110,6 +110,26 @@ const expect = (label, got, want) => {
 };
 expect("clap rises to front on chat wave", ordered[0].id, "clap");
 
+/* ---------- a burst is exact, and recent ---------- */
+
+const bw = trending.createWatcher({ onChange: () => {} });
+bw.start();
+send(msg(text("きちゃ")), 5);
+send(msg(text("きちゃきちゃ")), 5);
+
+const keyOf = (v) => tokens.cardKey([{ type: "text", value: v }]);
+expect("each exact wording bursts on its own, unmerged",
+  [bw.burst((s) => s.key === keyOf("きちゃ"))?.count,
+   bw.burst((s) => s.key === keyOf("きちゃきちゃ"))?.count],
+  [5, 5]);
+
+send(msg(text("ぽんぽこ")), 3);
+expect("three of a thing is not a burst",
+  bw.burst((s) => s.key === keyOf("ぽんぽこ")) === null, true);
+
+wait(20_000);
+expect("and a burst that has passed is no longer one", bw.burst() === null, true);
+
 /* ---------- a tooltip is not part of the comment ---------- */
 
 // Reaching the ＋ button means hovering the comment, which is exactly when

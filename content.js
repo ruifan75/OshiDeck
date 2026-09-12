@@ -450,43 +450,58 @@
       .sort((a, b) => b.trend - a.trend || fallback.get(a.id) - fallback.get(b.id));
   }
 
-  // What the chat is doing that this deck cannot already do.
+  // A card is drawn when the chat bursts — several people saying the same
+  // thing within a few seconds — not merely when something is popular. It then
+  // stays put for a while: recomputing it every render made it flicker between
+  // reactions, and a card that changes under the pointer is worth less than no
+  // card.
   //
-  // A reaction you already hold rises to the front on its own, so drawing it
-  // again would only be a duplicate. Member emoji are left out altogether:
-  // they belong to this channel, but YouTube serves them to members only, and
-  // a card that fails when pressed is worse than no card. When membership can
-  // be told apart, this is the line to revisit.
-  const DRAW_MIN_COUNT = 3;
-  const DRAW_MIN_SCORE = 3;
+  // Matching is by exact wording, not by the loose signature that orders the
+  // hand. That signature deliberately treats `きちゃ` and `きちゃきちゃ` as one
+  // reaction, which is right for sorting and wrong for offering: they are
+  // different things to say.
+  const HOLD_MS = 45_000;
+
+  let drawn = null; // { key, card, until }
+
+  // A reaction already in the hand is no offer at all, and member emoji are
+  // left out altogether: they belong to this channel, but YouTube serves them
+  // to members only, and a card that fails when pressed is worse than no card.
+  // When membership can be told apart, that is the line to revisit.
+  const worthOffering = (mine) => (seen) =>
+    !mine.has(seen.key) &&
+    tokens.hasSubstance(seen.tokens) &&
+    !tokens.requiredChannels(seen.tokens).length;
 
   function drawFromChat(deck) {
-    if (!settingsCache.suggest) return null;
+    if (!settingsCache.suggest) return (drawn = null);
 
-    const held = new Set();
+    const now = Date.now();
+    const mine = new Set();
     for (const card of deck) {
-      card.signature ||= trending.signature(card.tokens || []);
-      held.add(card.signature);
+      card.key ||= tokens.cardKey(card.tokens || []);
+      mine.add(card.key);
     }
 
-    let best = null;
-    for (const [signature, seen] of watcher.ranking()) {
-      if (!signature || held.has(signature)) continue;
-      if (seen.count < DRAW_MIN_COUNT || seen.score < DRAW_MIN_SCORE) continue;
-      if (!tokens.hasSubstance(seen.tokens)) continue;
-      if (tokens.requiredChannels(seen.tokens).length) continue;
-      if (!best || seen.score > best.score) best = { signature, ...seen };
-    }
+    // Taking it into the deck ends the offer, and so does its time running out.
+    if (drawn && (now >= drawn.until || mine.has(drawn.key))) drawn = null;
+    if (drawn) return drawn.card;
 
-    if (!best) return null;
-    return {
-      id: `drawn:${best.signature}`,
-      drawn: true,          // not a card anyone owns: no id in storage
-      tokens: best.tokens,
-      signature: best.signature,
-      hits: best.count,
-      trend: best.score
+    const seen = watcher.burst(worthOffering(mine));
+    if (!seen) return null;
+
+    drawn = {
+      key: seen.key,
+      until: now + HOLD_MS,
+      card: {
+        id: `drawn:${seen.key}`,
+        drawn: true,      // not a card anyone owns: no id in storage
+        tokens: seen.tokens,
+        key: seen.key,
+        hits: seen.count
+      }
     };
+    return drawn.card;
   }
 
   function buildDrawnRow(card) {
@@ -520,10 +535,29 @@
     play.className = "od-card-play";
     play.addEventListener("click", (event) => playCard(card, { send: event.shiftKey }));
     play.appendChild(cardBody(card, size).body);
-
     el.appendChild(play);
+
+    // Keeping it cannot go through playing it. With auto-send on, pressing the
+    // card sends it at once, and the save targets never get a chance to
+    // appear — so the way to keep a drawn card was closed for exactly the
+    // people who had turned that setting on.
+    const tools = document.createElement("div");
+    tools.className = "od-card-tools";
+    tools.appendChild(iconButton("plus", "入力欄に入れる（保存はそのあと帯から）", (event) => {
+      event.stopPropagation();
+      stageForSaving(card);
+    }, () => cardPeek(card)));
+    el.appendChild(tools);
+
     trackPeek(el, card);
     return el;
+  }
+
+  // Into the editor and no further, whatever auto-send is set to.
+  function stageForSaving(card) {
+    const input = getChatInput();
+    if (!input) return showToast("入力欄が見つかりません");
+    tokens.writeToInput(input, card.tokens || []);
   }
 
   /* ---------- notices ---------- */
@@ -951,7 +985,7 @@
     const body = text || (stamps ? `スタンプ ${stamps}個` : "");
 
     if (card.drawn) {
-      return { text: `${body}  ・ チャットで${card.hits}回。押すと入力欄へ、帯からデッキに入ります` };
+      return { text: `${body}  ・ いま${card.hits}人が連打中。押すと入力欄へ、＋で保存できます` };
     }
     return { text: card.hits > 0 ? `${body}  ・ いまチャットで${card.hits}回` : body };
   }
@@ -1064,7 +1098,7 @@
     return svg;
   }
 
-  const DRAWN_GAP = 10; // enough that a drawn card reads as not yet yours
+  const DRAWN_GAP = 14; // wide enough that it never reads as part of the hand
 
   function renderHand(container, deck, settings, hue, drawn) {
     const width = container.clientWidth || 400;

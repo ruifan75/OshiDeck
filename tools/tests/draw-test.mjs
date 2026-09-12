@@ -11,8 +11,8 @@ const source = process.env.OD_SOURCE
   : new URL("../../content.js", import.meta.url);
 const src = readFileSync(source, "utf8");
 
-const from = src.indexOf("  // What the chat is doing that this deck cannot already do.");
-const to = src.indexOf("  // No tools, no dragging", from);
+const from = src.indexOf("  // A card is drawn when the chat bursts");
+const to = src.indexOf("  function buildDrawnRow(", from);
 if (from < 0 || to < 0 || to <= from) {
   console.log("FAIL could not lift drawFromChat out of content.js");
   process.exit(1);
@@ -29,77 +29,104 @@ const check = (label, ok) => { if (!ok) fail++; console.log((ok ? "ok   " : "FAI
 
 /* ---------- which reaction is offered ---------- */
 
-// Signatures stand in for the real normaliser: two wordings of one reaction
-// share a signature, which is the only property this code depends on.
-const sig = (tokenList) =>
-  (tokenList || []).map((t) => (t.type === "text" ? t.value.replace(/(.)\1+/g, "$1") : t.emojiId)).join("|");
+// Exact wording, the way cardKey is: `きちゃ` and `きちゃきちゃ` are different
+// things to say, even though the sort deliberately treats them as one.
+const key = (tokenList) =>
+  (tokenList || []).map((t) => (t.type === "text" ? t.value : "\u0001" + t.emojiId)).join("").trim();
 
 const text = (value) => [{ type: "text", value }];
 const stamp = (owner) => [{ type: "youtubeEmoji", emojiId: `${owner}/heart`, alt: ":h:" }];
 
-function draw({ suggest = true, chat = [], deck = [] } = {}) {
-  const ranking = new Map(
-    chat.map(({ tokens, count, score }) => [sig(tokens), { count, score, tokens }])
-  );
+const tokenStub = {
+  cardKey: key,
+  hasSubstance: (t) => (t || []).some((x) => x.type === "youtubeEmoji" || x.value?.trim()),
+  requiredChannels: (t) =>
+    [...new Set((t || []).filter((x) => x.emojiId).map((x) => x.emojiId.split("/")[0]))]
+};
+
+// One panel, kept across calls so the hold can be observed. `chat` is what the
+// watcher would report as a burst right now; set it to null for a quiet chat.
+function panel({ suggest = true, now = 1_000_000 } = {}) {
+  const state = { chat: null, now };
 
   const api = new Function(
-    "settingsCache", "watcher", "tokens", "trending",
-    `${src.slice(from, to)}; return drawFromChat;`
+    "settingsCache", "watcher", "tokens", "Date",
+    `${src.slice(from, to)}; return { drawFromChat, holdMs: HOLD_MS };`
   )(
     { suggest },
-    { ranking: () => ranking },
     {
-      hasSubstance: (t) => (t || []).some((x) => x.type === "youtubeEmoji" || x.value?.trim()),
-      requiredChannels: (t) =>
-        [...new Set((t || []).filter((x) => x.emojiId).map((x) => x.emojiId.split("/")[0]))]
+      burst: (accept) => {
+        const seen = state.chat && { key: key(state.chat.tokens), count: state.chat.count, tokens: state.chat.tokens };
+        return seen && (!accept || accept(seen)) ? seen : null;
+      }
     },
-    { signature: sig }
+    tokenStub,
+    { now: () => state.now }
   );
 
-  return api(deck);
+  return {
+    holdMs: api.holdMs,
+    chat(next) { state.chat = next; return this; },
+    tick(ms) { state.now += ms; return this; },
+    draw: (deck = []) => api.drawFromChat(deck)
+  };
 }
 
-const wave = { tokens: text("かわいい"), count: 9, score: 9 };
+const draw = ({ suggest = true, chat = null, deck = [] } = {}) =>
+  panel({ suggest }).chat(chat).draw(deck);
 
-check("a strong reaction is offered", draw({ chat: [wave] })?.tokens === wave.tokens);
-check("and is marked as not yours", draw({ chat: [wave] })?.drawn === true);
-check("carrying the count for the bar to show", draw({ chat: [wave] })?.hits === 9);
+const wave = { tokens: text("かわいい"), count: 9 };
 
-check("turned off, nothing is offered", draw({ suggest: false, chat: [wave] }) === null);
+check("a burst is offered", draw({ chat: wave })?.tokens === wave.tokens);
+check("and is marked as not yours", draw({ chat: wave })?.drawn === true);
+check("carrying the count for the bar to show", draw({ chat: wave })?.hits === 9);
 
-check(
-  "too few messages is not a wave",
-  draw({ chat: [{ tokens: text("かわいい"), count: 2, score: 2 }] }) === null
-);
-
-check(
-  "an old burst is not a wave either, however many messages it was",
-  draw({ chat: [{ tokens: text("8888"), count: 40, score: 1.2 }] }) === null
-);
-
-check(
-  "a reaction already in the deck is not offered again",
-  draw({ chat: [wave], deck: [{ id: "k", tokens: text("かわいいいい") }] }) === null
-);
+check("a quiet chat offers nothing", draw({ chat: null }) === null);
+check("turned off, nothing is offered", draw({ suggest: false, chat: wave }) === null);
 
 check(
   "member emoji are never offered, even this channel's",
-  draw({ chat: [{ tokens: stamp("UCsakura0000000000000000"), count: 20, score: 20 }] }) === null
+  draw({ chat: { tokens: stamp("UCsakura0000000000000000"), count: 20 } }) === null
 );
 
 check(
   "nor is something with no substance",
-  draw({ chat: [{ tokens: text("   "), count: 20, score: 20 }] }) === null
+  draw({ chat: { tokens: text("   "), count: 20 } }) === null
 );
 
+/* ---------- exact wording, not the sort's loose one ---------- */
+
 check(
-  "the strongest of several is the one offered",
-  draw({ chat: [
-    { tokens: text("おつ"), count: 8, score: 8 },
-    { tokens: text("かわいい"), count: 4, score: 12 },
-    { tokens: text("888"), count: 30, score: 6 }
-  ] })?.tokens[0].value === "かわいい"
+  "a reaction already in the deck is not offered again",
+  draw({ chat: wave, deck: [{ id: "k", tokens: text("かわいい") }] }) === null
 );
+
+// The sort collapses repeats on purpose; offering must not.
+check(
+  "holding きちゃ does not cover きちゃきちゃ",
+  draw({ chat: { tokens: text("きちゃきちゃ"), count: 6 }, deck: [{ id: "k", tokens: text("きちゃ") }] })
+    ?.tokens[0].value === "きちゃきちゃ"
+);
+
+/* ---------- it stays put once drawn ---------- */
+
+const p = panel();
+const first = p.chat({ tokens: text("888"), count: 5 }).draw();
+check("the first burst is drawn", first?.tokens[0].value === "888");
+
+p.chat({ tokens: text("かわいい"), count: 9 }).tick(5_000);
+check("a louder burst does not replace it while it is held", p.draw() === first);
+
+p.tick(p.holdMs);
+check("once the hold is over, the newer burst takes its place",
+  p.draw()?.tokens[0].value === "かわいい");
+
+// Taking it into the deck ends the offer even mid-hold.
+const q = panel();
+const offered = q.chat({ tokens: text("888"), count: 5 }).draw();
+check("something is offered to begin with", !!offered);
+q.chat(null);
+check("keeping it ends the offer", q.draw([{ id: "own", tokens: text("888") }]) === null);
 
 /* ---------- where the room comes from ---------- */
 

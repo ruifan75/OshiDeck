@@ -117,8 +117,12 @@ const MUTATIONS = [
     "    if (drawn) return drawn.card;",
     "    if (false) return drawn.card;"],
 
-  [TREND, TRENDING, "a burst that never has to be a burst",
+  [TREND, TRENDING, "a burst with no floor under it",
     "        if (seen.count < BURST_MIN) continue;",
+    "        if (false) continue;"],
+
+  [TREND, TRENDING, "a burst that ignores how busy the chat is",
+    "        if (seen.count < said * BURST_SHARE) continue;",
     "        if (false) continue;"],
 
   [TREND, TRENDING, "bursts counted by the loose signature",

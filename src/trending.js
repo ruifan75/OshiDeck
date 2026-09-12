@@ -26,7 +26,17 @@
   // wording, because `きちゃ` and `きちゃきちゃ` are not the same thing to say
   // even though the ordering deliberately treats them as one reaction.
   const BURST_MS = 12_000;
-  const BURST_MIN = 4;
+
+  // Two tests, because neither alone means anything. A plain count cannot
+  // know how busy the chat is: four of a thing was a wave in a quiet room and
+  // ordinary noise in a busy one, and it was the busy one that kept offering
+  // things nobody was rallying behind. A share alone is worse — in a nearly
+  // silent chat the first two messages are 100% of it.
+  //
+  // So: enough of it to be a wave anywhere, AND most of what is being said.
+  // A real wave looks like this; people stop saying other things.
+  const BURST_MIN = 6;
+  const BURST_SHARE = 0.3;
 
   // Reordering is throttled because cards moving is disruptive, not because it
   // is expensive — and the pointer is protected separately, by freezing while
@@ -206,9 +216,11 @@
     function burst(accept) {
       const since = Date.now() - BURST_MS;
       const counts = new Map();
+      let said = 0;
 
       for (const entry of recent) {
         if (entry.at < since || !entry.key) continue;
+        said += 1;
         const seen = counts.get(entry.key) || { key: entry.key, count: 0, tokens: null };
         seen.count += 1;
         seen.tokens = entry.tokens || seen.tokens;
@@ -218,6 +230,7 @@
       let best = null;
       for (const seen of counts.values()) {
         if (seen.count < BURST_MIN) continue;
+        if (seen.count < said * BURST_SHARE) continue;
         if (accept && !accept(seen)) continue;
         if (!best || seen.count > best.count) best = seen;
       }
@@ -227,5 +240,7 @@
     return { start, stop, ranking, burst, get attached() { return !!host; } };
   }
 
-  OD.trending = { signature, createWatcher, WINDOW_MS, HALF_LIFE_MS, BURST_MS, BURST_MIN };
+  OD.trending = {
+    signature, createWatcher, WINDOW_MS, HALF_LIFE_MS, BURST_MS, BURST_MIN, BURST_SHARE
+  };
 })();

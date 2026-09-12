@@ -1004,7 +1004,9 @@
     const body = text || (stamps ? `スタンプ ${stamps}個` : "");
 
     if (card.drawn) {
-      return { text: `${body}  ・ いま${card.hits}人が連打中。押すと入力欄へ、＋で保存できます` };
+      // Messages, not people: one person can send six. Saying 人 was a claim
+      // the count does not support.
+      return { text: `${body}  ・ いま立て続けに${card.hits}回。押すと入力欄へ、＋で保存` };
     }
     return { text: card.hits > 0 ? `${body}  ・ いまチャットで${card.hits}回` : body };
   }

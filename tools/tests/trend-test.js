@@ -112,23 +112,49 @@ expect("clap rises to front on chat wave", ordered[0].id, "clap");
 
 /* ---------- a burst is exact, and recent ---------- */
 
-const bw = trending.createWatcher({ onChange: () => {} });
-bw.start();
-send(msg(text("きちゃ")), 5);
-send(msg(text("きちゃきちゃ")), 5);
-
 const keyOf = (v) => tokens.cardKey([{ type: "text", value: v }]);
+const only = (v) => (s) => s.key === keyOf(v);
+const chatter = (n) => { for (let i = 0; i < n; i++) send(msg(text("ざつだん" + i))); };
+
+let bw = trending.createWatcher({ onChange: () => {} });
+bw.start();
+send(msg(text("きちゃ")), 7);
+send(msg(text("きちゃきちゃ")), 7);
+
 expect("each exact wording bursts on its own, unmerged",
-  [bw.burst((s) => s.key === keyOf("きちゃ"))?.count,
-   bw.burst((s) => s.key === keyOf("きちゃきちゃ"))?.count],
-  [5, 5]);
+  [bw.burst(only("きちゃ"))?.count, bw.burst(only("きちゃきちゃ"))?.count], [7, 7]);
 
 send(msg(text("ぽんぽこ")), 3);
-expect("three of a thing is not a burst",
-  bw.burst((s) => s.key === keyOf("ぽんぽこ")) === null, true);
+expect("a few of a thing is not a burst", bw.burst(only("ぽんぽこ")) === null, true);
 
 wait(20_000);
 expect("and a burst that has passed is no longer one", bw.burst() === null, true);
+
+/* ---------- a burst is relative to how busy the chat is ---------- */
+
+// The reported case: a phrase nobody was rallying behind kept being offered,
+// because a plain count cannot tell a wave from ordinary traffic.
+bw = trending.createWatcher({ onChange: () => {} });
+bw.start();
+send(msg(text("それはそう")), 6);
+chatter(40);
+expect("six of a thing in a busy chat is just talk",
+  bw.burst(only("それはそう")) === null, true);
+
+// The same six, in a room where that is what everyone is saying.
+bw = trending.createWatcher({ onChange: () => {} });
+bw.start();
+send(msg(text("それはそう")), 6);
+chatter(4);
+expect("the same six, when it is most of what is being said, is a wave",
+  bw.burst(only("それはそう"))?.count, 6);
+
+// And a share alone would fire on a nearly silent chat.
+bw = trending.createWatcher({ onChange: () => {} });
+bw.start();
+send(msg(text("こん")), 2);
+expect("two of a thing is never a wave, however quiet the room",
+  bw.burst(only("こん")) === null, true);
 
 /* ---------- a tooltip is not part of the comment ---------- */
 

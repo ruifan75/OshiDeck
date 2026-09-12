@@ -562,10 +562,17 @@
     // people who had turned that setting on.
     const tools = document.createElement("div");
     tools.className = "od-card-tools";
-    tools.appendChild(iconButton("plus", "入力欄に入れる（保存はそのあと帯から）", (event) => {
+
+    const plus = iconButton("plus", "この札を保存（⇧＋クリックで入力欄へ）", (event) => {
       event.stopPropagation();
-      stageForSaving(card);
-    }, () => cardPeek(card)));
+      if (event.shiftKey) return stageForSaving(card);
+      // The choice belongs on the card, not up on the bar.
+      tools.replaceChildren(...targetButtons(card.tokens || [], {
+        onPick: (target) => saveTokens(card.tokens || [], target)
+      }));
+    }, () => cardPeek(card));
+
+    tools.appendChild(plus);
     el.appendChild(tools);
 
     trackPeek(el, card);
@@ -657,50 +664,117 @@
   // YouTube's own ⋮ behaves.
   function grabButton() {
     if (grabEl) return grabEl;
-
-    grabEl = document.createElement("button");
-    grabEl.type = "button";
+    grabEl = document.createElement("div");
     grabEl.className = "od-grab";
-    grabEl.textContent = "＋";
-    grabEl.setAttribute("aria-label", "このコメントを入力欄に入れる");
-    grabEl.addEventListener("click", (event) => {
+    return grabEl;
+  }
+
+  // Back to the ＋, whichever row it is about to sit in.
+  function resetGrab() {
+    const plus = document.createElement("button");
+    plus.type = "button";
+    plus.className = "od-grab-plus";
+    plus.textContent = "＋";
+    const label = "このコメントを札にする（⇧＋クリックで入力欄へ）";
+    plus.setAttribute("aria-label", label);
+    plus.title = label;
+    plus.addEventListener("click", (event) => {
       // The row underneath opens YouTube's own menus on click.
       event.preventDefault();
       event.stopPropagation();
-      takeComment(grabRow);
+      if (event.shiftKey) return takeComment(grabRow);
+      askWhere(grabRow);
     });
-    return grabEl;
+    grabButton().replaceChildren(plus);
   }
 
   function offerGrab(row) {
     if (row === grabRow && grabEl?.isConnected) return;
     grabRow = row;
     if (!row) return grabEl?.remove();
-    row.appendChild(grabButton());
+    resetGrab();
+    row.appendChild(grabEl);
   }
 
-  function takeComment(row) {
-    const message = row?.querySelector("#message");
-    if (!message) return;
+  // The two save targets, offered where the press happened. They used to be
+  // offered only on the bar at the top of the panel, which is a long way from
+  // a ＋ down in the chat — the same mistake as a warning at the foot of a
+  // settings page.
+  function targetButtons(captured, { onPick }) {
+    const forced = tokens.requiredChannels(captured).length > 0;
+    const hue = barContext?.hue;
+    const here = barContext?.channel?.name || "このチャンネル";
 
-    // Same reader as the editor uses: a comment and a draft have the same
-    // shape — text with <img data-emoji-id> among it.
-    const captured = tokens.collectTokens(message);
-    if (!tokens.hasSubstance(captured)) return showToast("入れられる中身がありません");
+    const make = (target, scope, label) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "od-target";
+      button.dataset.scope = scope;
+      if (scope === "channel" && hue != null) button.style.setProperty("--od-scope-hue", hue);
+      button.setAttribute("aria-label", label);
+      button.title = label;
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        onPick(target);
+      });
+      return button;
+    };
 
-    // Emoji from two channels can be sent nowhere, so such a card could never
-    // exist. Say so here rather than at the save button.
-    if (tokens.requiredChannels(captured).length > 1) {
-      return showToast("複数チャンネルのメン限が混ざっています");
+    const channel = make("channel", "channel", `${here}専用として保存`);
+    const global = make("global", "global", "通用の札として保存");
+
+    if (forced) {
+      global.disabled = true;
+      global.title = "メン限スタンプなので、このチャンネル専用にしかできません";
     }
+    if (!barContext?.channel?.id) {
+      // There is no channel to be tied to. Offering it anyway would save a
+      // universal card under a button that said otherwise.
+      channel.disabled = true;
+      channel.title = "チャンネルが分かりません";
+    }
+    return [channel, global];
+  }
+
+  function readComment(row) {
+    const message = row?.querySelector("#message");
+    if (!message) return null;
+
+    const captured = tokens.collectTokens(message);
+    if (!tokens.hasSubstance(captured)) {
+      showToast("入れられる中身がありません");
+      return null;
+    }
+    // Emoji from two channels can be sent nowhere, so such a card could never
+    // exist. Say so here rather than at the save target.
+    if (tokens.requiredChannels(captured).length > 1) {
+      showToast("複数チャンネルのメン限が混ざっています");
+      return null;
+    }
+    return captured;
+  }
+
+  function askWhere(row) {
+    const captured = readComment(row);
+    if (!captured) return;
+    grabButton().replaceChildren(...targetButtons(captured, {
+      onPick: (target) => {
+        resetGrab();
+        saveTokens(captured, target);
+      }
+    }));
+  }
+
+  // The other thing someone might want a comment for: to say it too. Shift
+  // takes it to the editor instead of saving it, which is the same shift that
+  // sends a card rather than typing it.
+  function takeComment(row) {
+    const captured = readComment(row);
+    if (!captured) return;
 
     const input = getChatInput();
     if (!input) return showToast("入力欄が見つかりません");
-
-    // Into the editor, not straight into the deck. The two save targets are
-    // already in the bar, and they are the choice this has to offer — which
-    // also means a member emoji still pins it to this channel, and saving
-    // still puts it in the deck. Appending matches what clicking a card does.
     tokens.writeToInput(input, captured);
   }
 
@@ -715,19 +789,30 @@
       return showToast("保存する内容を入力してください");
     }
 
+    return saveTokens(captured, target, {
+      clear: () => clearInput(input),
+      kept: "入力はそのままです",
+      editing: true
+    });
+  }
+
+  // Saving is the same wherever the content came from — the editor, a comment
+  // in the chat, or a card the chat held out. Only the tidying up differs, and
+  // only the editor can be in the middle of re-recording a card.
+  async function saveTokens(captured, target, { clear = () => {}, kept = "", editing = false } = {}) {
     const data = await store.read();
     if (!data) return shutdown();
     const channel = reconcileChannel(getChannel(), captured);
 
-    if (editingId) {
+    if (editing && editingId) {
       const id = editingId;
       editingId = null;
       if (data.cards.some((c) => c.id === id)) {
         // Nothing is cleared until the write is known to have landed.
         if (!(await store.apply("editCard", { id, tokens: captured })).ok) {
-          return showToast("保存できませんでした。入力はそのままです");
+          return showToast(`保存できませんでした。${kept}`);
         }
-        clearInput(input);
+        clear();
         showToast("札を更新しました");
         return render();
       }
@@ -740,7 +825,7 @@
     const duplicate = findDuplicate(data, channel?.id, captured);
     if (duplicate?.exact) {
       const existingScope = store.scopeOf(duplicate.card);
-      clearInput(input);
+      clear();
 
       if (existingScope !== scope) {
         // Re-scoping it would change what every other deck holding it can do,
@@ -785,10 +870,10 @@
     const added = await store.apply("addCard", { card, channelId: channel?.id, scope });
     if (!added.ok) {
       // Quota, or the context went away. Keep what was typed.
-      return showToast("保存できませんでした。入力はそのままです");
+      return showToast(`保存できませんでした。${kept}`);
     }
     if (added.value?.duplicate) {
-      clearInput(input);
+      clear();
       // It says what it is and whether the deck actually took it, so this can
       // stop claiming a success that did not happen.
       const { scope: had, added: joined } = added.value;
@@ -802,7 +887,7 @@
       await store.apply("setChannel", { channelId: channel.id, name: channel.name });
     }
 
-    clearInput(input);
+    clear();
 
     const saved = !channel?.id
       ? "プールに保存しました"

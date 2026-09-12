@@ -46,6 +46,12 @@
   z-index: 2;
   display: flex;
   align-items: center;
+  gap: 3px;
+}
+
+.od-grab-plus {
+  display: flex;
+  align-items: center;
   justify-content: center;
   width: 26px;
   height: 26px;
@@ -59,12 +65,40 @@
   cursor: pointer;
 }
 
-.od-grab:hover { background: rgba(255, 255, 255, .26); }
+.od-grab-plus:hover { background: rgba(255, 255, 255, .26); }
 
-.od-grab:focus-visible {
+.od-grab-plus:focus-visible,
+.od-target:focus-visible {
   outline: 2px solid #3ea6ff;
   outline-offset: 1px;
 }
+
+/* Where a card is about to go. The same two colours the panel uses everywhere
+   for it: the channel's own, and the grey that means anywhere. */
+.od-target {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 2px solid rgba(0, 0, 0, .55);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* These sit in YouTube's own chat rows, outside #oshideck-root, so the
+   panel's variables do not reach them — hence the fallbacks. */
+.od-target[data-scope="channel"] { background: oklch(0.74 0.19 var(--od-scope-hue, 320)); }
+.od-target[data-scope="global"] { background: var(--od-common, #8a8a8a); }
+
+.od-target:hover { transform: scale(1.12); }
+
+.od-target:disabled {
+  opacity: .3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* On a card the tools sit in a row of their own, so the targets fill it. */
+.od-card-tools .od-target { width: 20px; height: 20px; }
 
 /* ---------- top bar ---------- */
 

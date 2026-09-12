@@ -246,7 +246,7 @@ function buildCard(card, where) {
       () => ejectCard(card)));
   } else {
     el.appendChild(cardAction("×", "この札を削除（すべてのデッキから消えます）",
-      () => removeCard(card)));
+      () => removeCard(card, el)));
   }
   return el;
 }
@@ -472,12 +472,20 @@ async function removeDeck(id) {
 }
 
 // Deleting is from the pool, so it leaves every deck at once.
-async function removeCard(card) {
+async function removeCard(card, el) {
   // A universal card can sit in several decks, and deleting it empties all of
   // them — say so before it happens, not after.
   const held = store.decksHolding(decks, card.id).filter((id) => id !== selected);
-  if (held.length && !confirmDelete(card, held)) return;
+  if (!held.length) return deleteCardNow(card);
 
+  // Pressing × again used to count as agreeing, which meant the second press
+  // confirmed a warning nobody had read. Only the button in the question
+  // answers it.
+  if (el?.dataset.confirming) return;
+  askOnCard(el, card, held);
+}
+
+async function deleteCardNow(card) {
   const { ok, value: snapshot } = await mutate("deleteCard", { id: card.id });
   if (!ok || !snapshot) return;
 
@@ -487,19 +495,47 @@ async function removeCard(card) {
   status(`「${label(snapshot.card)}」を削除しました`, "元に戻す");
 }
 
-// An in-page confirmation rather than confirm(), which freezes the tab.
-let pendingDelete = null;
-
-function confirmDelete(card, held) {
+// Asked on the card, not in the status line. That line lives at the very
+// bottom of the page at 12px and 72% opacity, while the card being deleted is
+// wherever the pool happens to be scrolled to — so the warning was written
+// somewhere the eye had no reason to be.
+function askOnCard(el, card, held) {
+  if (!el) return deleteCardNow(card); // no card to ask on: nothing to point at
   const names = held.map((id) => nameOf(id)).join("、");
-  if (pendingDelete === card.id) {
-    pendingDelete = null;
-    return true;
-  }
-  pendingDelete = card.id;
-  status(`「${label(card)}」は ${names} のデッキにもあります。削除すると全部から消えます。`,
-    "それでも削除", () => removeCard(card));
-  return false;
+
+  const ask = document.createElement("div");
+  ask.className = "browse-confirm";
+  ask.setAttribute("role", "group");
+  ask.setAttribute("aria-label", `${names} のデッキにもあります。削除すると全部から消えます。`);
+
+  const line = document.createElement("p");
+  line.textContent = held.length === 1 ? "他のデッキにも" : `他${held.length}つのデッキにも`;
+
+  const close = () => {
+    ask.remove();
+    delete el.dataset.confirming;
+  };
+
+  const yes = document.createElement("button");
+  yes.type = "button";
+  yes.className = "browse-confirm-yes";
+  yes.textContent = "削除";
+  yes.title = `${names} のデッキからも消えます`;
+  yes.addEventListener("click", (event) => {
+    event.stopPropagation();
+    close();
+    deleteCardNow(card);
+  });
+
+  const no = document.createElement("button");
+  no.type = "button";
+  no.textContent = "やめる";
+  no.addEventListener("click", (event) => { event.stopPropagation(); close(); });
+
+  ask.append(line, yes, no);
+  el.dataset.confirming = "true";
+  el.appendChild(ask);
+  no.focus(); // the safe one, so a stray Enter cancels
 }
 
 function label(card) {
@@ -529,7 +565,6 @@ function status(message, actionLabel, action) {
     // The snapshot can hold a whole deck's worth of cards; once the button is
     // gone there is nothing left to undo with it.
     undo = null;
-    pendingDelete = null;
   }, 8000);
 }
 

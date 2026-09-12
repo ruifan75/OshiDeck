@@ -280,6 +280,51 @@ kbd {
 
 .browse-card[data-common] { border-top-color: #8a8a8a; }
 
+/* Deleting from the pool empties every deck holding the card, so the question
+   is asked on the card. It used to go to the status line at the foot of the
+   page — 12px at 72% opacity, nowhere near where the pointer was — and then a
+   second press of × counted as the answer. The card is already positioned
+   for its remove button, so the overlay has something to sit in. */
+.browse-card[data-confirming] { border-color: #e5534b; }
+
+.browse-confirm {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 3px;
+  padding: 6px;
+  border-radius: 8px;
+  background: color-mix(in srgb, Canvas 88%, #e5534b);
+}
+
+.browse-confirm p {
+  margin: 0 0 1px;
+  font-size: 10px;
+  line-height: 1.25;
+  text-align: center;
+  opacity: .85;
+}
+
+.browse-confirm button {
+  padding: 3px 4px;
+  border: 1px solid color-mix(in srgb, CanvasText 20%, transparent);
+  border-radius: 4px;
+  background: Canvas;
+  color: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.browse-confirm .browse-confirm-yes {
+  border-color: #e5534b;
+  color: #e5534b;
+  font-weight: 600;
+}
+
 .browse-body {
   display: flex;
   /* Without wrapping, a run of stamps stays on one line and pushes straight

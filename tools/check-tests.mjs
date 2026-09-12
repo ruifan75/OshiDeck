@@ -30,12 +30,14 @@ const CHANNEL = "channel-test.mjs";
 const VISIBILITY = "visibility-test.mjs";
 const TREND = "trend-test.js";
 const DRAW = "draw-test.mjs";
+const CONFIRM = "confirm-test.mjs";
 
 // Which file a mutation edits, and how its test is told to load the copy.
 const CONTENT = { file: "content.js", env: "OD_SOURCE" };
 const TRENDING = { file: "src/trending.js", env: "OD_TRENDING" };
 const LAYOUT = { file: "src/layout.js", env: "OD_LAYOUT" };
 const TOKENS = { file: "src/tokens.js", env: "OD_TOKENS" };
+const OPTIONS = { file: "options.js", env: "OD_OPTIONS" };
 
 const sources = new Map();
 const read = ({ file }) => {
@@ -126,6 +128,14 @@ const MUTATIONS = [
   [VISIBILITY, CONTENT, "a description left behind by a removed control",
     "if (!peekOwner || peekOwner.isConnected) return;",
     "if (true) return;"],
+
+  [CONFIRM, OPTIONS, "a second press of the same button counting as consent",
+    "  if (el?.dataset.confirming) return;",
+    "  if (el?.dataset.confirming) return deleteCardNow(card);"],
+
+  [CONFIRM, OPTIONS, "a shared card deleted without asking",
+    "  if (!held.length) return deleteCardNow(card);",
+    "  return deleteCardNow(card);"],
 ];
 
 const dir = mkdtempSync(join(tmpdir(), "oshideck-mutation-"));
@@ -150,7 +160,7 @@ function run(file, mutant, subject) {
 let failed = 0;
 
 // A suite already red would make every mutation look caught.
-for (const file of [CHANNEL, VISIBILITY, TREND, DRAW]) {
+for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM]) {
   if (run(file, null).failed) {
     console.log(`FAIL ${file} is red before any mutation`);
     failed = 1;

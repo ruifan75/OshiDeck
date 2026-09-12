@@ -32,6 +32,7 @@ const TREND = "trend-test.js";
 const DRAW = "draw-test.mjs";
 const CONFIRM = "confirm-test.mjs";
 const COLOUR = "colour-test.mjs";
+const PRESET = "preset-test.mjs";
 
 // Which file a mutation edits, and how its test is told to load the copy.
 const CONTENT = { file: "content.js", env: "OD_SOURCE" };
@@ -40,6 +41,7 @@ const LAYOUT = { file: "src/layout.js", env: "OD_LAYOUT" };
 const TOKENS = { file: "src/tokens.js", env: "OD_TOKENS" };
 const OPTIONS = { file: "options.js", env: "OD_OPTIONS" };
 const STORE = { file: "src/store.js", env: "OD_STORE" };
+const PRESETS = { file: "src/presets.js", env: "OD_PRESETS" };
 
 const sources = new Map();
 const read = ({ file }) => {
@@ -167,6 +169,18 @@ const MUTATIONS = [
     "    const known = OSHI_HUES[channelId];\n    if (known != null) return known;",
     "    const known = undefined;\n    if (known != null) return known;"],
 
+  [PRESET, PRESETS, "member emoji carried into a preset",
+    "      if (OD.tokens.requiredChannels(card.tokens).length) continue;",
+    "      if (false) continue;"],
+
+  [PRESET, PRESETS, "a preset that hands out its ids as well as its content",
+    "      id: crypto.randomUUID(),",
+    "      id: \"same-for-everyone\","],
+
+  [PRESET, PRESETS, "channel-only losing its meaning on the way in",
+    'scope: card.scope === "channel" && channelId ? channelId : OD.store.GLOBAL,',
+    "scope: OD.store.GLOBAL,"],
+
   [COLOUR, STORE, "an out-of-gamut hue clipped instead of desaturated",
     "    for (let c = chroma; c > 0.01 && found.some((v) => v < -0.0005 || v > 1.0005); c -= 0.005) {\n      found = rgb(c);\n    }",
     "    // (clipped below instead)"],
@@ -194,7 +208,7 @@ function run(file, mutant, subject) {
 let failed = 0;
 
 // A suite already red would make every mutation look caught.
-for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM, COLOUR]) {
+for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM, COLOUR, PRESET]) {
   if (run(file, null).failed) {
     console.log(`FAIL ${file} is red before any mutation`);
     failed = 1;

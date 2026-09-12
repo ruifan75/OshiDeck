@@ -485,6 +485,39 @@
       return { id: card.id, duplicate: false };
     },
 
+    // A preset is a starting hand, so it never replaces anything. A card
+    // already in the pool is reused rather than copied — two cards with the
+    // same words would both answer to the same reaction — and one already in
+    // the deck is left where it is.
+    loadPreset(data, { channelId, cards }) {
+      if (!channelId || !Array.isArray(cards) || !cards.length) return false;
+
+      const byKey = new Map(data.cards.map((card) => [OD.tokens.cardKey(card.tokens), card]));
+      let added = 0;
+      let reused = 0;
+
+      for (const card of cards) {
+        // A preset cannot carry member emoji, but a hand-edited one might try.
+        if (OD.tokens.requiredChannels(card.tokens).length) continue;
+
+        const key = OD.tokens.cardKey(card.tokens);
+        const existing = byKey.get(key);
+
+        if (existing) {
+          reused += 1;
+          addToDeck(data, channelId, existing.id);
+          continue;
+        }
+
+        data.cards.push(card);
+        byKey.set(key, card);
+        added += 1;
+        addToDeck(data, channelId, card.id);
+      }
+
+      return { added, reused };
+    },
+
     editCard(data, { id, tokens }) {
       const card = data.cards.find((c) => c.id === id);
       if (!card) return false;

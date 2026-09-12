@@ -9,8 +9,9 @@ import "./src/tokens.js";
 import "./src/backup.js";
 import "./src/store.js";
 import "./src/journal.js";
+import "./src/presets.js";
 
-const { store, journal } = globalThis.OshiDeck;
+const { store, journal, presets } = globalThis.OshiDeck;
 
 let queue = Promise.resolve();
 
@@ -22,7 +23,32 @@ function enqueue(work) {
   return result;
 }
 
+// The bundled presets, read once. They are the extension's own file, so the
+// worker reads it rather than exposing it to youtube.com through
+// web_accessible_resources — a content script would need that, and nothing on
+// the page has any business with this.
+let bundled = null;
+
+async function readPresets() {
+  if (bundled) return bundled;
+  try {
+    const response = await fetch(chrome.runtime.getURL("presets/presets.json"));
+    const raw = await response.json();
+    // Hand-edited, so a broken one is skipped by name rather than taking the
+    // rest down with it.
+    bundled = (Array.isArray(raw) ? raw : []).filter((preset) => !presets.validate(preset));
+  } catch (_) {
+    bundled = [];
+  }
+  return bundled;
+}
+
 chrome.runtime.onMessage.addListener((message, _sender, respond) => {
+  if (message?.type === "presets") {
+    readPresets().then((list) => respond({ ok: true, value: list }), () => respond({ ok: false }));
+    return true; // respond asynchronously
+  }
+
   if (message?.type === "openOptions") {
     chrome.runtime.openOptionsPage();
     respond({ ok: true });

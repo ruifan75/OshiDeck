@@ -288,6 +288,60 @@ function buildCard(card, where) {
   return el;
 }
 
+// An empty deck is the one place a preset is worth offering: a starting hand
+// for a channel nobody has played yet. It is never offered over a deck that
+// already has something in it.
+let bundled = null;
+
+async function loadBundled() {
+  if (bundled) return bundled;
+  try {
+    const reply = await chrome.runtime.sendMessage({ type: "presets" });
+    bundled = reply?.ok && Array.isArray(reply.value) ? reply.value : [];
+  } catch (_) {
+    bundled = [];
+  }
+  return bundled;
+}
+
+function presetOffer() {
+  const holder = document.createElement("div");
+  holder.className = "preset-offer";
+
+  loadBundled().then((list) => {
+    if (!list.length || !selected) return;
+
+    const line = document.createElement("small");
+    line.textContent = "はじめの一組を入れることもできます:";
+    holder.appendChild(line);
+
+    for (const preset of list) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "action";
+      button.textContent = `${preset.name}（${preset.cards.length}枚）`;
+      if (preset.note) button.title = preset.note;
+      button.addEventListener("click", () => usePreset(preset));
+      holder.appendChild(button);
+    }
+  });
+
+  return holder;
+}
+
+async function usePreset(preset) {
+  const cards = presets.cardsFor(preset, selected);
+  const { ok, value } = await mutate("loadPreset", { channelId: selected, cards });
+  if (!ok || !value) return;
+
+  // Reused rather than copied: the pool already had some of these, and two
+  // cards with the same words would both answer to the same reaction.
+  const note = value.reused
+    ? `（うち${value.reused}枚はプールにあったものを使いました）`
+    : "";
+  status(`「${preset.name}」を読み込みました${note}`);
+}
+
 function cardAction(glyph, label, onClick) {
   const button = document.createElement("button");
   button.type = "button";
@@ -326,7 +380,7 @@ function paintCards() {
     const empty = document.createElement("p");
     empty.className = "muted";
     empty.textContent = "右のプールから札をドラッグしてください。";
-    holder.appendChild(empty);
+    holder.append(empty, presetOffer());
     return;
   }
 
@@ -741,6 +795,33 @@ for (const group of document.querySelectorAll("[data-choice]")) {
   group.querySelector('button[value="merge"]').classList.add("on");
 }
 
+// A deck, as something to hand to someone who has none.
+async function exportPreset() {
+  if (!selected) return importStatus("デッキを選んでください");
+
+  const name = nameOf(selected) || selected;
+  const preset = presets.fromDeck(decks, selected, { name });
+
+  const problem = presets.validate(preset);
+  if (problem) return importStatus(`書き出せません: ${problem}`);
+
+  const blob = new Blob([JSON.stringify(preset, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+
+  const slug = name.replace(/[^\w\u3040-\u30ff\u4e00-\u9faf-]+/g, "-").slice(0, 40) || "preset";
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `oshideck-preset-${slug}.json`;
+  a.click();
+  // Revoking immediately can cancel the download in some builds.
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+
+  const dropped = cardsOf(selected).length - preset.cards.length;
+  importStatus(`${preset.cards.length}枚を書き出しました` +
+    (dropped > 0 ? `（メン限スタンプの${dropped}枚は入りません）` : ""));
+}
+
+document.querySelector("#presetBtn").addEventListener("click", exportPreset);
 document.querySelector("#exportBtn").addEventListener("click", exportBackup);
 document.querySelector("#importBtn").addEventListener("click", () =>
   document.querySelector("#importFile").click());
@@ -752,7 +833,7 @@ document.querySelector("#importFile").addEventListener("change", (event) => {
 
 /* ---------------- diagnostics ---------------- */
 
-const { journal } = globalThis.OshiDeck;
+const { journal, presets } = globalThis.OshiDeck;
 
 const journalStatus = (text) => {
   document.querySelector("#journalStatus").textContent = text;

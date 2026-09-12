@@ -1,7 +1,7 @@
 // OshiDeck — card deck for YouTube Live Chat.
 (() => {
   const OD = globalThis.OshiDeck;
-  const { journal, layout, store, tokens, trending } = OD;
+  const { journal, layout, presets, store, tokens, trending } = OD;
 
   const MAX_ROWS_CAP = 2;
   const PANEL_PADDING = 24;    // matches #oshideck-root horizontal padding in content.css
@@ -1710,7 +1710,10 @@
           ? "プールに追加できる札がありません"
           : "コメントを入力して保存すると札になります";
         rootEl.appendChild(empty);
-        if (!poolOpen) appendPoolToggle(pool.length);
+        if (!poolOpen) {
+          appendPresetOffer(rootEl, channel);
+          appendPoolToggle(pool.length);
+        }
         return;
       }
 
@@ -1803,6 +1806,58 @@
     retry.left -= 1;
     clearTimeout(refreshTimer);
     refreshTimer = setTimeout(render, 600);
+  }
+
+  /* ---------- a starting hand ---------- */
+
+  // The bundled presets, asked for once. The worker holds them: they are the
+  // extension's own file, and nothing on the page has any business with it.
+  let bundledPresets = [];
+  let askedForPresets = false;
+
+  function presetsOnHand() {
+    if (askedForPresets) return bundledPresets;
+    askedForPresets = true;
+
+    try {
+      chrome.runtime.sendMessage({ type: "presets" })
+        .then((reply) => {
+          if (!reply?.ok || !reply.value?.length) return;
+          bundledPresets = reply.value;
+          scheduleRender(); // they arrived after the panel had already drawn
+        })
+        .catch(() => {});
+    } catch (_) { /* extension reloaded: no starting hand, no harm */ }
+
+    return bundledPresets;
+  }
+
+  // Offered only where it means something: a channel whose deck is empty.
+  // Never over a deck that already has something in it.
+  function appendPresetOffer(container, channel) {
+    if (!channel?.id) return;
+
+    for (const preset of presetsOnHand()) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "od-more";
+      button.textContent = `＋ ${preset.name}（${preset.cards.length}枚）を入れる`;
+      button.addEventListener("click", () => usePreset(preset, channel.id));
+      container.appendChild(button);
+    }
+  }
+
+  async function usePreset(preset, channelId) {
+    const { ok, value } = await store.apply("loadPreset", {
+      channelId,
+      cards: presets.cardsFor(preset, channelId)
+    });
+    if (!ok || !value) return showToast("読み込めませんでした");
+
+    showToast(value.reused
+      ? `「${preset.name}」を入れました（うち${value.reused}枚はプールにあったもの）`
+      : `「${preset.name}」を入れました`);
+    render();
   }
 
   /* ---------- wiring ---------- */

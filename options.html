@@ -159,6 +159,16 @@
         <input id="importFile" type="file" accept="application/json,.json" hidden>
       </div>
 
+      <div class="row">
+        <div class="row-label">
+          <strong>プリセットに書き出す</strong>
+          <small>いま選んでいるデッキを、はじめの一組として配れる形にします。使用回数もIDも入らず、
+            中身だけです。メン限スタンプの札は、配った先では送れないので入りません。
+            <code>node tools/add-preset.mjs &lt;ファイル&gt;</code> で同梱できます。</small>
+        </div>
+        <button id="presetBtn" type="button" class="action">ファイルに保存</button>
+      </div>
+
       <p id="importStatus" class="import-status" aria-live="polite"></p>
     </section>
 
@@ -193,6 +203,7 @@
   <script src="src/tokens.js"></script>
   <script src="src/backup.js"></script>
   <script src="src/journal.js"></script>
+  <script src="src/presets.js"></script>
   <script src="options.js"></script>
 </body>
 </html>

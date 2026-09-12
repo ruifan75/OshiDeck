@@ -285,12 +285,16 @@
    centred in the panel. */
 .od-drawn-slot {
   flex: 0 0 auto;
+  /* Over the hand, so the glow is not clipped by the card beside it. The fan
+     gets a layer of its own so that the depths inside it stay inside it. */
+  z-index: 2;
   margin-right: var(--od-drawn-gap, 14px);
 }
 
 /* The hand fans in whatever the drawn card leaves, centred in that. */
 .od-fan {
   flex: 1 1 auto;
+  z-index: 1;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -300,6 +304,10 @@
 .od-card {
   position: relative;
   flex-shrink: 0;
+  /* Later siblings paint over earlier ones, which put the leftmost card — the
+     most-used one, and the one a drawn card sits next to — at the bottom of
+     the pile. The hand is ordered by importance, so the stack is too. */
+  z-index: var(--od-depth, 0);
   margin-left: var(--od-overlap);
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, .13);
@@ -416,7 +424,8 @@
 /* Two rows leave no room to lift a card, so hovering scales and glows. */
 .od-card:hover,
 .od-card:focus-within {
-  z-index: 4;
+  /* Above any depth a row can hand out. */
+  z-index: 50;
   border-color: oklch(0.80 0.16 var(--od-scope-hue) / .95);
   box-shadow: 0 6px 16px rgba(0, 0, 0, .6),
               0 0 14px oklch(0.74 0.19 var(--od-scope-hue) / .32);

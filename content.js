@@ -1280,6 +1280,9 @@
         const { rot, lift } = layout.tilt(i, rowLength);
         el.style.setProperty("--od-rot", `${rot.toFixed(2)}deg`);
         el.style.setProperty("--od-lift", `${lift.toFixed(2)}px`);
+        // Left-to-right is most-used first, so the left card is the one that
+        // must not be covered: the stack runs the other way to the DOM.
+        el.style.setProperty("--od-depth", rowLength - i);
         if (i > 0) el.style.setProperty("--od-overlap", `-${overlap.toFixed(1)}px`);
         fan.appendChild(el);
       }

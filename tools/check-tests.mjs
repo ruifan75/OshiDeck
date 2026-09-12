@@ -31,6 +31,7 @@ const VISIBILITY = "visibility-test.mjs";
 const TREND = "trend-test.js";
 const DRAW = "draw-test.mjs";
 const CONFIRM = "confirm-test.mjs";
+const COLOUR = "colour-test.mjs";
 
 // Which file a mutation edits, and how its test is told to load the copy.
 const CONTENT = { file: "content.js", env: "OD_SOURCE" };
@@ -38,6 +39,7 @@ const TRENDING = { file: "src/trending.js", env: "OD_TRENDING" };
 const LAYOUT = { file: "src/layout.js", env: "OD_LAYOUT" };
 const TOKENS = { file: "src/tokens.js", env: "OD_TOKENS" };
 const OPTIONS = { file: "options.js", env: "OD_OPTIONS" };
+const STORE = { file: "src/store.js", env: "OD_STORE" };
 
 const sources = new Map();
 const read = ({ file }) => {
@@ -160,6 +162,14 @@ const MUTATIONS = [
   [CONFIRM, OPTIONS, "a shared card deleted without asking",
     "  if (!held.length) return deleteCardNow(card);",
     "  return deleteCardNow(card);"],
+
+  [COLOUR, STORE, "a hand-picked colour ignored in favour of the hash",
+    "    const known = OSHI_HUES[channelId];\n    if (known != null) return known;",
+    "    const known = undefined;\n    if (known != null) return known;"],
+
+  [COLOUR, STORE, "an out-of-gamut hue clipped instead of desaturated",
+    "    for (let c = chroma; c > 0.01 && found.some((v) => v < -0.0005 || v > 1.0005); c -= 0.005) {\n      found = rgb(c);\n    }",
+    "    // (clipped below instead)"],
 ];
 
 const dir = mkdtempSync(join(tmpdir(), "oshideck-mutation-"));
@@ -184,7 +194,7 @@ function run(file, mutant, subject) {
 let failed = 0;
 
 // A suite already red would make every mutation look caught.
-for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM]) {
+for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM, COLOUR]) {
   if (run(file, null).failed) {
     console.log(`FAIL ${file} is red before any mutation`);
     failed = 1;

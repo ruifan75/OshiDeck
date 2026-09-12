@@ -261,6 +261,55 @@ kbd {
 
 .swatch[data-on] { box-shadow: 0 0 0 2px Canvas, 0 0 0 4px oklch(0.72 0.19 var(--hue)); }
 
+/* Beyond the eight. Only the hue is chosen, so the track is the hue wheel at
+   the one lightness and chroma the palette uses — what you see on it is
+   exactly what a deck will look like. */
+.hue-slider {
+  flex: 1 1 80px;
+  min-width: 60px;
+  max-width: 130px;
+  height: 16px;
+  margin: 0 2px;
+  padding: 0;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hue-slider::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(to right,
+    oklch(0.72 0.19 0), oklch(0.72 0.19 60), oklch(0.72 0.19 120),
+    oklch(0.72 0.19 180), oklch(0.72 0.19 240), oklch(0.72 0.19 300), oklch(0.72 0.19 360));
+}
+
+.hue-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  margin-top: -3px;
+  border: 2px solid Canvas;
+  border-radius: 50%;
+  background: oklch(0.72 0.19 var(--hue, 320));
+  box-shadow: 0 0 0 1px color-mix(in srgb, CanvasText 35%, transparent);
+}
+
+.hue-pick {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, CanvasText 28%, transparent);
+  border-radius: 50%;
+  background: oklch(0.72 0.19 var(--hue, 320));
+  cursor: pointer;
+}
+
+/* The native swatch would paint over the colour above with the input's own
+   value, which is only ever a starting point. */
+.hue-pick::-webkit-color-swatch-wrapper { padding: 0; }
+.hue-pick::-webkit-color-swatch { border: 0; border-radius: 50%; background: transparent; }
+
 .deck-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, 104px);

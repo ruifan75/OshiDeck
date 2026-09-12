@@ -23,11 +23,91 @@
   const decay = (ms) => Math.pow(0.5, Math.max(0, ms) / HALF_LIFE);
 
   const HUES = [320, 145, 250, 85, 25, 195, 290, 60];
+
+  // Hand-written, and consulted before the hash. A channel that is here gets
+  // the colour it is actually known by; everyone else keeps whatever their id
+  // happens to give them, which is stable but arbitrary. Either way the viewer
+  // can change it, and that choice always wins — this only decides what a deck
+  // looks like the first time it appears.
+  //
+  //   "UCPb47fygHcFbRp_y05mS0IA": 250,
+  const OSHI_HUES = {};
+
   function defaultHue(channelId) {
+    const known = OSHI_HUES[channelId];
+    if (known != null) return known;
+
     let h = 0;
     for (const ch of String(channelId)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
     return HUES[h % HUES.length];
   }
+
+  // The hue of a colour someone picked. The stored value is a hue and nothing
+  // else, because the palette fixes lightness and chroma — oklch(0.74 0.19 H)
+  // — so every channel reads the same against a dark panel. Keeping a whole
+  // colour would let one land unreadable, so a picked one is asked only what
+  // hue it is.
+  function hueOfColor(r, g, b) {
+    const linear = (v) => {
+      v /= 255;
+      return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4;
+    };
+    const R = linear(r), G = linear(g), B = linear(b);
+
+    // sRGB to Oklab, via the cube roots of the LMS cone responses.
+    const l = Math.cbrt(0.4122214708 * R + 0.5363325363 * G + 0.0514459929 * B);
+    const m = Math.cbrt(0.2119034982 * R + 0.6806995451 * G + 0.1073969566 * B);
+    const s = Math.cbrt(0.0883024619 * R + 0.2817188376 * G + 0.6299787005 * B);
+
+    const a = 1.9779984951 * l - 2.4285922050 * m + 0.4505937099 * s;
+    const bb = 0.0259040371 * l + 0.7827717662 * m - 0.8086757660 * s;
+
+    // Grey has no hue to speak of; pick something rather than a random angle.
+    if (Math.hypot(a, bb) < 1e-4) return 0;
+    return Math.round((Math.atan2(bb, a) * 180 / Math.PI + 360) % 360);
+  }
+
+  // The other way, so a colour picker can open on the colour already chosen.
+  // Out-of-gamut hues are clamped rather than refused: this is only ever the
+  // starting swatch of a picker.
+  function hexOfHue(hue, lightness = 0.72, chroma = 0.19) {
+    const h = (hue * Math.PI) / 180;
+
+    const rgb = (c) => {
+      const a = Math.cos(h) * c;
+      const b = Math.sin(h) * c;
+      const l = (lightness + 0.3963377774 * a + 0.2158037573 * b) ** 3;
+      const m = (lightness - 0.1055613458 * a - 0.0638541728 * b) ** 3;
+      const s = (lightness - 0.0894841775 * a - 1.2914855480 * b) ** 3;
+      return [
+        4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s,
+        -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
+        -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s
+      ];
+    };
+
+    // Some hues at this lightness and chroma are outside sRGB. Clipping the
+    // channels would shift the hue by up to nine degrees, so the chroma comes
+    // down instead and the hue survives — which is the part being chosen.
+    let found = rgb(chroma);
+    for (let c = chroma; c > 0.01 && found.some((v) => v < -0.0005 || v > 1.0005); c -= 0.005) {
+      found = rgb(c);
+    }
+
+    const channel = (v) => {
+      const encoded = v <= 0.0031308 ? 12.92 * v : 1.055 * Math.max(0, v) ** (1 / 2.4) - 0.055;
+      return Math.max(0, Math.min(255, Math.round(encoded * 255)));
+    };
+
+    return "#" + found.map((v) => channel(v).toString(16).padStart(2, "0")).join("");
+  }
+
+  const hueFromHex = (hex) => {
+    const m = /^#?([0-9a-f]{6})$/i.exec(String(hex || "").trim());
+    if (!m) return null;
+    const n = parseInt(m[1], 16);
+    return hueOfColor((n >> 16) & 255, (n >> 8) & 255, n & 255);
+  };
 
   const blank = () => ({ uses: 0, heat: 0, lastUsedAt: 0, createdAt: Date.now() });
 
@@ -582,7 +662,9 @@
 
   OD.store = {
     OPS, runOp, apply,
-    KEYS, GLOBAL, DEFAULT_SETTINGS, alive, defaultHue, scopeOf, allowedScope,
+    KEYS, GLOBAL, DEFAULT_SETTINGS, alive,
+    HUES, OSHI_HUES, defaultHue, hueOfColor, hueFromHex, hexOfHue,
+    scopeOf, allowedScope,
     read,
     deckOf, poolFor, compatibleWith, universal, usableOn, inDeck, decksHolding,
     addToDeck, removeFromDeck,

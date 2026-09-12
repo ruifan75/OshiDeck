@@ -101,7 +101,9 @@ let undo = null;
 let query = "";
 let dragging = null;   // { card, from: "deck" | "pool" }
 
-const HUES = [320, 145, 250, 85, 25, 195, 290, 60];
+// One list, in store.js — it had been written out here as well, and two
+// copies of a palette only stay the same by luck.
+const { HUES } = store;
 
 async function loadDecks() {
   const data = await store.read();
@@ -185,16 +187,51 @@ function paintHeader() {
   label.textContent = "推し色";
   swatches.appendChild(label);
 
+  const current = hueOf(selected);
+
   for (const hue of HUES) {
     const swatch = document.createElement("button");
     swatch.type = "button";
     swatch.className = "swatch";
     swatch.style.setProperty("--hue", hue);
     swatch.setAttribute("aria-label", `推し色 ${hue}`);
-    if (hue === hueOf(selected)) swatch.dataset.on = "true";
+    if (hue === current) swatch.dataset.on = "true";
     swatch.addEventListener("click", () => setHue(selected, hue));
     swatches.appendChild(swatch);
   }
+
+  // Any hue, not only the eight. What is stored is still a hue: the palette
+  // fixes lightness and chroma so every channel reads the same against the
+  // panel, and a colour picked from anywhere is asked only what hue it is.
+  const slider = document.createElement("input");
+  slider.type = "range";
+  slider.className = "hue-slider";
+  slider.min = "0";
+  slider.max = "359";
+  slider.value = String(current);
+  slider.style.setProperty("--hue", current);
+  slider.setAttribute("aria-label", "推し色を細かく選ぶ");
+  // The thumb follows the drag; the write waits for the release, or every
+  // pixel of it would be an operation through the worker.
+  slider.addEventListener("input", (event) =>
+    event.target.style.setProperty("--hue", event.target.value));
+  slider.addEventListener("change", (event) =>
+    setHue(selected, Number(event.target.value)));
+
+  // The native picker carries both of the other ways of asking: a colour code,
+  // and the eyedropper in the system colour panel.
+  const picker = document.createElement("input");
+  picker.type = "color";
+  picker.className = "hue-pick";
+  picker.value = store.hexOfHue(current);
+  picker.style.setProperty("--hue", current);
+  picker.setAttribute("aria-label", "色から選ぶ（カラーコード・スポイト）");
+  picker.addEventListener("change", (event) => {
+    const hue = store.hueFromHex(event.target.value);
+    if (hue != null) setHue(selected, hue);
+  });
+
+  swatches.append(slider, picker);
   header.append(title, swatches);
 }
 

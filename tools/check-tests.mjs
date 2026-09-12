@@ -129,6 +129,10 @@ const MUTATIONS = [
     "return Math.min(MAX_OVERLAP, Math.max(OVERLAP, cardWidth - step));",
     "return OVERLAP;"],
 
+  [DRAW, LAYOUT, "a drawn card costed as if it overlapped the hand",
+    "const besideDrawn = (availWidth, cardWidth, gap) => availWidth - cardWidth - gap;",
+    "const besideDrawn = (availWidth, cardWidth, gap) => availWidth - gap;"],
+
   [TREND, TOKENS, "tooltips read as part of the comment",
     'if (NOT_CONTENT.has(current.tagName) || current.hasAttribute?.("hidden")) return;',
     "if (false) return;"],

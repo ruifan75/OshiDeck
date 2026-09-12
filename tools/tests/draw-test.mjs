@@ -130,34 +130,48 @@ check("keeping it ends the offer", q.draw([{ id: "own", tokens: text("888") }]) 
 
 /* ---------- where the room comes from ---------- */
 
-const { overlapFor, fitsSqueezed, cardsPerRow, CARD_SIZE, OVERLAP, MAX_OVERLAP } = layout;
+const { overlapFor, fitsSqueezed, besideDrawn, cardsPerRow, CARD_SIZE, OVERLAP, MAX_OVERLAP } = layout;
 const SIDEBAR = 376;            // a 400px chat less the panel padding
 const CARD = CARD_SIZE.small;
-const GAP = 10;
+const GAP = 14;
+
+// The width the row actually takes, composed the way the DOM composes it: the
+// drawn card is a slot of its own with a margin, and only the hand overlaps.
+// The first version of this asserted the formula against itself and so missed
+// that the drawn card was being counted as one more overlapping card, which
+// left every row an overlap too wide.
+const rowWidth = (count, overlap, { withDrawn = false } = {}) =>
+  (withDrawn ? CARD + GAP : 0) +
+  (count > 0 ? CARD + (count - 1) * (CARD - overlap) : 0);
 
 const resting = cardsPerRow(SIDEBAR, CARD);
-const squeezed = overlapFor(SIDEBAR, CARD, resting + 1, GAP);
+check("a full row of a 400px sidebar is seven small cards", resting === 7);
+check("which fills it at the resting overlap", rowWidth(resting, OVERLAP) <= SIDEBAR);
 
-check("a full row can still take one more", fitsSqueezed(SIDEBAR, CARD, resting + 1, GAP));
+const handWidth = besideDrawn(SIDEBAR, CARD, GAP);
+const squeezed = overlapFor(handWidth, CARD, resting);
+
+check("that same row can still be dealt a card", fitsSqueezed(handWidth, CARD, resting));
 check("by tightening the overlap", squeezed > OVERLAP);
 check("and no tighter than the cap", squeezed <= MAX_OVERLAP);
-
-const used = CARD + resting * (CARD - squeezed) + GAP;
-check("the row still fits the width", used <= SIDEBAR + 0.5);
+check(
+  "and the row, drawn card and all, still fits",
+  rowWidth(resting, squeezed, { withDrawn: true }) <= SIDEBAR + 0.5
+);
 
 check(
   "a hand with room to spare is not squeezed at all",
-  overlapFor(SIDEBAR, CARD, 3, GAP) === OVERLAP
+  overlapFor(besideDrawn(SIDEBAR, CARD, GAP), CARD, 3) === OVERLAP
 );
 
 check(
-  "a row that cannot fit even squeezed says so",
-  !fitsSqueezed(200, CARD, 12, GAP)
+  "an empty deck still has room for the card it is dealt",
+  fitsSqueezed(besideDrawn(SIDEBAR, CARD, GAP), CARD, 0)
 );
 
 check(
-  "and one card alone needs no overlap",
-  overlapFor(SIDEBAR, CARD, 1, GAP) === OVERLAP
+  "a row too narrow to manage it says so",
+  !fitsSqueezed(besideDrawn(150, CARD, GAP), CARD, 7)
 );
 
 process.exit(fail);

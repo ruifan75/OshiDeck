@@ -31,9 +31,16 @@
 
   // Whether that squeeze is enough, or the row would overflow anyway.
   function fitsSqueezed(availWidth, cardWidth, count, gap = 0) {
+    if (count <= 0) return gap <= availWidth;
     const overlap = overlapFor(availWidth, cardWidth, count, gap);
     return cardWidth + (count - 1) * (cardWidth - overlap) + gap <= availWidth;
   }
+
+  // What the hand has to fan in once a drawn card has taken its place at the
+  // left. The drawn card sits apart rather than in the fan, so it costs a
+  // whole card plus the gap — counting it as one more overlapping card left
+  // the row an overlap too wide.
+  const besideDrawn = (availWidth, cardWidth, gap) => availWidth - cardWidth - gap;
 
   // Split `count` cards across at most `maxRows` rows as evenly as possible.
   // Filling row 1 to capacity would leave 8 cards at 7/row as an ugly 7 + 1.
@@ -60,5 +67,8 @@
     return { rot: t * span, lift: Math.abs(t) ** 2 * LIFT };
   }
 
-  OD.layout = { CARD_SIZE, OVERLAP, MAX_OVERLAP, cardsPerRow, overlapFor, fitsSqueezed, splitRows, tilt };
+  OD.layout = {
+    CARD_SIZE, OVERLAP, MAX_OVERLAP,
+    cardsPerRow, overlapFor, fitsSqueezed, besideDrawn, splitRows, tilt
+  };
 })();

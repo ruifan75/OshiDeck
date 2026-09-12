@@ -246,6 +246,23 @@
   justify-content: center;
 }
 
+/* The drawn card has a place of its own at the left edge — not the left end of
+   the hand. With an empty deck the hand has no left end, and the card came out
+   centred in the panel. */
+.od-drawn-slot {
+  flex: 0 0 auto;
+  margin-right: var(--od-drawn-gap, 14px);
+}
+
+/* The hand fans in whatever the drawn card leaves, centred in that. */
+.od-fan {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-width: 0;
+}
+
 .od-card {
   position: relative;
   flex-shrink: 0;
@@ -309,7 +326,6 @@
    the left, the edge where the most-used card already sits and the eye is
    already looking. */
 .od-drawn {
-  margin-right: var(--od-drawn-gap, 14px);
   border-style: dashed;
   border-color: rgba(255, 255, 255, .34);
   /* It breathes so that it is never mistaken for part of the hand, which is

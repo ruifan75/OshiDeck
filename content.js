@@ -1132,21 +1132,27 @@
       row.className = "od-row";
       firstRow ||= row;
 
-      // The drawn card rides at the left, where the most-used card already is
-      // and the eye already goes. It keeps out of the fan — upright, and a gap
-      // away — so that it reads as offered rather than held.
-      const takes = drawn && row === firstRow &&
-        layout.fitsSqueezed(avail, cardWidth, rowLength + 1, DRAWN_GAP);
+      // The drawn card gets a place of its own at the left edge, not the left
+      // end of the hand: with an empty deck the hand has no left end, and the
+      // card came out in the middle of the panel. The hand then fans in what
+      // is left, centred there.
+      const wanted = drawn && row === firstRow;
+      const handWidth = wanted ? layout.besideDrawn(avail, cardWidth, DRAWN_GAP) : avail;
+      const takes = wanted && layout.fitsSqueezed(handWidth, cardWidth, rowLength);
       const overlap = takes
-        ? layout.overlapFor(avail, cardWidth, rowLength + 1, DRAWN_GAP)
+        ? layout.overlapFor(handWidth, cardWidth, rowLength)
         : layout.OVERLAP;
 
       if (takes) {
-        const el = buildDrawn(drawn, { size });
-        el.style.setProperty("--od-drawn-gap", `${DRAWN_GAP}px`);
-        row.appendChild(el);
+        const slot = document.createElement("div");
+        slot.className = "od-drawn-slot";
+        slot.style.setProperty("--od-drawn-gap", `${DRAWN_GAP}px`);
+        slot.appendChild(buildDrawn(drawn, { size }));
+        row.appendChild(slot);
       }
 
+      const fan = document.createElement("div");
+      fan.className = "od-fan";
       for (let i = 0; i < rowLength; i++) {
         const card = deck[cursor++];
         const el = buildCard(card, { size, hue });
@@ -1154,8 +1160,9 @@
         el.style.setProperty("--od-rot", `${rot.toFixed(2)}deg`);
         el.style.setProperty("--od-lift", `${lift.toFixed(2)}px`);
         if (i > 0) el.style.setProperty("--od-overlap", `-${overlap.toFixed(1)}px`);
-        row.appendChild(el);
+        fan.appendChild(el);
       }
+      row.appendChild(fan);
       hand.appendChild(row);
     }
 

@@ -13,6 +13,9 @@ const text = (value) => ({ nodeType: 3, textContent: value });
 const msg  = (...kids) => new El("DIV", kids);
 const item = (message) => new El("YT-LIVE-CHAT-TEXT-MESSAGE-RENDERER", [], { __message: message });
 const emoji = (id) => new El("IMG", [], { "data-emoji-id": id, src: "https://yt3/" + id, alt: ":x:" });
+// YouTube appends one of these inside the message the first time it is
+// hovered, and its text is the emoji shortcode.
+const tooltip = (t) => new El("TP-YT-PAPER-TOOLTIP", [text(t)]);
 
 globalThis.Element = Element;
 globalThis.Node = { TEXT_NODE: 3, ELEMENT_NODE: 1 };
@@ -35,7 +38,7 @@ globalThis.MutationObserver = class { constructor(cb) { fire = cb; } observe() {
 
 require("/Users/maintainer/OshiDeck/src/layout.js");
 require("/Users/maintainer/OshiDeck/src/store.js");
-require("/Users/maintainer/OshiDeck/src/tokens.js");
+require(process.env.OD_TOKENS || "/Users/maintainer/OshiDeck/src/tokens.js");
 // OD_TRENDING lets the mutation checker swap in a deliberately broken copy.
 require(process.env.OD_TRENDING || "/Users/maintainer/OshiDeck/src/trending.js");
 
@@ -106,6 +109,23 @@ const expect = (label, got, want) => {
   console.log(`${ok ? "\nok  " : "\nFAIL"} ${label}: ${JSON.stringify(got)}${ok ? "" : " != " + JSON.stringify(want)}`);
 };
 expect("clap rises to front on chat wave", ordered[0].id, "clap");
+
+/* ---------- a tooltip is not part of the comment ---------- */
+
+// Reaching the ＋ button means hovering the comment, which is exactly when
+// YouTube adds the tooltip — so every comment taken that way used to arrive
+// with `:musical_notes:` stuck on the end, and any hovered message quietly
+// changed its own trend signature.
+const plain = msg(text("かわいい"), emoji(CH + "/heart"));
+const hovered = msg(text("かわいい"), emoji(CH + "/heart"), tooltip("\n  :musical_notes:"));
+
+expect("a hovered comment reads the same as an unhovered one",
+  trending.signature(tokens.collectTokens(hovered)),
+  trending.signature(tokens.collectTokens(plain)));
+
+expect("and carries no shortcode text",
+  tokens.collectTokens(hovered).some((t) => t.type === "text" && t.value.includes(":")),
+  false);
 
 /* ---------- a wave that ended does not hold the front ---------- */
 

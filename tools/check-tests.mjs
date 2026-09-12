@@ -35,6 +35,7 @@ const DRAW = "draw-test.mjs";
 const CONTENT = { file: "content.js", env: "OD_SOURCE" };
 const TRENDING = { file: "src/trending.js", env: "OD_TRENDING" };
 const LAYOUT = { file: "src/layout.js", env: "OD_LAYOUT" };
+const TOKENS = { file: "src/tokens.js", env: "OD_TOKENS" };
 
 const sources = new Map();
 const read = ({ file }) => {
@@ -117,6 +118,14 @@ const MUTATIONS = [
   [DRAW, LAYOUT, "a hand that refuses to squeeze",
     "return Math.min(MAX_OVERLAP, Math.max(OVERLAP, cardWidth - step));",
     "return OVERLAP;"],
+
+  [TREND, TOKENS, "tooltips read as part of the comment",
+    'if (NOT_CONTENT.has(current.tagName) || current.hasAttribute?.("hidden")) return;',
+    "if (false) return;"],
+
+  [VISIBILITY, CONTENT, "a description left behind by a removed control",
+    "if (!peekOwner || peekOwner.isConnected) return;",
+    "if (true) return;"],
 ];
 
 const dir = mkdtempSync(join(tmpdir(), "oshideck-mutation-"));

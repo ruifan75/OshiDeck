@@ -5,6 +5,10 @@
   const EMOJI_CLASS =
     "emoji yt-formatted-string style-scope yt-live-chat-text-input-field-renderer";
 
+  const NOT_CONTENT = new Set([
+    "TP-YT-PAPER-TOOLTIP", "SCRIPT", "STYLE", "TEMPLATE", "NOSCRIPT"
+  ]);
+
   function collectTokens(node) {
     const tokens = [];
 
@@ -38,6 +42,14 @@
     function walk(current) {
       if (current.nodeType === Node.TEXT_NODE) return pushText(current.textContent || "");
       if (current.nodeType !== Node.ELEMENT_NODE) return;
+
+      // Chrome, not content. YouTube appends a <tp-yt-paper-tooltip> inside
+      // the message the first time it is hovered, and that tooltip's text is
+      // the emoji shortcode — so every comment taken with the ＋ button, which
+      // can only be reached by hovering, arrived with `:musical_notes:` stuck
+      // on the end. It also quietly changed the chat-trend signature of any
+      // message the pointer had crossed.
+      if (NOT_CONTENT.has(current.tagName) || current.hasAttribute?.("hidden")) return;
 
       const emoji = readEmojiToken(current);
       if (emoji) return tokens.push(emoji);

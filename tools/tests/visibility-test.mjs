@@ -1,4 +1,5 @@
-// Whether the deck is on screen.
+// What the panel is showing: whether the deck is on screen at all, and what
+// its bar is saying.
 //
 // YouTube opens Super Chat over the same corner the deck sits in, and it does
 // that by collapsing the chat input rather than removing it — so "the input is
@@ -93,5 +94,56 @@ check("with nothing mounted and nothing usable, it waits", s.renders === 0);
 
 s = scene({ mounted: true, connected: false, usable: true }).run();
 check("a root torn out of the page counts as not mounted", s.renders === 1);
+
+/* ---------- the bar, once what it describes is gone ---------- */
+
+const peekFrom = src.indexOf("  function setPeek(next, owner = null) {");
+const peekTo = src.indexOf("  function poolBar(", peekFrom);
+if (peekFrom < 0 || peekTo < 0 || peekTo <= peekFrom) {
+  console.log("FAIL could not lift setPeek out of content.js");
+  process.exit(1);
+}
+
+function bar() {
+  const seen = { refreshes: 0 };
+  const api = new Function(
+    "seen",
+    `let peek = null;
+     let peekOwner = null;
+     const notice = null;
+     const refreshBar = () => { seen.refreshes += 1; };
+     ${src.slice(peekFrom, peekTo)}
+     return { setPeek, dropStalePeek, peek: () => peek, owner: () => peekOwner };`
+  )(seen);
+  return { ...api, seen };
+}
+
+// A card ejected while the pointer was on its eject button: the element goes,
+// so pointerleave never comes, and the bar was left describing a button that
+// no longer existed — which also meant it could never become the save
+// targets, so nothing could be added either.
+let b = bar();
+const button = { isConnected: true };
+b.setPeek({ text: "このデッキから外す" }, button);
+check("hovering a control puts its description in the bar", b.peek()?.text === "このデッキから外す");
+
+button.isConnected = false;
+b.dropStalePeek();
+check("and removing that control clears it", b.peek() === null);
+check("with nothing left owning the bar", b.owner() === null);
+
+// A control still on the page keeps its description: the panel re-renders
+// every few seconds in chat-driven mode, and the pointer may not have moved.
+b = bar();
+const staying = { isConnected: true };
+b.setPeek({ text: "この札を編集" }, staying);
+b.dropStalePeek();
+check("a control still there keeps its description", b.peek()?.text === "この札を編集");
+
+// Clearing has no owner to remember.
+b = bar();
+b.setPeek({ text: "x" }, { isConnected: true });
+b.setPeek(null);
+check("clearing forgets the owner too", b.owner() === null);
 
 process.exit(fail);

@@ -29,6 +29,7 @@
   let drag = null;
   let poolOpen = false;
   let peek = null;
+  let peekOwner = null; // the element whose description the bar is showing
   let editingId = null;  // card being re-recorded, if any
   let settingsCache = { ...store.DEFAULT_SETTINGS };
   let frozen = false;    // pointer is over the deck — do not reorder under it
@@ -956,7 +957,7 @@
   }
 
   function trackPeek(el, card) {
-    el.addEventListener("pointerenter", () => setPeek(cardPeek(card)));
+    el.addEventListener("pointerenter", () => setPeek(cardPeek(card), el));
     el.addEventListener("pointerleave", () => setPeek(null));
   }
 
@@ -967,9 +968,10 @@
     el.setAttribute("aria-label", text);
     // pointerenter/leave do not bubble, so entering a control inside a card
     // leaves the card's own peek alone; restore() puts it back on the way out.
-    el.addEventListener("pointerenter", () => setPeek({ text, warning: options.warning }));
+    el.addEventListener("pointerenter", () =>
+      setPeek({ text, warning: options.warning }, el));
     el.addEventListener("pointerleave", () =>
-      setPeek(options.restore ? options.restore() : null));
+      setPeek(options.restore ? options.restore() : null, el.parentElement));
     return el;
   }
 
@@ -1221,10 +1223,21 @@
     return readout;
   }
 
-  function setPeek(next) {
+  function setPeek(next, owner = null) {
     const changed = (peek?.text || null) !== (next?.text || null);
     peek = next;
+    peekOwner = next ? owner : null;
     if (changed && !notice) refreshBar();
+  }
+
+  // pointerleave never arrives for an element that was removed, so a card
+  // ejected while the pointer was on its button left its description in the
+  // bar for good — and with the bar stuck on a description, it could never
+  // become the save targets, so nothing could be added either.
+  function dropStalePeek() {
+    if (!peekOwner || peekOwner.isConnected) return;
+    peek = null;
+    peekOwner = null;
   }
 
   function poolBar(poolCount) {
@@ -1423,6 +1436,7 @@
     el.addEventListener("pointerenter", () => { frozen = true; });
     el.addEventListener("pointerleave", () => {
       frozen = false;
+      setPeek(null); // the pointer left the panel; nothing is being described
       if (pendingRender) { pendingRender = false; scheduleRender(); }
     });
 
@@ -1499,6 +1513,9 @@
 
     keepChatPinned(() => {
       rootEl.replaceChildren();
+      // Everything that was hovered is gone now; whatever it was describing
+      // must go with it.
+      dropStalePeek();
       rootEl.dataset.mode = data.settings.mode;
       rootEl.dataset.pool = String(poolOpen);
 

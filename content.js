@@ -30,6 +30,7 @@
   let poolOpen = false;
   let peek = null;
   let peekOwner = null; // the element whose description the bar is showing
+  let painted = null;   // what the panel is already showing
   let editingId = null;  // card being re-recorded, if any
   let settingsCache = { ...store.DEFAULT_SETTINGS };
   let frozen = false;    // pointer is over the deck — do not reorder under it
@@ -111,6 +112,7 @@
     if (!hide) return scheduleRender();
     // Nothing is under the pointer any more, and no pointerleave is owed.
     frozen = false;
+    painted = null;
     journal.record({ kind: "note", what: "stepped-aside", reason: "input-not-rendered" });
   }
 
@@ -462,7 +464,12 @@
   // different things to say.
   const HOLD_MS = 45_000;
 
-  let drawn = null; // { key, card, until }
+  let drawn = null;       // { key, card, until }
+  let drawnShown = null;  // the card the entry animation has already played for
+
+  // Must match od-drawn-breathe in content.css: the glow is picked up where
+  // the last one left off, and that needs the cycle length.
+  const BREATH_MS = 2600;
 
   // A reaction already in the hand is no offer at all, and member emoji are
   // left out altogether: they belong to this channel, but YouTube serves them
@@ -529,6 +536,18 @@
     el.className = "od-card od-drawn";
     el.dataset.size = size;
     el.dataset.scope = "global";
+
+    // A render for some other reason builds this element again, and a new
+    // element replays its animations — so it slid in from the left every time
+    // anything at all happened. It slides in only when it is genuinely a new
+    // card; otherwise it picks the glow up mid-breath, where the one before it
+    // would have been.
+    if (card.key !== drawnShown) {
+      drawnShown = card.key;
+      el.dataset.fresh = "true";
+    } else {
+      el.style.animationDelay = `-${Date.now() % BREATH_MS}ms`;
+    }
 
     const play = document.createElement("button");
     play.type = "button";
@@ -1100,6 +1119,21 @@
 
   const DRAWN_GAP = 14; // wide enough that it never reads as part of the hand
 
+  // Everything the panel draws from. Deliberately coarse about the chat: an
+  // exact hit count would change every few seconds and defeat the point, so
+  // only whether a card is trending at all counts as a change.
+  function panelSignature(data, channel, hue, shown, drawn) {
+    const s = data.settings;
+    return [
+      s.mode, s.cardSize, s.rows, s.sortBy, s.suggest ? "draw" : "",
+      channel?.id || "", hue ?? "",
+      poolOpen ? "pool" : "deck", expanded ? "more" : "",
+      editingId || "", flashId || "", inputHasContent ? "typing" : "",
+      drawn?.key || "",
+      shown.map((card) => (card.hits ? `${card.id}*` : card.id)).join(",")
+    ].join("|");
+  }
+
   function renderHand(container, deck, settings, hue, drawn) {
     const width = container.clientWidth || 400;
     const size = settings.cardSize;
@@ -1508,6 +1542,7 @@
       // over it. Staying put would draw the deck on top of that panel.
       if (rootEl && !rootEl.hidden) {
         rootEl.hidden = true;
+        painted = null;
         journal.record({ kind: "note", what: "stepped-aside", reason: "input-not-rendered" });
       }
       return;
@@ -1516,6 +1551,7 @@
 
     if (!rootEl || !rootEl.isConnected) {
       rootEl = mount(input);
+      painted = null;
       if (!rootEl) {
         journal.record({ kind: "error", what: "no-mount-point" });
         return log("Chat input found, but no place to mount.");
@@ -1564,6 +1600,14 @@
       // Only alongside your own deck. The pool is a place to choose from, not
       // somewhere to be handed things.
       const drawn = poolOpen ? null : drawFromChat(deck);
+
+      // Chat-driven mode renders every few seconds whether or not anything it
+      // shows has changed, and rebuilding is not free: the elements are new, so
+      // the drawn card replayed its entry animation and looked like it was
+      // jumping. Nothing to redraw, nothing redrawn.
+      const next = panelSignature(data, channel, hue, shown, drawn);
+      if (next === painted && rootEl.firstChild) return;
+      painted = next;
 
       barContext = { channel, hue, count: shown.length };
       barEl = buildBar(channel, hue, shown.length);

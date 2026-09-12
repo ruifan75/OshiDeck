@@ -146,4 +146,71 @@ b.setPeek({ text: "x" }, { isConnected: true });
 b.setPeek(null);
 check("clearing forgets the owner too", b.owner() === null);
 
+/* ---------- what counts as having changed ---------- */
+
+const sigFrom = src.indexOf("  function panelSignature(data, channel, hue, shown, drawn) {");
+const sigTo = src.indexOf("  function renderHand(", sigFrom);
+if (sigFrom < 0 || sigTo < 0 || sigTo <= sigFrom) {
+  console.log("FAIL could not lift panelSignature out of content.js");
+  process.exit(1);
+}
+
+// Chat-driven mode renders every few seconds whether or not anything shown has
+// changed. Getting this wrong in one direction redraws constantly — which made
+// the drawn card lurch — and in the other leaves the panel stale, which is
+// worse. So both directions are pinned.
+function signature({ pool = false, more = false, editing = null, flash = null,
+                     typing = false, settings = {}, channel = "UCaaa", hue = 320,
+                     shown = [], drawn = null } = {}) {
+  return new Function(
+    "poolOpen", "expanded", "editingId", "flashId", "inputHasContent",
+    `${src.slice(sigFrom, sigTo)} return panelSignature;`
+  )(pool, more, editing, flash, typing)(
+    { settings: { mode: "hand", cardSize: "small", rows: 2, sortBy: "heat", suggest: true, ...settings } },
+    { id: channel }, hue, shown, drawn
+  );
+}
+
+const hand = [{ id: "a", hits: 0 }, { id: "b", hits: 0 }];
+
+check("the same panel signs the same", signature({ shown: hand }) === signature({ shown: hand }));
+
+check(
+  "a chat count ticking up is not a change",
+  signature({ shown: [{ id: "a", hits: 4 }] }) === signature({ shown: [{ id: "a", hits: 9 }] })
+);
+
+check(
+  "but a card starting to trend is",
+  signature({ shown: [{ id: "a", hits: 0 }] }) !== signature({ shown: [{ id: "a", hits: 1 }] })
+);
+
+check(
+  "reordering the hand is",
+  signature({ shown: hand }) !== signature({ shown: [hand[1], hand[0]] })
+);
+
+check(
+  "a different card being drawn is",
+  signature({ shown: hand, drawn: { key: "888" } }) !== signature({ shown: hand, drawn: { key: "99" } })
+);
+
+check(
+  "and so is one being drawn at all",
+  signature({ shown: hand }) !== signature({ shown: hand, drawn: { key: "888" } })
+);
+
+for (const [label, over] of [
+  ["opening the pool", { pool: true }],
+  ["expanding", { more: true }],
+  ["editing a card", { editing: "a" }],
+  ["flashing one", { flash: "a" }],
+  ["typing", { typing: true }],
+  ["a settings change", { settings: { rows: 1 } }],
+  ["switching channel", { channel: "UCbbb" }],
+  ["a new colour", { hue: 90 }]
+]) {
+  check(`${label} is a change`, signature({ shown: hand }) !== signature({ shown: hand, ...over }));
+}
+
 process.exit(fail);

@@ -331,7 +331,17 @@
   /* It breathes so that it is never mistaken for part of the hand, which is
      the thing that is not supposed to move or surprise anyone. Slow, and the
      glow only — nothing about the card shifts, so the pointer can still land
-     on it. */
+     on it.
+
+     Sliding in is for a card that is actually new. The panel is rebuilt
+     whenever anything changes, and a new element replays its animations, so
+     putting the entry here made the card lurch every time. 2.6s is also in
+     content.js as BREATH_MS, which offsets the glow so a rebuild continues it
+     rather than restarting it. */
+  animation: od-drawn-breathe 2.6s ease-in-out infinite;
+}
+
+.od-drawn[data-fresh] {
   animation: od-drawn-in .22s ease-out, od-drawn-breathe 2.6s ease-in-out .22s infinite;
 }
 

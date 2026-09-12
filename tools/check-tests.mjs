@@ -141,6 +141,14 @@ const MUTATIONS = [
     "if (!peekOwner || peekOwner.isConnected) return;",
     "if (true) return;"],
 
+  [VISIBILITY, CONTENT, "a panel that cannot tell its hand has been reordered",
+    'shown.map((card) => (card.hits ? `${card.id}*` : card.id)).join(",")',
+    'shown.length'],
+
+  [VISIBILITY, CONTENT, "a chat count counted as a change in its own right",
+    'shown.map((card) => (card.hits ? `${card.id}*` : card.id)).join(",")',
+    'shown.map((card) => `${card.id}:${card.hits}`).join(",")'],
+
   [CONFIRM, OPTIONS, "a second press of the same button counting as consent",
     "  if (el?.dataset.confirming) return;",
     "  if (el?.dataset.confirming) return deleteCardNow(card);"],

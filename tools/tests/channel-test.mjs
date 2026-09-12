@@ -168,6 +168,37 @@ function frame() {
   };
 }
 
+// The panel actually runs inside the live-chat iframe, where the chat
+// document has no owner block and the answer is on the parent. A frame whose
+// top is itself never takes that path, so nothing here exercised it.
+function chatFrame() {
+  const top = { location: { search: "" } };
+  top.top = top;
+  let watch = page([]);
+  top.document = {
+    querySelector: (sel) => watch.querySelector(sel),
+    querySelectorAll: (sel) => watch.querySelectorAll(sel),
+    get defaultView() { return top; }
+  };
+
+  const win = { location: { search: "" }, top };
+  const chat = page([]); // a live chat carries nothing that names the owner
+  const document = {
+    querySelector: (sel) => chat.querySelector(sel),
+    querySelectorAll: (sel) => chat.querySelectorAll(sel),
+    get defaultView() { return win; }
+  };
+
+  const api = build(win, document);
+  return {
+    getChannel: () => api.getChannel(),
+    show(children, video) {
+      watch = page(children);
+      top.location.search = video ? `?v=${video}` : "";
+    }
+  };
+}
+
 /* ---------- fixtures ---------- */
 
 const A = "UCaaaaaaaaaaaaaaaaaaaaaa";
@@ -390,5 +421,19 @@ check("a blank moment on the same video keeps the answer", tab.getChannel()?.id 
 
 tab.show(blankOn(VID_C), VID_C);
 check("but the next video does not inherit it", tab.getChannel() === null);
+
+/* ---------- from inside the chat iframe ---------- */
+
+const chat = chatFrame();
+chat.show(settled, VID_B);
+check("the owner is read from the parent document", chat.getChannel()?.id === B);
+
+// A fresh frame: once an answer has been found for this video, a parent that
+// goes stale is indistinguishable from a blank moment — and keeping the answer
+// is right, because the video has not changed. What must not happen is reading
+// the previous owner before anything is known.
+const arriving = chatFrame();
+arriving.show([flexy(VID_A, [ownerBlock({ handle: "/@a", name: "Channel A" }), infocard("/@a", A, "Channel A")])], VID_B);
+check("a parent still on the previous video is noticed from here too", arriving.getChannel() === null);
 
 process.exit(fail);

@@ -29,4 +29,11 @@ for t in tools/tests/*.js tools/tests/*.mjs; do
     fail=1
   fi
 done
+echo
+
+# Green has to mean something: break each guarantee in turn and require the
+# channel tests to notice. Three of them once did not.
+echo "tests that can fail"
+node tools/check-tests.mjs || fail=1
+
 exit $fail

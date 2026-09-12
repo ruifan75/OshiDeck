@@ -88,9 +88,18 @@
   // under the pointer, and routing this through it left the deck drawn over
   // the Super Chat panel for as long as the pointer stayed on the deck.
   function syncVisibility() {
-    if (stopped || !rootEl?.isConnected) return;
-
+    if (stopped) return;
     const hide = !getChatInput();
+
+    // Nothing mounted yet — the first render found the input collapsed and
+    // returned before mounting. Returning here too left the deck missing
+    // until something else happened to schedule a render, which on a quiet
+    // chat can be a long time.
+    if (!rootEl?.isConnected) {
+      if (!hide) scheduleRender();
+      return;
+    }
+
     if (rootEl.hidden === hide) return;
     rootEl.hidden = hide;
 
@@ -190,11 +199,19 @@
   // meant no identification at all.
   function handleOf(href) {
     const path = (href || "").split(/[?#]/)[0];
-    if (!path.startsWith("/@") || path.length < 3) return null;
+    if (!path.startsWith("/@")) return null;
+
+    // Only the first segment: an info card can link to `/@name/videos` while
+    // the owner block links to `/@name`, and comparing whole paths made those
+    // two different channels. The old attribute selector allowed the tab form
+    // explicitly; dropping it silently narrowed the match.
+    const name = path.split("/")[1];
+    if (!name || name.length < 2) return null;
+
     try {
-      return decodeURIComponent(path).toLowerCase();
+      return `/${decodeURIComponent(name).toLowerCase()}`;
     } catch (_) {
-      return path.toLowerCase(); // malformed escape: compare it as written
+      return `/${name.toLowerCase()}`; // malformed escape: compare it as written
     }
   }
 

@@ -15,7 +15,8 @@
     mode: "hand",      // hand | list
     cardSize: "small", // large | medium | small
     rows: 2,           // 1 | 2
-    sortBy: "heat"     // manual | uses | heat | trend
+    sortBy: "heat",    // manual | uses | heat | trend
+    suggest: true      // draw one card from what the chat is doing
   };
 
   const HALF_LIFE = 7 * 24 * 60 * 60 * 1000;

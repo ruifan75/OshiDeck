@@ -36,7 +36,11 @@
 
   // Always running: even outside trend mode it keeps emoji urls fresh.
   const watcher = trending.createWatcher({
-    onChange: () => { if (settingsCache.sortBy === "trend") scheduleRender(); }
+    onChange: () => {
+      // Chat can change the hand two ways now: by reordering it, and by
+      // holding out a card that is not in it.
+      if (settingsCache.sortBy === "trend" || settingsCache.suggest) scheduleRender();
+    }
   });
 
   const log = (...args) => console.debug("[OshiDeck]", ...args);
@@ -445,6 +449,82 @@
       .sort((a, b) => b.trend - a.trend || fallback.get(a.id) - fallback.get(b.id));
   }
 
+  // What the chat is doing that this deck cannot already do.
+  //
+  // A reaction you already hold rises to the front on its own, so drawing it
+  // again would only be a duplicate. Member emoji are left out altogether:
+  // they belong to this channel, but YouTube serves them to members only, and
+  // a card that fails when pressed is worse than no card. When membership can
+  // be told apart, this is the line to revisit.
+  const DRAW_MIN_COUNT = 3;
+  const DRAW_MIN_SCORE = 3;
+
+  function drawFromChat(deck) {
+    if (!settingsCache.suggest) return null;
+
+    const held = new Set();
+    for (const card of deck) {
+      card.signature ||= trending.signature(card.tokens || []);
+      held.add(card.signature);
+    }
+
+    let best = null;
+    for (const [signature, seen] of watcher.ranking()) {
+      if (!signature || held.has(signature)) continue;
+      if (seen.count < DRAW_MIN_COUNT || seen.score < DRAW_MIN_SCORE) continue;
+      if (!tokens.hasSubstance(seen.tokens)) continue;
+      if (tokens.requiredChannels(seen.tokens).length) continue;
+      if (!best || seen.score > best.score) best = { signature, ...seen };
+    }
+
+    if (!best) return null;
+    return {
+      id: `drawn:${best.signature}`,
+      drawn: true,          // not a card anyone owns: no id in storage
+      tokens: best.tokens,
+      signature: best.signature,
+      hits: best.count,
+      trend: best.score
+    };
+  }
+
+  function buildDrawnRow(card) {
+    const el = document.createElement("div");
+    el.className = "od-listcard od-drawn";
+    el.dataset.scope = "global";
+
+    const play = document.createElement("button");
+    play.type = "button";
+    play.className = "od-listcard-play";
+    play.appendChild(tokens.toFragment(card.tokens || [], { preview: true }));
+    play.addEventListener("click", (event) => playCard(card, { send: event.shiftKey }));
+
+    el.appendChild(play);
+    trackPeek(el, card);
+    return el;
+  }
+
+  // No tools, no dragging, nothing to reorder — there is nothing here to
+  // rearrange yet. Pressing it puts the reaction in the editor, which is also
+  // how keeping it works: the bar is already offering the two save targets by
+  // then, and saving puts it in the pool and in this deck together.
+  function buildDrawn(card, { size }) {
+    const el = document.createElement("div");
+    el.className = "od-card od-drawn";
+    el.dataset.size = size;
+    el.dataset.scope = "global";
+
+    const play = document.createElement("button");
+    play.type = "button";
+    play.className = "od-card-play";
+    play.addEventListener("click", (event) => playCard(card, { send: event.shiftKey }));
+    play.appendChild(cardBody(card, size).body);
+
+    el.appendChild(play);
+    trackPeek(el, card);
+    return el;
+  }
+
   /* ---------- notices ---------- */
 
   let noticeTimer = null;
@@ -488,7 +568,8 @@
     tokens.writeToInput(input, card.tokens || []);
     if (willSend) submitChat(() => { sending = false; });
 
-    await store.apply("markUsed", { id: card.id });
+    // A drawn card is not in the pool, so there is no use count to raise.
+    if (!card.drawn) await store.apply("markUsed", { id: card.id });
   }
 
   // The renderer enables the button a beat after the input event lands.
@@ -867,6 +948,10 @@
     const text = tokens.toPlainText(card.tokens || []).trim();
     const stamps = (card.tokens || []).filter((t) => t.type === "youtubeEmoji").length;
     const body = text || (stamps ? `スタンプ ${stamps}個` : "");
+
+    if (card.drawn) {
+      return { text: `${body}  ・ チャットで${card.hits}回。押すと入力欄へ、帯からデッキに入ります` };
+    }
     return { text: card.hits > 0 ? `${body}  ・ いまチャットで${card.hits}回` : body };
   }
 
@@ -977,19 +1062,24 @@
     return svg;
   }
 
-  function renderHand(container, deck, settings, hue) {
+  const DRAWN_GAP = 10; // enough that a drawn card reads as not yet yours
+
+  function renderHand(container, deck, settings, hue, drawn) {
     const width = container.clientWidth || 400;
     const size = settings.cardSize;
     const cardWidth = layout.CARD_SIZE[size] || layout.CARD_SIZE.small;
     // Leave room for a scrollbar: when the deck overflows, the gutter eats
     // into the row and the last card would push a horizontal bar into view.
-    const perRow = layout.cardsPerRow(width - PANEL_PADDING - SCROLLBAR_GUTTER, cardWidth);
+    const avail = width - PANEL_PADDING - SCROLLBAR_GUTTER;
+    const perRow = layout.cardsPerRow(avail, cardWidth);
     const visibleRows = Math.min(MAX_ROWS_CAP, Math.max(1, settings.rows));
 
     // Lay out every card. The row setting caps how many rows are *shown*, not
     // how many exist — cards past the cap used to be unreachable.
     const allRows = Math.max(1, Math.ceil(deck.length / perRow));
     const { rows } = layout.splitRows(deck.length, perRow, allRows);
+    // A deck with nothing in it still needs a row to be handed a card into.
+    if (drawn && !rows.length) rows.push(0);
 
     const hand = document.createElement("div");
     hand.className = "od-hand";
@@ -1000,9 +1090,26 @@
     else if (rows.length > visibleRows) hand.dataset.scrollable = "true";
 
     let cursor = 0;
+    let firstRow = null;
     for (const rowLength of rows) {
       const row = document.createElement("div");
       row.className = "od-row";
+      firstRow ||= row;
+
+      // The drawn card rides at the left, where the most-used card already is
+      // and the eye already goes. It keeps out of the fan — upright, and a gap
+      // away — so that it reads as offered rather than held.
+      const takes = drawn && row === firstRow &&
+        layout.fitsSqueezed(avail, cardWidth, rowLength + 1, DRAWN_GAP);
+      const overlap = takes
+        ? layout.overlapFor(avail, cardWidth, rowLength + 1, DRAWN_GAP)
+        : layout.OVERLAP;
+
+      if (takes) {
+        const el = buildDrawn(drawn, { size });
+        el.style.setProperty("--od-drawn-gap", `${DRAWN_GAP}px`);
+        row.appendChild(el);
+      }
 
       for (let i = 0; i < rowLength; i++) {
         const card = deck[cursor++];
@@ -1010,7 +1117,7 @@
         const { rot, lift } = layout.tilt(i, rowLength);
         el.style.setProperty("--od-rot", `${rot.toFixed(2)}deg`);
         el.style.setProperty("--od-lift", `${lift.toFixed(2)}px`);
-        if (i > 0) el.style.setProperty("--od-overlap", `-${layout.OVERLAP}px`);
+        if (i > 0) el.style.setProperty("--od-overlap", `-${overlap.toFixed(1)}px`);
         row.appendChild(el);
       }
       hand.appendChild(row);
@@ -1020,11 +1127,15 @@
     return Math.max(0, deck.length - perRow * visibleRows);
   }
 
-  function renderList(container, deck, settings, hue) {
+  function renderList(container, deck, settings, hue, drawn) {
     const list = document.createElement("div");
     list.className = "od-list";
     if (expanded) list.dataset.expanded = "true";
     else if (deck.length > LIST_VISIBLE) list.dataset.scrollable = "true";
+
+    // A row rather than a card: the list has no fan to squeeze, so the drawn
+    // reaction simply sits at the top in the same dashed hand as the pool.
+    if (drawn) list.appendChild(buildDrawnRow(drawn));
 
     for (const card of deck) {
       const el = document.createElement("div");
@@ -1392,11 +1503,15 @@
       rootEl.dataset.pool = String(poolOpen);
 
       const shown = poolOpen ? pool : deck;
+      // Only alongside your own deck. The pool is a place to choose from, not
+      // somewhere to be handed things.
+      const drawn = poolOpen ? null : drawFromChat(deck);
+
       barContext = { channel, hue, count: shown.length };
       barEl = buildBar(channel, hue, shown.length);
       rootEl.appendChild(barEl);
 
-      if (!shown.length) {
+      if (!shown.length && !drawn) {
         const empty = document.createElement("div");
         empty.className = "od-empty";
         empty.textContent = poolOpen
@@ -1409,8 +1524,8 @@
 
       const hidden =
         data.settings.mode === "list"
-          ? renderList(rootEl, shown, data.settings, hue)
-          : renderHand(rootEl, shown, data.settings, hue);
+          ? renderList(rootEl, shown, data.settings, hue, drawn)
+          : renderHand(rootEl, shown, data.settings, hue, drawn);
 
       if (hidden > 0 || expanded) {
         const more = document.createElement("button");

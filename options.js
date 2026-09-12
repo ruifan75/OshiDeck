@@ -2,6 +2,7 @@ const { store, tokens } = globalThis.OshiDeck;
 
 const DEFAULTS = {
   autoSend: false,
+  suggest: true,
   mode: "hand",
   cardSize: "small",
   rows: 2,
@@ -31,6 +32,7 @@ let settings = { ...DEFAULTS };
 function paint() {
   document.querySelector(`input[name="mode"][value="${settings.mode}"]`).checked = true;
   document.querySelector("#autoSend").checked = !!settings.autoSend;
+  document.querySelector("#suggest").checked = settings.suggest !== false;
 
   for (const group of document.querySelectorAll(".segmented[data-setting]")) {
     const key = group.dataset.setting;
@@ -80,6 +82,10 @@ for (const group of document.querySelectorAll(".segmented[data-setting]")) {
     commit({ [key]: key === "rows" ? Number(button.value) : button.value });
   });
 }
+
+document.querySelector("#suggest").addEventListener("change", (event) => {
+  commit({ suggest: event.target.checked });
+});
 
 document.querySelector("#autoSend").addEventListener("change", (event) => {
   commit({ autoSend: event.target.checked });

@@ -255,7 +255,10 @@
   background: linear-gradient(162deg, #242424, #131313);
   box-shadow: 0 3px 8px rgba(0, 0, 0, .5);
   transform: rotate(var(--od-rot)) translateY(var(--od-lift));
-  transition: transform .13s ease, box-shadow .13s ease, border-color .13s ease;
+  /* margin-left carries the overlap, which tightens when the hand makes
+     room for a drawn card — so it has to slide, not jump. */
+  transition: transform .13s ease, box-shadow .13s ease, border-color .13s ease,
+              margin-left .18s ease;
 }
 
 .od-card[data-size="small"]  { width: 58px; height: 58px; }
@@ -296,6 +299,39 @@
 
 #oshideck-root[data-pool="true"] .od-card,
 #oshideck-root[data-pool="true"] .od-listcard { border-style: dashed; }
+
+/* A card the chat is holding out — drawn, not held.
+
+   Dashed like the pool, because that is already this panel's way of saying
+   "not yours yet". Upright and a gap clear of the fan, so it reads as offered
+   rather than as part of the hand; the hand tightens its overlap to take it
+   instead of growing a row, which would come out of the chat. It arrives at
+   the left, the edge where the most-used card already sits and the eye is
+   already looking. */
+.od-drawn {
+  margin-right: var(--od-drawn-gap, 10px);
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, .32);
+  animation: od-drawn-in .22s ease-out;
+}
+
+.od-drawn::before { background: var(--od-common); }
+
+.od-listcard.od-drawn {
+  margin-right: 0;
+  margin-bottom: 6px;
+}
+
+@keyframes od-drawn-in {
+  from { opacity: 0; transform: translateX(-12px) scale(.92); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Nothing here is worth making someone motion-sick over. */
+@media (prefers-reduced-motion: reduce) {
+  .od-drawn { animation: none; }
+  .od-card { transition: transform .13s ease, box-shadow .13s ease, border-color .13s ease; }
+}
 
 /* Two rows leave no room to lift a card, so hovering scales and glows. */
 .od-card:hover,

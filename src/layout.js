@@ -4,6 +4,11 @@
 
   const CARD_SIZE = { large: 74, medium: 66, small: 58 };
   const OVERLAP = 8;
+
+  // How tightly the hand may be squeezed to take one more card. Past this the
+  // cards stop reading as separate, so a row that still will not fit goes
+  // without the drawn card rather than becoming a smear.
+  const MAX_OVERLAP = 26;
   const MAX_TILT = 8;
   const LIFT = 5;
 
@@ -11,6 +16,23 @@
   function cardsPerRow(availWidth, cardWidth) {
     const step = cardWidth - OVERLAP;
     return Math.max(1, Math.floor((availWidth - cardWidth) / step) + 1);
+  }
+
+  // The overlap that makes `count` cards, plus `gap`, exactly fill the width.
+  //
+  // Drawing a card squeezes the hand instead of growing a row: the panel sits
+  // at the bottom of the chat, so another row would be taken out of the chat
+  // itself. Never looser than the resting overlap, never tighter than the cap.
+  function overlapFor(availWidth, cardWidth, count, gap = 0) {
+    if (count < 2) return OVERLAP;
+    const step = (availWidth - cardWidth - gap) / (count - 1);
+    return Math.min(MAX_OVERLAP, Math.max(OVERLAP, cardWidth - step));
+  }
+
+  // Whether that squeeze is enough, or the row would overflow anyway.
+  function fitsSqueezed(availWidth, cardWidth, count, gap = 0) {
+    const overlap = overlapFor(availWidth, cardWidth, count, gap);
+    return cardWidth + (count - 1) * (cardWidth - overlap) + gap <= availWidth;
   }
 
   // Split `count` cards across at most `maxRows` rows as evenly as possible.
@@ -38,5 +60,5 @@
     return { rot: t * span, lift: Math.abs(t) ** 2 * LIFT };
   }
 
-  OD.layout = { CARD_SIZE, OVERLAP, cardsPerRow, splitRows, tilt };
+  OD.layout = { CARD_SIZE, OVERLAP, MAX_OVERLAP, cardsPerRow, overlapFor, fitsSqueezed, splitRows, tilt };
 })();

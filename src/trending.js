@@ -96,10 +96,13 @@
       const message = node.querySelector?.("#message");
       if (!message) return;
 
-      const sig = signature(collectTokens(message));
+      // The tokens are kept, not just their signature: a reaction can only be
+      // offered as a card if there is something to put in the editor.
+      const captured = collectTokens(message);
+      const sig = signature(captured);
       if (!sig) return;
 
-      recent.push({ sig, at: Date.now() });
+      recent.push({ sig, at: Date.now(), tokens: captured });
       if (recent.length > RECENT_MAX) recent = recent.slice(-RECENT_MAX);
       dirty = true;
     }
@@ -168,15 +171,21 @@
     //
     // `count` is the plain number of messages, kept because that is what the
     // bar shows the viewer — 「いまチャットで4.35回」 is not a thing.
+    //
+    // `tokens` is the most recent wording of that reaction, which is what gets
+    // offered when the chat is holding out a card. Signatures collapse `888`
+    // and `88888888` together, so some wording has to be chosen, and the
+    // latest is the one still on screen.
     function ranking() {
       prune();
       const now = Date.now();
       const out = new Map();
 
       for (const entry of recent) {
-        const seen = out.get(entry.sig) || { score: 0, count: 0 };
+        const seen = out.get(entry.sig) || { score: 0, count: 0, tokens: null };
         seen.score += 2 ** (-(now - entry.at) / HALF_LIFE_MS);
         seen.count += 1;
+        seen.tokens = entry.tokens || seen.tokens; // recent is in order: newest wins
         out.set(entry.sig, seen);
       }
 

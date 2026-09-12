@@ -29,10 +29,12 @@ const root = new URL("..", import.meta.url).pathname;
 const CHANNEL = "channel-test.mjs";
 const VISIBILITY = "visibility-test.mjs";
 const TREND = "trend-test.js";
+const DRAW = "draw-test.mjs";
 
 // Which file a mutation edits, and how its test is told to load the copy.
 const CONTENT = { file: "content.js", env: "OD_SOURCE" };
 const TRENDING = { file: "src/trending.js", env: "OD_TRENDING" };
+const LAYOUT = { file: "src/layout.js", env: "OD_LAYOUT" };
 
 const sources = new Map();
 const read = ({ file }) => {
@@ -99,6 +101,22 @@ const MUTATIONS = [
   [TREND, TRENDING, "a flat count instead of recency",
     "seen.score += 2 ** (-(now - entry.at) / HALF_LIFE_MS);",
     "seen.score += 1;"],
+
+  [DRAW, CONTENT, "member emoji offered as a drawn card",
+    "if (tokens.requiredChannels(seen.tokens).length) continue;",
+    "if (false) continue;"],
+
+  [DRAW, CONTENT, "a reaction already in the deck offered again",
+    "if (!signature || held.has(signature)) continue;",
+    "if (!signature) continue;"],
+
+  [DRAW, CONTENT, "an old burst offered as though it were a wave",
+    "if (seen.count < DRAW_MIN_COUNT || seen.score < DRAW_MIN_SCORE) continue;",
+    "if (seen.count < DRAW_MIN_COUNT) continue;"],
+
+  [DRAW, LAYOUT, "a hand that refuses to squeeze",
+    "return Math.min(MAX_OVERLAP, Math.max(OVERLAP, cardWidth - step));",
+    "return OVERLAP;"],
 ];
 
 const dir = mkdtempSync(join(tmpdir(), "oshideck-mutation-"));
@@ -123,7 +141,7 @@ function run(file, mutant, subject) {
 let failed = 0;
 
 // A suite already red would make every mutation look caught.
-for (const file of [CHANNEL, VISIBILITY, TREND]) {
+for (const file of [CHANNEL, VISIBILITY, TREND, DRAW]) {
   if (run(file, null).failed) {
     console.log(`FAIL ${file} is red before any mutation`);
     failed = 1;

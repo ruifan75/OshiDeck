@@ -130,8 +130,8 @@ const MUTATIONS = [
     "        if (false) continue;"],
 
   [TREND, TRENDING, "bursts counted by the loose signature",
-    "recent.push({ sig, key: cardKey(captured), at: Date.now(), tokens: captured });",
-    "recent.push({ sig, key: sig, at: Date.now(), tokens: captured });"],
+    "recent.push({ sig, key: cardKey(captured), at, tokens: captured });",
+    "recent.push({ sig, key: sig, at, tokens: captured });"],
 
   [DRAW, LAYOUT, "a hand that refuses to squeeze",
     "return Math.min(MAX_OVERLAP, Math.max(OVERLAP, cardWidth - step));",
@@ -150,12 +150,28 @@ const MUTATIONS = [
     "if (true) return;"],
 
   [VISIBILITY, CONTENT, "a panel that cannot tell its hand has been reordered",
-    'shown.map((card) => (card.hits ? `${card.id}*` : card.id)).join(",")',
-    'shown.length'],
+    'shown.map(each).join(",")',
+    "shown.length"],
 
   [VISIBILITY, CONTENT, "a chat count counted as a change in its own right",
-    'shown.map((card) => (card.hits ? `${card.id}*` : card.id)).join(",")',
-    'shown.map((card) => `${card.id}:${card.hits}`).join(",")'],
+    '      card.hits ? "*" : ""',
+    "      card.hits || 0"],
+
+  [VISIBILITY, CONTENT, "a card edited in place going unnoticed",
+    '      tokens.cardKey(card.tokens || []),',
+    "      \"\","],
+
+  [VISIBILITY, CONTENT, "a resize that the fan is never told about",
+    "      rootEl?.clientWidth || 0,",
+    "      0,"],
+
+  [VISIBILITY, CONTENT, "presets arriving after the panel has given up asking",
+    "      pool.length, presetsOnHand().length,",
+    "      pool.length,"],
+
+  [VISIBILITY, CONTENT, "a panel that never actually skips",
+    "    if (next === painted && rootEl.firstChild) return;",
+    "    // (no skip)"],
 
   [CONFIRM, OPTIONS, "a second press of the same button counting as consent",
     "  if (el?.dataset.confirming) return;",
@@ -173,9 +189,13 @@ const MUTATIONS = [
     "      if (OD.tokens.requiredChannels(card.tokens).length) continue;",
     "      if (false) continue;"],
 
-  [PRESET, PRESETS, "a preset that hands out its ids as well as its content",
-    "      id: crypto.randomUUID(),",
-    "      id: \"same-for-everyone\","],
+  [PRESET, PRESETS, "a preset that carries its ids along with its content",
+    "        tokens: card.tokens,\n        scope:",
+    "        id: card.id,\n        tokens: card.tokens,\n        scope:"],
+
+  [PRESET, STORE, "a card that works only elsewhere counted as a match",
+    "        if (existing && usableOn(existing, channelId)) {",
+    "        if (existing) {"],
 
   [PRESET, PRESETS, "channel-only losing its meaning on the way in",
     'scope: card.scope === "channel" && channelId ? channelId : OD.store.GLOBAL,',
@@ -186,6 +206,58 @@ const MUTATIONS = [
     "    // (clipped below instead)"],
 ];
 
+// Which assertion each mutation has to break.
+//
+// A mutant killed by some other assertion in the same file proves nothing
+// about the one it is for. The reorder mutant also broke the trending
+// assertion, so deleting the reorder case would have left the checker green —
+// naming the assertion is what makes each mutation answer for its own.
+const KILLS = {
+  "a handle that rejects non-ASCII names": "encoded card handle matches a plain non-ASCII owner handle",
+  "a handle compared as a whole path": "a card linking to a channel tab matches the plain owner handle",
+  "the owner selectors collapsed into one document-order list": "an empty #owner earlier in the document does not win",
+  "the owner block no longer read for an id": "the membership button still gives the right id",
+  "buttons allowed to supply the channel name": "but its label is never the name",
+  "the mid-navigation freshness guard removed": "a page still showing the previous video answers nothing",
+  "unanimity allowed to answer over a known handle": "a known handle matching no card rejects the cards",
+  "a remembered channel no longer tied to its video": "but the next video does not inherit it",
+  "the parent document no longer consulted from the chat frame": "the owner is read from the parent document",
+  "a leftover player response believed": "a player response describing another video is not used",
+
+  "an unmounted panel never asked for": "with nothing mounted, a usable input asks for a render",
+  "the hover freeze left on after hiding": "hiding releases the hover freeze",
+  "a description left behind by a removed control": "and removing that control clears it",
+  "a panel that cannot tell its hand has been reordered": "reordering the hand is",
+  "a chat count counted as a change in its own right": "a chat count ticking up is not a change",
+  "a card edited in place going unnoticed": "a card edited in place is a change",
+  "a resize that the fan is never told about": "the panel being resized is a change",
+  "presets arriving after the panel has given up asking": "the presets arriving is a change",
+  "a panel that never actually skips": "render still decides whether to skip",
+
+  "a flat count instead of recency": "so the new reaction takes the front",
+  "a burst with no floor under it": "two of a thing is never a wave, however quiet the room",
+  "a burst that ignores how busy the chat is": "six of a thing in a busy chat is just talk",
+  "bursts counted by the loose signature": "each exact wording bursts on its own, unmerged",
+  "tooltips read as part of the comment": "and carries no shortcode text",
+
+  "member emoji offered as a drawn card": "member emoji are never offered",
+  "a reaction already in the deck offered again": "a reaction already in the deck is not offered again",
+  "a drawn card replaced the moment anything louder arrives": "a louder burst does not replace it while it is held",
+  "a hand that refuses to squeeze": "by tightening the overlap",
+  "a drawn card costed as if it overlapped the hand": "and the row, drawn card and all, still fits",
+
+  "a second press of the same button counting as consent": "pressing the same button again does not delete",
+  "a shared card deleted without asking": "a card another deck holds asks first",
+
+  "a hand-picked colour ignored in favour of the hash": "a listed channel gets the colour it is listed with",
+  "an out-of-gamut hue clipped instead of desaturated": "every hue survives the round trip",
+
+  "member emoji carried into a preset": "member emoji are left behind",
+  "a preset that carries its ids along with its content": "no ids, no counts, no history",
+  "channel-only losing its meaning on the way in": "and channel-only means the channel it is loaded into",
+  "a card that works only elsewhere counted as a match": "a card that only works on another channel is not treated as a match"
+};
+
 const dir = mkdtempSync(join(tmpdir(), "oshideck-mutation-"));
 const testPath = (name) => join(root, "tools", "tests", name);
 
@@ -193,15 +265,14 @@ function run(file, mutant, subject) {
   const env = mutant ? { ...process.env, [subject.env]: mutant } : process.env;
   try {
     execFileSync(process.execPath, [testPath(file)], { stdio: "pipe", env });
-    return { failed: false, reported: false };
+    return { failed: false, broke: [] };
   } catch (error) {
-    const out = String(error.stdout || "");
     // A real catch says FAIL for a case. A mutant that will not parse, or a
     // harness that cannot find its subject, says neither.
-    const reported = out.split("\n").some(
-      (line) => line.startsWith("FAIL ") && !line.includes("could not lift")
-    );
-    return { failed: true, reported };
+    const broke = String(error.stdout || "")
+      .split("\n")
+      .filter((line) => line.startsWith("FAIL ") && !line.includes("could not lift"));
+    return { failed: true, broke };
   }
 }
 
@@ -236,9 +307,21 @@ for (const [file, subject, name, find, replace] of MUTATIONS) {
     continue;
   }
 
-  const { reported } = run(file, mutant, subject);
-  console.log(`${reported ? "ok  " : "FAIL"} ${file.padEnd(20)} caught: ${name}`);
-  if (!reported) failed = 1;
+  const target = KILLS[name];
+  if (!target) {
+    console.log(`FAIL ${name} — does not say which assertion it must break`);
+    failed = 1;
+    continue;
+  }
+
+  const { broke } = run(file, mutant, subject);
+  const caught = broke.some((line) => line.includes(target));
+
+  console.log(`${caught ? "ok  " : "FAIL"} ${file.padEnd(20)} caught: ${name}`);
+  if (!caught) {
+    failed = 1;
+    console.log(`     it had to break "${target}"; it broke ${broke.length ? broke.map((l) => JSON.stringify(l.slice(5, 60))).join(", ") : "nothing"}`);
+  }
 }
 
 process.exit(failed);

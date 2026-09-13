@@ -20,7 +20,7 @@ globalThis.crypto ??= (await import("node:crypto")).webcrypto;
 const src = process.env.OD_PRESETS || "/Users/maintainer/OshiDeck/src/presets.js";
 await import("/Users/maintainer/OshiDeck/src/tokens.js");
 await import("/Users/maintainer/OshiDeck/src/backup.js");
-await import("/Users/maintainer/OshiDeck/src/store.js");
+await import(`file://${process.env.OD_STORE || "/Users/maintainer/OshiDeck/src/store.js"}`);
 await import(`file://${src}`);
 const { store, presets } = globalThis.OshiDeck;
 
@@ -109,6 +109,21 @@ result = await store.runOp("loadPreset", { channelId: OTHER, cards: presets.card
 check("a card already in the pool is reused, not copied", disk.cards.length === 2);
 check("and it is the one that was already there", disk.decks[OTHER].includes("mine"));
 check("counted as reused", result.value.reused === 1 && result.value.added === 1);
+
+// Same words, but tied to a channel this is not being loaded into. Reusing it
+// put nothing in the deck while the operation reported the card as handled.
+disk = {
+  cards: [card("theirs", text("わこつ"), CH)],
+  decks: { [OTHER]: [] },
+  channelMeta: {},
+  settings: {}
+};
+result = await store.runOp("loadPreset", { channelId: OTHER, cards: presets.cardsFor(made, OTHER) });
+check(
+  "a card that only works on another channel is not treated as a match",
+  disk.decks[OTHER].length === 2
+);
+check("so nothing is quietly dropped", result.value.added === 2 && result.value.reused === 0);
 
 // Loading twice is not loading twice as much.
 const before = disk.cards.length;

@@ -465,6 +465,8 @@
   const HOLD_MS = 45_000;
 
   let drawn = null;       // { key, card, until }
+  let holdTimer = null;   // wakes the panel when the hold runs out
+  let watching = null;    // the channel the drawn card and the chat counts are about
   let drawnShown = null;  // the card the entry animation has already played for
 
   // Must match od-drawn-breathe in content.css: the glow is picked up where
@@ -497,6 +499,12 @@
     const seen = watcher.burst(worthOffering(mine));
     if (!seen) return null;
 
+    // Expiry is only ever noticed by a render, and a chat that has gone quiet
+    // stops causing them — so the card outstayed its hold by as long as the
+    // chat stayed quiet. This is the render that retires it.
+    clearTimeout(holdTimer);
+    holdTimer = setTimeout(() => scheduleRender(), HOLD_MS + 250);
+
     drawn = {
       key: seen.key,
       until: now + HOLD_MS,
@@ -522,9 +530,27 @@
     play.appendChild(tokens.toFragment(card.tokens || [], { preview: true }));
     play.addEventListener("click", (event) => playCard(card, { send: event.shiftKey }));
 
-    el.appendChild(play);
+    el.append(play, drawnTools(card));
     trackPeek(el, card);
     return el;
+  }
+
+  // Keeping a drawn card cannot go through playing it: with auto-send on, the
+  // press sends it and the save targets never get their moment. The list row
+  // was left without this, so in list mode the card could only be played.
+  function drawnTools(card) {
+    const tools = document.createElement("div");
+    tools.className = "od-card-tools";
+
+    tools.appendChild(iconButton("plus", "この札を保存（⇧＋クリックで入力欄へ）", (event) => {
+      event.stopPropagation();
+      if (event.shiftKey) return stageForSaving(card);
+      tools.replaceChildren(...targetButtons(card.tokens || [], {
+        onPick: (target) => saveTokens(card.tokens || [], target)
+      }));
+    }, () => cardPeek(card)));
+
+    return tools;
   }
 
   // No tools, no dragging, nothing to reorder — there is nothing here to
@@ -560,20 +586,8 @@
     // card sends it at once, and the save targets never get a chance to
     // appear — so the way to keep a drawn card was closed for exactly the
     // people who had turned that setting on.
-    const tools = document.createElement("div");
-    tools.className = "od-card-tools";
-
-    const plus = iconButton("plus", "この札を保存（⇧＋クリックで入力欄へ）", (event) => {
-      event.stopPropagation();
-      if (event.shiftKey) return stageForSaving(card);
-      // The choice belongs on the card, not up on the bar.
-      tools.replaceChildren(...targetButtons(card.tokens || [], {
-        onPick: (target) => saveTokens(card.tokens || [], target)
-      }));
-    }, () => cardPeek(card));
-
-    tools.appendChild(plus);
-    el.appendChild(tools);
+    // The choice belongs on the card, not up on the bar.
+    el.appendChild(drawnTools(card));
 
     trackPeek(el, card);
     return el;
@@ -1093,7 +1107,13 @@
       // the count does not support.
       return { text: `${body}  ・ いま立て続けに${card.hits}回。押すと入力欄へ、＋で保存` };
     }
-    return { text: card.hits > 0 ? `${body}  ・ いまチャットで${card.hits}回` : body };
+    // Read now, not when the card was built. The panel deliberately does not
+    // redraw for a count ticking up, so the captured one goes stale — and this
+    // is the only place that number is ever shown.
+    const hits = card.signature
+      ? watcher.ranking().get(card.signature)?.count || 0
+      : card.hits || 0;
+    return { text: hits > 0 ? `${body}  ・ いまチャットで${hits}回` : body };
   }
 
   function trackPeek(el, card) {
@@ -1206,18 +1226,38 @@
 
   const DRAWN_GAP = 14; // wide enough that it never reads as part of the hand
 
-  // Everything the panel draws from. Deliberately coarse about the chat: an
-  // exact hit count would change every few seconds and defeat the point, so
-  // only whether a card is trending at all counts as a change.
-  function panelSignature(data, channel, hue, shown, drawn) {
+  // Everything the panel draws from.
+  //
+  // Deliberately coarse about the chat: an exact hit count changes every few
+  // seconds and would defeat the point, so only whether a card is trending at
+  // all counts as a change. The bar reads its count live instead, so nothing
+  // goes stale there either.
+  //
+  // Everything else has to be here, because a signature that misses an input
+  // leaves the panel showing what is no longer true — worse than redrawing for
+  // nothing. Width, because the fan is laid out to it. Content and scope,
+  // because an edit keeps the card's id. The channel name and the pool count,
+  // because the bar and the toggle say them. And whether the presets have
+  // arrived, because the empty-deck offer waits on them.
+  function panelSignature(data, channel, hue, shown, pool, drawn) {
     const s = data.settings;
+    const each = (card) => [
+      card.id,
+      tokens.cardKey(card.tokens || []),
+      card.bound ? "b" : "",
+      card.locked ? "l" : "",
+      card.hits ? "*" : ""
+    ].join(":");
+
     return [
       s.mode, s.cardSize, s.rows, s.sortBy, s.suggest ? "draw" : "",
-      channel?.id || "", hue ?? "",
+      channel?.id || "", channel?.name || "", hue ?? "",
+      rootEl?.clientWidth || 0,
       poolOpen ? "pool" : "deck", expanded ? "more" : "",
       editingId || "", flashId || "", inputHasContent ? "typing" : "",
+      pool.length, presetsOnHand().length,
       drawn?.key || "",
-      shown.map((card) => (card.hits ? `${card.id}*` : card.id)).join(",")
+      shown.map(each).join(",")
     ].join("|");
   }
 
@@ -1659,6 +1699,16 @@
     const video = currentVideo();
     if (!channel) retryUnresolved(video);
 
+    // Nothing seen on one stream says anything about the next, and YouTube can
+    // swap the message list inside the same document — which left the previous
+    // channel's card being offered here, and its messages ranking this hand.
+    if (channel?.id !== watching) {
+      watching = channel?.id || null;
+      drawn = null;
+      painted = null;
+      watcher.forget();
+    }
+
     if (channel) {
       journal.record({ kind: "channel", video, id: channel.id, name: channel.name, via: channel.via });
     } else if (video) {
@@ -1678,6 +1728,24 @@
       ? markLocked(store.poolFor(data, channel.id).map((card) => ({ ...card })), channel.id)
       : [];
 
+    const shown = poolOpen ? pool : deck;
+    // Only alongside your own deck. The pool is a place to choose from, not
+    // somewhere to be handed things.
+    const drawn = poolOpen ? null : drawFromChat(deck);
+
+    // Chat-driven mode renders every few seconds whether or not anything it
+    // shows has changed, and rebuilding is not free: the elements are new, so
+    // the drawn card replayed its entry animation and looked like it was
+    // jumping.
+    //
+    // This has to be decided *before* anything is torn down. It used to sit
+    // just after replaceChildren(), where rootEl.firstChild is null by
+    // construction — so the test never passed and the panel was rebuilt every
+    // time regardless.
+    const next = panelSignature(data, channel, hue, shown, pool, drawn);
+    if (next === painted && rootEl.firstChild) return;
+    painted = next;
+
     keepChatPinned(() => {
       rootEl.replaceChildren();
       // Everything that was hovered is gone now; whatever it was describing
@@ -1685,19 +1753,6 @@
       dropStalePeek();
       rootEl.dataset.mode = data.settings.mode;
       rootEl.dataset.pool = String(poolOpen);
-
-      const shown = poolOpen ? pool : deck;
-      // Only alongside your own deck. The pool is a place to choose from, not
-      // somewhere to be handed things.
-      const drawn = poolOpen ? null : drawFromChat(deck);
-
-      // Chat-driven mode renders every few seconds whether or not anything it
-      // shows has changed, and rebuilding is not free: the elements are new, so
-      // the drawn card replayed its entry animation and looked like it was
-      // jumping. Nothing to redraw, nothing redrawn.
-      const next = panelSignature(data, channel, hue, shown, drawn);
-      if (next === painted && rootEl.firstChild) return;
-      painted = next;
 
       barContext = { channel, hue, count: shown.length };
       barEl = buildBar(channel, hue, shown.length);
@@ -1842,17 +1897,23 @@
       button.type = "button";
       button.className = "od-more";
       button.textContent = `＋ ${preset.name}（${preset.cards.length}枚）を入れる`;
-      button.addEventListener("click", () => usePreset(preset, channel.id));
+      button.addEventListener("click", () => usePreset(preset, channel));
       container.appendChild(button);
     }
   }
 
-  async function usePreset(preset, channelId) {
+  async function usePreset(preset, channel) {
+    const channelId = channel.id;
     const { ok, value } = await store.apply("loadPreset", {
       channelId,
       cards: presets.cardsFor(preset, channelId)
     });
     if (!ok || !value) return showToast("読み込めませんでした");
+
+    // Saving a card is what usually teaches us a channel's name. A deck that
+    // begins with a preset never saves one, and the builder then lists it by
+    // raw id.
+    if (channel.name) await store.apply("setChannel", { channelId, name: channel.name });
 
     showToast(value.reused
       ? `「${preset.name}」を入れました（うち${value.reused}枚はプールにあったもの）`

@@ -503,7 +503,10 @@
         const key = OD.tokens.cardKey(card.tokens);
         const existing = byKey.get(key);
 
-        if (existing) {
+        // Same words is not the same card. One tied to another channel cannot
+        // be played here, so reusing it put nothing in the deck while the
+        // operation still reported the card as handled.
+        if (existing && usableOn(existing, channelId)) {
           reused += 1;
           addToDeck(data, channelId, existing.id);
           continue;

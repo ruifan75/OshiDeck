@@ -20,6 +20,15 @@
 
   const RECENT_MAX = 600;
 
+  // Just the times, for the share. Keeping wording costs memory, so `recent`
+  // is capped at 600 — but that cap was also the denominator, so in a chat
+  // fast enough to fill it inside twelve seconds a reaction looked like a far
+  // larger share of the room than it was. Numbers are cheap, so the count of
+  // what was said is kept separately and much further back. The numerator
+  // still comes from `recent`, so an extreme chat understates a share rather
+  // than inventing one — the safe direction.
+  const SAID_MAX = 4000;
+
   // A burst is not the same as popular. Offering a card is about catching a
   // wave as it breaks, so it counts plain repetitions over a few seconds
   // rather than the decayed weight above — and it counts them by exact
@@ -97,6 +106,7 @@
 
   function createWatcher({ onChange } = {}) {
     let recent = [];
+    let saidAt = [];
     let observer = null;
     let host = null;
     let notifyTimer = null;
@@ -120,7 +130,11 @@
       const sig = signature(captured);
       if (!sig) return;
 
-      recent.push({ sig, key: cardKey(captured), at: Date.now(), tokens: captured });
+      const at = Date.now();
+      saidAt.push(at);
+      if (saidAt.length > SAID_MAX) saidAt = saidAt.slice(-SAID_MAX);
+
+      recent.push({ sig, key: cardKey(captured), at, tokens: captured });
       if (recent.length > RECENT_MAX) recent = recent.slice(-RECENT_MAX);
       dirty = true;
     }
@@ -175,6 +189,15 @@
       return true;
     }
 
+    // Nothing seen on one stream says anything about the next. YouTube can
+    // replace the message list inside the same document, which leaves the
+    // previous channel's messages ranking this one.
+    function forget() {
+      recent = [];
+      saidAt = [];
+      dirty = false;
+    }
+
     function stop() {
       observer?.disconnect();
       clearInterval(notifyTimer);
@@ -216,11 +239,12 @@
     function burst(accept) {
       const since = Date.now() - BURST_MS;
       const counts = new Map();
-      let said = 0;
+
+      saidAt = saidAt.filter((at) => at >= since);
+      const said = saidAt.length;
 
       for (const entry of recent) {
         if (entry.at < since || !entry.key) continue;
-        said += 1;
         const seen = counts.get(entry.key) || { key: entry.key, count: 0, tokens: null };
         seen.count += 1;
         seen.tokens = entry.tokens || seen.tokens;
@@ -237,7 +261,7 @@
       return best;
     }
 
-    return { start, stop, ranking, burst, get attached() { return !!host; } };
+    return { start, stop, forget, ranking, burst, get attached() { return !!host; } };
   }
 
   OD.trending = {

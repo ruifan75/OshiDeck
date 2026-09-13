@@ -146,9 +146,25 @@ b.setPeek({ text: "x" }, { isConnected: true });
 b.setPeek(null);
 check("clearing forgets the owner too", b.owner() === null);
 
+/* ---------- where the skip is decided ---------- */
+
+// The signature can be tested as a pure function; whether render actually
+// consults it cannot, without a DOM. What can be pinned is the one thing that
+// went wrong: the check sat *after* replaceChildren(), where the panel has no
+// first child by construction, so the condition could never hold and every
+// notification rebuilt everything anyway. Order is the whole bug.
+{
+  const renderAt = src.indexOf("  async function render() {");
+  const skipAt = src.indexOf("if (next === painted", renderAt);
+  const tearAt = src.indexOf("rootEl.replaceChildren()", renderAt);
+
+  check("render still decides whether to skip", renderAt >= 0 && skipAt > renderAt);
+  check("and does it before tearing the panel down", skipAt > 0 && tearAt > 0 && skipAt < tearAt);
+}
+
 /* ---------- what counts as having changed ---------- */
 
-const sigFrom = src.indexOf("  function panelSignature(data, channel, hue, shown, drawn) {");
+const sigFrom = src.indexOf("  function panelSignature(data, channel, hue, shown, pool, drawn) {");
 const sigTo = src.indexOf("  function renderHand(", sigFrom);
 if (sigFrom < 0 || sigTo < 0 || sigTo <= sigFrom) {
   console.log("FAIL could not lift panelSignature out of content.js");
@@ -160,29 +176,58 @@ if (sigFrom < 0 || sigTo < 0 || sigTo <= sigFrom) {
 // the drawn card lurch — and in the other leaves the panel stale, which is
 // worse. So both directions are pinned.
 function signature({ pool = false, more = false, editing = null, flash = null,
-                     typing = false, settings = {}, channel = "UCaaa", hue = 320,
-                     shown = [], drawn = null } = {}) {
+                     typing = false, settings = {}, channel = "UCaaa", name = "さくら",
+                     hue = 320, width = 400, presets = 1,
+                     shown = [], poolCards = [], drawn = null } = {}) {
   return new Function(
     "poolOpen", "expanded", "editingId", "flashId", "inputHasContent",
+    "tokens", "presetsOnHand", "rootEl",
     `${src.slice(sigFrom, sigTo)} return panelSignature;`
-  )(pool, more, editing, flash, typing)(
+  )(
+    pool, more, editing, flash, typing,
+    { cardKey: (t) => (t || []).map((x) => x.value ?? x.emojiId).join("") },
+    () => new Array(presets),
+    { clientWidth: width }
+  )(
     { settings: { mode: "hand", cardSize: "small", rows: 2, sortBy: "heat", suggest: true, ...settings } },
-    { id: channel }, hue, shown, drawn
+    { id: channel, name }, hue, shown, poolCards, drawn
   );
 }
 
-const hand = [{ id: "a", hits: 0 }, { id: "b", hits: 0 }];
+const say = (value) => [{ type: "text", value }];
+const hand = [{ id: "a", hits: 0, tokens: say("わこつ") }, { id: "b", hits: 0, tokens: say("888") }];
 
 check("the same panel signs the same", signature({ shown: hand }) === signature({ shown: hand }));
 
 check(
   "a chat count ticking up is not a change",
-  signature({ shown: [{ id: "a", hits: 4 }] }) === signature({ shown: [{ id: "a", hits: 9 }] })
+  signature({ shown: [{ id: "a", hits: 4, tokens: say("x") }] }) ===
+  signature({ shown: [{ id: "a", hits: 9, tokens: say("x") }] })
 );
 
 check(
   "but a card starting to trend is",
-  signature({ shown: [{ id: "a", hits: 0 }] }) !== signature({ shown: [{ id: "a", hits: 1 }] })
+  signature({ shown: [{ id: "a", hits: 0, tokens: say("x") }] }) !==
+  signature({ shown: [{ id: "a", hits: 1, tokens: say("x") }] })
+);
+
+// An edit keeps the card's id, so the id alone cannot speak for it.
+check(
+  "a card edited in place is a change",
+  signature({ shown: [{ id: "a", tokens: say("わこつ") }] }) !==
+  signature({ shown: [{ id: "a", tokens: say("わこつ〜") }] })
+);
+
+check(
+  "a card becoming channel-only is",
+  signature({ shown: [{ id: "a", tokens: say("x") }] }) !==
+  signature({ shown: [{ id: "a", tokens: say("x"), bound: true }] })
+);
+
+check(
+  "and a card becoming unplayable here is",
+  signature({ shown: [{ id: "a", tokens: say("x") }] }) !==
+  signature({ shown: [{ id: "a", tokens: say("x"), locked: true }] })
 );
 
 check(
@@ -208,7 +253,11 @@ for (const [label, over] of [
   ["typing", { typing: true }],
   ["a settings change", { settings: { rows: 1 } }],
   ["switching channel", { channel: "UCbbb" }],
-  ["a new colour", { hue: 90 }]
+  ["the channel being named at last", { name: "" }],
+  ["a new colour", { hue: 90 }],
+  ["the panel being resized", { width: 320 }],
+  ["the pool gaining a card", { poolCards: [{ id: "p" }] }],
+  ["the presets arriving", { presets: 0 }]
 ]) {
   check(`${label} is a change`, signature({ shown: hand }) !== signature({ shown: hand, ...over }));
 }

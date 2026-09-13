@@ -57,27 +57,41 @@ const tokenStub = {
 // so it can only tell that holding happens — not that it happens for as long
 // as anybody was told.
 function panel({ suggest = true, now = 1_000_000, hold = 45_000 } = {}) {
-  const state = { chat: null, now };
+  const state = { chat: null, now, renders: 0, forgotten: 0 };
 
+  // `painted` starts dirty so that clearing it can be seen: a stream that is
+  // not the one before it must repaint from scratch, not skip on a signature
+  // the previous chat left behind.
   const api = new Function(
-    "settingsCache", "watcher", "tokens", "store", "Date",
-    `${src.slice(from, to)}; return { drawFromChat };`
+    "settingsCache", "watcher", "tokens", "store", "Date", "scheduleRender",
+    `let painted = "stale";
+     ${src.slice(from, to)};
+     return { drawFromChat, switchStream, painted: () => painted };`
   )(
     { suggest },
     {
+      forget: () => { state.forgotten += 1; },
       burst: (accept) => {
         const seen = state.chat && { key: key(state.chat.tokens), count: state.chat.count, tokens: state.chat.tokens };
         return seen && (!accept || accept(seen)) ? seen : null;
       }
     },
     tokenStub,
-    { tuning: () => hold },
-    { now: () => state.now }
+    // Which number is asked for is part of the behaviour: a stub that answers
+    // every question the same way lets the hold be read from the wrong setting
+    // and still keeps the whole file green.
+    { tuning: (settings, group) => (group === "hold" ? hold : 0) },
+    { now: () => state.now },
+    () => { state.renders += 1; }
   );
 
   return {
     chat(next) { state.chat = next; return this; },
     tick(ms) { state.now += ms; return this; },
+    renders: () => state.renders,
+    forgotten: () => state.forgotten,
+    painted: () => api.painted(),
+    switch: (stream) => api.switchStream(stream),
     draw: (deck = []) => api.drawFromChat(deck)
   };
 }
@@ -141,6 +155,35 @@ brief.chat({ tokens: text("かわいい"), count: 9 }).tick(6_000);
 check("a ten second hold still holds at six", brief.draw() === held);
 brief.tick(6_000);
 check("and lets go by twelve", brief.draw()?.tokens[0].value === "かわいい");
+
+// Expiry is only ever noticed by a render, and a chat that has gone quiet
+// causes none — so the panel has to wake itself, or the card outstays its hold
+// for as long as the silence lasts. This one uses a real timer, so the hold is
+// in milliseconds rather than the fake clock's seconds.
+const sleeper = panel({ hold: 20 });
+sleeper.chat({ tokens: text("888"), count: 5 }).draw();
+check("nothing is repainted merely for drawing a card", sleeper.renders() === 0);
+await new Promise((resolve) => setTimeout(resolve, 400));
+check("but the panel wakes itself once the hold has run out", sleeper.renders() === 1);
+
+/* ---------- a new stream is a new chat ---------- */
+
+// YouTube can swap the message list inside the same document, so the panel can
+// find itself in front of a different chat without anything being torn down.
+// Nothing the last one said means anything here.
+const moved = panel({ hold: 45_000 });
+moved.switch("Gv0g2GYipSM");
+const settled = moved.forgotten();
+const kept = moved.chat({ tokens: text("888"), count: 5 }).draw();
+moved.chat(null);
+check("a drawn card outlives an ordinary render", moved.draw() === kept);
+check("and a render that finds the same stream", moved.switch("Gv0g2GYipSM") === false);
+check("which forgets nothing", moved.forgotten() === settled);
+
+moved.switch("dQw4w9WgXcQ");
+check("but another stream takes the card away", moved.draw() === null);
+check("and forgets what the last chat was saying", moved.forgotten() === settled + 1);
+check("and repaints rather than trusting the old signature", moved.painted() === null);
 
 /* ---------- what the steps are worth ---------- */
 

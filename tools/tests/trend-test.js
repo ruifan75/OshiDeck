@@ -149,6 +149,16 @@ chatter(4);
 expect("the same six, when it is most of what is being said, is a wave",
   bw.burst(only("それはそう"))?.count, 6);
 
+// How busy the chat is has to be remembered, and the record of it is capped so
+// it cannot grow without bound. Emptying it at the cap — the cheap way to cap
+// it — makes the next handful of messages look like everything being said.
+bw = trending.createWatcher({ onChange: () => {} });
+bw.start();
+chatter(4001);
+send(msg(text("それはそう")), 6);
+expect("a chat too busy to remember in full is still measured in full",
+  bw.burst(only("それはそう")) === null, true);
+
 // And a share alone would fire on a nearly silent chat.
 bw = trending.createWatcher({ onChange: () => {} });
 bw.start();

@@ -1,13 +1,9 @@
 const { store, tokens } = globalThis.OshiDeck;
 
-const DEFAULTS = {
-  autoSend: false,
-  suggest: true,
-  mode: "hand",
-  cardSize: "small",
-  rows: 2,
-  sortBy: "heat"
-};
+// One list, in store.js. It had been written out here as well, so every
+// setting added since had no selected button on this page until someone
+// remembered to add it twice.
+const DEFAULTS = store.DEFAULT_SETTINGS;
 
 const SIZE_LABEL = { large: "大", medium: "中", small: "小" };
 
@@ -19,7 +15,7 @@ const SORT_LABEL = {
 };
 
 const SORT_NOTE = {
-  trend: "いまチャットで流れている反応に合う札を前に出します。新しい発言ほど重く数え（半減期25秒）、4秒ごとに並べ替え。カーソルが札の上にある間は動きません。",
+  trend: "いまチャットで流れている反応に合う札を前に出します。新しい発言ほど重く数え、4秒ごとに並べ替え。カーソルが札の上にある間は動きません。",
   heat: "古い使用ほど軽く数えます（半減期1週間）。",
   uses: "使った回数の合計。ずっと前によく使った札も上に残ります。",
   manual: "編成ページでドラッグして決めた順。勝手に動きません。"

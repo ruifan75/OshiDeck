@@ -15,6 +15,7 @@
   let lastWidth = 0;
   let notice = null;
   let inputHasContent = false;
+  let inputIsPinned = false;  // …and whether what is in it can only be channel-only
   let currentTokens = [];
   let barEl = null;
   let barContext = null;
@@ -524,6 +525,18 @@
       }
     };
     return drawn.card;
+  }
+
+  // Nothing seen on one stream says anything about the next, and YouTube can
+  // swap the message list inside the same document — which left the previous
+  // channel's card being offered here, and its messages ranking this hand.
+  function switchStream(stream) {
+    if (stream === watching) return false;
+    watching = stream;
+    drawn = null;
+    painted = null;
+    watcher.forget();
+    return true;
   }
 
   function buildDrawnRow(card) {
@@ -1259,6 +1272,7 @@
     return [
       s.mode, s.cardSize, s.rows, s.sortBy, s.suggest ? "draw" : "",
       s.draw, s.hold, s.pace,
+      inputIsPinned ? "pinned" : "",
       channel?.id || "", channel?.name || "", hue ?? "",
       rootEl?.clientWidth || 0,
       poolOpen ? "pool" : "deck", expanded ? "more" : "",
@@ -1601,8 +1615,13 @@
         return render();
       }
 
-      if (filled === inputHasContent) return; // only the transition moves the bar
+      // Whether the editor holds a member emoji decides whether 通用 can be
+      // offered, so the bar has to be rebuilt when that changes too — not only
+      // when the editor goes from empty to full.
+      const pinned = filled && tokens.requiredChannels(tokens.collectTokens(input)).length > 0;
+      if (filled === inputHasContent && pinned === inputIsPinned) return;
       inputHasContent = filled;
+      inputIsPinned = pinned;
       refreshBar();
     }
 
@@ -1707,15 +1726,7 @@
     const video = currentVideo();
     if (!channel) retryUnresolved(video);
 
-    // Nothing seen on one stream says anything about the next, and YouTube can
-    // swap the message list inside the same document — which left the previous
-    // channel's card being offered here, and its messages ranking this hand.
-    if (channel?.id !== watching) {
-      watching = channel?.id || null;
-      drawn = null;
-      painted = null;
-      watcher.forget();
-    }
+    switchStream(video || channel?.id || "");
 
     if (channel) {
       journal.record({ kind: "channel", video, id: channel.id, name: channel.name, via: channel.via });
@@ -1731,6 +1742,8 @@
 
     watchInput(input);
     inputHasContent = readInput(input);
+    inputIsPinned = inputHasContent &&
+      tokens.requiredChannels(tokens.collectTokens(input)).length > 0;
 
     const pool = channel?.id
       ? markLocked(store.poolFor(data, channel.id).map((card) => ({ ...card })), channel.id)
@@ -1750,6 +1763,11 @@
     // just after replaceChildren(), where rootEl.firstChild is null by
     // construction — so the test never passed and the panel was rebuilt every
     // time regardless.
+    // Before the early return, not after: a control that replaces itself in
+    // place — the drawn card's ＋ becoming the two targets — disconnects its
+    // owner without changing anything the signature can see.
+    dropStalePeek();
+
     const next = panelSignature(data, channel, hue, shown, pool, drawn);
     if (next === painted && rootEl.firstChild) return;
     painted = next;
@@ -1914,14 +1932,10 @@
     const channelId = channel.id;
     const { ok, value } = await store.apply("loadPreset", {
       channelId,
+      name: channel.name,
       cards: presets.cardsFor(preset, channelId)
     });
     if (!ok || !value) return showToast("読み込めませんでした");
-
-    // Saving a card is what usually teaches us a channel's name. A deck that
-    // begins with a preset never saves one, and the builder then lists it by
-    // raw id.
-    if (channel.name) await store.apply("setChannel", { channelId, name: channel.name });
 
     showToast(value.reused
       ? `「${preset.name}」を入れました（うち${value.reused}枚はプールにあったもの）`

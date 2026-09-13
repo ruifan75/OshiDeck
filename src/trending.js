@@ -139,7 +139,13 @@
 
       const at = Date.now();
       saidAt.push(at);
-      if (saidAt.length > SAID_MAX) saidAt = saidAt.slice(-SAID_MAX);
+      // Time first, and only when it has grown: slicing on every message once
+      // full copied four thousand numbers per message for as long as the chat
+      // ran, and with suggestions off nothing else ever pruned it.
+      if (saidAt.length > SAID_MAX) {
+        saidAt = saidAt.filter((seen) => seen >= at - BURST_MS);
+        if (saidAt.length > SAID_MAX) saidAt = saidAt.slice(-SAID_MAX);
+      }
 
       recent.push({ sig, key: cardKey(captured), at, tokens: captured });
       if (recent.length > RECENT_MAX) recent = recent.slice(-RECENT_MAX);
@@ -224,12 +230,16 @@
     // offered when the chat is holding out a card. Signatures collapse `888`
     // and `88888888` together, so some wording has to be chosen, and the
     // latest is the one still on screen.
+    // Reads without pruning. Pruning here meant a hover could consume the very
+    // expiry that notify() was about to redraw for, leaving the order and the
+    // trending marks as they were until another message happened along.
     function ranking() {
-      prune();
       const now = Date.now();
+      const cutoff = now - WINDOW_MS;
       const out = new Map();
 
       for (const entry of recent) {
+        if (entry.at < cutoff) continue;
         const seen = out.get(entry.sig) || { score: 0, count: 0, tokens: null };
         seen.score += 2 ** (-(now - entry.at) / halfLife());
         seen.count += 1;

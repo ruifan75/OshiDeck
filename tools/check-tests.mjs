@@ -194,8 +194,8 @@ const MUTATIONS = [
     "        id: card.id,\n        tokens: card.tokens,\n        scope:"],
 
   [PRESET, STORE, "a card that works only elsewhere counted as a match",
-    "        if (existing && usableOn(existing, channelId)) {",
-    "        if (existing) {"],
+    "        const existing = family.find((held) => usableOn(held, channelId));",
+    "        const existing = family[0];"],
 
   [PRESET, PRESETS, "channel-only losing its meaning on the way in",
     'scope: card.scope === "channel" && channelId ? channelId : OD.store.GLOBAL,',
@@ -212,6 +212,71 @@ const MUTATIONS = [
   [DRAW, STORE, "an unset step falling through to nothing",
     "    TUNING[group]?.[settings?.[group]] ?? TUNING[group]?.normal;",
     "    TUNING[group]?.[settings?.[group]];"],
+
+  [VISIBILITY, CONTENT, "the skip decided after the panel has been torn down",
+    `    if (next === painted && rootEl.firstChild) return;
+    painted = next;
+
+    keepChatPinned(() => {
+      rootEl.replaceChildren();`,
+    `    painted = next;
+
+    keepChatPinned(() => {
+      rootEl.replaceChildren();
+      if (next === painted && rootEl.firstChild) return;`],
+
+  [VISIBILITY, CONTENT, "a card becoming channel-only going unnoticed",
+    '      card.bound ? "b" : "",',
+    '      "",'],
+
+  [VISIBILITY, CONTENT, "a card that can no longer be played looking the same",
+    '      card.locked ? "l" : "",',
+    '      "",'],
+
+  [VISIBILITY, CONTENT, "the channel name left out of the signature",
+    'channel?.id || "", channel?.name || "", hue ?? "",',
+    'channel?.id || "", "", hue ?? "",'],
+
+  [VISIBILITY, CONTENT, "a pool that can gain a card unnoticed",
+    "      pool.length, presetsOnHand().length,",
+    "      presetsOnHand().length,"],
+
+  [VISIBILITY, CONTENT, "a drawn card the list offers no way to keep",
+    "    el.append(play, drawnTools(card));",
+    "    el.append(play);"],
+
+  [DRAW, CONTENT, "a stream change that keeps the last chat's card",
+    "    if (stream === watching) return false;",
+    "    if (true) return false;"],
+
+  [DRAW, CONTENT, "a new stream ranked by the old one's messages",
+    "    watcher.forget();",
+    "    // (the old chat is kept)"],
+
+  [DRAW, CONTENT, "a new stream skipped on the old one's signature",
+    `    drawn = null;
+    painted = null;`,
+    "    drawn = null;"],
+
+  [DRAW, CONTENT, "a hold that never wakes the panel",
+    "    holdTimer = setTimeout(() => scheduleRender(), hold + 250);",
+    "    holdTimer = null;"],
+
+  [DRAW, CONTENT, "the hold read from the wrong setting",
+    'const hold = store.tuning(settingsCache, "hold");',
+    'const hold = store.tuning(settingsCache, "pace");'],
+
+  [TREND, TRENDING, "a busy chat forgotten wholesale at the cap",
+    "        saidAt = saidAt.filter((seen) => seen >= at - BURST_MS);",
+    "        saidAt = [];"],
+
+  [PRESET, STORE, "one wording allowed only one card",
+    "        (byKey.get(key) || byKey.set(key, []).get(key)).push(card);",
+    "        byKey.set(key, [card]);"],
+
+  [PRESET, STORE, "a preset that loads without learning the name",
+    "      if (name) {",
+    "      if (false) {"],
 
   [COLOUR, STORE, "an out-of-gamut hue clipped instead of desaturated",
     "    for (let c = chroma; c > 0.01 && found.some((v) => v < -0.0005 || v > 1.0005); c -= 0.005) {\n      found = rgb(c);\n    }",
@@ -270,7 +335,24 @@ const KILLS = {
   "member emoji carried into a preset": "member emoji are left behind",
   "a preset that carries its ids along with its content": "no ids, no counts, no history",
   "channel-only losing its meaning on the way in": "and channel-only means the channel it is loaded into",
-  "a card that works only elsewhere counted as a match": "a card that only works on another channel is not treated as a match"
+  "a card that works only elsewhere counted as a match": "a card that only works on another channel is not treated as a match",
+  "one wording allowed only one card": "a usable card is found even behind one that is not",
+  "a preset that loads without learning the name": "loading a preset also names the channel",
+
+  "the skip decided after the panel has been torn down": "and does it before tearing the panel down",
+  "a card becoming channel-only going unnoticed": "a card becoming channel-only is",
+  "a card that can no longer be played looking the same": "and a card becoming unplayable here is",
+  "the channel name left out of the signature": "the channel being named at last is a change",
+  "a pool that can gain a card unnoticed": "the pool gaining a card is a change",
+  "a drawn card the list offers no way to keep": "and so can one in the list",
+
+  "a stream change that keeps the last chat's card": "but another stream takes the card away",
+  "a new stream ranked by the old one's messages": "and forgets what the last chat was saying",
+  "a new stream skipped on the old one's signature": "and repaints rather than trusting the old signature",
+  "a hold that never wakes the panel": "but the panel wakes itself once the hold has run out",
+  "the hold read from the wrong setting": "a louder burst does not replace it while it is held",
+
+  "a busy chat forgotten wholesale at the cap": "a chat too busy to remember in full is still measured in full"
 };
 
 const dir = mkdtempSync(join(tmpdir(), "oshideck-mutation-"));

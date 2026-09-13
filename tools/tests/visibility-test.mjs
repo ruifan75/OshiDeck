@@ -162,6 +162,21 @@ check("clearing forgets the owner too", b.owner() === null);
   check("and does it before tearing the panel down", skipAt > 0 && tearAt > 0 && skipAt < tearAt);
 }
 
+/* ---------- keeping a card that was dealt to you ---------- */
+
+// With auto-send on, pressing a card sends it — so the ＋ is the only way to
+// keep a drawn one, and the list row was shipped without it, which left the
+// card playable and unkeepable for exactly the people who had turned that
+// setting on.
+{
+  const upto = (at) => src.slice(at, src.indexOf("\n  function ", at + 10));
+  const row = upto(src.indexOf("  function buildDrawnRow(card) {"));
+  const fan = upto(src.indexOf("  function buildDrawn(card, { size }) {"));
+
+  check("a drawn card in the fan can be kept", row.length > 0 && fan.includes("drawnTools(card)"));
+  check("and so can one in the list", fan.length > 0 && row.includes("drawnTools(card)"));
+}
+
 /* ---------- what counts as having changed ---------- */
 
 const sigFrom = src.indexOf("  function panelSignature(data, channel, hue, shown, pool, drawn) {");
@@ -176,15 +191,15 @@ if (sigFrom < 0 || sigTo < 0 || sigTo <= sigFrom) {
 // the drawn card lurch — and in the other leaves the panel stale, which is
 // worse. So both directions are pinned.
 function signature({ pool = false, more = false, editing = null, flash = null,
-                     typing = false, settings = {}, channel = "UCaaa", name = "さくら",
+                     typing = false, pinned = false, settings = {}, channel = "UCaaa", name = "さくら",
                      hue = 320, width = 400, presets = 1,
                      shown = [], poolCards = [], drawn = null } = {}) {
   return new Function(
-    "poolOpen", "expanded", "editingId", "flashId", "inputHasContent",
+    "poolOpen", "expanded", "editingId", "flashId", "inputHasContent", "inputIsPinned",
     "tokens", "presetsOnHand", "rootEl",
     `${src.slice(sigFrom, sigTo)} return panelSignature;`
   )(
-    pool, more, editing, flash, typing,
+    pool, more, editing, flash, typing, pinned,
     { cardKey: (t) => (t || []).map((x) => x.value ?? x.emojiId).join("") },
     () => new Array(presets),
     { clientWidth: width }
@@ -251,6 +266,7 @@ for (const [label, over] of [
   ["editing a card", { editing: "a" }],
   ["flashing one", { flash: "a" }],
   ["typing", { typing: true }],
+  ["typing something only this channel can send", { typing: true, pinned: true }],
   ["a settings change", { settings: { rows: 1 } }],
   ["switching channel", { channel: "UCbbb" }],
   ["the channel being named at last", { name: "" }],

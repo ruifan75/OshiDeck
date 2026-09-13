@@ -125,6 +125,33 @@ check(
 );
 check("so nothing is quietly dropped", result.value.added === 2 && result.value.reused === 0);
 
+// Two cards can say the same words — one universal, one tied to a channel —
+// and only the shape of the pool decides which comes last. Keeping only the
+// last of them hid a perfectly usable card behind one that could not be
+// played here, and made a third card nobody asked for.
+disk = {
+  cards: [card("mine", text("わこつ"), "global"), card("theirs", text("わこつ"), CH)],
+  decks: { [OTHER]: [] },
+  channelMeta: {},
+  settings: {}
+};
+result = await store.runOp("loadPreset", { channelId: OTHER, cards: presets.cardsFor(made, OTHER) });
+check(
+  "a usable card is found even behind one that is not",
+  disk.cards.length === 3 && disk.decks[OTHER].includes("mine")
+);
+
+// A deck that begins with a preset never saves a card, and saving a card is
+// what usually teaches us a channel's name — so the builder listed it by raw
+// id. The name travels with the load rather than in an op of its own, which
+// could be interrupted between the two.
+disk = { cards: [], decks: {}, channelMeta: {}, settings: {} };
+await store.runOp("loadPreset", {
+  channelId: OTHER, name: "ゆめの", cards: presets.cardsFor(made, OTHER)
+});
+check("loading a preset also names the channel", disk.channelMeta[OTHER]?.name === "ゆめの");
+check("and gives it a colour to be shown in", typeof disk.channelMeta[OTHER]?.hue === "number");
+
 // Loading twice is not loading twice as much.
 const before = disk.cards.length;
 await store.runOp("loadPreset", { channelId: OTHER, cards: presets.cardsFor(made, OTHER) });

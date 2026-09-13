@@ -522,10 +522,19 @@
     // already in the pool is reused rather than copied — two cards with the
     // same words would both answer to the same reaction — and one already in
     // the deck is left where it is.
-    loadPreset(data, { channelId, cards }) {
+    loadPreset(data, { channelId, cards, name }) {
       if (!channelId || !Array.isArray(cards) || !cards.length) return false;
 
-      const byKey = new Map(data.cards.map((card) => [OD.tokens.cardKey(card.tokens), card]));
+      // Several cards can share one wording — a universal one and a
+      // channel-only one, say — so a key maps to all of them, and the one that
+      // can be played here is chosen. Keeping only the last meant an
+      // incompatible card could hide a perfectly good one behind it.
+      const byKey = new Map();
+      for (const card of data.cards) {
+        const key = OD.tokens.cardKey(card.tokens);
+        (byKey.get(key) || byKey.set(key, []).get(key)).push(card);
+      }
+
       let added = 0;
       let reused = 0;
 
@@ -534,21 +543,35 @@
         if (OD.tokens.requiredChannels(card.tokens).length) continue;
 
         const key = OD.tokens.cardKey(card.tokens);
-        const existing = byKey.get(key);
+        const family = byKey.get(key) || [];
 
         // Same words is not the same card. One tied to another channel cannot
         // be played here, so reusing it put nothing in the deck while the
         // operation still reported the card as handled.
-        if (existing && usableOn(existing, channelId)) {
+        const existing = family.find((held) => usableOn(held, channelId));
+        if (existing) {
           reused += 1;
           addToDeck(data, channelId, existing.id);
           continue;
         }
 
         data.cards.push(card);
-        byKey.set(key, card);
+        family.push(card);
+        byKey.set(key, family);
         added += 1;
         addToDeck(data, channelId, card.id);
+      }
+
+      // Saving a card is what usually teaches us a channel's name. A deck that
+      // begins with a preset never saves one, and would be listed by raw id —
+      // so the name rides along, and the two are one action rather than two
+      // that can come apart.
+      if (name) {
+        const existing = data.channelMeta[channelId] || {};
+        data.channelMeta[channelId] = {
+          hue: existing.hue ?? defaultHue(channelId),
+          name: existing.name || name
+        };
       }
 
       return { added, reused };

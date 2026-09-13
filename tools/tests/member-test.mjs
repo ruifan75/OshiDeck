@@ -15,6 +15,7 @@
 //   * `isSponsor` / `loyaltyBadges` / `sponsorOnly` appear nowhere in the
 //     page's HTML — the DOM is the only route
 import { readFileSync } from "node:fs";
+import { page } from "./page.mjs";
 
 globalThis.OshiDeck = {};
 globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
@@ -23,6 +24,10 @@ globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
 await import("../../src/tokens.js");
 await import("../../src/backup.js");
 await import(`file://${process.env.OD_STORE || "/Users/maintainer/OshiDeck/src/store.js"}`);
+// The signature is what findDuplicate uses to spot a near-miss, so the real
+// one comes along too rather than a stand-in that would agree with anything.
+globalThis.document = { querySelector: () => null };
+await import("../../src/trending.js");
 const { store } = globalThis.OshiDeck;
 
 const source = process.env.OD_SOURCE
@@ -30,14 +35,30 @@ const source = process.env.OD_SOURCE
   : new URL("../../content.js", import.meta.url);
 const src = readFileSync(source, "utf8");
 
-const from = src.indexOf("  // Am I a member of the channel running this chat?");
-// Far enough to take orderDeck with it: where a locked card ends up is
-// decided there, and a rule that is never applied is worth nothing.
-const to = src.indexOf("  // A card is drawn when the chat bursts", from);
-if (from < 0 || to < 0 || to <= from) {
-  console.log("FAIL could not lift the membership rule out of content.js");
-  process.exit(1);
-}
+// Wide enough to take the callers with it. A rule that is never applied is
+// worth nothing, and the ways to not apply it are all at call sites: the deck
+// that never asks, the order that never partitions, the save that never
+// refuses.
+const cut = (start, end) => {
+  const from = src.indexOf(start);
+  const to = src.indexOf(end, from);
+  if (from < 0 || to <= from) {
+    console.log(`FAIL could not lift ${JSON.stringify(start.trim().slice(0, 40))} out of content.js`);
+    process.exit(1);
+  }
+  return src.slice(from, to);
+};
+
+const lifted = [
+  // buildDeck, the membership rule, markLocked, playableFirst, orderDeck
+  cut("  // Nothing appears here unless it was put here", "  // A card is drawn when the chat bursts"),
+  // saveTokens
+  cut("  async function saveTokens(", "  function clearInput("),
+  // reconcileChannel and findDuplicate, which saveTokens leans on
+  cut("  function reconcileChannel(", "  function flashCard("),
+  // what the panel does when the page changes under it
+  cut("  let lastMembership = null;", "  const observer = new MutationObserver(")
+].join("\n");
 
 let fail = 0;
 const check = (label, ok) => { if (!ok) fail++; console.log((ok ? "ok   " : "FAIL ") + label); };
@@ -48,63 +69,71 @@ const AWAY = "UCyumeno0000000000000000";
 const text = (value) => [{ type: "text", value }];
 const stamp = (owner) => [{ type: "youtubeEmoji", emojiId: `${owner}/heart`, alt: ":h:" }];
 
-// A stand-in for the chat page. `mine` is the badge in the chip beside the
-// input; `others` is the crowd — every one of whose badges matches an
-// unscoped query.
-function page({ chip = true, mine = false, others = 57 } = {}) {
-  const badge = { who: "a badge" };
-  const chipEl = {
-    hidden: true,   // a popped-out chat hides the chip and is still a member
-    querySelector: (sel) => (mine && /author-badge-renderer/.test(sel) ? badge : null)
-  };
-  return {
-    querySelector(sel) {
-      const scoped = /message-input-renderer/.test(sel);
-      if (scoped && /author-chip/.test(sel)) return chip ? chipEl : null;
-      if (scoped && /author-badge-renderer/.test(sel)) return mine ? badge : null;
-      // Unscoped: the message list answers, and it is not answering about me.
-      if (/author-badge-renderer/.test(sel)) return others > 0 ? badge : null;
-      return null;
-    }
-  };
-}
+const { tokens, trending } = globalThis.OshiDeck;
 
-const lift = (doc, ranking = new Map()) => new Function(
-  "document", "tokens", "store", "watcher", "trending",
-  `${src.slice(from, to)}
-   return { membership, whyNotSendable, markLocked, playableFirst, orderDeck };`
-)(
-  doc,
-  {
-    requiredChannels: (list) =>
-      [...new Set((list || []).filter((t) => t.emojiId).map((t) => t.emojiId.split("/")[0]))]
-  },
-  store,                                    // the real sort, not a stand-in
-  { ranking: () => ranking },
-  { signature: (list) => JSON.stringify(list) }
-);
+// Everything the lifted code reaches for. `seen` is what came back out.
+const input = { id: "the editor" };
+
+function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "さくら" },
+                disk = null } = {}) {
+  const seen = { writes: [], toasts: [], renders: 0 };
+  const api = new Function(
+    "document", "tokens", "store", "watcher", "trending",
+    "getChannel", "showToast", "shutdown", "render", "flashCard", "journal", "log", "editingId",
+    "findChatInput", "currentInput", "rootEl", "scheduleRender",
+    `${lifted}
+     return { membership, whyNotSendable, markLocked, playableFirst, orderDeck,
+              buildDeck, saveTokens, reconcileChannel, onPageChanged };`
+  )(
+    doc,
+    tokens,
+    {
+      ...store,
+      read: async () => disk,
+      apply: async (op, args) => {
+        seen.writes.push({ op, args });
+        return { ok: true, value: { id: args.card?.id || "new", added: 1 } };
+      }
+    },
+    { ranking: () => ranking },
+    trending,
+    () => channel,
+    (message) => seen.toasts.push(message),
+    () => seen.toasts.push("shutdown"),
+    () => { seen.renders += 1; },
+    () => {},
+    { record: () => {} },
+    () => {},
+    null,
+    () => input,             // the input is there and has not moved
+    input,
+    { isConnected: true },
+    () => { seen.renders += 1; }
+  );
+  return { ...api, seen };
+}
 
 /* ---------- am I a member ---------- */
 
-check("my own badge beside the input says yes", lift(page({ mine: true })).membership() === true);
+check("my own badge beside the input says yes", lift({ doc: page({ mine: true }) }).membership() === true);
 
 check(
   "a chat full of other people's members is not me",
-  lift(page({ mine: false, others: 57 })).membership() === false
+  lift({ doc: page({ mine: false, others: 57 }) }).membership() === false
 );
 
 check(
   "a hidden chip still answers, since a popped-out chat hides it either way",
-  lift(page({ mine: true })).membership() === true
+  lift({ doc: page({ mine: true }) }).membership() === true
 );
 
 // Not knowing is its own answer. The alternative — reading a page that has
 // not rendered yet as "not a member" — locks a card that is perfectly fine.
-check("no chip at all is not a no", lift(page({ chip: false })).membership() === null);
+check("no chip at all is not a no", lift({ doc: page({ chip: false }) }).membership() === null);
 
 /* ---------- what that buys ---------- */
 
-const rule = lift(page()).whyNotSendable;
+const rule = lift().whyNotSendable;
 
 check("plain words send anywhere", rule(text("わこつ"), HERE, false) === "");
 check("this channel's emoji send while you are a member", rule(stamp(HERE), HERE, true) === "");
@@ -124,7 +153,7 @@ const hand = () => [
   card("theirs", stamp(AWAY))
 ];
 
-const { markLocked, playableFirst } = lift(page());
+const { markLocked, playableFirst } = lift();
 
 let cards = markLocked(hand(), HERE, true);
 check("a member keeps this channel's emoji playable", cards[1].locked === false);
@@ -182,7 +211,7 @@ const deck = (channelId, member) => {
     { id: "ours", tokens: stamp(HERE), uses: 99, heat: 99, lastUsedAt: Date.now() },
     { id: "plain", tokens: text("888"), uses: 1, heat: 1, lastUsedAt: 1 }
   ];
-  return lift(page()).orderDeck(markLocked(cards, channelId, member), { sortBy: "uses" });
+  return lift().orderDeck(markLocked(cards, channelId, member), { sortBy: "uses" });
 };
 
 check(
@@ -199,7 +228,7 @@ const trendy = (member) => {
     { id: "ours", tokens: stamp(HERE), heat: 1, lastUsedAt: 1 },
     { id: "plain", tokens: text("888"), heat: 1, lastUsedAt: 1 }
   ];
-  const api = lift(page(), loud);
+  const api = lift({ ranking: loud });
   return api.orderDeck(api.markLocked(cards, HERE, member), { sortBy: "trend" })
     .map((c) => c.id).join(",");
 };
@@ -207,16 +236,111 @@ const trendy = (member) => {
 check("the loudest reaction in the chat leads while you can send it", trendy(true) === "ours,plain");
 check("and goes to the back when you cannot", trendy(false) === "plain,ours");
 
+/* ---------- the deck that has to ask ---------- */
+
+// The rule can be perfectly right and never consulted. Removing the question
+// from buildDeck leaves every card in a real deck unlocked, and nothing above
+// this line would notice.
+const shelf = (channelId) => ({
+  cards: [
+    { id: "plain", tokens: text("888"), scope: store.GLOBAL, uses: 1, heat: 1, lastUsedAt: 1 },
+    { id: "ours", tokens: stamp(HERE), scope: HERE, uses: 9, heat: 9, lastUsedAt: 9 }
+  ],
+  decks: { [channelId]: ["plain", "ours"] },
+  channelMeta: {},
+  settings: { sortBy: "uses", mode: "hand", cardSize: "small", rows: 2 }
+});
+
+let built = lift({ doc: page({ mine: false }) }).buildDeck(shelf(HERE), HERE);
+check("a deck built for someone who is not a member locks the card",
+  built.find((c) => c.id === "ours")?.locked === true);
+check("and puts it last, even though it is the most used", built.at(-1).id === "ours");
+
+built = lift({ doc: page({ mine: true }) }).buildDeck(shelf(HERE), HERE);
+check("a member's deck leaves it playable", built.find((c) => c.id === "ours")?.locked === false);
+check("and where the sort put it", built[0].id === "ours");
+
 /* ---------- saving one you cannot send ---------- */
 
-// Nothing above can see this: the rule can be right while the code that saves
-// a card never asks it. Position is the only thing that says so.
+// Checking that the question is asked is not checking that the answer is
+// obeyed: `if (false && why)` kept both of those true while every refused
+// save went through. So the save runs, and what matters is whether anything
+// was written.
+const empty = (channelId) =>
+  ({ cards: [], decks: { [channelId]: [] }, channelMeta: {}, settings: shelf(channelId).settings });
+
+const saving = (doc, captured) => {
+  const api = lift({ doc, disk: empty(HERE) });
+  return api.saveTokens(captured, "channel").then(() => api.seen);
+};
+
+let after = await saving(page({ mine: false }), stamp(HERE));
+check("a member emoji you cannot send is not saved", after.writes.length === 0);
+check("and you are told why", after.toasts.join("").includes("メンバー"));
+
+after = await saving(page({ mine: true }), stamp(HERE));
+check("the same card saves once you are a member", after.writes.some((w) => w.op === "addCard"));
+
+after = await saving(page({ mine: false }), text("わこつ"));
+check("and plain words were never in question", after.writes.some((w) => w.op === "addCard"));
+
+// The one the review found: the page can move to another chat while storage
+// is being read, and the emoji being saved then belong to the channel we just
+// left. The badge on screen is about the new one, so it answers nothing about
+// them — and the way to show that it is no longer being used as the answer is
+// that both badges now give the same result.
+const moved = async (mine) => {
+  const api = lift({
+    doc: page({ mine }),                        // this chat, wherever we are
+    channel: { id: AWAY, name: "ゆめの" },
+    disk: empty(AWAY)
+  });
+  await api.saveTokens(stamp(HERE), "channel");
+  return api.seen.writes.filter((w) => w.op === "addCard").length;
+};
+
+check("a badge from this chat is not the answer for another channel's emoji",
+  (await moved(true)) === (await moved(false)));
+
+// Which way it falls is the same choice made everywhere else here: not
+// knowing is not a no. The card is scoped to the channel the emoji came from,
+// so the next time that deck is built, on the page that can actually answer,
+// it locks if the membership is not there.
+check("and not knowing lets the save through", (await moved(false)) === 1);
+
+/* ---------- and hearing about it at all ---------- */
+
+// A membership can start or end while the panel is sitting there. Nothing
+// else will notice: the observer used to ask only whether the editor had
+// moved, and with suggestions off and a plain sort a quiet chat never renders
+// on its own — so the locks stayed as they were until something unrelated
+// happened along.
 {
-  const saveAt = src.indexOf("  async function saveTokens(");
-  const askAt = src.indexOf("whyNotSendable(captured", saveAt);
-  const writeAt = src.indexOf("store.apply(", saveAt);
-  check("saving asks whether the card can be sent", saveAt >= 0 && askAt > saveAt);
-  check("and asks before it writes anything", askAt > 0 && writeAt > 0 && askAt < writeAt);
+  const joining = lift({ doc: page({ mine: false }) });
+  joining.onPageChanged();
+  const settled = joining.seen.renders;
+  joining.onPageChanged();
+  check("an unchanged page is not repainted", joining.seen.renders === settled);
+}
+
+{
+  // The same panel, watching a page that changes answer under it.
+  const doc = page({ mine: false });
+  const chip = doc.querySelector("yt-live-chat-message-input-renderer yt-live-chat-author-chip");
+  const badges = chip.querySelector("span#chat-badges");
+  const api = lift({ doc });
+
+  api.onPageChanged();
+  const settled = api.seen.renders;
+
+  badges.kids.push({ tag: "YT-LIVE-CHAT-AUTHOR-BADGE-RENDERER", id: null,
+                     attrs: { type: "member" }, kids: [], parent: badges });
+  api.onPageChanged();
+  check("joining repaints the panel", api.seen.renders === settled + 1);
+
+  badges.kids.pop();
+  api.onPageChanged();
+  check("and so does the membership running out", api.seen.renders === settled + 2);
 }
 
 process.exit(fail);

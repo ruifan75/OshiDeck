@@ -543,8 +543,12 @@
       mine.add(card.key);
     }
 
-    // Taking it into the deck ends the offer, and so does its time running out.
-    if (drawn && (now >= drawn.until || mine.has(drawn.key))) drawn = null;
+    // Taking it into the deck ends the offer, and so does its time running
+    // out — and so does losing the right to send it. A held card was checked
+    // only when it was drawn, so a membership ending mid-hold left an
+    // unplayable card sitting there, unlocked, until the hold ran out.
+    if (drawn && (now >= drawn.until || mine.has(drawn.key) ||
+        whyNotSendable(drawn.card.tokens, channelId, member))) drawn = null;
     if (drawn) return drawn.card;
 
     const seen = watcher.burst(worthOffering(mine, channelId, member));
@@ -884,12 +888,21 @@
   // in the chat, or a card the chat held out. Only the tidying up differs, and
   // only the editor can be in the middle of re-recording a card.
   async function saveTokens(captured, target, { clear = () => {}, kept = "", editing = false } = {}) {
+    // Both read now, before anything is awaited, and kept together: the page
+    // can move to another chat while storage is being read, and a membership
+    // answer is only ever about the channel it was read from.
+    const seen = { channel: getChannel(), member: membership() };
+
     const data = await store.read();
     if (!data) return shutdown();
-    const channel = reconcileChannel(getChannel(), captured);
+    const channel = reconcileChannel(seen.channel, captured);
+
+    // The emoji can belong to somewhere else — that is what reconcileChannel
+    // is for — and a badge from this chat says nothing about that channel.
+    const member = channel?.id && channel.id === seen.channel?.id ? seen.member : null;
 
     // Saving a card you cannot send is saving a card that fails when pressed.
-    const why = whyNotSendable(captured, channel?.id, membership());
+    const why = whyNotSendable(captured, channel?.id, member);
     if (why) {
       return showToast(why === "membership"
         ? "メンバー限定のスタンプです。メンバーになると保存できます"
@@ -2012,10 +2025,26 @@
   /* ---------- wiring ---------- */
 
   // Live chat mutates constantly, so keep the hot path to one cheap lookup.
-  const observer = new MutationObserver(() => {
+  let lastMembership = null;   // what the panel was last drawn against
+
+  // Named so it can be driven: what the panel does when the page changes
+  // under it is a decision, and it was being made inside the observer where
+  // nothing could reach it.
+  function onPageChanged() {
     const input = findChatInput(); // existence only: measuring here costs a layout
-    if (input && (input !== currentInput || !rootEl?.isConnected)) scheduleRender();
-  });
+    if (input && (input !== currentInput || !rootEl?.isConnected)) return scheduleRender();
+
+    // Joining, or a membership ending, changes which cards can be played —
+    // and nothing else is going to notice. With suggestions off and a plain
+    // sort, a quiet chat never renders on its own, so the locks stayed as
+    // they were until something unrelated happened along.
+    const member = membership();
+    if (member === lastMembership) return;
+    lastMembership = member;
+    scheduleRender();
+  }
+
+  const observer = new MutationObserver(onPageChanged);
   observer.observe(document.documentElement, { childList: true, subtree: true });
 
   try {

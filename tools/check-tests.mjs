@@ -337,9 +337,29 @@ const MUTATIONS = [
     "    return playableFirst(ordered);",
     "    return ordered;"],
 
-  [MEMBER, CONTENT, "a card saved that can never be sent",
-    "    const why = whyNotSendable(captured, channel?.id, membership());",
-    "    const why = \"\";"],
+  [MEMBER, CONTENT, "a refusal that is asked for and then ignored",
+    "    if (why) {",
+    "    if (false && why) {"],
+
+  [MEMBER, CONTENT, "this chat's badge answering for another channel's emoji",
+    "    const member = channel?.id && channel.id === seen.channel?.id ? seen.member : null;",
+    "    const member = seen.member;"],
+
+  [MEMBER, CONTENT, "a deck built without asking",
+    "    markLocked(cards, channelId, membership());",
+    "    markLocked(cards, channelId, true);"],
+
+  [MEMBER, CONTENT, "a panel that never hears about joining",
+    `    const member = membership();
+    if (member === lastMembership) return;
+    lastMembership = member;
+    scheduleRender();`,
+    "    return;"],
+
+  [DRAW, CONTENT, "a held card exempt from the membership ending",
+    `    if (drawn && (now >= drawn.until || mine.has(drawn.key) ||
+        whyNotSendable(drawn.card.tokens, channelId, member))) drawn = null;`,
+    "    if (drawn && (now >= drawn.until || mine.has(drawn.key))) drawn = null;"],
 
   [DRAW, CONTENT, "member emoji offered to someone who cannot send them",
     "    !whyNotSendable(seen.tokens, channelId, member);",
@@ -434,7 +454,11 @@ const KILLS = {
   "a lapsed membership indistinguishable from the wrong channel": "and says that is what happened",
   "a locked card left where the sort put it": "the most-used card still goes last once it cannot be sent",
   "chat-driven order forgetting the lock": "and goes to the back when you cannot",
-  "a card saved that can never be sent": "saving asks whether the card can be sent",
+  "a refusal that is asked for and then ignored": "a member emoji you cannot send is not saved",
+  "this chat's badge answering for another channel's emoji": "a badge from this chat is not the answer for another channel's emoji",
+  "a deck built without asking": "a deck built for someone who is not a member locks the card",
+  "a panel that never hears about joining": "joining repaints the panel",
+  "a held card exempt from the membership ending": "but loses it the moment the membership goes",
   "member emoji offered to someone who cannot send them": "nor this channel's while you are not a member"
 };
 

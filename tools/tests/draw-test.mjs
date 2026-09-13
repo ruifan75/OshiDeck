@@ -64,7 +64,7 @@ const tokenStub = {
 // as anybody was told.
 function panel({ suggest = true, now = 1_000_000, hold = 45_000,
                  channelId = null, member = null } = {}) {
-  const state = { chat: null, now, renders: 0, forgotten: 0 };
+  const state = { chat: null, now, renders: 0, forgotten: 0, member };
 
   // `painted` starts dirty so that clearing it can be seen: a stream that is
   // not the one before it must repaint from scratch, not skip on a signature
@@ -99,7 +99,9 @@ function panel({ suggest = true, now = 1_000_000, hold = 45_000,
     forgotten: () => state.forgotten,
     painted: () => api.painted(),
     switch: (video, channel) => api.switchStream(video, channel),
-    draw: (deck = []) => api.drawFromChat(deck, { channelId, member })
+    // A membership can end while a card is being held.
+    becomes(next) { state.member = next; return this; },
+    draw: (deck = []) => api.drawFromChat(deck, { channelId, member: state.member })
   };
 }
 
@@ -198,6 +200,18 @@ await sleep(150);
 check("nor part of the way through the hold", sleeper.renders() === 0);
 await sleep(650);
 check("but the panel wakes itself once the hold has run out", sleeper.renders() === 1);
+
+// Being held is not being exempt. The held card was checked once, when it was
+// drawn, so a membership ending mid-hold left an unplayable card sitting in
+// the panel — no lock, since a drawn card is not in the deck to be locked —
+// until the hold ran out on its own.
+const lapsing = panel({ hold: 45_000, channelId: SAKURA_ID, member: true });
+const onLoan = lapsing.chat(heart).draw();
+check("a member is offered this channel's emoji", onLoan?.tokens === heart.tokens);
+check("and keeps it while nothing changes", lapsing.draw() === onLoan);
+
+lapsing.becomes(false);
+check("but loses it the moment the membership goes", lapsing.draw() === null);
 
 /* ---------- a new stream is a new chat ---------- */
 

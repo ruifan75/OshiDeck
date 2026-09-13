@@ -18,6 +18,10 @@ globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
 globalThis.crypto ??= (await import("node:crypto")).webcrypto;
 
 const src = process.env.OD_PRESETS || "/Users/maintainer/OshiDeck/src/presets.js";
+// content.js is read rather than run: it wants a browser, and all that is
+// wanted here is the one function that asks the store to load a preset.
+const src2 = (await import("node:fs")).readFileSync(
+  process.env.OD_SOURCE || "/Users/maintainer/OshiDeck/content.js", "utf8");
 await import("/Users/maintainer/OshiDeck/src/tokens.js");
 await import("/Users/maintainer/OshiDeck/src/backup.js");
 await import(`file://${process.env.OD_STORE || "/Users/maintainer/OshiDeck/src/store.js"}`);
@@ -151,6 +155,32 @@ await store.runOp("loadPreset", {
 });
 check("loading a preset also names the channel", disk.channelMeta[OTHER]?.name === "ゆめの");
 check("and gives it a colour to be shown in", typeof disk.channelMeta[OTHER]?.hue === "number");
+
+// What the panel actually asks for. Everything above drives the op directly,
+// so the op could be right while the call that reaches it left something out —
+// which is exactly what happened to the name.
+const useFrom = src2.indexOf("  async function usePreset(preset, channel) {");
+const useTo = src2.indexOf("  /* ---------- wiring ---------- */", useFrom);
+if (useFrom < 0 || useTo < 0 || useTo <= useFrom) {
+  console.log("FAIL could not lift usePreset out of content.js");
+  process.exit(1);
+}
+
+disk = { cards: [], decks: {}, channelMeta: {}, settings: {} };
+const said = [];
+await new Function(
+  "store", "presets", "showToast", "render",
+  `${src2.slice(useFrom, useTo)} return usePreset;`
+)(
+  { apply: (op, args) => store.runOp(op, args) },
+  presets,
+  (message) => said.push(message),
+  () => {}
+)(made, { id: OTHER, name: "ゆめの" });
+
+check("the panel's own load fills the deck", disk.decks[OTHER]?.length === 2);
+check("and names the channel while it is there", disk.channelMeta[OTHER]?.name === "ゆめの");
+check("and says what it did", said.length === 1 && said[0].includes("さくらの定番"));
 
 // Loading twice is not loading twice as much.
 const before = disk.cards.length;

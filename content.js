@@ -530,7 +530,11 @@
   // Nothing seen on one stream says anything about the next, and YouTube can
   // swap the message list inside the same document — which left the previous
   // channel's card being offered here, and its messages ranking this hand.
-  function switchStream(stream) {
+  function switchStream(video, channel) {
+    // The video, not the channel: a channel can start a second stream without
+    // the page ever being rebuilt, and the first one's card was still being
+    // offered in front of the second one's chat.
+    const stream = video || channel?.id || "";
     if (stream === watching) return false;
     watching = stream;
     drawn = null;
@@ -1600,30 +1604,32 @@
     return tokens.hasSubstance(currentTokens);
   }
 
+  function editorChanged(input) {
+    const filled = readInput(input);
+
+    // Emptying the editor means you are no longer editing anything. Without
+    // this the flag survives with no visible way to clear it.
+    if (!filled && editingId) {
+      editingId = null;
+      inputHasContent = false;
+      return render();
+    }
+
+    // Whether the editor holds a member emoji decides whether 通用 can be
+    // offered, so the bar has to be rebuilt when that changes too — not only
+    // when the editor goes from empty to full.
+    const pinned = filled && tokens.requiredChannels(tokens.collectTokens(input)).length > 0;
+    if (filled === inputHasContent && pinned === inputIsPinned) return;
+    inputHasContent = filled;
+    inputIsPinned = pinned;
+    refreshBar();
+  }
+
   function watchInput(input) {
     if (watchedInput === input) return;
     watchedInput = input;
 
-    function onEditorChanged() {
-      const filled = readInput(input);
-
-      // Emptying the editor means you are no longer editing anything. Without
-      // this the flag survives with no visible way to clear it.
-      if (!filled && editingId) {
-        editingId = null;
-        inputHasContent = false;
-        return render();
-      }
-
-      // Whether the editor holds a member emoji decides whether 通用 can be
-      // offered, so the bar has to be rebuilt when that changes too — not only
-      // when the editor goes from empty to full.
-      const pinned = filled && tokens.requiredChannels(tokens.collectTokens(input)).length > 0;
-      if (filled === inputHasContent && pinned === inputIsPinned) return;
-      inputHasContent = filled;
-      inputIsPinned = pinned;
-      refreshBar();
-    }
+    const onEditorChanged = () => editorChanged(input);
 
     input.addEventListener("input", onEditorChanged);
 
@@ -1726,7 +1732,7 @@
     const video = currentVideo();
     if (!channel) retryUnresolved(video);
 
-    switchStream(video || channel?.id || "");
+    switchStream(video, channel);
 
     if (channel) {
       journal.record({ kind: "channel", video, id: channel.id, name: channel.name, via: channel.via });

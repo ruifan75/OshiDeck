@@ -91,7 +91,7 @@ function panel({ suggest = true, now = 1_000_000, hold = 45_000 } = {}) {
     renders: () => state.renders,
     forgotten: () => state.forgotten,
     painted: () => api.painted(),
-    switch: (stream) => api.switchStream(stream),
+    switch: (video, channel) => api.switchStream(video, channel),
     draw: (deck = []) => api.drawFromChat(deck)
   };
 }
@@ -159,11 +159,16 @@ check("and lets go by twelve", brief.draw()?.tokens[0].value === "かわいい")
 // Expiry is only ever noticed by a render, and a chat that has gone quiet
 // causes none — so the panel has to wake itself, or the card outstays its hold
 // for as long as the silence lasts. This one uses a real timer, so the hold is
-// in milliseconds rather than the fake clock's seconds.
-const sleeper = panel({ hold: 20 });
+// in milliseconds rather than the fake clock's seconds — and *when* it wakes is
+// the whole point: a wake-up that comes straight away is a repaint that
+// retires nothing, and the hold still ends in silence.
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const sleeper = panel({ hold: 300 });
 sleeper.chat({ tokens: text("888"), count: 5 }).draw();
 check("nothing is repainted merely for drawing a card", sleeper.renders() === 0);
-await new Promise((resolve) => setTimeout(resolve, 400));
+await sleep(150);
+check("nor part of the way through the hold", sleeper.renders() === 0);
+await sleep(650);
 check("but the panel wakes itself once the hold has run out", sleeper.renders() === 1);
 
 /* ---------- a new stream is a new chat ---------- */
@@ -171,19 +176,30 @@ check("but the panel wakes itself once the hold has run out", sleeper.renders() 
 // YouTube can swap the message list inside the same document, so the panel can
 // find itself in front of a different chat without anything being torn down.
 // Nothing the last one said means anything here.
+const SAKURA = { id: "UCsakura0000000000000000", name: "さくら" };
+
 const moved = panel({ hold: 45_000 });
-moved.switch("Gv0g2GYipSM");
+moved.switch("Gv0g2GYipSM", SAKURA);
 const settled = moved.forgotten();
 const kept = moved.chat({ tokens: text("888"), count: 5 }).draw();
 moved.chat(null);
 check("a drawn card outlives an ordinary render", moved.draw() === kept);
-check("and a render that finds the same stream", moved.switch("Gv0g2GYipSM") === false);
+check("and a render that finds the same stream", moved.switch("Gv0g2GYipSM", SAKURA) === false);
 check("which forgets nothing", moved.forgotten() === settled);
 
-moved.switch("dQw4w9WgXcQ");
-check("but another stream takes the card away", moved.draw() === null);
-check("and forgets what the last chat was saying", moved.forgotten() === settled + 1);
+// The same channel, a second stream. Nothing about the page need be rebuilt
+// between them, and the first one's card was still being offered here.
+check("but the same channel on a new video is a new chat",
+  moved.switch("dQw4w9WgXcQ", SAKURA) === true);
+check("which takes the card away", moved.draw() === null);
+check("forgets what the last chat was saying", moved.forgotten() === settled + 1);
 check("and repaints rather than trusting the old signature", moved.painted() === null);
+
+// A popped-out chat window has no video to go by, so the channel answers for
+// it — and two of those in a row are still one chat.
+const popped = panel();
+check("with no video the channel is the stream", popped.switch(null, SAKURA) === true);
+check("and stays the same one", popped.switch(null, SAKURA) === false);
 
 /* ---------- what the steps are worth ---------- */
 

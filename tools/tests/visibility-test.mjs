@@ -160,7 +160,86 @@ check("clearing forgets the owner too", b.owner() === null);
 
   check("render still decides whether to skip", renderAt >= 0 && skipAt > renderAt);
   check("and does it before tearing the panel down", skipAt > 0 && tearAt > 0 && skipAt < tearAt);
+
+  // A control that replaces itself in place — the drawn card's ＋ becoming the
+  // two save targets — disconnects the element the bar was describing without
+  // changing anything the signature can see. Clearing that after the decision
+  // is too late: the panel skips, and the bar keeps describing a button that
+  // is no longer there.
+  const peekAt = src.indexOf("dropStalePeek();", renderAt);
+  check("and clears a stale description before deciding, not after",
+    peekAt > renderAt && peekAt < skipAt);
 }
+
+/* ---------- what the editor tells the panel ---------- */
+
+// The bar offers 通用 or this channel only, and which of those is possible
+// depends on what is in the editor — a member emoji can go nowhere else. That
+// decision used to be made inside the listener that wired the editor up, where
+// no test could reach it, so the signature could be told about a state that
+// nothing ever computed.
+const editFrom = src.indexOf("  function editorChanged(input) {");
+const editTo = src.indexOf("  function watchInput(input) {", editFrom);
+if (editFrom < 0 || editTo < 0 || editTo <= editFrom) {
+  console.log("FAIL could not lift editorChanged out of content.js");
+  process.exit(1);
+}
+
+const words = (value) => ({ type: "text", value });
+const member = (owner) => ({ type: "youtubeEmoji", emojiId: `${owner}/heart` });
+
+function editor({ editing = null } = {}) {
+  const seen = { renders: 0, bars: 0 };
+  const api = new Function(
+    "seen", "tokens",
+    `let editingId = ${JSON.stringify(editing)};
+     let inputHasContent = false;
+     let inputIsPinned = false;
+     let currentTokens = [];
+     const readInput = (input) => {
+       currentTokens = tokens.collectTokens(input);
+       return tokens.hasSubstance(currentTokens);
+     };
+     const render = () => { seen.renders += 1; };
+     const refreshBar = () => { seen.bars += 1; };
+     ${src.slice(editFrom, editTo)}
+     return { editorChanged, filled: () => inputHasContent, pinned: () => inputIsPinned,
+              editing: () => editingId };`
+  )(seen, {
+    // An editor is just what is in it.
+    collectTokens: (input) => input || [],
+    hasSubstance: (list) => list.some((t) => t.emojiId || t.value?.trim()),
+    requiredChannels: (list) => [...new Set(list.filter((t) => t.emojiId).map((t) => t.emojiId.split("/")[0]))]
+  });
+  return { ...api, seen };
+}
+
+let e = editor();
+e.editorChanged([]);
+check("an empty editor nobody was editing changes nothing", e.seen.bars === 0);
+
+e.editorChanged([words("わこつ")]);
+check("typing rebuilds the bar", e.seen.bars === 1);
+check("and the panel is told the editor has something in it", e.filled() === true);
+check("which anyone can send", e.pinned() === false);
+
+e.editorChanged([words("わこつ")]);
+check("typing more of the same does not rebuild it again", e.seen.bars === 1);
+
+e.editorChanged([words("わこつ"), member("UCsakura0000000000000000")]);
+check("a member emoji arriving rebuilds the bar", e.seen.bars === 2);
+check("and is what pins the comment to this channel", e.pinned() === true);
+
+e.editorChanged([words("わこつ")]);
+check("taking it out again rebuilds it once more", e.seen.bars === 3);
+check("and unpins the comment", e.pinned() === false);
+
+// Emptying the editor is how you stop editing, and there is no other way out.
+e = editor({ editing: "card-1" });
+e.editorChanged([words("直している")]);
+e.editorChanged([]);
+check("emptying the editor ends the edit", e.editing() === null);
+check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
 
 /* ---------- keeping a card that was dealt to you ---------- */
 

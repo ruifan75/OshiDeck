@@ -278,6 +278,32 @@ const MUTATIONS = [
     "      if (name) {",
     "      if (false) {"],
 
+  // The five below are call sites. Every one of them was found by pointing out
+  // that a helper can be tested to the hilt while the line that calls it
+  // quietly passes the wrong thing — and all five went green until the tests
+  // above them were written.
+  [DRAW, CONTENT, "a wake-up that comes straight away instead of at the end",
+    "    holdTimer = setTimeout(() => scheduleRender(), hold + 250);",
+    "    holdTimer = setTimeout(() => scheduleRender(), 1);"],
+
+  [DRAW, CONTENT, "a second stream on one channel treated as the same chat",
+    '    const stream = video || channel?.id || "";',
+    '    const stream = channel?.id || "";'],
+
+  [VISIBILITY, CONTENT, "an editor whose member emoji nobody notices",
+    "    const pinned = filled && tokens.requiredChannels(tokens.collectTokens(input)).length > 0;",
+    "    const pinned = false;"],
+
+  [VISIBILITY, CONTENT, "a stale description cleared after the decision, not before",
+    `    dropStalePeek();
+
+    const next = panelSignature(data, channel, hue, shown, pool, drawn);`,
+    "    const next = panelSignature(data, channel, hue, shown, pool, drawn);"],
+
+  [PRESET, CONTENT, "a preset loaded without passing the name along",
+    "      name: channel.name,\n",
+    ""],
+
   [COLOUR, STORE, "an out-of-gamut hue clipped instead of desaturated",
     "    for (let c = chroma; c > 0.01 && found.some((v) => v < -0.0005 || v > 1.0005); c -= 0.005) {\n      found = rgb(c);\n    }",
     "    // (clipped below instead)"],
@@ -352,7 +378,13 @@ const KILLS = {
   "a hold that never wakes the panel": "but the panel wakes itself once the hold has run out",
   "the hold read from the wrong setting": "a louder burst does not replace it while it is held",
 
-  "a busy chat forgotten wholesale at the cap": "a chat too busy to remember in full is still measured in full"
+  "a busy chat forgotten wholesale at the cap": "a chat too busy to remember in full is still measured in full",
+
+  "a wake-up that comes straight away instead of at the end": "nor part of the way through the hold",
+  "a second stream on one channel treated as the same chat": "but the same channel on a new video is a new chat",
+  "an editor whose member emoji nobody notices": "a member emoji arriving rebuilds the bar",
+  "a stale description cleared after the decision, not before": "and clears a stale description before deciding, not after",
+  "a preset loaded without passing the name along": "and names the channel while it is there"
 };
 
 const dir = mkdtempSync(join(tmpdir(), "oshideck-mutation-"));

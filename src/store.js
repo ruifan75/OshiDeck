@@ -16,8 +16,41 @@
     cardSize: "small", // large | medium | small
     rows: 2,           // 1 | 2
     sortBy: "heat",    // manual | uses | heat | trend
-    suggest: true      // draw one card from what the chat is doing
+    suggest: true,     // draw one card from what the chat is doing
+    draw: "normal",    // shy | normal | eager — how much of a wave it takes
+    hold: "normal",    // short | normal | long — how long a drawn card stays
+    pace: "normal"     // slow | normal | quick — how fast the order forgets
   };
+
+  // The numbers behind those three. Offered as steps rather than as fields
+  // because they are not independent: how many messages and what share of the
+  // room together decide what counts as a wave, and picking them apart invites
+  // combinations that mean nothing (two messages, half the room).
+  //
+  // Every value is here, so changing what a step means is one edit, and the
+  // settings page can say plainly what it is about to do.
+  const TUNING = {
+    draw: {
+      shy:    { min: 8, share: 0.40 },
+      normal: { min: 6, share: 0.30 },
+      eager:  { min: 4, share: 0.20 }
+    },
+    hold: {
+      short: 20_000,
+      normal: 45_000,
+      long: 90_000
+    },
+    pace: {
+      slow: 60_000,
+      normal: 25_000,
+      quick: 10_000
+    }
+  };
+
+  // Falls back to the middle step rather than to nothing: a settings file from
+  // an older version has no opinion about these, and neither does a broken one.
+  const tuning = (settings, group) =>
+    TUNING[group]?.[settings?.[group]] ?? TUNING[group]?.normal;
 
   const HALF_LIFE = 7 * 24 * 60 * 60 * 1000;
   const decay = (ms) => Math.pow(0.5, Math.max(0, ms) / HALF_LIFE);
@@ -700,6 +733,7 @@
     OPS, runOp, apply,
     KEYS, GLOBAL, DEFAULT_SETTINGS, alive,
     HUES, OSHI_HUES, defaultHue, hueOfColor, hueFromHex, hexOfHue,
+    TUNING, tuning,
     scopeOf, allowedScope,
     read,
     deckOf, poolFor, compatibleWith, universal, usableOn, inDeck, decksHolding,

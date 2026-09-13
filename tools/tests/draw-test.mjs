@@ -19,10 +19,16 @@ if (from < 0 || to < 0 || to <= from) {
 }
 
 globalThis.OshiDeck = {};
-// An IIFE, imported for its side effect. OD_LAYOUT lets the mutation checker
-// swap in a broken copy.
+globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
+  get: async () => ({}), set: async () => {}
+} } };
+// IIFEs, imported for their side effects. OD_LAYOUT and OD_STORE let the
+// mutation checker swap in broken copies.
 await import(process.env.OD_LAYOUT ? `file://${process.env.OD_LAYOUT}` : "../../src/layout.js");
-const { layout } = globalThis.OshiDeck;
+await import("../../src/tokens.js");
+await import("../../src/backup.js");
+await import(`file://${process.env.OD_STORE || "/Users/maintainer/OshiDeck/src/store.js"}`);
+const { layout, store } = globalThis.OshiDeck;
 
 let fail = 0;
 const check = (label, ok) => { if (!ok) fail++; console.log((ok ? "ok   " : "FAIL ") + label); };
@@ -46,12 +52,16 @@ const tokenStub = {
 
 // One panel, kept across calls so the hold can be observed. `chat` is what the
 // watcher would report as a burst right now; set it to null for a quiet chat.
-function panel({ suggest = true, now = 1_000_000 } = {}) {
+// The hold is handed in rather than read back out of the implementation. A
+// test that asks the code how long it holds for agrees with whatever it says,
+// so it can only tell that holding happens — not that it happens for as long
+// as anybody was told.
+function panel({ suggest = true, now = 1_000_000, hold = 45_000 } = {}) {
   const state = { chat: null, now };
 
   const api = new Function(
-    "settingsCache", "watcher", "tokens", "Date",
-    `${src.slice(from, to)}; return { drawFromChat, holdMs: HOLD_MS };`
+    "settingsCache", "watcher", "tokens", "store", "Date",
+    `${src.slice(from, to)}; return { drawFromChat };`
   )(
     { suggest },
     {
@@ -61,11 +71,11 @@ function panel({ suggest = true, now = 1_000_000 } = {}) {
       }
     },
     tokenStub,
+    { tuning: () => hold },
     { now: () => state.now }
   );
 
   return {
-    holdMs: api.holdMs,
     chat(next) { state.chat = next; return this; },
     tick(ms) { state.now += ms; return this; },
     draw: (deck = []) => api.drawFromChat(deck)
@@ -110,16 +120,52 @@ check(
 
 /* ---------- it stays put once drawn ---------- */
 
-const p = panel();
+const p = panel({ hold: 45_000 });
 const first = p.chat({ tokens: text("888"), count: 5 }).draw();
 check("the first burst is drawn", first?.tokens[0].value === "888");
 
 p.chat({ tokens: text("かわいい"), count: 9 }).tick(5_000);
 check("a louder burst does not replace it while it is held", p.draw() === first);
 
-p.tick(p.holdMs);
+p.tick(35_000); // forty seconds in, well short of the hold
+check("and still does not, most of the way through", p.draw() === first);
+
+p.tick(10_000); // fifty seconds in, past it
 check("once the hold is over, the newer burst takes its place",
   p.draw()?.tokens[0].value === "かわいい");
+
+// A shorter hold means a shorter hold, not merely some hold.
+const brief = panel({ hold: 10_000 });
+const held = brief.chat({ tokens: text("888"), count: 5 }).draw();
+brief.chat({ tokens: text("かわいい"), count: 9 }).tick(6_000);
+check("a ten second hold still holds at six", brief.draw() === held);
+brief.tick(6_000);
+check("and lets go by twelve", brief.draw()?.tokens[0].value === "かわいい");
+
+/* ---------- what the steps are worth ---------- */
+
+// The steps are the whole interface to these numbers, so what each one means
+// is part of the behaviour rather than an implementation detail.
+const { DEFAULT_SETTINGS: defaults } = store;
+check("out of the box a card is held for 45 seconds", store.tuning(defaults, "hold") === 45_000);
+check("a wave is six messages and three tenths of the room",
+  store.tuning(defaults, "draw").min === 6 && store.tuning(defaults, "draw").share === 0.3);
+check("and the order halves its weight every 25 seconds", store.tuning(defaults, "pace") === 25_000);
+
+check("ひかえめ asks for more of the room than ふつう",
+  store.tuning({ draw: "shy" }, "draw").share > store.tuning({ draw: "normal" }, "draw").share);
+check("よく引く asks for fewer messages",
+  store.tuning({ draw: "eager" }, "draw").min < store.tuning({ draw: "normal" }, "draw").min);
+check("ながめ holds longer than みじかめ",
+  store.tuning({ hold: "long" }, "hold") > store.tuning({ hold: "short" }, "hold"));
+check("はやい forgets faster than ゆっくり",
+  store.tuning({ pace: "quick" }, "pace") < store.tuning({ pace: "slow" }, "pace"));
+
+// A settings file from before these existed has no opinion about them.
+check("an unset step falls back to the middle one",
+  store.tuning({}, "hold") === store.tuning({ hold: "normal" }, "hold"));
+check("and so does one nobody recognises",
+  store.tuning({ draw: "whatever" }, "draw").min === store.tuning({ draw: "normal" }, "draw").min);
 
 // Taking it into the deck ends the offer even mid-hold.
 const q = panel();

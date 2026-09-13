@@ -104,7 +104,14 @@
 
   /* ---------- the watcher ---------- */
 
-  function createWatcher({ onChange } = {}) {
+  // `tuning` says what the viewer has chosen. The constants above remain the
+  // answer when nobody has said otherwise, so the watcher still works standing
+  // on its own — which is how the tests drive it.
+  function createWatcher({ onChange, tuning = () => ({}) } = {}) {
+    const halfLife = () => tuning().halfLife || HALF_LIFE_MS;
+    const burstMin = () => tuning().burstMin || BURST_MIN;
+    const burstShare = () => tuning().burstShare || BURST_SHARE;
+
     let recent = [];
     let saidAt = [];
     let observer = null;
@@ -224,7 +231,7 @@
 
       for (const entry of recent) {
         const seen = out.get(entry.sig) || { score: 0, count: 0, tokens: null };
-        seen.score += 2 ** (-(now - entry.at) / HALF_LIFE_MS);
+        seen.score += 2 ** (-(now - entry.at) / halfLife());
         seen.count += 1;
         seen.tokens = entry.tokens || seen.tokens; // recent is in order: newest wins
         out.set(entry.sig, seen);
@@ -251,10 +258,13 @@
         counts.set(entry.key, seen);
       }
 
+      const floor = burstMin();
+      const share = burstShare();
+
       let best = null;
       for (const seen of counts.values()) {
-        if (seen.count < BURST_MIN) continue;
-        if (seen.count < said * BURST_SHARE) continue;
+        if (seen.count < floor) continue;
+        if (seen.count < said * share) continue;
         if (accept && !accept(seen)) continue;
         if (!best || seen.count > best.count) best = seen;
       }

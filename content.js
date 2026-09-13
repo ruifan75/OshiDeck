@@ -38,6 +38,14 @@
 
   // Always running: even outside trend mode it keeps emoji urls fresh.
   const watcher = trending.createWatcher({
+    tuning: () => {
+      const draw = store.tuning(settingsCache, "draw");
+      return {
+        halfLife: store.tuning(settingsCache, "pace"),
+        burstMin: draw.min,
+        burstShare: draw.share
+      };
+    },
     onChange: () => {
       // Chat can change the hand two ways now: by reordering it, and by
       // holding out a card that is not in it.
@@ -462,8 +470,6 @@
   // hand. That signature deliberately treats `きちゃ` and `きちゃきちゃ` as one
   // reaction, which is right for sorting and wrong for offering: they are
   // different things to say.
-  const HOLD_MS = 45_000;
-
   let drawn = null;       // { key, card, until }
   let holdTimer = null;   // wakes the panel when the hold runs out
   let watching = null;    // the channel the drawn card and the chat counts are about
@@ -502,12 +508,13 @@
     // Expiry is only ever noticed by a render, and a chat that has gone quiet
     // stops causing them — so the card outstayed its hold by as long as the
     // chat stayed quiet. This is the render that retires it.
+    const hold = store.tuning(settingsCache, "hold");
     clearTimeout(holdTimer);
-    holdTimer = setTimeout(() => scheduleRender(), HOLD_MS + 250);
+    holdTimer = setTimeout(() => scheduleRender(), hold + 250);
 
     drawn = {
       key: seen.key,
-      until: now + HOLD_MS,
+      until: now + hold,
       card: {
         id: `drawn:${seen.key}`,
         drawn: true,      // not a card anyone owns: no id in storage
@@ -1251,6 +1258,7 @@
 
     return [
       s.mode, s.cardSize, s.rows, s.sortBy, s.suggest ? "draw" : "",
+      s.draw, s.hold, s.pace,
       channel?.id || "", channel?.name || "", hue ?? "",
       rootEl?.clientWidth || 0,
       poolOpen ? "pool" : "deck", expanded ? "more" : "",

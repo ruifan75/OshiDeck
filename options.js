@@ -48,6 +48,19 @@ function paint() {
     `${SIZE_LABEL[settings.cardSize]} × ${settings.rows}行 = 最大${perRow * settings.rows}枚`;
 
   document.querySelector("#sortNote").textContent = SORT_NOTE[settings.sortBy] || "";
+
+  // Say the actual numbers. A step called ふつう tells nobody what it will do,
+  // and these are the values the panel was reported as getting wrong.
+  const draw = store.tuning(settings, "draw");
+  document.querySelector("#drawNote").textContent =
+    `12秒のあいだに同じ言葉が${draw.min}回以上、かつその間の発言の${Math.round(draw.share * 100)}%以上で引きます。` +
+    "賑やかなチャットほど、ひかえめが要ります。";
+  document.querySelector("#holdNote").textContent =
+    `引いた札は${store.tuning(settings, "hold") / 1000}秒そのまま残ります。` +
+    "短くすると入れ替わりが速く、カーソルの下で変わりやすくなります。";
+  document.querySelector("#paceNote").textContent =
+    `「チャット連動」の重みが半分になるまで${store.tuning(settings, "pace") / 1000}秒。` +
+    "速いほど直前の波にすぐ反応し、遅いほど落ち着きます。";
 }
 
 async function commit(patch) {

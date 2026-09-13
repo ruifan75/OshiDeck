@@ -106,7 +106,7 @@ const MUTATIONS = [
     "    // (freeze deliberately left on)"],
 
   [TREND, TRENDING, "a flat count instead of recency",
-    "seen.score += 2 ** (-(now - entry.at) / HALF_LIFE_MS);",
+    "seen.score += 2 ** (-(now - entry.at) / halfLife());",
     "seen.score += 1;"],
 
   [DRAW, CONTENT, "member emoji offered as a drawn card",
@@ -122,11 +122,11 @@ const MUTATIONS = [
     "    if (false) return drawn.card;"],
 
   [TREND, TRENDING, "a burst with no floor under it",
-    "        if (seen.count < BURST_MIN) continue;",
+    "        if (seen.count < floor) continue;",
     "        if (false) continue;"],
 
   [TREND, TRENDING, "a burst that ignores how busy the chat is",
-    "        if (seen.count < said * BURST_SHARE) continue;",
+    "        if (seen.count < said * share) continue;",
     "        if (false) continue;"],
 
   [TREND, TRENDING, "bursts counted by the loose signature",
@@ -201,6 +201,18 @@ const MUTATIONS = [
     'scope: card.scope === "channel" && channelId ? channelId : OD.store.GLOBAL,',
     "scope: OD.store.GLOBAL,"],
 
+  [DRAW, STORE, "a card held for a different time than anyone was told",
+    "      normal: 45_000,",
+    "      normal: 20_000,"],
+
+  [DRAW, STORE, "a wave redefined without saying so",
+    "      normal: { min: 6, share: 0.30 },",
+    "      normal: { min: 3, share: 0.10 },"],
+
+  [DRAW, STORE, "an unset step falling through to nothing",
+    "    TUNING[group]?.[settings?.[group]] ?? TUNING[group]?.normal;",
+    "    TUNING[group]?.[settings?.[group]];"],
+
   [COLOUR, STORE, "an out-of-gamut hue clipped instead of desaturated",
     "    for (let c = chroma; c > 0.01 && found.some((v) => v < -0.0005 || v > 1.0005); c -= 0.005) {\n      found = rgb(c);\n    }",
     "    // (clipped below instead)"],
@@ -251,6 +263,9 @@ const KILLS = {
 
   "a hand-picked colour ignored in favour of the hash": "a listed channel gets the colour it is listed with",
   "an out-of-gamut hue clipped instead of desaturated": "every hue survives the round trip",
+  "a card held for a different time than anyone was told": "out of the box a card is held for 45 seconds",
+  "a wave redefined without saying so": "a wave is six messages and three tenths of the room",
+  "an unset step falling through to nothing": "an unset step falls back to the middle one",
 
   "member emoji carried into a preset": "member emoji are left behind",
   "a preset that carries its ids along with its content": "no ids, no counts, no history",

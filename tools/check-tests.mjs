@@ -372,8 +372,8 @@ const KILLS = {
   "a pool that can gain a card unnoticed": "the pool gaining a card is a change",
   "a drawn card the list offers no way to keep": "and so can one in the list",
 
-  "a stream change that keeps the last chat's card": "but another stream takes the card away",
-  "a new stream ranked by the old one's messages": "and forgets what the last chat was saying",
+  "a stream change that keeps the last chat's card": "which takes the card away",
+  "a new stream ranked by the old one's messages": "forgets what the last chat was saying",
   "a new stream skipped on the old one's signature": "and repaints rather than trusting the old signature",
   "a hold that never wakes the panel": "but the panel wakes itself once the hold has run out",
   "the hold read from the wrong setting": "a louder burst does not replace it while it is held",

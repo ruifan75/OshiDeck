@@ -33,6 +33,7 @@ const DRAW = "draw-test.mjs";
 const CONFIRM = "confirm-test.mjs";
 const COLOUR = "colour-test.mjs";
 const PRESET = "preset-test.mjs";
+const MEMBER = "member-test.mjs";
 
 // Which file a mutation edits, and how its test is told to load the copy.
 const CONTENT = { file: "content.js", env: "OD_SOURCE" };
@@ -108,10 +109,6 @@ const MUTATIONS = [
   [TREND, TRENDING, "a flat count instead of recency",
     "seen.score += 2 ** (-(now - entry.at) / halfLife());",
     "seen.score += 1;"],
-
-  [DRAW, CONTENT, "member emoji offered as a drawn card",
-    "    !tokens.requiredChannels(seen.tokens).length;",
-    "    true;"],
 
   [DRAW, CONTENT, "a reaction already in the deck offered again",
     "    !mine.has(seen.key) &&",
@@ -304,6 +301,50 @@ const MUTATIONS = [
     "      name: channel.name,\n",
     ""],
 
+  // Membership. Every one of these is a signal that was measured on a real
+  // stream and could plausibly have been read the other way.
+  [MEMBER, CONTENT, "a badge read from anywhere in the chat",
+    `    const chip = document.querySelector(MY_CHIP);
+    if (!chip) return null;
+    return !!chip.querySelector("yt-live-chat-author-badge-renderer[type='member']");`,
+    `    return !!document.querySelector("yt-live-chat-author-badge-renderer[type='member']");`],
+
+  [MEMBER, CONTENT, "a hidden chip read as not being a member",
+    "    if (!chip) return null;",
+    "    if (!chip || chip.hidden) return false;"],
+
+  [MEMBER, CONTENT, "a page that has not answered read as a no",
+    "  function membership() {\n    const chip = document.querySelector(MY_CHIP);\n    if (!chip) return null;",
+    "  function membership() {\n    const chip = document.querySelector(MY_CHIP);\n    if (!chip) return false;"],
+
+  [MEMBER, CONTENT, "not knowing yet treated as not a member",
+    '    return member === false ? "membership" : "";',
+    '    return !member ? "membership" : "";'],
+
+  [MEMBER, CONTENT, "a lock guessed before the channel is known",
+    '    if (!channelId) return "";                    // no channel: cannot judge ownership',
+    '    if (false) return "";'],
+
+  [MEMBER, CONTENT, "a lapsed membership indistinguishable from the wrong channel",
+    '      card.lapsed = why === "membership";',
+    "      card.lapsed = false;"],
+
+  [MEMBER, CONTENT, "a locked card left where the sort put it",
+    '    if (settings.sortBy !== "trend") return playableFirst(store.sortCards(cards, settings.sortBy));',
+    '    if (settings.sortBy !== "trend") return store.sortCards(cards, settings.sortBy);'],
+
+  [MEMBER, CONTENT, "chat-driven order forgetting the lock",
+    "    return playableFirst(ordered);",
+    "    return ordered;"],
+
+  [MEMBER, CONTENT, "a card saved that can never be sent",
+    "    const why = whyNotSendable(captured, channel?.id, membership());",
+    "    const why = \"\";"],
+
+  [DRAW, CONTENT, "member emoji offered to someone who cannot send them",
+    "    !whyNotSendable(seen.tokens, channelId, member);",
+    "    true;"],
+
   [COLOUR, STORE, "an out-of-gamut hue clipped instead of desaturated",
     "    for (let c = chroma; c > 0.01 && found.some((v) => v < -0.0005 || v > 1.0005); c -= 0.005) {\n      found = rgb(c);\n    }",
     "    // (clipped below instead)"],
@@ -343,7 +384,6 @@ const KILLS = {
   "bursts counted by the loose signature": "each exact wording bursts on its own, unmerged",
   "tooltips read as part of the comment": "and carries no shortcode text",
 
-  "member emoji offered as a drawn card": "member emoji are never offered",
   "a reaction already in the deck offered again": "a reaction already in the deck is not offered again",
   "a drawn card replaced the moment anything louder arrives": "a louder burst does not replace it while it is held",
   "a hand that refuses to squeeze": "by tightening the overlap",
@@ -384,7 +424,18 @@ const KILLS = {
   "a second stream on one channel treated as the same chat": "but the same channel on a new video is a new chat",
   "an editor whose member emoji nobody notices": "a member emoji arriving rebuilds the bar",
   "a stale description cleared after the decision, not before": "and clears a stale description before deciding, not after",
-  "a preset loaded without passing the name along": "and names the channel while it is there"
+  "a preset loaded without passing the name along": "and names the channel while it is there",
+
+  "a badge read from anywhere in the chat": "a chat full of other people's members is not me",
+  "a hidden chip read as not being a member": "a hidden chip still answers",
+  "a page that has not answered read as a no": "no chip at all is not a no",
+  "not knowing yet treated as not a member": "and a page that has not said yet refuses nothing",
+  "a lock guessed before the channel is known": "with no channel known, nothing is refused",
+  "a lapsed membership indistinguishable from the wrong channel": "and says that is what happened",
+  "a locked card left where the sort put it": "the most-used card still goes last once it cannot be sent",
+  "chat-driven order forgetting the lock": "and goes to the back when you cannot",
+  "a card saved that can never be sent": "saving asks whether the card can be sent",
+  "member emoji offered to someone who cannot send them": "nor this channel's while you are not a member"
 };
 
 const dir = mkdtempSync(join(tmpdir(), "oshideck-mutation-"));
@@ -408,7 +459,7 @@ function run(file, mutant, subject) {
 let failed = 0;
 
 // A suite already red would make every mutation look caught.
-for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM, COLOUR, PRESET]) {
+for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM, COLOUR, PRESET, MEMBER]) {
   if (run(file, null).failed) {
     console.log(`FAIL ${file} is red before any mutation`);
     failed = 1;

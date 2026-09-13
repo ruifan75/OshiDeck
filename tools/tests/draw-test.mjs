@@ -13,10 +13,16 @@ const src = readFileSync(source, "utf8");
 
 const from = src.indexOf("  // A card is drawn when the chat bursts");
 const to = src.indexOf("  function buildDrawnRow(", from);
-if (from < 0 || to < 0 || to <= from) {
+// What may be offered is decided by the same rule that locks a card, so the
+// real one comes along rather than a stand-in that would only agree with
+// itself.
+const ruleFrom = src.indexOf("  function whyNotSendable(list, channelId, member) {");
+const ruleTo = src.indexOf("  function markLocked(", ruleFrom);
+if (from < 0 || to < 0 || to <= from || ruleFrom < 0 || ruleTo <= ruleFrom) {
   console.log("FAIL could not lift drawFromChat out of content.js");
   process.exit(1);
 }
+const body = src.slice(ruleFrom, ruleTo) + src.slice(from, to);
 
 globalThis.OshiDeck = {};
 globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
@@ -56,7 +62,8 @@ const tokenStub = {
 // test that asks the code how long it holds for agrees with whatever it says,
 // so it can only tell that holding happens — not that it happens for as long
 // as anybody was told.
-function panel({ suggest = true, now = 1_000_000, hold = 45_000 } = {}) {
+function panel({ suggest = true, now = 1_000_000, hold = 45_000,
+                 channelId = null, member = null } = {}) {
   const state = { chat: null, now, renders: 0, forgotten: 0 };
 
   // `painted` starts dirty so that clearing it can be seen: a stream that is
@@ -65,7 +72,7 @@ function panel({ suggest = true, now = 1_000_000, hold = 45_000 } = {}) {
   const api = new Function(
     "settingsCache", "watcher", "tokens", "store", "Date", "scheduleRender",
     `let painted = "stale";
-     ${src.slice(from, to)};
+     ${body};
      return { drawFromChat, switchStream, painted: () => painted };`
   )(
     { suggest },
@@ -92,12 +99,12 @@ function panel({ suggest = true, now = 1_000_000, hold = 45_000 } = {}) {
     forgotten: () => state.forgotten,
     painted: () => api.painted(),
     switch: (video, channel) => api.switchStream(video, channel),
-    draw: (deck = []) => api.drawFromChat(deck)
+    draw: (deck = []) => api.drawFromChat(deck, { channelId, member })
   };
 }
 
-const draw = ({ suggest = true, chat = null, deck = [] } = {}) =>
-  panel({ suggest }).chat(chat).draw(deck);
+const draw = ({ suggest = true, chat = null, deck = [], channelId = null, member = null } = {}) =>
+  panel({ suggest, channelId, member }).chat(chat).draw(deck);
 
 const wave = { tokens: text("かわいい"), count: 9 };
 
@@ -108,9 +115,30 @@ check("carrying the count for the bar to show", draw({ chat: wave })?.hits === 9
 check("a quiet chat offers nothing", draw({ chat: null }) === null);
 check("turned off, nothing is offered", draw({ suggest: false, chat: wave }) === null);
 
+const SAKURA_ID = "UCsakura0000000000000000";
+const heart = { tokens: stamp(SAKURA_ID), count: 20 };
+
 check(
-  "member emoji are never offered, even this channel's",
-  draw({ chat: { tokens: stamp("UCsakura0000000000000000"), count: 20 } }) === null
+  "another channel's member emoji are never offered",
+  draw({ chat: heart, channelId: "UCyumeno0000000000000000", member: true }) === null
+);
+
+check(
+  "nor this channel's while you are not a member",
+  draw({ chat: heart, channelId: SAKURA_ID, member: false }) === null
+);
+
+// This is what being able to ask bought: the emoji belong here and so do you.
+check(
+  "but this channel's are offered once you are one",
+  draw({ chat: heart, channelId: SAKURA_ID, member: true })?.tokens === heart.tokens
+);
+
+// The chip has not rendered yet. Refusing on a guess would hide a card that
+// is very likely fine; the same choice is made when locking.
+check(
+  "and a page that has not said yet is not treated as a no",
+  draw({ chat: heart, channelId: SAKURA_ID, member: null })?.tokens === heart.tokens
 );
 
 check(

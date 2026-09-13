@@ -421,7 +421,7 @@
   // drawn from the pool.
   function buildDeck(data, channelId) {
     const cards = store.deckOf(data, channelId).map((card) => ({ ...card }));
-    markLocked(cards, channelId);
+    markLocked(cards, channelId, membership());
     // The stripe had become the deck's colour on every card, which said
     // nothing. It marks scope again: grey works anywhere, coloured is tied to
     // this channel by its member emoji — and that is what makes deleting it
@@ -430,19 +430,58 @@
     return orderDeck(cards, data.settings);
   }
 
-  // Member emoji only send on the channel that hands them out. Lock only when
-  // we are sure: with no channel detected we cannot judge ownership, and a
-  // wrong lock is far worse than a card that fails to send.
-  function markLocked(cards, channelId) {
+  // Am I a member of the channel running this chat?
+  //
+  // Measured on the page rather than worked out. My own badge sits in the
+  // author chip beside the input, and that chip is the only place that answers
+  // for *me*: the message list is full of other people's badges — 57 of them
+  // on a stream I am not a member of — so an unscoped query says "member"
+  // in any chat that has members at all.
+  //
+  // Three answers, not two. The chip missing altogether means the page has not
+  // said yet, and a wrong lock is worse than a card that fails to send, so
+  // that case locks nothing. (`hidden` on the chip is not the answer either:
+  // a popped-out chat hides it while the badge is right there.)
+  const MY_CHIP = "yt-live-chat-message-input-renderer yt-live-chat-author-chip";
+
+  function membership() {
+    const chip = document.querySelector(MY_CHIP);
+    if (!chip) return null;
+    return !!chip.querySelector("yt-live-chat-author-badge-renderer[type='member']");
+  }
+
+  // Why these tokens cannot be sent here, or "" if they can. Two locks that
+  // look alike and mean different things: one is about where you are, the
+  // other about what you are paying for — and only the second is something
+  // the viewer can do anything about, so they must not read the same.
+  function whyNotSendable(list, channelId, member) {
+    const required = tokens.requiredChannels(list || []);
+    if (!required.length) return "";              // nobody's emoji but everyone's
+    if (!channelId) return "";                    // no channel: cannot judge ownership
+    if (!required.every((id) => id === channelId)) return "elsewhere";
+    return member === false ? "membership" : "";  // ours, while the membership lasts
+  }
+
+  function markLocked(cards, channelId, member) {
     for (const card of cards) {
-      const required = channelId ? tokens.requiredChannels(card.tokens) : [];
-      card.locked = required.length > 0 && !required.every((id) => id === channelId);
+      const why = whyNotSendable(card.tokens, channelId, member);
+      card.locked = !!why;
+      card.lapsed = why === "membership";
     }
     return cards;
   }
 
+  // Locked cards go last, whatever the order says. They stay in the deck — a
+  // membership can come back, and dropping the card would lose the place it
+  // had — but an unplayable card sitting mid-hand is exactly where the eye
+  // looks for the next thing to send.
+  const playableFirst = (cards) => [
+    ...cards.filter((card) => !card.locked),
+    ...cards.filter((card) => card.locked)
+  ];
+
   function orderDeck(cards, settings) {
-    if (settings.sortBy !== "trend") return store.sortCards(cards, settings.sortBy);
+    if (settings.sortBy !== "trend") return playableFirst(store.sortCards(cards, settings.sortBy));
 
     const ranking = watcher.ranking();
     // Personal habit is the tiebreak, so a quiet chat still gives a sane order.
@@ -450,7 +489,7 @@
       store.sortCards(cards, "heat").map((card, index) => [card.id, index])
     );
 
-    return cards
+    const ordered = cards
       .map((card) => {
         card.signature ||= trending.signature(card.tokens || []);
         const seen = ranking.get(card.signature);
@@ -459,6 +498,8 @@
         return card;
       })
       .sort((a, b) => b.trend - a.trend || fallback.get(a.id) - fallback.get(b.id));
+
+    return playableFirst(ordered);
   }
 
   // A card is drawn when the chat bursts — several people saying the same
@@ -484,12 +525,15 @@
   // left out altogether: they belong to this channel, but YouTube serves them
   // to members only, and a card that fails when pressed is worse than no card.
   // When membership can be told apart, that is the line to revisit.
-  const worthOffering = (mine) => (seen) =>
+  const worthOffering = (mine, channelId, member) => (seen) =>
     !mine.has(seen.key) &&
     tokens.hasSubstance(seen.tokens) &&
-    !tokens.requiredChannels(seen.tokens).length;
+    // A card that fails when pressed is worse than no card. Being a member is
+    // what changed here: this channel's emoji used to be refused outright,
+    // because there was no way to ask.
+    !whyNotSendable(seen.tokens, channelId, member);
 
-  function drawFromChat(deck) {
+  function drawFromChat(deck, { channelId, member } = {}) {
     if (!settingsCache.suggest) return (drawn = null);
 
     const now = Date.now();
@@ -503,7 +547,7 @@
     if (drawn && (now >= drawn.until || mine.has(drawn.key))) drawn = null;
     if (drawn) return drawn.card;
 
-    const seen = watcher.burst(worthOffering(mine));
+    const seen = watcher.burst(worthOffering(mine, channelId, member));
     if (!seen) return null;
 
     // Expiry is only ever noticed by a render, and a chat that has gone quiet
@@ -651,7 +695,9 @@
 
   async function playCard(card, { send }) {
     if (card.locked) {
-      return showToast("他チャンネルのメン限スタンプです");
+      return showToast(card.lapsed
+        ? "メンバー限定のスタンプです。メンバーになると使えます"
+        : "他チャンネルのメン限スタンプです");
     }
     // A click appends to the editor at once, but the send waits a beat for
     // YouTube to enable its button. A second click in that gap appended to the
@@ -841,6 +887,14 @@
     const data = await store.read();
     if (!data) return shutdown();
     const channel = reconcileChannel(getChannel(), captured);
+
+    // Saving a card you cannot send is saving a card that fails when pressed.
+    const why = whyNotSendable(captured, channel?.id, membership());
+    if (why) {
+      return showToast(why === "membership"
+        ? "メンバー限定のスタンプです。メンバーになると保存できます"
+        : "このチャンネルでは送れないスタンプです");
+    }
 
     if (editing && editingId) {
       const id = editingId;
@@ -1120,7 +1174,12 @@
   // tooltip would float over the chat; the bar is space we already occupy.
   function cardPeek(card) {
     if (card.locked) {
-      return { text: "別チャンネルのメン限スタンプ — この配信では送れません", warning: true };
+      return {
+        text: card.lapsed
+          ? "メンバー限定のスタンプ — メンバーになると送れます"
+          : "別チャンネルのメン限スタンプ — この配信では送れません",
+        warning: true
+      };
     }
     const text = tokens.toPlainText(card.tokens || []).trim();
     const stamps = (card.tokens || []).filter((t) => t.type === "youtubeEmoji").length;
@@ -1752,13 +1811,14 @@
       tokens.requiredChannels(tokens.collectTokens(input)).length > 0;
 
     const pool = channel?.id
-      ? markLocked(store.poolFor(data, channel.id).map((card) => ({ ...card })), channel.id)
+      ? playableFirst(markLocked(
+          store.poolFor(data, channel.id).map((card) => ({ ...card })), channel.id, membership()))
       : [];
 
     const shown = poolOpen ? pool : deck;
     // Only alongside your own deck. The pool is a place to choose from, not
     // somewhere to be handed things.
-    const drawn = poolOpen ? null : drawFromChat(deck);
+    const drawn = poolOpen ? null : drawFromChat(deck, { channelId: channel?.id, member: membership() });
 
     // Chat-driven mode renders every few seconds whether or not anything it
     // shows has changed, and rebuilding is not free: the elements are new, so

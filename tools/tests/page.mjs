@@ -13,12 +13,25 @@
 
 /* ---------- the engine ---------- */
 
-const compound = (token) => ({
-  tag: token.match(/^[\w-]+/)?.[0]?.toUpperCase() || null,
-  id: token.match(/#([\w-]+)/)?.[1] || null,
-  attrs: [...token.matchAll(/\[([\w-]+)\s*=\s*['"]?([^\]'"]+)['"]?\]/g)].map((m) => [m[1], m[2]]),
-  bare: /\[([\w-]+)\]/.test(token) ? token.match(/\[([\w-]+)\]/)[1] : null
-});
+// Anything it does not understand is refused rather than approximated. The
+// first version picked the fragments it recognised out of the token and
+// ignored the rest, so `:not([hidden])` read as *requiring* hidden and
+// `.whatever` read as nothing at all — both the opposite of what a browser
+// does. A selector engine that quietly reinterprets the selector is worse
+// than no engine, because the test still goes green.
+const UNDERSTOOD = /^(?:[\w-]+|#[\w-]+|\[[\w-]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\]]+))?\])+$/;
+
+const compound = (token) => {
+  if (!UNDERSTOOD.test(token)) {
+    throw new Error(`page.mjs cannot answer for ${JSON.stringify(token)} — ask a browser`);
+  }
+  return {
+    tag: token.match(/^[\w-]+/)?.[0]?.toUpperCase() || null,
+    id: token.match(/#([\w-]+)/)?.[1] || null,
+    attrs: [...token.matchAll(/\[([\w-]+)\s*=\s*['"]?([^\]'"]+)['"]?\]/g)].map((m) => [m[1], m[2]]),
+    bare: /\[([\w-]+)\]/.test(token) ? token.match(/\[([\w-]+)\]/)[1] : null
+  };
+};
 
 // Each step remembers how it is reached: a direct child, or any descendant.
 const chainOf = (group) => {
@@ -38,22 +51,21 @@ const hits = (node, step) =>
   (!step.bare || node.attrs[step.bare] !== undefined) &&
   step.attrs.every(([name, value]) => String(node.attrs[name]) === value);
 
-function matchesChain(node, chain) {
-  if (!hits(node, chain[chain.length - 1])) return false;
-  let at = node;
-  for (let i = chain.length - 2; i >= 0; i--) {
-    const how = chain[i + 1];
-    if (how.child) {
-      at = at.parent;
-      if (!at || !hits(at, chain[i])) return false;
-    } else {
-      at = at.parent;
-      while (at && !hits(at, chain[i])) at = at.parent;
-      if (!at) return false;
-    }
+// Backtracks, because taking the nearest matching ancestor and walking on is
+// not the same question. `input-renderer > div author-chip` matches in a
+// browser and did not match here: the greedy walk took the wrong `div` and
+// never went back for the other one.
+function matchesFrom(node, chain, i) {
+  if (!hits(node, chain[i])) return false;
+  if (i === 0) return true;
+  if (chain[i].child) return !!node.parent && matchesFrom(node.parent, chain, i - 1);
+  for (let at = node.parent; at; at = at.parent) {
+    if (matchesFrom(at, chain, i - 1)) return true;
   }
-  return true;
+  return false;
 }
+
+const matchesChain = (node, chain) => matchesFrom(node, chain, chain.length - 1);
 
 function* walk(node) {
   for (const kid of node.kids) {
@@ -99,12 +111,18 @@ const messageFrom = (badges) =>
 
 // Mine. The chip sits behind #input-container, and carries `hidden` in a
 // popped-out chat even while the badge is right there.
-const myChip = (mine) =>
-  el("yt-live-chat-author-chip", { hidden: "" }, [
+const myChip = (mine, hidden) =>
+  el("yt-live-chat-author-chip", hidden ? { hidden: "" } : {}, [
     el("span", { id: "chat-badges" }, mine ? [badge("member")] : [])
   ]);
 
-export function page({ chip = true, mine = false, others = 57, moderators = 1 } = {}) {
+// `hidden` is a fixture of the page, not a fact about membership: a popped-out
+// chat hides the chip either way. Every fixture used to set it, so a selector
+// that *required* hidden passed everything — and on a page where the chip is
+// visible that selector finds nothing, which reads as "cannot tell" and
+// leaves a non-member's cards unlocked.
+export function page({ chip = true, mine = false, others = 57, moderators = 1,
+                       hidden = true } = {}) {
   const messages = [];
   for (let i = 0; i < others; i++) messages.push(messageFrom([badge("member")]));
   for (let i = 0; i < moderators; i++) messages.push(messageFrom([badge("moderator")]));
@@ -117,7 +135,7 @@ export function page({ chip = true, mine = false, others = 57, moderators = 1 } 
           el("div", { id: "container" }, [
             el("div", { id: "top" }, [
               el("div", { id: "input-container" }, [
-                ...(chip ? [myChip(mine)] : []),
+                ...(chip ? [myChip(mine, hidden)] : []),
                 el("yt-live-chat-text-input-field-renderer", {}, [el("div", { id: "input" })])
               ])
             ])

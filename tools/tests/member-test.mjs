@@ -18,9 +18,16 @@ import { readFileSync } from "node:fs";
 import { page } from "./page.mjs";
 
 globalThis.OshiDeck = {};
+// Real storage, so the real operations can be run against it. Counting calls
+// to a stub that always says "saved" proves a call happened, not that a card
+// was saved — a save addressed to the wrong channel is rejected by the op and
+// looked identical from outside.
+let disk = { cards: [], decks: {}, channelMeta: {}, settings: {} };
 globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
-  get: async () => ({}), set: async () => {}
+  get: async () => JSON.parse(JSON.stringify(disk)),
+  set: async (patch) => { disk = { ...disk, ...JSON.parse(JSON.stringify(patch)) }; }
 } } };
+globalThis.crypto ??= (await import("node:crypto")).webcrypto;
 await import("../../src/tokens.js");
 await import("../../src/backup.js");
 await import(`file://${process.env.OD_STORE || "/Users/maintainer/OshiDeck/src/store.js"}`);
@@ -61,7 +68,19 @@ const lifted = [
 ].join("\n");
 
 let fail = 0;
-const check = (label, ok) => { if (!ok) fail++; console.log((ok ? "ok   " : "FAIL ") + label); };
+
+// Given a function, it is called here: production can hand the page a selector
+// the engine refuses to guess at, and that has to read as a failed assertion
+// rather than a crashed file — a file that dies reports no FAIL line at all,
+// and the mutation checker would count that as nothing happening.
+const check = (label, ok) => {
+  let passed = false;
+  let why = "";
+  try { passed = typeof ok === "function" ? ok() : ok; }
+  catch (error) { why = ` — ${error.message}`; }
+  if (!passed) fail++;
+  console.log((passed ? "ok   " : "FAIL ") + label + (passed ? "" : why));
+};
 
 const HERE = "UCsakura0000000000000000";
 const AWAY = "UCyumeno0000000000000000";
@@ -75,29 +94,43 @@ const { tokens, trending } = globalThis.OshiDeck;
 const input = { id: "the editor" };
 
 function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "さくら" },
-                disk = null } = {}) {
+                held = null, moves = null } = {}) {
   const seen = { writes: [], toasts: [], renders: 0 };
+
+  // What the page is showing, and which channel that is — both able to change
+  // while storage is being read, which is the case the pairing exists for.
+  let showing = doc;
+  let where = channel;
+
   const api = new Function(
     "document", "tokens", "store", "watcher", "trending",
     "getChannel", "showToast", "shutdown", "render", "flashCard", "journal", "log", "editingId",
     "findChatInput", "currentInput", "rootEl", "scheduleRender",
     `${lifted}
      return { membership, whyNotSendable, markLocked, playableFirst, orderDeck,
-              buildDeck, saveTokens, reconcileChannel, onPageChanged };`
+              buildDeck, buildPool, saveTokens, reconcileChannel, onPageChanged };`
   )(
-    doc,
+    { querySelector: (selector) => showing.querySelector(selector) },
     tokens,
     {
       ...store,
-      read: async () => disk,
+      read: async () => {
+        const data = held === null ? await store.read() : held;
+        // The page moves here: after the read has been asked for, before the
+        // answer is used.
+        if (moves) ({ showing, where } = moves());
+        return data;
+      },
+      // The real operation, against real storage. A stub that answers "saved"
+      // to anything cannot tell a save from one the store rejects.
       apply: async (op, args) => {
         seen.writes.push({ op, args });
-        return { ok: true, value: { id: args.card?.id || "new", added: 1 } };
+        return store.runOp(op, args);
       }
     },
     { ranking: () => ranking },
     trending,
-    () => channel,
+    () => where,
     (message) => seen.toasts.push(message),
     () => seen.toasts.push("shutdown"),
     () => { seen.renders += 1; },
@@ -115,21 +148,33 @@ function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "
 
 /* ---------- am I a member ---------- */
 
-check("my own badge beside the input says yes", lift({ doc: page({ mine: true }) }).membership() === true);
+// Lazily, all of them: production hands the page its selector, and one the
+// engine will not guess at has to read as a failed assertion here rather than
+// take the file down with it.
+const asked = (over) => () => lift({ doc: page(over) }).membership();
+
+check("my own badge beside the input says yes", () => asked({ mine: true })() === true);
 
 check(
   "a chat full of other people's members is not me",
-  lift({ doc: page({ mine: false, others: 57 }) }).membership() === false
+  () => asked({ mine: false, others: 57 })() === false
 );
 
 check(
   "a hidden chip still answers, since a popped-out chat hides it either way",
-  lift({ doc: page({ mine: true }) }).membership() === true
+  () => asked({ mine: true, hidden: true })() === true
 );
+
+// And the other way round. Every fixture used to hide the chip, which let a
+// selector that *required* hidden pass everything — on a page that shows the
+// chip that selector finds nothing, and a definite no is read as "cannot
+// tell", which leaves the cards unlocked.
+check("a chip on show answers the same way", () => asked({ mine: true, hidden: false })() === true);
+check("and says no just as plainly", () => asked({ mine: false, hidden: false })() === false);
 
 // Not knowing is its own answer. The alternative — reading a page that has
 // not rendered yet as "not a member" — locks a card that is perfectly fine.
-check("no chip at all is not a no", lift({ doc: page({ chip: false }) }).membership() === null);
+check("no chip at all is not a no", () => asked({ chip: false })() === null);
 
 /* ---------- what that buys ---------- */
 
@@ -222,7 +267,10 @@ check("and comes back to the front when it can", deck(HERE, true).map((c) => c.i
 
 // Chat-driven is a second sort with its own exit, and it was a second place
 // to forget.
-const loud = new Map([[JSON.stringify(stamp(HERE)), { score: 100, count: 30 }]]);
+// Keyed with the real signature. It was JSON.stringify here while the lift
+// supplied the real trending, so every lookup missed and the assertion was
+// passing on the fallback order — which that card already led.
+const loud = new Map([[trending.signature(stamp(HERE)), { score: 100, count: 30 }]]);
 const trendy = (member) => {
   const cards = [
     { id: "ours", tokens: stamp(HERE), heat: 1, lastUsedAt: 1 },
@@ -260,53 +308,77 @@ built = lift({ doc: page({ mine: true }) }).buildDeck(shelf(HERE), HERE);
 check("a member's deck leaves it playable", built.find((c) => c.id === "ours")?.locked === false);
 check("and where the sort put it", built[0].id === "ours");
 
+// The pool asks the same question from its own line, which is its own way to
+// forget: dropping the question there, or the partition, changed nothing any
+// test could see.
+// The locked card comes first, so the partition has to actually move it —
+// with it already last, dropping playableFirst here changed nothing visible.
+const shelved = (channelId) => ({
+  ...shelf(channelId),
+  cards: [...shelf(channelId).cards].reverse(),
+  decks: { [channelId]: [] }
+});
+
+let pool = lift({ doc: page({ mine: false }) }).buildPool(shelved(HERE), HERE);
+check("the pool locks what cannot be sent", pool.find((c) => c.id === "ours")?.locked === true);
+check("and puts it last there too", pool.at(-1).id === "ours");
+
+pool = lift({ doc: page({ mine: true }) }).buildPool(shelved(HERE), HERE);
+check("a member's pool leaves it playable", pool.find((c) => c.id === "ours")?.locked === false);
+
+check("and with no channel there is no pool at all",
+  lift().buildPool(shelved(HERE), null).length === 0);
+
 /* ---------- saving one you cannot send ---------- */
 
 // Checking that the question is asked is not checking that the answer is
 // obeyed: `if (false && why)` kept both of those true while every refused
 // save went through. So the save runs, and what matters is whether anything
 // was written.
-const empty = (channelId) =>
-  ({ cards: [], decks: { [channelId]: [] }, channelMeta: {}, settings: shelf(channelId).settings });
-
-const saving = (doc, captured) => {
-  const api = lift({ doc, disk: empty(HERE) });
-  return api.saveTokens(captured, "channel").then(() => api.seen);
+// What ends up in the pool, not what was asked of it.
+const saving = async (doc, captured, over = {}) => {
+  disk = { cards: [], decks: { [HERE]: [] }, channelMeta: {}, settings: {} };
+  const api = lift({ doc, ...over });
+  await api.saveTokens(captured, "channel");
+  return { ...api.seen, cards: disk.cards };
 };
 
 let after = await saving(page({ mine: false }), stamp(HERE));
-check("a member emoji you cannot send is not saved", after.writes.length === 0);
+check("a member emoji you cannot send is not saved", after.cards.length === 0);
+check("and nothing was even asked of the store", after.writes.length === 0);
 check("and you are told why", after.toasts.join("").includes("メンバー"));
 
 after = await saving(page({ mine: true }), stamp(HERE));
-check("the same card saves once you are a member", after.writes.some((w) => w.op === "addCard"));
+check("the same card lands in the pool once you are a member", after.cards.length === 1);
+check("as this channel's, since it can be nothing else", after.cards[0].scope === HERE);
 
 after = await saving(page({ mine: false }), text("わこつ"));
-check("and plain words were never in question", after.writes.some((w) => w.op === "addCard"));
+check("and plain words were never in question", after.cards.length === 1);
 
-// The one the review found: the page can move to another chat while storage
-// is being read, and the emoji being saved then belong to the channel we just
-// left. The badge on screen is about the new one, so it answers nothing about
-// them — and the way to show that it is no longer being used as the answer is
-// that both badges now give the same result.
-const moved = async (mine) => {
-  const api = lift({
-    doc: page({ mine }),                        // this chat, wherever we are
-    channel: { id: AWAY, name: "ゆめの" },
-    disk: empty(AWAY)
-  });
-  await api.saveTokens(stamp(HERE), "channel");
-  return api.seen.writes.filter((w) => w.op === "addCard").length;
-};
+// The one the review found, and the shape it actually needs: the page moves
+// *while storage is being read*. Before, the chat is the one the emoji came
+// from and there is no membership; by the time the answer comes back, the
+// page is somewhere I am a member. Reading the badge then, rather than at the
+// start, turns a definite no into a "cannot tell" — and lets the save through.
+const arriving = () => ({ showing: page({ mine: true }), where: { id: AWAY, name: "ゆめの" } });
 
-check("a badge from this chat is not the answer for another channel's emoji",
-  (await moved(true)) === (await moved(false)));
+after = await saving(page({ mine: false }), stamp(HERE), { moves: arriving });
+check(
+  "a membership found after the page moved does not answer for where we were",
+  after.cards.length === 0
+);
+check("and the refusal still says what it is", after.toasts.join("").includes("メンバー"));
 
-// Which way it falls is the same choice made everywhere else here: not
-// knowing is not a no. The card is scoped to the channel the emoji came from,
-// so the next time that deck is built, on the page that can actually answer,
-// it locks if the membership is not there.
-check("and not knowing lets the save through", (await moved(false)) === 1);
+// The pairing cuts both ways: a badge read here says no more about another
+// channel's emoji than it says yes. Refusing on it would stop a card that is
+// very likely fine, and the page that can actually answer will lock it.
+after = await saving(page({ mine: false }), stamp(AWAY));
+check("a badge here does not refuse another channel's emoji either", after.cards.length === 1);
+check("and the card is that channel's, not this one's", after.cards[0].scope === AWAY);
+
+// The same move, but the emoji were never in question.
+after = await saving(page({ mine: false }), text("888"), { moves: arriving });
+check("while an ordinary card is unaffected by any of it", after.cards.length === 1);
 
 /* ---------- and hearing about it at all ---------- */
 
@@ -341,6 +413,20 @@ check("and not knowing lets the save through", (await moved(false)) === 1);
   badges.kids.pop();
   api.onPageChanged();
   check("and so does the membership running out", api.seen.renders === settled + 2);
+}
+
+/* ---------- and that the observer is wired to hear it ---------- */
+
+// onPageChanged can be perfect and never called. Position is the only thing
+// that says the observer was given *this* function, and that it was told to
+// watch for a badge changing what it is — which is a membership change with
+// no nodes added or removed anywhere.
+{
+  const at = src.indexOf("const observer = new MutationObserver(");
+  const registered = src.slice(at, src.indexOf(");", src.indexOf("observe(", at)));
+  check("the observer runs onPageChanged", src.slice(at, at + 60).includes("MutationObserver(onPageChanged)"));
+  check("and watches attributes, not only nodes", /attributes:\s*true/.test(registered));
+  check("the type of a badge in particular", /attributeFilter:\s*\[\s*"type"\s*\]/.test(registered));
 }
 
 process.exit(fail);

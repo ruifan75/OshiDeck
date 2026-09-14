@@ -5,6 +5,7 @@
 // row — the hand tightens instead. And a card that cannot be sent is worse
 // than no card, so what is offered is filtered before it is ever shown.
 import { readFileSync } from "node:fs";
+import { page } from "./page.mjs";
 
 const source = process.env.OD_SOURCE
   ? new URL(`file://${process.env.OD_SOURCE}`)
@@ -13,10 +14,12 @@ const src = readFileSync(source, "utf8");
 
 const from = src.indexOf("  // A card is drawn when the chat bursts");
 const to = src.indexOf("  function buildDrawnRow(", from);
+// whyNotSendable comes along (below), and so does the line that asks it on
+// the panel's behalf.
 // What may be offered is decided by the same rule that locks a card, so the
 // real one comes along rather than a stand-in that would only agree with
 // itself.
-const ruleFrom = src.indexOf("  function whyNotSendable(list, channelId, member) {");
+const ruleFrom = src.indexOf("  // Am I a member of the channel running this chat?");
 const ruleTo = src.indexOf("  function markLocked(", ruleFrom);
 if (from < 0 || to < 0 || to <= from || ruleFrom < 0 || ruleTo <= ruleFrom) {
   console.log("FAIL could not lift drawFromChat out of content.js");
@@ -64,16 +67,19 @@ const tokenStub = {
 // as anybody was told.
 function panel({ suggest = true, now = 1_000_000, hold = 45_000,
                  channelId = null, member = null } = {}) {
-  const state = { chat: null, now, renders: 0, forgotten: 0, member };
+  const state = {
+    chat: null, now, renders: 0, forgotten: 0, member,
+    showing: page({ mine: member === true })
+  };
 
   // `painted` starts dirty so that clearing it can be seen: a stream that is
   // not the one before it must repaint from scratch, not skip on a signature
   // the previous chat left behind.
   const api = new Function(
-    "settingsCache", "watcher", "tokens", "store", "Date", "scheduleRender",
+    "settingsCache", "watcher", "tokens", "store", "Date", "scheduleRender", "document",
     `let painted = "stale";
      ${body};
-     return { drawFromChat, switchStream, painted: () => painted };`
+     return { drawFromChat, offerFromChat, switchStream, painted: () => painted };`
   )(
     { suggest },
     {
@@ -89,7 +95,10 @@ function panel({ suggest = true, now = 1_000_000, hold = 45_000,
     // and still keeps the whole file green.
     { tuning: (settings, group) => (group === "hold" ? hold : 0) },
     { now: () => state.now },
-    () => { state.renders += 1; }
+    () => { state.renders += 1; },
+    // offerFromChat reads the badge itself — that is the whole point of it
+    // being a function rather than two arguments composed at the call site.
+    { querySelector: (selector) => state.showing.querySelector(selector) }
   );
 
   return {
@@ -100,7 +109,13 @@ function panel({ suggest = true, now = 1_000_000, hold = 45_000,
     painted: () => api.painted(),
     switch: (video, channel) => api.switchStream(video, channel),
     // A membership can end while a card is being held.
-    becomes(next) { state.member = next; return this; },
+    becomes(next) {
+      state.member = next;
+      state.showing = page({ mine: next === true });
+      return this;
+    },
+    // What render() actually calls: it reads the badge off the page itself.
+    offer: (deck = []) => api.offerFromChat(deck, channelId ? { id: channelId } : null),
     draw: (deck = []) => api.drawFromChat(deck, { channelId, member: state.member })
   };
 }
@@ -212,6 +227,15 @@ check("and keeps it while nothing changes", lapsing.draw() === onLoan);
 
 lapsing.becomes(false);
 check("but loses it the moment the membership goes", lapsing.draw() === null);
+
+// The panel's own call, which reads the badge rather than being handed the
+// answer. Forcing that answer to true left the whole suite green.
+const asking = panel({ hold: 45_000, channelId: SAKURA_ID, member: false });
+check("the panel does not offer what the page says you cannot send",
+  asking.chat(heart).offer() === null);
+
+asking.becomes(true);
+check("and offers it once the page says you can", asking.offer()?.tokens === heart.tokens);
 
 /* ---------- a new stream is a new chat ---------- */
 

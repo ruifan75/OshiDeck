@@ -338,8 +338,10 @@ const MUTATIONS = [
     "    return ordered;"],
 
   [MEMBER, CONTENT, "a refusal that is asked for and then ignored",
-    "    if (why) {",
-    "    if (false && why) {"],
+    `    const why = whyNotSendable(captured, channel?.id, member);
+    if (why) {`,
+    `    const why = whyNotSendable(captured, channel?.id, member);
+    if (false && why) {`],
 
   [MEMBER, CONTENT, "this chat's badge answering for another channel's emoji",
     "    const member = channel?.id && channel.id === seen.channel?.id ? seen.member : null;",
@@ -364,6 +366,40 @@ const MUTATIONS = [
   [DRAW, CONTENT, "member emoji offered to someone who cannot send them",
     "    !whyNotSendable(seen.tokens, channelId, member);",
     "    true;"],
+
+  // The callers again, and the fixtures that were letting them through.
+  [MEMBER, CONTENT, "a chip that has to be hidden to count",
+    'const MY_CHIP = "yt-live-chat-message-input-renderer yt-live-chat-author-chip";',
+    'const MY_CHIP = "yt-live-chat-message-input-renderer yt-live-chat-author-chip[hidden]";'],
+
+  [MEMBER, CONTENT, "a badge read after the page has moved",
+    `    const seen = { channel: getChannel(), member: membership() };
+
+    const data = await store.read();`,
+    `    const data = await store.read();
+    const seen = { channel: getChannel(), member: membership() };`],
+
+  [MEMBER, CONTENT, "a pool that never asks",
+    "      store.poolFor(data, channelId).map((card) => ({ ...card })), channelId, membership()));",
+    "      store.poolFor(data, channelId).map((card) => ({ ...card })), channelId, true));"],
+
+  [MEMBER, CONTENT, "a pool that keeps a locked card where it was",
+    `    return playableFirst(markLocked(
+      store.poolFor(data, channelId)`,
+    `    return (markLocked(
+      store.poolFor(data, channelId)`],
+
+  [MEMBER, CONTENT, "an observer that is given something else to run",
+    "  const observer = new MutationObserver(onPageChanged);",
+    "  const observer = new MutationObserver(() => {});"],
+
+  [MEMBER, CONTENT, "an observer deaf to a badge changing in place",
+    `    childList: true, subtree: true, attributes: true, attributeFilter: ["type"]`,
+    "    childList: true, subtree: true"],
+
+  [DRAW, CONTENT, "an offer that takes the answer on trust",
+    "    return drawFromChat(deck, { channelId: channel?.id, member: membership() });",
+    "    return drawFromChat(deck, { channelId: channel?.id, member: true });"],
 
   [COLOUR, STORE, "an out-of-gamut hue clipped instead of desaturated",
     "    for (let c = chroma; c > 0.01 && found.some((v) => v < -0.0005 || v > 1.0005); c -= 0.005) {\n      found = rgb(c);\n    }",
@@ -455,10 +491,17 @@ const KILLS = {
   "a locked card left where the sort put it": "the most-used card still goes last once it cannot be sent",
   "chat-driven order forgetting the lock": "and goes to the back when you cannot",
   "a refusal that is asked for and then ignored": "a member emoji you cannot send is not saved",
-  "this chat's badge answering for another channel's emoji": "a badge from this chat is not the answer for another channel's emoji",
+  "this chat's badge answering for another channel's emoji": "a badge here does not refuse another channel's emoji either",
   "a deck built without asking": "a deck built for someone who is not a member locks the card",
   "a panel that never hears about joining": "joining repaints the panel",
   "a held card exempt from the membership ending": "but loses it the moment the membership goes",
+  "a chip that has to be hidden to count": "a chip on show answers the same way",
+  "a badge read after the page has moved": "a membership found after the page moved does not answer for where we were",
+  "a pool that never asks": "the pool locks what cannot be sent",
+  "a pool that keeps a locked card where it was": "and puts it last there too",
+  "an observer that is given something else to run": "the observer runs onPageChanged",
+  "an observer deaf to a badge changing in place": "and watches attributes, not only nodes",
+  "an offer that takes the answer on trust": "the panel does not offer what the page says you cannot send",
   "member emoji offered to someone who cannot send them": "nor this channel's while you are not a member"
 };
 

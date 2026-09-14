@@ -430,6 +430,15 @@
     return orderDeck(cards, data.settings);
   }
 
+  // The pool, assembled the same way and asking the same question. It was
+  // built inline in render(), where nothing could reach it — so dropping the
+  // question, or the partition, changed nothing any test could see.
+  function buildPool(data, channelId) {
+    if (!channelId) return [];
+    return playableFirst(markLocked(
+      store.poolFor(data, channelId).map((card) => ({ ...card })), channelId, membership()));
+  }
+
   // Am I a member of the channel running this chat?
   //
   // Measured on the page rather than worked out. My own badge sits in the
@@ -591,6 +600,12 @@
     return true;
   }
 
+  // Same reason as buildPool: the question has to be asked somewhere a test
+  // can watch it being asked.
+  function offerFromChat(deck, channel) {
+    return drawFromChat(deck, { channelId: channel?.id, member: membership() });
+  }
+
   function buildDrawnRow(card) {
     const el = document.createElement("div");
     el.className = "od-listcard od-drawn";
@@ -698,8 +713,15 @@
   let sending = false;
 
   async function playCard(card, { send }) {
-    if (card.locked) {
-      return showToast(card.lapsed
+    // Asked again here, and not only when the deck was built or the card
+    // drawn. The hand is deliberately frozen while the pointer is on it, so a
+    // membership ending under the pointer leaves every lock exactly as it
+    // was — and a drawn card has no lock at all, since it is in nobody's
+    // deck. Whatever the panel is showing, the press has to be right.
+    const why = whyNotSendable(card.tokens || [], getChannel()?.id, membership()) ||
+      (card.locked ? (card.lapsed ? "membership" : "elsewhere") : "");
+    if (why) {
+      return showToast(why === "membership"
         ? "メンバー限定のスタンプです。メンバーになると使えます"
         : "他チャンネルのメン限スタンプです");
     }
@@ -1823,15 +1845,12 @@
     inputIsPinned = inputHasContent &&
       tokens.requiredChannels(tokens.collectTokens(input)).length > 0;
 
-    const pool = channel?.id
-      ? playableFirst(markLocked(
-          store.poolFor(data, channel.id).map((card) => ({ ...card })), channel.id, membership()))
-      : [];
+    const pool = buildPool(data, channel?.id);
 
     const shown = poolOpen ? pool : deck;
     // Only alongside your own deck. The pool is a place to choose from, not
     // somewhere to be handed things.
-    const drawn = poolOpen ? null : drawFromChat(deck, { channelId: channel?.id, member: membership() });
+    const drawn = poolOpen ? null : offerFromChat(deck, channel);
 
     // Chat-driven mode renders every few seconds whether or not anything it
     // shows has changed, and rebuilding is not free: the elements are new, so
@@ -2045,7 +2064,11 @@
   }
 
   const observer = new MutationObserver(onPageChanged);
-  observer.observe(document.documentElement, { childList: true, subtree: true });
+  // `type` as well as childList: a badge can change what it is without being
+  // replaced, and that is a membership change with no nodes added or removed.
+  observer.observe(document.documentElement, {
+    childList: true, subtree: true, attributes: true, attributeFilter: ["type"]
+  });
 
   try {
     chrome.storage.onChanged.addListener((changes, area) => {

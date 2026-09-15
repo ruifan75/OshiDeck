@@ -13,24 +13,40 @@
 (() => {
   const OD = (globalThis.OshiDeck ||= {});
 
-  const FORMAT = 1;
+  const FORMAT = 2;
 
   // Where a preset card belongs. "channel" means whichever channel it is
   // loaded into — a preset cannot know, and must not guess.
   const SCOPES = new Set(["global", "channel"]);
 
-  // A deck, as content. Member emoji are left out: they belong to the channel
-  // that issues them and are unusable anywhere else, so carrying one into a
-  // preset would ship a card that can never be played.
+  const CHANNEL_ID = /^UC[A-Za-z0-9_-]{22}$/;
+
+  // Two kinds of preset, and the difference is whether it names a channel.
+  //
+  // Without one it is portable: anyone's empty deck can take it, so it can
+  // carry nothing that only works in one place.
+  //
+  // With one it is that channel's — and then its member emoji can travel,
+  // because the people it is being handed to are watching the same streamer
+  // and may well be members too. Leaving them out was reasoning from the
+  // portable kind alone: it dropped exactly the part of a deck that took the
+  // longest to build.
+  const offeredOn = (preset, channelId) => !preset?.channel || preset.channel === channelId;
+
   function fromDeck(data, channelId, { name, note } = {}) {
     const held = data.decks[channelId] || [];
     const byId = new Map(data.cards.map((card) => [card.id, card]));
 
     const cards = [];
+    let bound = false;
     for (const id of held) {
       const card = byId.get(id);
       if (!card) continue;
-      if (OD.tokens.requiredChannels(card.tokens).length) continue;
+      // Someone else's member emoji cannot be sent on this channel either, so
+      // they are not this deck's to hand on.
+      const required = OD.tokens.requiredChannels(card.tokens);
+      if (required.length && !required.every((id) => id === channelId)) continue;
+      if (required.length) bound = true;
       cards.push({
         tokens: card.tokens,
         scope: OD.store.scopeOf(card) === OD.store.GLOBAL ? "global" : "channel"
@@ -41,6 +57,9 @@
       format: FORMAT,
       name: name || "",
       note: note || "",
+      // Only when it has to be. A preset that names a channel is offered
+      // nowhere else, and most decks have no reason to be that narrow.
+      ...(bound ? { channel: channelId } : {}),
       cards
     };
   }
@@ -57,6 +76,9 @@
     }
     if (typeof raw.name !== "string" || !raw.name.trim()) return "name がありません";
     if (!Array.isArray(raw.cards) || !raw.cards.length) return "cards が空です";
+    if (raw.channel !== undefined && !CHANNEL_ID.test(raw.channel)) {
+      return `channel が不正です: ${raw.channel}`;
+    }
 
     const seen = new Set();
     for (const card of raw.cards) {
@@ -64,8 +86,17 @@
       if (!Array.isArray(card.tokens)) return "札に tokens がありません";
       if (!OD.tokens.hasSubstance(card.tokens)) return "中身のない札があります";
       if (!SCOPES.has(card.scope)) return `scope が不正です: ${card.scope}`;
-      if (OD.tokens.requiredChannels(card.tokens).length) {
-        return "メン限スタンプはプリセットに入れられません";
+
+      // Member emoji may travel, but only inside a preset that says whose
+      // they are — otherwise it would be offered to decks that can never
+      // send them.
+      const required = OD.tokens.requiredChannels(card.tokens);
+      if (required.length > 1) return "複数のチャンネルのメン限スタンプが混ざっています";
+      if (required.length && !raw.channel) {
+        return "メン限スタンプを入れるには channel が要ります";
+      }
+      if (required.length && required[0] !== raw.channel) {
+        return `よそのチャンネルのメン限スタンプが入っています: ${required[0]}`;
       }
 
       const key = OD.tokens.cardKey(card.tokens);
@@ -89,5 +120,5 @@
     }));
   }
 
-  OD.presets = { FORMAT, SCOPES, fromDeck, validate, cardsFor };
+  OD.presets = { FORMAT, SCOPES, CHANNEL_ID, offeredOn, fromDeck, validate, cardsFor };
 })();

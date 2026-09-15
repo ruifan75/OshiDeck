@@ -43,21 +43,39 @@ const data = {
     card("a", text("わこつ"), "global"),
     card("b", text("おかえり"), CH),
     card("c", stamp(CH), CH),
+    card("x", stamp(OTHER), OTHER),      // only a hand-edited state can put this here
     card("d", text("使っていない"), "global")
   ],
-  decks: { [CH]: ["a", "b", "c"] },
+  decks: { [CH]: ["a", "b", "c", "x"] },
   channelMeta: {},
   settings: {}
 };
 
 const made = presets.fromDeck(data, CH, { name: "さくらの定番" });
 
-check("only what is in the deck travels", made.cards.length === 2);
+check("only what is in the deck travels", made.cards.length === 3);
 check("in the order the deck had it", made.cards[0].tokens[0].value === "わこつ");
+
+// The reason member emoji used to be dropped was that a preset could not say
+// whose they were, so it could be offered anywhere. One that names a channel
+// can — and the people it is handed to are watching the same streamer, so
+// they may well be members too. Leaving them out threw away the part of a
+// deck that takes longest to build.
+check("this channel's member emoji travel", made.cards.some((c) => c.tokens.some((t) => t.emojiId)));
+check("and the preset says whose they are", made.channel === CH);
 check(
-  "member emoji are left behind, since they send nowhere else",
-  !made.cards.some((c) => c.tokens.some((t) => t.emojiId))
+  "another channel's are still left behind, since nobody here can send them",
+  !made.cards.some((c) => c.tokens.some((t) => (t.emojiId || "").startsWith(OTHER)))
 );
+
+// A deck with nothing channel-bound in it stays portable: naming a channel
+// would mean it is offered nowhere else, for no reason.
+const plain = presets.fromDeck(
+  { ...data, decks: { [CH]: ["a", "b"] } }, CH, { name: "どこでも" }
+);
+check("a deck with no member emoji names no channel", plain.channel === undefined);
+check("and still carries its cards", plain.cards.length === 2);
+
 check("a universal card says so", made.cards[0].scope === "global");
 check(
   "and a channel-only one says only that it is channel-only",
@@ -67,6 +85,13 @@ check(
   "no ids, no counts, no history",
   made.cards.every((c) => !("id" in c) && !("uses" in c) && !("lastUsedAt" in c))
 );
+
+/* ---------- where it is offered ---------- */
+
+check("a preset that names a channel is offered there", presets.offeredOn(made, CH));
+check("and nowhere else", !presets.offeredOn(made, OTHER));
+check("a portable one is offered anywhere", presets.offeredOn(plain, OTHER));
+check("even where the channel is not known yet", presets.offeredOn(plain, null));
 
 /* ---------- what will not be handed over ---------- */
 
@@ -79,9 +104,23 @@ check("a card needs tokens", !!broken({ cards: [{ scope: "global" }] }));
 check("with something in them", !!broken({ cards: [{ tokens: text("  "), scope: "global" }] }));
 check("and a scope it knows", !!broken({ cards: [{ tokens: text("x"), scope: "everywhere" }] }));
 check(
-  "member emoji cannot be smuggled in by hand",
+  "member emoji from another channel cannot be smuggled in by hand",
   !!broken({ cards: [{ tokens: stamp(OTHER), scope: "channel" }] })
 );
+// The message matters as much as the refusal: "this needs a channel" is a
+// thing the person editing the file can act on, where "someone else's emoji"
+// sends them looking for an emoji that is not there. Checking only that it
+// said *something* let the two guards cover for each other.
+check(
+  "nor can they ride in a preset that names nobody",
+  (presets.validate({ ...made, channel: undefined }) || "").includes("channel が要ります")
+);
+check(
+  "nor two channels' worth in one card",
+  !!broken({ cards: [{ tokens: [...stamp(CH), ...stamp(OTHER)], scope: "channel" }] })
+);
+check("a channel that is not one is refused", !!broken({ channel: "not-a-channel" }));
+check("and the portable kind still needs none", presets.validate(plain) === null);
 check(
   "nor can the same card twice",
   !!broken({ cards: [{ tokens: text("x"), scope: "global" }, { tokens: text("x"), scope: "global" }] })
@@ -90,14 +129,28 @@ check("a newer format is refused rather than half-read", !!broken({ format: 99 }
 
 /* ---------- loading it ---------- */
 
-const fresh = presets.cardsFor(made, OTHER);
+const fresh = presets.cardsFor(plain, OTHER);
 check("every card arrives with an id of its own", new Set(fresh.map((c) => c.id)).size === 2);
 check("and no history", fresh.every((c) => c.uses === 0 && c.lastUsedAt === 0));
 check("universal stays universal", fresh[0].scope === store.GLOBAL);
 check("and channel-only means the channel it is loaded into", fresh[1].scope === OTHER);
 
+// The bound kind, loaded where it belongs.
 disk = { cards: [], decks: {}, channelMeta: {}, settings: {} };
-let result = await store.runOp("loadPreset", { channelId: OTHER, cards: presets.cardsFor(made, OTHER) });
+await store.runOp("loadPreset", { channelId: CH, cards: presets.cardsFor(made, CH) });
+check("loaded on its own channel, the member emoji arrive", disk.cards.length === 3);
+check("and are that channel's, since they can be nothing else",
+  disk.cards.find((c) => c.tokens.some((t) => t.emojiId))?.scope === CH);
+
+// And the guard behind the offer: hand it to the wrong channel and the part
+// that cannot be sent there simply does not arrive.
+disk = { cards: [], decks: {}, channelMeta: {}, settings: {} };
+await store.runOp("loadPreset", { channelId: OTHER, cards: presets.cardsFor(made, OTHER) });
+check("forced onto another channel, only what can be sent there loads",
+  disk.cards.length === 2 && !disk.cards.some((c) => c.tokens.some((t) => t.emojiId)));
+
+disk = { cards: [], decks: {}, channelMeta: {}, settings: {} };
+let result = await store.runOp("loadPreset", { channelId: OTHER, cards: presets.cardsFor(plain, OTHER) });
 check("loading fills the deck", disk.decks[OTHER].length === 2);
 check("and the pool with it", disk.cards.length === 2);
 check("reporting what it did", result.value.added === 2 && result.value.reused === 0);
@@ -109,7 +162,7 @@ disk = {
   channelMeta: {},
   settings: {}
 };
-result = await store.runOp("loadPreset", { channelId: OTHER, cards: presets.cardsFor(made, OTHER) });
+result = await store.runOp("loadPreset", { channelId: OTHER, cards: presets.cardsFor(plain, OTHER) });
 check("a card already in the pool is reused, not copied", disk.cards.length === 2);
 check("and it is the one that was already there", disk.decks[OTHER].includes("mine"));
 check("counted as reused", result.value.reused === 1 && result.value.added === 1);
@@ -122,7 +175,7 @@ disk = {
   channelMeta: {},
   settings: {}
 };
-result = await store.runOp("loadPreset", { channelId: OTHER, cards: presets.cardsFor(made, OTHER) });
+result = await store.runOp("loadPreset", { channelId: OTHER, cards: presets.cardsFor(plain, OTHER) });
 check(
   "a card that only works on another channel is not treated as a match",
   disk.decks[OTHER].length === 2
@@ -139,7 +192,7 @@ disk = {
   channelMeta: {},
   settings: {}
 };
-result = await store.runOp("loadPreset", { channelId: OTHER, cards: presets.cardsFor(made, OTHER) });
+result = await store.runOp("loadPreset", { channelId: OTHER, cards: presets.cardsFor(plain, OTHER) });
 check(
   "a usable card is found even behind one that is not",
   disk.cards.length === 3 && disk.decks[OTHER].includes("mine")
@@ -151,7 +204,7 @@ check(
 // could be interrupted between the two.
 disk = { cards: [], decks: {}, channelMeta: {}, settings: {} };
 await store.runOp("loadPreset", {
-  channelId: OTHER, name: "ゆめの", cards: presets.cardsFor(made, OTHER)
+  channelId: OTHER, name: "ゆめの", cards: presets.cardsFor(plain, OTHER)
 });
 check("loading a preset also names the channel", disk.channelMeta[OTHER]?.name === "ゆめの");
 check("and gives it a colour to be shown in", typeof disk.channelMeta[OTHER]?.hue === "number");
@@ -184,7 +237,7 @@ check("and says what it did", said.length === 1 && said[0].includes("さくら�
 
 // Loading twice is not loading twice as much.
 const before = disk.cards.length;
-await store.runOp("loadPreset", { channelId: OTHER, cards: presets.cardsFor(made, OTHER) });
+await store.runOp("loadPreset", { channelId: OTHER, cards: presets.cardsFor(plain, OTHER) });
 check("loading the same preset again adds nothing", disk.cards.length === before);
 check("and does not repeat itself in the deck", new Set(disk.decks[OTHER]).size === disk.decks[OTHER].length);
 

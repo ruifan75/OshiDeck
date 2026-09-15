@@ -317,7 +317,9 @@ function presetOffer() {
   const holder = document.createElement("div");
   holder.className = "preset-offer";
 
-  loadBundled().then((list) => {
+  loadBundled().then((all) => {
+    // A preset that names a channel is only a starting hand for that channel.
+    const list = all.filter((preset) => presets.offeredOn(preset, selected));
     if (!list.length || !selected) return;
 
     const line = document.createElement("small");
@@ -827,7 +829,8 @@ async function exportPreset() {
 
   const dropped = cardsOf(selected).length - preset.cards.length;
   importStatus(`${preset.cards.length}枚を書き出しました` +
-    (dropped > 0 ? `（メン限スタンプの${dropped}枚は入りません）` : ""));
+    (preset.channel ? "（このチャンネル専用。メン限スタンプを含みます）" : "") +
+    (dropped > 0 ? `（よそのチャンネルのメン限スタンプ${dropped}枚は入りません）` : ""));
 }
 
 document.querySelector("#presetBtn").addEventListener("click", exportPreset);

@@ -163,7 +163,7 @@ const MUTATIONS = [
     "      0,"],
 
   [VISIBILITY, CONTENT, "presets arriving after the panel has given up asking",
-    "      pool.length, presetsOnHand().length,",
+    "      pool.length, presetsOnHand(channel?.id).length,",
     "      pool.length,"],
 
   [VISIBILITY, CONTENT, "a panel that never actually skips",
@@ -182,9 +182,27 @@ const MUTATIONS = [
     "    const known = OSHI_HUES[channelId];\n    if (known != null) return known;",
     "    const known = undefined;\n    if (known != null) return known;"],
 
-  [PRESET, PRESETS, "member emoji carried into a preset",
-    "      if (OD.tokens.requiredChannels(card.tokens).length) continue;",
+  [PRESET, PRESETS, "another channel's member emoji carried into a preset",
+    "      if (required.length && !required.every((id) => id === channelId)) continue;",
     "      if (false) continue;"],
+
+  [PRESET, PRESETS, "a preset that carries member emoji without saying whose",
+    "      if (required.length) bound = true;",
+    "      if (false) bound = true;"],
+
+  [PRESET, PRESETS, "member emoji accepted into a preset that names nobody",
+    `      if (required.length && !raw.channel) {
+        return "メン限スタンプを入れるには channel が要ります";
+      }`,
+    "      // (allowed)"],
+
+  [PRESET, PRESETS, "a preset offered to channels it was never for",
+    "  const offeredOn = (preset, channelId) => !preset?.channel || preset.channel === channelId;",
+    "  const offeredOn = () => true;"],
+
+  [PRESET, STORE, "a preset forced onto a channel that cannot send it",
+    "        if (required.length && !required.every((id) => id === channelId)) continue;",
+    "        if (false) continue;"],
 
   [PRESET, PRESETS, "a preset that carries its ids along with its content",
     "        tokens: card.tokens,\n        scope:",
@@ -235,8 +253,8 @@ const MUTATIONS = [
     'channel?.id || "", "", hue ?? "",'],
 
   [VISIBILITY, CONTENT, "a pool that can gain a card unnoticed",
-    "      pool.length, presetsOnHand().length,",
-    "      presetsOnHand().length,"],
+    "      pool.length, presetsOnHand(channel?.id).length,",
+    "      presetsOnHand(channel?.id).length,"],
 
   [VISIBILITY, CONTENT, "a drawn card the list offers no way to keep",
     "    el.append(play, drawnTools(card));",
@@ -505,7 +523,11 @@ const KILLS = {
   "a wave redefined without saying so": "a wave is six messages and three tenths of the room",
   "an unset step falling through to nothing": "an unset step falls back to the middle one",
 
-  "member emoji carried into a preset": "member emoji are left behind",
+  "another channel's member emoji carried into a preset": "another channel's are still left behind",
+  "a preset that carries member emoji without saying whose": "and the preset says whose they are",
+  "member emoji accepted into a preset that names nobody": "nor can they ride in a preset that names nobody",
+  "a preset offered to channels it was never for": "and nowhere else",
+  "a preset forced onto a channel that cannot send it": "forced onto another channel, only what can be sent there loads",
   "a preset that carries its ids along with its content": "no ids, no counts, no history",
   "channel-only losing its meaning on the way in": "and channel-only means the channel it is loaded into",
   "a card that works only elsewhere counted as a match": "a card that only works on another channel is not treated as a match",

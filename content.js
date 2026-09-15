@@ -1392,7 +1392,7 @@
       rootEl?.clientWidth || 0,
       poolOpen ? "pool" : "deck", expanded ? "more" : "",
       editingId || "", flashId || "", inputHasContent ? "typing" : "",
-      pool.length, presetsOnHand().length,
+      pool.length, presetsOnHand(channel?.id).length,
       drawn?.key || "",
       shown.map(each).join(",")
     ].join("|");
@@ -2011,8 +2011,11 @@
   let bundledPresets = [];
   let askedForPresets = false;
 
-  function presetsOnHand() {
-    if (askedForPresets) return bundledPresets;
+  // `channelId` narrows it to what can actually be offered here: a preset
+  // that names a channel belongs to that channel alone, because it may carry
+  // member emoji nobody else can send.
+  function presetsOnHand(channelId) {
+    if (askedForPresets) return bundledPresets.filter((p) => presets.offeredOn(p, channelId));
     askedForPresets = true;
 
     try {
@@ -2025,7 +2028,7 @@
         .catch(() => {});
     } catch (_) { /* extension reloaded: no starting hand, no harm */ }
 
-    return bundledPresets;
+    return bundledPresets.filter((p) => presets.offeredOn(p, channelId));
   }
 
   // Offered only where it means something: a channel whose deck is empty.
@@ -2033,7 +2036,7 @@
   function appendPresetOffer(container, channel) {
     if (!channel?.id) return;
 
-    for (const preset of presetsOnHand()) {
+    for (const preset of presetsOnHand(channel.id)) {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "od-more";

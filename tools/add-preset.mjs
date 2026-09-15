@@ -57,6 +57,9 @@ if (at >= 0) {
   list.push(incoming);
   console.log(`「${incoming.name}」を追加しました（${incoming.cards.length}枚）`);
 }
+if (incoming.channel) {
+  console.log(`  ${incoming.channel} 専用 ── その配信でだけ出ます`);
+}
 
 // One line per card. JSON.stringify with an indent puts every token on its
 // own line, which turns a ten-card preset into a hundred lines and makes the
@@ -66,6 +69,7 @@ const shaped = (preset) => [
   `    "format": ${preset.format || 1},`,
   `    "name": ${JSON.stringify(preset.name)},`,
   `    "note": ${JSON.stringify(preset.note || "")},`,
+  ...(preset.channel ? [`    "channel": ${JSON.stringify(preset.channel)},`] : []),
   '    "cards": [',
   preset.cards
     .map((card) => `      { "tokens": ${JSON.stringify(card.tokens)}, "scope": ${JSON.stringify(card.scope)} }`)

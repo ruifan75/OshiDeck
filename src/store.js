@@ -539,8 +539,11 @@
       let reused = 0;
 
       for (const card of cards) {
-        // A preset cannot carry member emoji, but a hand-edited one might try.
-        if (OD.tokens.requiredChannels(card.tokens).length) continue;
+        // A preset can carry this channel's member emoji — its readers watch
+        // the same streamer — but nobody else's, and a hand-edited one might
+        // try. Anything that cannot be sent here is not loaded here.
+        const required = OD.tokens.requiredChannels(card.tokens);
+        if (required.length && !required.every((id) => id === channelId)) continue;
 
         const key = OD.tokens.cardKey(card.tokens);
         const family = byKey.get(key) || [];

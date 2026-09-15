@@ -63,8 +63,10 @@ const lifted = [
   cut("  async function saveTokens(", "  function clearInput("),
   // reconcileChannel and findDuplicate, which saveTokens leans on
   cut("  function reconcileChannel(", "  function flashCard("),
-  // what the panel does when the page changes under it
-  cut("  let lastMembership = null;", "  const observer = new MutationObserver(")
+  // what the panel does when the page changes under it, and what it watches
+  cut("  let lastMembership = null;", "  const observer = watchPage("),
+  // pressing a card
+  cut("  let sending = false;", "  // The renderer enables the button a beat after")
 ].join("\n");
 
 let fail = 0;
@@ -94,8 +96,12 @@ const { tokens, trending } = globalThis.OshiDeck;
 const input = { id: "the editor" };
 
 function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "さくら" },
-                held = null, moves = null } = {}) {
-  const seen = { writes: [], toasts: [], renders: 0 };
+                held = null, moves = null, autoSend = true, staged = [] } = {}) {
+  const seen = { writes: [], toasts: [], renders: 0, sent: 0, observer: null };
+
+  // What is actually in the editor. ⇧＋click can leave something there that
+  // the next card then carries out with it.
+  let editor = staged;
 
   // What the page is showing, and which channel that is — both able to change
   // while storage is being read, which is the case the pairing exists for.
@@ -106,12 +112,21 @@ function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "
     "document", "tokens", "store", "watcher", "trending",
     "getChannel", "showToast", "shutdown", "render", "flashCard", "journal", "log", "editingId",
     "findChatInput", "currentInput", "rootEl", "scheduleRender",
+    "getChatInput", "settingsCache", "submitChat", "MutationObserver",
     `${lifted}
      return { membership, whyNotSendable, markLocked, playableFirst, orderDeck,
-              buildDeck, buildPool, saveTokens, reconcileChannel, onPageChanged };`
+              buildDeck, buildPool, saveTokens, reconcileChannel, onPageChanged,
+              watchPage, playCard };`
   )(
     { querySelector: (selector) => showing.querySelector(selector) },
-    tokens,
+    // The real rules; only the editor is modelled. writeToInput appends
+    // unless told to replace, which is the behaviour that lets a staged
+    // reaction ride out with the next card.
+    {
+      ...tokens,
+      writeToInput: (_, list) => { editor = [...editor, ...list]; },
+      collectTokens: () => editor
+    },
     {
       ...store,
       read: async () => {
@@ -130,7 +145,7 @@ function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "
     },
     { ranking: () => ranking },
     trending,
-    () => where,
+    () => (where ? { ...where } : where),
     (message) => seen.toasts.push(message),
     () => seen.toasts.push("shutdown"),
     () => { seen.renders += 1; },
@@ -141,7 +156,12 @@ function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "
     () => input,             // the input is there and has not moved
     input,
     { isConnected: true },
-    () => { seen.renders += 1; }
+    () => { seen.renders += 1; },
+    () => editor,
+    { autoSend },
+    (done) => { seen.sent += 1; done?.(); },
+    class { constructor(fn) { seen.observer = { fn }; }
+            observe(root, options) { Object.assign(seen.observer, { root, options }); } }
   );
   return { ...api, seen };
 }
@@ -271,10 +291,14 @@ check("and comes back to the front when it can", deck(HERE, true).map((c) => c.i
 // supplied the real trending, so every lookup missed and the assertion was
 // passing on the fallback order — which that card already led.
 const loud = new Map([[trending.signature(stamp(HERE)), { score: 100, count: 30 }]]);
+// Deliberately the other way round: "plain" is the card habit would put
+// first, so if the ranking is never consulted this falls back to heat and the
+// assertion passes on that instead. (It did. Twice — the first fix was
+// written and then lost before it reached the file.)
 const trendy = (member) => {
   const cards = [
     { id: "ours", tokens: stamp(HERE), heat: 1, lastUsedAt: 1 },
-    { id: "plain", tokens: text("888"), heat: 1, lastUsedAt: 1 }
+    { id: "plain", tokens: text("888"), heat: 99, lastUsedAt: Date.now() }
   ];
   const api = lift({ ranking: loud });
   return api.orderDeck(api.markLocked(cards, HERE, member), { sortBy: "trend" })
@@ -417,16 +441,87 @@ check("while an ordinary card is unaffected by any of it", after.cards.length ==
 
 /* ---------- and that the observer is wired to hear it ---------- */
 
-// onPageChanged can be perfect and never called. Position is the only thing
-// that says the observer was given *this* function, and that it was told to
-// watch for a badge changing what it is — which is a membership change with
-// no nodes added or removed anywhere.
+// onPageChanged can be perfect and never called. Reading the source for a
+// name and an option said nothing about *what* was being watched: a detached
+// target, or `subtree: false`, passed every one of those assertions while
+// disconnecting the panel from the page entirely. So the observer is handed
+// in and asked afterwards.
 {
-  const at = src.indexOf("const observer = new MutationObserver(");
-  const registered = src.slice(at, src.indexOf(");", src.indexOf("observe(", at)));
-  check("the observer runs onPageChanged", src.slice(at, at + 60).includes("MutationObserver(onPageChanged)"));
-  check("and watches attributes, not only nodes", /attributes:\s*true/.test(registered));
-  check("the type of a badge in particular", /attributeFilter:\s*\[\s*"type"\s*\]/.test(registered));
+  const api = lift();
+  const root = { id: "the document element" };
+  api.watchPage(root);
+  const { fn, root: watched, options } = api.seen.observer;
+
+  // Not "a function was passed" — the one that answers a membership change.
+  // The page here says no and the panel has not been told yet, so the first
+  // call is a change and has to repaint.
+  api.seen.renders = 0;
+  fn();
+  check("the observer is given the function that hears a membership change",
+    api.seen.renders === 1);
+  check("it watches what it was handed", watched === root);
+  check("the whole tree under it", options.subtree === true);
+  check("nodes coming and going", options.childList === true);
+  check("and a badge changing what it is", options.attributes === true &&
+    Array.isArray(options.attributeFilter) && options.attributeFilter.includes("type"));
 }
+
+// The lines left over: what gets watched, and what the two helpers are handed
+// when render calls them. Pulling buildPool and offerFromChat out of render
+// made their insides testable and left their arguments exactly as exposed as
+// they were — passing null to either is invisible from inside.
+check("and it is the document that is watched",
+  /watchPage\(document\.documentElement\)/.test(src));
+check("the pool is built for the channel we are on",
+  /buildPool\(data, channel\?\.id\)/.test(src));
+// Anchored on the call, not the name: `function offerFromChat(deck, channel)`
+// matched the looser pattern and kept it true whatever render passed.
+check("and the offer is made about it too",
+  /:\s*offerFromChat\(deck, channel\)/.test(src));
+
+/* ---------- pressing one ---------- */
+
+// The press is the last moment anything can be right, and it was checked
+// against what the panel happened to be drawn with. Removing the guard
+// altogether passed every assertion in this file.
+const pressing = async (over, card, staged = []) => {
+  const api = lift({ staged, ...over });
+  await api.playCard(card, { send: false });
+  return api.seen;
+};
+
+const ours = { id: "ours", tokens: stamp(HERE) };
+
+let press = await pressing({ doc: page({ mine: false }) }, ours);
+check("a card the page says you cannot send is not sent", press.sent === 0);
+check("and says which kind of no it is", press.toasts.join("").includes("メンバー"));
+
+press = await pressing({ doc: page({ mine: true }) }, ours);
+check("and goes out once the page says you can", press.sent === 1);
+
+// The stale lock is what the panel was drawn with, and the hand freezes under
+// the pointer — so rejoining left a card refusing to play that had just
+// become playable again.
+press = await pressing({ doc: page({ mine: true }) }, { ...ours, locked: true, lapsed: true });
+check("a lock left over from before is not the answer once the page can give one",
+  press.sent === 1);
+
+// ...but it is the answer when the page cannot.
+press = await pressing({ doc: page({ chip: false }) }, { ...ours, locked: true, lapsed: true });
+check("while a page that cannot answer leaves the old lock standing", press.sent === 0);
+
+/* ---------- and what the press actually sends ---------- */
+
+// ⇧＋click stages a reaction in the editor without sending it. The card was
+// checked; the comment was not — so a plain card pressed afterwards carried
+// the unusable emoji out with it.
+press = await pressing({ doc: page({ mine: false }) }, { id: "plain", tokens: text("888") },
+  stamp(HERE));
+check("a plain card does not carry out what is already in the editor", press.sent === 0);
+check("and says what is in the way", press.toasts.join("").includes("入力欄"));
+
+press = await pressing({ doc: page({ mine: true }) }, { id: "plain", tokens: text("888") },
+  stamp(HERE));
+check("the same editor goes out once every part of it can", press.sent === 1);
 
 process.exit(fail);

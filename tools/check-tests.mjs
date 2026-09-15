@@ -390,12 +390,63 @@ const MUTATIONS = [
       store.poolFor(data, channelId)`],
 
   [MEMBER, CONTENT, "an observer that is given something else to run",
-    "  const observer = new MutationObserver(onPageChanged);",
-    "  const observer = new MutationObserver(() => {});"],
+    "    const watcher = new Observer(onPageChanged);",
+    "    const watcher = new Observer(() => {});"],
 
   [MEMBER, CONTENT, "an observer deaf to a badge changing in place",
-    `    childList: true, subtree: true, attributes: true, attributeFilter: ["type"]`,
-    "    childList: true, subtree: true"],
+    `      childList: true, subtree: true, attributes: true, attributeFilter: ["type"]`,
+    "      childList: true, subtree: true"],
+
+  [MEMBER, CONTENT, "an observer that watches one branch instead of the tree",
+    `      childList: true, subtree: true, attributes: true, attributeFilter: ["type"]`,
+    `      childList: true, subtree: false, attributes: true, attributeFilter: ["type"]`],
+
+  [MEMBER, CONTENT, "an observer pointed at nothing",
+    "  const observer = watchPage(document.documentElement);",
+    "  const observer = watchPage({ nodeType: 1 });"],
+
+  [MEMBER, CONTENT, "a stale lock overriding an answer the page can give",
+    `    const why = here && member !== null
+      ? whyNotSendable(card.tokens || [], here, member)
+      : (card.locked ? (card.lapsed ? "membership" : "elsewhere") : "");`,
+    `    const why = whyNotSendable(card.tokens || [], here, member) ||
+      (card.locked ? (card.lapsed ? "membership" : "elsewhere") : "");`],
+
+  [MEMBER, CONTENT, "a press that goes out unchecked",
+    "    const why = here && member !== null",
+    "    const why = false && here && member !== null"],
+
+  [MEMBER, CONTENT, "the card checked and the comment sent",
+    `    if (willSend && whyNotSendable(tokens.collectTokens(input), here, member)) {
+      sending = false;
+      return showToast("送れないスタンプが入力欄に残っています");
+    }
+`, ""],
+
+  [MEMBER, CONTENT, "a pool built for nobody",
+    "    const pool = buildPool(data, channel?.id);",
+    "    const pool = buildPool(data, null);"],
+
+  [MEMBER, CONTENT, "an offer made about no channel at all",
+    "poolOpen ? null : offerFromChat(deck, channel);",
+    "poolOpen ? null : offerFromChat(deck, null);"],
+
+  [DRAW, CONTENT, "an offer that refuses a page which has not answered",
+    "    return drawFromChat(deck, { channelId: channel?.id, member: membership() });",
+    "    return drawFromChat(deck, { channelId: channel?.id, member: membership() === true });"],
+
+  [VISIBILITY, CONTENT, "a skip that can never hold",
+    "    const next = panelSignature(data, channel, hue, shown, pool, drawn);",
+    "    const next = panelSignature(data, channel, hue, shown, pool, drawn);\n    painted = null;"],
+
+  [VISIBILITY, CONTENT, "a drawn card given nothing to press",
+    `  function drawnTools(card) {
+    const tools = document.createElement("div");
+    tools.className = "od-card-tools";`,
+    `  function drawnTools(card) {
+    const tools = document.createElement("div");
+    tools.className = "od-card-tools";
+    return tools;`],
 
   [DRAW, CONTENT, "an offer that takes the answer on trust",
     "    return drawFromChat(deck, { channelId: channel?.id, member: membership() });",
@@ -499,8 +550,18 @@ const KILLS = {
   "a badge read after the page has moved": "a membership found after the page moved does not answer for where we were",
   "a pool that never asks": "the pool locks what cannot be sent",
   "a pool that keeps a locked card where it was": "and puts it last there too",
-  "an observer that is given something else to run": "the observer runs onPageChanged",
-  "an observer deaf to a badge changing in place": "and watches attributes, not only nodes",
+  "an observer that is given something else to run": "the observer is given the function that hears a membership change",
+  "an observer deaf to a badge changing in place": "and a badge changing what it is",
+  "an observer that watches one branch instead of the tree": "the whole tree under it",
+  "an observer pointed at nothing": "and it is the document that is watched",
+  "a stale lock overriding an answer the page can give": "a lock left over from before is not the answer once the page can give one",
+  "a press that goes out unchecked": "and says which kind of no it is",
+  "the card checked and the comment sent": "a plain card does not carry out what is already in the editor",
+  "a pool built for nobody": "the pool is built for the channel we are on",
+  "an offer made about no channel at all": "and the offer is made about it too",
+  "an offer that refuses a page which has not answered": "and a page that cannot answer yet does not refuse",
+  "a skip that can never hold": "and nothing rewrites the record in between",
+  "a drawn card given nothing to press": "a drawn card is handed something to press",
   "an offer that takes the answer on trust": "the panel does not offer what the page says you cannot send",
   "member emoji offered to someone who cannot send them": "nor this channel's while you are not a member"
 };

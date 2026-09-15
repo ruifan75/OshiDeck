@@ -718,8 +718,16 @@
     // membership ending under the pointer leaves every lock exactly as it
     // was — and a drawn card has no lock at all, since it is in nobody's
     // deck. Whatever the panel is showing, the press has to be right.
-    const why = whyNotSendable(card.tokens || [], getChannel()?.id, membership()) ||
-      (card.locked ? (card.lapsed ? "membership" : "elsewhere") : "");
+    //
+    // A definite answer now beats what the panel was drawn with, in both
+    // directions: rejoining under the pointer left the stale lock refusing a
+    // card that had just become sendable again. The lock only speaks when the
+    // page cannot.
+    const here = getChannel()?.id;
+    const member = membership();
+    const why = here && member !== null
+      ? whyNotSendable(card.tokens || [], here, member)
+      : (card.locked ? (card.lapsed ? "membership" : "elsewhere") : "");
     if (why) {
       return showToast(why === "membership"
         ? "メンバー限定のスタンプです。メンバーになると使えます"
@@ -737,6 +745,15 @@
     sending = willSend;
 
     tokens.writeToInput(input, card.tokens || []);
+
+    // What leaves is the editor, not the card. ⇧＋click stages a reaction
+    // without sending it, so an unusable one can already be sitting there and
+    // the next card carries it out the door — the card was checked and the
+    // comment was not.
+    if (willSend && whyNotSendable(tokens.collectTokens(input), here, member)) {
+      sending = false;
+      return showToast("送れないスタンプが入力欄に残っています");
+    }
     if (willSend) submitChat(() => { sending = false; });
 
     // A drawn card is not in the pool, so there is no use count to raise.
@@ -2063,12 +2080,22 @@
     scheduleRender();
   }
 
-  const observer = new MutationObserver(onPageChanged);
+  // Handed the observer rather than making one, so a test can be given the
+  // same thing the browser is: which function, watching what, for what. The
+  // assertions before this checked the source text for a name and an option,
+  // which a detached target or `subtree: false` sailed straight past.
+  //
   // `type` as well as childList: a badge can change what it is without being
   // replaced, and that is a membership change with no nodes added or removed.
-  observer.observe(document.documentElement, {
-    childList: true, subtree: true, attributes: true, attributeFilter: ["type"]
-  });
+  function watchPage(root, Observer = MutationObserver) {
+    const watcher = new Observer(onPageChanged);
+    watcher.observe(root, {
+      childList: true, subtree: true, attributes: true, attributeFilter: ["type"]
+    });
+    return watcher;
+  }
+
+  const observer = watchPage(document.documentElement);
 
   try {
     chrome.storage.onChanged.addListener((changes, area) => {

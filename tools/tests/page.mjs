@@ -29,7 +29,10 @@ const compound = (token) => {
     tag: token.match(/^[\w-]+/)?.[0]?.toUpperCase() || null,
     id: token.match(/#([\w-]+)/)?.[1] || null,
     attrs: [...token.matchAll(/\[([\w-]+)\s*=\s*['"]?([^\]'"]+)['"]?\]/g)].map((m) => [m[1], m[2]]),
-    bare: /\[([\w-]+)\]/.test(token) ? token.match(/\[([\w-]+)\]/)[1] : null
+    // All of them. Keeping only the first meant `[type][data-nonsense]`
+    // matched a badge that has no data-nonsense, where a browser matches
+    // nothing at all.
+    bare: [...token.matchAll(/\[([\w-]+)\]/g)].map((m) => m[1])
   };
 };
 
@@ -48,7 +51,7 @@ const chainOf = (group) => {
 const hits = (node, step) =>
   (!step.tag || node.tag === step.tag) &&
   (!step.id || node.id === step.id) &&
-  (!step.bare || node.attrs[step.bare] !== undefined) &&
+  step.bare.every((name) => node.attrs[name] !== undefined) &&
   step.attrs.every(([name, value]) => String(node.attrs[name]) === value);
 
 // Backtracks, because taking the nearest matching ancestor and walking on is
@@ -121,6 +124,48 @@ const myChip = (mine, hidden) =>
 // that *required* hidden passed everything — and on a page where the chip is
 // visible that selector finds nothing, which reads as "cannot tell" and
 // leaves a non-member's cards unlocked.
+// Enough of a document to let a builder build. Not a browser — but the
+// question "does this element contain a button" cannot be asked of a string,
+// and asserting that the source mentions drawnTools(card) let a drawnTools
+// that returns an empty div pass.
+export function documentFor(root) {
+  return {
+    querySelector: (selector) => root.querySelector(selector),
+    createElement: (tag) => make(tag),
+    createDocumentFragment: () => make("#fragment"),
+    createTextNode: (value) => ({ tag: "#text", text: value, kids: [], attrs: {} })
+  };
+}
+
+function make(tag) {
+  const node = el(tag, {}, []);
+  node.dataset = {};
+  node.style = { setProperty() {}, removeProperty() {} };
+  node.classList = { add() {}, remove() {}, toggle() {} };
+  node.addEventListener = () => {};
+  node.setAttribute = (name, value) => { node.attrs[name] = String(value); };
+  node.getAttribute = (name) => (name in node.attrs ? node.attrs[name] : null);
+  node.append = (...kids) => kids.forEach((kid) => node.appendChild(kid));
+  node.appendChild = (kid) => {
+    if (kid && typeof kid === "object") {
+      if (kid.tag === "#fragment") return kid.kids.forEach((each) => node.appendChild(each));
+      kid.parent = node;
+      node.kids.push(kid);
+    }
+    return kid;
+  };
+  node.replaceChildren = (...kids) => { node.kids = []; node.append(...kids); };
+  Object.defineProperty(node, "className", {
+    get: () => node.attrs.class || "",
+    set: (value) => { node.attrs.class = value; }
+  });
+  Object.defineProperty(node, "textContent", {
+    get: () => node.kids.map((k) => k.text || k.textContent || "").join(""),
+    set: (value) => { node.kids = [{ tag: "#text", text: String(value), kids: [], attrs: {} }]; }
+  });
+  return node;
+}
+
 export function page({ chip = true, mine = false, others = 57, moderators = 1,
                        hidden = true } = {}) {
   const messages = [];

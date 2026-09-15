@@ -67,10 +67,12 @@ const tokenStub = {
 // as anybody was told.
 function panel({ suggest = true, now = 1_000_000, hold = 45_000,
                  channelId = null, member = null } = {}) {
-  const state = {
-    chat: null, now, renders: 0, forgotten: 0, member,
-    showing: page({ mine: member === true })
-  };
+  // `null` is a page that has not rendered the chip, not one that says no —
+  // building a definite non-member page for it meant the unknown case could
+  // never be driven through offerFromChat at all.
+  const asPage = (answer) => (answer === null ? page({ chip: false }) : page({ mine: answer }));
+
+  const state = { chat: null, now, renders: 0, forgotten: 0, member, showing: asPage(member) };
 
   // `painted` starts dirty so that clearing it can be seen: a stream that is
   // not the one before it must repaint from scratch, not skip on a signature
@@ -111,7 +113,7 @@ function panel({ suggest = true, now = 1_000_000, hold = 45_000,
     // A membership can end while a card is being held.
     becomes(next) {
       state.member = next;
-      state.showing = page({ mine: next === true });
+      state.showing = asPage(next);
       return this;
     },
     // What render() actually calls: it reads the badge off the page itself.
@@ -236,6 +238,11 @@ check("the panel does not offer what the page says you cannot send",
 
 asking.becomes(true);
 check("and offers it once the page says you can", asking.offer()?.tokens === heart.tokens);
+
+// A page that has not said yet is not a no — the same answer the locks give.
+const unsure = panel({ hold: 45_000, channelId: SAKURA_ID, member: null });
+check("and a page that cannot answer yet does not refuse",
+  unsure.chat(heart).offer()?.tokens === heart.tokens);
 
 /* ---------- a new stream is a new chat ---------- */
 

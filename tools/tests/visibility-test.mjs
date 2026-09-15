@@ -11,6 +11,7 @@
 // test is YouTube's own timing; that was measured live and is recorded in the
 // commit that added the attribute observer.
 import { readFileSync } from "node:fs";
+import { page, documentFor } from "./page.mjs";
 
 const source = process.env.OD_SOURCE
   ? new URL(`file://${process.env.OD_SOURCE}`)
@@ -161,6 +162,17 @@ check("clearing forgets the owner too", b.owner() === null);
   check("render still decides whether to skip", renderAt >= 0 && skipAt > renderAt);
   check("and does it before tearing the panel down", skipAt > 0 && tearAt > 0 && skipAt < tearAt);
 
+  // Position is not enough on its own: `painted = null` slipped in just above
+  // the comparison keeps every position intact and stops the skip from ever
+  // holding — the panel then rebuilds on every notification, which is the bug
+  // the skip exists for. Render does clear it deliberately elsewhere (when it
+  // steps aside, and when it remounts), so what can be pinned is the stretch
+  // between working the signature out and comparing it: nothing may touch it
+  // there.
+  const signatureAt = src.indexOf("const next = panelSignature", renderAt);
+  check("and nothing rewrites the record in between",
+    signatureAt > 0 && !/\bpainted\s*=/.test(src.slice(signatureAt, skipAt)));
+
   // A control that replaces itself in place — the drawn card's ＋ becoming the
   // two save targets — disconnects the element the bar was describing without
   // changing anything the signature can see. Clearing that after the decision
@@ -242,6 +254,42 @@ check("emptying the editor ends the edit", e.editing() === null);
 check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
 
 /* ---------- keeping a card that was dealt to you ---------- */
+
+// Built, not read. Asserting that the source says `drawnTools(card)` let a
+// drawnTools returning an empty div through — the control is what matters,
+// not the call.
+{
+  const toolsFrom = src.indexOf("  function drawnTools(card) {");
+  const toolsTo = src.indexOf("\n  function ", toolsFrom + 10);
+  const iconFrom = src.indexOf("  function iconButton(");
+  const iconTo = src.indexOf("\n  function ", iconFrom + 10);
+  if (toolsFrom < 0 || iconFrom < 0) {
+    console.log("FAIL could not lift drawnTools out of content.js");
+    process.exit(1);
+  }
+
+  const document = documentFor(page());
+  const made = new Function(
+    "document", "cardPeek", "stageForSaving", "saveTokens", "targetButtons", "svgIcon", "describe",
+    [src.slice(toolsFrom, toolsTo), src.slice(iconFrom, iconTo), "return drawnTools;"].join("\n")
+  )(
+    document,
+    () => ({ text: "" }),
+    () => {},
+    () => {},
+    () => [document.createElement("button")],
+    () => document.createElement("svg"),
+    () => {}
+  )({ tokens: [{ type: "text", value: "888" }] });
+
+  const buttons = [];
+  (function find(node) {
+    for (const kid of node.kids || []) { if (kid.tag === "BUTTON") buttons.push(kid); find(kid); }
+  })(made);
+
+  check("a drawn card is handed something to press", buttons.length >= 1);
+  check("and it is the one that keeps it", (made.attrs.class || "").includes("od-card-tools"));
+}
 
 // With auto-send on, pressing a card sends it — so the ＋ is the only way to
 // keep a drawn one, and the list row was shipped without it, which left the

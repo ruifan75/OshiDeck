@@ -1,7 +1,8 @@
 // OshiDeck — card deck for YouTube Live Chat.
 (() => {
   const OD = globalThis.OshiDeck;
-  const { journal, layout, presets, store, tokens, trending } = OD;
+  const { i18n, journal, layout, presets, store, tokens, trending } = OD;
+  const t = (...args) => i18n.t(...args);
 
   const MAX_ROWS_CAP = 2;
   const PANEL_PADDING = 24;    // matches #oshideck-root horizontal padding in content.css
@@ -629,7 +630,7 @@
     const tools = document.createElement("div");
     tools.className = "od-card-tools";
 
-    tools.appendChild(iconButton("plus", "この札を保存（⇧＋クリックで入力欄へ）", (event) => {
+    tools.appendChild(iconButton("plus", t("peek.saveCard"), (event) => {
       event.stopPropagation();
       if (event.shiftKey) return stageForSaving(card);
       tools.replaceChildren(...targetButtons(card.tokens || [], {
@@ -683,7 +684,7 @@
   // Into the editor and no further, whatever auto-send is set to.
   function stageForSaving(card) {
     const input = getChatInput();
-    if (!input) return showToast("入力欄が見つかりません");
+    if (!input) return showToast(t("toast.noInput"));
     tokens.writeToInput(input, card.tokens || []);
   }
 
@@ -730,8 +731,8 @@
       : (card.locked ? (card.lapsed ? "membership" : "elsewhere") : "");
     if (why) {
       return showToast(why === "membership"
-        ? "メンバー限定のスタンプです。メンバーになると使えます"
-        : "他チャンネルのメン限スタンプです");
+        ? t("lock.membershipPlay")
+        : t("lock.elsewherePlay"));
     }
     // A click appends to the editor at once, but the send waits a beat for
     // YouTube to enable its button. A second click in that gap appended to the
@@ -739,7 +740,7 @@
     if (sending) return;
 
     const input = getChatInput();
-    if (!input) return showToast("入力欄が見つかりません");
+    if (!input) return showToast(t("toast.noInput"));
 
     const willSend = send || settingsCache.autoSend;
     sending = willSend;
@@ -752,7 +753,7 @@
     // comment was not.
     if (willSend && whyNotSendable(tokens.collectTokens(input), here, member)) {
       sending = false;
-      return showToast("送れないスタンプが入力欄に残っています");
+      return showToast(t("toast.leftover"));
     }
     if (willSend) submitChat(() => { sending = false; });
 
@@ -802,7 +803,7 @@
     plus.type = "button";
     plus.className = "od-grab-plus";
     plus.textContent = "＋";
-    const label = "このコメントを札にする（⇧＋クリックで入力欄へ）";
+    const label = t("peek.takeComment");
     plus.setAttribute("aria-label", label);
     plus.title = label;
     plus.addEventListener("click", (event) => {
@@ -830,7 +831,7 @@
   function targetButtons(captured, { onPick }) {
     const forced = tokens.requiredChannels(captured).length > 0;
     const hue = barContext?.hue;
-    const here = barContext?.channel?.name || "このチャンネル";
+    const here = barContext?.channel?.name || t("channel.this");
 
     const make = (target, scope, label) => {
       const button = document.createElement("button");
@@ -848,18 +849,18 @@
       return button;
     };
 
-    const channel = make("channel", "channel", `${here}専用として保存`);
-    const global = make("global", "global", "通用の札として保存");
+    const channel = make("channel", "channel", t("save.channelOnly", here));
+    const global = make("global", "global", t("save.global"));
 
     if (forced) {
       global.disabled = true;
-      global.title = "メン限スタンプなので、このチャンネル専用にしかできません";
+      global.title = t("save.forcedChannel");
     }
     if (!barContext?.channel?.id) {
       // There is no channel to be tied to. Offering it anyway would save a
       // universal card under a button that said otherwise.
       channel.disabled = true;
-      channel.title = "チャンネルが分かりません";
+      channel.title = t("toast.noChannel");
     }
     return [channel, global];
   }
@@ -870,13 +871,13 @@
 
     const captured = tokens.collectTokens(message);
     if (!tokens.hasSubstance(captured)) {
-      showToast("入れられる中身がありません");
+      showToast(t("toast.nothingToSave"));
       return null;
     }
     // Emoji from two channels can be sent nowhere, so such a card could never
     // exist. Say so here rather than at the save target.
     if (tokens.requiredChannels(captured).length > 1) {
-      showToast("複数チャンネルのメン限が混ざっています");
+      showToast(t("toast.mixedChannels"));
       return null;
     }
     return captured;
@@ -901,7 +902,7 @@
     if (!captured) return;
 
     const input = getChatInput();
-    if (!input) return showToast("入力欄が見つかりません");
+    if (!input) return showToast(t("toast.noInput"));
     tokens.writeToInput(input, captured);
   }
 
@@ -913,12 +914,12 @@
 
     const captured = tokens.collectTokens(input);
     if (!tokens.hasSubstance(captured)) {
-      return showToast("保存する内容を入力してください");
+      return showToast(t("toast.typeSomething"));
     }
 
     return saveTokens(captured, target, {
       clear: () => clearInput(input),
-      kept: "入力はそのままです",
+      kept: t("toast.inputKept"),
       editing: true
     });
   }
@@ -944,8 +945,8 @@
     const why = whyNotSendable(captured, channel?.id, member);
     if (why) {
       return showToast(why === "membership"
-        ? "メンバー限定のスタンプです。メンバーになると保存できます"
-        : "このチャンネルでは送れないスタンプです");
+        ? t("lock.membershipSave")
+        : t("lock.elsewhereSave"));
     }
 
     if (editing && editingId) {
@@ -954,10 +955,10 @@
       if (data.cards.some((c) => c.id === id)) {
         // Nothing is cleared until the write is known to have landed.
         if (!(await store.apply("editCard", { id, tokens: captured })).ok) {
-          return showToast(`保存できませんでした。${kept}`);
+          return showToast(t("toast.saveFailedKept", kept));
         }
         clear();
-        showToast("札を更新しました");
+        showToast(t("toast.cardUpdated"));
         return render();
       }
     }
@@ -975,23 +976,23 @@
         // Re-scoping it would change what every other deck holding it can do,
         // so say what it already is instead of quietly deciding.
         showToast(existingScope === store.GLOBAL
-          ? "同じ札が通用の札としてもうあります"
-          : "同じ札がこのチャンネル専用としてもうあります");
+          ? t("dup.globalExists")
+          : t("dup.channelExists"));
         if (channel?.id) await store.apply("addToDeck", { channelId: channel.id, cardId: duplicate.card.id });
         render();
         return flashCard(duplicate.card.id);
       }
 
       if (duplicate.inDeck || !channel?.id) {
-        showToast(duplicate.inDeck ? "同じ札がこのデッキにもうあります" : "同じ札がプールにもうあります");
+        showToast(duplicate.inDeck ? t("dup.inDeck") : t("dup.inPool"));
         return flashCard(duplicate.card.id);
       }
 
       const drawn = await store.apply("addToDeck", {
         channelId: channel.id, cardId: duplicate.card.id
       });
-      if (!drawn.ok) return showToast("保存できませんでした");
-      showToast("プールにあった同じ札をデッキに入れました");
+      if (!drawn.ok) return showToast(t("toast.saveFailed"));
+      showToast(t("dup.movedFromPool"));
       render();
       return flashCard(duplicate.card.id);
     }
@@ -1014,7 +1015,7 @@
     const added = await store.apply("addCard", { card, channelId: channel?.id, scope });
     if (!added.ok) {
       // Quota, or the context went away. Keep what was typed.
-      return showToast(`保存できませんでした。${kept}`);
+      return showToast(t("toast.saveFailedKept", kept));
     }
     if (added.value?.duplicate) {
       clear();
@@ -1022,8 +1023,8 @@
       // stop claiming a success that did not happen.
       const { scope: had, added: joined } = added.value;
       showToast(had !== scope
-        ? (had === store.GLOBAL ? "同じ札が通用の札としてもうありました" : "同じ札がこのチャンネル専用としてもうありました")
-        : joined ? "プールにあった同じ札をデッキに入れました" : "同じ札がこのデッキにもうあります");
+        ? (had === store.GLOBAL ? t("dup.globalExisted") : t("dup.channelExisted"))
+        : joined ? t("dup.movedFromPool") : t("dup.inDeck"));
       render();
       return flashCard(added.value.id);
     }
@@ -1034,15 +1035,15 @@
     clear();
 
     const saved = !channel?.id
-      ? "プールに保存しました"
+      ? t("saved.pool")
       : scope === store.GLOBAL
-        ? "通用の札として保存しました"
-        : "このチャンネル専用の札として保存しました";
+        ? t("saved.global")
+        : t("saved.channel");
     if (duplicate) {
       // Same reaction, different wording — probably redundant, but only the
       // user can say for sure, so keep it and make undoing it one click.
-      showToast(`${saved}（似た札がすでにあります）`, {
-        actionLabel: "取り消す",
+      showToast(t("saved.similar", saved), {
+        actionLabel: t("action.undoSave"),
         onAction: () => deleteCard(card, { silent: true })
       });
     } else {
@@ -1107,7 +1108,7 @@
     if (!input) return;
     editingId = card.id;
     tokens.writeToInput(input, card.tokens || [], { replace: true });
-    showToast("直したら「更新」を押してください");
+    showToast(t("toast.editHint"));
     render();
   }
 
@@ -1119,8 +1120,8 @@
     if (!ok || value < 0) return;
     render();
 
-    showToast("デッキから外しました（プールに残っています）", {
-      actionLabel: "元に戻す",
+    showToast(t("toast.ejected"), {
+      actionLabel: t("action.undo"),
       onAction: async () => {
         await store.apply("insertIntoDeck", { channelId, cardId: card.id, at: value });
         render();
@@ -1130,7 +1131,7 @@
 
   async function addToDeck(card) {
     const channelId = getChannel()?.id;
-    if (!channelId) return showToast("チャンネルが分かりません");
+    if (!channelId) return showToast(t("toast.noChannel"));
     const { ok } = await store.apply("addToDeck", { channelId, cardId: card.id });
     if (ok) render();
   }
@@ -1192,11 +1193,11 @@
     // Only reversible things here. A card taken out of the deck lands in this
     // channel's pool, so it is always one drag from coming back.
     tools.append(
-      iconButton("eject", "このデッキから外す", (event) => {
+      iconButton("eject", t("peek.eject"), (event) => {
         event.stopPropagation();
         removeFromDeck(card);
       }, back),
-      iconButton("edit", "この札を編集", (event) => { event.stopPropagation(); beginEdit(card); }, back)
+      iconButton("edit", t("peek.edit"), (event) => { event.stopPropagation(); beginEdit(card); }, back)
     );
     return tools;
   }
@@ -1211,8 +1212,8 @@
     if (silent) return; // the caller already explained what happened
 
     // Undo instead of a blocking confirm() — the whole page freezes on those.
-    showToast("札を削除しました", {
-      actionLabel: "元に戻す",
+    showToast(t("toast.deleted"), {
+      actionLabel: t("action.undo"),
       onAction: async () => {
         await store.apply("restoreCard", { snapshot });
         render();
@@ -1228,19 +1229,19 @@
     if (card.locked) {
       return {
         text: card.lapsed
-          ? "メンバー限定のスタンプ — メンバーになると送れます"
-          : "別チャンネルのメン限スタンプ — この配信では送れません",
+          ? t("peek.lockMembership")
+          : t("peek.lockElsewhere"),
         warning: true
       };
     }
     const text = tokens.toPlainText(card.tokens || []).trim();
     const stamps = (card.tokens || []).filter((t) => t.type === "youtubeEmoji").length;
-    const body = text || (stamps ? `スタンプ ${stamps}個` : "");
+    const body = text || (stamps ? t("peek.stamps", stamps) : "");
 
     if (card.drawn) {
       // Messages, not people: one person can send six. Saying 人 was a claim
       // the count does not support.
-      return { text: `${body}  ・ いま立て続けに${card.hits}回。押すと入力欄へ、＋で保存` };
+      return { text: t("peek.drawnHits", body, card.hits) };
     }
     // Read now, not when the card was built. The panel deliberately does not
     // redraw for a count ticking up, so the captured one goes stale — and this
@@ -1248,7 +1249,7 @@
     const hits = card.signature
       ? watcher.ranking().get(card.signature)?.count || 0
       : card.hits || 0;
-    return { text: hits > 0 ? `${body}  ・ いまチャットで${hits}回` : body };
+    return { text: hits > 0 ? t("peek.hits", body, hits) : body };
   }
 
   function trackPeek(el, card) {
@@ -1386,7 +1387,7 @@
 
     return [
       s.mode, s.cardSize, s.rows, s.sortBy, s.suggest ? "draw" : "",
-      s.draw, s.hold, s.pace,
+      s.draw, s.hold, s.pace, s.language,
       inputIsPinned ? "pinned" : "",
       channel?.id || "", channel?.name || "", hue ?? "",
       rootEl?.clientWidth || 0,
@@ -1523,12 +1524,12 @@
     else bar.append(inputHasContent ? saveTargets(channel, hue) : deckIdentity(channel, hue, count));
 
     if (poolOpen) {
-      bar.appendChild(buildAction("close", "閉じる", "プールを閉じる", () => {
+      bar.appendChild(buildAction("close", t("action.close"), t("aria.closePool"), () => {
         poolOpen = false;
         render();
       }));
     } else {
-      bar.appendChild(buildAction("deck", "編成", "デッキ編成をひらく", () => openOptions()));
+      bar.appendChild(buildAction("deck", t("action.build"), t("aria.openBuilder"), () => openOptions()));
     }
     return bar;
   }
@@ -1588,11 +1589,11 @@
 
     const label = document.createElement("span");
     label.className = "od-save-label";
-    label.textContent = "プールから追加";
+    label.textContent = t("pool.addFrom");
 
     const total = document.createElement("span");
     total.className = "od-count";
-    total.textContent = `${poolCount}枚`;
+    total.textContent = t("count.cards", poolCount);
 
     group.append(label, total);
     return group;
@@ -1608,7 +1609,7 @@
       dot.style.setProperty("--od-scope-hue", hue);
       const name = document.createElement("span");
       name.className = "od-channel";
-      name.textContent = channel.name || "このチャンネル";
+      name.textContent = channel.name || t("channel.this");
       const plus = document.createElement("span");
       plus.className = "od-plus-sign";
       plus.textContent = "＋";
@@ -1619,11 +1620,11 @@
     commonDot.className = "od-dot od-dot-common";
     const commonLabel = document.createElement("span");
     commonLabel.className = "od-common";
-    commonLabel.textContent = "共通";
+    commonLabel.textContent = t("bar.global");
 
     const total = document.createElement("span");
     total.className = "od-count";
-    total.textContent = `${count}枚`;
+    total.textContent = t("count.cards", count);
 
     group.append(commonDot, commonLabel, total);
     return group;
@@ -1636,12 +1637,12 @@
     if (editingId) {
       const label = document.createElement("span");
       label.className = "od-save-label";
-      label.textContent = "編集中";
+      label.textContent = t("bar.editing");
 
-      const update = buildAction("plus", "更新", "編集中の札を更新", () => saveCurrentInput());
+      const update = buildAction("plus", t("action.update"), t("aria.updateCard"), () => saveCurrentInput());
       update.dataset.primary = "true";
 
-      const cancel = buildAction("close", "やめる", "編集をやめる", () => {
+      const cancel = buildAction("close", t("action.cancel"), t("aria.cancelEdit"), () => {
         editingId = null;
         const input = getChatInput();
         if (input) clearInput(input);
@@ -1656,8 +1657,8 @@
     // — you are saving it here because you want it here. A card carrying
     // member emoji has no choice: it can only ever be this channel's.
     if (!channel?.id) {
-      const only = buildAction("plus", "プールに保存",
-        "チャンネルが分からないので、通用の札としてプールに置きます", () => saveCurrentInput("global"));
+      const only = buildAction("plus", t("save.pool"),
+        t("save.poolWhy"), () => saveCurrentInput("global"));
       only.dataset.primary = "true";
       group.appendChild(only);
       return group;
@@ -1665,19 +1666,19 @@
 
     const forced = tokens.requiredChannels(currentTokens).length > 0;
 
-    const toChannel = buildAction("plus", channel.name || "このチャンネル専用",
+    const toChannel = buildAction("plus", channel.name || t("save.channelShort"),
       forced
-        ? "メン限スタンプ入りなので、このチャンネル専用にしかできません"
-        : "このチャンネルのデッキだけに出る札にします",
+        ? t("save.forcedWhy")
+        : t("save.channelWhy"),
       () => saveCurrentInput("channel"));
     toChannel.dataset.primary = "true";
     toChannel.classList.add("od-save-channel");
     if (hue != null) toChannel.style.setProperty("--od-scope-hue", hue);
 
-    const toGlobal = buildAction("plus", "通用",
+    const toGlobal = buildAction("plus", t("save.globalShort"),
       forced
-        ? "メン限スタンプ入りの札は通用にできません"
-        : "どのチャンネルのデッキにも入れられる札にします",
+        ? t("save.globalBlocked")
+        : t("save.globalWhy"),
       () => saveCurrentInput("global"));
     if (forced) toGlobal.disabled = true;
 
@@ -1757,7 +1758,7 @@
       editingId = null;
       clearInput(input);
       render();
-      showToast("編集をやめました");
+      showToast(t("toast.editCancelled"));
     });
   }
 
@@ -1837,6 +1838,7 @@
     const data = await store.read();
     if (!data) return shutdown();
     settingsCache = data.settings;
+    i18n.use(settingsCache.language);
     watcher.start(); // no-op once attached; retries while chat is still loading
 
     const channel = getChannel();
@@ -1903,8 +1905,8 @@
         const empty = document.createElement("div");
         empty.className = "od-empty";
         empty.textContent = poolOpen
-          ? "プールに追加できる札がありません"
-          : "コメントを入力して保存すると札になります";
+          ? t("pool.empty")
+          : t("pool.emptyHint");
         rootEl.appendChild(empty);
         if (!poolOpen) {
           appendPresetOffer(rootEl, channel);
@@ -1923,11 +1925,11 @@
         more.type = "button";
         more.className = "od-more";
         more.dataset.expanded = String(expanded);
-        more.setAttribute("aria-label", expanded ? "たたむ" : "残りの札を出す");
+        more.setAttribute("aria-label", expanded ? t("action.collapse") : t("aria.showRest"));
         more.append(svgIcon("chevron"));
 
         const label = document.createElement("span");
-        label.textContent = expanded ? "たたむ" : `あと${hidden}枚`;
+        label.textContent = expanded ? t("action.collapse") : t("action.more", hidden);
         more.appendChild(label);
 
         more.addEventListener("click", () => { expanded = !expanded; render(); });
@@ -1946,9 +1948,9 @@
     button.className = "od-more";
     button.append(svgIcon("plus"));
     const label = document.createElement("span");
-    label.textContent = `プールから追加（${poolCount}枚）`;
+    label.textContent = t("pool.addFromCount", poolCount);
     button.appendChild(label);
-    button.setAttribute("aria-label", "プールから札を追加する");
+    button.setAttribute("aria-label", t("aria.addFromPool"));
     button.addEventListener("click", () => { poolOpen = true; render(); });
     rootEl.appendChild(button);
   }
@@ -1976,7 +1978,7 @@
       rootEl.replaceChildren();
       const notice = document.createElement("div");
       notice.className = "od-empty";
-      notice.textContent = "OshiDeck を更新しました。ページを再読み込みしてください";
+      notice.textContent = t("toast.reloaded");
       rootEl.appendChild(notice);
     }
     log("Stopped: extension context invalidated.");
@@ -2040,7 +2042,7 @@
       const button = document.createElement("button");
       button.type = "button";
       button.className = "od-more";
-      button.textContent = `＋ ${preset.name}（${preset.cards.length}枚）を入れる`;
+      button.textContent = t("preset.add", preset.name, preset.cards.length);
       button.addEventListener("click", () => usePreset(preset, channel));
       container.appendChild(button);
     }
@@ -2053,11 +2055,11 @@
       name: channel.name,
       cards: presets.cardsFor(preset, channelId)
     });
-    if (!ok || !value) return showToast("読み込めませんでした");
+    if (!ok || !value) return showToast(t("preset.failed"));
 
     showToast(value.reused
-      ? `「${preset.name}」を入れました（うち${value.reused}枚はプールにあったもの）`
-      : `「${preset.name}」を入れました`);
+      ? t("preset.loadedReused", preset.name, value.reused)
+      : t("preset.loaded", preset.name));
     render();
   }
 

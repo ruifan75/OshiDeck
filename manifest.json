@@ -19,6 +19,7 @@
         "https://www.youtube.com/*"
       ],
       "js": [
+        "src/i18n.js",
         "src/layout.js",
         "src/store.js",
         "src/tokens.js",

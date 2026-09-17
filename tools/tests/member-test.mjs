@@ -93,6 +93,11 @@ const stamp = (owner) => [{ type: "youtubeEmoji", emojiId: `${owner}/heart`, alt
 const { tokens, trending } = globalThis.OshiDeck;
 
 // Everything the lifted code reaches for. `seen` is what came back out.
+// Messages come back as "key|arg|arg" in these tests: an assertion cares
+// which message was chosen and what went into it, not how it is worded — and
+// the wording is now a thing that changes with the language.
+const t = (key, ...args) => [key, ...args].join("|");
+
 const input = { id: "the editor" };
 
 function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "さくら" },
@@ -110,7 +115,7 @@ function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "
 
   const api = new Function(
     "document", "tokens", "store", "watcher", "trending",
-    "getChannel", "showToast", "shutdown", "render", "flashCard", "journal", "log", "editingId",
+    "t", "getChannel", "showToast", "shutdown", "render", "flashCard", "journal", "log", "editingId",
     "findChatInput", "currentInput", "rootEl", "scheduleRender",
     "getChatInput", "settingsCache", "submitChat", "MutationObserver",
     `${lifted}
@@ -145,6 +150,7 @@ function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "
     },
     { ranking: () => ranking },
     trending,
+    t,
     () => (where ? { ...where } : where),
     (message) => seen.toasts.push(message),
     () => seen.toasts.push("shutdown"),
@@ -370,7 +376,7 @@ const saving = async (doc, captured, over = {}) => {
 let after = await saving(page({ mine: false }), stamp(HERE));
 check("a member emoji you cannot send is not saved", after.cards.length === 0);
 check("and nothing was even asked of the store", after.writes.length === 0);
-check("and you are told why", after.toasts.join("").includes("メンバー"));
+check("and you are told why", after.toasts.join("").includes("lock.membershipSave"));
 
 after = await saving(page({ mine: true }), stamp(HERE));
 check("the same card lands in the pool once you are a member", after.cards.length === 1);
@@ -391,7 +397,7 @@ check(
   "a membership found after the page moved does not answer for where we were",
   after.cards.length === 0
 );
-check("and the refusal still says what it is", after.toasts.join("").includes("メンバー"));
+check("and the refusal still says what it is", after.toasts.join("").includes("lock.membershipSave"));
 
 // The pairing cuts both ways: a badge read here says no more about another
 // channel's emoji than it says yes. Refusing on it would stop a card that is
@@ -494,7 +500,7 @@ const ours = { id: "ours", tokens: stamp(HERE) };
 
 let press = await pressing({ doc: page({ mine: false }) }, ours);
 check("a card the page says you cannot send is not sent", press.sent === 0);
-check("and says which kind of no it is", press.toasts.join("").includes("メンバー"));
+check("and says which kind of no it is", press.toasts.join("").includes("lock.membershipPlay"));
 
 press = await pressing({ doc: page({ mine: true }) }, ours);
 check("and goes out once the page says you can", press.sent === 1);
@@ -518,7 +524,7 @@ check("while a page that cannot answer leaves the old lock standing", press.sent
 press = await pressing({ doc: page({ mine: false }) }, { id: "plain", tokens: text("888") },
   stamp(HERE));
 check("a plain card does not carry out what is already in the editor", press.sent === 0);
-check("and says what is in the way", press.toasts.join("").includes("入力欄"));
+check("and says what is in the way", press.toasts.join("").includes("toast.leftover"));
 
 press = await pressing({ doc: page({ mine: true }) }, { id: "plain", tokens: text("888") },
   stamp(HERE));

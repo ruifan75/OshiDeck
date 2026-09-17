@@ -221,10 +221,15 @@ if (useFrom < 0 || useTo < 0 || useTo <= useFrom) {
 
 disk = { cards: [], decks: {}, channelMeta: {}, settings: {} };
 const said = [];
+// "key|arg|arg": which message was chosen and what went into it, rather than
+// how it happens to be worded in one language.
+const t = (key, ...args) => [key, ...args].join("|");
+
 await new Function(
-  "store", "presets", "showToast", "render",
+  "t", "store", "presets", "showToast", "render",
   `${src2.slice(useFrom, useTo)} return usePreset;`
 )(
+  t,
   { apply: (op, args) => store.runOp(op, args) },
   presets,
   (message) => said.push(message),

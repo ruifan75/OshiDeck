@@ -437,7 +437,7 @@ const MUTATIONS = [
   [MEMBER, CONTENT, "the card checked and the comment sent",
     `    if (willSend && whyNotSendable(tokens.collectTokens(input), here, member)) {
       sending = false;
-      return showToast("送れないスタンプが入力欄に残っています");
+      return showToast(t("toast.leftover"));
     }
 `, ""],
 

@@ -270,9 +270,10 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
 
   const document = documentFor(page());
   const made = new Function(
-    "document", "cardPeek", "stageForSaving", "saveTokens", "targetButtons", "svgIcon", "describe",
+    "t", "document", "cardPeek", "stageForSaving", "saveTokens", "targetButtons", "svgIcon", "describe",
     [src.slice(toolsFrom, toolsTo), src.slice(iconFrom, iconTo), "return drawnTools;"].join("\n")
   )(
+    (key) => key,
     document,
     () => ({ text: "" }),
     () => {},

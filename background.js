@@ -5,6 +5,7 @@
 // before either writes, and the loser's change vanishes. So neither writes.
 // They send a named operation here, and this worker — one context, one queue —
 // applies them strictly one at a time.
+import "./src/i18n.js";
 import "./src/tokens.js";
 import "./src/backup.js";
 import "./src/store.js";

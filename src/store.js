@@ -19,7 +19,8 @@
     suggest: true,     // draw one card from what the chat is doing
     draw: "normal",    // shy | normal | eager — how much of a wave it takes
     hold: "normal",    // short | normal | long — how long a drawn card stays
-    pace: "normal"     // slow | normal | quick — how fast the order forgets
+    pace: "normal",    // slow | normal | quick — how fast the order forgets
+    language: ""       // "" follows the browser; otherwise a code from i18n.LANGUAGES
   };
 
   // The numbers behind those three. Offered as steps rather than as fields

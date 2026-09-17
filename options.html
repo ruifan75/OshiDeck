@@ -99,6 +99,42 @@
 
       <div class="row">
         <div class="row-label">
+          <strong data-i18n="ui.sortBy"></strong>
+          <small id="sortNote" data-i18n="ui.sortNoteDefault"></small>
+        </div>
+        <div class="segmented segmented-wide" data-setting="sortBy">
+          <button type="button" value="trend" data-i18n="sort.trend"></button>
+          <button type="button" value="heat" data-i18n="sort.heat"></button>
+          <button type="button" value="uses" data-i18n="sort.uses"></button>
+          <button type="button" value="manual" data-i18n="sort.manual"></button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-label">
+          <strong data-i18n="ui.pace"></strong>
+          <small id="paceNote"></small>
+        </div>
+        <div class="segmented" data-setting="pace">
+          <button type="button" value="slow" data-i18n="ui.slow"></button>
+          <button type="button" value="normal" data-i18n="ui.normal"></button>
+          <button type="button" value="quick" data-i18n="ui.quick"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="ui.drawFromChat"></h2>
+      <label class="switch-row">
+        <input id="suggest" type="checkbox">
+        <span>
+          <strong data-i18n="ui.suggest"></strong>
+          <small data-i18n="ui.suggestNote"></small>
+        </span>
+      </label>
+
+      <div class="row">
+        <div class="row-label">
           <strong data-i18n="ui.drawEase"></strong>
           <small id="drawNote"></small>
         </div>
@@ -120,42 +156,6 @@
           <button type="button" value="long" data-i18n="ui.long"></button>
         </div>
       </div>
-
-      <div class="row">
-        <div class="row-label">
-          <strong data-i18n="ui.pace"></strong>
-          <small id="paceNote"></small>
-        </div>
-        <div class="segmented" data-setting="pace">
-          <button type="button" value="slow" data-i18n="ui.slow"></button>
-          <button type="button" value="normal" data-i18n="ui.normal"></button>
-          <button type="button" value="quick" data-i18n="ui.quick"></button>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="row-label">
-          <strong data-i18n="ui.sortBy"></strong>
-          <small id="sortNote" data-i18n="ui.sortNoteDefault"></small>
-        </div>
-        <div class="segmented segmented-wide" data-setting="sortBy">
-          <button type="button" value="trend" data-i18n="sort.trend"></button>
-          <button type="button" value="heat" data-i18n="sort.heat"></button>
-          <button type="button" value="uses" data-i18n="sort.uses"></button>
-          <button type="button" value="manual" data-i18n="sort.manual"></button>
-        </div>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2 data-i18n="ui.drawFromChat"></h2>
-      <label class="switch-row">
-        <input id="suggest" type="checkbox">
-        <span>
-          <strong data-i18n="ui.suggest"></strong>
-          <small data-i18n="ui.suggestNote"></small>
-        </span>
-      </label>
     </section>
 
     <section class="card">

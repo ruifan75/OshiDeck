@@ -13,6 +13,10 @@ echo "undefined calls"
 node tools/check-refs.mjs content.js options.js background.js src/*.js tools/check-refs.mjs
 echo
 
+echo "言語"
+node tools/check-i18n.mjs
+echo
+
 echo "css traps"
 node tools/check-css.mjs content.css options.css
 node tools/check-var-timing.mjs content.css options.css

@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OshiDeck 設定</title>
+  <title data-i18n="ui.title">OshiDeck 設定</title>
   <link rel="stylesheet" href="options.css">
 </head>
 <body>
   <main>
     <header>
       <h1>OshiDeck</h1>
-      <p class="lede">保存した札の確認と、配信ページでの見え方の設定。</p>
+      <p class="lede" data-i18n="ui.lede"></p>
     </header>
 
     <section class="card decks">
-      <h2>デッキ</h2>
+      <h2 data-i18n="ui.decks"></h2>
 
       <div class="browser">
-        <nav id="deckList" class="deck-list" aria-label="デッキ一覧"></nav>
+        <nav id="deckList" class="deck-list" data-i18n-aria-label="aria.deckList"></nav>
 
         <div class="deck-main">
           <div id="deckHeader" class="deck-header"></div>
@@ -25,9 +25,9 @@
           <p id="deckHint" class="muted deck-hint"></p>
         </div>
 
-        <aside id="pool" class="pool" aria-label="カードプール">
+        <aside id="pool" class="pool" data-i18n-aria-label="ui.pool">
           <div class="pool-head">
-            <strong>カードプール</strong>
+            <strong data-i18n="ui.pool"></strong>
             <span id="poolCount" class="muted"></span>
           </div>
           <label class="search">
@@ -35,7 +35,7 @@
                  stroke-linecap="round" aria-hidden="true">
               <circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path>
             </svg>
-            <input id="deckSearch" type="search" placeholder="中身で絞り込む" autocomplete="off">
+            <input id="deckSearch" type="search" data-i18n-placeholder="ui.searchPlaceholder" autocomplete="off">
           </label>
           <div id="poolCards" class="pool-cards"></div>
         </aside>
@@ -43,7 +43,7 @@
     </section>
 
     <section class="card">
-      <h2>表示モード</h2>
+      <h2 data-i18n="ui.displayMode"></h2>
 
       <div class="modes">
         <label class="mode">
@@ -53,8 +53,8 @@
               <span class="thumb-row"><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i></span>
               <span class="thumb-row"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
             </span>
-            <strong>手札</strong>
-            <small>札が扇状に並びます。幅に合わせて1行の枚数が増減。</small>
+            <strong data-i18n="ui.modeHand"></strong>
+            <small data-i18n="ui.modeHandNote"></small>
           </span>
         </label>
 
@@ -64,170 +64,178 @@
             <span class="thumb thumb-list" aria-hidden="true">
               <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
             </span>
-            <strong>リスト</strong>
-            <small>1行1枚。幅が広いほど欄が増え、中身を長く読めます。</small>
+            <strong data-i18n="ui.modeList"></strong>
+            <small data-i18n="ui.modeListNote"></small>
           </span>
         </label>
       </div>
     </section>
 
     <section class="card">
-      <h2>手札の並べ方</h2>
+      <h2 data-i18n="ui.handLayout"></h2>
 
       <div class="row">
         <div class="row-label">
-          <strong>札の大きさ</strong>
-          <small>小さいほど枚数が増え、長い札は途中で薄くなります。</small>
+          <strong data-i18n="ui.cardSize"></strong>
+          <small data-i18n="ui.cardSizeNote"></small>
         </div>
         <div class="segmented" data-setting="cardSize">
-          <button type="button" value="large">大</button>
-          <button type="button" value="medium">中</button>
-          <button type="button" value="small">小</button>
+          <button type="button" value="large" data-i18n="size.large"></button>
+          <button type="button" value="medium" data-i18n="size.medium"></button>
+          <button type="button" value="small" data-i18n="size.small"></button>
         </div>
       </div>
 
       <div class="row">
         <div class="row-label">
-          <strong>行数</strong>
-          <small><span id="capacity">小 × 2行 = 最大14枚</span>。これは一度に見える枚数で、残りはスクロールで出てきます。</small>
+          <strong data-i18n="ui.rows"></strong>
+          <small><span id="capacity"></span><span data-i18n="ui.rowsNote"></span></small>
         </div>
         <div class="segmented" data-setting="rows">
-          <button type="button" value="1">1行</button>
-          <button type="button" value="2">2行</button>
+          <button type="button" value="1" data-i18n="ui.row1"></button>
+          <button type="button" value="2" data-i18n="ui.row2"></button>
         </div>
       </div>
 
       <div class="row">
         <div class="row-label">
-          <strong>引きやすさ</strong>
+          <strong data-i18n="ui.drawEase"></strong>
           <small id="drawNote"></small>
         </div>
         <div class="segmented" data-setting="draw">
-          <button type="button" value="shy">ひかえめ</button>
-          <button type="button" value="normal">ふつう</button>
-          <button type="button" value="eager">よく引く</button>
+          <button type="button" value="shy" data-i18n="ui.shy"></button>
+          <button type="button" value="normal" data-i18n="ui.normal"></button>
+          <button type="button" value="eager" data-i18n="ui.eager"></button>
         </div>
       </div>
 
       <div class="row">
         <div class="row-label">
-          <strong>引いた札が残る時間</strong>
+          <strong data-i18n="ui.holdTime"></strong>
           <small id="holdNote"></small>
         </div>
         <div class="segmented" data-setting="hold">
-          <button type="button" value="short">みじかめ</button>
-          <button type="button" value="normal">ふつう</button>
-          <button type="button" value="long">ながめ</button>
+          <button type="button" value="short" data-i18n="ui.short"></button>
+          <button type="button" value="normal" data-i18n="ui.normal"></button>
+          <button type="button" value="long" data-i18n="ui.long"></button>
         </div>
       </div>
 
       <div class="row">
         <div class="row-label">
-          <strong>反応の速さ</strong>
+          <strong data-i18n="ui.pace"></strong>
           <small id="paceNote"></small>
         </div>
         <div class="segmented" data-setting="pace">
-          <button type="button" value="slow">ゆっくり</button>
-          <button type="button" value="normal">ふつう</button>
-          <button type="button" value="quick">はやい</button>
+          <button type="button" value="slow" data-i18n="ui.slow"></button>
+          <button type="button" value="normal" data-i18n="ui.normal"></button>
+          <button type="button" value="quick" data-i18n="ui.quick"></button>
         </div>
       </div>
 
       <div class="row">
         <div class="row-label">
-          <strong>並び順</strong>
-          <small id="sortNote">「最近よく使う順」は、古い使用ほど軽く数えます（半減期1週間）。</small>
+          <strong data-i18n="ui.sortBy"></strong>
+          <small id="sortNote" data-i18n="ui.sortNoteDefault"></small>
         </div>
         <div class="segmented segmented-wide" data-setting="sortBy">
-          <button type="button" value="trend">チャット連動</button>
-          <button type="button" value="heat">最近よく使う順</button>
-          <button type="button" value="uses">使った回数順</button>
-          <button type="button" value="manual">自分で並べた順</button>
+          <button type="button" value="trend" data-i18n="sort.trend"></button>
+          <button type="button" value="heat" data-i18n="sort.heat"></button>
+          <button type="button" value="uses" data-i18n="sort.uses"></button>
+          <button type="button" value="manual" data-i18n="sort.manual"></button>
         </div>
       </div>
     </section>
 
     <section class="card">
-      <h2>チャットから引く</h2>
+      <h2 data-i18n="ui.drawFromChat"></h2>
       <label class="switch-row">
         <input id="suggest" type="checkbox">
         <span>
-          <strong>いま多い反応を1枚だけ手札に出す</strong>
-          <small>持っていない反応が盛り上がっているとき、手札の左端にすこし詰めて1枚差し込みます。
-            押せば入力欄に入り、そのまま送るか、帯からデッキに入れられます。メン限スタンプは出しません
-            （このチャンネルのものでも、メンバーでなければ送れないため）。</small>
+          <strong data-i18n="ui.suggest"></strong>
+          <small data-i18n="ui.suggestNote"></small>
         </span>
       </label>
     </section>
 
     <section class="card">
-      <h2>送信</h2>
+      <h2 data-i18n="ui.send"></h2>
       <label class="switch-row">
         <input id="autoSend" type="checkbox">
         <span>
-          <strong>札をクリックしたら自動で送信する</strong>
-          <small>オフなら入力欄に入れるだけです。オフのままでも <kbd>⇧</kbd> ＋ クリックでその場から送信できます。</small>
+          <strong data-i18n="ui.autoSend"></strong>
+          <small><span data-i18n="ui.autoSendNote1"></span> <kbd>⇧</kbd> <span data-i18n="ui.autoSendNote2"></span></small>
         </span>
       </label>
     </section>
 
     <section class="card">
-      <h2>バックアップ</h2>
+      <h2 data-i18n="ui.language"></h2>
 
       <div class="row">
         <div class="row-label">
-          <strong>書き出す</strong>
-          <small>プール・デッキ・チャンネル設定・表示設定をまとめてJSONにします。</small>
+          <strong data-i18n="ui.language"></strong>
+          <small data-i18n="ui.languageNote"></small>
         </div>
-        <button id="exportBtn" type="button" class="action">ファイルに保存</button>
+        <div class="segmented" data-choice="language">
+          <button type="button" value="" data-i18n="ui.languageAuto"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="ui.backup"></h2>
+
+      <div class="row">
+        <div class="row-label">
+          <strong data-i18n="ui.export"></strong>
+          <small data-i18n="ui.exportNote"></small>
+        </div>
+        <button id="exportBtn" type="button" class="action" data-i18n="ui.saveToFile"></button>
       </div>
 
       <div class="row">
         <div class="row-label">
-          <strong>読み込む</strong>
-          <small id="importNote">同じ内容の札は重複しません。同じファイルを2回読んでも増えません。</small>
+          <strong data-i18n="ui.import"></strong>
+          <small id="importNote" data-i18n="opt.mergeNote"></small>
         </div>
         <div class="segmented" data-choice="importMode">
-          <button type="button" value="merge">追加</button>
-          <button type="button" value="replace">全部置き換え</button>
+          <button type="button" value="merge" data-i18n="ui.merge"></button>
+          <button type="button" value="replace" data-i18n="ui.replaceAll"></button>
         </div>
-        <button id="importBtn" type="button" class="action">ファイルを選ぶ</button>
+        <button id="importBtn" type="button" class="action" data-i18n="ui.pickFile"></button>
         <input id="importFile" type="file" accept="application/json,.json" hidden>
       </div>
 
       <div class="row">
         <div class="row-label">
-          <strong>プリセットに書き出す</strong>
-          <small>いま選んでいるデッキを、はじめの一組として配れる形にします。使用回数もIDも入らず、
-            中身だけです。このチャンネルのメン限スタンプは一緒に行きます ── その場合はこの
-            チャンネル専用のプリセットになり、ほかの配信では出ません。よそのチャンネルの
-            スタンプは入りません。
-            <code>node tools/add-preset.mjs &lt;ファイル&gt;</code> で同梱できます。</small>
+          <strong data-i18n="ui.exportPreset"></strong>
+          <small><span data-i18n="ui.exportPresetNote1"></span>
+            <code>node tools/add-preset.mjs &lt;file&gt;</code> <span data-i18n="ui.exportPresetNote2"></span></small>
         </div>
-        <button id="presetBtn" type="button" class="action">ファイルに保存</button>
+        <button id="presetBtn" type="button" class="action" data-i18n="ui.saveToFile"></button>
       </div>
 
       <p id="importStatus" class="import-status" aria-live="polite"></p>
     </section>
 
     <section class="card">
-      <h2>診断ログ</h2>
+      <h2 data-i18n="ui.journal"></h2>
 
       <div class="row">
         <div class="row-label">
-          <strong>書き出す</strong>
-          <small>どのチャンネルをどう判定したかの記録です。うまくいかないときは、
-            このファイルを一緒に送ってください。札やチャットの中身は入っていません。</small>
+          <strong data-i18n="ui.export"></strong>
+          <small data-i18n="ui.journalNote"></small>
         </div>
-        <button id="journalBtn" type="button" class="action">ファイルに保存</button>
+        <button id="journalBtn" type="button" class="action" data-i18n="ui.saveToFile"></button>
       </div>
 
       <div class="row">
         <div class="row-label">
-          <strong>消す</strong>
-          <small>記録は新しい300件だけ残ります。手前で消してから再現させると読みやすくなります。</small>
+          <strong data-i18n="ui.clear"></strong>
+          <small data-i18n="ui.clearNote"></small>
         </div>
-        <button id="journalClear" type="button" class="action">記録を消す</button>
+        <button id="journalClear" type="button" class="action" data-i18n="ui.clearButton"></button>
       </div>
 
       <p id="journalStatus" class="import-status" aria-live="polite"></p>

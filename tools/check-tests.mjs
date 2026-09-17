@@ -34,6 +34,7 @@ const CONFIRM = "confirm-test.mjs";
 const COLOUR = "colour-test.mjs";
 const PRESET = "preset-test.mjs";
 const MEMBER = "member-test.mjs";
+const I18N = "i18n-test.mjs";
 
 // Which file a mutation edits, and how its test is told to load the copy.
 const CONTENT = { file: "content.js", env: "OD_SOURCE" };
@@ -43,6 +44,7 @@ const TOKENS = { file: "src/tokens.js", env: "OD_TOKENS" };
 const OPTIONS = { file: "options.js", env: "OD_OPTIONS" };
 const STORE = { file: "src/store.js", env: "OD_STORE" };
 const PRESETS = { file: "src/presets.js", env: "OD_PRESETS" };
+const I18NSRC = { file: "src/i18n.js", env: "OD_I18N" };
 
 const sources = new Map();
 const read = ({ file }) => {
@@ -470,6 +472,26 @@ const MUTATIONS = [
     "    return drawFromChat(deck, { channelId: channel?.id, member: membership() });",
     "    return drawFromChat(deck, { channelId: channel?.id, member: true });"],
 
+  [I18N, I18NSRC, "a language nobody wrote answered with keys",
+    "    const text = entry ? entry[current] || entry[SOURCE] : key;",
+    "    const text = entry ? entry[current] || key : key;"],
+
+  [I18N, I18NSRC, "a missing key answered with silence instead of its name",
+    "    const text = entry ? entry[current] || entry[SOURCE] : key;",
+    '    const text = entry ? entry[current] || entry[SOURCE] : "";'],
+
+  [I18N, I18NSRC, "a nearby language given up on",
+    "    const near = LANGUAGES.find((lang) => lang.code.split(\"-\")[0].toLowerCase() === primary);\n    return near ? near.code : SOURCE;",
+    "    return SOURCE;"],
+
+  [I18N, I18NSRC, "an unset language pinned to whatever was chosen last",
+    '  const use = (want) => (current = want ? resolve(want) : fromBrowser());',
+    "  const use = (want) => (current = resolve(want) || current);"],
+
+  [I18N, I18NSRC, "a hole left saying undefined",
+    '      ? text.replace(/\\$(\\d)/g, (_, n) => String(args[Number(n) - 1] ?? ""))',
+    "      ? text.replace(/\\$(\\d)/g, (_, n) => String(args[Number(n) - 1]))"],
+
   [COLOUR, STORE, "an out-of-gamut hue clipped instead of desaturated",
     "    for (let c = chroma; c > 0.01 && found.some((v) => v < -0.0005 || v > 1.0005); c -= 0.005) {\n      found = rgb(c);\n    }",
     "    // (clipped below instead)"],
@@ -569,6 +591,12 @@ const KILLS = {
   "a panel that never hears about joining": "joining repaints the panel",
   "a held card exempt from the membership ending": "but loses it the moment the membership goes",
   "a chip that has to be hidden to count": "a chip on show answers the same way",
+
+  "a language nobody wrote answered with keys": "a missing translation falls through to the source",
+  "a missing key answered with silence instead of its name": "a key that does not exist says so",
+  "a nearby language given up on": "a nearby Chinese falls to the Chinese there is",
+  "an unset language pinned to whatever was chosen last": "an empty setting goes back to guessing",
+  "a hole left saying undefined": "a hole nobody filled is empty",
   "a badge read after the page has moved": "a membership found after the page moved does not answer for where we were",
   "a pool that never asks": "the pool locks what cannot be sent",
   "a pool that keeps a locked card where it was": "and puts it last there too",
@@ -609,7 +637,7 @@ function run(file, mutant, subject) {
 let failed = 0;
 
 // A suite already red would make every mutation look caught.
-for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM, COLOUR, PRESET, MEMBER]) {
+for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM, COLOUR, PRESET, MEMBER, I18N]) {
   if (run(file, null).failed) {
     console.log(`FAIL ${file} is red before any mutation`);
     failed = 1;

@@ -78,7 +78,13 @@ for (const file of CODE) {
 }
 
 // The page itself: text sitting between tags rather than behind a key.
-const body = html.replace(/<!--[\s\S]*?-->/g, "").replace(/<(script|style)[\s\S]*?<\/\1>/g, "");
+// An element that names a key may keep its Japanese inside: that text is the
+// fallback shown before the script runs, which is better than a blank page.
+const body = html
+  .replace(/<!--[\s\S]*?-->/g, "")
+  .replace(/<(script|style)[\s\S]*?<\/\1>/g, "")
+  .replace(/<([\w-]+)[^>]*\sdata-i18n="[\w.]+"[^>]*>[^<]*/g, "<$1>");
+
 for (const [, text] of body.matchAll(/>([^<>]+)</g)) {
   if (!JAPANESE.test(text)) continue;
   left += 1;

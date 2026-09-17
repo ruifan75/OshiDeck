@@ -1,24 +1,25 @@
-const { store, tokens } = globalThis.OshiDeck;
+const { i18n, store, tokens } = globalThis.OshiDeck;
+const t = (...args) => i18n.t(...args);
 
 // One list, in store.js. It had been written out here as well, so every
 // setting added since had no selected button on this page until someone
 // remembered to add it twice.
 const DEFAULTS = store.DEFAULT_SETTINGS;
 
-const SIZE_LABEL = { large: "大", medium: "中", small: "小" };
+const SIZE_LABEL = { large: t("size.large"), medium: t("size.medium"), small: t("size.small") };
 
 const SORT_LABEL = {
-  trend: "チャット連動",
-  heat: "最近よく使う順",
-  uses: "使った回数順",
-  manual: "自分で並べた順"
+  trend: t("sort.trend"),
+  heat: t("sort.heat"),
+  uses: t("sort.uses"),
+  manual: t("sort.manual")
 };
 
 const SORT_NOTE = {
-  trend: "いまチャットで流れている反応に合う札を前に出します。新しい発言ほど重く数え、4秒ごとに並べ替え。カーソルが札の上にある間は動きません。",
-  heat: "古い使用ほど軽く数えます（半減期1週間）。",
-  uses: "使った回数の合計。ずっと前によく使った札も上に残ります。",
-  manual: "編成ページでドラッグして決めた順。勝手に動きません。"
+  trend: t("sort.trendNote"),
+  heat: t("sort.heatNote"),
+  uses: t("sort.usesNote"),
+  manual: t("sort.manualNote")
 };
 const SIDEBAR_WIDTH = 400;
 const PANEL_PADDING = 24;
@@ -29,6 +30,10 @@ function paint() {
   document.querySelector(`input[name="mode"][value="${settings.mode}"]`).checked = true;
   document.querySelector("#autoSend").checked = !!settings.autoSend;
   document.querySelector("#suggest").checked = settings.suggest !== false;
+
+  for (const button of document.querySelectorAll('[data-choice="language"] button')) {
+    button.classList.toggle("on", button.value === (settings.language || ""));
+  }
 
   for (const group of document.querySelectorAll(".segmented[data-setting]")) {
     const key = group.dataset.setting;
@@ -41,7 +46,7 @@ function paint() {
   const { CARD_SIZE, cardsPerRow } = globalThis.OshiDeck.layout;
   const perRow = cardsPerRow(SIDEBAR_WIDTH - PANEL_PADDING, CARD_SIZE[settings.cardSize]);
   document.querySelector("#capacity").textContent =
-    `${SIZE_LABEL[settings.cardSize]} × ${settings.rows}行 = 最大${perRow * settings.rows}枚`;
+    t("opt.capacity", SIZE_LABEL[settings.cardSize], settings.rows, perRow * settings.rows);
 
   document.querySelector("#sortNote").textContent = SORT_NOTE[settings.sortBy] || "";
 
@@ -49,14 +54,52 @@ function paint() {
   // and these are the values the panel was reported as getting wrong.
   const draw = store.tuning(settings, "draw");
   document.querySelector("#drawNote").textContent =
-    `12秒のあいだに同じ言葉が${draw.min}回以上、かつその間の発言の${Math.round(draw.share * 100)}%以上で引きます。` +
-    "賑やかなチャットほど、ひかえめが要ります。";
+    t("opt.drawNote", draw.min, Math.round(draw.share * 100)) +
+    t("opt.drawHint");
   document.querySelector("#holdNote").textContent =
-    `引いた札は${store.tuning(settings, "hold") / 1000}秒そのまま残ります。` +
-    "短くすると入れ替わりが速く、カーソルの下で変わりやすくなります。";
+    t("opt.holdNote", store.tuning(settings, "hold") / 1000) +
+    t("opt.holdHint");
   document.querySelector("#paceNote").textContent =
-    `「チャット連動」の重みが半分になるまで${store.tuning(settings, "pace") / 1000}秒。` +
-    "速いほど直前の波にすぐ反応し、遅いほど落ち着きます。";
+    t("opt.paceNote", store.tuning(settings, "pace") / 1000) +
+    t("opt.paceHint");
+}
+
+// Every element that names a key, filled. Text by default; an attribute when
+// the key is on `data-i18n-<attribute>`, which is how a placeholder or an
+// aria-label gets said in the right language too.
+function applyLanguage() {
+  i18n.use(settings.language);
+  document.documentElement.lang = i18n.current();
+
+  for (const el of document.querySelectorAll("[data-i18n]")) {
+    el.textContent = t(el.dataset.i18n);
+  }
+  for (const el of document.querySelectorAll("[data-i18n-placeholder]")) {
+    el.setAttribute("placeholder", t(el.dataset.i18nPlaceholder));
+  }
+  for (const el of document.querySelectorAll("[data-i18n-aria-label]")) {
+    el.setAttribute("aria-label", t(el.dataset.i18nAriaLabel));
+  }
+}
+
+// Built from the table rather than written into the page: adding a language
+// should be one entry in i18n.js and nothing else.
+function buildLanguageChoice() {
+  const group = document.querySelector('[data-choice="language"]');
+  for (const { code, label } of i18n.LANGUAGES) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.value = code;
+    // In its own language, always: someone looking for 繁體中文 is not
+    // reading the Japanese word for it.
+    button.textContent = label;
+    group.appendChild(button);
+  }
+
+  group.addEventListener("click", (event) => {
+    const button = event.target.closest("button");
+    if (button) commit({ language: button.value });
+  });
 }
 
 async function commit(patch) {
@@ -65,10 +108,11 @@ async function commit(patch) {
   const { ok, value } = await store.apply("setSettings", { patch });
   if (!ok) return;
   settings = value;
+  applyLanguage();
   paint();
 
   const saved = document.querySelector("#saved");
-  saved.textContent = "保存しました";
+  saved.textContent = t("opt.saved");
   clearTimeout(commit.timer);
   commit.timer = setTimeout(() => (saved.textContent = ""), 1200);
 }
@@ -76,6 +120,7 @@ async function commit(patch) {
 async function load() {
   const stored = await chrome.storage.local.get("settings");
   settings = { ...DEFAULTS, ...(stored.settings || {}) };
+  applyLanguage();
   paint();
 }
 
@@ -100,6 +145,7 @@ document.querySelector("#autoSend").addEventListener("change", (event) => {
   commit({ autoSend: event.target.checked });
 });
 
+buildLanguageChoice();
 load();
 
 /* ---------------- deck browser ---------------- */
@@ -139,7 +185,7 @@ function paintDecks() {
   if (!ids.length) {
     const empty = document.createElement("p");
     empty.className = "muted";
-    empty.textContent = "配信ページで札を保存するとデッキができます。";
+    empty.textContent = t("opt.noDecks");
     list.appendChild(empty);
   }
 
@@ -165,8 +211,8 @@ function paintDecks() {
     drop.type = "button";
     drop.className = "deck-delete";
     drop.textContent = "×";
-    drop.title = "このデッキを削除（このチャンネル専用の札も一緒に消えます）";
-    drop.setAttribute("aria-label", `${nameOf(id)} のデッキを削除`);
+    drop.title = t("opt.deleteDeck");
+    drop.setAttribute("aria-label", t("aria.deleteDeck", nameOf(id)));
     drop.addEventListener("click", (event) => {
       event.stopPropagation();
       removeDeck(id);
@@ -193,7 +239,7 @@ function paintHeader() {
   const swatches = document.createElement("div");
   swatches.className = "swatches";
   const label = document.createElement("small");
-  label.textContent = "推し色";
+  label.textContent = t("opt.oshiColour");
   swatches.appendChild(label);
 
   const current = hueOf(selected);
@@ -203,7 +249,7 @@ function paintHeader() {
     swatch.type = "button";
     swatch.className = "swatch";
     swatch.style.setProperty("--hue", hue);
-    swatch.setAttribute("aria-label", `推し色 ${hue}`);
+    swatch.setAttribute("aria-label", t("opt.oshiColourHue", hue));
     if (hue === current) swatch.dataset.on = "true";
     swatch.addEventListener("click", () => setHue(selected, hue));
     swatches.appendChild(swatch);
@@ -219,7 +265,7 @@ function paintHeader() {
   slider.max = "359";
   slider.value = String(current);
   slider.style.setProperty("--hue", current);
-  slider.setAttribute("aria-label", "推し色を細かく選ぶ");
+  slider.setAttribute("aria-label", t("opt.hueSlider"));
   // The thumb follows the drag; the write waits for the release, or every
   // pixel of it would be an operation through the worker.
   slider.addEventListener("input", (event) =>
@@ -234,7 +280,7 @@ function paintHeader() {
   picker.className = "hue-pick";
   picker.value = store.hexOfHue(current);
   picker.style.setProperty("--hue", current);
-  picker.setAttribute("aria-label", "色から選ぶ（カラーコード・スポイト）");
+  picker.setAttribute("aria-label", t("opt.colourPicker"));
   picker.addEventListener("change", (event) => {
     const hue = store.hueFromHex(event.target.value);
     if (hue != null) setHue(selected, hue);
@@ -252,7 +298,7 @@ function paintHeader() {
 async function mutate(op, args) {
   const reply = await store.apply(op, args);
   if (!reply.ok) {
-    status("保存できませんでした");
+    status(t("toast.saveFailed"));
     return reply;
   }
   const data = await store.read();
@@ -277,7 +323,7 @@ function buildCard(card, where) {
 
   const meta = document.createElement("div");
   meta.className = "browse-meta";
-  meta.textContent = card.uses ? `${card.uses}回` : "未使用";
+  meta.textContent = card.uses ? t("opt.uses", card.uses) : t("opt.unused");
 
   el.append(body, meta);
   wireDrag(el, card, where);
@@ -288,10 +334,10 @@ function buildCard(card, where) {
   // Every card has a pool to fall back to now, so leaving a deck always means
   // the same thing wherever you do it.
   if (where === "deck") {
-    el.appendChild(cardAction("⏏", "このデッキから外す（プールに戻ります）",
+    el.appendChild(cardAction("⏏", t("peek.ejectPool"),
       () => ejectCard(card)));
   } else {
-    el.appendChild(cardAction("×", "この札を削除（すべてのデッキから消えます）",
+    el.appendChild(cardAction("×", t("peek.deleteCard"),
       () => removeCard(card, el)));
   }
   return el;
@@ -323,14 +369,14 @@ function presetOffer() {
     if (!list.length || !selected) return;
 
     const line = document.createElement("small");
-    line.textContent = "はじめの一組を入れることもできます:";
+    line.textContent = t("opt.presetOffer");
     holder.appendChild(line);
 
     for (const preset of list) {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "action";
-      button.textContent = `${preset.name}（${preset.cards.length}枚）`;
+      button.textContent = t("opt.presetButton", preset.name, preset.cards.length);
       if (preset.note) button.title = preset.note;
       button.addEventListener("click", () => usePreset(preset));
       holder.appendChild(button);
@@ -348,9 +394,9 @@ async function usePreset(preset) {
   // Reused rather than copied: the pool already had some of these, and two
   // cards with the same words would both answer to the same reaction.
   const note = value.reused
-    ? `（うち${value.reused}枚はプールにあったものを使いました）`
+    ? t("opt.presetReused", value.reused)
     : "";
-  status(`「${preset.name}」を読み込みました${note}`);
+  status(t("opt.presetLoaded", preset.name, note));
 }
 
 function cardAction(glyph, label, onClick) {
@@ -376,21 +422,21 @@ function paintCards() {
     hint.textContent = "";
     const empty = document.createElement("p");
     empty.className = "muted";
-    empty.textContent = "デッキがありません。";
+    empty.textContent = t("opt.deckEmpty");
     holder.appendChild(empty);
     return;
   }
 
   hint.textContent =
     settings.sortBy === "manual"
-      ? "右のプールからドラッグして追加、札同士をドラッグで並べ替え。"
-      : `並べ替えはできますが、配信ページは「${SORT_LABEL[settings.sortBy]}」で表示中です。`;
+      ? t("opt.deckHint")
+      : t("opt.deckHintSorted", SORT_LABEL[settings.sortBy]);
 
   const cards = cardsOf(selected);
   if (!cards.length) {
     const empty = document.createElement("p");
     empty.className = "muted";
-    empty.textContent = "右のプールから札をドラッグしてください。";
+    empty.textContent = t("opt.deckEmptyHint");
     holder.append(empty, presetOffer());
     return;
   }
@@ -413,15 +459,15 @@ function paintPool() {
     : all;
 
   document.querySelector("#poolCount").textContent = query
-    ? `${shown.length} / ${all.length}枚`
-    : `${all.length}枚`;
+    ? t("opt.poolCountFiltered", shown.length, all.length)
+    : t("opt.poolCount", all.length);
 
   if (!shown.length) {
     const empty = document.createElement("p");
     empty.className = "muted";
     empty.textContent = query
-      ? "一致する札がありません。"
-      : "追加できる札がありません。";
+      ? t("opt.noMatch")
+      : t("opt.poolEmpty");
     holder.appendChild(empty);
     return;
   }
@@ -535,10 +581,10 @@ async function dropOnDeck({ card, from }, { target, side }) {
 
   if (joined) {
     undo = () => mutate("removeFromDeck", { channelId: into, cardId: card.id })
-      .then((r) => r.ok && status("元に戻しました"));
-    status(`「${label(card)}」を ${nameOf(into)} に入れました`, "元に戻す");
+      .then((r) => r.ok && status(t("opt.undone")));
+    status(t("opt.addedTo", label(card), nameOf(into)), t("action.undo"));
   } else if (settings.sortBy !== "manual") {
-    status("並べ替えました（表示に反映するには並び順を「自分で並べた順」に）");
+    status(t("opt.reordered"));
   }
 }
 
@@ -549,9 +595,9 @@ async function ejectCard(card, deckId = selected) {
   // insertIntoDeck tolerates whatever happened in the meantime: the card may
   // have been re-added from the chat panel, or deleted outright.
   undo = () => mutate("insertIntoDeck", { channelId: deckId, cardId: card.id, at })
-    .then((r) => r.ok && status("元に戻しました"));
+    .then((r) => r.ok && status(t("opt.undone")));
 
-  status(`「${label(card)}」をデッキから外しました（プールに残っています）`, "元に戻す");
+  status(t("opt.ejected", label(card)), t("action.undo"));
 }
 
 // Removing a deck keeps universal cards in the pool; cards only this channel
@@ -565,12 +611,12 @@ async function removeDeck(id) {
   paintDecks();
 
   undo = () => mutate("restoreDeck", { snapshot })
-    .then((r) => r.ok && status("元に戻しました"));
+    .then((r) => r.ok && status(t("opt.undone")));
 
   const note = snapshot.exclusive?.length
-    ? `（このチャンネル専用の${snapshot.exclusive.length}枚も一緒に削除）`
-    : "（札はプールに残っています）";
-  status(`「${was}」のデッキを削除しました${note}`, "元に戻す");
+    ? t("opt.deckDeletedNote", snapshot.exclusive.length)
+    : t("opt.deckKeptNote");
+  status(t("opt.deckDeleted", was, note), t("action.undo"));
 }
 
 // Deleting is from the pool, so it leaves every deck at once.
@@ -592,9 +638,9 @@ async function deleteCardNow(card) {
   if (!ok || !snapshot) return;
 
   undo = () => mutate("restoreCard", { snapshot })
-    .then((r) => r.ok && status("元に戻しました"));
+    .then((r) => r.ok && status(t("opt.undone")));
 
-  status(`「${label(snapshot.card)}」を削除しました`, "元に戻す");
+  status(t("opt.cardDeleted", label(snapshot.card)), t("action.undo"));
 }
 
 // Asked on the card, not in the status line. That line lives at the very
@@ -608,10 +654,10 @@ function askOnCard(el, card, held) {
   const ask = document.createElement("div");
   ask.className = "browse-confirm";
   ask.setAttribute("role", "group");
-  ask.setAttribute("aria-label", `${names} のデッキにもあります。削除すると全部から消えます。`);
+  ask.setAttribute("aria-label", t("opt.sharedWarn", names));
 
   const line = document.createElement("p");
-  line.textContent = held.length === 1 ? "他のデッキにも" : `他${held.length}つのデッキにも`;
+  line.textContent = held.length === 1 ? t("opt.sharedOther") : t("opt.sharedOthers", held.length);
 
   const close = () => {
     ask.remove();
@@ -621,8 +667,8 @@ function askOnCard(el, card, held) {
   const yes = document.createElement("button");
   yes.type = "button";
   yes.className = "browse-confirm-yes";
-  yes.textContent = "削除";
-  yes.title = `${names} のデッキからも消えます`;
+  yes.textContent = t("action.delete");
+  yes.title = t("opt.sharedAlso", names);
   yes.addEventListener("click", (event) => {
     event.stopPropagation();
     close();
@@ -631,7 +677,7 @@ function askOnCard(el, card, held) {
 
   const no = document.createElement("button");
   no.type = "button";
-  no.textContent = "やめる";
+  no.textContent = t("action.cancel");
   no.addEventListener("click", (event) => { event.stopPropagation(); close(); });
 
   ask.append(line, yes, no);
@@ -644,7 +690,7 @@ function label(card) {
   const text = tokens.toPlainText(card.tokens || []).trim();
   if (text) return text.length > 18 ? text.slice(0, 18) + "…" : text;
   const stamps = (card.tokens || []).filter((t) => t.type === "youtubeEmoji").length;
-  return stamps ? `スタンプ${stamps}個` : "空の札";
+  return stamps ? t("opt.stamps", stamps) : t("opt.emptyCard");
 }
 
 function status(message, actionLabel, action) {
@@ -730,7 +776,7 @@ async function exportBackup() {
   // Revoking immediately can cancel the download in some builds.
   setTimeout(() => URL.revokeObjectURL(url), 10000);
 
-  importStatus(`${payload.cards.length}枚を書き出しました`);
+  importStatus(t("opt.exported", payload.cards.length));
 }
 
 async function readBackupFile(file) {
@@ -740,11 +786,11 @@ async function readBackupFile(file) {
   try {
     raw = JSON.parse(await file.text());
   } catch (_) {
-    return importStatus("JSONとして読めませんでした");
+    return importStatus(t("opt.notJson"));
   }
 
   const problem = backup.validate(raw);
-  if (problem) return importStatus(`読み込めません: ${problem}`);
+  if (problem) return importStatus(t("opt.cannotRead", problem));
 
   const { cards, decks } = backup.summarise(raw);
   // Replacing throws away everything currently stored, so it never happens on
@@ -752,8 +798,8 @@ async function readBackupFile(file) {
   if (importMode === "replace") {
     pending = raw;
     return importStatus(
-      `${file.name}: ${cards}枚 / ${decks}デッキ。今のデータをすべて捨てて置き換えます。`,
-      "置き換える",
+      t("opt.replaceConfirm", file.name, cards, decks),
+      t("opt.replace"),
       () => applyImport()
     );
   }
@@ -774,21 +820,21 @@ async function applyImport() {
   // Computing it here and sending the result would roll back anything that
   // committed while the message was in flight.
   const { ok, value } = await store.apply("importBackup", { raw, mode });
-  if (!ok) return importStatus("保存できませんでした");
+  if (!ok) return importStatus(t("toast.saveFailed"));
 
   importStatus(
     mode === "replace"
-      ? `${value.count}枚に置き換えました`
+      ? t("opt.replaced", value.count)
       : value.added || value.linked
-        ? `新しい札 ${value.added}枚、デッキへの追加 ${value.linked}件`
-        : "すでに全部持っていました"
+        ? t("opt.mergedNew", value.added, value.linked)
+        : t("opt.mergedNone")
   );
 
   await load();
   await loadDecks();
 }
 
-for (const group of document.querySelectorAll("[data-choice]")) {
+for (const group of document.querySelectorAll('[data-choice="importMode"]')) {
   group.addEventListener("click", (event) => {
     const button = event.target.closest("button");
     if (!button) return;
@@ -800,21 +846,21 @@ for (const group of document.querySelectorAll("[data-choice]")) {
     }
     document.querySelector("#importNote").textContent =
       importMode === "replace"
-        ? "今のプールとデッキをすべて捨てて、ファイルの内容にします。"
-        : "同じ内容の札は重複しません。同じファイルを2回読んでも増えません。";
+        ? t("opt.replaceNote")
+        : t("opt.mergeNote");
   });
   group.querySelector('button[value="merge"]').classList.add("on");
 }
 
 // A deck, as something to hand to someone who has none.
 async function exportPreset() {
-  if (!selected) return importStatus("デッキを選んでください");
+  if (!selected) return importStatus(t("opt.pickDeck"));
 
   const name = nameOf(selected) || selected;
   const preset = presets.fromDeck(decks, selected, { name });
 
   const problem = presets.validate(preset);
-  if (problem) return importStatus(`書き出せません: ${problem}`);
+  if (problem) return importStatus(t("opt.cannotExport", problem));
 
   const blob = new Blob([JSON.stringify(preset, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
@@ -828,9 +874,9 @@ async function exportPreset() {
   setTimeout(() => URL.revokeObjectURL(url), 10000);
 
   const dropped = cardsOf(selected).length - preset.cards.length;
-  importStatus(`${preset.cards.length}枚を書き出しました` +
-    (preset.channel ? "（このチャンネル専用。メン限スタンプを含みます）" : "") +
-    (dropped > 0 ? `（よそのチャンネルのメン限スタンプ${dropped}枚は入りません）` : ""));
+  importStatus(t("opt.exported", preset.cards.length) +
+    (preset.channel ? t("opt.presetBound") : "") +
+    (dropped > 0 ? t("opt.presetDropped", dropped) : ""));
 }
 
 document.querySelector("#presetBtn").addEventListener("click", exportPreset);
@@ -853,12 +899,12 @@ const journalStatus = (text) => {
 
 async function showJournalCount() {
   const entries = await journal.read();
-  journalStatus(entries.length ? `${entries.length}件を記録しています` : "まだ記録はありません");
+  journalStatus(entries.length ? t("opt.journalCount", entries.length) : t("opt.journalEmpty"));
 }
 
 async function saveJournal() {
   const entries = await journal.read();
-  if (!entries.length) return journalStatus("まだ記録がないので、書き出すものがありません");
+  if (!entries.length) return journalStatus(t("opt.journalNothing"));
 
   const text = journal.format(entries, chrome.runtime.getManifest().version);
   const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
@@ -872,7 +918,7 @@ async function saveJournal() {
   // Revoking immediately can cancel the download in some builds.
   setTimeout(() => URL.revokeObjectURL(url), 10000);
 
-  journalStatus(`${entries.length}件を書き出しました`);
+  journalStatus(t("opt.journalExported", entries.length));
 }
 
 async function clearJournal() {
@@ -886,7 +932,7 @@ async function clearJournal() {
     reply = null; // no worker to ask
   }
 
-  journalStatus(reply?.ok ? "記録を消しました" : "消せませんでした");
+  journalStatus(reply?.ok ? t("opt.journalCleared") : t("opt.journalClearFailed"));
 }
 
 document.querySelector("#journalBtn").addEventListener("click", saveJournal);

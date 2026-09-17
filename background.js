@@ -43,6 +43,11 @@ async function readPresets() {
   return bundled;
 }
 
+// The toolbar button. With no `action` in the manifest there is no button to
+// press, and with no popup declared the press arrives here — which is what we
+// want, since everything this extension has to configure lives on one page.
+chrome.action.onClicked.addListener(() => chrome.runtime.openOptionsPage());
+
 chrome.runtime.onMessage.addListener((message, _sender, respond) => {
   if (message?.type === "presets") {
     readPresets().then((list) => respond({ ok: true, value: list }), () => respond({ ok: false }));

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "OshiDeck",
-  "version": "0.22.0",
+  "version": "0.22.1",
   "description": "YouTube Live Chatのコメント・メン限スタンプを札にして、チャット横から一発で打てるChrome拡張機能",
   "permissions": [
     "storage"
@@ -34,5 +34,8 @@
       "run_at": "document_idle"
     }
   ],
+  "action": {
+    "default_title": "OshiDeck — 設定と編成"
+  },
   "options_page": "options.html"
 }

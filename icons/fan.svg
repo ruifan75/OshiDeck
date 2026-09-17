@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="28" fill="#1b1d21"/>
+  <g transform="translate(64 84)">
+    <g transform="rotate(-24) translate(-20 -40)">
+      <rect width="40" height="60" rx="8" fill="#cfd2d8"/>
+      <path d="M0 8a8 8 0 0 1 8-8h24a8 8 0 0 1 8 8v6H0z" fill="#52a9fe"/>
+    </g>
+    <g transform="rotate(24) translate(-20 -40)">
+      <rect width="40" height="60" rx="8" fill="#cfd2d8"/>
+      <path d="M0 8a8 8 0 0 1 8-8h24a8 8 0 0 1 8 8v6H0z" fill="#fd7277"/>
+    </g>
+    <g transform="translate(-21 -48)">
+      <rect width="42" height="62" rx="8" fill="#f2f3f6"/>
+      <path d="M0 8a8 8 0 0 1 8-8h26a8 8 0 0 1 8 8v6H0z" fill="#d777ed"/>
+    </g>
+  </g>
+</svg>

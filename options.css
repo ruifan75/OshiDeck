@@ -657,3 +657,35 @@ kbd {
 /* Grey stripe means the card works on any channel — same meaning as the
    chat panel, so the two read alike. */
 .browse-card[data-universal] { border-top-color: #8a8a8a; }
+
+/* The two per-deck actions, beside the deck's own name — not down in the
+   backup section, which is about the whole store. Small and quiet: they are
+   next to the title, and a title that has to share its line with two loud
+   buttons stops reading as a title. */
+.deck-title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.deck-title strong { flex: 1 1 auto; min-width: 0; }
+
+.deck-action {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 7px;
+  background: none;
+  color: inherit;
+  opacity: .5;
+  cursor: pointer;
+}
+
+.deck-action svg { width: 15px; height: 15px; }
+.deck-action:hover { opacity: 1; background: #ffffff14; }
+.deck-action:focus-visible { opacity: 1; outline: 2px solid #8ab4ff; outline-offset: 1px; }

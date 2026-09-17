@@ -287,7 +287,49 @@ function paintHeader() {
   });
 
   swatches.append(slider, picker);
-  header.append(title, swatches);
+
+  // On the deck, not in the backup section. Those two are about the whole
+  // store — pool, every deck, settings — and these two are about this one
+  // deck. Sitting in the same list, the only way to tell which was which was
+  // to read all four labels.
+  const line = document.createElement("div");
+  line.className = "deck-title";
+  line.append(
+    title,
+    deckAction("download", t("opt.deckExport"), exportDeck),
+    deckAction("upload", t("opt.deckImport"), () => document.querySelector("#deckFile").click())
+  );
+
+  header.append(line, swatches);
+}
+
+const DECK_ICONS = {
+  // Into a tray, and out of one.
+  download: "M12 4v10m0 0 4-4m-4 4-4-4M5 18h14",
+  upload: "M12 20V10m0 0 4 4m-4-4-4 4M5 6h14"
+};
+
+function deckAction(icon, label, onClick) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "deck-action";
+  button.title = label;
+  button.setAttribute("aria-label", label);
+
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("viewBox", "0 0 24 24");
+  svg.setAttribute("fill", "none");
+  svg.setAttribute("stroke", "currentColor");
+  svg.setAttribute("stroke-width", "2");
+  svg.setAttribute("stroke-linecap", "round");
+  svg.setAttribute("stroke-linejoin", "round");
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", DECK_ICONS[icon]);
+  svg.appendChild(path);
+
+  button.appendChild(svg);
+  button.addEventListener("click", onClick);
+  return button;
 }
 
 // Apply a change to the freshest stored state, never to the snapshot this page
@@ -853,8 +895,8 @@ for (const group of document.querySelectorAll('[data-choice="importMode"]')) {
 }
 
 // A deck, as something to hand to someone who has none.
-async function exportPreset() {
-  if (!selected) return importStatus(t("opt.pickDeck"));
+async function exportDeck() {
+  if (!selected) return;
 
   const name = nameOf(selected) || selected;
   const preset = presets.fromDeck(decks, selected, { name });
@@ -874,12 +916,51 @@ async function exportPreset() {
   setTimeout(() => URL.revokeObjectURL(url), 10000);
 
   const dropped = cardsOf(selected).length - preset.cards.length;
-  importStatus(t("opt.exported", preset.cards.length) +
+  status(t("opt.exported", preset.cards.length) +
     (preset.channel ? t("opt.presetBound") : "") +
     (dropped > 0 ? t("opt.presetDropped", dropped) : ""));
 }
 
-document.querySelector("#presetBtn").addEventListener("click", exportPreset);
+// And the way back in. Everything that decides anything is already written:
+// the file is checked by the extension's own reader, and the operation that
+// takes it in is the same one the bundled presets go through — which is what
+// settles duplicates, scope, and which cards can be played here at all.
+async function importDeck(file) {
+  if (!file || !selected) return;
+
+  let raw;
+  try {
+    raw = JSON.parse(await file.text());
+  } catch (_) {
+    return status(t("opt.notJson"));
+  }
+
+  const problem = presets.validate(raw);
+  if (problem) return status(t("opt.cannotRead", problem));
+
+  // A file carrying another channel's member emoji cannot be played here, and
+  // loading it would silently drop the part that took the longest to build.
+  // Better to say so than to half-load it.
+  if (!presets.offeredOn(raw, selected)) return status(t("opt.importNotForHere"));
+
+  const { ok, value } = await mutate("loadPreset", {
+    channelId: selected,
+    name: nameOf(selected),
+    cards: presets.cardsFor(raw, selected)
+  });
+  if (!ok || !value) return;
+  if (!value.added && !value.reused) return status(t("opt.importedNothing"));
+
+  const note = value.reused ? t("opt.presetReused", value.reused) : "";
+  status(t("opt.presetLoaded", raw.name, note));
+  await loadDecks();
+}
+
+document.querySelector("#deckFile").addEventListener("change", (event) => {
+  const [file] = event.target.files || [];
+  event.target.value = "";   // the same file twice in a row is still a change
+  importDeck(file);
+});
 document.querySelector("#exportBtn").addEventListener("click", exportBackup);
 document.querySelector("#importBtn").addEventListener("click", () =>
   document.querySelector("#importFile").click());

@@ -492,6 +492,14 @@ const MUTATIONS = [
     '      ? text.replace(/\\$(\\d)/g, (_, n) => String(args[Number(n) - 1] ?? ""))',
     "      ? text.replace(/\\$(\\d)/g, (_, n) => String(args[Number(n) - 1]))"],
 
+  [PRESET, OPTIONS, "a file taken in without asking whose it is",
+    "  if (!presets.offeredOn(raw, selected)) return status(t(\"opt.importNotForHere\"));",
+    "  if (false) return status(t(\"opt.importNotForHere\"));"],
+
+  [PRESET, OPTIONS, "a file taken in without being read first",
+    "  if (problem) return status(t(\"opt.cannotRead\", problem));",
+    "  if (false) return status(t(\"opt.cannotRead\", problem));"],
+
   [COLOUR, STORE, "an out-of-gamut hue clipped instead of desaturated",
     "    for (let c = chroma; c > 0.01 && found.some((v) => v < -0.0005 || v > 1.0005); c -= 0.005) {\n      found = rgb(c);\n    }",
     "    // (clipped below instead)"],
@@ -550,6 +558,8 @@ const KILLS = {
   "member emoji accepted into a preset that names nobody": "nor can they ride in a preset that names nobody",
   "a preset offered to channels it was never for": "and nowhere else",
   "a preset forced onto a channel that cannot send it": "forced onto another channel, only what can be sent there loads",
+  "a file taken in without asking whose it is": "a file for another channel is refused, not half-loaded",
+  "a file taken in without being read first": "a file that is not a preset is refused",
   "a preset that carries its ids along with its content": "no ids, no counts, no history",
   "channel-only losing its meaning on the way in": "and channel-only means the channel it is loaded into",
   "a card that works only elsewhere counted as a match": "a card that only works on another channel is not treated as a match",

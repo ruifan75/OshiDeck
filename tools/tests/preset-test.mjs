@@ -246,4 +246,63 @@ await store.runOp("loadPreset", { channelId: OTHER, cards: presets.cardsFor(plai
 check("loading the same preset again adds nothing", disk.cards.length === before);
 check("and does not repeat itself in the deck", new Set(disk.decks[OTHER]).size === disk.decks[OTHER].length);
 
+/* ---------- and the way back in, from the builder ---------- */
+
+// The file can only be handed to someone if they can take it. Everything that
+// decides is already written — validate, offeredOn, loadPreset — so what is
+// left to get wrong is the line that calls them, which is the part nothing
+// was watching.
+const optionsSrc = (await import("node:fs")).readFileSync(
+  process.env.OD_OPTIONS || "/Users/maintainer/OshiDeck/options.js", "utf8");
+
+const from = optionsSrc.indexOf("async function importDeck(file) {");
+const to = optionsSrc.indexOf("\n}", from) + 2;
+if (from < 0 || to <= from) {
+  console.log("FAIL could not lift importDeck out of options.js");
+  process.exit(1);
+}
+
+const importing = (raw, into) => {
+  const seen = { writes: [], said: [] };
+  const run = new Function(
+    "t", "presets", "selected", "status", "mutate", "nameOf", "loadDecks",
+    `${optionsSrc.slice(from, to)} return importDeck;`
+  )(
+    (key, ...args) => [key, ...args].join("|"),
+    presets,
+    into,
+    (message) => seen.said.push(message),
+    async (op, args) => { seen.writes.push({ op, args }); return store.runOp(op, args); },
+    () => "さくら",
+    async () => {}
+  );
+  return run({ text: async () => JSON.stringify(raw) }).then(() => seen);
+};
+
+disk = { cards: [], decks: { [CH]: [] }, channelMeta: {}, settings: {} };
+let got = await importing(made, CH);
+check("a file made here loads back in", disk.cards.length === 3);
+check("and says what it did", got.said.join("").includes("opt.presetLoaded"));
+
+// The one the offer already knows: a file carrying somebody's member emoji is
+// no use on another channel, and loading it would quietly drop exactly the
+// part that took the longest to build.
+disk = { cards: [], decks: { [OTHER]: [] }, channelMeta: {}, settings: {} };
+got = await importing(made, OTHER);
+check("a file for another channel is refused, not half-loaded", disk.cards.length === 0);
+check("and says which kind of no it is", got.said.join("").includes("opt.importNotForHere"));
+
+// The portable kind has nobody to belong to, so it goes anywhere.
+disk = { cards: [], decks: { [OTHER]: [] }, channelMeta: {}, settings: {} };
+got = await importing(plain, OTHER);
+check("a portable file loads anywhere", disk.cards.length === 2);
+
+// Hand-edited, or from a newer build. A file that is merely *empty* would be
+// refused by the operation anyway, which proves nothing about the reading —
+// so this one has a card in it that only the reading can object to.
+disk = { cards: [], decks: { [CH]: [] }, channelMeta: {}, settings: {} };
+got = await importing({ name: "あやしい", cards: [{ tokens: text("x"), scope: "everywhere" }] }, CH);
+check("a file that is not a preset is refused", disk.cards.length === 0);
+check("with the reason it gave", got.said.join("").includes("opt.cannotRead"));
+
 process.exit(fail);

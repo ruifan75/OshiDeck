@@ -100,12 +100,17 @@ for (const file of files) {
       if (!signature) continue;
 
       const at = seen.get(signature) || {
-        wordings: new Map(), people: new Set(), streams: new Set(), count: 0,
+        wordings: new Map(), people: new Set(), crowds: new Map(), count: 0,
         member: required.length > 0
       };
       at.count += 1;
-      at.people.add(item.authorExternalChannelId || `anon:${at.count}`);
-      at.streams.add(file);
+
+      const who = item.authorExternalChannelId || `anon:${at.count}`;
+      at.people.add(who);
+      // Who said it on each night separately, as well as across all of them.
+      const crowd = at.crowds.get(file) || new Set();
+      crowd.add(who);
+      at.crowds.set(file, crowd);
 
       // A signature collapses `888` and `88888888`, and one of those is what
       // somebody would want on the card. Keeping the first one seen made the
@@ -126,13 +131,31 @@ for (const file of files) {
 const commonest = (wordings) =>
   JSON.parse([...wordings].sort((a, b) => b[1] - a[1])[0][0]);
 
+// How many people said it on its *second* busiest night.
+//
+// One evening cannot carry a card on its own, and the total across all of
+// them does not notice that it tried. `ノシノシ` — waving, what viewers send
+// as they arrive and leave — had 125 people here, and 112 of them were at
+// one 31-minute singing relay where the audience was hopping between
+// channels. That is the relay's habit, not this channel's, and it ranked
+// fifth. Meanwhile `🦢✨` is this channel's own sign, and its second-best
+// night still has 90 people.
+//
+// The busiest night is what an event inflates; the second is what a habit
+// has to supply, every time.
+const secondCrowd = (crowds) => {
+  const sizes = [...crowds.values()].map((c) => c.size).sort((a, b) => b - a);
+  return sizes[1] || 0;
+};
+
 const candidates = [...seen.values()]
   .map((c) => {
     const list = commonest(c.wordings);
     return {
       people: c.people.size,
+      regulars: secondCrowd(c.crowds),
       count: c.count,
-      streams: c.streams.size,
+      streams: c.crowds.size,
       member: c.member,
       text: tokens.toPlainText(list).trim(),
       wordings: c.wordings.size,
@@ -147,13 +170,13 @@ const candidates = [...seen.values()]
   // is one night: a joke that landed once looks identical to a greeting until
   // there is a second night to compare it with.
   .filter((c) => c.people > 1 && c.streams >= MIN_STREAMS)
-  // Then by people, not by how many streams. Sorting by streams first put
-  // everything that happened to appear in all fifteen above everything that
-  // did not, however few said it — and buried this channel's own signature,
-  // `🦢✨`, at twenty-eighth on 354 people, under entries with twenty. It
-  // misses four streams because it is what people send while she sings, and
-  // being absent from the streams where she talks is not a fault in it.
-  .sort((a, b) => b.people - a.people || b.count - a.count);
+  // Not by how many streams, which put everything appearing in all fifteen
+  // above everything that did not, however few said it — and buried this
+  // channel's own sign, `🦢✨`, at twenty-eighth on 354 people, beneath
+  // entries with twenty. It misses four of the fifteen because it is what
+  // people send while she sings, and being absent from the streams where she
+  // talks is not a fault in it.
+  .sort((a, b) => b.regulars - a.regulars || b.people - a.people || b.count - a.count);
 
 const out = `${root}tools/candidates.json`;
 writeFileSync(out, `${JSON.stringify({ channel, streams: files.length, candidates }, null, 2)}\n`);
@@ -172,11 +195,11 @@ if (skipped) {
   }
 }
 
-console.log("\n配信数  人数  回数  種別  内容");
+console.log("\n常連  のべ  配信  回数  種別  内容");
 for (const c of candidates.slice(0, 40)) {
   console.log(
-    `${String(c.streams).padStart(5)} ${String(c.people).padStart(5)} ${String(c.count).padStart(5)}` +
-    `   ${c.member ? "メン限" : "　　  "}  ${label(c).slice(0, 44)}`
+    `${String(c.regulars).padStart(4)} ${String(c.people).padStart(5)} ${String(c.streams).padStart(5)}` +
+    ` ${String(c.count).padStart(5)}   ${c.member ? "メン限" : "　　  "}  ${label(c).slice(0, 42)}`
   );
 }
 console.log(`\ntools/candidates.json — ${candidates.length}件`);

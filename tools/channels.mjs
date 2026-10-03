@@ -4,6 +4,7 @@
 //   node tools/channels.mjs Hololive --limit 200
 //   node tools/channels.mjs --all             # every vtuber Holodex knows
 //   node tools/channels.mjs --orgs            # what organisations there are
+//   node tools/channels.mjs --streams UC… [--topic singing] [--limit 15]
 //
 // This is a working list, not something the extension ships: which channels
 // to mine chat for, and the names to put against the ids that turn up in
@@ -48,10 +49,12 @@ const flag = (name, fallback) => {
 };
 const orgs = args.includes("--orgs");
 const all = args.includes("--all");
+const wantStreams = args.includes("--streams");
+const topic = flag("--topic", null);
 const org = args.find((a) => !a.startsWith("--") && args[args.indexOf(a) - 1] !== "--limit");
 const limit = Number(flag("--limit", 100));
 
-if (!orgs && !all && !org) {
+if (!orgs && !all && !wantStreams && !org) {
   console.log('usage: node tools/channels.mjs "<org>" [--limit N]');
   console.log("       node tools/channels.mjs --all");
   console.log("       node tools/channels.mjs --orgs");
@@ -73,6 +76,40 @@ const ask = async (path) => {
   }
   return response.json();
 };
+
+// Which streams to mine, as ids on stdout — so mine.sh can read them.
+//
+// Holodex labels a stream with a topic (`singing`, `membersonly`, `shorts`),
+// which YouTube does not, and which a title cannot be trusted for: a singing
+// stream of hers is 【 #歌枠 】 but a relay is 【#響き渡れリバベレ歌枠リレー】
+// and a members-only one says so in Japanese.
+//
+// `membersonly` is always dropped: its chat is members only, so every count
+// taken from it is about a different room than the one a preset is for.
+if (wantStreams) {
+  const which = args.find((a, at) => !a.startsWith("--") && args[at - 1] !== "--topic" &&
+    args[at - 1] !== "--limit" && args[at - 1] !== "--streams");
+  const channel = args[args.indexOf("--streams") + 1]?.startsWith("UC")
+    ? args[args.indexOf("--streams") + 1]
+    : which;
+  if (!channel) {
+    console.log("usage: node tools/channels.mjs --streams <UC…> [--topic singing] [--limit N]");
+    exit(1);
+  }
+
+  const videos = await ask(
+    `videos?channel_id=${channel}&type=stream&status=past&limit=50` +
+    (topic ? `&topic=${encodeURIComponent(topic)}` : "")
+  );
+
+  const usable = videos
+    .filter((v) => v.topic_id !== "membersonly")
+    .filter((v) => (v.duration || 0) > 600)
+    .slice(0, limit);
+
+  for (const v of usable) console.log(v.id);
+  exit(0);
+}
 
 /* ---------- the list ---------- */
 

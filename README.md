@@ -746,6 +746,7 @@ tools/check-i18n.mjs  直に書かれた文字列と、鍵の過不足を検出
 tools/check-refs.mjs  存在しない関数の呼び出しを検出
 tools/check-css.mjs   同じセレクタが同じプロパティを2回書いていないか
 tools/check-var-timing.mjs  カスタムプロパティの合成が継承で壊れていないか
+tools/channels.mjs    Holodex から事務所のチャンネル一覧（`tools/channels.json` へ）
 tools/add-preset.mjs  書き出したプリセットを presets/presets.json に入れる
 tools/selftest.js     YouTubeのDOMセレクタの自己診断
 tools/tests/          上のテスト本体（`page.mjs` はチャット画面の模型）

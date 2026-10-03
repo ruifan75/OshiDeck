@@ -1,7 +1,8 @@
 // Lists an organisation's channels from Holodex, into tools/channels.json.
 //
-//   node tools/channels.mjs "Re:AcT"
+//   node tools/channels.mjs ReAcT
 //   node tools/channels.mjs Hololive --limit 200
+//   node tools/channels.mjs --all             # every vtuber Holodex knows
 //   node tools/channels.mjs --orgs            # what organisations there are
 //
 // This is a working list, not something the extension ships: which channels
@@ -46,14 +47,20 @@ const flag = (name, fallback) => {
   return at < 0 ? fallback : args[at + 1];
 };
 const orgs = args.includes("--orgs");
+const all = args.includes("--all");
 const org = args.find((a) => !a.startsWith("--") && args[args.indexOf(a) - 1] !== "--limit");
 const limit = Number(flag("--limit", 100));
 
-if (!orgs && !org) {
+if (!orgs && !all && !org) {
   console.log('usage: node tools/channels.mjs "<org>" [--limit N]');
+  console.log("       node tools/channels.mjs --all");
   console.log("       node tools/channels.mjs --orgs");
   exit(1);
 }
+
+// Holodex is somebody's server and this walks the whole of it. A pause
+// between pages costs a minute and asks nothing of anyone.
+const breathe = () => new Promise((resolve) => setTimeout(resolve, 250));
 
 const ask = async (path) => {
   const response = await fetch(`https://holodex.net/api/v2/${path}`, {
@@ -82,6 +89,7 @@ if (orgs) {
     }
     if (page.length < 100) break;
     if (offset > 20000) break;   // a wrong answer is better than an endless one
+    await breathe();
   }
   for (const [name, count] of [...seen].sort((a, b) => b[1] - a[1])) {
     console.log(`${String(count).padStart(5)}  ${name}`);
@@ -89,15 +97,31 @@ if (orgs) {
   exit(0);
 }
 
-// Holodex pages; a large org runs past one request.
+// Holodex pages; a large org runs past one request, and everything runs past
+// a great many of them.
 const channels = [];
-for (let offset = 0; offset < limit; offset += 50) {
-  const page = await ask(
-    `channels?org=${encodeURIComponent(org)}&type=vtuber&limit=50&offset=${offset}` +
-    "&sort=subscriber_count&order=desc"
-  );
-  channels.push(...page);
-  if (page.length < 50) break;
+if (all) {
+  for (let offset = 0; ; offset += 100) {
+    const page = await ask(
+      `channels?type=vtuber&limit=100&offset=${offset}&sort=subscriber_count&order=desc`
+    );
+    channels.push(...page);
+    process.stdout.write(`\r  ${channels.length} …`);
+    if (page.length < 100) break;
+    if (offset > 50000) break;
+    await breathe();
+  }
+  process.stdout.write("\r");
+} else {
+  for (let offset = 0; offset < limit; offset += 50) {
+    const page = await ask(
+      `channels?org=${encodeURIComponent(org)}&type=vtuber&limit=50&offset=${offset}` +
+      "&sort=subscriber_count&order=desc"
+    );
+    channels.push(...page);
+    if (page.length < 50) break;
+    await breathe();
+  }
 }
 
 const shaped = channels.map((c) => ({
@@ -119,14 +143,14 @@ if (existsSync(out)) {
 const byId = new Map(held.map((c) => [c.id, c]));
 for (const c of shaped) byId.set(c.id, c);
 
-const all = [...byId.values()].sort((a, b) =>
+const everyone = [...byId.values()].sort((a, b) =>
   (a.org || "").localeCompare(b.org || "") || b.subscribers - a.subscribers);
 
-writeFileSync(out, `${JSON.stringify(all, null, 2)}\n`);
+writeFileSync(out, `${JSON.stringify(everyone, null, 2)}\n`);
 
 const added = shaped.filter((c) => !held.some((h) => h.id === c.id)).length;
-console.log(`${org}: ${shaped.length}チャンネル（新規 ${added}）`);
-console.log(`tools/channels.json — ${all.length}件`);
+console.log(`${all ? "すべて" : org}: ${shaped.length}チャンネル（新規 ${added}）`);
+console.log(`tools/channels.json — ${everyone.length}件`);
 for (const c of shaped.slice(0, 8)) {
   console.log(`  ${c.id}  ${String(c.subscribers).padStart(8)}  ${c.japanese}`);
 }

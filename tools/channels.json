@@ -1,0 +1,2312 @@
+[
+  {
+    "id": "UCoSrY_IQQVpmIRZ9Xf-y93g",
+    "name": "Gawr Gura",
+    "japanese": "Gawr Gura Ch. hololive-EN",
+    "handle": "@gawrgura",
+    "org": "Hololive",
+    "group": "English -Myth-",
+    "subscribers": 4710000,
+    "inactive": true
+  },
+  {
+    "id": "UCCzUftO8KOVkV4wQG1vkUvg",
+    "name": "Houshou Marine",
+    "japanese": "Marine Ch. 宝鐘マリン hololive3期生",
+    "handle": "@houshoumarine",
+    "org": "Hololive",
+    "group": "3rd Generation (Fantasy)",
+    "subscribers": 4430000,
+    "inactive": false
+  },
+  {
+    "id": "UCJFZiqLMntJufDCHc6bQixg",
+    "name": "hololive VTuber Group",
+    "japanese": "hololive ホロライブ - VTuber Group",
+    "handle": "@hololivetv",
+    "org": "Hololive",
+    "group": "Official",
+    "subscribers": 2970000,
+    "inactive": false
+  },
+  {
+    "id": "UC5CwaMl1eIgY8h02uZw7u8A",
+    "name": "Hoshimachi Suisei",
+    "japanese": "Suisei Channel",
+    "handle": "@suisei_hosimati",
+    "org": "Hololive",
+    "group": "0th Generation",
+    "subscribers": 2920000,
+    "inactive": false
+  },
+  {
+    "id": "UCjLEmnpCNeisMxy134KPwWw",
+    "name": "Kobo Kanaeru",
+    "japanese": "Kobo Kanaeru Ch. hololive",
+    "handle": "@kobokanaeru",
+    "org": "Hololive",
+    "group": "Indonesia 3rd Gen (holoh3ro)",
+    "subscribers": 2800000,
+    "inactive": false
+  },
+  {
+    "id": "UC1DCedRgGHBdm81E1llLhOQ",
+    "name": "Usada Pekora",
+    "japanese": "Pekora Ch. 兎田ぺこら",
+    "handle": "@usadapekora",
+    "org": "Hololive",
+    "group": "3rd Generation (Fantasy)",
+    "subscribers": 2790000,
+    "inactive": false
+  },
+  {
+    "id": "UCdn5BQ06XqgXoAxIhbqw5Rg",
+    "name": "Shirakami Fubuki",
+    "japanese": "フブキCh。白上フブキ",
+    "handle": "@shirakamifubuki",
+    "org": "Hololive",
+    "group": "1st Generation",
+    "subscribers": 2680000,
+    "inactive": false
+  },
+  {
+    "id": "UCL_qhgtOy0dy1Agp8vkySQg",
+    "name": "Mori Calliope",
+    "japanese": "Mori Calliope Ch. hololive",
+    "handle": "@moricalliope",
+    "org": "Hololive",
+    "group": "English -Myth-",
+    "subscribers": 2650000,
+    "inactive": false
+  },
+  {
+    "id": "UC-hM6YJuNYVAmUWxeIr9FeA",
+    "name": "Sakura Miko",
+    "japanese": "Miko Ch. さくらみこ",
+    "handle": "@sakuramiko35",
+    "org": "Hololive",
+    "group": "0th Generation",
+    "subscribers": 2450000,
+    "inactive": false
+  },
+  {
+    "id": "UChAnqc_AY5_I3Px5dig3X1Q",
+    "name": "Inugami Korone",
+    "japanese": "Korone Ch. 戌神ころね",
+    "handle": "@inugamikorone",
+    "org": "Hololive",
+    "group": "GAMERS",
+    "subscribers": 2290000,
+    "inactive": false
+  },
+  {
+    "id": "UC1opHUrw8rvnsadT-iGp7Cg",
+    "name": "Minato Aqua",
+    "japanese": "Aqua Ch. 湊あくあ",
+    "handle": "@minatoaqua",
+    "org": "Hololive",
+    "group": "2nd Generation",
+    "subscribers": 2220000,
+    "inactive": true
+  },
+  {
+    "id": "UCvaTdHTWBGv3MKj3KVqJVCw",
+    "name": "Nekomata Okayu",
+    "japanese": "Okayu Ch. 猫又おかゆ",
+    "handle": "@nekomataokayu",
+    "org": "Hololive",
+    "group": "GAMERS",
+    "subscribers": 2140000,
+    "inactive": false
+  },
+  {
+    "id": "UCdyqAaZDKHXg4Ahi7VENThQ",
+    "name": "Shirogane Noel",
+    "japanese": "Noel Ch. 白銀ノエル",
+    "handle": "@shiroganenoel",
+    "org": "Hololive",
+    "group": "3rd Generation (Fantasy)",
+    "subscribers": 2050000,
+    "inactive": false
+  },
+  {
+    "id": "UCvzGlP9oQwU--Y0r9id_jnA",
+    "name": "Oozora Subaru",
+    "japanese": "Subaru Ch. 大空スバル",
+    "handle": "@oozorasubaru",
+    "org": "Hololive",
+    "group": "2nd Generation",
+    "subscribers": 2030000,
+    "inactive": false
+  },
+  {
+    "id": "UCyl1z3jo3XHR1riLFKG5UAg",
+    "name": "Watson Amelia",
+    "japanese": "Watson Amelia Ch. hololive-EN",
+    "handle": "@watsonameliaen",
+    "org": "Hololive",
+    "group": "English -Myth-",
+    "subscribers": 1800000,
+    "inactive": true
+  },
+  {
+    "id": "UCZlDXzGoo7d44bwdNObFacg",
+    "name": "Amane Kanata",
+    "japanese": "Kanata Ch. 天音かなた",
+    "handle": "@amanekanatach",
+    "org": "Hololive",
+    "group": "4th Generation (holoForce)",
+    "subscribers": 1730000,
+    "inactive": true
+  },
+  {
+    "id": "UC7fk0CB07ly8oSl0aqKkqFg",
+    "name": "Nakiri Ayame",
+    "japanese": "Nakiri Ayame Ch. 百鬼あやめ",
+    "handle": "@nakiriayame",
+    "org": "Hololive",
+    "group": "2nd Generation",
+    "subscribers": 1720000,
+    "inactive": false
+  },
+  {
+    "id": "UCqm3BQLlJfvkTsX_hvm0UmA",
+    "name": "Tsunomaki Watame",
+    "japanese": "Watame Ch. 角巻わため",
+    "handle": "@tsunomakiwatame",
+    "org": "Hololive",
+    "group": "4th Generation (holoForce)",
+    "subscribers": 1720000,
+    "inactive": false
+  },
+  {
+    "id": "UCMwGHR0BTZuLsmjY_NT5Pwg",
+    "name": "Ninomae Ina'nis",
+    "japanese": "Ninomae Ina'nis Ch. hololive",
+    "handle": "@ninomaeinanis",
+    "org": "Hololive",
+    "group": "English -Myth-",
+    "subscribers": 1670000,
+    "inactive": false
+  },
+  {
+    "id": "UCHsx4Hqa-1ORjQTh9TYDhww",
+    "name": "Takanashi Kiara",
+    "japanese": "Takanashi Kiara Ch. hololive",
+    "handle": "@takanashikiara",
+    "org": "Hololive",
+    "group": "English -Myth-",
+    "subscribers": 1650000,
+    "inactive": false
+  },
+  {
+    "id": "UCQ0UDLQCjY0rmuxCDE38FGg",
+    "name": "Natsuiro Matsuri",
+    "japanese": "Matsuri Channel 夏色まつり",
+    "handle": "@natsuiromatsuri",
+    "org": "Hololive",
+    "group": "1st Generation",
+    "subscribers": 1600000,
+    "inactive": false
+  },
+  {
+    "id": "UC1CfXB_kRs3C-zaeTG3oGyg",
+    "name": "Akai Haato",
+    "japanese": "HAACHAMA Ch 赤井はあと",
+    "handle": "@akaihaato",
+    "org": "Hololive",
+    "group": "1st Generation",
+    "subscribers": 1590000,
+    "inactive": false
+  },
+  {
+    "id": "UCUKD-uaobj9jiqB-VXt71mA",
+    "name": "Shishiro Botan",
+    "japanese": "Botan Ch.獅白ぼたん",
+    "handle": "@shishirobotan",
+    "org": "Hololive",
+    "group": "5th Generation (holoFive)",
+    "subscribers": 1590000,
+    "inactive": false
+  },
+  {
+    "id": "UC1uv2Oq6kNxgATlCiez59hw",
+    "name": "Tokoyami Towa",
+    "japanese": "Towa Ch. 常闇トワ",
+    "handle": "@tokoyamitowa",
+    "org": "Hololive",
+    "group": "4th Generation (holoForce)",
+    "subscribers": 1580000,
+    "inactive": false
+  },
+  {
+    "id": "UCENwRMx5Yh42zWpzURebzTw",
+    "name": "La+ Darknesss",
+    "japanese": "Laplus ch. ラプラス・ダークネス - holoX -",
+    "handle": "@LaplusDarknesss",
+    "org": "Hololive",
+    "group": "6th Generation -holoX-",
+    "subscribers": 1580000,
+    "inactive": false
+  },
+  {
+    "id": "UCl_gCybOJRIgOXw6Qb4qJzQ",
+    "name": "Uruha Rushia",
+    "japanese": "Rushia Ch. 潤羽るしあ",
+    "handle": "@uruharushia",
+    "org": "Hololive",
+    "group": "3rd Generation (Fantasy)",
+    "subscribers": 1480000,
+    "inactive": true
+  },
+  {
+    "id": "UCS9uQI-jC3DE0L4IpXyvr6w",
+    "name": "Kiryu Coco",
+    "japanese": "Coco Ch. 桐生ココ",
+    "handle": "@kiryucoco",
+    "org": "Hololive",
+    "group": "4th Generation (holoForce)",
+    "subscribers": 1430000,
+    "inactive": true
+  },
+  {
+    "id": "UCP0BspO_AMEe3aQqqpo89Dg",
+    "name": "Moona Hoshinova",
+    "japanese": "Moona Hoshinova hololive",
+    "handle": "@moonahoshinova",
+    "org": "Hololive",
+    "group": "Indonesia 1st Gen (AREA 15)",
+    "subscribers": 1420000,
+    "inactive": false
+  },
+  {
+    "id": "UCYz_5n-uDuChHtLo7My1HnQ",
+    "name": "Kureiji Ollie",
+    "japanese": "Kureiji Ollie Ch. hololive",
+    "handle": "@kureijiollie",
+    "org": "Hololive",
+    "group": "Indonesia 2nd Gen (holoro)",
+    "subscribers": 1410000,
+    "inactive": false
+  },
+  {
+    "id": "UC6eWCld0KwmyHFbAqK3V-Rw",
+    "name": "Hakui Koyori",
+    "japanese": "Koyori ch. 博衣こより - holoX -",
+    "handle": "@hakuikoyori",
+    "org": "Hololive",
+    "group": "6th Generation -holoX-",
+    "subscribers": 1380000,
+    "inactive": false
+  },
+  {
+    "id": "UCFKOVgVbGmX65RxO3EtH3iw",
+    "name": "Yukihana Lamy",
+    "japanese": "Lamy Ch. 雪花ラミィ",
+    "handle": "@yukihanalamy",
+    "org": "Hololive",
+    "group": "5th Generation (holoFive)",
+    "subscribers": 1380000,
+    "inactive": false
+  },
+  {
+    "id": "UCt9H_RpQzhxzlyBxFqrdHqA",
+    "name": "Fuwawa & Mococo Abyssgard",
+    "japanese": "FUWAMOCO Ch. hololive",
+    "handle": "@fuwamoco_en",
+    "org": "Hololive",
+    "group": "English -Advent-",
+    "subscribers": 1380000,
+    "inactive": false
+  },
+  {
+    "id": "UCIBY1ollUsauvVi4hW4cumw",
+    "name": "Sakamata Chloe",
+    "japanese": "Chloe ch. 沙花叉クロヱ - holoX -",
+    "handle": "@sakamatachloe",
+    "org": "Hololive",
+    "group": "6th Generation -holoX-",
+    "subscribers": 1370000,
+    "inactive": true
+  },
+  {
+    "id": "UCK9V2B22uJYu3N7eR_BT9QA",
+    "name": "Omaru Polka",
+    "japanese": "Polka Ch. 尾丸ポルカ",
+    "handle": "@omarupolka",
+    "org": "Hololive",
+    "group": "5th Generation (holoFive)",
+    "subscribers": 1370000,
+    "inactive": false
+  },
+  {
+    "id": "UCp-5t9SrOQwXMU7iIjQfARg",
+    "name": "Ookami Mio",
+    "japanese": "Mio Channel 大神ミオ",
+    "handle": "@ookamimio",
+    "org": "Hololive",
+    "group": "GAMERS",
+    "subscribers": 1360000,
+    "inactive": false
+  },
+  {
+    "id": "UCXTpFs_3PqI41qX2d9tL2Rw",
+    "name": "Murasaki Shion",
+    "japanese": "Shion Ch. 紫咲シオン",
+    "handle": "@murasakishionch",
+    "org": "Hololive",
+    "group": "2nd Generation",
+    "subscribers": 1360000,
+    "inactive": true
+  },
+  {
+    "id": "UCp6993wxpyDPHUpavwDFqgg",
+    "name": "Tokino Sora",
+    "japanese": "SoraCh. ときのそらチャンネル",
+    "handle": "@tokino_sora",
+    "org": "Hololive",
+    "group": "0th Generation",
+    "subscribers": 1350000,
+    "inactive": false
+  },
+  {
+    "id": "UC0TXe_LYZ4scaW2XMyi5_kw",
+    "name": "AZKi",
+    "japanese": "AZKi Channel",
+    "handle": "@AZKi_VDiVA",
+    "org": "Hololive",
+    "group": "0th Generation",
+    "subscribers": 1340000,
+    "inactive": false
+  },
+  {
+    "id": "UCAWSyEs_Io8MtpY3m-zqILA",
+    "name": "Momosuzu Nene",
+    "japanese": "Nene Ch.桃鈴ねね",
+    "handle": "@momosuzunene",
+    "org": "Hololive",
+    "group": "5th Generation (holoFive)",
+    "subscribers": 1330000,
+    "inactive": false
+  },
+  {
+    "id": "UCdXAk5MpyLD8594lm_OvtGQ",
+    "name": "Juufuutei Raden",
+    "japanese": "Raden Ch. 儒烏風亭らでん ‐ ReGLOSS",
+    "handle": "@juufuuteiraden",
+    "org": "Hololive",
+    "group": "DEV_IS ReGLOSS",
+    "subscribers": 1270000,
+    "inactive": false
+  },
+  {
+    "id": "UC1iA6_NT4mtAcIII6ygrvCw",
+    "name": "Todoroki Hajime",
+    "japanese": "Hajime Ch. 轟はじめ ‐ ReGLOSS",
+    "handle": "@todoroki_hajime",
+    "org": "Hololive",
+    "group": "DEV_IS ReGLOSS",
+    "subscribers": 1250000,
+    "inactive": false
+  },
+  {
+    "id": "UCgmPnx-EEeOrZSg5Tiw7ZRQ",
+    "name": "Hakos Baelz",
+    "japanese": "Hakos Baelz Ch. hololive",
+    "handle": "@hakosbaelz",
+    "org": "Hololive",
+    "group": "English -Promise-",
+    "subscribers": 1220000,
+    "inactive": false
+  },
+  {
+    "id": "UCDqI2jOz0weumE8s7paEk6g",
+    "name": "Robocosan",
+    "japanese": "Roboco Ch. - ロボ子",
+    "handle": "@robocosan",
+    "org": "Hololive",
+    "group": "0th Generation",
+    "subscribers": 1190000,
+    "inactive": false
+  },
+  {
+    "id": "UC3n5uGu18FoCy23ggWWp8tA",
+    "name": "Nanashi Mumei",
+    "japanese": "Nanashi Mumei Ch. hololive-EN",
+    "handle": "@nanashimumei_en",
+    "org": "Hololive",
+    "group": "English -Promise-",
+    "subscribers": 1180000,
+    "inactive": true
+  },
+  {
+    "id": "UCa9Y57gfeY0Zro_noHRVrnw",
+    "name": "Himemori Luna",
+    "japanese": "Luna Ch. 姫森ルーナ",
+    "handle": "@himemoriluna",
+    "org": "Hololive",
+    "group": "4th Generation (holoForce)",
+    "subscribers": 1160000,
+    "inactive": false
+  },
+  {
+    "id": "UCmbs8T6MWqUHP1tIQvSgKrg",
+    "name": "Ouro Kronii",
+    "japanese": "Ouro Kronii Ch. hololive",
+    "handle": "@ourokronii",
+    "org": "Hololive",
+    "group": "English -Promise-",
+    "subscribers": 1160000,
+    "inactive": false
+  },
+  {
+    "id": "UCvInZx9h3jC2JzsIzoOebWg",
+    "name": "Shiranui Flare",
+    "japanese": "Flare Ch. 不知火フレア",
+    "handle": "@shiranuiflare",
+    "org": "Hololive",
+    "group": "3rd Generation (Fantasy)",
+    "subscribers": 1160000,
+    "inactive": false
+  },
+  {
+    "id": "UC8rcEBzJSleTkf_-agPM20g",
+    "name": "IRyS",
+    "japanese": "IRyS Ch. hololive",
+    "handle": "@irys_en",
+    "org": "Hololive",
+    "group": "English -Promise-",
+    "subscribers": 1150000,
+    "inactive": false
+  },
+  {
+    "id": "UC_vMYWcDjmfdpH6r4TTn1MQ",
+    "name": "Kazama Iroha",
+    "japanese": "Iroha ch. 風真いろは - holoX -",
+    "handle": "@kazamairohach",
+    "org": "Hololive",
+    "group": "6th Generation -holoX-",
+    "subscribers": 1150000,
+    "inactive": false
+  },
+  {
+    "id": "UC1suqwovbL1kzsoaZgFZLKg",
+    "name": "Yuzuki Choco",
+    "japanese": "Choco Ch. 癒月ちょこ",
+    "handle": "@yuzukichococh",
+    "org": "Hololive",
+    "group": "2nd Generation",
+    "subscribers": 1120000,
+    "inactive": false
+  },
+  {
+    "id": "UCs9_O1tRPMQTHQ-N_L6FU2g",
+    "name": "Takane Lui",
+    "japanese": "Lui ch. 鷹嶺ルイ - holoX -",
+    "handle": "@takanelui",
+    "org": "Hololive",
+    "group": "6th Generation -holoX-",
+    "subscribers": 1120000,
+    "inactive": false
+  },
+  {
+    "id": "UCTvHWSfBZgtxE4sILOaurIQ",
+    "name": "Vestia Zeta",
+    "japanese": "Vestia Zeta Ch. hololive",
+    "handle": "@vestiazeta",
+    "org": "Hololive",
+    "group": "Indonesia 3rd Gen (holoh3ro)",
+    "subscribers": 1050000,
+    "inactive": false
+  },
+  {
+    "id": "UCFTLzh12_nrtzqBPsTCqenA",
+    "name": "Aki Rosenthal",
+    "japanese": "アキロゼCh。Vtuber/ホロライブ所属",
+    "handle": "@akirosenthal",
+    "org": "Hololive",
+    "group": "1st Generation",
+    "subscribers": 1040000,
+    "inactive": false
+  },
+  {
+    "id": "UC_sFNM0z0MWm9A6WlKPuMMg",
+    "name": "Nerissa Ravencroft",
+    "japanese": "Nerissa Ravencroft Ch. hololive",
+    "handle": "@nerissa_en",
+    "org": "Hololive",
+    "group": "English -Advent-",
+    "subscribers": 1030000,
+    "inactive": false
+  },
+  {
+    "id": "UCotXwY6s8pWmuWd_snKYjhg",
+    "name": "hololive English",
+    "japanese": "hololive English",
+    "handle": "@hololive_En",
+    "org": "Hololive",
+    "group": "Official",
+    "subscribers": 1020000,
+    "inactive": false
+  },
+  {
+    "id": "UCO_aKKYxn4tvrqPjcTzZ6EQ",
+    "name": "Ceres Fauna",
+    "japanese": "Ceres Fauna Ch. hololive-EN",
+    "handle": "@ceresfauna",
+    "org": "Hololive",
+    "group": "English -Promise-",
+    "subscribers": 1010000,
+    "inactive": true
+  },
+  {
+    "id": "UCOyYb1c43VlX9rc_lT6NKQw",
+    "name": "Ayunda Risu",
+    "japanese": "Ayunda Risu Ch. hololive",
+    "handle": "@ayunda_risu",
+    "org": "Hololive",
+    "group": "Indonesia 1st Gen (AREA 15)",
+    "subscribers": 1010000,
+    "inactive": false
+  },
+  {
+    "id": "UC9p_lqQ0FEDz327Vgf5JwqA",
+    "name": "Koseki Bijou",
+    "japanese": "Koseki Bijou Ch. hololive",
+    "handle": "@KosekiBijou",
+    "org": "Hololive",
+    "group": "English -Advent-",
+    "subscribers": 998000,
+    "inactive": false
+  },
+  {
+    "id": "UCZLZ8Jjx_RN2CXloOmgTHVg",
+    "name": "Kaela Kovalskia",
+    "japanese": "Kaela Kovalskia Ch. hololive",
+    "handle": "@kaelakovalskia",
+    "org": "Hololive",
+    "group": "Indonesia 3rd Gen (holoh3ro)",
+    "subscribers": 920000,
+    "inactive": false
+  },
+  {
+    "id": "UCD8HOxPs4Xvsm8H0ZxXGiBw",
+    "name": "Yozora Mel",
+    "japanese": "Mel Channel 夜空メルチャンネル",
+    "handle": "@yozoramel",
+    "org": "Hololive",
+    "group": "1st Generation",
+    "subscribers": 878000,
+    "inactive": true
+  },
+  {
+    "id": "UCWQtYtq9EOB4-I5P-3fh8lA",
+    "name": "Otonose Kanade",
+    "japanese": "Kanade Ch. 音乃瀬奏 ‐ ReGLOSS",
+    "handle": "@otonosekanade",
+    "org": "Hololive",
+    "group": "DEV_IS ReGLOSS",
+    "subscribers": 860000,
+    "inactive": false
+  },
+  {
+    "id": "UChgTyjG-pdNvxxhdsXfHQ5Q",
+    "name": "Pavolia Reine",
+    "japanese": "Pavolia Reine Ch. hololive",
+    "handle": "@pavoliareine",
+    "org": "Hololive",
+    "group": "Indonesia 2nd Gen (holoro)",
+    "subscribers": 856000,
+    "inactive": false
+  },
+  {
+    "id": "UCAoy6rzhSf4ydcYjJw3WoVg",
+    "name": "Airani Iofifteen",
+    "japanese": "Airani Iofifteen Channel hololive",
+    "handle": "@airaniiofifteen",
+    "org": "Hololive",
+    "group": "Indonesia 1st Gen (AREA 15)",
+    "subscribers": 834000,
+    "inactive": false
+  },
+  {
+    "id": "UC727SQYUvx5pDDGQpTICNWg",
+    "name": "Anya Melfissa",
+    "japanese": "Anya Melfissa Ch. hololive",
+    "handle": "@anyamelfissa",
+    "org": "Hololive",
+    "group": "Indonesia 2nd Gen (holoro)",
+    "subscribers": 801000,
+    "inactive": false
+  },
+  {
+    "id": "UCtyWhCj3AqKh2dXctLkDtng",
+    "name": "Ichijou Ririka",
+    "japanese": "Ririka Ch. 一条莉々華 ‐ ReGLOSS",
+    "handle": "@ichijouririka",
+    "org": "Hololive",
+    "group": "DEV_IS ReGLOSS",
+    "subscribers": 754000,
+    "inactive": false
+  },
+  {
+    "id": "UCGzTVXqMQHa4AgJVJIVvtDQ",
+    "name": "Kikirara Vivi",
+    "japanese": "Vivi Ch. 綺々羅々ヴィヴィ - FLOW GLOW",
+    "handle": "@kikiraravivi",
+    "org": "Hololive",
+    "group": "DEV_IS FLOW GLOW",
+    "subscribers": 746000,
+    "inactive": false
+  },
+  {
+    "id": "UCgnfPPb9JI3e9A4cXHnWbyg",
+    "name": "Shiori Novella",
+    "japanese": "Shiori Novella Ch. hololive",
+    "handle": "@ShioriNovella",
+    "org": "Hololive",
+    "group": "English -Advent-",
+    "subscribers": 744000,
+    "inactive": false
+  },
+  {
+    "id": "UCjk2nKmHzgH5Xy-C5qYRd5A",
+    "name": "Mizumiya Su",
+    "japanese": "Su Ch. 水宮枢 - FLOW GLOW",
+    "handle": "@mizumiya_su",
+    "org": "Hololive",
+    "group": "DEV_IS FLOW GLOW",
+    "subscribers": 744000,
+    "inactive": false
+  },
+  {
+    "id": "UCMGfV7TVTmHhEErVJg1oHBQ",
+    "name": "Hiodoshi Ao",
+    "japanese": "Ao Ch. 火威青 ‐ ReGLOSS",
+    "handle": "@hiodoshiao",
+    "org": "Hololive",
+    "group": "DEV_IS ReGLOSS",
+    "subscribers": 729000,
+    "inactive": true
+  },
+  {
+    "id": "UCl69AEx4MdqMZH7Jtsm7Tig",
+    "name": "Raora Panthera",
+    "japanese": "Raora Panthera Ch. hololive",
+    "handle": "@raorapanthera",
+    "org": "Hololive",
+    "group": "English -Justice-",
+    "subscribers": 689000,
+    "inactive": false
+  },
+  {
+    "id": "UCuI_opAVX6qbxZY-a-AxFuQ",
+    "name": "Koganei Niko",
+    "japanese": "Niko Ch. 虎金妃笑虎 - FLOW GLOW",
+    "handle": "@koganeiniko",
+    "org": "Hololive",
+    "group": "DEV_IS FLOW GLOW",
+    "subscribers": 659000,
+    "inactive": false
+  },
+  {
+    "id": "UCW5uhrG1eCBYditmhL0Ykjw",
+    "name": "Elizabeth Rose Bloodflame",
+    "japanese": "Elizabeth Rose Bloodflame Ch. hololive",
+    "handle": "@ERBloodflame",
+    "org": "Hololive",
+    "group": "English -Justice-",
+    "subscribers": 657000,
+    "inactive": false
+  },
+  {
+    "id": "UCKMWFR6lAstLa7Vbf5dH7ig",
+    "name": "Rindo Chihaya",
+    "japanese": "Chihaya Ch. 輪堂 千速 - FLOW GLOW",
+    "handle": "@rindochihaya",
+    "org": "Hololive",
+    "group": "DEV_IS FLOW GLOW",
+    "subscribers": 620000,
+    "inactive": false
+  },
+  {
+    "id": "UCDHABijvPBnJm7F-KlNME3w",
+    "name": "Gigi Murin",
+    "japanese": "Gigi Murin Ch. hololive",
+    "handle": "@gigimurin",
+    "org": "Hololive",
+    "group": "English -Justice-",
+    "subscribers": 609000,
+    "inactive": false
+  },
+  {
+    "id": "UC10wVt6hoQiwySRhz7RdOUA",
+    "name": "hololive ReGLOSS",
+    "japanese": "hololive ReGLOSS",
+    "handle": "@reglossofficial",
+    "org": "Hololive",
+    "group": "Official",
+    "subscribers": 602000,
+    "inactive": false
+  },
+  {
+    "id": "UCfrWoRGlawPQDQxxeIDRP0Q",
+    "name": "hololive Indonesia",
+    "japanese": "hololive Indonesia",
+    "handle": "@hololive_id",
+    "org": "Hololive",
+    "group": "Official",
+    "subscribers": 602000,
+    "inactive": false
+  },
+  {
+    "id": "UCvN5h1ShZtc7nly3pezRayg",
+    "name": "Cecilia Immergreen",
+    "japanese": "Cecilia Immergreen Ch. hololive",
+    "handle": "@ceciliaimgreen",
+    "org": "Hololive",
+    "group": "English -Justice-",
+    "subscribers": 542000,
+    "inactive": false
+  },
+  {
+    "id": "UC9LSiN9hXI55svYEBrrK-tw",
+    "name": "Isaki Riona",
+    "japanese": "Riona Ch. 響咲リオナ - FLOW GLOW",
+    "handle": "@isakiriona",
+    "org": "Hololive",
+    "group": "DEV_IS FLOW GLOW",
+    "subscribers": 532000,
+    "inactive": false
+  },
+  {
+    "id": "UCsUj0dszADCGbF3gNrQEuSQ",
+    "name": "Tsukumo Sana",
+    "japanese": "Tsukumo Sana Ch. hololive-EN",
+    "handle": "@tsukumosana",
+    "org": "Hololive",
+    "group": "English -Promise-",
+    "subscribers": 398000,
+    "inactive": true
+  },
+  {
+    "id": "UCANDOlYTJT7N5jlRC3zfzVA",
+    "name": "Yukoku Roberu",
+    "japanese": "Roberu Ch. 夕刻ロベル",
+    "handle": "@yukokuroberu",
+    "org": "Hololive",
+    "group": "HOLOSTARS 2nd Gen (SunTempo)",
+    "subscribers": 386000,
+    "inactive": false
+  },
+  {
+    "id": "UCu2n3qHuOuQIygREMnWeQWg",
+    "name": "hololive FLOW GLOW",
+    "japanese": "hololive FLOW GLOW",
+    "handle": null,
+    "org": "Hololive",
+    "group": "Official",
+    "subscribers": 373000,
+    "inactive": false
+  },
+  {
+    "id": "UC8eitCE9Z6EwUCs-VUi1blg",
+    "name": "Achichi Mela",
+    "japanese": "Mela Ch. 熱千めら‐ アソビ★まわり隊!",
+    "handle": "@achichi_mela",
+    "org": "Hololive",
+    "group": "ASOBI★MAWARI-TAI!",
+    "subscribers": 343000,
+    "inactive": false
+  },
+  {
+    "id": "UCyxtGMdWlURZ30WSnEjDOQw",
+    "name": "Regis Altare",
+    "japanese": "Regis Altare Ch. HOLOSTARS-EN",
+    "handle": "@regisaltare",
+    "org": "Hololive",
+    "group": "HOLOSTARS English -TEMPUS- HQ",
+    "subscribers": 307000,
+    "inactive": false
+  },
+  {
+    "id": "UCp3tgHXw_HI0QMk1K8qh3gQ",
+    "name": "Choco Sub Channel",
+    "japanese": "Choco subCh. 癒月ちょこ",
+    "handle": null,
+    "org": "Hololive",
+    "group": "2nd Generation",
+    "subscribers": 290000,
+    "inactive": false
+  },
+  {
+    "id": "UCy9mgxB8pn2C4aNK_MPthDQ",
+    "name": "Suzuna Tsuzuri",
+    "japanese": "Tsuzuri Ch. 鈴鳴つづり ‐ アソビ★まわり隊!",
+    "handle": "@suzuna_tsuzuri",
+    "org": "Hololive",
+    "group": "ASOBI★MAWARI-TAI!",
+    "subscribers": 288000,
+    "inactive": false
+  },
+  {
+    "id": "UCWsfcksUUpoEvhia0_ut0bA",
+    "name": "HOLOSTARS Official",
+    "japanese": "holostars ホロスターズ - VTuber Group",
+    "handle": "@holostarstv",
+    "org": "Hololive",
+    "group": "Official",
+    "subscribers": 286000,
+    "inactive": false
+  },
+  {
+    "id": "UCNVEsYbiZjH5QLmGeSgTSzg",
+    "name": "Astel Leda",
+    "japanese": "astel ch.アステル",
+    "handle": "@astelleda",
+    "org": "Hololive",
+    "group": "HOLOSTARS 2nd Gen (SunTempo)",
+    "subscribers": 281000,
+    "inactive": false
+  },
+  {
+    "id": "UCSjQDxud2HkAO2DVD3lwxmw",
+    "name": "Hyakuto Kyoko",
+    "japanese": "Kyoko Ch. 百灯キョーコ ‐ アソビ★まわり隊!",
+    "handle": "@hyakuto_kyoko",
+    "org": "Hololive",
+    "group": "ASOBI★MAWARI-TAI!",
+    "subscribers": 278000,
+    "inactive": false
+  },
+  {
+    "id": "UCROQtXcp2loQEmvpe5rhJzQ",
+    "name": "Sorashina Sopia",
+    "japanese": "Sopia Ch. 宙科そぴあ ‐ アソビ★まわり隊!",
+    "handle": "@sorashina_sopia",
+    "org": "Hololive",
+    "group": "ASOBI★MAWARI-TAI!",
+    "subscribers": 276000,
+    "inactive": false
+  },
+  {
+    "id": "UC9mf_ZVpouoILRY9NUIaK-w",
+    "name": "Rikka",
+    "japanese": "Rikka ch.律可",
+    "handle": "@rikkaroid",
+    "org": "Hololive",
+    "group": "HOLOSTARS 1st Gen",
+    "subscribers": 265000,
+    "inactive": true
+  },
+  {
+    "id": "UCZgOv3YDEs-ZnZWDYVwJdmA",
+    "name": "Kanade Izuru",
+    "japanese": "Izuru Ch. 奏手イヅル",
+    "handle": "@kanadeizuru",
+    "org": "Hololive",
+    "group": "HOLOSTARS 1st Gen",
+    "subscribers": 263000,
+    "inactive": false
+  },
+  {
+    "id": "UCKeAhJvy8zgXWbh9duVjIaQ",
+    "name": "Arurandeisu",
+    "japanese": "Aruran Ch. アルランディス",
+    "handle": "@arurandeisu",
+    "org": "Hololive",
+    "group": "HOLOSTARS 1st Gen",
+    "subscribers": 251000,
+    "inactive": true
+  },
+  {
+    "id": "UC2hx0xVkMoHGWijwr_lA01w",
+    "name": "Axel Syrios",
+    "japanese": "Axel Syrios Ch. HOLOSTARS-EN",
+    "handle": "@axelsyrios",
+    "org": "Hololive",
+    "group": "HOLOSTARS English -TEMPUS- HQ",
+    "subscribers": 246000,
+    "inactive": false
+  },
+  {
+    "id": "UChSvpZYRPh0FvG4SJGSga3g",
+    "name": "Kageyama Shien",
+    "japanese": "Shien Ch.影山シエン",
+    "handle": "@kageyamashien",
+    "org": "Hololive",
+    "group": "HOLOSTARS 3rd Gen (TriNero)",
+    "subscribers": 246000,
+    "inactive": true
+  },
+  {
+    "id": "UCgZuwn-O7Szh9cAgHqJ6vjw",
+    "name": "Mano Aloe",
+    "japanese": "Aloe Ch.魔乃アロエ",
+    "handle": null,
+    "org": "Hololive",
+    "group": "5th Generation (holoFive)",
+    "subscribers": 233000,
+    "inactive": true
+  },
+  {
+    "id": "UCDRWSO281bIHYVi-OV3iFYA",
+    "name": "Noir Vesper",
+    "japanese": "Noir Vesper Ch. HOLOSTARS-EN",
+    "handle": "@noirvesper_en",
+    "org": "Hololive",
+    "group": "HOLOSTARS English -TEMPUS- HQ",
+    "subscribers": 222000,
+    "inactive": true
+  },
+  {
+    "id": "UCozx5csNhCx1wsVq3SZVkBQ",
+    "name": "holoAN room",
+    "japanese": "holoAN room (ホロアナ)",
+    "handle": "@hololivetv",
+    "org": "Hololive",
+    "group": "Official",
+    "subscribers": 221000,
+    "inactive": false
+  },
+  {
+    "id": "UCu2DMOGLeR_DSStCyeQpi5Q",
+    "name": "YAGOO",
+    "japanese": "tanigox",
+    "handle": "@tanigox",
+    "org": "Hololive",
+    "group": "Misc",
+    "subscribers": 209000,
+    "inactive": false
+  },
+  {
+    "id": "UC7MMNHR-kf9EN1rXiesMTMw",
+    "name": "Magni Dezmond",
+    "japanese": "Magni Dezmond Ch. HOLOSTARS-EN",
+    "handle": "@magnidezmond",
+    "org": "Hololive",
+    "group": "HOLOSTARS English -TEMPUS- HQ",
+    "subscribers": 207000,
+    "inactive": true
+  },
+  {
+    "id": "UC7gxU6NXjKF1LrgOddPzgTw",
+    "name": "Banzoin Hakka",
+    "japanese": "Banzoin Hakka Ch. HOLOSTARS-EN",
+    "handle": "@BanzoinHakka",
+    "org": "Hololive",
+    "group": "HOLOSTARS English -TEMPUS- Vanguard",
+    "subscribers": 205000,
+    "inactive": false
+  },
+  {
+    "id": "UCHP4f7G2dWD4qib7BMatGAw",
+    "name": "Gavis Bettel",
+    "japanese": "Gavis Bettel Ch. HOLOSTARS-EN",
+    "handle": "@GavisBettel",
+    "org": "Hololive",
+    "group": "HOLOSTARS English -TEMPUS- Vanguard",
+    "subscribers": 203000,
+    "inactive": false
+  },
+  {
+    "id": "UCwL7dgTxKo8Y4RFIKWaf8gA",
+    "name": "Aragami Oga",
+    "japanese": "Oga Ch.荒咬オウガ",
+    "handle": "@aragamioga",
+    "org": "Hololive",
+    "group": "HOLOSTARS 3rd Gen (TriNero)",
+    "subscribers": 202000,
+    "inactive": false
+  },
+  {
+    "id": "UCHj_mh57PVMXhAUDphUQDFA",
+    "name": "Akai Haato (Sub)",
+    "japanese": "HAACHAMA DARKWEB CH",
+    "handle": null,
+    "org": "Hololive",
+    "group": "1st Generation",
+    "subscribers": 189000,
+    "inactive": false
+  },
+  {
+    "id": "UCTVSOgYuSWmNAt-lnJPkEEw",
+    "name": "Jurard T Rexford",
+    "japanese": "Jurard T Rexford Ch. HOLOSTARS-EN",
+    "handle": "@jurardtrexford",
+    "org": "Hololive",
+    "group": "HOLOSTARS English -ARMIS-",
+    "subscribers": 187000,
+    "inactive": false
+  },
+  {
+    "id": "UCc88OV45ICgHbn3ZqLLb52w",
+    "name": "Yatogami Fuma",
+    "japanese": "Fuma Ch. 夜十神封魔 - UPROAR!! -",
+    "handle": "@yatogamifuma",
+    "org": "Hololive",
+    "group": "HOLOSTARS UPROAR!!",
+    "subscribers": 186000,
+    "inactive": false
+  },
+  {
+    "id": "UCdfMHxjcCc2HSd9qFvfJgjg",
+    "name": "Minase Rio",
+    "japanese": "Rio Ch. 水無世燐央 - UPROAR!! -",
+    "handle": "@minaserioch",
+    "org": "Hololive",
+    "group": "HOLOSTARS UPROAR!!",
+    "subscribers": 184000,
+    "inactive": true
+  },
+  {
+    "id": "UCAHwWUotyS3l2qBetFDsjgQ",
+    "name": "ASOBI★MAWARI-TAI!",
+    "japanese": "アソビ★まわり隊!",
+    "handle": "@ASOBIMAWARITAI",
+    "org": "Hololive",
+    "group": "Official",
+    "subscribers": 171000,
+    "inactive": false
+  },
+  {
+    "id": "UC060r4zABV18vcahAWR1n7w",
+    "name": "Machina X Flayon",
+    "japanese": "Machina X Flayon Ch. HOLOSTARS-EN",
+    "handle": "@MachinaXFlayon",
+    "org": "Hololive",
+    "group": "HOLOSTARS English -TEMPUS- Vanguard",
+    "subscribers": 166000,
+    "inactive": false
+  },
+  {
+    "id": "UCLbtM3JZfRTg8v2KGag-RMw",
+    "name": "Aki Rosenthal (Sub)",
+    "japanese": "AkiRose Ch.アキ・ローゼンタールSub",
+    "handle": null,
+    "org": "Hololive",
+    "group": "1st Generation",
+    "subscribers": 164000,
+    "inactive": false
+  },
+  {
+    "id": "UCawGfU44CZxd2ZVf_VGijbA",
+    "name": "hololive Dreams",
+    "japanese": "hololive Dreams ホロライブドリームス",
+    "handle": "@holo_dreams_en",
+    "org": "Hololive",
+    "group": "Misc",
+    "subscribers": 161000,
+    "inactive": false
+  },
+  {
+    "id": "UCkT1u65YS49ca_LsFwcTakw",
+    "name": "Hizaki Gamma",
+    "japanese": "Gamma Ch. 緋崎ガンマ - UPROAR!! -",
+    "handle": "@hizakigamma",
+    "org": "Hololive",
+    "group": "HOLOSTARS UPROAR!!",
+    "subscribers": 159000,
+    "inactive": true
+  },
+  {
+    "id": "UC6t3-_N8A6ME1JShZHHqOMw",
+    "name": "Hanasaki Miyabi",
+    "japanese": "Miyabi Ch. 花咲みやび",
+    "handle": "@miyabihanasaki",
+    "org": "Hololive",
+    "group": "HOLOSTARS 1st Gen",
+    "subscribers": 154000,
+    "inactive": true
+  },
+  {
+    "id": "UCKYyiJwNg2nV7hM86U5_wvw",
+    "name": "Omegaα hololive-EN",
+    "japanese": "Omegaα hololive-EN",
+    "handle": "@omegaalpha_en",
+    "org": "Hololive",
+    "group": "Misc",
+    "subscribers": 151000,
+    "inactive": true
+  },
+  {
+    "id": "UCnVbtCwr-5LXxUlGxsgD7sQ",
+    "name": "Midnight Grand Orchestra",
+    "japanese": "Midnight Grand Orchestra",
+    "handle": "@m_g_orchestra",
+    "org": "Hololive",
+    "group": "Misc",
+    "subscribers": 147000,
+    "inactive": false
+  },
+  {
+    "id": "UCGNI4MENvnsymYjKiZwv9eg",
+    "name": "Kishido Temma",
+    "japanese": "Temma Ch. 岸堂天真",
+    "handle": "@kishidotemma",
+    "org": "Hololive",
+    "group": "HOLOSTARS 2nd Gen (SunTempo)",
+    "subscribers": 144000,
+    "inactive": true
+  },
+  {
+    "id": "UCMqGG8BRAiI1lJfKOpETM_w",
+    "name": "Josuiji Shinri",
+    "japanese": "Josuiji Shinri Ch. HOLOSTARS-EN",
+    "handle": "@JosuijiShinri",
+    "org": "Hololive",
+    "group": "HOLOSTARS English -TEMPUS- Vanguard",
+    "subscribers": 138000,
+    "inactive": false
+  },
+  {
+    "id": "UCJxZpzx4wHzEYD-eCiZPikg",
+    "name": "HOLOSTARS English",
+    "japanese": "HOLOSTARS English",
+    "handle": "@HOLOSTARSen",
+    "org": "Hololive",
+    "group": "Official",
+    "subscribers": 137000,
+    "inactive": false
+  },
+  {
+    "id": "UCLk1hcmxg8rJ3Nm1_GvxTRA",
+    "name": "Octavio",
+    "japanese": "Octavio Ch. HOLOSTARS-EN",
+    "handle": "@octavio_holo",
+    "org": "Hololive",
+    "group": "HOLOSTARS English -ARMIS-",
+    "subscribers": 129000,
+    "inactive": false
+  },
+  {
+    "id": "UCgRqGV1gBf2Esxh0Tz1vxzw",
+    "name": "Utsugi Uyu",
+    "japanese": "Uyu Ch. 羽継烏有 - UPROAR!! -",
+    "handle": "@utsugiuyu",
+    "org": "Hololive",
+    "group": "HOLOSTARS UPROAR!!",
+    "subscribers": 125000,
+    "inactive": false
+  },
+  {
+    "id": "UC3OH5FKQ3qtl4uRme_vZTgA",
+    "name": "UNIT B [Pre-Debut]",
+    "japanese": "UNIT B (Pre-Debut) - mekPark",
+    "handle": "@Unit_B_official",
+    "org": "Hololive",
+    "group": "mekPark",
+    "subscribers": 117000,
+    "inactive": false
+  },
+  {
+    "id": "UCajbFh6e_R8QZdHAMbbi4rQ",
+    "name": "Crimzon Ruze",
+    "japanese": "Crimzon Ruze Ch. HOLOSTARS-EN",
+    "handle": "@crimzonruze",
+    "org": "Hololive",
+    "group": "HOLOSTARS English -ARMIS-",
+    "subscribers": 102000,
+    "inactive": false
+  },
+  {
+    "id": "UCJv02SHZgav7Mv3V0kBOR8Q",
+    "name": "Goldbullet",
+    "japanese": "Goldbullet Ch. HOLOSTARS-EN",
+    "handle": "@goldbullet_en",
+    "org": "Hololive",
+    "group": "HOLOSTARS English -ARMIS-",
+    "subscribers": 84300,
+    "inactive": false
+  },
+  {
+    "id": "UCrEgFGxfrKGyy17V9csSa5w",
+    "name": "Blue Journey",
+    "japanese": "Blue Journey",
+    "handle": "@BlueJourneyInfo",
+    "org": "Hololive",
+    "group": "holo-n",
+    "subscribers": 79800,
+    "inactive": true
+  },
+  {
+    "id": "UCNoxM_Kxoa-_gOtoyjbux7Q",
+    "name": "hololive English Shorts",
+    "japanese": "hololive English Shorts",
+    "handle": "@hololive_En",
+    "org": "Hololive",
+    "group": "Misc",
+    "subscribers": 78100,
+    "inactive": true
+  },
+  {
+    "id": "UCEzsociuFqVwgZuMaZqaCsg",
+    "name": "Kagami Kira",
+    "japanese": "Kira Ch. 鏡見キラ",
+    "handle": "@kagamikirach",
+    "org": "Hololive",
+    "group": "HOLOSTARS 1st Gen",
+    "subscribers": 77100,
+    "inactive": true
+  },
+  {
+    "id": "UCq4ky2drohLT7W0DmDEw1dQ",
+    "name": "Takanashi Kiara SubCh.",
+    "japanese": "Takanashi Kiara SubCh.",
+    "handle": "@takanashikiara",
+    "org": "Hololive",
+    "group": "English -Myth-",
+    "subscribers": 71800,
+    "inactive": false
+  },
+  {
+    "id": "UChpRPsAeSZn5DistGacR3iA",
+    "name": "ACHRORA",
+    "japanese": "ACHRORA - mekPark",
+    "handle": "@ACHRORAofficial",
+    "org": "Hololive",
+    "group": "mekPark",
+    "subscribers": 68500,
+    "inactive": false
+  },
+  {
+    "id": "UCgNVXGlZIFK96XdEY20sVjg",
+    "name": "Civia",
+    "japanese": "Civia Ch.",
+    "handle": "@Civia_Hololive",
+    "org": "Hololive",
+    "group": "CN 1st Generation",
+    "subscribers": 54600,
+    "inactive": true
+  },
+  {
+    "id": "UCmms2EE02mK4zdECwrHBpaA",
+    "name": "hololive OFFICIAL CARD GAME",
+    "japanese": "hololive OFFICIAL CARD GAME【公式】",
+    "handle": "@hololive_OCG",
+    "org": "Hololive",
+    "group": "Misc",
+    "subscribers": 44600,
+    "inactive": false
+  },
+  {
+    "id": "UCfpWrWvbA34LmrZ9h4Lbwag",
+    "name": "Holoearth",
+    "japanese": "HOLOEARTH ホロアース",
+    "handle": "@holoearth_en",
+    "org": "Hololive",
+    "group": "Misc",
+    "subscribers": 44500,
+    "inactive": false
+  },
+  {
+    "id": "UCsehvfwaWF6nWuFnXI0AqZQ",
+    "name": "Tsukishita Kaoru",
+    "japanese": "Kaoru Ch.月下カオル",
+    "handle": null,
+    "org": "Hololive",
+    "group": "HOLOSTARS 3rd Gen (TriNero)",
+    "subscribers": 39200,
+    "inactive": true
+  },
+  {
+    "id": "UCt4-iv7EP0UU_w733D_r_jA",
+    "name": "holo indie",
+    "japanese": "holo Indie チャンネル",
+    "handle": "@holoindie_ccmc",
+    "org": "Hololive",
+    "group": "Misc",
+    "subscribers": 39200,
+    "inactive": false
+  },
+  {
+    "id": "UCGSOfFtVCTBfmGxHK5OD8ag",
+    "name": "Ankimo",
+    "japanese": "Ankimo Ch. あん肝チャンネル",
+    "handle": "@ankimoch",
+    "org": "Hololive",
+    "group": "Misc",
+    "subscribers": 37500,
+    "inactive": true
+  },
+  {
+    "id": "UCMyuwtApj--U6jm-NFzZMOw",
+    "name": "Odeholo",
+    "japanese": "『おでかけホロライブ』アニメ公式チャンネル",
+    "handle": "@odeholo",
+    "org": "Hololive",
+    "group": "Misc",
+    "subscribers": 23300,
+    "inactive": false
+  },
+  {
+    "id": "UCLGFMR7JOmPUuLXRh0hliTQ",
+    "name": "mekPark",
+    "japanese": "mekPark",
+    "handle": "@mekParkOfficial",
+    "org": "Hololive",
+    "group": "Official",
+    "subscribers": 10500,
+    "inactive": false
+  },
+  {
+    "id": "UCGKgJ4MtJ1coi6tWJUfnsQA",
+    "name": "Yakushiji Suzaku",
+    "japanese": "Suzaku Ch. 薬師寺朱雀",
+    "handle": "@YakushijiSuzaku",
+    "org": "Hololive",
+    "group": "HOLOSTARS 1st Gen",
+    "subscribers": 10300,
+    "inactive": true
+  },
+  {
+    "id": "UCl7xaOxJUq7GsD4M8N68FaA",
+    "name": "HLZNTL",
+    "japanese": "HLZNTL ホリゾンタル",
+    "handle": "@HLZNTL",
+    "org": "Hololive",
+    "group": "Misc",
+    "subscribers": 2580,
+    "inactive": true
+  },
+  {
+    "id": "UC4OeUf_KfYRrwksschtRYow",
+    "name": "Hanabasami Kyo",
+    "japanese": "花鋏キョウ*Kyo Hanabasami【卒業】",
+    "handle": "@Kyo_Hanabasami",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 352000,
+    "inactive": true
+  },
+  {
+    "id": "UCB1s_IdO-r0nUkY2mXeti-A",
+    "name": "Shishigami Leona",
+    "japanese": "獅子神レオナ/レオナちゃんねる",
+    "handle": "@LeonaShishigami",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 342000,
+    "inactive": false
+  },
+  {
+    "id": "UCXtQTtPJedfjqEPysorbsMg",
+    "name": "Qualia Qu",
+    "japanese": "久檻夜くぅ / Qualia Qu Ch.",
+    "handle": "@Qu_Qualia",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 145000,
+    "inactive": true
+  },
+  {
+    "id": "UC6HjtF2rHZO8gAsX5FXF-Kg",
+    "name": "Himekuma Ribon",
+    "japanese": "Himekuma Ribon Ch. 姫熊 りぼん",
+    "handle": "@sb_ribon_",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 122000,
+    "inactive": true
+  },
+  {
+    "id": "UCeqIMtLuGc3YgwkhEaG8oDg",
+    "name": "Usuwa Suu",
+    "japanese": "稀羽すう - Suu Usuwa -",
+    "handle": "@usuwasuu",
+    "org": "ReAcT",
+    "group": "REVERBERATION",
+    "subscribers": 113000,
+    "inactive": false
+  },
+  {
+    "id": "UC5XQhzMH08PgWa4Zp02Gcsw",
+    "name": "Tsukushi Aria",
+    "japanese": "月紫アリア / Tsukushi Aria",
+    "handle": "@tsukushi_aria",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 75100,
+    "inactive": false
+  },
+  {
+    "id": "UCDrG8pzkq_cCCLcN5wgrzNw",
+    "name": "Makoh Lisa",
+    "japanese": "魔光リサ - Lisa Makoh -",
+    "handle": "@Lisa_Makoh",
+    "org": "ReAcT",
+    "group": "REVERBERATION",
+    "subscribers": 58600,
+    "inactive": false
+  },
+  {
+    "id": "UCoFEbNyIRUS26-hf2AucwFw",
+    "name": "Nekono Yukino",
+    "japanese": "猫乃ユキノ／NekonoYukino",
+    "handle": "@nekonoyukin0",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 57500,
+    "inactive": false
+  },
+  {
+    "id": "UCxLgvntienV0kwNLxrbcmyQ",
+    "name": "Kulaku Lie",
+    "japanese": "Kulaku Lie ch.九楽ライ【卒業】",
+    "handle": "@LieKulaku",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 51300,
+    "inactive": true
+  },
+  {
+    "id": "UCFrH3bfn7gDeV29wrHHM80g",
+    "name": "Inuki Matoi",
+    "japanese": "射貫まといちゃんねる",
+    "handle": "@matoi_inuki",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 47600,
+    "inactive": true
+  },
+  {
+    "id": "UC8jskpQfW9fn2NLK3PdaGdg",
+    "name": "Yumekawa Kanau (Virtual Idol)",
+    "japanese": "夢川かなう/Kanau ch",
+    "handle": "@Kanau_Yumekawa",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 35800,
+    "inactive": false
+  },
+  {
+    "id": "UCt0F29rrrkOU5Vu2gyYgrBA",
+    "name": "Kogami Yukari",
+    "japanese": "Yukari Ch / 皇噛ユカリ【METEO】",
+    "handle": "@yukari_kogami",
+    "org": "ReAcT",
+    "group": "Sugar Stella",
+    "subscribers": 35200,
+    "inactive": true
+  },
+  {
+    "id": "UCmssHxtaJAxIvje7LTHoKiw",
+    "name": "Kurone Yomi",
+    "japanese": "黒音よみ【活動終了】",
+    "handle": "@Kurone__Yomi",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 34400,
+    "inactive": true
+  },
+  {
+    "id": "UC90vyzmRgWCE17-uWNsKW2Q",
+    "name": "Re:Act Official",
+    "japanese": "【Re:AcT /リアクト】公式チャンネル",
+    "handle": "@Re_AcT_",
+    "org": "ReAcT",
+    "group": "Official",
+    "subscribers": 33100,
+    "inactive": false
+  },
+  {
+    "id": "UCpPuEfqwYbpn7e2jWdQeWew",
+    "name": "Mizugame Mia",
+    "japanese": "水瓶ミア/ミアちゃんねる",
+    "handle": "@Mia_Mizugame",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 31000,
+    "inactive": false
+  },
+  {
+    "id": "UCvuAdWg_I8U9kwVGZ4XLvog",
+    "name": "Kannagi Anna",
+    "japanese": "神凪アンナ - Kannagi Anna - ",
+    "handle": "@AnnaKannagi",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 30100,
+    "inactive": false
+  },
+  {
+    "id": "UCoY9O-RYuBYHNf41pgQHCnw",
+    "name": "Suzuhana Inori",
+    "japanese": "鈴花いのり - Suzuhana Inori -",
+    "handle": "@InoriSuzuhana",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 29400,
+    "inactive": false
+  },
+  {
+    "id": "UCVbRXkQP-LumaBzfw-wsrrg",
+    "name": "Sumeragi Rose",
+    "japanese": "皇ロゼ／SumeragiRose ch",
+    "handle": "@Rose_Sumeragi",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 28900,
+    "inactive": false
+  },
+  {
+    "id": "UCHnbtVLZYGuKkGh6iFxxTpw",
+    "name": "Anya Kumori",
+    "japanese": "杏夜 くもり - Anya Kumori -",
+    "handle": "@annyakumori",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 28600,
+    "inactive": false
+  },
+  {
+    "id": "UCcD_EdnJcOjJMohDn435D3w",
+    "name": "Shirane Yuki",
+    "japanese": "白音ゆき-Shirane Yuki-",
+    "handle": "@Shirane_Yuki",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 28200,
+    "inactive": false
+  },
+  {
+    "id": "UCX2Sm8SGWTUOyCizgrzadXA",
+    "name": "Kirahoshi Uta",
+    "japanese": "綺羅星ウタ/ウタちゃんねる",
+    "handle": "@uta_kirahoshi",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 26700,
+    "inactive": true
+  },
+  {
+    "id": "UCBe_jjkUHhVNAj46bukAbJA",
+    "name": "Koto Miyuri",
+    "japanese": "Koto Miyuri Ch. / 琴みゆり【卒業】",
+    "handle": "@miyuri_koto",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 26600,
+    "inactive": true
+  },
+  {
+    "id": "UCls95hH--nOEgKDjR2nKNUA",
+    "name": "Midomido Mayo",
+    "japanese": "미도미도 마요 Midomido Mayo",
+    "handle": "@Midomido_Mayo",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 26500,
+    "inactive": false
+  },
+  {
+    "id": "UC8W8jZ1P9bhJFYLelr3EvIQ",
+    "name": "Tomyoji Kagura",
+    "japanese": "燈明寺かぐら - Tomyoji Kagura -",
+    "handle": "@KaguraTomyoji",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 20700,
+    "inactive": false
+  },
+  {
+    "id": "UCCvInijwD6Qg9xwdtYJcYtQ",
+    "name": "Futari Mai",
+    "japanese": "双理マイ/マイちゃんねる",
+    "handle": "@Mai_Futari",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 18100,
+    "inactive": true
+  },
+  {
+    "id": "UCIueYPQm6sk8oaKxq0hSjyQ",
+    "name": "Coucourua Creil",
+    "japanese": "ククルア・クレイユ - Coucourua Creil -",
+    "handle": "@CoucouruaCreil",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 17300,
+    "inactive": true
+  },
+  {
+    "id": "UCJQMHCFjVZOVRYafR6gY04Q",
+    "name": "Usami Yuno",
+    "japanese": "Usami Yuno Ch. 宇佐美 ユノ",
+    "handle": "@yuno_usami",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 17200,
+    "inactive": true
+  },
+  {
+    "id": "UCM6ZAX8qPfCzEkKcGOFWPMw",
+    "name": "Tadase Ciel",
+    "japanese": "多々星シエル/シエルちゃんねる",
+    "handle": "@Ciel_Tadase",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 15900,
+    "inactive": true
+  },
+  {
+    "id": "UCTEZGNJDqv-isWSPRsEhnRA",
+    "name": "Marumochi Tsukimi",
+    "japanese": "Marumochi Tsukimi / 丸餅つきみ",
+    "handle": "@tukimi_marumoti",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 15700,
+    "inactive": false
+  },
+  {
+    "id": "UCi6nuuHhOj_usxkjlcHdRXw",
+    "name": "Otogi Nemu",
+    "japanese": "音伽ねむ - Nemu Otogi -",
+    "handle": "@NemuOtogi",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 14600,
+    "inactive": false
+  },
+  {
+    "id": "UCShDuyxe-cDewxtcPbBmi_Q",
+    "name": "Mikoshi Taran",
+    "japanese": "神輿たらん - Taran Mikoshi -",
+    "handle": "@TaranMikoshi",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 12400,
+    "inactive": true
+  },
+  {
+    "id": "UCdrUdY5LsTHT1oS3szu1glw",
+    "name": "Shirotae Toki",
+    "japanese": "白妙とき - Shirotae Toki -",
+    "handle": "@RAG_Toki",
+    "org": "ReAcT",
+    "group": "Re:AcT Gaming",
+    "subscribers": 11900,
+    "inactive": false
+  },
+  {
+    "id": "UCqJfSD3Ld2JYvx7qXDcpK9A",
+    "name": "Sugar Stella",
+    "japanese": "Sugar Stella",
+    "handle": "@SugaSte_info",
+    "org": "ReAcT",
+    "group": "Sugar Stella",
+    "subscribers": 11500,
+    "inactive": true
+  },
+  {
+    "id": "UCf6J4I7NwMXtuIU8YZKAjCA",
+    "name": "Yuiga Kohaku",
+    "japanese": "Kohaku Ch / 唯牙コハク",
+    "handle": "@kohaku_yuiga",
+    "org": "ReAcT",
+    "group": "Sugar Stella",
+    "subscribers": 11300,
+    "inactive": true
+  },
+  {
+    "id": "UCvwGSjWai2Xz_-HFUI5M5YA",
+    "name": "Melty R.I.P.",
+    "japanese": "Melty R.I.P. / めるてぃりっぷ",
+    "handle": "@MeltyRIP_info",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 11300,
+    "inactive": true
+  },
+  {
+    "id": "UCDQkIK-Md2XDbDWN4nKyzIQ",
+    "name": "Yumekawa Kanau (Virtual Singer)",
+    "japanese": "夢川かなう - Kanau Yumekawa",
+    "handle": "@Kanau_Yumekawa",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 9650,
+    "inactive": false
+  },
+  {
+    "id": "UC46Wizhr_xgL9Rm9onVkPQQ",
+    "name": "Inumoti Tirol",
+    "japanese": "チロルちゃんねる/犬望チロル",
+    "handle": "@tirol_inumoti",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 9160,
+    "inactive": true
+  },
+  {
+    "id": "UCdvYw1B1EaOZfgO7-Ir3ORQ",
+    "name": "Kurama Tsumugi",
+    "japanese": "鞍馬つむぎ/Tsumugi ch",
+    "handle": "@tsumugi_kurama",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 8840,
+    "inactive": true
+  },
+  {
+    "id": "UCa5g-Q_NT2COXiSS55bwXVQ",
+    "name": "Kazami Mikan",
+    "japanese": "【活動終了】Kazami Mikan - 風海みかんちゃんねる - official",
+    "handle": "@Kazami_Mikan83",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 8470,
+    "inactive": true
+  },
+  {
+    "id": "UC1yZAPWNLVtfCX43IQS0gTA",
+    "name": "Shirazuna Iwo",
+    "japanese": "不知名イヲ - Shirazuna Iwo - ",
+    "handle": "@IwoShirazuna",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 8240,
+    "inactive": false
+  },
+  {
+    "id": "UCtKH7ZHAJ7TcTjyiLJRHhvg",
+    "name": "Ayamo Nono (Old)",
+    "japanese": "彩雲のの - Nono Ayamo -",
+    "handle": "@Nono_Ayamo",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 8090,
+    "inactive": true
+  },
+  {
+    "id": "UCyTw66xE5YkeTL2YduA69QQ",
+    "name": "Minato Minami",
+    "japanese": "みみみch / 湊音みなみ",
+    "handle": "@_MinatoMinami",
+    "org": "ReAcT",
+    "group": "Sugar Stella",
+    "subscribers": 7910,
+    "inactive": true
+  },
+  {
+    "id": "UC01dI90qNB6RhCt1tdXnQAg",
+    "name": "Kuryu Isana",
+    "japanese": "【活動終了】紅龍イサナ - Isana Kuryu -",
+    "handle": "@IsanaKuryu",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 7800,
+    "inactive": true
+  },
+  {
+    "id": "UCmBrGHMM-fGSO1vDknaWlGA",
+    "name": "Yagiri Mei",
+    "japanese": "夜霧メイ/メイちゃんねる",
+    "handle": "@Mei_Yagiri",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 7790,
+    "inactive": true
+  },
+  {
+    "id": "UC9XsF9M7lZ1BSABHjKatOSA",
+    "name": "Otoha Sora",
+    "japanese": "音羽奏來 - Otoha Sora - ",
+    "handle": "@Sora__Otoha",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 7560,
+    "inactive": false
+  },
+  {
+    "id": "UCSw8TAyNIuPZc6gZqRKnO6A",
+    "name": "Layla Sama",
+    "japanese": "レイラ・サマ-Layla Sama-",
+    "handle": "@_laylasama",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 7210,
+    "inactive": false
+  },
+  {
+    "id": "UCBiJHt0WEb3GGayMyUz5QIQ",
+    "name": "Tenbin Hakari",
+    "japanese": "天秤はかり/Hakari ch",
+    "handle": "@HakariTenbin",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 7110,
+    "inactive": true
+  },
+  {
+    "id": "UCReYPHLeFKv-0wYgX6F2Zhw",
+    "name": "Izumo Meguru",
+    "japanese": "出雲めぐるちゃんねる【活動終了】",
+    "handle": "@meguru_izumo",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 6960,
+    "inactive": true
+  },
+  {
+    "id": "UCzbDTH6ennkRENJDBCk-NPw",
+    "name": "Koyoi Inari",
+    "japanese": "狐宵いなり - Inari Koyoi -",
+    "handle": "@rag_inari",
+    "org": "ReAcT",
+    "group": "Re:AcT Gaming",
+    "subscribers": 6590,
+    "inactive": false
+  },
+  {
+    "id": "UCzPv09-SJeVd1hBdpvlhy0g",
+    "name": "Aoto Latte",
+    "japanese": "아오토 라떼 Aoto Latte",
+    "handle": "@Aoto_Latte",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 6530,
+    "inactive": false
+  },
+  {
+    "id": "UCpBCiBjOoZanFhj-49LgcDg",
+    "name": "Hekina Airu",
+    "japanese": "碧那アイル -AilChannel-",
+    "handle": "@Ail_Hekina",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 6450,
+    "inactive": true
+  },
+  {
+    "id": "UCY5jwnUvdsrsfqsMQWHau-w",
+    "name": "Bisui Syuka",
+    "japanese": "美睡シュカ - Syuka Bisui -",
+    "handle": "@SyukaBisui",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 5940,
+    "inactive": true
+  },
+  {
+    "id": "UCXOV1n3Pd-5qAYurmw5nv5Q",
+    "name": "Yuusz Mumu",
+    "japanese": "유우스즈 무무 Yuusz Mumu",
+    "handle": "@YuuszMumu",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 5350,
+    "inactive": false
+  },
+  {
+    "id": "UCpgM2Ycx8WC8eRNxGAL2i3Q",
+    "name": "kototo!",
+    "japanese": "kototo!",
+    "handle": "@kototoi_alma",
+    "org": "ReAcT",
+    "group": "Artists",
+    "subscribers": 5110,
+    "inactive": false
+  },
+  {
+    "id": "UCvdnHDN9VpPFeLoB8BpPHFg",
+    "name": "Towan Kokoro",
+    "japanese": "桃犬こころ-Towan Kokoro-",
+    "handle": "@towankokoro",
+    "org": "ReAcT",
+    "group": "Re:AcT Gaming",
+    "subscribers": 4980,
+    "inactive": false
+  },
+  {
+    "id": "UCvq_7I63tALUzJJvFOrjHPg",
+    "name": "Kurono Suzu",
+    "japanese": "黎乃鈴 -Kurono Suzu-",
+    "handle": "@RAG_Suzu",
+    "org": "ReAcT",
+    "group": "Re:AcT Gaming",
+    "subscribers": 4910,
+    "inactive": false
+  },
+  {
+    "id": "UCLLTq5nDGMGQwEmqeD3Yezw",
+    "name": "Majinai Kuroka",
+    "japanese": "마지나이 쿠로카 Majinai Kuroka",
+    "handle": "@Majinai_Kuroka",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 4450,
+    "inactive": false
+  },
+  {
+    "id": "UCvFgWnhRKSuTMHoh6fKAwhQ",
+    "name": "Asamiya Nao",
+    "japanese": "아사미야 나오 Asamiya Nao",
+    "handle": "@Asamiya_Nao",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 4000,
+    "inactive": false
+  },
+  {
+    "id": "UChmCIfTk8UsT4igvKZ6Huqw",
+    "name": "Musubime Himari",
+    "japanese": "結萌ひまり-Musubime Himari-",
+    "handle": "@RAG_Himari",
+    "org": "ReAcT",
+    "group": "Re:AcT Gaming",
+    "subscribers": 3770,
+    "inactive": true
+  },
+  {
+    "id": "UCQccGv1G0YL313NA28xTQ8A",
+    "name": "Awawa Iruka",
+    "japanese": "泡々いるか / Awawa Iruka",
+    "handle": "@RAG_Iruka",
+    "org": "ReAcT",
+    "group": "Re:AcT Gaming",
+    "subscribers": 3750,
+    "inactive": false
+  },
+  {
+    "id": "UC18kbpPBYEZAP5QNfrwe8JQ",
+    "name": "Takigami Rito",
+    "japanese": "瀧上りとちゃんねる",
+    "handle": "@takigami_rito",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 3670,
+    "inactive": true
+  },
+  {
+    "id": "UCVKWgVm8BSlMkGZIDGaoElw",
+    "name": "Ayamo Nono",
+    "japanese": "彩雲のの",
+    "handle": "@Ayamo_nono",
+    "org": "ReAcT",
+    "group": "REVERBERATION",
+    "subscribers": 3300,
+    "inactive": false
+  },
+  {
+    "id": "UCaz2spGEjBzErnHLYOjZrHA",
+    "name": "Re:AcT KR Official",
+    "japanese": "Re:AcT KR 【리액트 KR】",
+    "handle": "@Re_AcT_KR",
+    "org": "ReAcT",
+    "group": "Official",
+    "subscribers": 3090,
+    "inactive": false
+  },
+  {
+    "id": "UCaP317DiL6Lf9PmXaJK8N7g",
+    "name": "Tsuyuri Eru",
+    "japanese": "罪揺える -Tsuyuri Eru-",
+    "handle": "@RAG_Eru",
+    "org": "ReAcT",
+    "group": "Re:AcT Gaming",
+    "subscribers": 2700,
+    "inactive": false
+  },
+  {
+    "id": "UCY_2D7S_rTS9cxIGbSWF5nw",
+    "name": "Saotome Poemu",
+    "japanese": "早乙女ぽえむ/ぽえぽえチャンネル",
+    "handle": "@poemu_saotome",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 2610,
+    "inactive": true
+  },
+  {
+    "id": "UCKXvhxWGPnVbU-tHNX0QNXQ",
+    "name": "Mizumo Uru",
+    "japanese": "미즈모 우루 Mizumo Uru",
+    "handle": "@Mizumo_Uru",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 2580,
+    "inactive": true
+  },
+  {
+    "id": "UCfJWrs0m30P-pLEXLYrXbOw",
+    "name": "Akame Siah",
+    "japanese": "아카메 시아 Akame Siah",
+    "handle": "@Akame_Siah",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 2550,
+    "inactive": true
+  },
+  {
+    "id": "UCX_Q3gM0GNiUpv_UraS-1kA",
+    "name": "Tenka Amu",
+    "japanese": "天華あむ - Amu Tenka -",
+    "handle": "@RAG_Amu",
+    "org": "ReAcT",
+    "group": "Re:AcT Gaming",
+    "subscribers": 2060,
+    "inactive": true
+  },
+  {
+    "id": "UCPb47fygHcFbRp_y05mS0IA",
+    "name": "REVERBERATION",
+    "japanese": "REVERBERATION",
+    "handle": "@X_REVERBERATION",
+    "org": "ReAcT",
+    "group": "REVERBERATION",
+    "subscribers": 2010,
+    "inactive": false
+  },
+  {
+    "id": "UCxK9Lu1TjYqUH0FAOqW9EXQ",
+    "name": "Seiroku Kira",
+    "japanese": "세이로쿠 키라 Seiroku Kira",
+    "handle": "@SeirokuKira",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 1900,
+    "inactive": false
+  },
+  {
+    "id": "UCtUq59HAr1UGi6TB6nCYtxw",
+    "name": "Ten+Ten Tenx2",
+    "japanese": "텐플라스텐 텐텐 Ten+Ten Tenx2",
+    "handle": "@TenplusTen_1010",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 1890,
+    "inactive": false
+  },
+  {
+    "id": "UCj_ptTHh9OboZpWfsDCoyjg",
+    "name": "Re:AcT Gaming",
+    "japanese": "【Re:AcT Gaming】公式チャンネル",
+    "handle": "@Re_AcT_Gaming",
+    "org": "ReAcT",
+    "group": "Official",
+    "subscribers": 1850,
+    "inactive": false
+  },
+  {
+    "id": "UCv0Igle5HiAqDFWz2GM5BAA",
+    "name": "Majinai Kuroka Archive",
+    "japanese": "쿠로카 다시보기",
+    "handle": "@Majinai_Kuroka",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 1210,
+    "inactive": false
+  },
+  {
+    "id": "UCaiEgZoOU7y4oAxnQbsR6DA",
+    "name": "Lulunea Neruru",
+    "japanese": "ルルネア=ネルル / Lulunea Neruru",
+    "handle": "@LuluneaNeruru",
+    "org": "ReAcT",
+    "group": "Re:AcT Gaming",
+    "subscribers": 1050,
+    "inactive": false
+  },
+  {
+    "id": "UCeGrc0horTCU2DlnNo_FNAg",
+    "name": "Chikachika Choke",
+    "japanese": "치카치카 쵸케 chikax2 choke",
+    "handle": "@chikax2_choke",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 1040,
+    "inactive": false
+  },
+  {
+    "id": "UC2WcZDV2dHgtJp4H-LscyKA",
+    "name": "Midomido Mayo Archive",
+    "japanese": "미도마요",
+    "handle": "@Midomido_Mayo",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 936,
+    "inactive": false
+  },
+  {
+    "id": "UCA5EUF0vW2AGNNWqDfZS0rA",
+    "name": "Sayo Shigure",
+    "japanese": "小夜シグレ - Shigure Sayo -",
+    "handle": "@RAG_Shigure",
+    "org": "ReAcT",
+    "group": "Re:AcT Gaming",
+    "subscribers": 754,
+    "inactive": true
+  },
+  {
+    "id": "UCT4QDOBJMttHBZXhDnR25zQ",
+    "name": "Asamiya Nao Archive",
+    "japanese": "또 만나오 Nao Archive",
+    "handle": "@Asamiya_Nao",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 754,
+    "inactive": false
+  },
+  {
+    "id": "UCAePtlqx1XIvYh35J8TpBBw",
+    "name": "Aoto Latte Archive",
+    "japanese": "라떼는 말이야~",
+    "handle": "@Aoto_Latte",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 747,
+    "inactive": false
+  },
+  {
+    "id": "UC0pA7uDmbbEKIr0SVocP-Tg",
+    "name": "Konekoto Suya",
+    "japanese": "코네코토 스야 konekoto suya",
+    "handle": "@konekoto_suya",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 738,
+    "inactive": false
+  },
+  {
+    "id": "UC4x-GEt8n6CJBSTI1K9vZ7w",
+    "name": "Dreamcatch Deathwa",
+    "japanese": "도리무캐치 데스와 dreamcatch death-wa",
+    "handle": "@dreamcatch_0311",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 711,
+    "inactive": false
+  },
+  {
+    "id": "UCQF2efk32bluLgeUS51nFQw",
+    "name": "Mizumo Uru (Old)",
+    "japanese": "채널 변경",
+    "handle": "@Mizumo_Uru",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 553,
+    "inactive": true
+  },
+  {
+    "id": "UC30qYt5EBXB5_cJ0cDf_A9A",
+    "name": "Seiroku Kira Archive",
+    "japanese": "세이로쿠 키라 다시보기",
+    "handle": "@SeirokuKira",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 436,
+    "inactive": false
+  },
+  {
+    "id": "UC6UhDmiziIidJy3fzX4NOBA",
+    "name": "Mizumo Uru Archive",
+    "japanese": "우루 다시보기",
+    "handle": "@Mizumo_Uru",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 433,
+    "inactive": true
+  },
+  {
+    "id": "UCL2wpb5XxrR2ObBxMp6nkvw",
+    "name": "Yuusz Mumu Archive",
+    "japanese": "무무 무했니",
+    "handle": "@YuuszMumu",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 433,
+    "inactive": false
+  },
+  {
+    "id": "UCL6fHiHC1KudvThvV-_z9bA",
+    "name": "Asagi Nagisa",
+    "japanese": "浅葱なぎさ - Asagi Nagisa -",
+    "handle": "@RAG_Nagisa",
+    "org": "ReAcT",
+    "group": "Re:AcT Gaming",
+    "subscribers": 423,
+    "inactive": true
+  },
+  {
+    "id": "UCETiN_q5L16I7sOL75xn-vA",
+    "name": "Akame Siah Archive",
+    "japanese": "타락도 락이고 극락도 락이다 (시아 다시보기)",
+    "handle": "@Akame_Siah",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 352,
+    "inactive": true
+  },
+  {
+    "id": "UCMLRP6a9la_Xi_0LGQKwlFg",
+    "name": "Ten+Ten Tenx2 Archive",
+    "japanese": "텐시보기",
+    "handle": "@TenplusTen_1010",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 323,
+    "inactive": false
+  },
+  {
+    "id": "UCsf4lVeL0VEETAhRHKEiDHA",
+    "name": "Majinai Kuroka (Old)",
+    "japanese": "채널 이전",
+    "handle": "@Majinai_Kuroka",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 134,
+    "inactive": true
+  },
+  {
+    "id": "UCJ89J2nLMeH6aJPe2pg6-og",
+    "name": "Dreamcatch Deathwa Archive",
+    "japanese": "데스와 다시보기 데스와",
+    "handle": "@dreamcatch_0311",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 130,
+    "inactive": false
+  },
+  {
+    "id": "UCllB3f3DajAH6h2tWptsoUQ",
+    "name": "Chikachika Choke Archive",
+    "japanese": "쵸카이브",
+    "handle": "@chikax2_choke",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 127,
+    "inactive": false
+  },
+  {
+    "id": "UCw0XhDH5kPb4z83MEWnnqWw",
+    "name": "Midomido Mayo (Old)",
+    "japanese": "채널 이전",
+    "handle": "@Midomido_Mayo",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 120,
+    "inactive": true
+  },
+  {
+    "id": "UCsEYnooncm-dmSHOrQfDM3Q",
+    "name": "Konekoto Suya Archive",
+    "japanese": "스야 다시보기",
+    "handle": "@konekoto_suya",
+    "org": "ReAcT",
+    "group": "Re:AcT KR",
+    "subscribers": 119,
+    "inactive": false
+  },
+  {
+    "id": "UC3_AvvGCSzk7GFYDDQEjr5w",
+    "name": "Akame Siah (Old)",
+    "japanese": "채널이전",
+    "handle": "@Akame_Siah",
+    "org": "ReAcT",
+    "group": null,
+    "subscribers": 113,
+    "inactive": true
+  }
+]

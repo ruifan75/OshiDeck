@@ -69,10 +69,23 @@ const ask = async (path) => {
 
 /* ---------- the list ---------- */
 
+// Holodex has no endpoint for this, so the organisations are whatever the
+// channels say they are. One page of them is sorted alphabetically and shows
+// only the As — the whole list has to be walked.
 if (orgs) {
-  const list = await ask("channels?type=vtuber&limit=100&sort=org");
-  const seen = [...new Set(list.map((c) => c.org).filter(Boolean))].sort();
-  console.log(seen.join("\n"));
+  const seen = new Map();
+  for (let offset = 0; ; offset += 100) {
+    const page = await ask(`channels?type=vtuber&limit=100&offset=${offset}&sort=org`);
+    for (const c of page) {
+      if (!c.org) continue;
+      seen.set(c.org, (seen.get(c.org) || 0) + 1);
+    }
+    if (page.length < 100) break;
+    if (offset > 20000) break;   // a wrong answer is better than an endless one
+  }
+  for (const [name, count] of [...seen].sort((a, b) => b[1] - a[1])) {
+    console.log(`${String(count).padStart(5)}  ${name}`);
+  }
   exit(0);
 }
 

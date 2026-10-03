@@ -17,6 +17,10 @@ import { argv, exit } from "node:process";
 
 const root = new URL("..", import.meta.url).pathname;
 
+// Said on more than one night. Two is the smallest number that can tell the
+// difference between a habit and an evening.
+const MIN_STREAMS = 3;
+
 globalThis.OshiDeck = {};
 globalThis.document = { querySelector: () => null };
 globalThis.chrome = { runtime: { id: "x" }, storage: { local: { get: async () => ({}), set: async () => {} } } };
@@ -139,9 +143,17 @@ const candidates = [...seen.values()]
               sharedTooltipText: t.sharedTooltipText })
     };
   })
-  // One person saying a thing is not something the room does.
-  .filter((c) => c.people > 1)
-  .sort((a, b) => b.streams - a.streams || b.people - a.people || b.count - a.count);
+  // One person saying a thing is not something the room does, and one stream
+  // is one night: a joke that landed once looks identical to a greeting until
+  // there is a second night to compare it with.
+  .filter((c) => c.people > 1 && c.streams >= MIN_STREAMS)
+  // Then by people, not by how many streams. Sorting by streams first put
+  // everything that happened to appear in all fifteen above everything that
+  // did not, however few said it — and buried this channel's own signature,
+  // `🦢✨`, at twenty-eighth on 354 people, under entries with twenty. It
+  // misses four streams because it is what people send while she sings, and
+  // being absent from the streams where she talks is not a fault in it.
+  .sort((a, b) => b.people - a.people || b.count - a.count);
 
 const out = `${root}tools/candidates.json`;
 writeFileSync(out, `${JSON.stringify({ channel, streams: files.length, candidates }, null, 2)}\n`);

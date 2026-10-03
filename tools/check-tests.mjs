@@ -35,6 +35,7 @@ const COLOUR = "colour-test.mjs";
 const PRESET = "preset-test.mjs";
 const MEMBER = "member-test.mjs";
 const I18N = "i18n-test.mjs";
+const EMOJI = "emoji-test.mjs";
 
 // Which file a mutation edits, and how its test is told to load the copy.
 const CONTENT = { file: "content.js", env: "OD_SOURCE" };
@@ -500,6 +501,24 @@ const MUTATIONS = [
     "  if (problem) return status(t(\"opt.cannotRead\", problem));",
     "  if (false) return status(t(\"opt.cannotRead\", problem));"],
 
+  [EMOJI, TOKENS, "an owner prefix read as a membership on its own",
+    "      if (!needsMembership(token)) continue;",
+    "      if (false) continue;"],
+
+  [EMOJI, TOKENS, "an underscore looked for anywhere in the shortcut",
+    "  const MEMBERS_ONLY = /^:_/;",
+    "  const MEMBERS_ONLY = /_/;"],
+
+  [EMOJI, TOKENS, "a card from before the shortcut existed read as free",
+    "    return !shortcut || MEMBERS_ONLY.test(shortcut);",
+    "    return MEMBERS_ONLY.test(shortcut);"],
+
+  [EMOJI, TOKENS, "a shortcut that does not survive the editor",
+    `    if (token.sharedTooltipText) {
+      img.setAttribute("shared-tooltip-text", token.sharedTooltipText);
+    }
+`, ""],
+
   [COLOUR, STORE, "an out-of-gamut hue clipped instead of desaturated",
     "    for (let c = chroma; c > 0.01 && found.some((v) => v < -0.0005 || v > 1.0005); c -= 0.005) {\n      found = rgb(c);\n    }",
     "    // (clipped below instead)"],
@@ -602,6 +621,11 @@ const KILLS = {
   "a held card exempt from the membership ending": "but loses it the moment the membership goes",
   "a chip that has to be hidden to count": "a chip on show answers the same way",
 
+  "an owner prefix read as a membership on its own": "a card of free emoji names nobody",
+  "an underscore looked for anywhere in the shortcut": "an underscore in the middle is not the mark",
+  "a card from before the shortcut existed read as free": "a card saved before the shortcut was collected still asks for a membership",
+  "a shortcut that does not survive the editor": "writing a card keeps the shortcut with it",
+
   "a language nobody wrote answered with keys": "a missing translation falls through to the source",
   "a missing key answered with silence instead of its name": "a key that does not exist says so",
   "a nearby language given up on": "a nearby Chinese falls to the Chinese there is",
@@ -647,7 +671,7 @@ function run(file, mutant, subject) {
 let failed = 0;
 
 // A suite already red would make every mutation look caught.
-for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM, COLOUR, PRESET, MEMBER, I18N]) {
+for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM, COLOUR, PRESET, MEMBER, I18N, EMOJI]) {
   if (run(file, null).failed) {
     console.log(`FAIL ${file} is red before any mutation`);
     failed = 1;

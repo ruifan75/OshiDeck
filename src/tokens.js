@@ -79,11 +79,34 @@
   const OWNER = /^(UC[A-Za-z0-9_-]{22})\//;
   const emojiOwner = (emojiId) => OWNER.exec(emojiId || "")?.[1] || null;
 
+  // An owner prefix is not the same as needing a membership. YouTube hands
+  // out free emoji packs — `:shelterin:`, `:face-red-heart-shape:` — and
+  // those carry a channel prefix too: an ordinary viewer's account, not a
+  // creator's. Reading the prefix alone locked a card anyone could send, and
+  // locked it everywhere, forever.
+  //
+  // What separates them is the shortcut: YouTube writes a member emoji's as
+  // `:_name:` and a free one's without the underscore. Measured in two
+  // places, because they do not agree — the live DOM's `alt` is a display
+  // name (`ぺここ`), and the shortcut is in `shared-tooltip-text`
+  // (`:_ぺここ:`); a chat export calls it `shortcuts`.
+  const MEMBERS_ONLY = /^:_/;
+
+  // Cards saved before any of this was collected have no shortcut to read.
+  // Treating those as free would unlock a card that fails when pressed, which
+  // is the failure the locks exist to prevent — so silence means membership,
+  // the same answer the code gave before there was a way to ask.
+  function needsMembership(token) {
+    const shortcut = token.sharedTooltipText || "";
+    return !shortcut || MEMBERS_ONLY.test(shortcut);
+  }
+
   // Which channels' member emoji a card needs. Empty means it works anywhere.
   function requiredChannels(tokenList) {
     const owners = new Set();
     for (const token of tokenList || []) {
       if (token.type !== "youtubeEmoji") continue;
+      if (!needsMembership(token)) continue;
       const owner = emojiOwner(token.emojiId);
       if (owner) owners.add(owner);
     }
@@ -122,6 +145,12 @@
     if (src) img.setAttribute("src", src);
     img.setAttribute("alt", token.alt || "");
     img.setAttribute("data-emoji-id", token.emojiId || "");
+    // Written back because it is read back: a card staged into the editor and
+    // collected again would otherwise lose the one thing that says whether it
+    // needs a membership.
+    if (token.sharedTooltipText) {
+      img.setAttribute("shared-tooltip-text", token.sharedTooltipText);
+    }
     return img;
   }
 
@@ -189,6 +218,6 @@
 
   OD.tokens = {
     collectTokens, toPlainText, toFragment, toHtml, cardKey, hasContent, hasSubstance, writeToInput,
-    emojiOwner, requiredChannels, harvestEmoji, freshSrc
+    emojiOwner, requiredChannels, needsMembership, harvestEmoji, freshSrc
   };
 })();

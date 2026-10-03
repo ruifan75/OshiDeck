@@ -8,19 +8,23 @@
 # and ranks what the room says. Downloads land in chat/, which is git-ignored
 # and safe to delete — they are a hundred megabytes and always re-fetchable.
 #
-# Six, because it was measured rather than guessed (tools/saturation.mjs):
-# one stream has no way to tell a regular greeting from a one-night joke, the
-# top of the list stops moving around the fifth, and past the twelfth it does
-# not move at all. Six is where another download stops buying anything.
+# Fifteen. Six was the first answer, from measuring how much the top of the
+# list still moved — and that measured the wrong thing. The loudest few
+# entries settle early and stay settled; what keeps arriving is the rest of
+# the vocabulary. Of this channel's newest six streams four were singing
+# streams, and the whole family of reaction words that only come up while
+# she is talking — かわいい, すごい, いいね, わかる — was missing from the
+# candidates entirely. Fifteen has them, and the singing-stream applause that
+# six had at the top falls to where it belongs.
 #
-# Newest rather than a spread of kinds, also measured: against a hand-picked
-# mix of singing, chatting and gaming streams, the newest six gave the same
-# top thirteen in a slightly different order and dropped nothing.
+# Newest rather than a spread of kinds, which is the part that would not
+# scale past one channel: picking a mix by hand means watching enough of
+# somebody to know what their mix is.
 set -e
 cd "$(dirname "$0")/.."
 
 channel=$1
-want=${2:-6}
+want=${2:-15}
 
 if [ -z "$channel" ]; then
   echo "usage: tools/mine.sh <UC…> [streams]"

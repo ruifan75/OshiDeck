@@ -8,8 +8,14 @@
 //
 // What is measured is the top of the list, not the length of it. A longer
 // list is what more chat always produces — most of it said twice by two
-// people and never again. The question is whether the cards somebody would
-// actually pick are still moving.
+// people and never again.
+//
+// Read it knowing what it cannot tell you. The top settles early and stays
+// settled, because the loudest handful of things a room says are the same
+// every night; that is not the same as the vocabulary being complete. On
+// this channel the top stopped moving at five streams, and the reaction
+// words — かわいい, すごい, わかる — did not turn up until eleven, because
+// they belong to the streams where she talks rather than sings.
 import { readFileSync } from "node:fs";
 import { argv, exit } from "node:process";
 

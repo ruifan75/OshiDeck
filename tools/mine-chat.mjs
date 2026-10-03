@@ -96,15 +96,21 @@ for (const file of files) {
       if (!signature) continue;
 
       const at = seen.get(signature) || {
-        tokens: list, people: new Set(), streams: new Set(), count: 0,
+        wordings: new Map(), people: new Set(), streams: new Set(), count: 0,
         member: required.length > 0
       };
       at.count += 1;
       at.people.add(item.authorExternalChannelId || `anon:${at.count}`);
       at.streams.add(file);
-      // The wording people actually used most, rather than the first seen:
-      // a signature collapses `888` and `88888888`, and one of them is what
-      // somebody would want on the card.
+
+      // A signature collapses `888` and `88888888`, and one of those is what
+      // somebody would want on the card. Keeping the first one seen made the
+      // answer depend on which stream happened to be read first — two runs
+      // over the same chat in a different order disagreed about the wording
+      // while agreeing about everything else.
+      const wording = JSON.stringify(list);
+      at.wordings.set(wording, (at.wordings.get(wording) || 0) + 1);
+
       seen.set(signature, at);
       streams.add(file);
     }
@@ -113,19 +119,26 @@ for (const file of files) {
 
 /* ---------- what came out ---------- */
 
+const commonest = (wordings) =>
+  JSON.parse([...wordings].sort((a, b) => b[1] - a[1])[0][0]);
+
 const candidates = [...seen.values()]
-  .map((c) => ({
-    people: c.people.size,
-    count: c.count,
-    streams: c.streams.size,
-    member: c.member,
-    text: tokens.toPlainText(c.tokens).trim(),
-    tokens: c.tokens.map((t) =>
-      t.type === "text"
-        ? { type: "text", value: t.value }
-        : { type: "youtubeEmoji", emojiId: t.emojiId, alt: t.alt,
-            sharedTooltipText: t.sharedTooltipText })
-  }))
+  .map((c) => {
+    const list = commonest(c.wordings);
+    return {
+      people: c.people.size,
+      count: c.count,
+      streams: c.streams.size,
+      member: c.member,
+      text: tokens.toPlainText(list).trim(),
+      wordings: c.wordings.size,
+      tokens: list.map((t) =>
+        t.type === "text"
+          ? { type: "text", value: t.value }
+          : { type: "youtubeEmoji", emojiId: t.emojiId, alt: t.alt,
+              sharedTooltipText: t.sharedTooltipText })
+    };
+  })
   // One person saying a thing is not something the room does.
   .filter((c) => c.people > 1)
   .sort((a, b) => b.streams - a.streams || b.people - a.people || b.count - a.count);

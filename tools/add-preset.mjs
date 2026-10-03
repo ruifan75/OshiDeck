@@ -1,11 +1,19 @@
 // Drops an exported preset into presets/presets.json.
 //
 //   node tools/add-preset.mjs ~/Downloads/oshideck-preset-さくら.json
+//   node tools/add-preset.mjs ~/Downloads/oshideck-preset-さくら.json --channel UC…
 //
 // Making a preset is meant to be the same gesture as using one: build a deck
 // you like, write it out from the options page, run this, commit. The file is
 // validated by the extension's own reader first — a preset that would be
 // skipped at load time should not reach the repository at all.
+//
+// A bundled preset names a channel, always. What someone wants to open a
+// stream with belongs to that streamer — the in-jokes, the call-and-response,
+// the stamps — and a generic set of greetings is something anyone types once
+// and never thinks about again. Exporting names the channel by itself when
+// the deck carries that channel's member emoji; a deck of plain text has
+// nothing to give it away, so `--channel` says it.
 import { readFileSync, writeFileSync } from "node:fs";
 import { argv, exit } from "node:process";
 
@@ -13,8 +21,12 @@ const root = new URL("..", import.meta.url).pathname;
 const bundle = `${root}presets/presets.json`;
 
 const [, , path, ...rest] = argv;
-if (!path || rest.length) {
-  console.log("usage: node tools/add-preset.mjs <exported preset.json>");
+const flag = rest.indexOf("--channel");
+const channel = flag >= 0 ? rest[flag + 1] : null;
+const spare = rest.filter((_, at) => at !== flag && at !== flag + 1);
+
+if (!path || spare.length || (flag >= 0 && !channel)) {
+  console.log("usage: node tools/add-preset.mjs <exported preset.json> [--channel UC…]");
   exit(1);
 }
 
@@ -47,6 +59,24 @@ try {
   die(`presets/presets.json を読めません: ${error.message}`);
 }
 if (!Array.isArray(list)) die("presets/presets.json が配列ではありません");
+
+// Said on the command line, when the deck had no member emoji to say it.
+if (channel) {
+  if (incoming.channel && incoming.channel !== channel) {
+    die(`${path} は ${incoming.channel} 専用です。--channel ${channel} とは違います`);
+  }
+  incoming.channel = channel;
+}
+
+// A preset belongs to a channel: one naming none would be offered to every
+// empty deck, which is a promise it cannot keep.
+if (!incoming.channel) {
+  die(`${path} はどのチャンネルのものか分かりません。` +
+    "--channel UC… を付けるか、そのチャンネルのメン限スタンプを入れて書き出してください。");
+}
+
+const problemAgain = presets.validate(incoming);
+if (problemAgain) die(`${path} は使えません: ${problemAgain}`);
 
 // Names are how a preset is offered, so two of them cannot share one.
 const at = list.findIndex((preset) => preset.name === incoming.name);

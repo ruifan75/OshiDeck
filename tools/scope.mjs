@@ -12,14 +12,29 @@
 // can type anywhere. Sending them at somebody else is simply wrong, and the
 // only thing that can tell is whether anybody else's room says them.
 //
-// So: said in other rooms → `global`, and it travels to every pool. Said only
-// here → `channel`, and it stays. Member emoji are settled before any of this
-// by the store, which forces them to the channel that issues them.
+// So: *near the top* in other rooms → `global`, and it travels to every pool.
+// Only here → `channel`, and it stays. Member emoji are settled before any of
+// this by the store, which forces them to the channel that issues them.
+//
+// Near the top, rather than merely present. A candidate list runs to several
+// hundred, and being somewhere in one only means a few people said it once.
+// `ただいま` is 稀羽すう's greeting — her streams are called ここで待ってんのよ,
+// so her viewers come home to them — and three other channels had it: at 78th,
+// 78th and 46th, by one to three people each, against her 63 and 622 times.
+// Counting those as "said elsewhere" called it universal.
+//
+// Twenty is where the two kinds separate. At that depth 👏 is in 32 of 35
+// other channels and ただいま is in none; going to ten would start taking
+// うおおおおお (4) and はい！はい！はい！はい！ (9) away as well, and those
+// really do belong to everybody.
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { argv, exit } from "node:process";
 
 const root = new URL("..", import.meta.url).pathname;
 const dir = `${root}tools/candidates`;
+
+// How far down somebody else's list still counts as "they say this too".
+const NEAR_THE_TOP = 20;
 
 globalThis.OshiDeck = {};
 globalThis.document = { querySelector: () => null };
@@ -61,7 +76,9 @@ for (const file of files) {
 
   // Signatures, so `888` and `88888888` are the same thing said twice and
   // `おつ` is not `おつかれ`. The same collapse the hand's own sort uses.
-  const said = new Set(other.candidates.map((c) => trending.signature(c.tokens)));
+  const said = new Set(
+    other.candidates.slice(0, NEAR_THE_TOP).map((c) => trending.signature(c.tokens))
+  );
   for (const sig of said) elsewhere.set(sig, (elsewhere.get(sig) || 0) + 1);
 }
 

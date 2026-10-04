@@ -2,19 +2,19 @@
   {
     "format": 2,
     "name": "稀羽すう",
-    "note": "過去20配信のチャットから、常連が多い順に10枚",
+    "note": "過去15配信のチャットから、常連が多い順に10枚",
     "channel": "UCeqIMtLuGc3YgwkhEaG8oDg",
     "cards": [
       { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-      { "tokens": [{"type":"text","value":"🦢"},{"type":"text","value":"✨"},{"type":"text","value":"🦢"},{"type":"text","value":"✨"},{"type":"text","value":"🦢"},{"type":"text","value":"✨"}], "scope": "global" },
-      { "tokens": [{"type":"text","value":"ただいまー"}], "scope": "global" },
-      { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "global" },
-      { "tokens": [{"type":"text","value":"いえーい！"}], "scope": "global" },
-      { "tokens": [{"type":"youtubeEmoji","emojiId":"UCeqIMtLuGc3YgwkhEaG8oDg/eEkxafOBL5WO7OsPo4yGMA","alt":"curry","sharedTooltipText":":_curry:"},{"type":"youtubeEmoji","emojiId":"UCeqIMtLuGc3YgwkhEaG8oDg/eEkxafOBL5WO7OsPo4yGMA","alt":"curry","sharedTooltipText":":_curry:"},{"type":"youtubeEmoji","emojiId":"UCeqIMtLuGc3YgwkhEaG8oDg/eEkxafOBL5WO7OsPo4yGMA","alt":"curry","sharedTooltipText":":_curry:"}], "scope": "channel" },
+      { "tokens": [{"type":"text","value":"🦢"},{"type":"text","value":"✨"},{"type":"text","value":"🦢"},{"type":"text","value":"✨"},{"type":"text","value":"🦢"},{"type":"text","value":"✨"}], "scope": "channel" },
+      { "tokens": [{"type":"text","value":"ただいまー"}], "scope": "channel" },
       { "tokens": [{"type":"youtubeEmoji","emojiId":"UCeqIMtLuGc3YgwkhEaG8oDg/eEkxaZeBL5WO7OsPo4yGMA","alt":"tadaima","sharedTooltipText":":_tadaima:"},{"type":"youtubeEmoji","emojiId":"UCeqIMtLuGc3YgwkhEaG8oDg/eEkxaZeBL5WO7OsPo4yGMA","alt":"tadaima","sharedTooltipText":":_tadaima:"},{"type":"youtubeEmoji","emojiId":"UCeqIMtLuGc3YgwkhEaG8oDg/eEkxaZeBL5WO7OsPo4yGMA","alt":"tadaima","sharedTooltipText":":_tadaima:"}], "scope": "channel" },
-      { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-      { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "global" },
-      { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" }
+      { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "global" },
+      { "tokens": [{"type":"youtubeEmoji","emojiId":"UCeqIMtLuGc3YgwkhEaG8oDg/eEkxafOBL5WO7OsPo4yGMA","alt":"curry","sharedTooltipText":":_curry:"},{"type":"youtubeEmoji","emojiId":"UCeqIMtLuGc3YgwkhEaG8oDg/eEkxafOBL5WO7OsPo4yGMA","alt":"curry","sharedTooltipText":":_curry:"},{"type":"youtubeEmoji","emojiId":"UCeqIMtLuGc3YgwkhEaG8oDg/eEkxafOBL5WO7OsPo4yGMA","alt":"curry","sharedTooltipText":":_curry:"}], "scope": "channel" },
+      { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+      { "tokens": [{"type":"text","value":"🦢"}], "scope": "channel" },
+      { "tokens": [{"type":"youtubeEmoji","emojiId":"UCeqIMtLuGc3YgwkhEaG8oDg/eEkxabGFL5WO7OsPo4yGMA","alt":"www","sharedTooltipText":":_www:"}], "scope": "channel" },
+      { "tokens": [{"type":"text","value":"いえーい！"}], "scope": "global" }
     ]
   }
 ]

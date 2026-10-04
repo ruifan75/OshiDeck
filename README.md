@@ -391,9 +391,19 @@ tools/mine.sh UCeqIMtLuGc3YgwkhEaG8oDg
 よその部屋だけ**です。
 
 ```
-tools/mine-org.sh ReAcT          # 事務所をまるごと掘る（数時間、途中から再開できます）
+tools/mine-org.sh ReAcT              # 事務所をまるごと（数時間、途中から再開できます）
+tools/mine-org.sh --subscriptions    # 登録しているチャンネルを、並べた順に
 node tools/scope.mjs UC… --take 10 --name 稀羽すう
 ```
+
+**どのチャンネルからやるか**は `tools/subscriptions.json` の順です。youtube.com/feed/channels を
+保存したものを `tools/subscriptions.mjs` に読ませると、Holodex と突き合わせて書き出します ──
+**並べた順がそのまま残ります**。登録者数より、本人が並べた順のほうが「次はどれ」の答えとして
+まともです。
+
+Holodex が知らないチャンネルは外します。名前からVTuberかどうかを当てようと
+しても当たりませんでした ── 「VTuber」と名前に入っているのは1件だけで、配信の有無で絞っても
+政治家や一般の配信者が残ります。Holodex は人が手で維持しているので、そちらを信じます。
 
 `scope.mjs` は `tools/candidates/` にある全チャンネルぶんを読んで、一枚ごとに「よそでも言うか」
 を見ます。言う → `global` でどのプールにも出る。ここだけ → `channel` で留まる。メン限スタンプは
@@ -820,7 +830,8 @@ tools/check-css.mjs   同じセレクタが同じプロパティを2回書いて
 tools/check-var-timing.mjs  カスタムプロパティの合成が継承で壊れていないか
 tools/channels.mjs    Holodex から事務所のチャンネル一覧（`tools/channels.json` へ）
 tools/mine.sh         チャンネルIDひとつから候補一覧まで（取得して数える）
-tools/mine-org.sh     事務所まるごと。途中で止めても続きから
+tools/mine-org.sh     事務所まるごと、または登録順に。途中で止めても続きから
+tools/subscriptions.mjs  保存した登録チャンネルのページを Holodex と突き合わせる
 tools/mine-chat.mjs   過去のチャットから札の候補を出す（`tools/candidates/` へ）
 tools/scope.mjs       よそでも言うか、ここだけかで scope を決める
 tools/saturation.mjs  何配信ぶん掘れば十分かを測る

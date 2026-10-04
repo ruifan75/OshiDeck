@@ -24,3 +24,7 @@ chat-*/
 # What came out of mining it. A working note: re-made by one command, and
 # what survives curation goes into presets/presets.json instead.
 tools/candidates/
+
+# The saved YouTube subscriptions page — 7MB of someone's signed-in session.
+# tools/subscriptions.json is what comes out of it, and that is committed.
+channels

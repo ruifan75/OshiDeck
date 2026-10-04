@@ -3,6 +3,7 @@
 #
 #   tools/mine-org.sh ReAcT
 #   tools/mine-org.sh Hololive 15
+#   tools/mine-org.sh --subscriptions      # the maintainer's own list, in his order
 #
 # Hours, not minutes — so it is resumable: a channel that already has a
 # candidates file is skipped, and stopping it anywhere loses at most the one
@@ -25,15 +26,27 @@ want=${2:-15}
 
 if [ -z "$org" ]; then
   echo "usage: tools/mine-org.sh <org> [streams]"
+  echo "       tools/mine-org.sh --subscriptions [streams]"
   echo "       node tools/channels.mjs --orgs   # で名前を確かめられます"
   exit 1
 fi
 
 mkdir -p tools/candidates
 
+# `--subscriptions` keeps the order it is given, which is the order the maintainer
+# arranged his own subscriptions in — a better answer to "which channel next"
+# than subscriber counts. Inside an organisation there is no such order, so
+# the biggest rooms go first: they are the ones with chat to count.
 ids=$(node -e '
   const fs = require("node:fs");
   const org = process.argv[1];
+
+  if (org === "--subscriptions") {
+    const list = JSON.parse(fs.readFileSync("tools/subscriptions.json", "utf8"));
+    for (const c of list.filter((c) => !c.inactive)) console.log(c.id);
+    return;
+  }
+
   const all = JSON.parse(fs.readFileSync("tools/channels.json", "utf8"));
   const mine = all.filter((c) => c.org === org && !c.inactive)
     .sort((a, b) => b.subscribers - a.subscribers);

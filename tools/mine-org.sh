@@ -41,21 +41,22 @@ ids=$(node -e '
   const fs = require("node:fs");
   const org = process.argv[1];
 
+  let want;
   if (org === "--subscriptions") {
-    const list = JSON.parse(fs.readFileSync("tools/subscriptions.json", "utf8"));
-    for (const c of list.filter((c) => !c.inactive)) console.log(c.id);
-    return;
+    // Already in his order; keep it.
+    want = JSON.parse(fs.readFileSync("tools/subscriptions.json", "utf8"))
+      .filter((c) => !c.inactive);
+  } else {
+    want = JSON.parse(fs.readFileSync("tools/channels.json", "utf8"))
+      .filter((c) => c.org === org && !c.inactive)
+      .sort((a, b) => b.subscribers - a.subscribers);
+    if (!want.length) {
+      console.error(`FAIL ${org} のチャンネルが tools/channels.json にありません`);
+      process.exit(1);
+    }
   }
-
-  const all = JSON.parse(fs.readFileSync("tools/channels.json", "utf8"));
-  const mine = all.filter((c) => c.org === org && !c.inactive)
-    .sort((a, b) => b.subscribers - a.subscribers);
-  if (!mine.length) {
-    console.error(`FAIL ${org} のチャンネルが tools/channels.json にありません`);
-    process.exit(1);
-  }
-  for (const c of mine) console.log(c.id);
-' "$org")
+  for (const c of want) console.log(c.id);
+' -- "$org")
 
 total=$(echo "$ids" | wc -l | tr -d ' ')
 at=0

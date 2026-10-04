@@ -92,4 +92,43 @@ check("and still names its channel", needs([{ type: "youtubeEmoji", emojiId: `${
     img?.attrs["shared-tooltip-text"] === ":shelterin:");
 }
 
+/* ---------- what a standard emoji is ---------- */
+
+// Not an emoji token at all. YouTube serves 👏 as an <img> with no
+// data-emoji-id, so collectTokens keeps its alt as text — and a card built
+// any other way writes `<img data-emoji-id="👏">` with nothing to load.
+//
+// This matters to the miner more than to the page: a chat export calls 👏 an
+// emoji whose `emojiId` is the character, and carrying that across verbatim
+// made the most-said card on every channel there is — applause — a row of
+// broken images that matched nothing anybody had saved by hand.
+{
+  const img = (attrs) => ({
+    nodeType: 1,
+    tagName: "IMG",
+    attributes: Object.entries(attrs).map(([name, value]) => ({ name, value })),
+    getAttribute: (name) => (name in attrs ? attrs[name] : null),
+    hasAttribute: (name) => name in attrs,
+    childNodes: [],
+    querySelector: () => null
+  });
+  const message = (kids) => ({ nodeType: 1, tagName: "SPAN", childNodes: kids,
+    hasAttribute: () => false, querySelector: () => null });
+
+  globalThis.Node = { TEXT_NODE: 3, ELEMENT_NODE: 1 };
+  // readEmojiToken asks `instanceof Element` before anything else.
+  globalThis.Element = class {};
+  const asElement = (o) => Object.assign(Object.create(Element.prototype), o);
+
+  const read = tokens.collectTokens(asElement(message([
+    asElement(img({ alt: "👏" })),                                 // standard
+    asElement(img({ alt: "curry", "data-emoji-id": `${SUU}/abc`,
+                    "shared-tooltip-text": ":_curry:" }))          // member
+  ])));
+
+  check("a standard emoji comes back as text", read[0]?.type === "text" && read[0].value === "👏");
+  check("and a member emoji as an emoji", read[1]?.type === "youtubeEmoji");
+  check("carrying its shortcut", read[1]?.sharedTooltipText === ":_curry:");
+}
+
 process.exit(fail);

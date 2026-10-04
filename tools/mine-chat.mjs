@@ -55,16 +55,28 @@ try {
 // A chat export says `shortcuts: [":_tadaima:"]` where the live page says
 // `shared-tooltip-text`. Same string, different spelling of the same fact,
 // and tokens.js only knows the second one.
+//
+// And an export calls everything an emoji, including 👏 and 🦢 — whose
+// `emojiId` is the character itself. The extension does not: a standard
+// emoji reaches it as an <img> with no data-emoji-id, and collectTokens
+// keeps its alt as text. Carrying them across as emoji tokens would write
+// `<img data-emoji-id="👏">` with nothing to load, so a card of applause —
+// the most-said thing on every channel there is — would be a row of broken
+// images that matches no card anybody saved by hand.
+const CUSTOM = /^UC[A-Za-z0-9_-]{22}\//;
+
 const asTokens = (message) =>
-  (message?.runs || []).map((run) =>
-    "text" in run
-      ? { type: "text", value: run.text }
-      : {
-          type: "youtubeEmoji",
-          emojiId: run.emoji?.emojiId || "",
-          alt: run.emoji?.image?.accessibility?.accessibilityData?.label || "",
-          sharedTooltipText: (run.emoji?.shortcuts || [])[0] || ""
-        });
+  (message?.runs || []).map((run) => {
+    if ("text" in run) return { type: "text", value: run.text };
+    const id = run.emoji?.emojiId || "";
+    if (!CUSTOM.test(id)) return { type: "text", value: id };
+    return {
+      type: "youtubeEmoji",
+      emojiId: id,
+      alt: run.emoji?.image?.accessibility?.accessibilityData?.label || "",
+      sharedTooltipText: (run.emoji?.shortcuts || [])[0] || ""
+    };
+  });
 
 const seen = new Map();      // signature -> what was said, and by whom
 const guests = new Map();    // other channels' member emoji, and how often

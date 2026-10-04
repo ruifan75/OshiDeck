@@ -519,6 +519,10 @@ const MUTATIONS = [
     }
 `, ""],
 
+  [EMOJI, TOKENS, "a standard emoji kept as an emoji token",
+    '      if (current.tagName === "IMG") return pushText(current.getAttribute("alt") || "");',
+    '      if (current.tagName === "IMG") return tokens.push({ type: "youtubeEmoji", emojiId: current.getAttribute("alt") || "" });'],
+
   [COLOUR, STORE, "an out-of-gamut hue clipped instead of desaturated",
     "    for (let c = chroma; c > 0.01 && found.some((v) => v < -0.0005 || v > 1.0005); c -= 0.005) {\n      found = rgb(c);\n    }",
     "    // (clipped below instead)"],
@@ -625,6 +629,7 @@ const KILLS = {
   "an underscore looked for anywhere in the shortcut": "an underscore in the middle is not the mark",
   "a card from before the shortcut existed read as free": "a card saved before the shortcut was collected still asks for a membership",
   "a shortcut that does not survive the editor": "writing a card keeps the shortcut with it",
+  "a standard emoji kept as an emoji token": "a standard emoji comes back as text",
 
   "a language nobody wrote answered with keys": "a missing translation falls through to the source",
   "a missing key answered with silence instead of its name": "a key that does not exist says so",

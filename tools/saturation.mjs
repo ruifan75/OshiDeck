@@ -48,11 +48,15 @@ function read(file) {
     for (const action of entry.replayChatItemAction?.actions || []) {
       const item = action.addChatItemAction?.item?.liveChatTextMessageRenderer;
       if (!item) continue;
-      const list = (item.message?.runs || []).map((run) =>
-        "text" in run
-          ? { type: "text", value: run.text }
-          : { type: "youtubeEmoji", emojiId: run.emoji?.emojiId || "",
-              sharedTooltipText: (run.emoji?.shortcuts || [])[0] || "" });
+      // Standard emoji are text to the extension; see mine-chat.mjs.
+      const list = (item.message?.runs || []).map((run) => {
+        if ("text" in run) return { type: "text", value: run.text };
+        const id = run.emoji?.emojiId || "";
+        return /^UC[A-Za-z0-9_-]{22}\//.test(id)
+          ? { type: "youtubeEmoji", emojiId: id,
+              sharedTooltipText: (run.emoji?.shortcuts || [])[0] || "" }
+          : { type: "text", value: id };
+      });
       if (!tokens.hasSubstance(list)) continue;
       if (tokens.requiredChannels(list).some((id) => id !== channel)) continue;
       const sig = trending.signature(list);

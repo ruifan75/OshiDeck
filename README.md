@@ -383,6 +383,24 @@ tools/mine.sh UCeqIMtLuGc3YgwkhEaG8oDg
 無料の絵文字は外します ── 後者は[Member emoji](#member-emoji)のとおり、接頭辞だけを見ていると
 取り違えるものです。
 
+### ここだけの言葉か、どこでも言う言葉か
+
+`scope` は数えただけでは決まりません。**「メン限ではない」は「通用」ではない**からです ──
+`🦢✨` は稀羽すうの看板（名前が「羽」）ですが、文字そのものはただの絵文字で、誰でもどこへでも
+送れてしまいます。よそへ送るのが単に間違いだ、というだけのことで、**それを知っているのは
+よその部屋だけ**です。
+
+```
+tools/mine-org.sh ReAcT          # 事務所をまるごと掘る（数時間、途中から再開できます）
+node tools/scope.mjs UC… --take 10 --name 稀羽すう
+```
+
+`scope.mjs` は `tools/candidates/` にある全チャンネルぶんを読んで、一枚ごとに「よそでも言うか」
+を見ます。言う → `global` でどのプールにも出る。ここだけ → `channel` で留まる。メン限スタンプは
+そもそも選べません（`forcedScope` が配っているチャンネルに固定します）。
+
+事務所まるごと掘るのは、札の候補のためでもあり、**互いの対照群になるため**でもあります。
+
 **同梱するときは**、気に入ったデッキを書き出してから、
 
 ```
@@ -802,7 +820,9 @@ tools/check-css.mjs   同じセレクタが同じプロパティを2回書いて
 tools/check-var-timing.mjs  カスタムプロパティの合成が継承で壊れていないか
 tools/channels.mjs    Holodex から事務所のチャンネル一覧（`tools/channels.json` へ）
 tools/mine.sh         チャンネルIDひとつから候補一覧まで（取得して数える）
-tools/mine-chat.mjs   過去のチャットから札の候補を出す（`tools/candidates.json` へ）
+tools/mine-org.sh     事務所まるごと。途中で止めても続きから
+tools/mine-chat.mjs   過去のチャットから札の候補を出す（`tools/candidates/` へ）
+tools/scope.mjs       よそでも言うか、ここだけかで scope を決める
 tools/saturation.mjs  何配信ぶん掘れば十分かを測る
 tools/add-preset.mjs  書き出したプリセットを presets/presets.json に入れる
 tools/selftest.js     YouTubeのDOMセレクタの自己診断

@@ -23,4 +23,4 @@ chat-*/
 
 # What came out of mining it. A working note: re-made by one command, and
 # what survives curation goes into presets/presets.json instead.
-tools/candidates.json
+tools/candidates/

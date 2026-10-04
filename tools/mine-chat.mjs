@@ -12,7 +12,7 @@
 // was said. A few people spamming a hundred stamps each is the thing that
 // dominates a raw count, and it is not what the room is doing. On a 2-hour
 // singing stream the two orderings disagree completely at the top.
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { argv, exit } from "node:process";
 
 const root = new URL("..", import.meta.url).pathname;
@@ -190,7 +190,12 @@ const candidates = [...seen.values()]
   // talks is not a fault in it.
   .sort((a, b) => b.regulars - a.regulars || b.people - a.people || b.count - a.count);
 
-const out = `${root}tools/candidates.json`;
+// One file per channel, because the interesting question needs more than
+// one of them: whether a phrase belongs to this channel or to everybody is
+// not answerable from inside a single chat. tools/scope.mjs reads the lot.
+const dir = `${root}tools/candidates`;
+mkdirSync(dir, { recursive: true });
+const out = `${dir}/${channel}.json`;
 writeFileSync(out, `${JSON.stringify({ channel, streams: files.length, candidates }, null, 2)}\n`);
 
 // Built from the tokens rather than from the text, so a member emoji reads
@@ -214,4 +219,4 @@ for (const c of candidates.slice(0, 40)) {
     ` ${String(c.count).padStart(5)}   ${c.member ? "メン限" : "　　  "}  ${label(c).slice(0, 42)}`
   );
 }
-console.log(`\ntools/candidates.json — ${candidates.length}件`);
+console.log(`\n${out.replace(root, "")} — ${candidates.length}件`);

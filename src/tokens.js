@@ -137,6 +137,74 @@
 
   const freshSrc = (token) => liveSrc.get(token.emojiId) || token.src || "";
 
+  /* ---------- standard emoji ---------- */
+
+  // YouTube does not draw 👏 in the system font. Live chat replaces every
+  // standard emoji with Google's own picture, so the same message is one
+  // drawing in the chat and a different one on the card beside it — and a
+  // third one again on Windows, where the system font is Segoe UI Emoji. A
+  // card is a picture of the message it is about to send, so it has to use
+  // the chat's pictures.
+  //
+  // On the card only. These stay `text` tokens everywhere else, and what
+  // goes into the chat editor stays characters: YouTube's own renderer is
+  // what turns them into images there, and an <img> written in their place
+  // carries no emoji id for it to resolve.
+  const NOTO = "https://fonts.gstatic.com/s/e/notoemoji/15.1";
+
+  // Regional indicators (🇯🇵) and keycaps (1️⃣) have to be named separately.
+  // Underneath they are two letters and a digit, so Extended_Pictographic —
+  // which is the test for every other emoji there is — says no to both.
+  const IS_EMOJI = /\p{Extended_Pictographic}|[\u{1F1E6}-\u{1F1FF}]|\u20E3/u;
+
+  const segmenter = new Intl.Segmenter(undefined, { granularity: "grapheme" });
+
+  // Text split into the pictures in it and the characters between them.
+  //
+  // Graphemes rather than code points, because a picture is not a character:
+  // 👏🏻 is a hand and a skin tone, 😵‍💫 is two faces and a joiner, 👨‍👩‍👧 is
+  // three people and two more, and every one of them is one drawing.
+  function splitEmoji(text) {
+    const parts = [];
+    let plain = "";
+    for (const { segment } of segmenter.segment(text || "")) {
+      if (!IS_EMOJI.test(segment)) { plain += segment; continue; }
+      if (plain) { parts.push({ emoji: false, value: plain }); plain = ""; }
+      parts.push({ emoji: true, value: segment });
+    }
+    if (plain) parts.push({ emoji: false, value: plain });
+    return parts;
+  }
+
+  // The picture's url is not worth storing anywhere: it falls out of the
+  // characters. Checked against one stream's chat export, all 115 standard
+  // emoji in it derived to the url YouTube itself had served.
+  const notoSrc = (grapheme) =>
+    `${NOTO}/${[...grapheme]
+      // YouTube drops the variation selector from its own emoji ids, and the
+      // file answers with or without it, so dropping it keeps one spelling.
+      .filter((ch) => ch !== "\uFE0F")
+      // The `1` of 1️⃣ is code point 31 and the file is `0031_20e3`.
+      .map((ch) => ch.codePointAt(0).toString(16).padStart(4, "0"))
+      .join("_")}/72.png`;
+
+  function createStandardEmojiNode(grapheme) {
+    const img = document.createElement("img");
+    // No data-emoji-id: that names an emoji YouTube hosts for one channel,
+    // and these belong to nobody. It is also what collectTokens reads, so
+    // putting one here would turn 👏 into a member emoji on the way back.
+    img.className = "od-emoji";
+    img.setAttribute("src", notoSrc(grapheme));
+    img.setAttribute("alt", grapheme);
+    // Not everything that segments as one grapheme has a picture — ™, ♻,
+    // the older dingbats — and the ones that do not answer 404. Falling back
+    // to the characters is what the card showed before any of this.
+    img.addEventListener("error", () => {
+      img.replaceWith(document.createTextNode(grapheme));
+    }, { once: true });
+    return img;
+  }
+
   function createEmojiNode(token, { preview = false } = {}) {
     const img = document.createElement("img");
     // Outside a preview this has to match the markup YouTube itself writes.
@@ -159,10 +227,21 @@
   function toFragment(tokens, options) {
     const frag = document.createDocumentFragment();
     for (const token of tokens) {
-      if (token.type === "text") frag.appendChild(document.createTextNode(token.value || ""));
+      if (token.type === "text") appendText(frag, token.value || "", options);
       else if (token.type === "youtubeEmoji") frag.appendChild(createEmojiNode(token, options));
     }
     return frag;
+  }
+
+  // Pictures on a card, characters in the editor.
+  function appendText(frag, text, { preview = false } = {}) {
+    if (!text) return;
+    if (!preview) { frag.appendChild(document.createTextNode(text)); return; }
+    for (const part of splitEmoji(text)) {
+      frag.appendChild(
+        part.emoji ? createStandardEmojiNode(part.value) : document.createTextNode(part.value)
+      );
+    }
   }
 
   function toHtml(tokens) {
@@ -218,6 +297,6 @@
 
   OD.tokens = {
     collectTokens, toPlainText, toFragment, toHtml, cardKey, hasContent, hasSubstance, writeToInput,
-    emojiOwner, requiredChannels, needsMembership, harvestEmoji, freshSrc
+    emojiOwner, requiredChannels, needsMembership, harvestEmoji, freshSrc, splitEmoji
   };
 })();

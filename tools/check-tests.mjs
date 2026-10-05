@@ -523,13 +523,45 @@ const MUTATIONS = [
     '      if (current.tagName === "IMG") return pushText(current.getAttribute("alt") || "");',
     '      if (current.tagName === "IMG") return tokens.push({ type: "youtubeEmoji", emojiId: current.getAttribute("alt") || "" });'],
 
+  [EMOJI, TOKENS, "the chat editor given pictures instead of characters",
+    "    if (!preview) { frag.appendChild(document.createTextNode(text)); return; }",
+    "    if (false) { frag.appendChild(document.createTextNode(text)); return; }"],
+
+  [EMOJI, TOKENS, "flags and keycaps left as text for not being pictographic",
+    "  const IS_EMOJI = /\\p{Extended_Pictographic}|[\\u{1F1E6}-\\u{1F1FF}]|\\u20E3/u;",
+    "  const IS_EMOJI = /\\p{Extended_Pictographic}/u;"],
+
+  [EMOJI, TOKENS, "a picture asked for per code point rather than per emoji",
+    "    for (const { segment } of segmenter.segment(text || \"\")) {",
+    "    for (const segment of [...(text || \"\")]) {"],
+
+  [EMOJI, TOKENS, "the variation selector kept in the filename",
+    "      .filter((ch) => ch !== \"\\uFE0F\")",
+    "      .filter(() => true)"],
+
+  [EMOJI, TOKENS, "a code point left unpadded",
+    "      .map((ch) => ch.codePointAt(0).toString(16).padStart(4, \"0\"))",
+    "      .map((ch) => ch.codePointAt(0).toString(16))"],
+
+  [EMOJI, TOKENS, "a standard emoji claiming an owner",
+    "    img.setAttribute(\"alt\", grapheme);",
+    "    img.setAttribute(\"alt\", grapheme);\n    img.setAttribute(\"data-emoji-id\", grapheme);"],
+
+  [EMOJI, TOKENS, "an emoji with no picture left as a broken image",
+    "      img.replaceWith(document.createTextNode(grapheme));",
+    "      /* left showing nothing */"],
+
   [VISIBILITY, CONTENT, "the bar repeating what the card already says",
     "      text: runsOver(card, settingsCache.cardSize)\n        ? tokens.toPlainText(card.tokens || []).trim()\n        : \"\"",
     "      text: tokens.toPlainText(card.tokens || []).trim()"],
 
   [VISIBILITY, CONTENT, "an emoji measured by the length of its name",
-    "        wide + (token.type === \"text\" ? token.value.trim().length : EMOJI_WIDTH),",
-    "        wide + (token.type === \"text\" ? token.value.trim().length : (token.alt || \"\").length),"],
+    "      (wide, token) => wide + (token.type === \"text\" ? textWidth(token.value) : EMOJI_WIDTH),",
+    "      (wide, token) => wide + (token.type === \"text\" ? textWidth(token.value) : (token.alt || \"\").length),"],
+
+  [VISIBILITY, CONTENT, "an emoji in a sentence counted by its characters",
+    "    tokens.splitEmoji((value || \"\").trim())\n      .reduce((wide, part) => wide + (part.emoji ? EMOJI_WIDTH : part.value.length), 0);",
+    "    (value || \"\").trim().length;"],
 
   [VISIBILITY, CONTENT, "a notice left sitting over the controls it names",
     "    if (notice) clearNotice();",
@@ -650,6 +682,15 @@ const KILLS = {
   "a notice left sitting over the controls it names": "typing clears a notice that was in the way",
   "a refusal with nothing to show for it where it happened": "and marks the card that was pressed",
   "an emoji measured by the length of its name": "three emoji are six characters wide, not twenty-one",
+  "an emoji in a sentence counted by its characters": "an emoji inside text is a picture, not its characters",
+
+  "the chat editor given pictures instead of characters": "and the chat editor is still given the characters",
+  "flags and keycaps left as text for not being pictographic": "a flag is a picture even though its letters are not",
+  "a picture asked for per code point rather than per emoji": "a skin tone belongs to the hand in front of it",
+  "the variation selector kept in the filename": "the variation selector is dropped",
+  "a code point left unpadded": "a short code point is padded to four digits",
+  "a standard emoji claiming an owner": "a standard picture claims no owner",
+  "an emoji with no picture left as a broken image": "an emoji with no picture falls back to the character",
 
   "a language nobody wrote answered with keys": "a missing translation falls through to the source",
   "a missing key answered with silence instead of its name": "a key that does not exist says so",

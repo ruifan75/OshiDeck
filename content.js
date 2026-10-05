@@ -1303,10 +1303,17 @@
   // pictures was shrunk and faded for being too long.
   const EMOJI_WIDTH = 2;
 
+  // An emoji sitting inside a text token is a picture too — the card draws it
+  // as one — and counting its characters instead made two cards of the same
+  // six pictures measure differently: 🦢✨🦢✨🦢✨ came to nine, because ✨ is
+  // one UTF-16 unit and 🦢 is two.
+  const textWidth = (value) =>
+    tokens.splitEmoji((value || "").trim())
+      .reduce((wide, part) => wide + (part.emoji ? EMOJI_WIDTH : part.value.length), 0);
+
   const widthOf = (card) =>
     (card.tokens || []).reduce(
-      (wide, token) =>
-        wide + (token.type === "text" ? token.value.trim().length : EMOJI_WIDTH),
+      (wide, token) => wide + (token.type === "text" ? textWidth(token.value) : EMOJI_WIDTH),
       0
     );
 

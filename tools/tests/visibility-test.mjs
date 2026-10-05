@@ -281,6 +281,17 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
     process.exit(1);
   }
 
+  // splitEmoji is the real one. How wide a card is and how many pictures get
+  // drawn on it are the same count, and a copy written here would only ever
+  // agree with itself.
+  globalThis.OshiDeck ||= {};
+  await import(
+    process.env.OD_TOKENS
+      ? `file://${process.env.OD_TOKENS}`
+      : new URL("../../src/tokens.js", import.meta.url).href
+  );
+  const { splitEmoji } = globalThis.OshiDeck.tokens;
+
   const api = new Function(
     "tokens", "settingsCache", "watcher", "t", "document",
     `${src.slice(sizes, sizesTo)}
@@ -288,7 +299,7 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
      return { cardPeek, cardBody, widthOf };`
   )(
     { toPlainText: (list) => (list || []).map((x) => (x.type === "text" ? x.value : x.alt || "")).join(""),
-      toFragment: () => ({}) },
+      toFragment: () => ({}), splitEmoji },
     { cardSize: "small" },
     { ranking: () => new Map() },
     (key, ...args) => [key, ...args].join("|"),
@@ -321,6 +332,16 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
   // pictures for being 21 characters long.
   check("three emoji are six characters wide, not twenty-one",
     api.widthOf({ tokens: stamp(3) }) === 6);
+
+  // The same is true of an emoji that arrived as part of a sentence, now
+  // that the card draws those as pictures too. Counting their characters
+  // made 🦢✨🦢✨🦢✨ nine wide — ✨ is one UTF-16 unit and 🦢 is two — so six
+  // pictures and three pictures faded at different points for no reason a
+  // reader could see.
+  check("an emoji inside text is a picture, not its characters",
+    api.widthOf({ tokens: words("🦢✨🦢✨🦢✨") }) === 12);
+  check("and the words around it are still words",
+    api.widthOf({ tokens: words("おつ🦢") }) === 4);
   check("so a card of them is not treated as overlong",
     !api.cardBody({ tokens: stamp(3) }, "small").body.dataset.length);
   check("while a card of actual words still is",

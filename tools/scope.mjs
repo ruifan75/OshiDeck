@@ -187,7 +187,11 @@ function write(mine, judged, title) {
               type: "youtubeEmoji",
               emojiId: t.emojiId,
               ...(t.alt ? { alt: t.alt } : {}),
-              ...(t.sharedTooltipText ? { sharedTooltipText: t.sharedTooltipText } : {})
+              ...(t.sharedTooltipText ? { sharedTooltipText: t.sharedTooltipText } : {}),
+              // Stale urls are refreshed from the live chat by harvestEmoji;
+              // what this buys is the first render, before any of that emoji
+              // has gone past.
+              ...(t.src ? { src: t.src } : {})
             }),
       scope: c.scope
     }))

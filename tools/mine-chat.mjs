@@ -70,11 +70,19 @@ const asTokens = (message) =>
     if ("text" in run) return { type: "text", value: run.text };
     const id = run.emoji?.emojiId || "";
     if (!CUSTOM.test(id)) return { type: "text", value: id };
+    // The picture, too. Without it a member-emoji card has nothing to draw
+    // until that emoji happens to go past in the chat and harvestEmoji picks
+    // up a url — so a freshly loaded preset is a row of blank squares, which
+    // is the first thing anybody sees of it. The export carries two sizes;
+    // the larger survives a card at any size.
+    const sizes = run.emoji?.image?.thumbnails || [];
+    const biggest = sizes[sizes.length - 1];
     return {
       type: "youtubeEmoji",
       emojiId: id,
       alt: run.emoji?.image?.accessibility?.accessibilityData?.label || "",
-      sharedTooltipText: (run.emoji?.shortcuts || [])[0] || ""
+      sharedTooltipText: (run.emoji?.shortcuts || [])[0] || "",
+      ...(biggest?.url ? { src: biggest.url } : {})
     };
   });
 
@@ -175,7 +183,8 @@ const candidates = [...seen.values()]
         t.type === "text"
           ? { type: "text", value: t.value }
           : { type: "youtubeEmoji", emojiId: t.emojiId, alt: t.alt,
-              sharedTooltipText: t.sharedTooltipText })
+              sharedTooltipText: t.sharedTooltipText,
+              ...(t.src ? { src: t.src } : {}) })
     };
   })
   // One person saying a thing is not something the room does, and one stream

@@ -2,6 +2,7 @@
 //
 //   node tools/add-preset.mjs ~/Downloads/oshideck-preset-さくら.json
 //   node tools/add-preset.mjs ~/Downloads/oshideck-preset-さくら.json --channel UC…
+//   node tools/add-preset.mjs tools/candidates/*.preset.json
 //
 // Making a preset is meant to be the same gesture as using one: build a deck
 // you like, write it out from the options page, run this, commit. The file is
@@ -20,13 +21,19 @@ import { argv, exit } from "node:process";
 const root = new URL("..", import.meta.url).pathname;
 const bundle = `${root}presets/presets.json`;
 
-const [, , path, ...rest] = argv;
-const flag = rest.indexOf("--channel");
-const channel = flag >= 0 ? rest[flag + 1] : null;
-const spare = rest.filter((_, at) => at !== flag && at !== flag + 1);
+const args = argv.slice(2);
+const flag = args.indexOf("--channel");
+const channel = flag >= 0 ? args[flag + 1] : null;
+const paths = args.filter((a, at) => at !== flag && at !== flag + 1 && !a.startsWith("--"));
 
-if (!path || spare.length || (flag >= 0 && !channel)) {
-  console.log("usage: node tools/add-preset.mjs <exported preset.json> [--channel UC…]");
+if (!paths.length || (flag >= 0 && !channel)) {
+  console.log("usage: node tools/add-preset.mjs <preset.json …> [--channel UC…]");
+  exit(1);
+}
+// `--channel` renames the one file it is given. Several files already carry
+// their own channel, and one flag cannot answer for all of them.
+if (channel && paths.length > 1) {
+  console.log("FAIL --channel は1つのファイルにしか使えません");
   exit(1);
 }
 
@@ -42,16 +49,6 @@ const { presets } = globalThis.OshiDeck;
 
 const die = (message) => { console.log(`FAIL ${message}`); exit(1); };
 
-let incoming;
-try {
-  incoming = JSON.parse(readFileSync(path, "utf8"));
-} catch (error) {
-  die(`${path} を読めません: ${error.message}`);
-}
-
-const problem = presets.validate(incoming);
-if (problem) die(`${path} は使えません: ${problem}`);
-
 let list;
 try {
   list = JSON.parse(readFileSync(bundle, "utf8"));
@@ -60,36 +57,53 @@ try {
 }
 if (!Array.isArray(list)) die("presets/presets.json が配列ではありません");
 
-// Said on the command line, when the deck had no member emoji to say it.
-if (channel) {
-  if (incoming.channel && incoming.channel !== channel) {
-    die(`${path} は ${incoming.channel} 専用です。--channel ${channel} とは違います`);
+let added = 0;
+let replaced = 0;
+
+for (const path of paths) {
+  let incoming;
+  try {
+    incoming = JSON.parse(readFileSync(path, "utf8"));
+  } catch (error) {
+    die(`${path} を読めません: ${error.message}`);
   }
-  incoming.channel = channel;
+
+  const problem = presets.validate(incoming);
+  if (problem) die(`${path} は使えません: ${problem}`);
+
+  // Said on the command line, when the deck had no member emoji to say it.
+  if (channel) {
+    if (incoming.channel && incoming.channel !== channel) {
+      die(`${path} は ${incoming.channel} 専用です。--channel ${channel} とは違います`);
+    }
+    incoming.channel = channel;
+  }
+
+  // A preset belongs to a channel: one naming none would be offered to every
+  // empty deck, which is a promise it cannot keep.
+  if (!incoming.channel) {
+    die(`${path} はどのチャンネルのものか分かりません。` +
+      "--channel UC… を付けるか、そのチャンネルのメン限スタンプを入れて書き出してください。");
+  }
+
+  const problemAgain = presets.validate(incoming);
+  if (problemAgain) die(`${path} は使えません: ${problemAgain}`);
+
+  // The channel, not the name. Two presets for one channel would both be
+  // offered to the same empty deck, which is the collision that matters;
+  // two channels sharing a display name are never offered together, and
+  // among hundreds of VTubers that is going to happen.
+  const at = list.findIndex((preset) => preset.channel === incoming.channel);
+  if (at >= 0) {
+    list[at] = incoming;
+    replaced += 1;
+  } else {
+    list.push(incoming);
+    added += 1;
+  }
 }
 
-// A preset belongs to a channel: one naming none would be offered to every
-// empty deck, which is a promise it cannot keep.
-if (!incoming.channel) {
-  die(`${path} はどのチャンネルのものか分かりません。` +
-    "--channel UC… を付けるか、そのチャンネルのメン限スタンプを入れて書き出してください。");
-}
-
-const problemAgain = presets.validate(incoming);
-if (problemAgain) die(`${path} は使えません: ${problemAgain}`);
-
-// Names are how a preset is offered, so two of them cannot share one.
-const at = list.findIndex((preset) => preset.name === incoming.name);
-if (at >= 0) {
-  list[at] = incoming;
-  console.log(`「${incoming.name}」を差し替えました（${incoming.cards.length}枚）`);
-} else {
-  list.push(incoming);
-  console.log(`「${incoming.name}」を追加しました（${incoming.cards.length}枚）`);
-}
-if (incoming.channel) {
-  console.log(`  ${incoming.channel} 専用 ── その配信でだけ出ます`);
-}
+console.log(`追加 ${added}組、差し替え ${replaced}組`);
 
 // One line per card. JSON.stringify with an indent puts every token on its
 // own line, which turns a ten-card preset into a hundred lines and makes the

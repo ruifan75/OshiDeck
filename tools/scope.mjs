@@ -105,6 +105,36 @@ for (const room of loaded) {
   for (const sig of room.near) everywhere.set(sig, (everywhere.get(sig) || 0) + 1);
 }
 
+// One spelling per phrase, for the cards that travel.
+//
+// Scope is decided on the signature, which treats `お`, `おおー` and `お！`
+// as one reaction — rightly, they are. But each channel writes its own
+// commonest wording onto the card, so 273 channels produced twelve separate
+// global cards for that one reaction, eight for `w`, four for `👏`. Loading
+// several presets then stacked all of them into every pool.
+//
+// So a phrase that is going to be global gets the wording the most people
+// used across every channel that says it. A channel-only card keeps its own:
+// there is nobody else to agree with, and the way this room writes it is the
+// point.
+const spelling = new Map();   // signature -> wording -> people
+for (const room of loaded) {
+  for (const c of room.candidates) {
+    const sig = trending.signature(c.tokens);
+    const by = spelling.get(sig) || new Map();
+    const key = JSON.stringify(c.tokens);
+    by.set(key, (by.get(key) || 0) + c.people);
+    spelling.set(sig, by);
+  }
+}
+
+const commonestSpelling = (sig, fallback) => {
+  const by = spelling.get(sig);
+  if (!by) return fallback;
+  const [best] = [...by].sort((a, b) => b[1] - a[1]);
+  return JSON.parse(best[0]);
+};
+
 if (loaded.length < 2) {
   console.log("FAIL 比べる相手がいません。ほかのチャンネルも tools/mine.sh で掘ってください");
   exit(1);
@@ -134,7 +164,12 @@ function decide(mine) {
     // the store forces their scope regardless of what a preset claims.
     const member = tokens.requiredChannels(c.tokens).length > 0;
     const common = others >= Math.max(1, Math.ceil(rooms * SAID_ELSEWHERE));
-    return { ...c, others, rooms, member, scope: member || !common ? "channel" : "global" };
+    const scope = member || !common ? "channel" : "global";
+    return {
+      ...c,
+      tokens: scope === "global" ? commonestSpelling(sig, c.tokens) : c.tokens,
+      others, rooms, member, scope
+    };
   });
 }
 

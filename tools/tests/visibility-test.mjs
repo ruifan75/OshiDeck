@@ -304,13 +304,17 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
   check("nor does it spell out an emoji's filename",
     api.cardPeek({ tokens: stamp(3) }).text === "");
 
-  check("the bar carries the count, which the card has no room for",
-    api.cardPeek({ tokens: stamp(3), hits: 5 }).text === "peek.hitsOnly|5");
+  // The card breathes in the corner when it is being said right now, and
+  // five people or fifty does not change what anybody does about it.
+  check("nor count what the card is already showing it is doing",
+    api.cardPeek({ tokens: stamp(3), hits: 5 }).text === "");
+  check("and a drawn card is not told where its own ＋ is",
+    api.cardPeek({ tokens: stamp(3), drawn: true, hits: 7 }).text === "");
 
-  // Except when the card genuinely cannot show it.
+  // The one thing a card genuinely cannot show: itself, when it is too full.
   const long = words("あ".repeat(25));
   check("a card too full to read is read out in the bar",
-    api.cardPeek({ tokens: long, hits: 4 }).text === `peek.hits|${"あ".repeat(25)}|4`);
+    api.cardPeek({ tokens: long, hits: 4 }).text === "あ".repeat(25));
 
   // An emoji is a picture about two characters wide, not the length of its
   // name — measuring the text shrank and faded a card of three small

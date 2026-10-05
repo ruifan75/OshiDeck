@@ -524,8 +524,8 @@ const MUTATIONS = [
     '      if (current.tagName === "IMG") return tokens.push({ type: "youtubeEmoji", emojiId: current.getAttribute("alt") || "" });'],
 
   [VISIBILITY, CONTENT, "the bar repeating what the card already says",
-    "    const body = runsOver(card, settingsCache.cardSize)\n      ? tokens.toPlainText(card.tokens || []).trim()\n      : \"\";",
-    "    const body = tokens.toPlainText(card.tokens || []).trim();"],
+    "      text: runsOver(card, settingsCache.cardSize)\n        ? tokens.toPlainText(card.tokens || []).trim()\n        : \"\"",
+    "      text: tokens.toPlainText(card.tokens || []).trim()"],
 
   [VISIBILITY, CONTENT, "an emoji measured by the length of its name",
     "        wide + (token.type === \"text\" ? token.value.trim().length : EMOJI_WIDTH),",

@@ -1236,31 +1236,26 @@
         warning: true
       };
     }
-    // The card is under the pointer. Repeating what is written on it tells
-    // nobody anything — and for a card of member emoji it was worse than
-    // nothing, because their text is the name YouTube files them under:
-    // `:_tadaima:` ×3 read out as `tadaimatadaimatadaima`.
+    // The bar says what the card cannot, and nothing else.
     //
-    // What the card cannot show is the number. Trending is a dot in the
-    // corner, not a count. So that is what the bar is for, and the words are
-    // only repeated when the card is too full to show them itself.
-    const body = runsOver(card, settingsCache.cardSize)
-      ? tokens.toPlainText(card.tokens || []).trim()
-      : "";
-
-    if (card.drawn) {
-      // Messages, not people: one person can send six. Saying 人 was a claim
-      // the count does not support.
-      return { text: body ? t("peek.drawnHits", body, card.hits) : t("peek.drawnOnly", card.hits) };
-    }
-    // Read now, not when the card was built. The panel deliberately does not
-    // redraw for a count ticking up, so the captured one goes stale — and this
-    // is the only place that number is ever shown.
-    const hits = card.signature
-      ? watcher.ranking().get(card.signature)?.count || 0
-      : card.hits || 0;
-    if (!hits) return { text: body };
-    return { text: body ? t("peek.hits", body, hits) : t("peek.hitsOnly", hits) };
+    // A card is under the pointer when this runs, so repeating what is on it
+    // says nothing — and for member emoji it said something wrong, since
+    // their text is the name YouTube files them under and `:_tadaima:` ×3
+    // read out as `tadaimatadaimatadaima`.
+    //
+    // The chat count went the same way. A card that is being said right now
+    // already breathes in the corner; whether it is five people or fifty
+    // does not change what anybody does about it, and the dot is the part
+    // that does. Nor does a drawn card need to be told how to be kept: its
+    // ＋ is right there on it, in the same place as every other card's.
+    //
+    // What is left is the one case where the card genuinely cannot show
+    // itself: too full, shrunk and faded out.
+    return {
+      text: runsOver(card, settingsCache.cardSize)
+        ? tokens.toPlainText(card.tokens || []).trim()
+        : ""
+    };
   }
 
   function trackPeek(el, card) {

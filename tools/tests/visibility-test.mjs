@@ -200,11 +200,13 @@ if (editFrom < 0 || editTo < 0 || editTo <= editFrom) {
 const words = (value) => ({ type: "text", value });
 const member = (owner) => ({ type: "youtubeEmoji", emojiId: `${owner}/heart` });
 
-function editor({ editing = null } = {}) {
-  const seen = { renders: 0, bars: 0 };
+function editor({ editing = null, notice = null } = {}) {
+  const seen = { renders: 0, bars: 0, cleared: 0 };
   const api = new Function(
     "seen", "tokens",
     `let editingId = ${JSON.stringify(editing)};
+     let notice = ${JSON.stringify(notice)};
+     const clearNotice = () => { notice = null; seen.cleared += 1; };
      let inputHasContent = false;
      let inputIsPinned = false;
      let currentTokens = [];
@@ -216,7 +218,7 @@ function editor({ editing = null } = {}) {
      const refreshBar = () => { seen.bars += 1; };
      ${src.slice(editFrom, editTo)}
      return { editorChanged, filled: () => inputHasContent, pinned: () => inputIsPinned,
-              editing: () => editingId };`
+              editing: () => editingId, notice: () => notice };`
   )(seen, {
     // An editor is just what is in it.
     collectTokens: (input) => input || [],
@@ -245,6 +247,15 @@ check("and is what pins the comment to this channel", e.pinned() === true);
 e.editorChanged([words("わこつ")]);
 check("taking it out again rebuilds it once more", e.seen.bars === 3);
 check("and unpins the comment", e.pinned() === false);
+
+// A notice is in the same row as the save targets and outranks them, so an
+// error about what was typed hid the buttons needed to fix it — for the six
+// seconds it took to time out. Typing again is the answer: a message about
+// what just happened stops being news as soon as something else happens.
+e = editor({ notice: { message: "混到了多個頻道的會員限定貼圖" } });
+e.editorChanged([words("わこつ")]);
+check("typing clears a notice that was in the way", e.notice() === null);
+check("and the bar is rebuilt without it", e.seen.bars >= 1);
 
 // Emptying the editor is how you stop editing, and there is no other way out.
 e = editor({ editing: "card-1" });

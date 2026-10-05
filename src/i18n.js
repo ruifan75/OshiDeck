@@ -105,7 +105,6 @@
     "toast.saveFailed":      { ja: "保存できませんでした", "zh-TW": "儲存失敗" },
     "toast.saveFailedKept":  { ja: "保存できませんでした。$1", "zh-TW": "儲存失敗。$1" },
     "toast.cardUpdated":     { ja: "札を更新しました", "zh-TW": "已更新這張牌" },
-    "toast.editHint":        { ja: "直したら「更新」を押してください", "zh-TW": "改好後按「更新」" },
     "toast.editCancelled":   { ja: "編集をやめました", "zh-TW": "已取消編輯" },
     "toast.ejected":         { ja: "デッキから外しました（プールに残っています）",
                                "zh-TW": "已從牌組移除（牌還留在卡池裡）" },

@@ -1108,7 +1108,9 @@
     if (!input) return;
     editingId = card.id;
     tokens.writeToInput(input, card.tokens || [], { replace: true });
-    showToast(t("toast.editHint"));
+    // No toast. The bar is about to say 編集中 and put 更新 and やめる in it,
+    // which is the same sentence with buttons — and a notice outranks them,
+    // so telling someone to press 更新 hid 更新 for six seconds.
     render();
   }
 
@@ -1746,6 +1748,12 @@
 
   function editorChanged(input) {
     const filled = readInput(input);
+
+    // A notice says what just happened, and it stops being news the moment
+    // you do something else. It also outranks the save targets, which are in
+    // the same row — so an error about what you typed hid the buttons you
+    // needed to fix it and try again, for six seconds.
+    if (notice) clearNotice();
 
     // Emptying the editor means you are no longer editing anything. Without
     // this the flag survives with no visible way to clear it.

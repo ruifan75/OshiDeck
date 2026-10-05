@@ -2,6 +2,7 @@
 //
 //   node tools/scope.mjs UCeqIMtLuGc3YgwkhEaG8oDg
 //   node tools/scope.mjs UCeqIMtLuGc3YgwkhEaG8oDg --take 10 --name 稀羽すう
+//   node tools/scope.mjs --all                    # every channel, one pass
 //
 // Reads every tools/candidates/*.json — one per channel, from mine-chat —
 // and asks of each phrase: how many other channels say it too?
@@ -36,6 +37,19 @@ const dir = `${root}tools/candidates`;
 // How far down somebody else's list still counts as "they say this too".
 const NEAR_THE_TOP = 20;
 
+// And how many of them have to. A share rather than a count, because the
+// count changes as more channels are mined and the question does not: with
+// 36 channels to compare against, `ただいま` was in none of them and "at
+// least one" was a fine rule; at 272 it is in two, and "at least one" called
+// 稀羽すう's own greeting universal again.
+//
+// The distribution is two humps with a gap: of 2619 cards across 273
+// channels, 1390 are in nobody else's top twenty and 568 are in more than
+// half. Two percent — six channels of 272 — is where the gap sits. Above it:
+// GG, わかる, おはよー, ばいばーい, 88888, ナイス, 待機. Below it: そう,
+// wkwkwk, ないふぁい, and spellings of things already counted once.
+const SAID_ELSEWHERE = 0.02;
+
 globalThis.OshiDeck = {};
 globalThis.document = { querySelector: () => null };
 globalThis.chrome = { runtime: { id: "x" }, storage: { local: { get: async () => ({}), set: async () => {} } } };
@@ -51,14 +65,16 @@ const flag = (name, fallback) => {
   return at < 0 ? fallback : args[at + 1];
 };
 const channel = args.find((a) => /^UC[A-Za-z0-9_-]{22}$/.test(a));
+const every = args.includes("--all");
 const take = Number(flag("--take", 10));
 const name = flag("--name", null);
 
-if (!channel) {
+if (!channel && !every) {
   console.log("usage: node tools/scope.mjs <UC…> [--take N] [--name 名前]");
+  console.log("       node tools/scope.mjs --all");
   exit(1);
 }
-if (!existsSync(`${dir}/${channel}.json`)) {
+if (channel && !existsSync(`${dir}/${channel}.json`)) {
   console.log(`FAIL ${channel} の候補がありません。先に tools/mine.sh を回してください`);
   exit(1);
 }
@@ -69,73 +85,109 @@ if (!existsSync(`${dir}/${channel}.json`)) {
 // ends in .json like everything else — read as a candidate list it has no
 // candidates in it at all.
 const files = readdirSync(dir).filter((f) => f.endsWith(".json") && !f.endsWith(".preset.json"));
-const elsewhere = new Map();   // signature -> how many other channels say it
-let rooms = 0;
 
-for (const file of files) {
+// Read once, not once per channel. Every lookup wants the same thing — who
+// else says this — so the tally is built across all of them and each
+// channel's own contribution subtracted when its turn comes. Doing it per
+// channel meant re-reading a hundred megabytes 273 times.
+const loaded = files.map((file) => {
   const other = JSON.parse(readFileSync(`${dir}/${file}`, "utf8"));
-  if (other.channel === channel) continue;
-  rooms += 1;
-
   // Signatures, so `888` and `88888888` are the same thing said twice and
   // `おつ` is not `おつかれ`. The same collapse the hand's own sort uses.
-  const said = new Set(
-    other.candidates.slice(0, NEAR_THE_TOP).map((c) => trending.signature(c.tokens))
-  );
-  for (const sig of said) elsewhere.set(sig, (elsewhere.get(sig) || 0) + 1);
+  return {
+    ...other,
+    near: new Set(other.candidates.slice(0, NEAR_THE_TOP).map((c) => trending.signature(c.tokens)))
+  };
+});
+
+const everywhere = new Map();
+for (const room of loaded) {
+  for (const sig of room.near) everywhere.set(sig, (everywhere.get(sig) || 0) + 1);
 }
 
-if (!rooms) {
+if (loaded.length < 2) {
   console.log("FAIL 比べる相手がいません。ほかのチャンネルも tools/mine.sh で掘ってください");
   exit(1);
 }
 
 /* ---------- and this one ---------- */
 
-const mine = JSON.parse(readFileSync(`${dir}/${channel}.json`, "utf8"));
-
 const label = (list) =>
   list.map((t) => (t.type === "text" ? t.value : t.sharedTooltipText || `[${t.alt}]`)).join("");
 
-const judged = mine.candidates.slice(0, take).map((c) => {
-  const others = elsewhere.get(trending.signature(c.tokens)) || 0;
-  // Member emoji have no say in this: they can be sent in one place, and the
-  // store forces their scope regardless of what a preset claims.
-  const member = tokens.requiredChannels(c.tokens).length > 0;
-  return { ...c, others, member, scope: member || !others ? "channel" : "global" };
-});
+// Names, so a preset is offered by something a person recognises.
+let named = new Map();
+try {
+  named = new Map(
+    JSON.parse(readFileSync(`${root}tools/channels.json`, "utf8"))
+      .map((c) => [c.id, c.japanese || c.name])
+  );
+} catch (_) { /* the list is optional */ }
 
-console.log(`${rooms}チャンネルと比べました\n`);
+function decide(mine) {
+  const rooms = loaded.length - 1;
+  return mine.candidates.slice(0, take).map((c) => {
+    const sig = trending.signature(c.tokens);
+    // Everyone who says it, less this channel if it is one of them.
+    const others = (everywhere.get(sig) || 0) - (mine.near.has(sig) ? 1 : 0);
+    // Member emoji have no say in this: they can be sent in one place, and
+    // the store forces their scope regardless of what a preset claims.
+    const member = tokens.requiredChannels(c.tokens).length > 0;
+    const common = others >= Math.max(1, Math.ceil(rooms * SAID_ELSEWHERE));
+    return { ...c, others, rooms, member, scope: member || !common ? "channel" : "global" };
+  });
+}
+
+function write(mine, judged, title) {
+  const preset = {
+    format: 2,
+    name: title,
+    note: `過去${mine.streams}配信のチャットから、常連が多い順に${judged.length}枚`,
+    channel: mine.channel,
+    cards: judged.map((c) => ({
+      tokens: c.tokens.map((t) =>
+        t.type === "text"
+          ? { type: "text", value: t.value }
+          : {
+              type: "youtubeEmoji",
+              emojiId: t.emojiId,
+              ...(t.alt ? { alt: t.alt } : {}),
+              ...(t.sharedTooltipText ? { sharedTooltipText: t.sharedTooltipText } : {})
+            }),
+      scope: c.scope
+    }))
+  };
+  const out = `${dir}/${mine.channel}.preset.json`;
+  writeFileSync(out, `${JSON.stringify(preset, null, 2)}\n`);
+  return out;
+}
+
+if (every) {
+  let made = 0;
+  let empty = 0;
+  for (const mine of loaded) {
+    const judged = decide(mine);
+    if (!judged.length) { empty += 1; continue; }
+    write(mine, judged, named.get(mine.channel) || mine.channel);
+    made += 1;
+  }
+  console.log(`${loaded.length}チャンネル → ${made}組（候補なし ${empty}）`);
+  console.log(`  node tools/add-preset.mjs tools/candidates/*.preset.json`);
+  exit(0);
+}
+
+const mine = loaded.find((m) => m.channel === channel);
+const judged = decide(mine);
+
+console.log(`${judged[0]?.rooms ?? loaded.length - 1}チャンネルと比べました\n`);
 console.log("よそ  常連  種別   scope    内容");
 for (const c of judged) {
   console.log(
-    `${String(c.others).padStart(3)}/${rooms}  ${String(c.regulars).padStart(4)}  ` +
+    `${String(c.others).padStart(3)}/${c.rooms}  ${String(c.regulars).padStart(4)}  ` +
     `${c.member ? "メン限" : "　　  "}  ${c.scope.padEnd(8)} ${label(c.tokens).slice(0, 38)}`
   );
 }
 
-/* ---------- as a preset ---------- */
-
-const preset = {
-  format: 2,
-  name: name || channel,
-  note: `過去${mine.streams}配信のチャットから、常連が多い順に${judged.length}枚`,
-  channel,
-  cards: judged.map((c) => ({
-    tokens: c.tokens.map((t) =>
-      t.type === "text"
-        ? { type: "text", value: t.value }
-        : {
-            type: "youtubeEmoji",
-            emojiId: t.emojiId,
-            ...(t.alt ? { alt: t.alt } : {}),
-            ...(t.sharedTooltipText ? { sharedTooltipText: t.sharedTooltipText } : {})
-          }),
-    scope: c.scope
-  }))
-};
-
-const out = `${dir}/${channel}.preset.json`;
-writeFileSync(out, `${JSON.stringify(preset, null, 2)}\n`);
+const out = write(mine, judged, name || named.get(channel) || channel);
 console.log(`\n${out.replace(root, "")}`);
 console.log(`  node tools/add-preset.mjs ${out.replace(root, "")}`);

@@ -28,6 +28,7 @@
   let grabRow = null;
   let expanded = false;
   let flashId = null;
+  let flashKind = "found";
   let drag = null;
   let poolOpen = false;
   let peek = null;
@@ -611,6 +612,7 @@
     const el = document.createElement("div");
     el.className = "od-listcard od-drawn";
     el.dataset.scope = "global";
+    if (card.id === flashId) el.dataset.flash = flashKind;
 
     const play = document.createElement("button");
     play.type = "button";
@@ -649,6 +651,7 @@
     const el = document.createElement("div");
     el.className = "od-card od-drawn";
     el.dataset.size = size;
+    if (card.id === flashId) el.dataset.flash = flashKind;
     el.dataset.scope = "global";
 
     // A render for some other reason builds this element again, and a new
@@ -730,6 +733,9 @@
       ? whyNotSendable(card.tokens || [], here, member)
       : (card.locked ? (card.lapsed ? "membership" : "elsewhere") : "");
     if (why) {
+      // The bar still says why — but on its own it was the only signal, and
+      // it is nowhere near where the press happened.
+      if (card.id) flashCard(card.id, "refused");
       return showToast(why === "membership"
         ? t("lock.membershipPlay")
         : t("lock.elsewherePlay"));
@@ -958,7 +964,9 @@
           return showToast(t("toast.saveFailedKept", kept));
         }
         clear();
-        showToast(t("toast.cardUpdated"));
+        // No toast: the card's own contents change under the pointer, which
+        // is both the result and a better account of it than a word in a
+        // corner nobody is looking at.
         return render();
       }
     }
@@ -1093,8 +1101,16 @@
     return similar;
   }
 
-  function flashCard(id) {
+  // Two things to say about a card, in the place the eye already is.
+  //
+  // `found` is "this one, the one you already had" — a card that was reused
+  // rather than made again. `refused` is "this one did not go": pressing a
+  // locked card does nothing at all, and the only account of why was a line
+  // in the corner of a bar nobody has reason to look at. The card that was
+  // pressed is under the pointer.
+  function flashCard(id, how = "found") {
     flashId = id;
+    flashKind = how;
     render();
     setTimeout(() => {
       if (flashId !== id) return;
@@ -1318,7 +1334,7 @@
     if (card.id === editingId) el.dataset.editing = "true";
     if (card.locked) el.dataset.locked = "true";
     if (card.hits > 0) el.dataset.trending = "true";
-    if (card.id === flashId) el.dataset.flash = "true";
+    if (card.id === flashId) el.dataset.flash = flashKind;
 
     const { body } = cardBody(card, size);
 
@@ -1417,7 +1433,7 @@
       channel?.id || "", channel?.name || "", hue ?? "",
       rootEl?.clientWidth || 0,
       poolOpen ? "pool" : "deck", expanded ? "more" : "",
-      editingId || "", flashId || "", inputHasContent ? "typing" : "",
+      editingId || "", flashId ? `${flashId}:${flashKind}` : "", inputHasContent ? "typing" : "",
       pool.length, presetsOnHand(channel?.id).length,
       drawn?.key || "",
       shown.map(each).join(",")
@@ -1515,7 +1531,7 @@
       if (card.id === editingId) el.dataset.editing = "true";
       if (card.locked) el.dataset.locked = "true";
       if (card.hits > 0) el.dataset.trending = "true";
-      if (card.id === flashId) el.dataset.flash = "true";
+      if (card.id === flashId) el.dataset.flash = flashKind;
 
       const play = document.createElement("button");
       play.type = "button";
@@ -1789,7 +1805,6 @@
       editingId = null;
       clearInput(input);
       render();
-      showToast(t("toast.editCancelled"));
     });
   }
 
@@ -2088,9 +2103,10 @@
     });
     if (!ok || !value) return showToast(t("preset.failed"));
 
-    showToast(value.reused
-      ? t("preset.loadedReused", preset.name, value.reused)
-      : t("preset.loaded", preset.name));
+    // Ten cards arriving is its own announcement. What it does not account
+    // for is a pool that grew by less than that, so the only thing said here
+    // is the part that would otherwise be a surprise.
+    if (value.reused) showToast(t("preset.loadedReused", preset.name, value.reused));
     render();
   }
 

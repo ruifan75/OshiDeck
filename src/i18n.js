@@ -97,8 +97,6 @@
     "toast.inputKept":       { ja: "入力はそのままです", "zh-TW": "輸入欄的內容保留著" },
     "toast.saveFailed":      { ja: "保存できませんでした", "zh-TW": "儲存失敗" },
     "toast.saveFailedKept":  { ja: "保存できませんでした。$1", "zh-TW": "儲存失敗。$1" },
-    "toast.cardUpdated":     { ja: "札を更新しました", "zh-TW": "已更新這張牌" },
-    "toast.editCancelled":   { ja: "編集をやめました", "zh-TW": "已取消編輯" },
     "toast.ejected":         { ja: "デッキから外しました（プールに残っています）",
                                "zh-TW": "已從牌組移除（牌還留在卡池裡）" },
     "toast.deleted":         { ja: "札を削除しました", "zh-TW": "已刪除這張牌" },
@@ -127,7 +125,6 @@
     /* ---------- a starting hand ---------- */
     "preset.add":            { ja: "＋ $1（$2枚）を入れる", "zh-TW": "＋ 加入「$1」（$2 張）" },
     "preset.failed":         { ja: "読み込めませんでした", "zh-TW": "載入失敗" },
-    "preset.loaded":         { ja: "「$1」を入れました", "zh-TW": "已加入「$1」" },
     "preset.loadedReused":   { ja: "「$1」を入れました（うち$2枚はプールにあったもの）",
                                "zh-TW": "已加入「$1」（其中 $2 張原本就在卡池裡）" },
 

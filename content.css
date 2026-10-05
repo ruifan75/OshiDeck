@@ -653,8 +653,8 @@
 .od-listcard[data-drop="after"]::after { right: 2px; }
 
 /* "You already have this one" — say which. */
-.od-card[data-flash],
-.od-listcard[data-flash] {
+.od-card[data-flash="found"],
+.od-listcard[data-flash="found"] {
   animation: od-flash 1.6s ease-out;
 }
 
@@ -664,6 +664,23 @@
     box-shadow: 0 0 0 2px oklch(0.84 0.16 var(--od-scope-hue)),
                 0 0 16px oklch(0.78 0.18 var(--od-scope-hue) / .7);
   }
+}
+
+/* "This one did not go." Pressing a locked card does nothing, and the only
+   account of why was a line in the bar — across the panel from the press.
+   Red rather than the deck's colour, and a shake rather than a glow: this is
+   the one card feedback that has to mean no. */
+.od-card[data-flash="refused"],
+.od-listcard[data-flash="refused"] {
+  animation: od-refused 420ms ease-out;
+  box-shadow: 0 0 0 2px oklch(0.68 0.19 25), 0 0 14px oklch(0.64 0.2 25 / .6);
+}
+
+@keyframes od-refused {
+  0%, 100% { transform: translateX(0); }
+  15% { transform: translateX(-3px); }
+  40% { transform: translateX(3px); }
+  70% { transform: translateX(-2px); }
 }
 
 @media (prefers-reduced-motion: reduce) {

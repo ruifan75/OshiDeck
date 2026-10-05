@@ -102,7 +102,7 @@ const input = { id: "the editor" };
 
 function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "さくら" },
                 held = null, moves = null, autoSend = true, staged = [] } = {}) {
-  const seen = { writes: [], toasts: [], renders: 0, sent: 0, observer: null };
+  const seen = { writes: [], toasts: [], renders: 0, sent: 0, observer: null, flashed: [] };
 
   // What is actually in the editor. ⇧＋click can leave something there that
   // the next card then carries out with it.
@@ -155,7 +155,7 @@ function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "
     (message) => seen.toasts.push(message),
     () => seen.toasts.push("shutdown"),
     () => { seen.renders += 1; },
-    () => {},
+    (id, how) => seen.flashed.push(`${id}:${how}`),
     { record: () => {} },
     () => {},
     null,
@@ -501,6 +501,10 @@ const ours = { id: "ours", tokens: stamp(HERE) };
 let press = await pressing({ doc: page({ mine: false }) }, ours);
 check("a card the page says you cannot send is not sent", press.sent === 0);
 check("and says which kind of no it is", press.toasts.join("").includes("lock.membershipPlay"));
+
+// Pressing it does nothing at all, and the bar is across the panel from
+// where the press happened. The card that was pressed is under the pointer.
+check("and marks the card that was pressed", press.flashed.includes("ours:refused"));
 
 press = await pressing({ doc: page({ mine: true }) }, ours);
 check("and goes out once the page says you can", press.sent === 1);

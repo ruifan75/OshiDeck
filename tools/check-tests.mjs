@@ -535,6 +535,10 @@ const MUTATIONS = [
     "    if (notice) clearNotice();",
     "    if (false) clearNotice();"],
 
+  [MEMBER, CONTENT, "a refusal with nothing to show for it where it happened",
+    '      if (card.id) flashCard(card.id, "refused");',
+    "      if (false) flashCard(card.id);"],
+
   [COLOUR, STORE, "an out-of-gamut hue clipped instead of desaturated",
     "    for (let c = chroma; c > 0.01 && found.some((v) => v < -0.0005 || v > 1.0005); c -= 0.005) {\n      found = rgb(c);\n    }",
     "    // (clipped below instead)"],
@@ -644,6 +648,7 @@ const KILLS = {
   "a standard emoji kept as an emoji token": "a standard emoji comes back as text",
   "the bar repeating what the card already says": "a card says what it says, so the bar does not repeat it",
   "a notice left sitting over the controls it names": "typing clears a notice that was in the way",
+  "a refusal with nothing to show for it where it happened": "and marks the card that was pressed",
   "an emoji measured by the length of its name": "three emoji are six characters wide, not twenty-one",
 
   "a language nobody wrote answered with keys": "a missing translation falls through to the source",

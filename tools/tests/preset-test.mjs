@@ -238,7 +238,9 @@ await new Function(
 
 check("the panel's own load fills the deck", disk.decks[OTHER]?.length === 2);
 check("and names the channel while it is there", disk.channelMeta[OTHER]?.name === "ゆめの");
-check("and says what it did", said.length === 1 && said[0].includes("さくらの定番"));
+// Ten cards arriving is its own announcement; what it does not account for
+// is a pool that grew by less, so that is the only thing left to say.
+check("a load with nothing reused says nothing", said.length === 0);
 
 // Loading twice is not loading twice as much.
 const before = disk.cards.length;

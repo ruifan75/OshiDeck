@@ -398,13 +398,14 @@ function signature({ pool = false, more = false, editing = null, flash = null,
                      shown = [], poolCards = [], drawn = null } = {}) {
   return new Function(
     "poolOpen", "expanded", "editingId", "flashId", "inputHasContent", "inputIsPinned",
-    "tokens", "presetsOnHand", "rootEl",
+    "tokens", "presetsOnHand", "rootEl", "flashKind",
     `${src.slice(sigFrom, sigTo)} return panelSignature;`
   )(
     pool, more, editing, flash, typing, pinned,
     { cardKey: (t) => (t || []).map((x) => x.value ?? x.emojiId).join("") },
     () => new Array(presets),
-    { clientWidth: width }
+    { clientWidth: width },
+    "found"
   )(
     { settings: { mode: "hand", cardSize: "small", rows: 2, sortBy: "heat", suggest: true, ...settings } },
     { id: channel, name }, hue, shown, poolCards, drawn

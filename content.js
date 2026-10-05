@@ -1234,14 +1234,22 @@
         warning: true
       };
     }
-    const text = tokens.toPlainText(card.tokens || []).trim();
-    const stamps = (card.tokens || []).filter((t) => t.type === "youtubeEmoji").length;
-    const body = text || (stamps ? t("peek.stamps", stamps) : "");
+    // The card is under the pointer. Repeating what is written on it tells
+    // nobody anything — and for a card of member emoji it was worse than
+    // nothing, because their text is the name YouTube files them under:
+    // `:_tadaima:` ×3 read out as `tadaimatadaimatadaima`.
+    //
+    // What the card cannot show is the number. Trending is a dot in the
+    // corner, not a count. So that is what the bar is for, and the words are
+    // only repeated when the card is too full to show them itself.
+    const body = runsOver(card, settingsCache.cardSize)
+      ? tokens.toPlainText(card.tokens || []).trim()
+      : "";
 
     if (card.drawn) {
       // Messages, not people: one person can send six. Saying 人 was a claim
       // the count does not support.
-      return { text: t("peek.drawnHits", body, card.hits) };
+      return { text: body ? t("peek.drawnHits", body, card.hits) : t("peek.drawnOnly", card.hits) };
     }
     // Read now, not when the card was built. The panel deliberately does not
     // redraw for a count ticking up, so the captured one goes stale — and this
@@ -1249,7 +1257,8 @@
     const hits = card.signature
       ? watcher.ranking().get(card.signature)?.count || 0
       : card.hits || 0;
-    return { text: hits > 0 ? t("peek.hits", body, hits) : body };
+    if (!hits) return { text: body };
+    return { text: body ? t("peek.hits", body, hits) : t("peek.hitsOnly", hits) };
   }
 
   function trackPeek(el, card) {
@@ -1271,17 +1280,36 @@
     return el;
   }
 
+  // How much a card at this size can show before it fades out.
+  const BUDGET = { small: 6, medium: 9, large: 12 };
+
+  // How wide a card's contents are, in characters. An emoji is one picture
+  // about two characters across — not the length of its name, which is what
+  // measuring the plain text does: three `:_tadaima:` came to 21 characters
+  // because that is `tadaimatadaimatadaima`, and a card of three small
+  // pictures was shrunk and faded for being too long.
+  const EMOJI_WIDTH = 2;
+
+  const widthOf = (card) =>
+    (card.tokens || []).reduce(
+      (wide, token) =>
+        wide + (token.type === "text" ? token.value.trim().length : EMOJI_WIDTH),
+      0
+    );
+
+  const runsOver = (card, size) => widthOf(card) > (BUDGET[size] || BUDGET.small) * 3;
+
   function cardBody(card, size) {
     const body = document.createElement("div");
     body.className = "od-card-body";
     body.appendChild(tokens.toFragment(card.tokens || [], { preview: true }));
 
     // Long text shrinks a step and fades out rather than overflowing.
-    const length = tokens.toPlainText(card.tokens || []).trim().length;
-    const budget = size === "small" ? 6 : size === "medium" ? 9 : 12;
-    if (length > budget * 3) body.dataset.length = "long";
-    else if (length > budget) body.dataset.length = "medium";
-    return { body, truncated: length > budget * 3 };
+    const width = widthOf(card);
+    const budget = BUDGET[size] || BUDGET.small;
+    if (width > budget * 3) body.dataset.length = "long";
+    else if (width > budget) body.dataset.length = "medium";
+    return { body, truncated: runsOver(card, size) };
   }
 
   function buildCard(card, { size, hue }) {

@@ -523,6 +523,14 @@ const MUTATIONS = [
     '      if (current.tagName === "IMG") return pushText(current.getAttribute("alt") || "");',
     '      if (current.tagName === "IMG") return tokens.push({ type: "youtubeEmoji", emojiId: current.getAttribute("alt") || "" });'],
 
+  [VISIBILITY, CONTENT, "the bar repeating what the card already says",
+    "    const body = runsOver(card, settingsCache.cardSize)\n      ? tokens.toPlainText(card.tokens || []).trim()\n      : \"\";",
+    "    const body = tokens.toPlainText(card.tokens || []).trim();"],
+
+  [VISIBILITY, CONTENT, "an emoji measured by the length of its name",
+    "        wide + (token.type === \"text\" ? token.value.trim().length : EMOJI_WIDTH),",
+    "        wide + (token.type === \"text\" ? token.value.trim().length : (token.alt || \"\").length),"],
+
   [COLOUR, STORE, "an out-of-gamut hue clipped instead of desaturated",
     "    for (let c = chroma; c > 0.01 && found.some((v) => v < -0.0005 || v > 1.0005); c -= 0.005) {\n      found = rgb(c);\n    }",
     "    // (clipped below instead)"],
@@ -630,6 +638,8 @@ const KILLS = {
   "a card from before the shortcut existed read as free": "a card saved before the shortcut was collected still asks for a membership",
   "a shortcut that does not survive the editor": "writing a card keeps the shortcut with it",
   "a standard emoji kept as an emoji token": "a standard emoji comes back as text",
+  "the bar repeating what the card already says": "a card says what it says, so the bar does not repeat it",
+  "an emoji measured by the length of its name": "three emoji are six characters wide, not twenty-one",
 
   "a language nobody wrote answered with keys": "a missing translation falls through to the source",
   "a missing key answered with silence instead of its name": "a key that does not exist says so",

@@ -253,6 +253,65 @@ e.editorChanged([]);
 check("emptying the editor ends the edit", e.editing() === null);
 check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
 
+/* ---------- what the bar adds to a card ---------- */
+
+// The card is under the pointer. Repeating what is written on it says
+// nothing, and for member emoji it said something wrong: their text is the
+// name YouTube files them under, so `:_tadaima:` three times read out as
+// `tadaimatadaimatadaima`. What a card cannot show is the number — trending
+// is a dot in the corner, not a count.
+{
+  const from = src.indexOf("  function cardPeek(card) {");
+  const to = src.indexOf("  function trackPeek(");
+  const sizes = src.indexOf("  // How much a card at this size can show");
+  const sizesTo = src.indexOf("  function buildCard(");
+  if (from < 0 || sizes < 0) {
+    console.log("FAIL could not lift cardPeek out of content.js");
+    process.exit(1);
+  }
+
+  const api = new Function(
+    "tokens", "settingsCache", "watcher", "t", "document",
+    `${src.slice(sizes, sizesTo)}
+     ${src.slice(from, to)}
+     return { cardPeek, cardBody, widthOf };`
+  )(
+    { toPlainText: (list) => (list || []).map((x) => (x.type === "text" ? x.value : x.alt || "")).join(""),
+      toFragment: () => ({}) },
+    { cardSize: "small" },
+    { ranking: () => new Map() },
+    (key, ...args) => [key, ...args].join("|"),
+    { createElement: () => ({ appendChild() {}, dataset: {}, set className(v) {} }) }
+  );
+
+  const stamp = (n) => new Array(n).fill(0).map(() => (
+    { type: "youtubeEmoji", emojiId: "UCx/y", alt: "tadaima", sharedTooltipText: ":_tadaima:" }));
+  const words = (value) => [{ type: "text", value }];
+
+  check("a card says what it says, so the bar does not repeat it",
+    api.cardPeek({ tokens: words("わこつ") }).text === "");
+  check("nor does it spell out an emoji's filename",
+    api.cardPeek({ tokens: stamp(3) }).text === "");
+
+  check("the bar carries the count, which the card has no room for",
+    api.cardPeek({ tokens: stamp(3), hits: 5 }).text === "peek.hitsOnly|5");
+
+  // Except when the card genuinely cannot show it.
+  const long = words("あ".repeat(25));
+  check("a card too full to read is read out in the bar",
+    api.cardPeek({ tokens: long, hits: 4 }).text === `peek.hits|${"あ".repeat(25)}|4`);
+
+  // An emoji is a picture about two characters wide, not the length of its
+  // name — measuring the text shrank and faded a card of three small
+  // pictures for being 21 characters long.
+  check("three emoji are six characters wide, not twenty-one",
+    api.widthOf({ tokens: stamp(3) }) === 6);
+  check("so a card of them is not treated as overlong",
+    !api.cardBody({ tokens: stamp(3) }, "small").body.dataset.length);
+  check("while a card of actual words still is",
+    api.cardBody({ tokens: long }, "small").body.dataset.length === "long");
+}
+
 /* ---------- keeping a card that was dealt to you ---------- */
 
 // Built, not read. Asserting that the source says `drawnTools(card)` let a

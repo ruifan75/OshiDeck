@@ -147,6 +147,27 @@ b.setPeek({ text: "x" }, { isConnected: true });
 b.setPeek(null);
 check("clearing forgets the owner too", b.owner() === null);
 
+// Idle, the bar says which deck this is and how much of it travels. Once the
+// bar stopped reading cards back, cardPeek began answering `{ text: "" }` for
+// a card that can show itself — most of them — and an empty object is still
+// truthy, so the bar drew an empty row where the name had been. Then, because
+// "" and null compare the same inside setPeek, moving the pointer away was
+// not a change and the bar was never rebuilt: one hover emptied it for good.
+b = bar();
+b.setPeek({ text: "" }, { isConnected: true });
+check("a card that can show itself leaves the bar to the deck", b.peek() === null);
+check("with nothing owning it", b.owner() === null);
+check("and no redraw asked for on the way past", b.seen.refreshes === 0);
+
+// A card that does have something to say still says it, and the way back out
+// is still a change — otherwise the warning would be the thing that sticks.
+b = bar();
+b.setPeek({ text: "メンバー限定", warning: true }, { isConnected: true });
+check("a locked card still speaks", b.peek()?.text === "メンバー限定");
+b.setPeek({ text: "" }, { isConnected: true });
+check("and moving to one that does not gives the bar back", b.peek() === null);
+check("which is worth the redraw", b.seen.refreshes === 2);
+
 /* ---------- where the skip is decided ---------- */
 
 // The signature can be tested as a pure function; whether render actually

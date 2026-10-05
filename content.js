@@ -1614,10 +1614,19 @@
     return readout;
   }
 
+  // A peek with nothing to say is not a peek.
+  //
+  // Once the bar stopped reading cards back, cardPeek began answering
+  // `{ text: "" }` for a card that can show itself — which is most of them —
+  // and an empty object is still truthy. The bar drew an empty row where the
+  // deck's own name and scope had been. Worse, "" and null compare the same
+  // two lines down, so moving the pointer off the card was not a change and
+  // the name never came back: hovering one card emptied the bar for good.
   function setPeek(next, owner = null) {
-    const changed = (peek?.text || null) !== (next?.text || null);
-    peek = next;
-    peekOwner = next ? owner : null;
+    const said = next?.text ? next : null;
+    const changed = (peek?.text || null) !== (said?.text || null);
+    peek = said;
+    peekOwner = said ? owner : null;
     if (changed && !notice) refreshBar();
   }
 

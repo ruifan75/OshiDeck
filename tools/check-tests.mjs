@@ -563,6 +563,10 @@ const MUTATIONS = [
     "    tokens.splitEmoji((value || \"\").trim())\n      .reduce((wide, part) => wide + (part.emoji ? EMOJI_WIDTH : part.value.length), 0);",
     "    (value || \"\").trim().length;"],
 
+  [VISIBILITY, CONTENT, "an empty description treated as something to say",
+    "    const said = next?.text ? next : null;",
+    "    const said = next;"],
+
   [VISIBILITY, CONTENT, "a notice left sitting over the controls it names",
     "    if (notice) clearNotice();",
     "    if (false) clearNotice();"],
@@ -679,6 +683,7 @@ const KILLS = {
   "a shortcut that does not survive the editor": "writing a card keeps the shortcut with it",
   "a standard emoji kept as an emoji token": "a standard emoji comes back as text",
   "the bar repeating what the card already says": "a card says what it says, so the bar does not repeat it",
+  "an empty description treated as something to say": "a card that can show itself leaves the bar to the deck",
   "a notice left sitting over the controls it names": "typing clears a notice that was in the way",
   "a refusal with nothing to show for it where it happened": "and marks the card that was pressed",
   "an emoji measured by the length of its name": "three emoji are six characters wide, not twenty-one",

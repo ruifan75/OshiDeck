@@ -65,7 +65,10 @@ if (!existsSync(`${dir}/${channel}.json`)) {
 
 /* ---------- everyone else's rooms ---------- */
 
-const files = readdirSync(dir).filter((f) => f.endsWith(".json"));
+// Its own output lives in the same directory, and `<channel>.preset.json`
+// ends in .json like everything else — read as a candidate list it has no
+// candidates in it at all.
+const files = readdirSync(dir).filter((f) => f.endsWith(".json") && !f.endsWith(".preset.json"));
 const elsewhere = new Map();   // signature -> how many other channels say it
 let rooms = 0;
 

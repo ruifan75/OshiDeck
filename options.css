@@ -213,7 +213,6 @@ kbd {
   background: oklch(0.72 0.19 var(--hue, 320));
 }
 
-.deck-dot[data-common] { background: #8a8a8a; }
 
 .deck-name {
   flex: 1;
@@ -327,7 +326,6 @@ kbd {
   border-radius: 8px;
 }
 
-.browse-card[data-common] { border-top-color: #8a8a8a; }
 
 /* Deleting from the pool empties every deck holding the card, so the question
    is asked on the card. It used to go to the status line at the foot of the

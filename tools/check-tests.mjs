@@ -495,6 +495,10 @@ const MUTATIONS = [
     '      ? text.replace(/\\$(\\d)/g, (_, n) => String(args[Number(n) - 1] ?? ""))',
     "      ? text.replace(/\\$(\\d)/g, (_, n) => String(args[Number(n) - 1]))"],
 
+  [PRESET, OPTIONS, "the pool's stripe left on the stylesheet's default hue",
+    '  el.style.setProperty("--hue", hueOf(selected));',
+    '  if (where === "deck") el.style.setProperty("--hue", hueOf(selected));'],
+
   [PRESET, OPTIONS, "the stripe read from the stamps instead of the scope",
     "  if (store.scopeOf(card) === store.GLOBAL) el.dataset.universal = \"true\";",
     "  if (!tokens.requiredChannels(card.tokens).length) el.dataset.universal = \"true\";"],
@@ -707,6 +711,7 @@ const KILLS = {
   "member emoji accepted into a preset that names nobody": "nor can they ride in a preset that names nobody",
   "a preset offered to channels it was never for": "and nowhere else",
   "a preset forced onto a channel that cannot send it": "forced onto another channel, only what can be sent there loads",
+  "the pool's stripe left on the stylesheet's default hue": "a card in the pool wears the deck's colour",
   "the stripe read from the stamps instead of the scope": "a card tied to a channel by its words is not universal here",
   "a file taken in without asking whose it is": "a file for another channel is refused, not half-loaded",
   "a file taken in without being read first": "a file that is not a preset is refused",

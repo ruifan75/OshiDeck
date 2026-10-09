@@ -357,7 +357,12 @@ function buildCard(card, where) {
   const el = document.createElement("div");
   el.className = "browse-card";
   el.draggable = true;
-  if (where === "deck") el.style.setProperty("--hue", hueOf(selected));
+  // Both columns. The hue was set on the deck's side only, so a card in the
+  // pool fell back to the stylesheet's 320 — pink, on every channel. There is
+  // nothing else it could be: poolFor has already narrowed the pool to what
+  // this deck's channel can send, so a card in it that is not universal is
+  // this channel's.
+  el.style.setProperty("--hue", hueOf(selected));
 
   const body = document.createElement("div");
   body.className = "browse-body";
@@ -491,11 +496,10 @@ function paintCards() {
   for (const card of cards) holder.appendChild(buildCard(card, "deck"));
 }
 
-// The pool holds the cards that can go into any deck. A card carrying member
-// emoji cannot — it only sends on the channel that hands them out — so it is
-// not pool material and never appears here. What is left is the same list
-// whatever deck is selected; the only per-deck fact is whether a card is
-// already in it, and that is a mark on the card, not a reason to hide it.
+// The pool holds what this deck could take and has not: cards that work
+// anywhere, and cards tied to this channel — including the ones carrying its
+// member emoji, which send here and nowhere else. Somebody else's never
+// appear, because they could not be added.
 function paintPool() {
   const holder = document.querySelector("#poolCards");
   holder.replaceChildren();

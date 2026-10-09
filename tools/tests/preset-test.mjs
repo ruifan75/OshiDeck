@@ -310,11 +310,15 @@ check("and says which kind of no it is", got.said.join("").includes("opt.importN
   }
 
   // tokens.toFragment reaches for the global document, not the injected one.
-  const node = () => ({
-    dataset: {}, style: { setProperty() {} },
-    append() {}, appendChild() {}, setAttribute() {}, addEventListener() {},
-    set className(v) {}, set textContent(v) {}, set draggable(v) {}
-  });
+  const node = () => {
+    const vars = {};
+    return {
+      dataset: {}, vars,
+      style: { setProperty: (key, value) => { vars[key] = value; } },
+      append() {}, appendChild() {}, setAttribute() {}, addEventListener() {},
+      set className(v) {}, set textContent(v) {}, set draggable(v) {}
+    };
+  };
   const was = globalThis.document;
   globalThis.document = {
     createElement: node,
@@ -329,10 +333,11 @@ check("and says which kind of no it is", got.said.join("").includes("opt.importN
     { createElement: node },
     store, tokens,
     (key) => key,
-    () => 0, CH, () => {}, () => ({})
+    () => 42, CH, () => {}, () => ({})
   );
 
-  const scoped = (scope, tokenList) => build({ tokens: tokenList, scope, uses: 0 }, "pool");
+  const scoped = (scope, tokenList, where = "pool") =>
+    build({ tokens: tokenList, scope, uses: 0 }, where);
 
   check("a card tied to a channel by its words is not universal here",
     scoped(CH, [{ type: "text", value: "はのは〜" }]).dataset.universal === undefined);
@@ -341,6 +346,16 @@ check("and says which kind of no it is", got.said.join("").includes("opt.importN
   check("and a card forced by its stamps is still not",
     scoped(store.GLOBAL, [{ type: "youtubeEmoji", emojiId: `${CH}/x`,
       sharedTooltipText: ":_hai:" }]).dataset.universal === undefined);
+
+  // And the stripe's colour, which was set on the deck's side only — so a
+  // card in the pool fell back to the stylesheet's 320, pink on every
+  // channel. poolFor has already narrowed the pool to what this deck can
+  // send, so there is nothing else it could be.
+  const words = [{ type: "text", value: "はのは〜" }];
+  check("a card in the pool wears the deck's colour",
+    scoped(CH, words).vars["--hue"] === 42);
+  check("the same one in the deck wears it too",
+    scoped(CH, words, "deck").vars["--hue"] === 42);
 
   globalThis.document = was;
 }

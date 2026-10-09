@@ -499,6 +499,16 @@
    sizes and the length steps from there.
    The bar, the list and the builder set their own: they have their own
    heights to fit, not the card's. */
+/* How many times the card says it. Quieter than the thing it is counting,
+   and sized in em so it shrinks with the steps like everything else. */
+.od-times {
+  margin-left: 2px;
+  font-size: 0.85em;
+  color: var(--od-dim);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
 .od-emoji {
   width: 1.6em;
   height: 1.6em;

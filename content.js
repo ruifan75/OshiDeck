@@ -1314,16 +1314,38 @@
     tokens.splitEmoji((value || "").trim())
       .reduce((wide, part) => wide + (part.emoji ? EMOJI_WIDTH : part.value.length), 0);
 
-  const widthOf = (card) =>
-    (card.tokens || []).reduce(
+  // The `×5`, which takes room on the card like anything else.
+  const TIMES_WIDTH = 2;
+
+  // What a card draws, which is not always what it says. A card that is one
+  // picture said five times draws the picture once and counts — the stamps
+  // are the whole point of a card like that, and five of them on a small
+  // card means shrinking them until they cannot be told apart. The bar still
+  // shows every one of them; that is where you check what is about to be
+  // sent.
+  const shownAs = (card) =>
+    tokens.repeated(card.tokens || []) || { unit: card.tokens || [], times: 0 };
+
+  const widthOf = (card) => {
+    const { unit, times } = shownAs(card);
+    return unit.reduce(
       (wide, token) => wide + (token.type === "text" ? textWidth(token.value) : EMOJI_WIDTH),
       0
-    );
+    ) + (times ? TIMES_WIDTH : 0);
+  };
 
   function cardBody(card, size) {
     const body = document.createElement("div");
     body.className = "od-card-body";
-    body.appendChild(tokens.toFragment(card.tokens || [], { preview: true }));
+
+    const { unit, times } = shownAs(card);
+    body.appendChild(tokens.toFragment(unit, { preview: true }));
+    if (times) {
+      const count = document.createElement("span");
+      count.className = "od-times";
+      count.textContent = `×${times}`;
+      body.appendChild(count);
+    }
 
     // Long text shrinks a step and fades out rather than overflowing.
     const width = widthOf(card);

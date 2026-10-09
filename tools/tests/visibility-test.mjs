@@ -311,7 +311,7 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
       ? `file://${process.env.OD_TOKENS}`
       : new URL("../../src/tokens.js", import.meta.url).href
   );
-  const { splitEmoji } = globalThis.OshiDeck.tokens;
+  const { splitEmoji, repeated } = globalThis.OshiDeck.tokens;
 
   const drawFrom = src.indexOf("  function peekReadout({");
   const drawTo = src.indexOf("  // What makes one peek a different peek.");
@@ -333,7 +333,7 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
       toFragment: (list, options) => ({ drawn: list, preview: options?.preview }),
       cardKey: (list) => (list || [])
         .map((x) => (x.type === "text" ? x.value : `\u0001${x.emojiId}`)).join(""),
-      splitEmoji },
+      splitEmoji, repeated },
     { cardSize: "small" },
     { ranking: () => new Map() },
     (key, ...args) => [key, ...args].join("|"),
@@ -348,6 +348,11 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
 
   const stamp = (n) => new Array(n).fill(0).map(() => (
     { type: "youtubeEmoji", emojiId: "UCx/y", alt: "tadaima", sharedTooltipText: ":_tadaima:" }));
+  // Different stamps, for the cases about how much room pictures take. The
+  // same stamp n times is drawn as one and a count, which is a separate
+  // question and has its own cases below.
+  const varied = (n) => new Array(n).fill(0).map((_, at) => (
+    { type: "youtubeEmoji", emojiId: `UCx/y${at}`, alt: "tadaima", sharedTooltipText: ":_tadaima:" }));
   const words = (value) => [{ type: "text", value }];
 
   // The bar shows the card in full — shrunk, faded and cut off is the state
@@ -399,14 +404,14 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
   // measuring the text shrank and faded a card of three small stamps for
   // being 21 characters long, which is `tadaimatadaimatadaima`.
   check("three stamps are nine wide, not twenty-one",
-    api.widthOf({ tokens: stamp(3) }) === 9);
+    api.widthOf({ tokens: varied(3) }) === 9);
 
   // The same for a stamp that arrived inside a sentence, now that the card
-  // draws those as pictures too. Counting their characters made 🦢✨🦢✨🦢✨
-  // nine wide — ✨ is one UTF-16 unit and 🦢 is two — so six pictures and
-  // three pictures faded at different points for no reason a reader could see.
+  // draws those as pictures too. Counting characters made these eleven wide,
+  // because ✨ is one UTF-16 unit and 🦢 is two — so six pictures and three
+  // pictures faded at different points for no reason a reader could see.
   check("a stamp inside text is a picture, not its characters",
-    api.widthOf({ tokens: words("🦢✨🦢✨🦢✨") }) === 18);
+    api.widthOf({ tokens: words("🦢✨🎶🫧🎀💜") }) === 18);
   check("and the words around it are still words",
     api.widthOf({ tokens: words("おつ🦢") }) === 5);
   check("a card of actual words is treated as overlong",
@@ -420,12 +425,48 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
   // Measuring only the width put every step out of reach of the stamps. The
   // shrink arrived at ten of them and the fade never did, while the third
   // row was already being cut off at the card's edge at five.
-  const step = (n, size) => api.cardBody({ tokens: stamp(n) }, size).body.dataset.length;
+  const step = (n, size) => api.cardBody({ tokens: varied(n) }, size).body.dataset.length;
   check("two stamps sit on a small card at full size", step(2, "small") === undefined);
   check("four shrink a step", step(4, "small") === "medium");
   check("seven shrink again, and that is the step that fades", step(7, "small") === "long");
   check("a large card holds four at full size", step(4, "large") === undefined);
   check("and reaches the fade later than a small one does", step(7, "large") === "medium");
+
+  /* ---------- one thing, said over and over ---------- */
+
+  // Most cards are: of the 2609 mined out of chat, 1150 are nothing but a
+  // run of pictures repeated. Drawn literally, a small card has to shrink to
+  // fit five stamps — and the stamps are the whole point of a card like that.
+  {
+    const body = api.cardBody({ tokens: stamp(5) }, "small").body;
+    check("five of the same stamp draw as one picture and a count",
+      body.kids.length === 2 && body.kids[0]?.drawn?.length === 1);
+    check("the count says how many", body.kids[1]?.wrote === "×5");
+    // The shortest unit, so six of one stamp is ×6 and not a unit of three
+    // said twice — both describe the card, only one of them is a card.
+    check("six of one stamp is six, not three twice",
+      api.cardBody({ tokens: stamp(6) }, "small").body.kids[1]?.wrote === "×6");
+    check("and the card keeps its full size", body.dataset.length === undefined);
+    // Five different stamps still have to shrink: there is nothing to count.
+    check("while five different ones still do not fit", step(5, "small") === "medium");
+    check("the count takes room on the card too",
+      api.widthOf({ tokens: stamp(5) }) === 5);
+  }
+
+  // A run, not only a single stamp.
+  check("a repeated run of pictures collapses the same way",
+    api.cardBody({ tokens: words("🦢✨🦢✨🦢✨") }, "small").body.kids[1]?.wrote === "×3");
+
+  // But never words. `www` is the word, `88888` is the clapping, and `おお`
+  // written `お×2` is nonsense — a repeated character is the shape of what is
+  // being said, while a repeated stamp is just the stamp, again.
+  check("repeated words are left exactly as they are",
+    api.cardBody({ tokens: words("www") }, "small").body.kids.length === 1);
+  check("and so is clapping",
+    api.cardBody({ tokens: words("88888888") }, "small").body.kids.length === 1);
+
+  // The card counts; the bar still shows what will actually be sent.
+  check("the bar carries every one of them", api.cardPeek({ tokens: stamp(5) }).tokens?.length === 5);
 }
 
 /* ---------- keeping a card that was dealt to you ---------- */

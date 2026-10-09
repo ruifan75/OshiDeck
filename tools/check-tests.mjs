@@ -567,6 +567,22 @@ const MUTATIONS = [
     "tokens.toFragment(list, { preview: true })",
     "tokens.toFragment(list)"],
 
+  [VISIBILITY, CONTENT, "a card drawn in full when it is one thing repeated",
+    "    tokens.repeated(card.tokens || []) || { unit: card.tokens || [], times: 0 };",
+    "    ({ unit: card.tokens || [], times: 0 });"],
+
+  [VISIBILITY, CONTENT, "the count not taking any room on the card",
+    "    ) + (times ? TIMES_WIDTH : 0);",
+    "    ) + 0;"],
+
+  [VISIBILITY, TOKENS, "repeated words collapsed as if they were stamps",
+    "        if (!part.emoji) return null;",
+    "        if (!part.emoji) { for (const ch of part.value) atoms.push({ key: ch, token: { type: \"text\", value: ch } }); continue; }"],
+
+  [VISIBILITY, TOKENS, "the longest repeating unit taken instead of the shortest",
+    "    for (let size = 1; size <= atoms.length / 2; size++) {",
+    "    for (let size = Math.floor(atoms.length / 2); size >= 1; size--) {"],
+
   [VISIBILITY, CONTENT, "a stamp measured by its width alone, not the room it takes",
     "  const EMOJI_WIDTH = 3;",
     "  const EMOJI_WIDTH = 2;"],
@@ -704,6 +720,10 @@ const KILLS = {
   "an empty description treated as something to say": "a peek with nothing in it leaves the bar to the deck",
   "a notice left sitting over the controls it names": "typing clears a notice that was in the way",
   "a refusal with nothing to show for it where it happened": "and marks the card that was pressed",
+  "a card drawn in full when it is one thing repeated": "five of the same stamp draw as one picture and a count",
+  "the count not taking any room on the card": "the count takes room on the card too",
+  "repeated words collapsed as if they were stamps": "repeated words are left exactly as they are",
+  "the longest repeating unit taken instead of the shortest": "six of one stamp is six, not three twice",
   "a stamp measured by its width alone, not the room it takes": "seven shrink again, and that is the step that fades",
   "an emoji measured by the length of its name": "three stamps are nine wide, not twenty-one",
   "an emoji in a sentence counted by its characters": "a stamp inside text is a picture, not its characters",

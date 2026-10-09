@@ -300,6 +300,8 @@
     "ui.short":              { ja: "みじかめ", "zh-TW": "短" },
     "ui.long":               { ja: "ながめ", "zh-TW": "長" },
     "ui.slow":               { ja: "ゆっくり", "zh-TW": "慢" },
+    "ui.secondsShort":       { ja: "秒", "zh-TW": "秒" },
+    "ui.customSeconds":      { ja: "自分で秒数を決める", "zh-TW": "自訂秒數" },
     "ui.quick":              { ja: "はやい", "zh-TW": "快" },
 
     "ui.sortBy":             { ja: "並び順", "zh-TW": "排序方式" },
@@ -314,10 +316,10 @@
 
     "ui.send":               { ja: "送信", "zh-TW": "送出" },
     "ui.autoSend":           { ja: "札をクリックしたら自動で送信する", "zh-TW": "點了牌就自動送出" },
-    "ui.autoSendNote1":      { ja: "オフなら入力欄に入れるだけです。オフのままでも",
-                               "zh-TW": "關著的話只會填入輸入欄。就算關著，也可以用" },
-    "ui.autoSendNote2":      { ja: "＋ クリックでその場から送信できます。",
-                               "zh-TW": "＋ 點擊直接送出。" },
+    "ui.autoSendNote1":      { ja: "オフなら入力欄に置くだけ。オフでも",
+                               "zh-TW": "關著就只填入輸入欄。關著也能用" },
+    "ui.autoSendNote2":      { ja: "＋クリックで送れます。",
+                               "zh-TW": "＋點擊直接送出。" },
 
     "ui.backup":             { ja: "バックアップ", "zh-TW": "備份" },
     "ui.export":             { ja: "書き出す", "zh-TW": "匯出" },

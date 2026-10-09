@@ -65,6 +65,29 @@ const S = globalThis.OshiDeck.store;
   }
 
   console.log("");
+  console.log("--- settings settled on the way in ---");
+
+  // An empty number field reads as NaN, and a step name that was never
+  // offered would quietly become the middle one on every read instead of
+  // being refused once, here.
+  // The fake storage does not keep what is written, so each of these starts
+  // from the defaults — which is what makes a refused key visible: it comes
+  // back as the default rather than as what was asked for.
+  {
+    const set = async (patch) => (await S.runOp("setSettings", { patch })).value;
+    check("a number of milliseconds is kept", (await set({ hold: 7_000 })).hold === 7_000);
+    check("too short is pulled up to a second", (await set({ hold: 5 })).hold === 1_000);
+    check("too long is pulled down to ten minutes", (await set({ pace: 9e9 })).pace === 600_000);
+    check("nothing at all is refused", (await set({ hold: NaN })).hold === "normal");
+    check("a step that was never offered is refused too",
+      (await set({ pace: "blazing" })).pace === "normal");
+    check("while a step that was offered is taken",
+      (await set({ pace: "quick" })).pace === "quick");
+    check("and a setting that is not one of these is left alone",
+      (await set({ cardSize: "large" })).cardSize === "large");
+  }
+
+  console.log("");
   console.log("--- atomicity ---");
   writes = [];
   await S.runOp("markUsed", { id: "univ", channelId: SAKURA });

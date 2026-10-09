@@ -15,11 +15,11 @@
     mode: "hand",      // hand | list
     cardSize: "small", // large | medium | small
     rows: 2,           // 1 | 2
-    sortBy: "heat",    // manual | uses | heat | trend
+    sortBy: "trend",   // manual | uses | heat | trend
     suggest: true,     // draw one card from what the chat is doing
     draw: "normal",    // shy | normal | eager — how much of a wave it takes
-    hold: "normal",    // short | normal | long — how long a drawn card stays
-    pace: "normal",    // slow | normal | quick — how fast the order forgets
+    hold: "normal",    // long | normal | short, or milliseconds
+    pace: "normal",    // slow | normal | quick, or milliseconds
     language: ""       // "" follows the browser; otherwise a code from i18n.LANGUAGES
   };
 
@@ -37,21 +37,55 @@
       eager:  { min: 4, share: 0.20 }
     },
     hold: {
-      short: 20_000,
-      normal: 45_000,
-      long: 90_000
+      long: 60_000,
+      normal: 30_000,
+      short: 15_000
     },
     pace: {
-      slow: 60_000,
-      normal: 25_000,
+      slow: 30_000,
+      normal: 20_000,
       quick: 10_000
     }
   };
 
+  // These two can also be given a number of milliseconds outright. Steps are
+  // the honest default — they are a judgement about feel, not a measurement —
+  // but somebody who has watched their own chat has a better number than any
+  // of mine. `draw` stays steps only: it is two numbers that have to agree,
+  // and picking them apart invites combinations that mean nothing.
+  const BY_TIME = new Set(["hold", "pace"]);
+  const SHORTEST = 1_000;
+  const LONGEST = 600_000;
+  const clampTime = (ms) => Math.min(LONGEST, Math.max(SHORTEST, Math.round(ms)));
+
   // Falls back to the middle step rather than to nothing: a settings file from
   // an older version has no opinion about these, and neither does a broken one.
-  const tuning = (settings, group) =>
-    TUNING[group]?.[settings?.[group]] ?? TUNING[group]?.normal;
+  const tuning = (settings, group) => {
+    const chosen = settings?.[group];
+    if (BY_TIME.has(group) && typeof chosen === "number" && Number.isFinite(chosen)) {
+      return clampTime(chosen);
+    }
+    return TUNING[group]?.[chosen] ?? TUNING[group]?.normal;
+  };
+
+  // Settled on the way in, so nothing downstream has to wonder. An empty
+  // number field reads as NaN, and a step name that was never offered would
+  // silently become the middle one on every read instead of being refused
+  // once here.
+  function cleanSettings(patch) {
+    const clean = { ...patch };
+    for (const group of BY_TIME) {
+      if (!(group in clean)) continue;
+      const value = clean[group];
+      if (typeof value === "number") {
+        if (Number.isFinite(value)) clean[group] = clampTime(value);
+        else delete clean[group];
+      } else if (!TUNING[group][value]) {
+        delete clean[group];
+      }
+    }
+    return clean;
+  }
 
   const HALF_LIFE = 7 * 24 * 60 * 60 * 1000;
   const decay = (ms) => Math.pow(0.5, Math.max(0, ms) / HALF_LIFE);
@@ -722,7 +756,7 @@
     // Settings were the last thing writing storage from a page, which a
     // replace import could race.
     setSettings(data, { patch }) {
-      data.settings = { ...data.settings, ...patch };
+      data.settings = { ...data.settings, ...cleanSettings(patch) };
       return data.settings;
     },
 

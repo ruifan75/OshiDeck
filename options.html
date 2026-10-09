@@ -115,10 +115,15 @@
           <strong data-i18n="ui.pace"></strong>
           <small id="paceNote"></small>
         </div>
-        <div class="segmented" data-setting="pace">
-          <button type="button" value="slow" data-i18n="ui.slow"></button>
-          <button type="button" value="normal" data-i18n="ui.normal"></button>
-          <button type="button" value="quick" data-i18n="ui.quick"></button>
+        <div class="choice">
+          <div class="segmented" data-setting="pace">
+            <button type="button" value="slow" data-i18n="ui.slow"></button>
+            <button type="button" value="normal" data-i18n="ui.normal"></button>
+            <button type="button" value="quick" data-i18n="ui.quick"></button>
+          </div>
+          <input class="seconds" type="number" min="1" max="600" step="1" inputmode="numeric"
+                 data-seconds="pace" data-i18n-placeholder="ui.secondsShort"
+                 data-i18n-aria-label="ui.customSeconds">
         </div>
       </div>
     </section>
@@ -150,10 +155,15 @@
           <strong data-i18n="ui.holdTime"></strong>
           <small id="holdNote"></small>
         </div>
-        <div class="segmented" data-setting="hold">
-          <button type="button" value="short" data-i18n="ui.short"></button>
-          <button type="button" value="normal" data-i18n="ui.normal"></button>
-          <button type="button" value="long" data-i18n="ui.long"></button>
+        <div class="choice">
+          <div class="segmented" data-setting="hold">
+            <button type="button" value="long" data-i18n="ui.long"></button>
+            <button type="button" value="normal" data-i18n="ui.normal"></button>
+            <button type="button" value="short" data-i18n="ui.short"></button>
+          </div>
+          <input class="seconds" type="number" min="1" max="600" step="1" inputmode="numeric"
+                 data-seconds="hold" data-i18n-placeholder="ui.secondsShort"
+                 data-i18n-aria-label="ui.customSeconds">
         </div>
       </div>
     </section>
@@ -164,7 +174,7 @@
         <input id="autoSend" type="checkbox">
         <span>
           <strong data-i18n="ui.autoSend"></strong>
-          <small><span data-i18n="ui.autoSendNote1"></span> <kbd>⇧</kbd> <span data-i18n="ui.autoSendNote2"></span></small>
+          <small><span data-i18n="ui.autoSendNote1"></span> <span class="keys"><kbd>⇧</kbd><span data-i18n="ui.autoSendNote2"></span></span></small>
         </span>
       </label>
     </section>

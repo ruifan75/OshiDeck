@@ -279,15 +279,29 @@ check("and stays the same one", popped.switch(null, SAKURA) === false);
 // The steps are the whole interface to these numbers, so what each one means
 // is part of the behaviour rather than an implementation detail.
 const { DEFAULT_SETTINGS: defaults } = store;
-check("out of the box a card is held for 45 seconds", store.tuning(defaults, "hold") === 45_000);
+check("out of the box a card is held for 30 seconds", store.tuning(defaults, "hold") === 30_000);
 check("a wave is six messages and three tenths of the room",
-  store.tuning(defaults, "draw").min === 6 && store.tuning(defaults, "draw").share === 0.3);
-check("and the order halves its weight every 25 seconds", store.tuning(defaults, "pace") === 25_000);
+  store.tuning(defaults, "draw")?.min === 6 && store.tuning(defaults, "draw")?.share === 0.3);
+check("and the order halves its weight every 20 seconds", store.tuning(defaults, "pace") === 20_000);
+check("and the hand follows the chat before anything is changed", defaults.sortBy === "trend");
+
+// The steps are the honest default, but a number is a legitimate answer for
+// these two: somebody who has watched their own chat has a better one.
+check("a hold given in milliseconds is used as given",
+  store.tuning({ hold: 7_000 }, "hold") === 7_000);
+check("and so is a pace", store.tuning({ pace: 45_000 }, "pace") === 45_000);
+check("but the draw is two numbers that have to agree, so it stays a step",
+  store.tuning({ draw: 5_000 }, "draw")?.min === 6);
+
+// Out of range, or not a number at all, falls back rather than taking effect.
+check("a hold of nothing is refused", store.tuning({ hold: NaN }, "hold") === 30_000);
+check("too short is pulled up to a second", store.tuning({ hold: 1 }, "hold") === 1_000);
+check("and too long down to ten minutes", store.tuning({ pace: 9_999_999 }, "pace") === 600_000);
 
 check("ひかえめ asks for more of the room than ふつう",
-  store.tuning({ draw: "shy" }, "draw").share > store.tuning({ draw: "normal" }, "draw").share);
+  store.tuning({ draw: "shy" }, "draw")?.share > store.tuning({ draw: "normal" }, "draw")?.share);
 check("よく引く asks for fewer messages",
-  store.tuning({ draw: "eager" }, "draw").min < store.tuning({ draw: "normal" }, "draw").min);
+  store.tuning({ draw: "eager" }, "draw")?.min < store.tuning({ draw: "normal" }, "draw")?.min);
 check("ながめ holds longer than みじかめ",
   store.tuning({ hold: "long" }, "hold") > store.tuning({ hold: "short" }, "hold"));
 check("はやい forgets faster than ゆっくり",
@@ -297,7 +311,7 @@ check("はやい forgets faster than ゆっくり",
 check("an unset step falls back to the middle one",
   store.tuning({}, "hold") === store.tuning({ hold: "normal" }, "hold"));
 check("and so does one nobody recognises",
-  store.tuning({ draw: "whatever" }, "draw").min === store.tuning({ draw: "normal" }, "draw").min);
+  store.tuning({ draw: "whatever" }, "draw")?.min === store.tuning({ draw: "normal" }, "draw")?.min);
 
 // Taking it into the deck ends the offer even mid-hold.
 const q = panel();

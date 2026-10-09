@@ -42,6 +42,16 @@ function paint() {
     }
   }
 
+  // A number means none of the steps, so none of them are lit and the field
+  // holds the answer instead. Not while it is being typed in, though: the
+  // paint that follows the commit would put the rounded value back under the
+  // cursor mid-keystroke.
+  for (const field of document.querySelectorAll("input[data-seconds]")) {
+    if (field === document.activeElement) continue;
+    const chosen = settings[field.dataset.seconds];
+    field.value = typeof chosen === "number" ? String(Math.round(chosen / 1000)) : "";
+  }
+
   // Show what the current size and row count actually buy in a 400px sidebar.
   const { CARD_SIZE, cardsPerRow } = globalThis.OshiDeck.layout;
   const perRow = cardsPerRow(SIDEBAR_WIDTH - PANEL_PADDING, CARD_SIZE[settings.cardSize]);
@@ -134,6 +144,16 @@ for (const group of document.querySelectorAll(".segmented[data-setting]")) {
     const button = event.target.closest("button");
     if (!button) return;
     commit({ [key]: key === "rows" ? Number(button.value) : button.value });
+  });
+}
+
+// Typing a number is choosing it; emptying the field goes back to the middle
+// step rather than to nothing, which is where an unreadable value lands too.
+for (const field of document.querySelectorAll("input[data-seconds]")) {
+  field.addEventListener("change", () => {
+    const key = field.dataset.seconds;
+    const seconds = Number(field.value);
+    commit({ [key]: field.value.trim() && Number.isFinite(seconds) ? seconds * 1000 : "normal" });
   });
 }
 

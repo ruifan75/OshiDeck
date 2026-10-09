@@ -225,16 +225,16 @@ const MUTATIONS = [
     "scope: OD.store.GLOBAL,"],
 
   [DRAW, STORE, "a card held for a different time than anyone was told",
-    "      normal: 45_000,",
-    "      normal: 20_000,"],
+    "      normal: 30_000,\n      short: 15_000",
+    "      normal: 20_000,\n      short: 15_000"],
 
   [DRAW, STORE, "a wave redefined without saying so",
     "      normal: { min: 6, share: 0.30 },",
     "      normal: { min: 3, share: 0.10 },"],
 
   [DRAW, STORE, "an unset step falling through to nothing",
-    "    TUNING[group]?.[settings?.[group]] ?? TUNING[group]?.normal;",
-    "    TUNING[group]?.[settings?.[group]];"],
+    "    return TUNING[group]?.[chosen] ?? TUNING[group]?.normal;",
+    "    return TUNING[group]?.[chosen];"],
 
   [VISIBILITY, CONTENT, "the skip decided after the panel has been torn down",
     `    if (next === painted && rootEl.firstChild) return;
@@ -658,6 +658,18 @@ const MUTATIONS = [
     '      if (card.id) flashCard(card.id, "refused");',
     "      if (false) flashCard(card.id);"],
 
+  [STORED, STORE, "a setting taken on trust, whatever it says",
+    "      data.settings = { ...data.settings, ...cleanSettings(patch) };",
+    "      data.settings = { ...data.settings, ...patch };"],
+
+  [STORED, STORE, "a custom time left unbounded",
+    "  const clampTime = (ms) => Math.min(LONGEST, Math.max(SHORTEST, Math.round(ms)));",
+    "  const clampTime = (ms) => Math.round(ms);"],
+
+  [DRAW, STORE, "a number of milliseconds read as a step name",
+    "    if (BY_TIME.has(group) && typeof chosen === \"number\" && Number.isFinite(chosen)) {",
+    "    if (false) {"],
+
   [STORED, STORE, "an old count handed to every channel, not the decks holding it",
     "      if (ids.includes(card.id)) card.by[channelId] = { ...was };",
     "      card.by[channelId] = { ...was };"],
@@ -718,11 +730,14 @@ const KILLS = {
   "a shared card deleted without asking": "a card another deck holds asks first",
 
   "a hand-picked colour ignored in favour of the hash": "a listed channel gets the colour it is listed with",
+  "a setting taken on trust, whatever it says": "a step that was never offered is refused too",
+  "a custom time left unbounded": "too short is pulled up to a second",
+  "a number of milliseconds read as a step name": "a hold given in milliseconds is used as given",
   "an old count handed to every channel, not the decks holding it": "a card in no deck has nowhere to put it",
   "a count already split overwritten by the flat one it replaced": "and a card already counted per channel is left alone",
   "the flat count left on the card beside the split one": "and the card stops carrying one of its own",
   "an out-of-gamut hue clipped instead of desaturated": "every hue survives the round trip",
-  "a card held for a different time than anyone was told": "out of the box a card is held for 45 seconds",
+  "a card held for a different time than anyone was told": "out of the box a card is held for 30 seconds",
   "a wave redefined without saying so": "a wave is six messages and three tenths of the room",
   "an unset step falling through to nothing": "an unset step falls back to the middle one",
 

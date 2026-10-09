@@ -123,6 +123,23 @@ h2 { margin: 0 0 16px; font-size: 15px; }
 .row-label strong { font-size: 13px; font-weight: 500; }
 .row-label small { font-size: 11px; opacity: .62; line-height: 1.5; }
 
+/* A set of steps, and the field for somebody who wants a number instead. */
+.choice { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+.seconds {
+  width: 58px;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 12px;
+  text-align: right;
+}
+
+.seconds:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
 .segmented {
   display: flex;
   flex-shrink: 0;
@@ -162,6 +179,15 @@ h2 { margin: 0 0 16px; font-size: 15px; }
 .switch-row span { display: flex; flex-direction: column; gap: 4px; }
 .switch-row strong { font-size: 13px; font-weight: 500; }
 .switch-row small { font-size: 11px; opacity: .68; line-height: 1.5; }
+
+/* `⇧＋クリック` is one thing to read, so it does not break in the middle. */
+.switch-row .keys { white-space: nowrap; }
+
+/* A switch and the row under it are different questions, and that note runs
+   to two lines. `:first-of-type` takes the rule off the first .row in a card,
+   which is right under a heading and wrong under a switch — the row ended up
+   sitting against the bottom of the note. */
+.switch-row + .row { margin-top: 2px; padding-top: 14px; border-top: 1px solid var(--line); }
 
 kbd {
   padding: 1px 5px;

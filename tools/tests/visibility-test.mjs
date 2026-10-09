@@ -457,13 +457,23 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
   check("a repeated run of pictures collapses the same way",
     api.cardBody({ tokens: words("🦢✨🦢✨🦢✨") }, "small").body.kids[1]?.wrote === "×3");
 
-  // But never words. `www` is the word, `88888` is the clapping, and `おお`
-  // written `お×2` is nonsense — a repeated character is the shape of what is
-  // being said, while a repeated stamp is just the stamp, again.
-  check("repeated words are left exactly as they are",
-    api.cardBody({ tokens: words("www") }, "small").body.kids.length === 1);
-  check("and so is clapping",
-    api.cardBody({ tokens: words("88888888") }, "small").body.kids.length === 1);
+  // Characters are a different question, and the answer is usually no.
+  // `www` is the word, `88888` is the clapping, and `てぇてぇ`, `よしよし`,
+  // `そうそう` are each one word that happens to be a doubling — writing any
+  // of them as `×N` takes the word apart.
+  const drawn = (text) => api.cardBody({ tokens: words(text) }, "small").body;
+  check("repeated characters are left exactly as they are", drawn("www").kids.length === 1);
+  check("and so is clapping", drawn("88888888").kids.length === 1);
+  check("and a word that is a doubling", drawn("てぇてぇ").kids.length === 1);
+
+  // Unless there is a terminator, which makes the unit something that was
+  // said rather than the shape of how it was said. Of the 354 cards of
+  // repeated characters mined from chat, all 14 with one read as a count and
+  // none of the other 340 do.
+  check("a chant with a terminator is counted", drawn("はい！はい！はい！はい！").kids[1]?.wrote === "×4");
+  check("and the unit keeps its mark",
+    drawn("アンコール！アンコール！").kids[0]?.drawn?.[0]?.value === "アンコール！");
+  check("but a mark on its own is not something said", drawn("！！！！").kids.length === 1);
 
   // The card counts; the bar still shows what will actually be sent.
   check("the bar carries every one of them", api.cardPeek({ tokens: stamp(5) }).tokens?.length === 5);

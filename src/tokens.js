@@ -237,20 +237,45 @@
   // stamps are the whole point of a card like that: 48% of cards held their
   // full size, against 85% once the repeat is counted instead of drawn.
   //
-  // Pictures only. `www` is the word, `88888` is the clapping, and `おお`
-  // written `お×2` is nonsense — a repeated character is the shape of the
-  // thing being said, while a repeated stamp is just the stamp, again.
+  // What repeats has to be a thing somebody said, not the shape of how they
+  // said it.
+  //
+  // A picture always is: a stamp again is the stamp, again. A run of
+  // characters usually is not — `www` is the word, `88888` is the clapping,
+  // and `てぇてぇ`, `よしよし`, `そうそう`, `ぎゅっぎゅっ` are each one word
+  // that happens to be a doubling. Writing any of those as `×N` takes the
+  // word apart.
+  //
+  // A terminator is what separates them. `はい！はい！はい！はい！` is one
+  // utterance said four times and reads exactly as `はい！×4`, and so do
+  // `アンコール！×2`, `安心！×3`, `ちーよみ！×2`. Across the 354 cards of
+  // repeated characters mined from chat the split is clean: all 14 with a
+  // terminator read as a count, and none of the other 340 do.
+  //
+  // More than one atom, so `！×4` stays as it is — there the mark is the
+  // whole of what was said, which puts it back with `www`.
+  const ENDS_AN_UTTERANCE = /[！!？?。]/u;
+
+  const saidAgain = (unit) =>
+    unit.every((atom) => atom.picture) ||
+    (unit.length > 1 && ENDS_AN_UTTERANCE.test(unit[unit.length - 1].key));
+
   function repeated(tokenList) {
     const atoms = [];
     for (const token of tokenList || []) {
       if (token.type === "youtubeEmoji") {
-        atoms.push({ key: `\u0001${token.emojiId}`, token });
+        atoms.push({ picture: true, key: `\u0001${token.emojiId}`, token });
         continue;
       }
       if (token.type !== "text") return null;
       for (const part of splitEmoji(token.value || "")) {
-        if (!part.emoji) return null;
-        atoms.push({ key: part.value, token: { type: "text", value: part.value } });
+        if (part.emoji) {
+          atoms.push({ picture: true, key: part.value, token: { type: "text", value: part.value } });
+          continue;
+        }
+        for (const { segment } of segmenter.segment(part.value)) {
+          atoms.push({ picture: false, key: segment, token: { type: "text", value: segment } });
+        }
       }
     }
     if (atoms.length < 2) return null;
@@ -262,9 +287,20 @@
       for (let at = size; at < atoms.length && same; at++) {
         if (atoms[at].key !== atoms[at % size].key) same = false;
       }
-      if (same) {
-        return { unit: atoms.slice(0, size).map((a) => a.token), times: atoms.length / size };
+      if (!same) continue;
+
+      const unit = atoms.slice(0, size);
+      if (!saidAgain(unit)) return null;
+
+      // Back into tokens, with the characters joined up again: they were
+      // taken apart one grapheme at a time only to find where the repeat was.
+      const whole = [];
+      for (const atom of unit) {
+        const last = whole[whole.length - 1];
+        if (atom.token.type === "text" && last?.type === "text") last.value += atom.token.value;
+        else whole.push({ ...atom.token });
       }
+      return { unit: whole, times: atoms.length / size };
     }
     return null;
   }

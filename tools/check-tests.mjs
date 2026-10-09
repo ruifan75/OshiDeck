@@ -575,9 +575,21 @@ const MUTATIONS = [
     "    ) + (times ? TIMES_WIDTH : 0);",
     "    ) + 0;"],
 
-  [VISIBILITY, TOKENS, "repeated words collapsed as if they were stamps",
-    "        if (!part.emoji) return null;",
-    "        if (!part.emoji) { for (const ch of part.value) atoms.push({ key: ch, token: { type: \"text\", value: ch } }); continue; }"],
+  [VISIBILITY, TOKENS, "a doubled word counted as a chant",
+    "    (unit.length > 1 && ENDS_AN_UTTERANCE.test(unit[unit.length - 1].key));",
+    "    unit.length > 1;"],
+
+  [VISIBILITY, TOKENS, "a chant left as a wall of characters",
+    "  const saidAgain = (unit) =>\n    unit.every((atom) => atom.picture) ||\n    (unit.length > 1 && ENDS_AN_UTTERANCE.test(unit[unit.length - 1].key));",
+    "  const saidAgain = (unit) => unit.every((atom) => atom.picture);"],
+
+  [VISIBILITY, TOKENS, "a terminator on its own read as something said",
+    "    (unit.length > 1 && ENDS_AN_UTTERANCE",
+    "    (unit.length > 0 && ENDS_AN_UTTERANCE"],
+
+  [VISIBILITY, TOKENS, "the unit left in the pieces it was taken apart into",
+    '        if (atom.token.type === "text" && last?.type === "text") last.value += atom.token.value;',
+    "        if (false) last.value += atom.token.value;"],
 
   [VISIBILITY, TOKENS, "the longest repeating unit taken instead of the shortest",
     "    for (let size = 1; size <= atoms.length / 2; size++) {",
@@ -722,7 +734,10 @@ const KILLS = {
   "a refusal with nothing to show for it where it happened": "and marks the card that was pressed",
   "a card drawn in full when it is one thing repeated": "five of the same stamp draw as one picture and a count",
   "the count not taking any room on the card": "the count takes room on the card too",
-  "repeated words collapsed as if they were stamps": "repeated words are left exactly as they are",
+  "a doubled word counted as a chant": "and a word that is a doubling",
+  "a chant left as a wall of characters": "a chant with a terminator is counted",
+  "a terminator on its own read as something said": "but a mark on its own is not something said",
+  "the unit left in the pieces it was taken apart into": "and the unit keeps its mark",
   "the longest repeating unit taken instead of the shortest": "six of one stamp is six, not three twice",
   "a stamp measured by its width alone, not the room it takes": "seven shrink again, and that is the step that fades",
   "an emoji measured by the length of its name": "three stamps are nine wide, not twenty-one",

@@ -427,7 +427,10 @@
   function resolve(want) {
     const code = String(want || "").trim();
     if (!code) return SOURCE;
-    if (MESSAGES["bar.global"][code]) return code;
+    // Against the list, not against a lookup. `"toString"` answered on every
+    // message object, so it was taken for a language — and then `t()` reached
+    // for `entry["toString"]`, found a function, and called `.replace` on it.
+    if (LANGUAGES.some((lang) => lang.code === code)) return code;
     const primary = code.split("-")[0].toLowerCase();
     const near = LANGUAGES.find((lang) => lang.code.split("-")[0].toLowerCase() === primary);
     return near ? near.code : SOURCE;

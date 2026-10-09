@@ -37,6 +37,17 @@ check("and zh on its own does too", i18n.use("zh") === "zh-TW");
 check("English falls back to the source", i18n.use("en-US") === "ja");
 check("and so does something nobody has heard of", i18n.use("xx") === "ja");
 
+// A name every object answers to is not a language. `MESSAGES[key][code]`
+// said yes to "toString", so it was taken for one — and then t() reached for
+// that entry, found a function and called .replace on it. A backup carries
+// the setting, so a file was enough to break the page.
+for (const borrowed of ["toString", "constructor", "hasOwnProperty", "__proto__"]) {
+  check(`${borrowed} is not a language`, i18n.use(borrowed) === "ja");
+  let said = null;
+  try { said = i18n.t("bar.global"); } catch (_) { said = null; }
+  check(`and asking for a word after it still answers`, typeof said === "string" && !!said);
+}
+
 /* ---------- what comes out ---------- */
 
 i18n.use("ja");

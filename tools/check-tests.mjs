@@ -204,6 +204,10 @@ const MUTATIONS = [
       }`,
     "      // (allowed)"],
 
+  [I18N, I18NSRC, "a language borrowed from Object.prototype",
+    "    if (LANGUAGES.some((lang) => lang.code === code)) return code;",
+    '    if (MESSAGES["bar.global"][code]) return code;'],
+
   [I18N, I18NSRC, "a validator reason left untranslated inside a translated status",
     '      Array.isArray(value) && typeof value[0] === "string" && value[0].startsWith("validation.")',
     '      false && Array.isArray(value) && typeof value[0] === "string" && value[0].startsWith("validation.")'],
@@ -694,6 +698,10 @@ const MUTATIONS = [
     "    const where = held.length ? held : (scope === GLOBAL ? [] : [scope]);",
     "    const where = held;"],
 
+  [STORED, STORE, "settings handed to a page without being checked",
+    "      return { ...DEFAULT_SETTINGS, ...cleanSettings(raw?.[KEYS.SETTINGS]) };",
+    "      return { ...DEFAULT_SETTINGS, ...(raw?.[KEYS.SETTINGS] || {}) };"],
+
   [STORED, STORE, "a file's settings taken as written",
     "      settings: { ...DEFAULT_SETTINGS, ...cleanSettings(raw[KEYS.SETTINGS]) },",
     "      settings: { ...DEFAULT_SETTINGS, ...(raw[KEYS.SETTINGS] || {}) },"],
@@ -814,6 +822,8 @@ const KILLS = {
 
   "another channel's member emoji carried into a preset": "another channel's are still left behind",
   "a preset that carries member emoji without saying whose": "and the preset says whose they are",
+  "a language borrowed from Object.prototype": "toString is not a language",
+  "settings handed to a page without being checked": "a page asking for settings alone gets them checked",
   "a validator reason left untranslated inside a translated status": "a Chinese status includes a Chinese validation reason",
   "a validator reason losing its arguments": "a Chinese status includes a Chinese validation reason",
   "file data mistaken for a nested validator error": "a malformed file value resembling an error tuple stays literal",

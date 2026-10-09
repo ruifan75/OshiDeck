@@ -153,6 +153,22 @@ const S = globalThis.OshiDeck.store;
   }
 
   console.log("");
+  console.log("--- settings for a page that wants nothing else ---");
+
+  // The options page read storage directly and merged what it found, so a
+  // restored backup carrying `mode: "not-a-mode"` reached paint(), which
+  // looks the matching radio up by value and set `.checked` on nothing.
+  {
+    const before = stored;
+    stored = { settings: { mode: "not-a-mode", rows: 99, cardSize: "medium" } };
+    const only = await S.readSettings();
+    check("a page asking for settings alone gets them checked",
+      only.mode === "hand" && only.rows === 2);
+    check("and keeps the ones that were fine", only.cardSize === "medium");
+    stored = before;
+  }
+
+  console.log("");
   console.log("--- the same wording is not the same card ---");
 
   // One tied to another channel cannot be sent here, so calling it a

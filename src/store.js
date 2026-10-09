@@ -881,8 +881,22 @@
     }
   }
 
+  // Settings alone, for a page that wants nothing else. The options page read
+  // storage directly and merged what it found, so a restored backup carrying
+  // `mode: "not-a-mode"` reached paint() — which looks the matching radio up
+  // by value and set `.checked` on nothing. Everything that reads settings
+  // now goes through the same gate.
+  async function readSettings() {
+    try {
+      const raw = await chrome.storage.local.get(KEYS.SETTINGS);
+      return { ...DEFAULT_SETTINGS, ...cleanSettings(raw?.[KEYS.SETTINGS]) };
+    } catch (_) {
+      return { ...DEFAULT_SETTINGS };
+    }
+  }
+
   OD.store = {
-    OPS, runOp, apply,
+    OPS, runOp, apply, readSettings,
     KEYS, GLOBAL, DEFAULT_SETTINGS, alive,
     HUES, OSHI_HUES, defaultHue, hueOfColor, hueFromHex, hexOfHue,
     TUNING, tuning,

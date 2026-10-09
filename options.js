@@ -137,8 +137,10 @@ async function commit(patch) {
 }
 
 async function load() {
-  const stored = await chrome.storage.local.get("settings");
-  settings = { ...DEFAULTS, ...(stored.settings || {}) };
+  // Through the store, which is where a setting is checked against what it
+  // may be. Read straight from storage, a restored backup carrying
+  // `mode: "not-a-mode"` arrived here intact and paint() threw on it.
+  settings = await store.readSettings();
   applyLanguage();
   paint();
 }

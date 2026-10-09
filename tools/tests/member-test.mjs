@@ -125,7 +125,7 @@ function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "
     "presets", "presetsOnHand",
     `${lifted}
      return { membership, whyNotSendable, markLocked, playableFirst, orderDeck,
-              buildDeck, buildPool, saveTokens, reconcileChannel, onPageChanged,
+              buildDeck, buildPool, buildOffered, saveTokens, reconcileChannel, onPageChanged,
               watchPage, playCard };`
   )(
     { querySelector: (selector) => showing.querySelector(selector) },
@@ -387,35 +387,37 @@ check("and with no channel there is no pool at all",
   const alreadyMine = { tokens: stamp(HERE), scope: "channel" };
   offering = [{ name: "稀羽すう", channel: HERE, cards: [fresh, theirs, alreadyMine] }];
 
-  const shown = lift({ doc: page({ mine: true }) }).buildPool(shelved(HERE), HERE);
-  const offered = shown.filter((c) => c.offered);
+  const api = lift({ doc: page({ mine: true }) });
+  const offered = api.buildOffered(shelved(HERE), HERE);
 
   check("cards the channel uses and you do not have are offered", offered.length === 2);
+  check("and they are kept apart from what you already have",
+    api.buildPool(shelved(HERE), HERE).every((c) => !c.offered));
   check("and they are the ones you do not have",
     offered.map((c) => tokens.toPlainText(c.tokens)).sort().join("|") === "おかえり|はのは〜");
   check("an offered card set to this channel wears its colour",
     offered.find((c) => tokens.toPlainText(c.tokens) === "はのは〜")?.bound === true);
   check("while a universal one does not",
     offered.find((c) => tokens.toPlainText(c.tokens) === "おかえり")?.bound === false);
-  check("while one you already own is not offered twice",
-    shown.filter((c) => tokens.cardKey(c.tokens) === tokens.cardKey(stamp(HERE))).length === 1);
+  check("while one you already own is not offered at all",
+    offered.every((c) => tokens.cardKey(c.tokens) !== tokens.cardKey(stamp(HERE))));
   check("an offered card carries what it was offered from", !!offered[0].offered);
 
   // cardsFor hands out a fresh uuid every time it is asked, and the panel's
   // signature is built from card ids: an offered card that is a new card on
   // every render makes the panel redraw forever.
-  const again = lift({ doc: page({ mine: true }) }).buildPool(shelved(HERE), HERE);
+  const again = lift({ doc: page({ mine: true }) }).buildOffered(shelved(HERE), HERE);
   check("and the same offer has the same id every time",
-    again.filter((c) => c.offered).map((c) => c.id).join() ===
-    offered.map((c) => c.id).join());
+    again.map((c) => c.id).join() === offered.map((c) => c.id).join());
 
-  // Same rules as anything else in the pool.
-  check("and its scope still shows",
-    shown.find((c) => c.id === "ours")?.bound === true);
+  // Same rules on the half you already own: without it every card in the
+  // pool was drawn grey, including the ones tied to this channel.
+  check("and a card of your own in the pool shows its scope too",
+    api.buildPool(shelved(HERE), HERE).find((c) => c.id === "ours")?.bound === true);
 
-  const locked = lift({ doc: page({ mine: false }) }).buildPool(shelved(HERE), HERE);
+  const locked = lift({ doc: page({ mine: false }) }).buildOffered(shelved(HERE), HERE);
   check("an offered card of plain words is never locked",
-    locked.filter((c) => c.offered).every((c) => c.locked === false));
+    locked.every((c) => c.locked === false));
 
   offering = [];
 }

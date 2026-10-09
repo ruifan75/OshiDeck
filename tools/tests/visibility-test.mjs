@@ -99,7 +99,7 @@ check("a root torn out of the page counts as not mounted", s.renders === 1);
 /* ---------- the bar, once what it describes is gone ---------- */
 
 const peekFrom = src.indexOf("  // What makes one peek a different peek.");
-const peekTo = src.indexOf("  function poolBar(", peekFrom);
+const peekTo = src.indexOf("  function poolTabs(", peekFrom);
 if (peekFrom < 0 || peekTo < 0 || peekTo <= peekFrom) {
   console.log("FAIL could not lift setPeek out of content.js");
   process.exit(1);
@@ -174,29 +174,31 @@ check("which is worth the redraw", b.seen.refreshes === 2);
 // short panel saying one short thing. The bar is already where this UI puts
 // anything that would otherwise take room of its own.
 {
-  const from = src.indexOf("  function buildBar(channel, hue, count, poolCount) {");
+  const from = src.indexOf("  function buildBar({ channel, hue, count, mine, offered }) {");
   const to = src.indexOf("  function noticeRow(");
   if (from < 0 || to < 0 || to <= from) {
     console.log("FAIL could not lift buildBar out of content.js");
     process.exit(1);
   }
 
-  const bar = (poolOpen, poolCount) => new Function(
-    "poolOpen", "poolCount", "document", "t",
-    `const notice = null, peek = null, inputHasContent = false;
+  const bar = (poolOpen, mine, offered = 0) => new Function(
+    "poolOpen", "mine", "offered", "document", "t",
+    `let poolTab = "mine";
+     const notice = null, peek = null, inputHasContent = false;
      const noticeRow = () => ({ is: "notice" });
      const peekReadout = () => ({ is: "peek" });
-     const poolBar = () => ({ is: "poolBar" });
+     const poolTabs = (m, o) => ({ is: "tabs", mine: m, offered: o });
      const saveTargets = () => ({ is: "saveTargets" });
      const deckIdentity = () => ({ is: "identity" });
      const buildAction = (icon, text) => ({ is: "action", icon, text });
      const render = () => {};
      const openOptions = () => {};
      ${src.slice(from, to)}
-     return buildBar(null, 0, 4, poolCount);`
+     return buildBar({ channel: null, hue: 0, count: 4, mine, offered });`
   )(
     poolOpen,
-    poolCount,
+    mine,
+    offered,
     { createElement: () => ({
         kids: [],
         append(...nodes) { this.kids.push(...nodes); },
@@ -208,12 +210,27 @@ check("which is worth the redraw", b.seen.refreshes === 2);
 
   const wayIn = (built) => built.kids.find((k) => k.is === "action" && k.icon === "plus");
 
-  check("the way into the pool is in the bar", !!wayIn(bar(false, 7)));
-  check("and says how many are waiting in it", wayIn(bar(false, 7)).text.includes("7"));
-  check("an empty pool offers no way in", !wayIn(bar(false, 0)));
+  check("the way in is in the bar", !!wayIn(bar(false, 7)));
+  check("and says how many are waiting", wayIn(bar(false, 7)).text.includes("7"));
+  check("nothing to add offers no way in", !wayIn(bar(false, 0)));
   check("and the pool itself offers no way into itself", !wayIn(bar(true, 7)));
   check("the builder is still there either way",
     bar(false, 7).kids.some((k) => k.icon === "deck") && bar(false, 0).kids.some((k) => k.icon === "deck"));
+
+  // Both halves counted. A channel whose preset is the only thing on offer —
+  // nothing saved yet, which is every channel at the start — had no way in
+  // at all while the button counted the pool alone.
+  check("a preset alone is still a way in", !!wayIn(bar(false, 0, 10)));
+  check("and the count is everything you could add",
+    wayIn(bar(false, 7, 10)).text.includes("17"));
+
+  // Inside, they are two labels rather than one list: a card you saved and a
+  // card a preset is offering are different things, and shown together the
+  // pool was full of cards that were not in it.
+  const tabs = (built) => built.kids.find((k) => k.is === "tabs");
+  check("the pool shows its two halves apart", !!tabs(bar(true, 7, 10)));
+  check("each counted on its own",
+    tabs(bar(true, 7, 10)).mine === 7 && tabs(bar(true, 7, 10)).offered === 10);
 }
 
 /* ---------- where the skip is decided ---------- */
@@ -592,16 +609,16 @@ if (sigFrom < 0 || sigTo < 0 || sigTo <= sigFrom) {
 // changed. Getting this wrong in one direction redraws constantly — which made
 // the drawn card lurch — and in the other leaves the panel stale, which is
 // worse. So both directions are pinned.
-function signature({ pool = false, more = false, editing = null, flash = null,
+function signature({ pool = false, tab = "mine", more = false, editing = null, flash = null,
                      typing = false, pinned = false, settings = {}, channel = "UCaaa", name = "さくら",
                      hue = 320, width = 400, presets = 1,
                      shown = [], poolCards = [], drawn = null } = {}) {
   return new Function(
-    "poolOpen", "expanded", "editingId", "flashId", "inputHasContent", "inputIsPinned",
+    "poolOpen", "poolTab", "expanded", "editingId", "flashId", "inputHasContent", "inputIsPinned",
     "tokens", "presetsOnHand", "rootEl", "flashKind",
     `${src.slice(sigFrom, sigTo)} return panelSignature;`
   )(
-    pool, more, editing, flash, typing, pinned,
+    pool, tab, more, editing, flash, typing, pinned,
     { cardKey: (t) => (t || []).map((x) => x.value ?? x.emojiId).join("") },
     () => new Array(presets),
     { clientWidth: width },
@@ -665,6 +682,8 @@ check(
 
 for (const [label, over] of [
   ["opening the pool", { pool: true }],
+  // The cards swap under the pointer and nothing else about the panel moves.
+  ["switching to the other half of it", { pool: true, tab: "offered" }],
   ["expanding", { more: true }],
   ["editing a card", { editing: "a" }],
   ["flashing one", { flash: "a" }],

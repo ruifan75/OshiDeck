@@ -31,6 +31,8 @@
   let flashKind = "found";
   let drag = null;
   let poolOpen = false;
+  // Which half of it is on show: what you have, or what a preset offers.
+  let poolTab = "mine";
   let peek = null;
   let peekOwner = null; // the element whose description the bar is showing
   let painted = null;   // what the panel is already showing
@@ -432,26 +434,33 @@
     return orderDeck(cards, data.settings);
   }
 
-  // Everything that could go into this deck, which is two questions with one
-  // answer: what you already have and have not put in, and what this
-  // channel's regulars use that you do not have at all.
-  //
-  // The second half used to be all-or-nothing and only on an empty deck — a
-  // preset was ten cards or none, and the moment the deck had one card of
-  // its own the offer was gone for good. Nothing about that follows from
-  // what a preset is. It is a list of cards; the pool is where cards come
-  // from; a card you do not own yet is still a card you could put in here.
+  // Two answers to "what else can go in this deck", kept apart because they
+  // are different things. A card in the pool is one you saved; a card from a
+  // preset is one you have never had. Mixed together, the pool showed cards
+  // that were not in it.
   //
   // Assembled here rather than inline in render(), where nothing could reach
-  // it — dropping the lock, or the partition, changed nothing any test saw.
+  // them — dropping the lock, or the partition, changed nothing any test saw.
+
+  // What you have and have not put in this deck.
   function buildPool(data, channelId) {
     if (!channelId) return [];
+    return readyToAdd(store.poolFor(data, channelId).map((card) => ({ ...card })), channelId);
+  }
 
-    const mine = store.poolFor(data, channelId).map((card) => ({ ...card }));
+  // What this channel's regulars use that you have none of.
+  //
+  // A preset used to be all-or-nothing and only on an empty deck — ten cards
+  // or none, and the moment the deck had one card of its own the offer was
+  // gone for good. Nothing about that follows from what a preset is. It is a
+  // list of cards, and a card you do not own yet is still one you could put
+  // in here.
+  function buildOffered(data, channelId) {
+    if (!channelId) return [];
 
-    // Anything already in the collection is already answered for: it is
-    // either in this deck or in the half above, and loadPreset would have
-    // reused it rather than making a second one.
+    // Anything already in the collection is answered for by the other half:
+    // it is in this deck or in the pool, and loadPreset would have reused it
+    // rather than making a second one.
     const held = new Set(data.cards.map((card) => tokens.cardKey(card.tokens || [])));
     const offered = [];
     for (const preset of presetsOnHand(channelId)) {
@@ -466,12 +475,16 @@
                        id: `preset:${key}`, offered: source });
       }
     }
+    return readyToAdd(offered, channelId);
+  }
 
-    const cards = playableFirst(markLocked([...mine, ...offered], channelId, membership()));
-    // The stripe says scope here too. Without this every card in the pool
-    // was drawn grey, including the ones tied to this channel.
-    for (const card of cards) card.bound = store.scopeOf(card) !== store.GLOBAL;
-    return cards;
+  // Both halves are looked at the same way: what cannot be sent goes last,
+  // and the stripe says scope. Without the second line every card in the
+  // pool was drawn grey, including the ones tied to this channel.
+  function readyToAdd(cards, channelId) {
+    const ready = playableFirst(markLocked(cards, channelId, membership()));
+    for (const card of ready) card.bound = store.scopeOf(card) !== store.GLOBAL;
+    return ready;
   }
 
   // Am I a member of the channel running this chat?
@@ -1510,7 +1523,7 @@
       inputIsPinned ? "pinned" : "",
       channel?.id || "", channel?.name || "", hue ?? "",
       rootEl?.clientWidth || 0,
-      poolOpen ? "pool" : "deck", expanded ? "more" : "",
+      poolOpen ? `pool:${poolTab}` : "deck", expanded ? "more" : "",
       editingId || "", flashId ? `${flashId}:${flashKind}` : "", inputHasContent ? "typing" : "",
       pool.length, presetsOnHand(channel?.id).length,
       drawn?.key || "",
@@ -1634,13 +1647,13 @@
   // something worth keeping it becomes the destination picker, so choosing
   // where a card goes is one click on a labelled button — never a guess
   // followed by a correction.
-  function buildBar(channel, hue, count, poolCount) {
+  function buildBar({ channel, hue, count, mine, offered }) {
     const bar = document.createElement("div");
     bar.className = "od-bar";
     // Everything that would otherwise float over the chat lives here instead.
     if (notice) bar.append(noticeRow(notice));
     else if (peek) bar.append(peekReadout(peek));
-    else if (poolOpen) bar.append(poolBar(count));
+    else if (poolOpen) bar.append(poolTabs(mine, offered));
     else bar.append(inputHasContent ? saveTargets(channel, hue) : deckIdentity(channel, hue, count));
 
     if (poolOpen) {
@@ -1649,13 +1662,17 @@
         render();
       }));
     } else {
-      // The way into the pool used to be a full-width row under the hand,
-      // which cost a line of the panel to say one short thing. The bar is
-      // already where this UI puts anything that would otherwise take room
-      // of its own, and it has a side for controls.
-      if (poolCount) {
-        bar.appendChild(buildAction("plus", t("pool.short", poolCount), t("aria.addFromPool"),
-          () => { poolOpen = true; render(); }));
+      // The way in used to be a full-width row under the hand, which cost a
+      // line of the panel to say one short thing. The bar is already where
+      // this UI puts anything that would otherwise take room of its own, and
+      // it has a side for controls.
+      //
+      // Both halves counted, not just the pool. A channel whose preset is the
+      // only thing on offer — nothing saved yet, which is every channel at
+      // the start — would otherwise have no way in at all.
+      if (mine + offered) {
+        bar.appendChild(buildAction("plus", t("pool.short", mine + offered), t("aria.addFromPool"),
+          () => { poolOpen = true; poolTab = mine ? "mine" : "offered"; render(); }));
       }
       bar.appendChild(buildAction("deck", t("action.build"), t("aria.openBuilder"), () => openOptions()));
     }
@@ -1727,19 +1744,26 @@
     peekOwner = null;
   }
 
-  function poolBar(poolCount) {
+  // The two halves, as two labels you switch between. A card you saved and a
+  // card a preset is offering are different things — shown in one list, the
+  // pool was full of cards that were not in it.
+  function poolTabs(mine, offered) {
     const group = document.createElement("div");
     group.className = "od-bar-identity";
 
-    const label = document.createElement("span");
-    label.className = "od-save-label";
-    label.textContent = t("pool.addFrom");
+    const tab = (which, text) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "od-pool-tab";
+      button.textContent = text;
+      if (poolTab === which) button.dataset.current = "true";
+      button.addEventListener("click", () => { poolTab = which; render(); });
+      return button;
+    };
 
-    const total = document.createElement("span");
-    total.className = "od-count";
-    total.textContent = t("count.cards", poolCount);
-
-    group.append(label, total);
+    group.append(tab("mine", t("pool.mine", mine)));
+    // Nothing left to offer is not a tab to press; the preset is spent.
+    if (offered) group.append(tab("offered", t("pool.offered", offered)));
     return group;
   }
 
@@ -1913,8 +1937,7 @@
 
   function refreshBar() {
     if (!barEl?.isConnected || !barContext) return;
-    const next = buildBar(
-      barContext.channel, barContext.hue, barContext.count, barContext.poolCount);
+    const next = buildBar(barContext);
     barEl.replaceWith(next);
     barEl = next;
   }
@@ -2014,9 +2037,12 @@
     inputIsPinned = inputHasContent &&
       tokens.requiredChannels(tokens.collectTokens(input)).length > 0;
 
-    const pool = buildPool(data, channel?.id);
+    const mine = buildPool(data, channel?.id);
+    const offered = buildOffered(data, channel?.id);
+    // The last card of a half can be taken while you are looking at it.
+    if (poolTab === "offered" && !offered.length) poolTab = "mine";
 
-    const shown = poolOpen ? pool : deck;
+    const shown = poolOpen ? (poolTab === "offered" ? offered : mine) : deck;
     // Only alongside your own deck. The pool is a place to choose from, not
     // somewhere to be handed things.
     const drawn = poolOpen ? null : offerFromChat(deck, channel);
@@ -2035,7 +2061,7 @@
     // owner without changing anything the signature can see.
     dropStalePeek();
 
-    const next = panelSignature(data, channel, hue, shown, pool, drawn);
+    const next = panelSignature(data, channel, hue, shown, [...mine, ...offered], drawn);
     if (next === painted && rootEl.firstChild) return;
     painted = next;
 
@@ -2047,8 +2073,9 @@
       rootEl.dataset.mode = data.settings.mode;
       rootEl.dataset.pool = String(poolOpen);
 
-      barContext = { channel, hue, count: shown.length, poolCount: pool.length };
-      barEl = buildBar(channel, hue, shown.length, pool.length);
+      barContext = { channel, hue, count: shown.length,
+                     mine: mine.length, offered: offered.length };
+      barEl = buildBar(barContext);
       rootEl.appendChild(barEl);
 
       if (!shown.length && !drawn) {

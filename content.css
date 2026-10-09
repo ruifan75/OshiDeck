@@ -165,6 +165,27 @@
    bar's own height rather than a card's, which is the point of showing it. */
 .od-peek .od-emoji { width: 18px; height: 18px; }
 
+/* The pool's two halves. Quiet until it is the one you are looking at — the
+   bar has one line and these share it with the close button. */
+.od-pool-tab {
+  flex-shrink: 0;
+  padding: 3px 7px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--od-faint);
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.od-pool-tab:hover { color: var(--od-text); }
+
+.od-pool-tab[data-current] {
+  background: rgba(255, 255, 255, .13);
+  color: var(--od-text);
+}
+
 .od-save-label {
   flex-shrink: 0;
   font-size: 11px;

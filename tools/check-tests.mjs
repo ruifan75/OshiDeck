@@ -315,8 +315,8 @@ const MUTATIONS = [
   [VISIBILITY, CONTENT, "a stale description cleared after the decision, not before",
     `    dropStalePeek();
 
-    const next = panelSignature(data, channel, hue, shown, pool, drawn);`,
-    "    const next = panelSignature(data, channel, hue, shown, pool, drawn);"],
+    const next = panelSignature(data, channel, hue, shown, [...mine, ...offered], drawn);`,
+    "    const next = panelSignature(data, channel, hue, shown, [...mine, ...offered], drawn);"],
 
   [PRESET, CONTENT, "a preset loaded without passing the name along",
     "      cards: presets.cardsFor(preset, channelId)",
@@ -401,12 +401,12 @@ const MUTATIONS = [
     const seen = { channel: getChannel(), member: membership() };`],
 
   [MEMBER, CONTENT, "a pool that never asks",
-    "    const cards = playableFirst(markLocked([...mine, ...offered], channelId, membership()));",
-    "    const cards = playableFirst(markLocked([...mine, ...offered], channelId, true));"],
+    "    const ready = playableFirst(markLocked(cards, channelId, membership()));",
+    "    const ready = playableFirst(markLocked(cards, channelId, true));"],
 
   [MEMBER, CONTENT, "a pool that keeps a locked card where it was",
-    "    const cards = playableFirst(markLocked([...mine, ...offered], channelId, membership()));\n",
-    "    const cards = markLocked([...mine, ...offered], channelId, membership());\n"],
+    "    const ready = playableFirst(markLocked(cards, channelId, membership()));\n",
+    "    const ready = markLocked(cards, channelId, membership());\n"],
 
   [MEMBER, CONTENT, "an observer that is given something else to run",
     "    const watcher = new Observer(onPageChanged);",
@@ -443,8 +443,8 @@ const MUTATIONS = [
 `, ""],
 
   [MEMBER, CONTENT, "a pool built for nobody",
-    "    const pool = buildPool(data, channel?.id);",
-    "    const pool = buildPool(data, null);"],
+    "    const mine = buildPool(data, channel?.id);",
+    "    const mine = buildPool(data, null);"],
 
   [MEMBER, CONTENT, "an offer made about no channel at all",
     "poolOpen ? null : offerFromChat(deck, channel);",
@@ -455,8 +455,8 @@ const MUTATIONS = [
     "    return drawFromChat(deck, { channelId: channel?.id, member: membership() === true });"],
 
   [VISIBILITY, CONTENT, "a skip that can never hold",
-    "    const next = panelSignature(data, channel, hue, shown, pool, drawn);",
-    "    const next = panelSignature(data, channel, hue, shown, pool, drawn);\n    painted = null;"],
+    "    const next = panelSignature(data, channel, hue, shown, [...mine, ...offered], drawn);",
+    "    const next = panelSignature(data, channel, hue, shown, [...mine, ...offered], drawn);\n    painted = null;"],
 
   [VISIBILITY, CONTENT, "a drawn card given nothing to press",
     `  function drawnTools(card) {
@@ -614,7 +614,7 @@ const MUTATIONS = [
     "    const said = next;"],
 
   [VISIBILITY, CONTENT, "no way into the pool from anywhere",
-    "      if (poolCount) {",
+    "      if (mine + offered) {",
     "      if (false) {"],
 
   [VISIBILITY, CONTENT, "a notice left sitting over the controls it names",
@@ -634,8 +634,8 @@ const MUTATIONS = [
     "                       id: `preset:${key}:${Math.random()}`, offered: source });"],
 
   [MEMBER, CONTENT, "the pool's scope stripe left grey on every card",
-    "    // was drawn grey, including the ones tied to this channel.\n    for (const card of cards) card.bound = store.scopeOf(card) !== store.GLOBAL;",
-    "    // was drawn grey, including the ones tied to this channel.\n    for (const card of cards) card.bound = false;"],
+    "    for (const card of ready) card.bound = store.scopeOf(card) !== store.GLOBAL;",
+    "    for (const card of ready) card.bound = false;"],
 
   [MEMBER, CONTENT, "a refusal with nothing to show for it where it happened",
     '      if (card.id) flashCard(card.id, "refused");',
@@ -753,12 +753,12 @@ const KILLS = {
   "a card's contents written into the bar as text": "the bar draws the stamps rather than naming them",
   "the bar's stamps built the way the editor's are": "the way a card face draws them, not the way the editor does",
   "an empty description treated as something to say": "a peek with nothing in it leaves the bar to the deck",
-  "no way into the pool from anywhere": "the way into the pool is in the bar",
+  "no way into the pool from anywhere": "the way in is in the bar",
   "a notice left sitting over the controls it names": "typing clears a notice that was in the way",
   "a preset's cards never offered from the pool": "cards the channel uses and you do not have are offered",
-  "a card offered that you already have": "while one you already own is not offered twice",
+  "a card offered that you already have": "while one you already own is not offered at all",
   "an offer that is a different card every render": "and the same offer has the same id every time",
-  "the pool's scope stripe left grey on every card": "and its scope still shows",
+  "the pool's scope stripe left grey on every card": "and a card of your own in the pool shows its scope too",
   "a refusal with nothing to show for it where it happened": "and marks the card that was pressed",
   "a card drawn in full when it is one thing repeated": "five of the same stamp draw as one picture and a count",
   "the count not taking any room on the card": "the count takes room on the card too",

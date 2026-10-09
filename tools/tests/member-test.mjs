@@ -130,6 +130,7 @@ function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "
     `${lifted}
      return { membership, whyNotSendable, markLocked, playableFirst, orderDeck,
               buildDeck, buildPool, buildOffered, saveTokens, reconcileChannel, onPageChanged,
+              findDuplicate,
               watchPage, playCard };`
   )(
     { querySelector: (selector) => showing.querySelector(selector) },
@@ -444,6 +445,22 @@ check("and with no channel there is no pool at all",
   check("while one you already own is not offered at all",
     offered.every((c) => tokens.cardKey(c.tokens) !== tokens.cardKey(stamp(HERE))));
   check("an offered card carries what it was offered from", !!offered[0].offered);
+
+  // The viewer's own route to the same mistake, and the one they could see:
+  // the input cleared, the bar said the card already existed on this channel,
+  // and nothing had been saved. findDuplicate matched on wording alone, so
+  // saveTokens never reached the addCard that had already learned better.
+  {
+    const theirs = { id: "theirs", tokens: text("わこつ"), scope: AWAY, by: {} };
+    const here = { id: "here", tokens: text("わこつ"), scope: HERE, by: {} };
+    const api3 = lift({ doc: page({ mine: true }) });
+    const data = (cards) => ({ cards, decks: { [HERE]: [] }, channelMeta: {}, settings: {} });
+
+    check("a card of the same words tied elsewhere is not a duplicate here",
+      api3.findDuplicate(data([theirs]), HERE, text("わこつ")) === null);
+    check("while one that can be sent here is",
+      api3.findDuplicate(data([here]), HERE, text("わこつ"))?.exact === true);
+  }
 
   // Owning the words is not owning a card you can send. A copy tied to
   // another channel cannot be played here, so counting it as owned left both

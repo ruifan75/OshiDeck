@@ -1146,6 +1146,12 @@
 
     let similar = null;
     for (const card of data.cards) {
+      // Only a card you could actually press here. The same wording tied to
+      // another channel is a different card — the third place that had to
+      // learn it, after addCard and the preset offer. Here it was the one
+      // the viewer saw: the input cleared, the bar said the card already
+      // existed on this channel, and nothing had been saved.
+      if (!store.usableOn(card, channelId)) continue;
       if (tokens.cardKey(card.tokens) === key) {
         return { card, exact: true, inDeck: store.inDeck(data, channelId, card.id) };
       }

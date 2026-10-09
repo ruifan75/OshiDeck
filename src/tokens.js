@@ -108,7 +108,10 @@
   // Which channels' member emoji a card needs. Empty means it works anywhere.
   function requiredChannels(tokenList) {
     const owners = new Set();
-    for (const token of tokenList || []) {
+    // A list, or nothing. `tokens: {}` is not iterable at all, and this is
+    // reached from withScope before anything has had a chance to drop the
+    // card — so it threw where it was meant to be describing.
+    for (const token of Array.isArray(tokenList) ? tokenList : []) {
       if (token?.type !== "youtubeEmoji") continue;
       if (!needsMembership(token)) continue;
       const owner = emojiOwner(token.emojiId);

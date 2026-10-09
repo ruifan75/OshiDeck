@@ -698,6 +698,18 @@ const MUTATIONS = [
     "    const where = held.length ? held : (scope === GLOBAL ? [] : [scope]);",
     "    const where = held;"],
 
+  [STORED, STORE, "a deck list taken on trust while counts are migrated",
+    "      .filter(([, ids]) => Array.isArray(ids) && ids.includes(card.id))",
+    "      .filter(([, ids]) => (ids || []).includes(card.id))"],
+
+  [STORED, TOKENS, "a token list walked before it is known to be a list",
+    "    for (const token of Array.isArray(tokenList) ? tokenList : []) {",
+    "    for (const token of tokenList || []) {"],
+
+  [MEMBER, CONTENT, "the save path calling anything with the same words a duplicate",
+    "      if (!store.usableOn(card, channelId)) continue;",
+    "      if (false) continue;"],
+
   [STORED, STORE, "a card that is not a card carried into the panel",
     "    const whole = cards.filter(readable);",
     "    const whole = cards;"],
@@ -739,7 +751,7 @@ const MUTATIONS = [
     "        .filter(() => true)"],
 
   [STORED, STORE, "an old count handed to every channel, not the decks holding it",
-    "      .filter(([, ids]) => (ids || []).includes(card.id))",
+    "      .filter(([, ids]) => Array.isArray(ids) && ids.includes(card.id))",
     "      .filter(() => true)"],
 
   [STORED, STORE, "a count already split overwritten by the flat one it replaced",
@@ -843,6 +855,9 @@ const KILLS = {
   "another channel's member emoji carried into a preset": "another channel's are still left behind",
   "a preset that carries member emoji without saying whose": "and the preset says whose they are",
   "a language borrowed from Object.prototype": "toString is not a language",
+  "a deck list taken on trust while counts are migrated": "and a count migrates past a deck that is not a list",
+  "a token list walked before it is known to be a list": "a tokens field that cannot be walked is dropped, not fatal",
+  "the save path calling anything with the same words a duplicate": "a card of the same words tied elsewhere is not a duplicate here",
   "a card that is not a card carried into the panel": "the card that is not a card is dropped",
   "a deck that is not a list read as one": "a deck that is not a list reads as empty",
   "a file applied without the worker checking it": "a file the validator refuses is refused here too",

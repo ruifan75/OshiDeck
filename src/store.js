@@ -239,7 +239,10 @@
     if (Object.keys(card.by || {}).length) return card;
 
     const held = Object.entries(decks || {})
-      .filter(([, ids]) => (ids || []).includes(card.id))
+      // Before pruneImpossible has had a chance to normalise them: a legacy
+      // card with counts to migrate reaches this while `decks[x]` is still
+      // whatever storage held, and `{}.includes` is not a function.
+      .filter(([, ids]) => Array.isArray(ids) && ids.includes(card.id))
       .map(([channelId]) => channelId);
 
     // A card in no deck is usually one that was ejected into the pool, and it

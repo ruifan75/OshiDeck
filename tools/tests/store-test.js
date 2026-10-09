@@ -19,7 +19,7 @@ globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
   set: async (patch) => { writes.push(Object.keys(patch).sort().join("+")); }
 } } };
 require(process.env.OD_STORE || "../../src/store.js");
-require("../../src/tokens.js");
+require(process.env.OD_TOKENS || "../../src/tokens.js");
 require("../../src/backup.js");
 const S = globalThis.OshiDeck.store;
 
@@ -178,6 +178,24 @@ const S = globalThis.OshiDeck.store;
       d.decks[SAKURA].join() === "fine");
 
     // A deck that is not a list is not a deck with problems in it.
+    // The guards have to run before anything that could throw first. `tokens:
+    // {}` is not iterable, and withScope reads it on the way in; a legacy
+    // card with counts to migrate meets the deck list while it is still
+    // whatever storage held.
+    stored = { cards: [{ id: "obj", tokens: {} }, { id: "fine2", tokens: [{ type: "text", value: "8" }] }],
+               decks: {}, channelMeta: {}, settings: {} };
+    let survived = null;
+    try { survived = (await S.read()).cards.map((c) => c.id).join(); } catch (_) { survived = "threw"; }
+    check("a tokens field that cannot be walked is dropped, not fatal", survived === "fine2");
+
+    stored = { cards: [{ id: "old2", tokens: [{ type: "text", value: "8" }],
+                         uses: 40, heat: 40, lastUsedAt: 1 }],
+               decks: { [SAKURA]: {} }, channelMeta: {}, settings: {} };
+    let migrated = null;
+    try { migrated = (await S.read()).cards[0].by; } catch (_) { migrated = "threw"; }
+    check("and a count migrates past a deck that is not a list",
+      migrated && typeof migrated === "object" && migrated !== "threw");
+
     // Caught, because the mutant that removes the guard throws here — and a
     // test that goes down with it reports nothing at all.
     stored = { cards: [], decks: { [SAKURA]: {} }, channelMeta: {}, settings: {} };

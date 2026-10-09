@@ -201,7 +201,16 @@ kbd {
   font-size: 10px;
 }
 
-#saved { min-height: 1.4em; margin: 0; font-size: 12px; opacity: .72; }
+/* A refusal quotes the value it refused, and a file can hold a value with no
+   spaces in it at all — one 200 characters long gave this line a 1259px
+   scroll width. It wraps anywhere, and what it quotes is bounded besides. */
+#saved {
+  min-height: 1.4em;
+  margin: 0;
+  font-size: 12px;
+  opacity: .72;
+  overflow-wrap: anywhere;
+}
 
 /* ---------- deck browser ---------- */
 

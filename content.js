@@ -432,13 +432,46 @@
     return orderDeck(cards, data.settings);
   }
 
-  // The pool, assembled the same way and asking the same question. It was
-  // built inline in render(), where nothing could reach it — so dropping the
-  // question, or the partition, changed nothing any test could see.
+  // Everything that could go into this deck, which is two questions with one
+  // answer: what you already have and have not put in, and what this
+  // channel's regulars use that you do not have at all.
+  //
+  // The second half used to be all-or-nothing and only on an empty deck — a
+  // preset was ten cards or none, and the moment the deck had one card of
+  // its own the offer was gone for good. Nothing about that follows from
+  // what a preset is. It is a list of cards; the pool is where cards come
+  // from; a card you do not own yet is still a card you could put in here.
+  //
+  // Assembled here rather than inline in render(), where nothing could reach
+  // it — dropping the lock, or the partition, changed nothing any test saw.
   function buildPool(data, channelId) {
     if (!channelId) return [];
-    return playableFirst(markLocked(
-      store.poolFor(data, channelId).map((card) => ({ ...card })), channelId, membership()));
+
+    const mine = store.poolFor(data, channelId).map((card) => ({ ...card }));
+
+    // Anything already in the collection is already answered for: it is
+    // either in this deck or in the half above, and loadPreset would have
+    // reused it rather than making a second one.
+    const held = new Set(data.cards.map((card) => tokens.cardKey(card.tokens || [])));
+    const offered = [];
+    for (const preset of presetsOnHand(channelId)) {
+      for (const source of preset.cards || []) {
+        const key = tokens.cardKey(source.tokens || []);
+        if (held.has(key)) continue;
+        held.add(key); // two presets can carry the same card
+        // The id has to be the same on every render or the panel's signature
+        // changes for nothing and it redraws forever; cardsFor hands out a
+        // fresh uuid each time it is asked.
+        offered.push({ ...presets.cardsFor({ cards: [source] }, channelId)[0],
+                       id: `preset:${key}`, offered: source });
+      }
+    }
+
+    const cards = playableFirst(markLocked([...mine, ...offered], channelId, membership()));
+    // The stripe says scope here too. Without this every card in the pool
+    // was drawn grey, including the ones tied to this channel.
+    for (const card of cards) card.bound = store.scopeOf(card) !== store.GLOBAL;
+    return cards;
   }
 
   // Am I a member of the channel running this chat?
@@ -1148,9 +1181,23 @@
   }
 
   async function addToDeck(card) {
-    const channelId = getChannel()?.id;
-    if (!channelId) return showToast(t("toast.noChannel"));
-    const { ok } = await store.apply("addToDeck", { channelId, cardId: card.id });
+    const channel = getChannel();
+    if (!channel?.id) return showToast(t("toast.noChannel"));
+
+    // A card offered by a preset is not a card yet. loadPreset is what makes
+    // one — the same path the whole preset takes — so one added by hand
+    // lands exactly where it would have landed anyway.
+    if (card.offered) {
+      const { ok } = await store.apply("loadPreset", {
+        channelId: channel.id,
+        name: channel.name,
+        cards: presets.cardsFor({ cards: [card.offered] }, channel.id)
+      });
+      if (!ok) return showToast(t("preset.failed"));
+      return render();
+    }
+
+    const { ok } = await store.apply("addToDeck", { channelId: channel.id, cardId: card.id });
     if (ok) render();
   }
 
@@ -1361,6 +1408,7 @@
     el.dataset.size = size;
     el.dataset.scope = card.bound ? "channel" : "global";
     if (card.bound && hue != null) el.style.setProperty("--od-scope-hue", hue);
+    if (card.offered) el.dataset.offered = "true";
     if (card.id === editingId) el.dataset.editing = "true";
     if (card.locked) el.dataset.locked = "true";
     if (card.hits > 0) el.dataset.trending = "true";
@@ -1558,6 +1606,7 @@
       el.className = "od-listcard";
       el.dataset.scope = card.bound ? "channel" : "global";
       if (card.bound && hue != null) el.style.setProperty("--od-scope-hue", hue);
+      if (card.offered) el.dataset.offered = "true";
       if (card.id === editingId) el.dataset.editing = "true";
       if (card.locked) el.dataset.locked = "true";
       if (card.hits > 0) el.dataset.trending = "true";

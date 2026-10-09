@@ -319,8 +319,8 @@ const MUTATIONS = [
     "    const next = panelSignature(data, channel, hue, shown, pool, drawn);"],
 
   [PRESET, CONTENT, "a preset loaded without passing the name along",
-    "      name: channel.name,\n",
-    ""],
+    "      cards: presets.cardsFor(preset, channelId)",
+    "      cards: presets.cardsFor(preset, channelId), name: undefined"],
 
   // Membership. Every one of these is a signal that was measured on a real
   // stream and could plausibly have been read the other way.
@@ -401,14 +401,12 @@ const MUTATIONS = [
     const seen = { channel: getChannel(), member: membership() };`],
 
   [MEMBER, CONTENT, "a pool that never asks",
-    "      store.poolFor(data, channelId).map((card) => ({ ...card })), channelId, membership()));",
-    "      store.poolFor(data, channelId).map((card) => ({ ...card })), channelId, true));"],
+    "    const cards = playableFirst(markLocked([...mine, ...offered], channelId, membership()));",
+    "    const cards = playableFirst(markLocked([...mine, ...offered], channelId, true));"],
 
   [MEMBER, CONTENT, "a pool that keeps a locked card where it was",
-    `    return playableFirst(markLocked(
-      store.poolFor(data, channelId)`,
-    `    return (markLocked(
-      store.poolFor(data, channelId)`],
+    "    const cards = playableFirst(markLocked([...mine, ...offered], channelId, membership()));\n",
+    "    const cards = markLocked([...mine, ...offered], channelId, membership());\n"],
 
   [MEMBER, CONTENT, "an observer that is given something else to run",
     "    const watcher = new Observer(onPageChanged);",
@@ -619,6 +617,22 @@ const MUTATIONS = [
     "    if (notice) clearNotice();",
     "    if (false) clearNotice();"],
 
+  [MEMBER, CONTENT, "a preset's cards never offered from the pool",
+    "      for (const source of preset.cards || []) {",
+    "      for (const source of []) {"],
+
+  [MEMBER, CONTENT, "a card offered that you already have",
+    "        if (held.has(key)) continue;",
+    "        if (false) continue;"],
+
+  [MEMBER, CONTENT, "an offer that is a different card every render",
+    "                       id: `preset:${key}`, offered: source });",
+    "                       id: `preset:${key}:${Math.random()}`, offered: source });"],
+
+  [MEMBER, CONTENT, "the pool's scope stripe left grey on every card",
+    "    // was drawn grey, including the ones tied to this channel.\n    for (const card of cards) card.bound = store.scopeOf(card) !== store.GLOBAL;",
+    "    // was drawn grey, including the ones tied to this channel.\n    for (const card of cards) card.bound = false;"],
+
   [MEMBER, CONTENT, "a refusal with nothing to show for it where it happened",
     '      if (card.id) flashCard(card.id, "refused");',
     "      if (false) flashCard(card.id);"],
@@ -736,6 +750,10 @@ const KILLS = {
   "an empty description treated as something to say": "a peek with nothing in it leaves the bar to the deck",
   "no way into the pool from anywhere": "the way into the pool is in the bar",
   "a notice left sitting over the controls it names": "typing clears a notice that was in the way",
+  "a preset's cards never offered from the pool": "a card the channel uses and you do not have is offered",
+  "a card offered that you already have": "while one you already own is not offered twice",
+  "an offer that is a different card every render": "and the same offer has the same id every time",
+  "the pool's scope stripe left grey on every card": "and its scope still shows",
   "a refusal with nothing to show for it where it happened": "and marks the card that was pressed",
   "a card drawn in full when it is one thing repeated": "five of the same stamp draw as one picture and a count",
   "the count not taking any room on the card": "the count takes room on the card too",

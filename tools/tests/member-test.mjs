@@ -35,7 +35,11 @@ await import(`file://${process.env.OD_STORE || "/Users/maintainer/OshiDeck/src/s
 // one comes along too rather than a stand-in that would agree with anything.
 globalThis.document = { querySelector: () => null };
 await import("../../src/trending.js");
-const { store } = globalThis.OshiDeck;
+// What a preset's card becomes when it is offered is part of what is being
+// asked here, so the real one comes along rather than a copy that would only
+// agree with itself.
+await import(`file://${process.env.OD_PRESETS || "/Users/maintainer/OshiDeck/src/presets.js"}`);
+const { store, presets } = globalThis.OshiDeck;
 
 const source = process.env.OD_SOURCE
   ? new URL(`file://${process.env.OD_SOURCE}`)
@@ -118,6 +122,7 @@ function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "
     "t", "getChannel", "showToast", "shutdown", "render", "flashCard", "journal", "log", "editingId",
     "findChatInput", "currentInput", "rootEl", "scheduleRender",
     "getChatInput", "settingsCache", "submitChat", "MutationObserver",
+    "presets", "presetsOnHand",
     `${lifted}
      return { membership, whyNotSendable, markLocked, playableFirst, orderDeck,
               buildDeck, buildPool, saveTokens, reconcileChannel, onPageChanged,
@@ -167,10 +172,17 @@ function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "
     { autoSend },
     (done) => { seen.sent += 1; done?.(); },
     class { constructor(fn) { seen.observer = { fn }; }
-            observe(root, options) { Object.assign(seen.observer, { root, options }); } }
+            observe(root, options) { Object.assign(seen.observer, { root, options }); } },
+    // The real cardsFor: what a preset's card becomes is the thing being
+    // asked about, and a copy here would only agree with itself.
+    presets,
+    () => offering
   );
   return { ...api, seen };
 }
+
+// What presetsOnHand answers with, for the cases that care.
+let offering = [];
 
 /* ---------- am I a member ---------- */
 
@@ -358,6 +370,46 @@ check("a member's pool leaves it playable", pool.find((c) => c.id === "ours")?.l
 
 check("and with no channel there is no pool at all",
   lift().buildPool(shelved(HERE), null).length === 0);
+
+/* ---------- and what the channel's regulars use ---------- */
+
+// A preset was all-or-nothing, and only while the deck was empty: ten cards
+// or none, and the moment the deck had one card of its own the offer was
+// gone for good. Nothing about that follows from what a preset is — it is a
+// list of cards, the pool is where cards come from, and a card you do not
+// own yet is still one you could put in here.
+{
+  const fresh = { tokens: text("おかえり"), scope: "global" };
+  const alreadyMine = { tokens: stamp(HERE), scope: "channel" };
+  offering = [{ name: "稀羽すう", channel: HERE, cards: [fresh, alreadyMine] }];
+
+  const shown = lift({ doc: page({ mine: true }) }).buildPool(shelved(HERE), HERE);
+  const offered = shown.filter((c) => c.offered);
+
+  check("a card the channel uses and you do not have is offered", offered.length === 1);
+  check("and it is the one you do not have",
+    tokens.toPlainText(offered[0].tokens) === "おかえり");
+  check("while one you already own is not offered twice",
+    shown.filter((c) => tokens.cardKey(c.tokens) === tokens.cardKey(stamp(HERE))).length === 1);
+  check("an offered card carries what it was offered from", !!offered[0].offered);
+
+  // cardsFor hands out a fresh uuid every time it is asked, and the panel's
+  // signature is built from card ids: an offered card that is a new card on
+  // every render makes the panel redraw forever.
+  const again = lift({ doc: page({ mine: true }) }).buildPool(shelved(HERE), HERE);
+  check("and the same offer has the same id every time",
+    again.find((c) => c.offered)?.id === offered[0].id);
+
+  // Same rules as anything else in the pool.
+  check("and its scope still shows",
+    shown.find((c) => c.id === "ours")?.bound === true);
+
+  const locked = lift({ doc: page({ mine: false }) }).buildPool(shelved(HERE), HERE);
+  check("an offered card nobody can send here is locked like any other",
+    locked.filter((c) => c.offered)[0]?.locked === false); // this one is plain words
+
+  offering = [];
+}
 
 /* ---------- saving one you cannot send ---------- */
 

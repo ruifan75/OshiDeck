@@ -380,10 +380,12 @@
   width: 3px;
 }
 
-/* Cards being browsed in the pool are not in play yet. */
-#oshideck-root[data-pool="true"] .od-card::before,
-#oshideck-root[data-pool="true"] .od-listcard::before { background: var(--od-common); }
-
+/* Cards being browsed in the pool are not in play yet — said with the edge,
+   not the stripe. The stripe says scope, and scope is the one thing you need
+   while deciding whether to add a card: a channel-only one works here and
+   nowhere else. Painting it grey in the pool hid exactly that, and hid it
+   from the half where it matters most, since a preset's cards have never
+   been seen before. */
 #oshideck-root[data-pool="true"] .od-card,
 #oshideck-root[data-pool="true"] .od-listcard { border-style: dashed; }
 
@@ -395,16 +397,6 @@
    instead of growing a row, which would come out of the chat. It arrives at
    the left, the edge where the most-used card already sits and the eye is
    already looking. */
-/* Offered rather than owned: a card the pool is showing from a preset, which
-   you do not have yet. The same dashed edge the drawn card uses — it means
-   the same thing there, that this is not part of the deck until you say so.
-   No breathing, though: a pool full of them would be a pool full of movement. */
-.od-card[data-offered],
-.od-listcard[data-offered] {
-  border-style: dashed;
-  border-color: rgba(255, 255, 255, .3);
-}
-
 .od-drawn {
   border-style: dashed;
   border-color: rgba(255, 255, 255, .34);

@@ -168,6 +168,30 @@ b.setPeek({ text: "" }, { isConnected: true });
 check("and moving to one that does not gives the bar back", b.peek() === null);
 check("which is worth the redraw", b.seen.refreshes === 2);
 
+/* ---------- what the stripe is allowed to say ---------- */
+
+// The stripe means scope, and scope is the one thing you need while deciding
+// whether to add a card: a channel-only one works here and nowhere else. The
+// panel sets data-scope on every card and had it right — and then the pool
+// repainted every ::before grey, "being browsed, not in play", so the answer
+// never reached the screen. Worst on the preset half, whose cards have never
+// been seen before and have nothing else to go on.
+//
+// A rule, not a line of code, which is why no other test here could see it.
+{
+  const css = readFileSync(
+    process.env.OD_CSS
+      ? new URL(`file://${process.env.OD_CSS}`)
+      : new URL("../../content.css", import.meta.url),
+    "utf8"
+  );
+  // Each piece holds one rule: its selector and the declarations after it.
+  const inThePool = css.split("}").filter((rule) => rule.includes('[data-pool="true"]'));
+  check("the pool has rules of its own at all", inThePool.length > 0);
+  check("the pool does not paint over the scope stripe",
+    inThePool.every((rule) => !(rule.includes("::before") && rule.includes("background"))));
+}
+
 /* ---------- the way into the pool ---------- */
 
 // It used to be a full-width row under the hand, which spent a line of a

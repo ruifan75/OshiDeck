@@ -1421,7 +1421,6 @@
     el.dataset.size = size;
     el.dataset.scope = card.bound ? "channel" : "global";
     if (card.bound && hue != null) el.style.setProperty("--od-scope-hue", hue);
-    if (card.offered) el.dataset.offered = "true";
     if (card.id === editingId) el.dataset.editing = "true";
     if (card.locked) el.dataset.locked = "true";
     if (card.hits > 0) el.dataset.trending = "true";
@@ -1619,7 +1618,6 @@
       el.className = "od-listcard";
       el.dataset.scope = card.bound ? "channel" : "global";
       if (card.bound && hue != null) el.style.setProperty("--od-scope-hue", hue);
-      if (card.offered) el.dataset.offered = "true";
       if (card.id === editingId) el.dataset.editing = "true";
       if (card.locked) el.dataset.locked = "true";
       if (card.hits > 0) el.dataset.trending = "true";

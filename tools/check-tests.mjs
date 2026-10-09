@@ -46,6 +46,10 @@ const OPTIONS = { file: "options.js", env: "OD_OPTIONS" };
 const STORE = { file: "src/store.js", env: "OD_STORE" };
 const PRESETS = { file: "src/presets.js", env: "OD_PRESETS" };
 const I18NSRC = { file: "src/i18n.js", env: "OD_I18N" };
+// Not JavaScript, so `node --check` has nothing to say about it. Twice now a
+// decision made correctly in JS was painted over by a rule in CSS, which no
+// test could see.
+const STYLE = { file: "content.css", env: "OD_CSS", js: false };
 
 const sources = new Map();
 const read = ({ file }) => {
@@ -617,6 +621,10 @@ const MUTATIONS = [
     "      if (mine + offered) {",
     "      if (false) {"],
 
+  [VISIBILITY, STYLE, "the pool painting over the scope stripe",
+    '#oshideck-root[data-pool="true"] .od-card,',
+    '#oshideck-root[data-pool="true"] .od-card::before { background: var(--od-common); }\n#oshideck-root[data-pool="true"] .od-card,'],
+
   [VISIBILITY, CONTENT, "a notice left sitting over the controls it names",
     "    if (notice) clearNotice();",
     "    if (false) clearNotice();"],
@@ -754,6 +762,7 @@ const KILLS = {
   "the bar's stamps built the way the editor's are": "the way a card face draws them, not the way the editor does",
   "an empty description treated as something to say": "a peek with nothing in it leaves the bar to the deck",
   "no way into the pool from anywhere": "the way in is in the bar",
+  "the pool painting over the scope stripe": "the pool does not paint over the scope stripe",
   "a notice left sitting over the controls it names": "typing clears a notice that was in the way",
   "a preset's cards never offered from the pool": "cards the channel uses and you do not have are offered",
   "a card offered that you already have": "while one you already own is not offered at all",
@@ -842,15 +851,17 @@ for (const [file, subject, name, find, replace] of MUTATIONS) {
     continue;
   }
 
-  const mutant = join(dir, `${name.replace(/\W+/g, "-")}.js`);
+  const mutant = join(dir, `${name.replace(/\W+/g, "-")}.${subject.js === false ? "css" : "js"}`);
   writeFileSync(mutant, source.replace(find, replace));
 
-  try {
-    execFileSync(process.execPath, ["--check", mutant], { stdio: "pipe" });
-  } catch (_) {
-    console.log(`FAIL ${name} — the mutation does not parse, so nothing was tested`);
-    failed = 1;
-    continue;
+  if (subject.js !== false) {
+    try {
+      execFileSync(process.execPath, ["--check", mutant], { stdio: "pipe" });
+    } catch (_) {
+      console.log(`FAIL ${name} — the mutation does not parse, so nothing was tested`);
+      failed = 1;
+      continue;
+    }
   }
 
   const target = KILLS[name];

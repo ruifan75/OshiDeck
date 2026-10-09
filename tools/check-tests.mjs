@@ -514,7 +514,7 @@ const MUTATIONS = [
     "    return MEMBERS_ONLY.test(shortcut);"],
 
   [EMOJI, TOKENS, "a shortcut that does not survive the editor",
-    `    if (token.sharedTooltipText) {
+    `    if (token.sharedTooltipText && !preview) {
       img.setAttribute("shared-tooltip-text", token.sharedTooltipText);
     }
 `, ""],
@@ -522,6 +522,10 @@ const MUTATIONS = [
   [EMOJI, TOKENS, "a standard emoji kept as an emoji token",
     '      if (current.tagName === "IMG") return pushText(current.getAttribute("alt") || "");',
     '      if (current.tagName === "IMG") return tokens.push({ type: "youtubeEmoji", emojiId: current.getAttribute("alt") || "" });'],
+
+  [EMOJI, TOKENS, "a card face handing YouTube a tooltip to float",
+    "    if (token.sharedTooltipText && !preview) {",
+    "    if (token.sharedTooltipText) {"],
 
   [EMOJI, TOKENS, "the chat editor given pictures instead of characters",
     "    if (!preview) { frag.appendChild(document.createTextNode(text)); return; }",
@@ -689,6 +693,7 @@ const KILLS = {
   "an emoji measured by the length of its name": "three emoji are six characters wide, not twenty-one",
   "an emoji in a sentence counted by its characters": "an emoji inside text is a picture, not its characters",
 
+  "a card face handing YouTube a tooltip to float": "but a card face hands YouTube nothing to pop up",
   "the chat editor given pictures instead of characters": "and the chat editor is still given the characters",
   "flags and keycaps left as text for not being pictographic": "a flag is a picture even though its letters are not",
   "a picture asked for per code point rather than per emoji": "a skin tone belongs to the hand in front of it",

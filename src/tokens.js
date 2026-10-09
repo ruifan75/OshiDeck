@@ -216,7 +216,14 @@
     // Written back because it is read back: a card staged into the editor and
     // collected again would otherwise lose the one thing that says whether it
     // needs a membership.
-    if (token.sharedTooltipText) {
+    //
+    // The editor only. This is YouTube's own attribute — `tp-yt-paper-tooltip`
+    // is what reads it, which is why collectTokens already has to skip that
+    // element — and the panel is mounted inside the live chat renderer, so a
+    // card face carrying one got YouTube's tooltip floating `:_ただいま:` over
+    // the chat on hover. Nothing in this UI gets a native tooltip; what a card
+    // has to say, the bar says.
+    if (token.sharedTooltipText && !preview) {
       img.setAttribute("shared-tooltip-text", token.sharedTooltipText);
     }
     return img;

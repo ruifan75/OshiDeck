@@ -90,6 +90,17 @@ check("and still names its channel", needs([{ type: "youtubeEmoji", emojiId: `${
   const img = written.find((el) => el.attrs["data-emoji-id"]);
   check("writing a card keeps the shortcut with it",
     img?.attrs["shared-tooltip-text"] === ":shelterin:");
+
+  // But only there. `shared-tooltip-text` is YouTube's own attribute —
+  // tp-yt-paper-tooltip is what reads it, which is why collectTokens already
+  // skips that element — and the panel lives inside the live chat renderer.
+  // A card face carrying one had YouTube float `:_ただいま:` over the chat on
+  // hover: a native tooltip, in a UI that deliberately has none.
+  written.length = 0;
+  tokens.toFragment([emoji(SUU, ":_tadaima:")], { preview: true });
+  const face = written.find((el) => el.attrs["data-emoji-id"]);
+  check("but a card face hands YouTube nothing to pop up",
+    face && !("shared-tooltip-text" in face.attrs));
 }
 
 /* ---------- what a standard emoji is ---------- */

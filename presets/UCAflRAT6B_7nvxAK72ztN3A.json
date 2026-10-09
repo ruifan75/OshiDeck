@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "甘葛すもあ / Amazura Sumoa",
+  "note": "過去13配信のチャットから、常連が多い順に10枚",
+  "channel": "UCAflRAT6B_7nvxAK72ztN3A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"🚬"},{"type":"text","value":"🎶"},{"type":"text","value":"🚬"},{"type":"text","value":"🎶"},{"type":"text","value":"🚬"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ごきげんよう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCAflRAT6B_7nvxAK72ztN3A/gWE3ZtiiDIPA_9EPi5yRyAg","alt":"kan","sharedTooltipText":":_kan:","src":"https://yt3.ggpht.com/yK7zrVBSyQbWnF6yNeEat_uJjPzm4xedMYeShjS2D5zsY5banT9YH7X-S00xvGiaNpAtFaVj=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCAflRAT6B_7nvxAK72ztN3A/gWE3ZqqiDIPA_9EPi5yRyAg","alt":"chill","sharedTooltipText":":_chill:","src":"https://yt3.ggpht.com/S0thdLcbDkYQgkt9MElaBymrthJv6nU3-EZQgEC-vXFQFz6Lr1hO6e1hR0iuSWNWnzLkshWy=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCAflRAT6B_7nvxAK72ztN3A/eQU3ZrPdLP3C_9EP_-6V2Aw","alt":"light","sharedTooltipText":":_light:","src":"https://yt3.ggpht.com/dfG-DKK7yD-SrBwaXGobLErIl-VCik51Bq_S-qQU1rKFq-W6FPkjIzafWGaZmeLVOwRkXl9HLg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCAflRAT6B_7nvxAK72ztN3A/eQU3ZrPdLP3C_9EP_-6V2Aw","alt":"light","sharedTooltipText":":_light:","src":"https://yt3.ggpht.com/dfG-DKK7yD-SrBwaXGobLErIl-VCik51Bq_S-qQU1rKFq-W6FPkjIzafWGaZmeLVOwRkXl9HLg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCAflRAT6B_7nvxAK72ztN3A/eQU3ZrPdLP3C_9EP_-6V2Aw","alt":"light","sharedTooltipText":":_light:","src":"https://yt3.ggpht.com/dfG-DKK7yD-SrBwaXGobLErIl-VCik51Bq_S-qQU1rKFq-W6FPkjIzafWGaZmeLVOwRkXl9HLg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCAflRAT6B_7nvxAK72ztN3A/eQU3ZrPdLP3C_9EP_-6V2Aw","alt":"light","sharedTooltipText":":_light:","src":"https://yt3.ggpht.com/dfG-DKK7yD-SrBwaXGobLErIl-VCik51Bq_S-qQU1rKFq-W6FPkjIzafWGaZmeLVOwRkXl9HLg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCAflRAT6B_7nvxAK72ztN3A/cUPZaODWCNOT5t0PmuatwAQ","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/sp7SczeVUmHSLeEPNlMYK9hD55MfIDaRYwNXTh9VnnzbOPgZ0ilzjlNTx-V-U7hb2Hy64tpubQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCAflRAT6B_7nvxAK72ztN3A/cUPZaODWCNOT5t0PmuatwAQ","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/sp7SczeVUmHSLeEPNlMYK9hD55MfIDaRYwNXTh9VnnzbOPgZ0ilzjlNTx-V-U7hb2Hy64tpubQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCAflRAT6B_7nvxAK72ztN3A/cUPZaODWCNOT5t0PmuatwAQ","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/sp7SczeVUmHSLeEPNlMYK9hD55MfIDaRYwNXTh9VnnzbOPgZ0ilzjlNTx-V-U7hb2Hy64tpubQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

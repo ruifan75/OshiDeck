@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "不知名イヲ - Shirazuna Iwo - ",
+  "note": "過去6配信のチャットから、常連が多い順に10枚",
+  "channel": "UC1yZAPWNLVtfCX43IQS0gTA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"🐋"},{"type":"text","value":"🌊"},{"type":"text","value":"🎶"},{"type":"text","value":"🐋"},{"type":"text","value":"🌊"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"穏やかでありますように〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あい！あい！あい！あい！"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1yZAPWNLVtfCX43IQS0gTA/CcCZafLHH5aC7OsPjNGriQ4","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/f6ay5-rQHABs8WYwC-eXZ4-eOYmBDrbnDfVvRXcmCjUgy-BMpt2_AvcNlk7_3npVtqz4s6v2uQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1yZAPWNLVtfCX43IQS0gTA/CcCZafLHH5aC7OsPjNGriQ4","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/f6ay5-rQHABs8WYwC-eXZ4-eOYmBDrbnDfVvRXcmCjUgy-BMpt2_AvcNlk7_3npVtqz4s6v2uQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1yZAPWNLVtfCX43IQS0gTA/CcCZafLHH5aC7OsPjNGriQ4","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/f6ay5-rQHABs8WYwC-eXZ4-eOYmBDrbnDfVvRXcmCjUgy-BMpt2_AvcNlk7_3npVtqz4s6v2uQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1yZAPWNLVtfCX43IQS0gTA/xg0aaYvPHO-Vs8IPpI_p0QI","alt":"不知名はサンマを入手","sharedTooltipText":":_不知名はサンマを入手:","src":"https://yt3.ggpht.com/2TH57w4LlqPmtuXrP-JkeiRIIv07nD1goJh-qr7buUHtHvoEeaUhJ75KXh4JeY_vW-hLXA_l=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1yZAPWNLVtfCX43IQS0gTA/xg0aaYvPHO-Vs8IPpI_p0QI","alt":"不知名はサンマを入手","sharedTooltipText":":_不知名はサンマを入手:","src":"https://yt3.ggpht.com/2TH57w4LlqPmtuXrP-JkeiRIIv07nD1goJh-qr7buUHtHvoEeaUhJ75KXh4JeY_vW-hLXA_l=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1yZAPWNLVtfCX43IQS0gTA/xg0aaYvPHO-Vs8IPpI_p0QI","alt":"不知名はサンマを入手","sharedTooltipText":":_不知名はサンマを入手:","src":"https://yt3.ggpht.com/2TH57w4LlqPmtuXrP-JkeiRIIv07nD1goJh-qr7buUHtHvoEeaUhJ75KXh4JeY_vW-hLXA_l=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんイヲ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こん"},{"type":"youtubeEmoji","emojiId":"UC1yZAPWNLVtfCX43IQS0gTA/CcCZabvHH5aC7OsPjNGriQ4","alt":"イヲですよ","sharedTooltipText":":_イヲですよ:","src":"https://yt3.ggpht.com/Tuq4sS6R9lrpBbIbL5K-Vm2ws6QsVoYCRtvIEAyrQ91LPcbIHbjJ9Eoj2El47CkVHh3DrKOuZg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"穏やかでありますように～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "global" }
+  ]
+}

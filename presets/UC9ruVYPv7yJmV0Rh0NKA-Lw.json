@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "kson ONAIR",
+  "note": "過去13配信のチャットから、常連が多い順に10枚",
+  "channel": "UC9ruVYPv7yJmV0Rh0NKA-Lw",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9ruVYPv7yJmV0Rh0NKA-Lw/hk0PYdnvDIS58wSf4Q4","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/Djbo7mmpRSunvpbARxTAxPyjV2WBHBIRBPecbvfkD_8g0wC4ovdHpXuLTlU-4OmtNfktyDsL=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9ruVYPv7yJmV0Rh0NKA-Lw/xW45YL7IC4XU_AP015eQCQ","alt":"HEART","sharedTooltipText":":_HEART:","src":"https://yt3.ggpht.com/pNP8HPRThbphwc9hQ8M0nYGVAQetT4ZIHmzX3yjePYD1UbT7UjwA64TlLSXpOdUe9acuA030pCY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9ruVYPv7yJmV0Rh0NKA-Lw/xW45YL7IC4XU_AP015eQCQ","alt":"HEART","sharedTooltipText":":_HEART:","src":"https://yt3.ggpht.com/pNP8HPRThbphwc9hQ8M0nYGVAQetT4ZIHmzX3yjePYD1UbT7UjwA64TlLSXpOdUe9acuA030pCY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9ruVYPv7yJmV0Rh0NKA-Lw/xW45YL7IC4XU_AP015eQCQ","alt":"HEART","sharedTooltipText":":_HEART:","src":"https://yt3.ggpht.com/pNP8HPRThbphwc9hQ8M0nYGVAQetT4ZIHmzX3yjePYD1UbT7UjwA64TlLSXpOdUe9acuA030pCY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9ruVYPv7yJmV0Rh0NKA-Lw/AjINYfObAsXR8gSqzrr4Cw","alt":"GAYA","sharedTooltipText":":_GAYA:","src":"https://yt3.ggpht.com/bbobsCjBpH_ZRM33HwboG3x02RKy3MhKVgsAjQ_AKmzM07Qzb8st6QEPuQdCPgI5D-bih0lygg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9ruVYPv7yJmV0Rh0NKA-Lw/AjINYfObAsXR8gSqzrr4Cw","alt":"GAYA","sharedTooltipText":":_GAYA:","src":"https://yt3.ggpht.com/bbobsCjBpH_ZRM33HwboG3x02RKy3MhKVgsAjQ_AKmzM07Qzb8st6QEPuQdCPgI5D-bih0lygg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9ruVYPv7yJmV0Rh0NKA-Lw/AjINYfObAsXR8gSqzrr4Cw","alt":"GAYA","sharedTooltipText":":_GAYA:","src":"https://yt3.ggpht.com/bbobsCjBpH_ZRM33HwboG3x02RKy3MhKVgsAjQ_AKmzM07Qzb8st6QEPuQdCPgI5D-bih0lygg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9ruVYPv7yJmV0Rh0NKA-Lw/JVTqYuPqCoSG_9EP2bqT8As","alt":"cat","sharedTooltipText":":_cat:","src":"https://yt3.ggpht.com/6Up8wSAm53pTKJVDj0808tB90QHLNIHBrTwZ8qxHU2k64pcGmWAJuqhjYFEk14JMGQ2mQt2RXBo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9ruVYPv7yJmV0Rh0NKA-Lw/JVTqYuPqCoSG_9EP2bqT8As","alt":"cat","sharedTooltipText":":_cat:","src":"https://yt3.ggpht.com/6Up8wSAm53pTKJVDj0808tB90QHLNIHBrTwZ8qxHU2k64pcGmWAJuqhjYFEk14JMGQ2mQt2RXBo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9ruVYPv7yJmV0Rh0NKA-Lw/JVTqYuPqCoSG_9EP2bqT8As","alt":"cat","sharedTooltipText":":_cat:","src":"https://yt3.ggpht.com/6Up8wSAm53pTKJVDj0808tB90QHLNIHBrTwZ8qxHU2k64pcGmWAJuqhjYFEk14JMGQ2mQt2RXBo=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" }
+  ]
+}

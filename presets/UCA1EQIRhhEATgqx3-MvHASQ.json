@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ChumuNote #チュムノート【MOLA STUDIO】",
+  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "channel": "UCA1EQIRhhEATgqx3-MvHASQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCA1EQIRhhEATgqx3-MvHASQ/bnq1ZMGaEMPigwP0xr-4Dw","alt":"ChumuHello","sharedTooltipText":":_ChumuHello:","src":"https://yt3.ggpht.com/APCzxxqbBTtAXJtxf_AbrXVj_5vqKVa3yL3rpxt7y4LYygmXv8hIosZvaJyYtew9XuOvdRbo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCA1EQIRhhEATgqx3-MvHASQ/bnq1ZLmfEMPigwP0xr-4Dw","alt":"ChumuMolaMola","sharedTooltipText":":_ChumuMolaMola:","src":"https://yt3.ggpht.com/9w3CtdrCzcQ5TKOjFTiQNChnEdqeQwwMZP5P5UD-B8Ailc9CaHM-HL7dQ4gpYN11B0U3y5fnzAE=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCA1EQIRhhEATgqx3-MvHASQ/bnq1ZICbEMPigwP0xr-4Dw","alt":"ChumuGoodbye","sharedTooltipText":":_ChumuGoodbye:","src":"https://yt3.ggpht.com/x9tAOlCco3PI_I2O35jtFDQzq-D9_ndPtuZxH5vq31v98DWirv8ET2BAYuEw0wZXQXCuVGY5Fg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCA1EQIRhhEATgqx3-MvHASQ/bnq1ZLmfEMPigwP0xr-4Dw","alt":"ChumuMolaMola","sharedTooltipText":":_ChumuMolaMola:","src":"https://yt3.ggpht.com/9w3CtdrCzcQ5TKOjFTiQNChnEdqeQwwMZP5P5UD-B8Ailc9CaHM-HL7dQ4gpYN11B0U3y5fnzAE=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCA1EQIRhhEATgqx3-MvHASQ/bnq1ZMmcEMPigwP0xr-4Dw","alt":"ChumuLol","sharedTooltipText":":_ChumuLol:","src":"https://yt3.ggpht.com/3Ci8w31RqwS5597mtpFF36WYGOxD0_Oks0IhST0kwiFS6uOco4Mh5MDkO9cP6dA-vJRscsb1=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCA1EQIRhhEATgqx3-MvHASQ/5xuTZOPaEMy2gwPKtLrACA","alt":"ChumuWait","sharedTooltipText":":_ChumuWait:","src":"https://yt3.ggpht.com/emGKGr4fYv0aXAkbyBkcyPOXL-LbldbNk1iEW4n0zy76Ldz_sciDBk3T7b899SdjUUNoBerD4Us=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCA1EQIRhhEATgqx3-MvHASQ/5xuTZOPaEMy2gwPKtLrACA","alt":"ChumuWait","sharedTooltipText":":_ChumuWait:","src":"https://yt3.ggpht.com/emGKGr4fYv0aXAkbyBkcyPOXL-LbldbNk1iEW4n0zy76Ldz_sciDBk3T7b899SdjUUNoBerD4Us=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCA1EQIRhhEATgqx3-MvHASQ/5xuTZOPaEMy2gwPKtLrACA","alt":"ChumuWait","sharedTooltipText":":_ChumuWait:","src":"https://yt3.ggpht.com/emGKGr4fYv0aXAkbyBkcyPOXL-LbldbNk1iEW4n0zy76Ldz_sciDBk3T7b899SdjUUNoBerD4Us=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんまんぼう"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCA1EQIRhhEATgqx3-MvHASQ/5xuTZPjbEMy2gwPKtLrACA","alt":"ChumuCry","sharedTooltipText":":_ChumuCry:","src":"https://yt3.ggpht.com/dGOFoBpA11l9v75R-l338P7ijs-Q4do-bdq0COimU34U3o_amnQNq9CMUDYMpXstg-CqrN9_8pY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCA1EQIRhhEATgqx3-MvHASQ/5xuTZPjbEMy2gwPKtLrACA","alt":"ChumuCry","sharedTooltipText":":_ChumuCry:","src":"https://yt3.ggpht.com/dGOFoBpA11l9v75R-l338P7ijs-Q4do-bdq0COimU34U3o_amnQNq9CMUDYMpXstg-CqrN9_8pY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCA1EQIRhhEATgqx3-MvHASQ/5xuTZPjbEMy2gwPKtLrACA","alt":"ChumuCry","sharedTooltipText":":_ChumuCry:","src":"https://yt3.ggpht.com/dGOFoBpA11l9v75R-l338P7ijs-Q4do-bdq0COimU34U3o_amnQNq9CMUDYMpXstg-CqrN9_8pY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" }
+  ]
+}

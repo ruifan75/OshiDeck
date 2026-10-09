@@ -2193,29 +2193,34 @@
 
   /* ---------- a starting hand ---------- */
 
-  // The bundled presets, asked for once. The worker holds them: they are the
-  // extension's own file, and nothing on the page has any business with it.
-  let bundledPresets = [];
-  let askedForPresets = false;
+  // The bundled presets for one channel, asked for once per channel. The
+  // worker holds them: they are the extension's own files, and nothing on the
+  // page has any business with them.
+  //
+  // Per channel because that is how they are stored — one file each, named by
+  // an index — so asking for all of them would mean reading all of them, and
+  // a viewer needs one.
+  const presetsByChannel = new Map();   // channelId -> preset[]
+  const asked = new Set();
 
-  // `channelId` narrows it to what can actually be offered here: a preset
-  // that names a channel belongs to that channel alone, because it may carry
-  // member emoji nobody else can send.
+  // The worker answers for this channel, and `offeredOn` is asked again here
+  // because this side is the one that knows which channel it is looking at.
   function presetsOnHand(channelId) {
-    if (askedForPresets) return bundledPresets.filter((p) => presets.offeredOn(p, channelId));
-    askedForPresets = true;
+    const held = presetsByChannel.get(channelId) || [];
+    if (asked.has(channelId)) return held.filter((p) => presets.offeredOn(p, channelId));
+    asked.add(channelId);
 
     try {
-      chrome.runtime.sendMessage({ type: "presets" })
+      chrome.runtime.sendMessage({ type: "presets", channelId })
         .then((reply) => {
           if (!reply?.ok || !reply.value?.length) return;
-          bundledPresets = reply.value;
+          presetsByChannel.set(channelId, reply.value);
           scheduleRender(); // they arrived after the panel had already drawn
         })
         .catch(() => {});
     } catch (_) { /* extension reloaded: no starting hand, no harm */ }
 
-    return bundledPresets.filter((p) => presets.offeredOn(p, channelId));
+    return held.filter((p) => presets.offeredOn(p, channelId));
   }
 
   // Offered only where it means something: a channel whose deck is empty.

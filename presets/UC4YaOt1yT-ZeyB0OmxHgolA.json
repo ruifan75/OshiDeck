@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Kizuna AI - A.I.Channel",
+  "note": "過去6配信のチャットから、常連が多い順に10枚",
+  "channel": "UC4YaOt1yT-ZeyB0OmxHgolA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"きたあああああああああああ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いいね"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"まずい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" }
+  ]
+}

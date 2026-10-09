@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "久々湊るい - Kugumi Rui -",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCv7hPaqfIM06j3B1vOgSPyg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"🎧"},{"type":"text","value":"🫧"},{"type":"text","value":"🎶"},{"type":"text","value":"🎧"},{"type":"text","value":"🫧"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCv7hPaqfIM06j3B1vOgSPyg/yw9-Y-TYKILBgwPZirSABQ","alt":"wara","sharedTooltipText":":_wara:","src":"https://yt3.ggpht.com/_9_PSm6QBP8piFDY1KQDCr03VcmEgeVswYSJ0Id6f52BMbfTsrKtYKoIIyrws-xokc7yFDusYw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCv7hPaqfIM06j3B1vOgSPyg/yw9-Y-TYKILBgwPZirSABQ","alt":"wara","sharedTooltipText":":_wara:","src":"https://yt3.ggpht.com/_9_PSm6QBP8piFDY1KQDCr03VcmEgeVswYSJ0Id6f52BMbfTsrKtYKoIIyrws-xokc7yFDusYw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCv7hPaqfIM06j3B1vOgSPyg/Jx2sY6_iON6P_9EPlM-8qAI","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/ox0FFKQ4G_KDD6JWISRZKCRYF9Fxywp3KA0MLDXvZ4lN6xqSS2WROAxJq9zPJ8X-mOq4kdeluA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCv7hPaqfIM06j3B1vOgSPyg/Jx2sY6_iON6P_9EPlM-8qAI","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/ox0FFKQ4G_KDD6JWISRZKCRYF9Fxywp3KA0MLDXvZ4lN6xqSS2WROAxJq9zPJ8X-mOq4kdeluA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCv7hPaqfIM06j3B1vOgSPyg/Jx2sY6_iON6P_9EPlM-8qAI","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/ox0FFKQ4G_KDD6JWISRZKCRYF9Fxywp3KA0MLDXvZ4lN6xqSS2WROAxJq9zPJ8X-mOq4kdeluA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんにちは〜"},{"type":"youtubeEmoji","emojiId":"UCv7hPaqfIM06j3B1vOgSPyg/yw9-Y8DaKILBgwPZirSABQ","alt":"yoyo","sharedTooltipText":":_yoyo:","src":"https://yt3.ggpht.com/FU-FLZcrIYSmyu_59h2zv9_xeP4bxkbb8SH5fnBpC4HL77qfEYhUEHo51GthGGzwwG3jMUngrak=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/popcorn-yellow-striped-smile","alt":"popcorn-yellow-striped-smile","sharedTooltipText":":popcorn-yellow-striped-smile:","src":"https://yt3.ggpht.com/TW_GktV5uVYviPDtkCRCKRDrGlUc3sJ5OHO81uqdMaaHrIQ5-sXXwJfDI3FKPyv4xtGpOlg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/popcorn-yellow-striped-smile","alt":"popcorn-yellow-striped-smile","sharedTooltipText":":popcorn-yellow-striped-smile:","src":"https://yt3.ggpht.com/TW_GktV5uVYviPDtkCRCKRDrGlUc3sJ5OHO81uqdMaaHrIQ5-sXXwJfDI3FKPyv4xtGpOlg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/popcorn-yellow-striped-smile","alt":"popcorn-yellow-striped-smile","sharedTooltipText":":popcorn-yellow-striped-smile:","src":"https://yt3.ggpht.com/TW_GktV5uVYviPDtkCRCKRDrGlUc3sJ5OHO81uqdMaaHrIQ5-sXXwJfDI3FKPyv4xtGpOlg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/popcorn-yellow-striped-smile","alt":"popcorn-yellow-striped-smile","sharedTooltipText":":popcorn-yellow-striped-smile:","src":"https://yt3.ggpht.com/TW_GktV5uVYviPDtkCRCKRDrGlUc3sJ5OHO81uqdMaaHrIQ5-sXXwJfDI3FKPyv4xtGpOlg=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

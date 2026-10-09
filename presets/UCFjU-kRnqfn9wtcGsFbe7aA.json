@@ -1,0 +1,11 @@
+{
+  "format": 2,
+  "name": "ユプシロン | Yupsilon",
+  "note": "過去3配信のチャットから、常連が多い順に3枚",
+  "channel": "UCFjU-kRnqfn9wtcGsFbe7aA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"🌙"},{"type":"text","value":"🎶"},{"type":"text","value":"🌙"},{"type":"text","value":"🎶"},{"type":"text","value":"🌙"},{"type":"text","value":"🎶"},{"type":"text","value":"🌙"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" }
+  ]
+}

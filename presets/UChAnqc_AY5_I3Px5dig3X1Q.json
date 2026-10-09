@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Korone Ch. 戌神ころね",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UChAnqc_AY5_I3Px5dig3X1Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChAnqc_AY5_I3Px5dig3X1Q/nPKDYNrrKKzr8gSR8ry4Dg","alt":"koroneTerepkpk","sharedTooltipText":":_koroneTerepkpk:","src":"https://yt3.ggpht.com/PONwitIcvYk-93Bno411RDX1loDGnxwaVJ03ZmBFvbFkz0febsq87hvjeJ8hzXopBIQv0bcKmQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChAnqc_AY5_I3Px5dig3X1Q/nPKDYNrrKKzr8gSR8ry4Dg","alt":"koroneTerepkpk","sharedTooltipText":":_koroneTerepkpk:","src":"https://yt3.ggpht.com/PONwitIcvYk-93Bno411RDX1loDGnxwaVJ03ZmBFvbFkz0febsq87hvjeJ8hzXopBIQv0bcKmQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChAnqc_AY5_I3Px5dig3X1Q/nPKDYNrrKKzr8gSR8ry4Dg","alt":"koroneTerepkpk","sharedTooltipText":":_koroneTerepkpk:","src":"https://yt3.ggpht.com/PONwitIcvYk-93Bno411RDX1loDGnxwaVJ03ZmBFvbFkz0febsq87hvjeJ8hzXopBIQv0bcKmQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"HBD!"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChAnqc_AY5_I3Px5dig3X1Q/sprJXKiUCs_JgwOj2rPQDw","alt":"koroneIiyubi","sharedTooltipText":":_koroneIiyubi:","src":"https://yt3.ggpht.com/BhtUEflMhjeHSEE8AALgZPl_OQAUPIRmGuyXaIsQXRpsT3yVEH0jcNGyJGCTjr7XEGRhtsiKtz0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChAnqc_AY5_I3Px5dig3X1Q/sprJXKiUCs_JgwOj2rPQDw","alt":"koroneIiyubi","sharedTooltipText":":_koroneIiyubi:","src":"https://yt3.ggpht.com/BhtUEflMhjeHSEE8AALgZPl_OQAUPIRmGuyXaIsQXRpsT3yVEH0jcNGyJGCTjr7XEGRhtsiKtz0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChAnqc_AY5_I3Px5dig3X1Q/sprJXKiUCs_JgwOj2rPQDw","alt":"koroneIiyubi","sharedTooltipText":":_koroneIiyubi:","src":"https://yt3.ggpht.com/BhtUEflMhjeHSEE8AALgZPl_OQAUPIRmGuyXaIsQXRpsT3yVEH0jcNGyJGCTjr7XEGRhtsiKtz0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"うんうん"}], "scope": "global" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "黎乃鈴 -Kurono Suzu-",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCvq_7I63tALUzJJvFOrjHPg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おはよー"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCvq_7I63tALUzJJvFOrjHPg/6A1qaYDbOc7c7OsP9Yf-uA0","alt":"wwwスタンプ","sharedTooltipText":":_wwwスタンプ:","src":"https://yt3.ggpht.com/VcdZVyJbB0YgVHDk3JkDY2jAH4wzv_k8edsUAI0QlwEUFr6cr79TjS626TXgU41iypBE-ao=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCvq_7I63tALUzJJvFOrjHPg/6A1qaYDbOc7c7OsP9Yf-uA0","alt":"wwwスタンプ","sharedTooltipText":":_wwwスタンプ:","src":"https://yt3.ggpht.com/VcdZVyJbB0YgVHDk3JkDY2jAH4wzv_k8edsUAI0QlwEUFr6cr79TjS626TXgU41iypBE-ao=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCvq_7I63tALUzJJvFOrjHPg/6A1qaYDbOc7c7OsP9Yf-uA0","alt":"wwwスタンプ","sharedTooltipText":":_wwwスタンプ:","src":"https://yt3.ggpht.com/VcdZVyJbB0YgVHDk3JkDY2jAH4wzv_k8edsUAI0QlwEUFr6cr79TjS626TXgU41iypBE-ao=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCvq_7I63tALUzJJvFOrjHPg/6A1qaffUOc7c7OsP9Yf-uA0","alt":"ハートスタンプ","sharedTooltipText":":_ハートスタンプ:","src":"https://yt3.ggpht.com/aWc_I9VH7QW03POGrSfGU0X6iuBcGF3DSV3B7O5fIIPgGHCJG5s2qLb8MK6qg_Q_q5Z0N7cv=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCvq_7I63tALUzJJvFOrjHPg/WLanaf3oKdmEs8IPh7eTkAQ","alt":"びっくりスタンプ","sharedTooltipText":":_びっくりスタンプ:","src":"https://yt3.ggpht.com/y4mcConoOE8O-pcmIcl7rmF54E2ibU7LBiYLWck3WP5cZIdlSGVhaYEWuiu9xijul5ggk9gg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCvq_7I63tALUzJJvFOrjHPg/bSmoaaKiELyB5t0Pxa7uwAY","alt":"乙スタンプ","sharedTooltipText":":_乙スタンプ:","src":"https://yt3.ggpht.com/dYCRqAfYBLO_xvsvBvetUm1B472pZdSEGF2IfM2thaw-vbP9OJws3lul4tUmllQhPtZRAU0aJw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCvq_7I63tALUzJJvFOrjHPg/bSmoaaKiELyB5t0Pxa7uwAY","alt":"乙スタンプ","sharedTooltipText":":_乙スタンプ:","src":"https://yt3.ggpht.com/dYCRqAfYBLO_xvsvBvetUm1B472pZdSEGF2IfM2thaw-vbP9OJws3lul4tUmllQhPtZRAU0aJw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCvq_7I63tALUzJJvFOrjHPg/bSmoaaKiELyB5t0Pxa7uwAY","alt":"乙スタンプ","sharedTooltipText":":_乙スタンプ:","src":"https://yt3.ggpht.com/dYCRqAfYBLO_xvsvBvetUm1B472pZdSEGF2IfM2thaw-vbP9OJws3lul4tUmllQhPtZRAU0aJw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはよう"}], "scope": "channel" }
+  ]
+}

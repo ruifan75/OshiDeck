@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "あおぎり高校 - Aogiri Vtuber High School",
+  "note": "過去8配信のチャットから、常連が多い順に10枚",
+  "channel": "UCPLeqi7rIqS9uY4_TrSUOMg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あっ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ほうほう"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ばいばーい"}], "scope": "global" }
+  ]
+}

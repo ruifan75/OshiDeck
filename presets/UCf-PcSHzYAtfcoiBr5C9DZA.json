@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "長瀬有花 / Yuka Nagase",
+  "note": "過去9配信のチャットから、常連が多い順に10枚",
+  "channel": "UCf-PcSHzYAtfcoiBr5C9DZA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"VHS!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCf-PcSHzYAtfcoiBr5C9DZA/TxX6Y822K8-L_9EPyqW-8AY","alt":"yukaハトくん","sharedTooltipText":":_yukaハトくん:","src":"https://yt3.ggpht.com/-VyTZgqUsUUMYFk6gNLB7FVqehcv_pgGUAQUkH7LNGOYTA7duoljrr25zAJQzBcWuew25s3e=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCf-PcSHzYAtfcoiBr5C9DZA/I_P5Y9LyOcKS_9EP4Km_gAw","alt":"yukaYukab","sharedTooltipText":":_yukaYukab:","src":"https://yt3.ggpht.com/s-mJJkX--P7Zcy8oLtO9LnU_r3xRBsmm5t16JlB979T9NV8DZki4nkJnTdHf2XeVzVoA52cA3w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888888"}], "scope": "global" }
+  ]
+}

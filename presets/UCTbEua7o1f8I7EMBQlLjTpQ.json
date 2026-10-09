@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "幽音しの Shino Channel - ななしいんく",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCTbEua7o1f8I7EMBQlLjTpQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👻"},{"type":"text","value":"🫧"},{"type":"text","value":"🎶"},{"type":"text","value":"👻"},{"type":"text","value":"🫧"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTbEua7o1f8I7EMBQlLjTpQ/z680aOPcN6K1_9EPmM-XmAc","alt":"obake","sharedTooltipText":":_obake:","src":"https://yt3.ggpht.com/3krwAlWvY3Bgty93ssLU6DTCS45eu3H_9A2nVU3COi5FyxdsxoCAWmx4qgZguQFXesOfFDLALg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCTbEua7o1f8I7EMBQlLjTpQ/z680aOPcN6K1_9EPmM-XmAc","alt":"obake","sharedTooltipText":":_obake:","src":"https://yt3.ggpht.com/3krwAlWvY3Bgty93ssLU6DTCS45eu3H_9A2nVU3COi5FyxdsxoCAWmx4qgZguQFXesOfFDLALg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCTbEua7o1f8I7EMBQlLjTpQ/z680aOPcN6K1_9EPmM-XmAc","alt":"obake","sharedTooltipText":":_obake:","src":"https://yt3.ggpht.com/3krwAlWvY3Bgty93ssLU6DTCS45eu3H_9A2nVU3COi5FyxdsxoCAWmx4qgZguQFXesOfFDLALg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTbEua7o1f8I7EMBQlLjTpQ/7rs1aLHIOYqI_9EP_5SroQY","alt":"それわろた","sharedTooltipText":":_それわろた:","src":"https://yt3.ggpht.com/DDCYPkUB8br7McUNoWqW4jklmFhvF8pKR0bfVn3LdckpoGVZUfEAsn00pRfdrW5MkR5zXgE1=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCTbEua7o1f8I7EMBQlLjTpQ/7rs1aLHIOYqI_9EP_5SroQY","alt":"それわろた","sharedTooltipText":":_それわろた:","src":"https://yt3.ggpht.com/DDCYPkUB8br7McUNoWqW4jklmFhvF8pKR0bfVn3LdckpoGVZUfEAsn00pRfdrW5MkR5zXgE1=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCTbEua7o1f8I7EMBQlLjTpQ/7rs1aLHIOYqI_9EP_5SroQY","alt":"それわろた","sharedTooltipText":":_それわろた:","src":"https://yt3.ggpht.com/DDCYPkUB8br7McUNoWqW4jklmFhvF8pKR0bfVn3LdckpoGVZUfEAsn00pRfdrW5MkR5zXgE1=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ノ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんおばけ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんおばけ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "global" }
+  ]
+}

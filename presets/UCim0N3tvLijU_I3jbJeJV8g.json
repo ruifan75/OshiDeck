@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "るるどらいおん",
+  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "channel": "UCim0N3tvLijU_I3jbJeJV8g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCim0N3tvLijU_I3jbJeJV8g/pTGkYq2-GIHO8wSis7sg","alt":"ruruHaato","sharedTooltipText":":_ruruHaato:","src":"https://yt3.ggpht.com/7PGh92h1Ku4-wuqOQ8ytSw1w4fL76iEXd71BHd0DjxXAz12xyHgg94oyDiXiTm8nVjiMLM44=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCim0N3tvLijU_I3jbJeJV8g/pTGkYq2-GIHO8wSis7sg","alt":"ruruHaato","sharedTooltipText":":_ruruHaato:","src":"https://yt3.ggpht.com/7PGh92h1Ku4-wuqOQ8ytSw1w4fL76iEXd71BHd0DjxXAz12xyHgg94oyDiXiTm8nVjiMLM44=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCim0N3tvLijU_I3jbJeJV8g/pTGkYq2-GIHO8wSis7sg","alt":"ruruHaato","sharedTooltipText":":_ruruHaato:","src":"https://yt3.ggpht.com/7PGh92h1Ku4-wuqOQ8ytSw1w4fL76iEXd71BHd0DjxXAz12xyHgg94oyDiXiTm8nVjiMLM44=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

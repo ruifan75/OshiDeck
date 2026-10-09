@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Sakuna Ch. 結城さくな",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCrV1Hf5r8P148idjoSfrGEQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCrV1Hf5r8P148idjoSfrGEQ/DOr4aP6zC-WYs8IP0MzL2A8","alt":"ｗｗｗ","sharedTooltipText":":_ｗｗｗ:","src":"https://yt3.ggpht.com/scGvgo0e3rigHl-yzgGV4BmTBA1scR7RAoWSHXaKLjII8ulQJ0DcvRiviyJVRKpjrejCB-Ij0mQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCrV1Hf5r8P148idjoSfrGEQ/DOr4aP6zC-WYs8IP0MzL2A8","alt":"ｗｗｗ","sharedTooltipText":":_ｗｗｗ:","src":"https://yt3.ggpht.com/scGvgo0e3rigHl-yzgGV4BmTBA1scR7RAoWSHXaKLjII8ulQJ0DcvRiviyJVRKpjrejCB-Ij0mQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCrV1Hf5r8P148idjoSfrGEQ/DOr4aP6zC-WYs8IP0MzL2A8","alt":"ｗｗｗ","sharedTooltipText":":_ｗｗｗ:","src":"https://yt3.ggpht.com/scGvgo0e3rigHl-yzgGV4BmTBA1scR7RAoWSHXaKLjII8ulQJ0DcvRiviyJVRKpjrejCB-Ij0mQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCrV1Hf5r8P148idjoSfrGEQ/DOr4aImuC-WYs8IP0MzL2A8","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/vlafzMaUbFp0pOdFXYmQtOVAZ00RM9XASRlfqlDvk_U_VWxG0G91qCD1OGbbFN8odRgqbmFcGg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCrV1Hf5r8P148idjoSfrGEQ/DOr4aNemC-WYs8IP0MzL2A8","alt":"きらきら","sharedTooltipText":":_きらきら:","src":"https://yt3.ggpht.com/krjS3YsDHMCUCaPSkeCRvpC5z3i79XwWCw9ar-6s6RpoQ6Vn1Dp0I8JTpP1SFezVzkRwSLBrMw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCrV1Hf5r8P148idjoSfrGEQ/DOr4aPy2C-WYs8IP0MzL2A8","alt":"サイリウム2","sharedTooltipText":":_サイリウム2:","src":"https://yt3.ggpht.com/k-fc1mLm0ilRe1BoeI79jTkd97QApTruGBHORffyn3WM5qujGQ6-ZxAkfsoEnZxdqXtJJbY4-Bw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCrV1Hf5r8P148idjoSfrGEQ/DOr4aMuxC-WYs8IP0MzL2A8","alt":"むーちゃん","sharedTooltipText":":_むーちゃん:","src":"https://yt3.ggpht.com/bkzM6ezTIqAKUkYvI95mipXuuaCdgklwByfng9oGbffhuoYRE_vRWdEzohFULaEBFPl9_kQn9dM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCrV1Hf5r8P148idjoSfrGEQ/DOr4aMuxC-WYs8IP0MzL2A8","alt":"むーちゃん","sharedTooltipText":":_むーちゃん:","src":"https://yt3.ggpht.com/bkzM6ezTIqAKUkYvI95mipXuuaCdgklwByfng9oGbffhuoYRE_vRWdEzohFULaEBFPl9_kQn9dM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCrV1Hf5r8P148idjoSfrGEQ/DOr4aMuxC-WYs8IP0MzL2A8","alt":"むーちゃん","sharedTooltipText":":_むーちゃん:","src":"https://yt3.ggpht.com/bkzM6ezTIqAKUkYvI95mipXuuaCdgklwByfng9oGbffhuoYRE_vRWdEzohFULaEBFPl9_kQn9dM=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんさくな〜"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "カグラナナchannel／ななかぐら",
+  "note": "過去13配信のチャットから、常連が多い順に10枚",
+  "channel": "UCbfv8uuUXt3RSJGEwxny5Rw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCbfv8uuUXt3RSJGEwxny5Rw/mFv9X7awF86S_AP396qYAQ","alt":"草スタンプ","sharedTooltipText":":_草スタンプ:","src":"https://yt3.ggpht.com/T-YilwIJiimd8Uj9O7fNMTcVPM-pjpeOZLDQBJC-iqPW8YiEBpcfhelRhn9PUFfe5an7KZTO=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCbfv8uuUXt3RSJGEwxny5Rw/mFv9X-KwF86S_AP396qYAQ","alt":"こんスタンプ","sharedTooltipText":":_こんスタンプ:","src":"https://yt3.ggpht.com/UsmT9JC-tjIxDUf0vZCzTcdiPUPs3z8yV6GmhjBSAzccdOwOEZkyrW1E9DhTGFMNU2DVq2e6Hv0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCbfv8uuUXt3RSJGEwxny5Rw/mFv9X8CxF86S_AP396qYAQ","alt":"カグラ","sharedTooltipText":":_カグラ:","src":"https://yt3.ggpht.com/hqSdMtNINOkNSGCEzzAzgkN-hxSqiihnFgx9Nskh4OJi9OG7kw_W_ciYhCyiaVr1V45Azc5HJw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" }
+  ]
+}

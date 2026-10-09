@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "レイラ・サマ-Layla Sama-",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCSw8TAyNIuPZc6gZqRKnO6A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👑"},{"type":"text","value":"🔶"},{"type":"text","value":"🎶"},{"type":"text","value":"👑"},{"type":"text","value":"🔶"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCSw8TAyNIuPZc6gZqRKnO6A/FoKxaKnICtqG_9EPqv3T4AU","alt":"クロ君待機","sharedTooltipText":":_クロ君待機:","src":"https://yt3.ggpht.com/w_roIqt6hSaY1ZNnC789C2e3sESO1TdkOp68Mhi6W3O6Mr6G_WNwCi_VSeXMBxtDHS0CwsnHuw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSw8TAyNIuPZc6gZqRKnO6A/FoKxaKnICtqG_9EPqv3T4AU","alt":"クロ君待機","sharedTooltipText":":_クロ君待機:","src":"https://yt3.ggpht.com/w_roIqt6hSaY1ZNnC789C2e3sESO1TdkOp68Mhi6W3O6Mr6G_WNwCi_VSeXMBxtDHS0CwsnHuw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSw8TAyNIuPZc6gZqRKnO6A/FoKxaKnICtqG_9EPqv3T4AU","alt":"クロ君待機","sharedTooltipText":":_クロ君待機:","src":"https://yt3.ggpht.com/w_roIqt6hSaY1ZNnC789C2e3sESO1TdkOp68Mhi6W3O6Mr6G_WNwCi_VSeXMBxtDHS0CwsnHuw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おつかれサマでした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCSw8TAyNIuPZc6gZqRKnO6A/FoKxaI7FCtqG_9EPqv3T4AU","alt":"ペンライト金","sharedTooltipText":":_ペンライト金:","src":"https://yt3.ggpht.com/0HHInvCU8hjgO8P3nKDVtMB-D1o5V3p63TqY4JhjNAE96molQrTQXpIGXQT1II2momX_uMGR=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSw8TAyNIuPZc6gZqRKnO6A/FoKxaJfGCtqG_9EPqv3T4AU","alt":"ペンライト黒","sharedTooltipText":":_ペンライト黒:","src":"https://yt3.ggpht.com/CVvGll125VGtxj_N9e4zUPCUkUUfodHnE-lLT0xmiSpQc7ioeX-2bSHgy3p_CHapmK5lP5Jj=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSw8TAyNIuPZc6gZqRKnO6A/FoKxaI7FCtqG_9EPqv3T4AU","alt":"ペンライト金","sharedTooltipText":":_ペンライト金:","src":"https://yt3.ggpht.com/0HHInvCU8hjgO8P3nKDVtMB-D1o5V3p63TqY4JhjNAE96molQrTQXpIGXQT1II2momX_uMGR=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSw8TAyNIuPZc6gZqRKnO6A/FoKxaJfGCtqG_9EPqv3T4AU","alt":"ペンライト黒","sharedTooltipText":":_ペンライト黒:","src":"https://yt3.ggpht.com/CVvGll125VGtxj_N9e4zUPCUkUUfodHnE-lLT0xmiSpQc7ioeX-2bSHgy3p_CHapmK5lP5Jj=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

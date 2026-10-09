@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "メーメントヴァニタス / MEMENTOVANITAS",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCE4W22kKQQVdrA2KTiyZ_cA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👁‍🗨"},{"type":"text","value":"🗝"},{"type":"text","value":"🎶"},{"type":"text","value":"👁‍🗨"},{"type":"text","value":"🗝"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCE4W22kKQQVdrA2KTiyZ_cA/HV9aaYvoIbyB5t0Px7HwkQg","alt":"tinHonkowa","sharedTooltipText":":_tinHonkowa:","src":"https://yt3.ggpht.com/L8k4UGsXTwiAUv1ptav1o6o6NPthUyGSIi15WMnNFblWjEIy4fc5uzNnsm61e6lyBClA5KIt=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCE4W22kKQQVdrA2KTiyZ_cA/HV9aaYvoIbyB5t0Px7HwkQg","alt":"tinHonkowa","sharedTooltipText":":_tinHonkowa:","src":"https://yt3.ggpht.com/L8k4UGsXTwiAUv1ptav1o6o6NPthUyGSIi15WMnNFblWjEIy4fc5uzNnsm61e6lyBClA5KIt=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCE4W22kKQQVdrA2KTiyZ_cA/HV9aaYvoIbyB5t0Px7HwkQg","alt":"tinHonkowa","sharedTooltipText":":_tinHonkowa:","src":"https://yt3.ggpht.com/L8k4UGsXTwiAUv1ptav1o6o6NPthUyGSIi15WMnNFblWjEIy4fc5uzNnsm61e6lyBClA5KIt=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCE4W22kKQQVdrA2KTiyZ_cA/MgSCacqiNMLc7OsPiaqnwQE","alt":"tinTin","sharedTooltipText":":_tinTin:","src":"https://yt3.ggpht.com/02KJgVFUHaHXAvC4cTMzkNMby1smfUvLutg1U8lIyXjSQUL4Srs1lCPnW9X5hvqUzd6U9v7wBw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCE4W22kKQQVdrA2KTiyZ_cA/MgSCacqiNMLc7OsPiaqnwQE","alt":"tinTin","sharedTooltipText":":_tinTin:","src":"https://yt3.ggpht.com/02KJgVFUHaHXAvC4cTMzkNMby1smfUvLutg1U8lIyXjSQUL4Srs1lCPnW9X5hvqUzd6U9v7wBw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCE4W22kKQQVdrA2KTiyZ_cA/MgSCacqiNMLc7OsPiaqnwQE","alt":"tinTin","sharedTooltipText":":_tinTin:","src":"https://yt3.ggpht.com/02KJgVFUHaHXAvC4cTMzkNMby1smfUvLutg1U8lIyXjSQUL4Srs1lCPnW9X5hvqUzd6U9v7wBw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"said hi"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" }
+  ]
+}

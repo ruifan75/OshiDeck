@@ -333,6 +333,44 @@ got = await importing(made, OTHER);
 check("a file for another channel is refused, not half-loaded", disk.cards.length === 0);
 check("and says which kind of no it is", got.said.join("").includes("opt.importNotForHere"));
 
+/* ---------- one file per channel, and an index naming them ---------- */
+
+// A single file holding every preset is fetched and parsed whole on every
+// cold start of the worker, and it grows with the number of channels anyone
+// has mined while what a viewer needs stays at one. What the index promises
+// has to be true of the files, or a channel is offered something that is not
+// there.
+{
+  const { readFileSync, readdirSync } = await import("node:fs");
+  const dir = new URL("../../presets/", import.meta.url).pathname;
+  const index = JSON.parse(readFileSync(`${dir}index.json`, "utf8"));
+
+  check("the index says which format it is", index.format === 2);
+  check("and lists something", Array.isArray(index.presets) && index.presets.length > 0);
+
+  const named = new Set(index.presets.map((e) => e.file));
+  const onDisk = new Set(readdirSync(dir).filter((f) => f !== "index.json"));
+
+  check("everything it names is there",
+    index.presets.every((e) => onDisk.has(e.file)));
+  check("and everything there is named",
+    [...onDisk].every((f) => named.has(f)));
+  check("a file is a name, not a path",
+    index.presets.every((e) => /^[A-Za-z0-9_-]+\.json$/.test(e.file)));
+
+  let wrong = 0;
+  for (const entry of index.presets) {
+    const preset = JSON.parse(readFileSync(`${dir}${entry.file}`, "utf8"));
+    if (presets.validate(preset)) wrong += 1;
+    if (preset.channel !== entry.channel) wrong += 1;
+  }
+  check("every bundled preset passes the reader that will load it", wrong === 0);
+
+  // Two entries for one channel would both be offered to the same deck.
+  const channels = index.presets.map((e) => e.channel);
+  check("and no channel is named twice", new Set(channels).size === channels.length);
+}
+
 /* ---------- and what the builder says a card is ---------- */
 
 // The stripe means scope, and the two pages were answering that differently.

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "羽澄さひろ / Hasumi Sahiro",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCaHgUmTyQhth2s07ChoKJuw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaHgUmTyQhth2s07ChoKJuw/Wa1qZ5fTKaC8_9EP19PD4Qs","alt":"uooo","sharedTooltipText":":_uooo:","src":"https://yt3.ggpht.com/Lqm6IqZwoOdLkrl027f9VIuJvHz-oK-W7V9kYg0L7wTwgTkqjEDKXfdcc7twD-GR5CVZUreHyA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🕊"},{"type":"text","value":"🌸"},{"type":"text","value":"🕊"},{"type":"text","value":"🌸"},{"type":"text","value":"🕊"},{"type":"text","value":"🌸"},{"type":"text","value":"🕊"},{"type":"text","value":"🌸"},{"type":"text","value":" "}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaHgUmTyQhth2s07ChoKJuw/Wa1qZ8PNKaC8_9EP19PD4Qs","alt":"bawl","sharedTooltipText":":_bawl:","src":"https://yt3.ggpht.com/ABWylRSTVWUiWLvt2Q-O0TFZu0LxYSQHCAqfovH1zJYwz0SO5OozDIGxS1UHuXIJhmkPc3cJ0g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaHgUmTyQhth2s07ChoKJuw/Wa1qZ8LWKaC8_9EP19PD4Qs","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/jfNaN4yjQQ0_V6tq5hI_fP76f6p9Y5mXO6T4pK-C3-LgmRXsqQ1coT9-PFGV1I6nEGz-HMBm=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaHgUmTyQhth2s07ChoKJuw/Wa1qZ7fkKaC8_9EP19PD4Qs","alt":"kirakira","sharedTooltipText":":_kirakira:","src":"https://yt3.ggpht.com/e-LgX8qz9D9r92MujIt30XOLyaNfmErF03CcGM5202Ba7EBvqbqyJLzddCehe3kn5X7CcYFgC5g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaHgUmTyQhth2s07ChoKJuw/Wa1qZ6bdKaC8_9EP19PD4Qs","alt":"gkbr","sharedTooltipText":":_gkbr:","src":"https://yt3.ggpht.com/15QsRlOCAwyEovN4_8EW84WsHVP3RRyBw4ov2SHdhi-5XAIpZ4RUxFx-oV5LI0BvX2DywgHWbw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaHgUmTyQhth2s07ChoKJuw/Xko3Z-3YIKCn_9EP3qmVWQ","alt":"smile","sharedTooltipText":":_smile:","src":"https://yt3.ggpht.com/5Ij2OaZGIBLtvgTaF_3ioZCITl3qLBUHbPV6WVfBCkdPqVQeGkMPJ5MYSp0_IGVpLVIFkcmwBw=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

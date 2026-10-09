@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Subaru Ch. 大空スバル",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCvzGlP9oQwU--Y0r9id_jnA",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCvzGlP9oQwU--Y0r9id_jnA/5ERlXO73GJfxjQSzrJI4","alt":"スバル草草の草","sharedTooltipText":":_スバル草草の草:","src":"https://yt3.ggpht.com/o3nKQ5kofVf4SlVo6dWwkcAuASyoh3PLGpajwbDyr0JmiRxF8OhTF2DFKKP_iELaXmXy-JulDg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCvzGlP9oQwU--Y0r9id_jnA/5ERlXO73GJfxjQSzrJI4","alt":"スバル草草の草","sharedTooltipText":":_スバル草草の草:","src":"https://yt3.ggpht.com/o3nKQ5kofVf4SlVo6dWwkcAuASyoh3PLGpajwbDyr0JmiRxF8OhTF2DFKKP_iELaXmXy-JulDg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCvzGlP9oQwU--Y0r9id_jnA/5ERlXO73GJfxjQSzrJI4","alt":"スバル草草の草","sharedTooltipText":":_スバル草草の草:","src":"https://yt3.ggpht.com/o3nKQ5kofVf4SlVo6dWwkcAuASyoh3PLGpajwbDyr0JmiRxF8OhTF2DFKKP_iELaXmXy-JulDg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCvzGlP9oQwU--Y0r9id_jnA/je0QXs3bNIbe-QO8-bDgDQ","alt":"スバルあじまる","sharedTooltipText":":_スバルあじまる:","src":"https://yt3.ggpht.com/6kLIcAuNm2a1jraNJgL1T73NlKRoqIErKiLAKYTdWxE53Hp28po3QkPAe8yNK48LjdCZ8ytl=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCvzGlP9oQwU--Y0r9id_jnA/je0QXs3bNIbe-QO8-bDgDQ","alt":"スバルあじまる","sharedTooltipText":":_スバルあじまる:","src":"https://yt3.ggpht.com/6kLIcAuNm2a1jraNJgL1T73NlKRoqIErKiLAKYTdWxE53Hp28po3QkPAe8yNK48LjdCZ8ytl=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCvzGlP9oQwU--Y0r9id_jnA/je0QXs3bNIbe-QO8-bDgDQ","alt":"スバルあじまる","sharedTooltipText":":_スバルあじまる:","src":"https://yt3.ggpht.com/6kLIcAuNm2a1jraNJgL1T73NlKRoqIErKiLAKYTdWxE53Hp28po3QkPAe8yNK48LjdCZ8ytl=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"うんうん"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCvzGlP9oQwU--Y0r9id_jnA/8Im8YdS_Mojj8gTu3a3IBA","alt":"スバルうれしいあひる","sharedTooltipText":":_スバルうれしいあひる:","src":"https://yt3.ggpht.com/EhEeBfpX6aGsF_CNgiEuHzHTYtekfmSVpFjvx4lTSeyC5cDPiex4gwzt3_Y5OD7CgjAvQU9rr-U=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCvzGlP9oQwU--Y0r9id_jnA/8Im8YdS_Mojj8gTu3a3IBA","alt":"スバルうれしいあひる","sharedTooltipText":":_スバルうれしいあひる:","src":"https://yt3.ggpht.com/EhEeBfpX6aGsF_CNgiEuHzHTYtekfmSVpFjvx4lTSeyC5cDPiex4gwzt3_Y5OD7CgjAvQU9rr-U=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCvzGlP9oQwU--Y0r9id_jnA/8Im8YdS_Mojj8gTu3a3IBA","alt":"スバルうれしいあひる","sharedTooltipText":":_スバルうれしいあひる:","src":"https://yt3.ggpht.com/EhEeBfpX6aGsF_CNgiEuHzHTYtekfmSVpFjvx4lTSeyC5cDPiex4gwzt3_Y5OD7CgjAvQU9rr-U=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なにィ！？"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "白妙とき - Shirotae Toki -",
+  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "channel": "UCdrUdY5LsTHT1oS3szu1glw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんときー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"✌"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつときー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdrUdY5LsTHT1oS3szu1glw/w8UAadGLBdOp7OsP89OXmA8","alt":"ハート","sharedTooltipText":":_ハート:","src":"https://yt3.ggpht.com/QfHRwhdQCevUq_TuuhyENsFTXtcpXzMrmcRJzHYXvT18Et2-lAtPtdZubiDrjpFugHgywV1Wibg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ナイス"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" }
+  ]
+}

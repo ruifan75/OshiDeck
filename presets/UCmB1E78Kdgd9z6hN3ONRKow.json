@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "花ノ木まる ✿ Hananoki Maru",
+  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "channel": "UCmB1E78Kdgd9z6hN3ONRKow",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんまるー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おつまるー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんまる～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"たゐき"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" }
+  ]
+}

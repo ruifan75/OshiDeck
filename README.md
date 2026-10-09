@@ -518,7 +518,8 @@ node tools/add-preset.mjs ~/Downloads/oshideck-preset-さくら.json
 node tools/add-preset.mjs ~/Downloads/oshideck-preset-さくら.json --channel UC…
 ```
 
-とすれば `presets/presets.json` に入ります。あとは commit するだけ。**同じチャンネルの組があれば
+とすれば `presets/<チャンネルID>.json` として入り、`presets/index.json` に名前が載ります。
+あとは commit するだけ。**同じチャンネルの組があれば
 差し替えます** ── 名前ではありません。ひとつの空デッキに2組が出るのが困るのであって、
 表示名が同じチャンネルが2つあっても一緒には出ないからです。
 取り込む前に拡張機能自身の検証を通すので、**読み込み時に弾かれるものはリポジトリに入りません**。
@@ -528,7 +529,7 @@ node tools/add-preset.mjs ~/Downloads/oshideck-preset-さくら.json --channel U
 メン限スタンプが入っていれば書き出しが勝手に名乗りますが、文字だけのデッキには名乗るものが
 無いので、そのときは `--channel` で言います。
 
-同梱の `presets/presets.json` には **262組** が入っています ── 登録している273チャンネルぶんの
+同梱の `presets/` には **262組** が入っています ── 登録している273チャンネルぶんの
 チャットを掘って、常連の多い順に10枚ずつ。`tools/mine-org.sh --subscriptions` と
 `tools/scope.mjs --all` の出力そのままです。
 
@@ -544,6 +545,20 @@ node tools/add-preset.mjs ~/Downloads/oshideck-preset-さくら.json --channel U
 
 同梱のファイルはサービスワーカーが読みます。拡張機能自身のファイルであって、YouTubeのページに
 見せる理由が無いからです（`web_accessible_resources` に出すと見えてしまいます）。
+
+### 1チャンネル1ファイル
+
+同梱のプリセットは `presets/<チャンネルID>.json` に1組ずつ置いて、`presets/index.json` が
+どれがどのチャンネルのものかを言います。ワーカーは起動のたびに index（いまのところ27KB）だけを
+読み、そのあと**目の前のチャンネルの1組（4.4KB）だけ**を取りに行きます。
+
+ひとつの大きなファイルだったころは、冷起動のたびに全部を `fetch` して `JSON.parse` していました。
+その大きさは**誰かが掘ったチャンネルの数**で増えるのに、ひとりの視聴者が要るのは1組です ──
+262組で1.1MB、Holodex の活動中チャンネルは2893あるので、同じやり方なら11.8MBを毎回読むことに
+なります。分けたいまなら、そこまで掘っても冷起動で読むのは index の282KBだけです。
+
+プリセットサーバー（[Roadmap](#roadmap)）はまだ要りません。要るとすれば、index そのものが
+大きくなりすぎたときです。
 
 ## Export and import
 
@@ -1115,7 +1130,7 @@ src/trending.js    チャット監視と署名の正規化
 src/backup.js      書き出し・読み込み・検証・マージ
 src/journal.js     診断ログ（判定の経路と、判定できなかったときの手掛かり）
 src/presets.js     はじめの一組（書き出し・検証・読み込み）
-presets/           同梱のプリセット。`tools/add-preset.mjs` で足す
+presets/           同梱のプリセット。1チャンネル1ファイルと `index.json`。`tools/add-preset.mjs` で足す
 options.html/js/css  設定ページ（デッキ一覧＋表示設定）
 design/            UI検討用のデザインキャンバス
 tools/hooks/          commit-msg と pre-commit。`git config core.hooksPath tools/hooks` で一度だけ有効化
@@ -1134,7 +1149,7 @@ tools/mine-chat.mjs   過去のチャットから札の候補を出す（`tools/
 tools/scope.mjs       よそでも言うか、ここだけかで scope を決める
 tools/emoji-src.mjs   掘ったあとの候補に、スタンプの画像だけ取りに戻る
 tools/saturation.mjs  何配信ぶん掘れば十分かを測る
-tools/add-preset.mjs  書き出したプリセットを presets/presets.json に入れる
+tools/add-preset.mjs  書き出したプリセットを presets/ に入れ、index.json に載せる
 tools/selftest.js     YouTubeのDOMセレクタの自己診断
 tools/tests/          上のテスト本体（`page.mjs` はチャット画面の模型）
 ```

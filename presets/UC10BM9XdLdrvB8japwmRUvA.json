@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Kanaria",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UC10BM9XdLdrvB8japwmRUvA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"KING"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おめでとうございます！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"きた"}], "scope": "global" }
+  ]
+}

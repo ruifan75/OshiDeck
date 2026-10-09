@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ルルネア=ネルル / Lulunea Neruru",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCaiEgZoOU7y4oAxnQbsR6DA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"たかほー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaiEgZoOU7y4oAxnQbsR6DA/evI7arODCueq7OsPr8ThoQU","alt":"nice","sharedTooltipText":":_nice:","src":"https://yt3.ggpht.com/9P8SJbMC5e_WcaWLuswbkZTOlDu2HWrpYwgSi01CSIj9kdj2y99py584XMXNTh-jmKts08z29Yg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaiEgZoOU7y4oAxnQbsR6DA/evI7arODCueq7OsPr8ThoQU","alt":"nice","sharedTooltipText":":_nice:","src":"https://yt3.ggpht.com/9P8SJbMC5e_WcaWLuswbkZTOlDu2HWrpYwgSi01CSIj9kdj2y99py584XMXNTh-jmKts08z29Yg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaiEgZoOU7y4oAxnQbsR6DA/evI7arODCueq7OsPr8ThoQU","alt":"nice","sharedTooltipText":":_nice:","src":"https://yt3.ggpht.com/9P8SJbMC5e_WcaWLuswbkZTOlDu2HWrpYwgSi01CSIj9kdj2y99py584XMXNTh-jmKts08z29Yg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"よしよし"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaiEgZoOU7y4oAxnQbsR6DA/GPk7arDJMeeq7OsPr8ThoQU","alt":"BIGhoneko","sharedTooltipText":":_BIGhoneko:","src":"https://yt3.ggpht.com/n2sR3bWJVeJ4dzyddUBtEN5GL8nL6Ii-cgoj6TjgB9yAIWzux6sn1w9_Edwefbvnp2OL21cY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaiEgZoOU7y4oAxnQbsR6DA/GPk7arDJMeeq7OsPr8ThoQU","alt":"BIGhoneko","sharedTooltipText":":_BIGhoneko:","src":"https://yt3.ggpht.com/n2sR3bWJVeJ4dzyddUBtEN5GL8nL6Ii-cgoj6TjgB9yAIWzux6sn1w9_Edwefbvnp2OL21cY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaiEgZoOU7y4oAxnQbsR6DA/GPk7arDJMeeq7OsPr8ThoQU","alt":"BIGhoneko","sharedTooltipText":":_BIGhoneko:","src":"https://yt3.ggpht.com/n2sR3bWJVeJ4dzyddUBtEN5GL8nL6Ii-cgoj6TjgB9yAIWzux6sn1w9_Edwefbvnp2OL21cY=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

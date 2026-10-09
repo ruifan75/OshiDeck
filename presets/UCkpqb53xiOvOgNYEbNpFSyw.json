@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "茜音カンナ / Canna Channel【ななしいんく】",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCkpqb53xiOvOgNYEbNpFSyw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"🎶"},{"type":"text","value":"⚔"},{"type":"text","value":"❤"},{"type":"text","value":"🎶"},{"type":"text","value":"⚔"},{"type":"text","value":"❤"},{"type":"text","value":"🎶"},{"type":"text","value":"⚔"},{"type":"text","value":"❤"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkpqb53xiOvOgNYEbNpFSyw/7VG7YpeuBMPp8wSBi62YCw","alt":"kon","sharedTooltipText":":_kon:","src":"https://yt3.ggpht.com/h0NwK7FeFnazCs9-LMXmzeLOe8CBYNl0b3zTpPME-n7rPPVQSbLsuzyelQmG3P2TqMicygyQXw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkpqb53xiOvOgNYEbNpFSyw/7VG7YoWzBMPp8wSBi62YCw","alt":"wanda","sharedTooltipText":":_wanda:","src":"https://yt3.ggpht.com/qM8xpuyQwP_b2EwgkvgSblEkxPmphYVXFLhFy5M1wmGR5iVqBWSE4bgIRpfVOOqrxQc9C85R=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkpqb53xiOvOgNYEbNpFSyw/7VG7YrG1BMPp8wSBi62YCw","alt":"bikkuri","sharedTooltipText":":_bikkuri:","src":"https://yt3.ggpht.com/CN_2DA6TKSvGFUrkF83XX9Kf2f6xEZVVp3kii2kfqIAg_MdjFw5_a_gPKq_IcXGbl_rNV0tT8A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkpqb53xiOvOgNYEbNpFSyw/7VG7YoyxBMPp8wSBi62YCw","alt":"otu","sharedTooltipText":":_otu:","src":"https://yt3.ggpht.com/TiY8soz40AbcOuo697LII1xmN_tHfQeRYCkzC-e6iMrSL0T9kdCgTkRwC2eAE6ysLtpM1qme=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkpqb53xiOvOgNYEbNpFSyw/7VG7YoWzBMPp8wSBi62YCw","alt":"wanda","sharedTooltipText":":_wanda:","src":"https://yt3.ggpht.com/qM8xpuyQwP_b2EwgkvgSblEkxPmphYVXFLhFy5M1wmGR5iVqBWSE4bgIRpfVOOqrxQc9C85R=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkpqb53xiOvOgNYEbNpFSyw/7VG7YrG1BMPp8wSBi62YCw","alt":"bikkuri","sharedTooltipText":":_bikkuri:","src":"https://yt3.ggpht.com/CN_2DA6TKSvGFUrkF83XX9Kf2f6xEZVVp3kii2kfqIAg_MdjFw5_a_gPKq_IcXGbl_rNV0tT8A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつわんだー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" }
+  ]
+}

@@ -24,24 +24,64 @@ function enqueue(work) {
   return result;
 }
 
-// The bundled presets, read once. They are the extension's own file, so the
-// worker reads it rather than exposing it to youtube.com through
-// web_accessible_resources — a content script would need that, and nothing on
-// the page has any business with this.
-let bundled = null;
+// One file per channel, and an index naming them.
+//
+// It was a single file holding every preset, fetched and parsed whole on
+// every cold start. That file grows with the number of channels anyone has
+// ever mined, while what one viewer needs stays at one preset: at 262 it was
+// a megabyte, and the list it is built from runs to 2893 active channels.
+// Now the worker reads an index of a few tens of kilobytes and then the one
+// file the channel in front of you asks for.
+//
+// The worker reads them rather than exposing them to youtube.com through
+// web_accessible_resources — a content script would need that, and nothing
+// on the page has any business with this.
+let index = null;
 
-async function readPresets() {
-  if (bundled) return bundled;
+async function readIndex() {
+  if (index) return index;
   try {
-    const response = await fetch(chrome.runtime.getURL("presets/presets.json"));
+    const response = await fetch(chrome.runtime.getURL("presets/index.json"));
     const raw = await response.json();
-    // Hand-edited, so a broken one is skipped by name rather than taking the
-    // rest down with it.
-    bundled = (Array.isArray(raw) ? raw : []).filter((preset) => !presets.validate(preset));
+    index = Array.isArray(raw?.presets) ? raw.presets : [];
   } catch (_) {
-    bundled = [];
+    index = [];
   }
-  return bundled;
+  return index;
+}
+
+// A name from the index becomes a url, so it has to be a name and not a path.
+const NAMED = /^[A-Za-z0-9_-]+\.json$/;
+
+// Read once each, and remembered either way: a file that is missing or
+// broken should be asked for once, not on every render.
+const bundled = new Map();
+
+async function readPreset(file) {
+  if (bundled.has(file)) return bundled.get(file);
+
+  let preset = null;
+  if (NAMED.test(file)) {
+    try {
+      const response = await fetch(chrome.runtime.getURL(`presets/${file}`));
+      const raw = await response.json();
+      // Hand-edited, so a broken one is skipped rather than taking the rest
+      // down with it.
+      preset = presets.validate(raw) ? null : raw;
+    } catch (_) { /* missing or unreadable */ }
+  }
+
+  bundled.set(file, preset);
+  return preset;
+}
+
+// Only what this channel could be offered. An entry naming no channel is
+// offered anywhere, which is what offeredOn says on the other side.
+async function readPresets(channelId) {
+  const wanted = (await readIndex())
+    .filter((entry) => entry && (!entry.channel || entry.channel === channelId));
+  const got = await Promise.all(wanted.map((entry) => readPreset(entry.file)));
+  return got.filter(Boolean);
 }
 
 // The toolbar button. With no `action` in the manifest there is no button to
@@ -51,7 +91,8 @@ chrome.action.onClicked.addListener(() => chrome.runtime.openOptionsPage());
 
 chrome.runtime.onMessage.addListener((message, _sender, respond) => {
   if (message?.type === "presets") {
-    readPresets().then((list) => respond({ ok: true, value: list }), () => respond({ ok: false }));
+    readPresets(message.channelId)
+      .then((list) => respond({ ok: true, value: list }), () => respond({ ok: false }));
     return true; // respond asynchronously
   }
 

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "あくび・でもんすぺーど / Akubi Demonspade ",
+  "note": "過去12配信のチャットから、常連が多い順に10枚",
+  "channel": "UC5SSy3julTJHzmExQJjLUkw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんびび"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC5SSy3julTJHzmExQJjLUkw/34W7ZZ-DK-6I_9EP9NmkkAk","alt":"akubiKon","sharedTooltipText":":_akubiKon:","src":"https://yt3.ggpht.com/C6dCgCSl7jH6fSjhgZg1JzJVbkDGSm7QqBRU7mrSb7yLBmM0J0CJDoE0w1U5q_7lByaSnQ6B=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5SSy3julTJHzmExQJjLUkw/34W7ZYaCK-6I_9EP9NmkkAk","alt":"akubiBii","sharedTooltipText":":_akubiBii:","src":"https://yt3.ggpht.com/GrQOiM5kZTtVXyGbkk4OosmUUHI2Px5SHhkmK7F1JQH3Zq9wK7_Eo_H-VxUmms7gfUzuDWoSTQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5SSy3julTJHzmExQJjLUkw/34W7ZYaCK-6I_9EP9NmkkAk","alt":"akubiBii","sharedTooltipText":":_akubiBii:","src":"https://yt3.ggpht.com/GrQOiM5kZTtVXyGbkk4OosmUUHI2Px5SHhkmK7F1JQH3Zq9wK7_Eo_H-VxUmms7gfUzuDWoSTQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC5SSy3julTJHzmExQJjLUkw/C367ZdjyL8ib_9EP782diAI","alt":"akubiKusa","sharedTooltipText":":_akubiKusa:","src":"https://yt3.ggpht.com/CcGauvO1P3E_R-f4N-cNmIE1fAIQmtGrQRtbqQoC0kUf5jK5ilkNDArBgyESQimCO5NrGPf0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5SSy3julTJHzmExQJjLUkw/C367ZdjyL8ib_9EP782diAI","alt":"akubiKusa","sharedTooltipText":":_akubiKusa:","src":"https://yt3.ggpht.com/CcGauvO1P3E_R-f4N-cNmIE1fAIQmtGrQRtbqQoC0kUf5jK5ilkNDArBgyESQimCO5NrGPf0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC5SSy3julTJHzmExQJjLUkw/aV26ZZSJGO6I_9EPieykuAM","alt":"akubiOtsu","sharedTooltipText":":_akubiOtsu:","src":"https://yt3.ggpht.com/dHb0hljBR3ctub6a3gP6oiJ6hV7-Nw8YEZ9bz9cF1EiO8URR4yGVd2JlSRiiixsHbSYD8BnMoQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5SSy3julTJHzmExQJjLUkw/34W7ZYaCK-6I_9EP9NmkkAk","alt":"akubiBii","sharedTooltipText":":_akubiBii:","src":"https://yt3.ggpht.com/GrQOiM5kZTtVXyGbkk4OosmUUHI2Px5SHhkmK7F1JQH3Zq9wK7_Eo_H-VxUmms7gfUzuDWoSTQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5SSy3julTJHzmExQJjLUkw/34W7ZYaCK-6I_9EP9NmkkAk","alt":"akubiBii","sharedTooltipText":":_akubiBii:","src":"https://yt3.ggpht.com/GrQOiM5kZTtVXyGbkk4OosmUUHI2Px5SHhkmK7F1JQH3Zq9wK7_Eo_H-VxUmms7gfUzuDWoSTQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつびび"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" }
+  ]
+}

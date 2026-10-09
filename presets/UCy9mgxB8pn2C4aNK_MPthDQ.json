@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Tsuzuri Ch. 鈴鳴つづり ‐ アソビ★まわり隊!",
+  "note": "過去9配信のチャットから、常連が多い順に10枚",
+  "channel": "UCy9mgxB8pn2C4aNK_MPthDQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"NT"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"GG"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんつづー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "global" }
+  ]
+}

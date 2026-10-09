@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Mirea Sheltzs／ミレア・シェルツ",
+  "note": "過去12配信のチャットから、常連が多い順に10枚",
+  "channel": "UCIumx9FItlv6B_JsHVMjVYA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"🕊"},{"type":"text","value":"🎶"},{"type":"text","value":"❄"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ただいま"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIumx9FItlv6B_JsHVMjVYA/Rbq4ZvSkHuS6_9EP9qmh2AE","alt":"MireaSCute","sharedTooltipText":":_MireaSCute:","src":"https://yt3.ggpht.com/8speESCs7ndA6i0HaZr856OMOIHs_AJdSh_QvGvJvZWOmC7G0e1E2eFHDO5L1ScHq2hOO4ebAA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIumx9FItlv6B_JsHVMjVYA/Rbq4ZvSkHuS6_9EP9qmh2AE","alt":"MireaSCute","sharedTooltipText":":_MireaSCute:","src":"https://yt3.ggpht.com/8speESCs7ndA6i0HaZr856OMOIHs_AJdSh_QvGvJvZWOmC7G0e1E2eFHDO5L1ScHq2hOO4ebAA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIumx9FItlv6B_JsHVMjVYA/Rbq4ZvSkHuS6_9EP9qmh2AE","alt":"MireaSCute","sharedTooltipText":":_MireaSCute:","src":"https://yt3.ggpht.com/8speESCs7ndA6i0HaZr856OMOIHs_AJdSh_QvGvJvZWOmC7G0e1E2eFHDO5L1ScHq2hOO4ebAA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIumx9FItlv6B_JsHVMjVYA/8gdPYci1Ke7t8gTh_rOQBA","alt":"MireaSSmile","sharedTooltipText":":_MireaSSmile:","src":"https://yt3.ggpht.com/76mEtLFc0iFYneTMJ4YglaJwyDDEVKqzCQV0UwiN79x-YIkAYB7mdddVoK9oPyopzPlLFdbd=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIumx9FItlv6B_JsHVMjVYA/8gdPYci1Ke7t8gTh_rOQBA","alt":"MireaSSmile","sharedTooltipText":":_MireaSSmile:","src":"https://yt3.ggpht.com/76mEtLFc0iFYneTMJ4YglaJwyDDEVKqzCQV0UwiN79x-YIkAYB7mdddVoK9oPyopzPlLFdbd=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIumx9FItlv6B_JsHVMjVYA/8gdPYci1Ke7t8gTh_rOQBA","alt":"MireaSSmile","sharedTooltipText":":_MireaSSmile:","src":"https://yt3.ggpht.com/76mEtLFc0iFYneTMJ4YglaJwyDDEVKqzCQV0UwiN79x-YIkAYB7mdddVoK9oPyopzPlLFdbd=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIumx9FItlv6B_JsHVMjVYA/drkEY7y1LKWH_9EP9fiN0Ao","alt":"MireaSWaiting","sharedTooltipText":":_MireaSWaiting:","src":"https://yt3.ggpht.com/KggiTBLZMw2wFLn-ivVLB1akSdkgzzszKP0ng5ka6GObVkgRac3gkdn4hp1KFyy7EfqrRcuqdQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIumx9FItlv6B_JsHVMjVYA/drkEY7y1LKWH_9EP9fiN0Ao","alt":"MireaSWaiting","sharedTooltipText":":_MireaSWaiting:","src":"https://yt3.ggpht.com/KggiTBLZMw2wFLn-ivVLB1akSdkgzzszKP0ng5ka6GObVkgRac3gkdn4hp1KFyy7EfqrRcuqdQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIumx9FItlv6B_JsHVMjVYA/drkEY7y1LKWH_9EP9fiN0Ao","alt":"MireaSWaiting","sharedTooltipText":":_MireaSWaiting:","src":"https://yt3.ggpht.com/KggiTBLZMw2wFLn-ivVLB1akSdkgzzszKP0ng5ka6GObVkgRac3gkdn4hp1KFyy7EfqrRcuqdQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ただいま～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほうほう"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" }
+  ]
+}

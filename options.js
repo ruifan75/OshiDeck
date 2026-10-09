@@ -432,24 +432,26 @@ function buildCard(card, where) {
 // An empty deck is the one place a preset is worth offering: a starting hand
 // for a channel nobody has played yet. It is never offered over a deck that
 // already has something in it.
-let bundled = null;
+// Per deck, because that is how they are stored: one file each, named by an
+// index, so asking for all of them would mean reading all of them.
+const bundled = new Map();
 
-async function loadBundled() {
-  if (bundled) return bundled;
+async function loadBundled(channelId) {
+  if (bundled.has(channelId)) return bundled.get(channelId);
+  let list = [];
   try {
-    const reply = await chrome.runtime.sendMessage({ type: "presets" });
-    bundled = reply?.ok && Array.isArray(reply.value) ? reply.value : [];
-  } catch (_) {
-    bundled = [];
-  }
-  return bundled;
+    const reply = await chrome.runtime.sendMessage({ type: "presets", channelId });
+    list = reply?.ok && Array.isArray(reply.value) ? reply.value : [];
+  } catch (_) { /* worker gone: no starting hand, no harm */ }
+  bundled.set(channelId, list);
+  return list;
 }
 
 function presetOffer() {
   const holder = document.createElement("div");
   holder.className = "preset-offer";
 
-  loadBundled().then((all) => {
+  loadBundled(selected).then((all) => {
     // A preset that names a channel is only a starting hand for that channel.
     const list = all.filter((preset) => presets.offeredOn(preset, selected));
     if (!list.length || !selected) return;

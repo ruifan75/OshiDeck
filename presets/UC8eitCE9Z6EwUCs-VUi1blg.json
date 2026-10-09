@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Mela Ch. 熱千めら‐ アソビ★まわり隊!",
+  "note": "過去11配信のチャットから、常連が多い順に10枚",
+  "channel": "UC8eitCE9Z6EwUCs-VUi1blg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"のじゃー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"🌀"},{"type":"text","value":"🌀"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わかる"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいいのじゃ"}], "scope": "channel" }
+  ]
+}

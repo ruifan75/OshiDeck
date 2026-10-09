@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Linon ch. 天籠りのん",
+  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "channel": "UCdIa_1lEL5c5RrGgIKptQrw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"🎀"},{"type":"text","value":"🏳"},{"type":"text","value":"🎶"},{"type":"text","value":"🎀"},{"type":"text","value":"🏳"},{"type":"text","value":"🎶"},{"type":"text","value":"🎀"},{"type":"text","value":"🏳"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつこもー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"安心！安心！安心！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんこもー"}], "scope": "channel" }
+  ]
+}

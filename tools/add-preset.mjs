@@ -1,4 +1,4 @@
-// Drops an exported preset into presets/presets.json.
+// Drops an exported preset into presets/, and names it in presets/index.json.
 //
 //   node tools/add-preset.mjs ~/Downloads/oshideck-preset-さくら.json
 //   node tools/add-preset.mjs ~/Downloads/oshideck-preset-さくら.json --channel UC…
@@ -19,7 +19,12 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { argv, exit } from "node:process";
 
 const root = new URL("..", import.meta.url).pathname;
-const bundle = `${root}presets/presets.json`;
+// One file per channel, and an index naming them. A single file holding every
+// preset is fetched and parsed whole on every cold start of the worker, and
+// it grows with the number of channels anyone has mined while what a viewer
+// needs stays at one.
+const dir = `${root}presets/`;
+const indexFile = `${dir}index.json`;
 
 const args = argv.slice(2);
 const flag = args.indexOf("--channel");
@@ -60,11 +65,11 @@ const die = (message) => { console.log(`FAIL ${message}`); exit(1); };
 
 let list;
 try {
-  list = JSON.parse(readFileSync(bundle, "utf8"));
-} catch (error) {
-  die(`presets/presets.json を読めません: ${error.message}`);
+  const raw = JSON.parse(readFileSync(indexFile, "utf8"));
+  list = Array.isArray(raw?.presets) ? raw.presets : [];
+} catch (_) {
+  list = []; // the first one written makes the index
 }
-if (!Array.isArray(list)) die("presets/presets.json が配列ではありません");
 
 let added = 0;
 let replaced = 0;
@@ -102,34 +107,44 @@ for (const path of paths) {
   // offered to the same empty deck, which is the collision that matters;
   // two channels sharing a display name are never offered together, and
   // among hundreds of VTubers that is going to happen.
-  const at = list.findIndex((preset) => preset.channel === incoming.channel);
+  const at = list.findIndex((entry) => entry.channel === incoming.channel);
+  const file = `${incoming.channel}.json`;
+  writeFileSync(`${dir}${file}`, shaped(incoming));
+
   if (at >= 0) {
-    list[at] = incoming;
+    list[at] = { channel: incoming.channel, file };
     replaced += 1;
   } else {
-    list.push(incoming);
+    list.push({ channel: incoming.channel, file });
     added += 1;
   }
 }
+
+// So the index reads the same from one run to the next, and a diff of adding
+// one preset is one line.
+list.sort((a, b) => String(a.channel).localeCompare(String(b.channel)));
 
 console.log(`追加 ${added}組、差し替え ${replaced}組`);
 
 // One line per card. JSON.stringify with an indent puts every token on its
 // own line, which turns a ten-card preset into a hundred lines and makes the
 // diff of adding one card unreadable.
-const shaped = (preset) => [
-  "  {",
-  `    "format": ${preset.format || 1},`,
-  `    "name": ${JSON.stringify(preset.name)},`,
-  `    "note": ${JSON.stringify(preset.note || "")},`,
-  ...(preset.channel ? [`    "channel": ${JSON.stringify(preset.channel)},`] : []),
-  '    "cards": [',
-  preset.cards
-    .map((card) => `      { "tokens": ${JSON.stringify(card.tokens)}, "scope": ${JSON.stringify(card.scope)} }`)
-    .join(",\n"),
-  "    ]",
-  "  }"
-].join("\n");
+function shaped(preset) {
+  return [
+    "{",
+    `  "format": ${preset.format || 1},`,
+    `  "name": ${JSON.stringify(preset.name)},`,
+    `  "note": ${JSON.stringify(preset.note || "")},`,
+    ...(preset.channel ? [`  "channel": ${JSON.stringify(preset.channel)},`] : []),
+    '  "cards": [',
+    preset.cards
+      .map((card) => `    { "tokens": ${JSON.stringify(card.tokens)}, "scope": ${JSON.stringify(card.scope)} }`)
+      .join(",\n"),
+    "  ]",
+    "}",
+    ""
+  ].join("\n");
+}
 
-writeFileSync(bundle, `[\n${list.map(shaped).join(",\n")}\n]\n`);
-console.log(`presets/presets.json — ${list.length}組`);
+writeFileSync(indexFile, `${JSON.stringify({ format: 2, presets: list }, null, 2)}\n`);
+console.log(`presets/ — ${list.length}組`);

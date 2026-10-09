@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Choco Ch. 癒月ちょこ",
+  "note": "過去8配信のチャットから、常連が多い順に10枚",
+  "channel": "UC1suqwovbL1kzsoaZgFZLKg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1suqwovbL1kzsoaZgFZLKg/5vACZvLpKuyP_9EPobyi0AY","alt":"ちょこ先生草手書きスタンプ","sharedTooltipText":":_ちょこ先生草手書きスタンプ:","src":"https://yt3.ggpht.com/RvuEop7YQEuE7zOatkPCnR2OIjW3aqNd82bqXFseQekmzUKXqNy6aUmmOtx64bf120nakcNx7AY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ちょこん"},{"type":"text","value":"🍫"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"うまい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おつかれいと"},{"type":"text","value":"🍫"}], "scope": "channel" }
+  ]
+}

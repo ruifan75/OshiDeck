@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "泡々いるか / Awawa Iruka",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCQccGv1G0YL313NA28xTQ8A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"GGNF"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQccGv1G0YL313NA28xTQ8A/3aJraea2HJHIs8IPqa_pqQs","alt":"bukubuku","sharedTooltipText":":_bukubuku:","src":"https://yt3.ggpht.com/SomHJXf45pVhkhre5KSy3cXVDgZvpwwuQG1knz7bVfVmDSbRxLvMpb2MAtG8j18Od5PTyKhFcw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQccGv1G0YL313NA28xTQ8A/3aJraea2HJHIs8IPqa_pqQs","alt":"bukubuku","sharedTooltipText":":_bukubuku:","src":"https://yt3.ggpht.com/SomHJXf45pVhkhre5KSy3cXVDgZvpwwuQG1knz7bVfVmDSbRxLvMpb2MAtG8j18Od5PTyKhFcw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おつわわー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"GG"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQccGv1G0YL313NA28xTQ8A/3aJraZ--HJHIs8IPqa_pqQs","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/-ABZGp9qi6vJJ5OW4BCJYqL_NCZH7grcbLmPTsts1aKmr3vlStj92No6c9hlGkbCLp-1o_1_=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQccGv1G0YL313NA28xTQ8A/3aJraZ--HJHIs8IPqa_pqQs","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/-ABZGp9qi6vJJ5OW4BCJYqL_NCZH7grcbLmPTsts1aKmr3vlStj92No6c9hlGkbCLp-1o_1_=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "global" }
+  ]
+}

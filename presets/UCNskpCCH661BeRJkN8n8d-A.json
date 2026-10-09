@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "UTANO ch. 白玖ウタノ",
+  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "channel": "UCNskpCCH661BeRJkN8n8d-A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あい！あい！あい！あい！"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"🌭"},{"type":"text","value":"👶"},{"type":"text","value":"🧨"},{"type":"text","value":"✨"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"もう一度ーーー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ハロウタノーン"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNskpCCH661BeRJkN8n8d-A/qNhXZpucO7md_9EPp-6NkAU","alt":"UTANO002","sharedTooltipText":":_UTANO002:","src":"https://yt3.ggpht.com/WFBvm1KCrN7lH-LN1wP1XIjS4Sl0SJvDE1OdPystWh_MBkI79BM7-adMG1JeNTa_j8ejWa4L=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNskpCCH661BeRJkN8n8d-A/qNhXZpucO7md_9EPp-6NkAU","alt":"UTANO002","sharedTooltipText":":_UTANO002:","src":"https://yt3.ggpht.com/WFBvm1KCrN7lH-LN1wP1XIjS4Sl0SJvDE1OdPystWh_MBkI79BM7-adMG1JeNTa_j8ejWa4L=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNskpCCH661BeRJkN8n8d-A/qNhXZpucO7md_9EPp-6NkAU","alt":"UTANO002","sharedTooltipText":":_UTANO002:","src":"https://yt3.ggpht.com/WFBvm1KCrN7lH-LN1wP1XIjS4Sl0SJvDE1OdPystWh_MBkI79BM7-adMG1JeNTa_j8ejWa4L=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌭"},{"type":"text","value":"👶"},{"type":"text","value":"🧨"},{"type":"text","value":"💎"},{"type":"text","value":"⚡"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつウタノーン"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Niko Ch. 虎金妃笑虎 - FLOW GLOW",
+  "note": "過去10配信のチャットから、常連が多い順に10枚",
+  "channel": "UCuI_opAVX6qbxZY-a-AxFuQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCuI_opAVX6qbxZY-a-AxFuQ/ODhxZ4WDOKC8_9EP19PD4Qs","alt":"草虎の字","sharedTooltipText":":_草虎の字:","src":"https://yt3.ggpht.com/vwGg2j951em6QG0Ed7R852vqC8ialsYgpKUfrzqK9L3VgLjrse7PZ8DY4WahqVODbTuQ9JulBA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCuI_opAVX6qbxZY-a-AxFuQ/ODhxZ4WDOKC8_9EP19PD4Qs","alt":"草虎の字","sharedTooltipText":":_草虎の字:","src":"https://yt3.ggpht.com/vwGg2j951em6QG0Ed7R852vqC8ialsYgpKUfrzqK9L3VgLjrse7PZ8DY4WahqVODbTuQ9JulBA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCuI_opAVX6qbxZY-a-AxFuQ/ODhxZ4WDOKC8_9EP19PD4Qs","alt":"草虎の字","sharedTooltipText":":_草虎の字:","src":"https://yt3.ggpht.com/vwGg2j951em6QG0Ed7R852vqC8ialsYgpKUfrzqK9L3VgLjrse7PZ8DY4WahqVODbTuQ9JulBA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCuI_opAVX6qbxZY-a-AxFuQ/ODhxZ7WCOKC8_9EP19PD4Qs","alt":"キターの字","sharedTooltipText":":_キターの字:","src":"https://yt3.ggpht.com/7WGO8jQoK1cCkxGW_8s696PfHY0-Dvg7lG0BSpoYXZ2nSpV83kV475SxfJE_JhMBAl6fxmc4eK0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCuI_opAVX6qbxZY-a-AxFuQ/ODhxZ7WCOKC8_9EP19PD4Qs","alt":"キターの字","sharedTooltipText":":_キターの字:","src":"https://yt3.ggpht.com/7WGO8jQoK1cCkxGW_8s696PfHY0-Dvg7lG0BSpoYXZ2nSpV83kV475SxfJE_JhMBAl6fxmc4eK0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCuI_opAVX6qbxZY-a-AxFuQ/ODhxZ7WCOKC8_9EP19PD4Qs","alt":"キターの字","sharedTooltipText":":_キターの字:","src":"https://yt3.ggpht.com/7WGO8jQoK1cCkxGW_8s696PfHY0-Dvg7lG0BSpoYXZ2nSpV83kV475SxfJE_JhMBAl6fxmc4eK0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCuI_opAVX6qbxZY-a-AxFuQ/mlKYaMuHKKPA_9EPnbS_sAc","alt":"困り顔","sharedTooltipText":":_困り顔:","src":"https://yt3.ggpht.com/ZIJfw9mFGicZtoQdFxTZxaHH9_sfKr1bK3QyBqhG-Nw4ExUHai8U6I-T4fLVPNn0CSj3XYCspA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCuI_opAVX6qbxZY-a-AxFuQ/mlKYaMuHKKPA_9EPnbS_sAc","alt":"困り顔","sharedTooltipText":":_困り顔:","src":"https://yt3.ggpht.com/ZIJfw9mFGicZtoQdFxTZxaHH9_sfKr1bK3QyBqhG-Nw4ExUHai8U6I-T4fLVPNn0CSj3XYCspA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCuI_opAVX6qbxZY-a-AxFuQ/mlKYaMuHKKPA_9EPnbS_sAc","alt":"困り顔","sharedTooltipText":":_困り顔:","src":"https://yt3.ggpht.com/ZIJfw9mFGicZtoQdFxTZxaHH9_sfKr1bK3QyBqhG-Nw4ExUHai8U6I-T4fLVPNn0CSj3XYCspA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "global" }
+  ]
+}

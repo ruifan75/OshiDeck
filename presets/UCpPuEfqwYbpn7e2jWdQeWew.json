@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "水瓶ミア/ミアちゃんねる",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCpPuEfqwYbpn7e2jWdQeWew",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんかめー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかめー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCpPuEfqwYbpn7e2jWdQeWew/oTDqYMeIJKrm8gTjv5-QBA","alt":"miaPipi","sharedTooltipText":":_miaPipi:","src":"https://yt3.ggpht.com/ZN-p8dZv6ulqknQvYCfve5S2tT75_Av8UqLu_7vXQVB-mXgg6nd4XYBWPy4TpdaEPZxUcxX-4vc=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🐢"},{"type":"text","value":"🎶"},{"type":"text","value":"🐢"},{"type":"text","value":"🎶"},{"type":"text","value":"🐢"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCpPuEfqwYbpn7e2jWdQeWew/riPqYMDEBcvw8gSdh6qgCA","alt":"miaKusa","sharedTooltipText":":_miaKusa:","src":"https://yt3.ggpht.com/0uzAdheSCy-UDyLVZyPvjp8bEXwNGeSYlL7uGZ0rwLHgxEhSkoI4fuD9DX9fgGB01yNBmFAZ7g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCpPuEfqwYbpn7e2jWdQeWew/zfDkX9reIY-J_AOQm57wDQ","alt":"miaLight","sharedTooltipText":":_miaLight:","src":"https://yt3.ggpht.com/f8zapume9M3-gyQaZDetzAypS6lQHgHhltrwlT-JMv9Jq0eeyhyAyXcEotXinI24W_DolNSb=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpPuEfqwYbpn7e2jWdQeWew/zfDkX4HfIY-J_AOQm57wDQ","alt":"miaLight2","sharedTooltipText":":_miaLight2:","src":"https://yt3.ggpht.com/UcVPmFcmViRUSFLKoSRkey3j2S_jJqN1oijlRyViJOcHdzh5qUqtx4IbUQE4nzvgMR3sH3mm=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpPuEfqwYbpn7e2jWdQeWew/zfDkX9reIY-J_AOQm57wDQ","alt":"miaLight","sharedTooltipText":":_miaLight:","src":"https://yt3.ggpht.com/f8zapume9M3-gyQaZDetzAypS6lQHgHhltrwlT-JMv9Jq0eeyhyAyXcEotXinI24W_DolNSb=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpPuEfqwYbpn7e2jWdQeWew/zfDkX4HfIY-J_AOQm57wDQ","alt":"miaLight2","sharedTooltipText":":_miaLight2:","src":"https://yt3.ggpht.com/UcVPmFcmViRUSFLKoSRkey3j2S_jJqN1oijlRyViJOcHdzh5qUqtx4IbUQE4nzvgMR3sH3mm=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCpPuEfqwYbpn7e2jWdQeWew/zCvqYManEcHn8gS5_6vwCQ","alt":"miaOtukame","sharedTooltipText":":_miaOtukame:","src":"https://yt3.ggpht.com/pdVtCDCQgknsav4Pk_vVaFsEUYeCY0Hh25OCsSOtEoMOjHKSzI8NC_WqQnZATePdG9N6Sb6f=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpPuEfqwYbpn7e2jWdQeWew/zCvqYManEcHn8gS5_6vwCQ","alt":"miaOtukame","sharedTooltipText":":_miaOtukame:","src":"https://yt3.ggpht.com/pdVtCDCQgknsav4Pk_vVaFsEUYeCY0Hh25OCsSOtEoMOjHKSzI8NC_WqQnZATePdG9N6Sb6f=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

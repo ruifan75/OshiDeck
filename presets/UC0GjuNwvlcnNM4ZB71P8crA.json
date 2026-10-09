@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "電信柱ちゃん / DENSHINBASHIRA-CHAN",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UC0GjuNwvlcnNM4ZB71P8crA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👀"},{"type":"text","value":"🛜"},{"type":"text","value":"🎶"},{"type":"text","value":"👀"},{"type":"text","value":"🛜"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おはよー"}], "scope": "global" }
+  ]
+}

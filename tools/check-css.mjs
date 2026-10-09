@@ -81,6 +81,35 @@ function duplicates(css) {
   return problems;
 }
 
+// A descendant selector that reaches further than it meant to.
+//
+// `.switch-row span { display: flex; flex-direction: column }` was written for
+// the one span holding a switch's title and its note. It also matched every
+// span *inside* the note, and a flex container is block-level — so the
+// autoSend sentence came out as three lines, one per span, with the ⇧ stacked
+// on top of the words after it. A `>` was all it needed.
+//
+// The shape to refuse: a rule that lays out an unrestricted descendant of a
+// row that holds running text. Layout belongs to the elements a rule can name.
+const TEXT_ROWS = ["switch-row", "row-label"];
+
+function reachesTooFar(css) {
+  const problems = [];
+  for (const m of css.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
+    const selector = m[1].trim().replace(/\s+/g, " ");
+    if (!selector || selector.startsWith("@")) continue;
+    if (!/(^|\s)display\s*:\s*(flex|grid|block)/.test(m[2])) continue;
+
+    for (const row of TEXT_ROWS) {
+      // `.row span` reaches; `.row > span` and `.row` itself do not.
+      if (new RegExp(`\\.${row}\\s+(?!>)`).test(selector)) {
+        problems.push(`${selector} lays out any descendant of .${row}, not one it names`);
+      }
+    }
+  }
+  return problems;
+}
+
 let failed = 0;
 for (const file of process.argv.slice(2)) {
   const source = stripConditionals(
@@ -90,6 +119,7 @@ for (const file of process.argv.slice(2)) {
 
   const problems = [
     ...duplicates(css),
+    ...reachesTooFar(css),
     ...scopes.flatMap((scope) => duplicates(scope.css).map((p) => `${scope.label}: ${p}`))
   ];
 

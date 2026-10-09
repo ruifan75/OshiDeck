@@ -176,7 +176,11 @@ h2 { margin: 0 0 16px; font-size: 15px; }
 
 .switch-row { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
 .switch-row input { margin-top: 3px; accent-color: var(--accent); }
-.switch-row span { display: flex; flex-direction: column; gap: 4px; }
+/* The direct child only — the wrapper holding the title and the note. Written
+   as a descendant it also caught every <span> inside the note, turning each
+   into a block-level flex column: the autoSend sentence came out as three
+   lines, one per span, with the ⇧ stacked on top of the words after it. */
+.switch-row > span { display: flex; flex-direction: column; gap: 4px; }
 .switch-row strong { font-size: 13px; font-weight: 500; }
 .switch-row small { font-size: 11px; opacity: .68; line-height: 1.5; }
 

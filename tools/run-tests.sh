@@ -4,6 +4,10 @@
 set -e
 cd "$(dirname "$0")/.."
 
+echo "hooks"
+sh tools/check-hooks.sh
+echo
+
 echo "syntax"
 for f in content.js options.js src/*.js tools/*.mjs; do node --check "$f"; done
 node --check tools/tests/*.js

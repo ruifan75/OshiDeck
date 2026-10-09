@@ -1,4 +1,4 @@
-// the maintainer's own subscription list, in his own order, matched to Holodex.
+// The maintainer's own subscription list, in their own order, matched to Holodex.
 //
 //   node tools/subscriptions.mjs channels          # the saved YouTube page
 //   node tools/subscriptions.mjs channels --all    # including ones Holodex lacks

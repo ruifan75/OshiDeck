@@ -11,7 +11,7 @@ image*.png
 Screenshot*.png
 スクリーンショット*.png
 
-# the maintainer's own requirements notes — his working file, not a project artefact
+# The maintainer's own requirements notes — a working file, not a project artefact
 note
 
 # API keys. The example beside it is what gets committed.

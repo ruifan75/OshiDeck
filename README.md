@@ -1118,6 +1118,8 @@ src/presets.js     はじめの一組（書き出し・検証・読み込み）
 presets/           同梱のプリセット。`tools/add-preset.mjs` で足す
 options.html/js/css  設定ページ（デッキ一覧＋表示設定）
 design/            UI検討用のデザインキャンバス
+tools/hooks/          commit-msg と pre-commit。`git config core.hooksPath tools/hooks` で一度だけ有効化
+tools/check-hooks.sh  その設定が入っているかの確認（run-tests.sh の最初）
 tools/run-tests.sh    ブラウザなしで通せるもの全部
 tools/check-tests.mjs テストが落ちられることの確認（変異171通り、CSSも含む）
 tools/check-i18n.mjs  鍵の過不足、直書きの文字列、読み込み時の翻訳を検出

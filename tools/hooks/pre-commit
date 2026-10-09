@@ -1,0 +1,31 @@
+#!/bin/sh
+# The same rule for what goes into the files, not only the message.
+#
+# tools/channels.json is exempt: it is Holodex's own list of 3765 VTuber
+# channels, and one of them has a stage name that collides; they have nothing to
+# do with this repository. The hooks are exempt because they carry the
+# pattern they are looking for.
+set -e
+
+BANNED='***REMOVED***'
+
+found=0
+for file in $(git diff --cached --name-only --diff-filter=ACM); do
+  case "$file" in
+    tools/channels.json|tools/hooks/*) continue ;;
+  esac
+
+  # The status of a pipeline is its last command's, so asking `grep | sed`
+  # whether it matched answers for sed — which succeeds on no input.
+  hits=$(git show ":$file" 2>/dev/null | grep -n "$BANNED" || true)
+  if [ -n "$hits" ]; then
+    echo "$hits" | sed "s|^|     $file:|"
+    found=1
+  fi
+done
+
+if [ "$found" = 1 ]; then
+  echo "FAIL ステージされた内容に名前か個人アドレスが入っています（上記）。"
+  echo "     公開リポジトリです。--no-verify で通せますが、履歴からは消えません。"
+  exit 1
+fi

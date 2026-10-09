@@ -3,7 +3,7 @@
 #
 #   tools/mine-org.sh ReAcT
 #   tools/mine-org.sh Hololive 15
-#   tools/mine-org.sh --subscriptions      # the maintainer's own list, in his order
+#   tools/mine-org.sh --subscriptions      # the maintainer's own list, in order
 #
 # Hours, not minutes — so it is resumable: a channel that already has a
 # candidates file is skipped, and stopping it anywhere loses at most the one
@@ -33,8 +33,8 @@ fi
 
 mkdir -p tools/candidates
 
-# `--subscriptions` keeps the order it is given, which is the order the maintainer
-# arranged his own subscriptions in — a better answer to "which channel next"
+# `--subscriptions` keeps the order it is given, which is the order someone
+# arranged their own subscriptions in — a better answer to "which channel next"
 # than subscriber counts. Inside an organisation there is no such order, so
 # the biggest rooms go first: they are the ones with chat to count.
 ids=$(node -e '
@@ -51,7 +51,7 @@ ids=$(node -e '
       console.error("     node tools/subscriptions.mjs <保存したページ> を回してください");
       process.exit(1);
     }
-    // Already in his order; keep it.
+    // Already in that order; keep it.
     want = JSON.parse(fs.readFileSync("tools/subscriptions.json", "utf8"))
       .filter((c) => !c.inactive);
   } else {

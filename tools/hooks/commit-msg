@@ -1,0 +1,23 @@
+#!/bin/sh
+# Keeps a name and an address out of the history.
+#
+# This repository is public. The person who maintains it is ruifan75 on
+# GitHub, and that is the only name it needs: a first name and a personal
+# address are not something a commit message should be carrying, and once
+# pushed they cannot be taken back without rewriting everything after them —
+# which is how this hook came to exist.
+#
+# Installed by `git config core.hooksPath tools/hooks`, which is also what
+# tools/check-hooks.sh checks.
+set -e
+
+BANNED='***REMOVED***'
+
+if grep -q "$BANNED" "$1"; then
+  echo "FAIL このコミットメッセージには名前か個人アドレスが入っています:"
+  grep -n "$BANNED" "$1" | sed 's/^/     /'
+  echo
+  echo "     公開リポジトリです。GitHub の ruifan75 以外の呼び方は要りません。"
+  echo "     どうしても必要なら --no-verify で通せますが、履歴は書き換えないと消せません。"
+  exit 1
+fi

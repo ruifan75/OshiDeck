@@ -131,7 +131,8 @@ check("a newer format is refused rather than half-read", !!broken({ format: 99 }
 
 const fresh = presets.cardsFor(plain, OTHER);
 check("every card arrives with an id of its own", new Set(fresh.map((c) => c.id)).size === 2);
-check("and no history", fresh.every((c) => c.uses === 0 && c.lastUsedAt === 0));
+check("and no history on any channel",
+  fresh.every((c) => Object.keys(c.by).length === 0));
 check("universal stays universal", fresh[0].scope === store.GLOBAL);
 check("and channel-only means the channel it is loaded into", fresh[1].scope === OTHER);
 

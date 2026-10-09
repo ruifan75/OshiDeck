@@ -12,8 +12,8 @@ const t = (v) => [{ type: "text", value: v }];
 
 const mine = {
   cards: [
-    { id: "a", tokens: t("888"), uses: 40, heat: 40, lastUsedAt: 111 },
-    { id: "b", tokens: t("wakotsu"), uses: 5, heat: 5, lastUsedAt: 222 }
+    { id: "a", tokens: t("888"), by: { UCsakura: { uses: 40, heat: 40, lastUsedAt: 111 } } },
+    { id: "b", tokens: t("wakotsu"), by: { UCsakura: { uses: 5, heat: 5, lastUsedAt: 222 } } }
   ],
   decks: { UCsakura: ["a", "b"] },
   channelMeta: { UCsakura: { name: "sakura", hue: 320 } }
@@ -50,9 +50,10 @@ console.log("     sakura:", m.decks.UCsakura.map((id) => id.slice(0, 4)).join(" 
 console.log("     yumeno:", m.decks.UCyumeno.map((id) => id.slice(0, 4)).join(" "));
 
 check("same content is not duplicated", m.cards.filter((c) => c.tokens[0].value === "888").length === 1);
-check("my own usage counts survive", m.cards.find((c) => c.id === "a").uses === 40);
+check("my own usage counts survive", m.cards.find((c) => c.id === "a").by.UCsakura.uses === 40);
 check("id collision gets a fresh id", m.cards.find((c) => c.tokens[0].value === "GG!").id !== "a");
-check("someone elses counts start cold", m.cards.find((c) => c.tokens[0].value === "otsu").uses === 0);
+check("someone elses counts start cold",
+  Object.keys(m.cards.find((c) => c.tokens[0].value === "otsu").by || {}).length === 0);
 check("my channel name wins", m.channelMeta.UCsakura.name === "sakura");
 check("unknown channel is adopted", m.channelMeta.UCyumeno.name === "yumeno");
 check("original deck order kept", m.decks.UCsakura.slice(0, 2).join(" ") === "a b");

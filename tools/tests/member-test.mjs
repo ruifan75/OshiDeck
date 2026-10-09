@@ -333,8 +333,10 @@ check("and goes to the back when you cannot", trendy(false) === "plain,ours");
 // this line would notice.
 const shelf = (channelId) => ({
   cards: [
-    { id: "plain", tokens: text("888"), scope: store.GLOBAL, uses: 1, heat: 1, lastUsedAt: 1 },
-    { id: "ours", tokens: stamp(HERE), scope: HERE, uses: 9, heat: 9, lastUsedAt: 9 }
+    { id: "plain", tokens: text("888"), scope: store.GLOBAL,
+      by: { [channelId]: { uses: 1, heat: 1, lastUsedAt: 1 } } },
+    { id: "ours", tokens: stamp(HERE), scope: HERE,
+      by: { [channelId]: { uses: 9, heat: 9, lastUsedAt: 9 } } }
   ],
   decks: { [channelId]: ["plain", "ours"] },
   channelMeta: {},
@@ -370,6 +372,42 @@ check("a member's pool leaves it playable", pool.find((c) => c.id === "ours")?.l
 
 check("and with no channel there is no pool at all",
   lift().buildPool(shelved(HERE), null).length === 0);
+
+/* ---------- whose habit it is ---------- */
+
+// How often a card is used is a fact about a chat, not about the card. 👏
+// pressed fifty times in one channel says nothing about the next one, and
+// one shared number put a card nobody there had ever pressed at the front
+// of the hand.
+{
+  const AWAY_CH = "UCbbbbbbbbbbbbbbbbbbbbbb";
+  const worn = {
+    cards: [
+      { id: "plain", tokens: text("888"), scope: store.GLOBAL,
+        by: { [AWAY_CH]: { uses: 50, heat: 50, lastUsedAt: Date.now() } } },
+      { id: "here", tokens: text("わこつ"), scope: store.GLOBAL,
+        by: { [HERE]: { uses: 2, heat: 2, lastUsedAt: Date.now() } } }
+    ],
+    decks: { [HERE]: ["plain", "here"] },
+    channelMeta: {},
+    settings: { sortBy: "uses", mode: "hand", cardSize: "small", rows: 2 }
+  };
+
+  const api = lift({ doc: page({ mine: true }) });
+  check("a habit on one channel does not order another",
+    api.buildDeck(worn, HERE)[0].id === "here");
+
+  // And the sort still works where the habit was earned.
+  check("while on the channel it was earned on it leads",
+    api.buildDeck({ ...worn, decks: { [AWAY_CH]: ["plain", "here"] } }, AWAY_CH)[0].id === "plain");
+
+  // Pressing it only counts where it was pressed.
+  const card = { id: "plain", tokens: text("888"), by: {} };
+  store.markUsed(card, HERE);
+  check("pressing a card counts on the channel it was pressed on",
+    card.by[HERE].uses === 1);
+  check("and nowhere else", Object.keys(card.by).join() === HERE);
+}
 
 /* ---------- and what the channel's regulars use ---------- */
 

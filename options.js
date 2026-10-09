@@ -370,7 +370,10 @@ function buildCard(card, where) {
 
   const meta = document.createElement("div");
   meta.className = "browse-meta";
-  meta.textContent = card.uses ? t("opt.uses", card.uses) : t("opt.unused");
+  // On this channel, not across all of them: the count means "how often you
+  // reach for this here", and both columns are already about one deck.
+  const { uses } = store.countOn(card, selected);
+  meta.textContent = uses ? t("opt.uses", uses) : t("opt.unused");
 
   el.append(body, meta);
   wireDrag(el, card, where);

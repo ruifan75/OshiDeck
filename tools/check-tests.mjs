@@ -36,6 +36,7 @@ const PRESET = "preset-test.mjs";
 const MEMBER = "member-test.mjs";
 const I18N = "i18n-test.mjs";
 const EMOJI = "emoji-test.mjs";
+const STORED = "store-test.js";
 
 // Which file a mutation edits, and how its test is told to load the copy.
 const CONTENT = { file: "content.js", env: "OD_SOURCE" };
@@ -354,9 +355,13 @@ const MUTATIONS = [
     '      card.lapsed = why === "membership";',
     "      card.lapsed = false;"],
 
+  [MEMBER, STORE, "one use count shared by every channel",
+    "  const countOn = (card, channelId) => (channelId && card.by?.[channelId]) || noCount();",
+    "  const countOn = (card) => Object.values(card.by || {})[0] || noCount();"],
+
   [MEMBER, CONTENT, "a locked card left where the sort put it",
-    '    if (settings.sortBy !== "trend") return playableFirst(store.sortCards(cards, settings.sortBy));',
-    '    if (settings.sortBy !== "trend") return store.sortCards(cards, settings.sortBy);'],
+    "      return playableFirst(store.sortCards(cards, settings.sortBy, channelId));",
+    "      return store.sortCards(cards, settings.sortBy, channelId);"],
 
   [MEMBER, CONTENT, "chat-driven order forgetting the lock",
     "    return playableFirst(ordered);",
@@ -653,6 +658,18 @@ const MUTATIONS = [
     '      if (card.id) flashCard(card.id, "refused");',
     "      if (false) flashCard(card.id);"],
 
+  [STORED, STORE, "an old count handed to every channel, not the decks holding it",
+    "      if (ids.includes(card.id)) card.by[channelId] = { ...was };",
+    "      card.by[channelId] = { ...was };"],
+
+  [STORED, STORE, "a count already split overwritten by the flat one it replaced",
+    "    if (Object.keys(card.by || {}).length) return card;",
+    "    if (false) return card;"],
+
+  [STORED, STORE, "the flat count left on the card beside the split one",
+    "    delete card.uses; delete card.heat; delete card.lastUsedAt;",
+    "    /* kept */"],
+
   [COLOUR, STORE, "an out-of-gamut hue clipped instead of desaturated",
     "    for (let c = chroma; c > 0.01 && found.some((v) => v < -0.0005 || v > 1.0005); c -= 0.005) {\n      found = rgb(c);\n    }",
     "    // (clipped below instead)"],
@@ -701,6 +718,9 @@ const KILLS = {
   "a shared card deleted without asking": "a card another deck holds asks first",
 
   "a hand-picked colour ignored in favour of the hash": "a listed channel gets the colour it is listed with",
+  "an old count handed to every channel, not the decks holding it": "a card in no deck has nowhere to put it",
+  "a count already split overwritten by the flat one it replaced": "and a card already counted per channel is left alone",
+  "the flat count left on the card beside the split one": "and the card stops carrying one of its own",
   "an out-of-gamut hue clipped instead of desaturated": "every hue survives the round trip",
   "a card held for a different time than anyone was told": "out of the box a card is held for 45 seconds",
   "a wave redefined without saying so": "a wave is six messages and three tenths of the room",
@@ -748,6 +768,7 @@ const KILLS = {
   "not knowing yet treated as not a member": "and a page that has not said yet refuses nothing",
   "a lock guessed before the channel is known": "with no channel known, nothing is refused",
   "a lapsed membership indistinguishable from the wrong channel": "and says that is what happened",
+  "one use count shared by every channel": "a habit on one channel does not order another",
   "a locked card left where the sort put it": "the most-used card still goes last once it cannot be sent",
   "chat-driven order forgetting the lock": "and goes to the back when you cannot",
   "a refusal that is asked for and then ignored": "a member emoji you cannot send is not saved",
@@ -839,7 +860,7 @@ function run(file, mutant, subject) {
 let failed = 0;
 
 // A suite already red would make every mutation look caught.
-for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM, COLOUR, PRESET, MEMBER, I18N, EMOJI]) {
+for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM, COLOUR, PRESET, MEMBER, I18N, EMOJI, STORED]) {
   if (run(file, null).failed) {
     console.log(`FAIL ${file} is red before any mutation`);
     failed = 1;

@@ -114,9 +114,7 @@
       tokens: card.tokens,
       scope: card.scope === "channel" && channelId ? channelId : OD.store.GLOBAL,
       createdAt: Date.now(),
-      uses: 0,
-      heat: 0,
-      lastUsedAt: 0
+      by: {}
     }));
   }
 

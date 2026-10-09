@@ -177,7 +177,9 @@
 
       // Someone else's counts are not yours, so an arriving card starts cold.
       const id = taken.has(card.id) ? newId() : card.id;
-      cards.push({ ...clone(card), id, uses: 0, heat: 0, lastUsedAt: 0 });
+      // A file written before counts were split still carries the flat ones.
+      const { uses, heat, lastUsedAt, ...rest } = clone(card);
+      cards.push({ ...rest, id, by: {} });
       taken.add(id);
       byKey.set(key, id);
       idMap.set(card.id, id);

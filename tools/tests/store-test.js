@@ -18,7 +18,7 @@ globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
   get: async () => stored,
   set: async (patch) => { writes.push(Object.keys(patch).sort().join("+")); }
 } } };
-require("/Users/maintainer/OshiDeck/src/store.js");
+require(process.env.OD_STORE || "/Users/maintainer/OshiDeck/src/store.js");
 require("/Users/maintainer/OshiDeck/src/tokens.js");
 const S = globalThis.OshiDeck.store;
 
@@ -28,9 +28,46 @@ const S = globalThis.OshiDeck.store;
   const ids = (l) => l.map((c) => c.id).join(" ") || "(none)";
   const d = await S.read();
 
+  console.log("--- counts split per channel ---");
+
+  // Counts used to be one number per card, shared by every channel. Where
+  // they were earned cannot be recovered, so each deck holding the card keeps
+  // what there was — exactly right for a card in one deck, which is most of
+  // them, and the only answer for a card in several that does not throw the
+  // order away on upgrade.
+  {
+    const before = stored;
+    stored = {
+      cards: [
+        { id: "shared", tokens: text("888"), uses: 40, heat: 40, lastUsedAt: 111 },
+        { id: "loose",  tokens: text("GG"),  uses: 7,  heat: 7,  lastUsedAt: 222 },
+        // Both shapes at once, which a hand-edited file can carry: the split
+        // one is the real answer and the flat one is what it replaced.
+        { id: "fresh",  tokens: text("w"),   uses: 99, heat: 99, lastUsedAt: 99,
+          by: { [YUMENO]: { uses: 3, heat: 3, lastUsedAt: 9 } } }
+      ],
+      decks: { [SAKURA]: ["shared"], [YUMENO]: ["shared"] },
+      channelMeta: {}
+    };
+    const old = await S.read();
+    const by = (id) => old.cards.find((c) => c.id === id).by;
+
+    check("an old count goes to every deck that holds the card",
+      by("shared")[SAKURA].uses === 40 && by("shared")[YUMENO].uses === 40);
+    check("and the card stops carrying one of its own",
+      old.cards.every((c) => c.uses === undefined && c.heat === undefined));
+    check("a card in no deck has nowhere to put it",
+      Object.keys(by("loose")).length === 0);
+    check("and a card already counted per channel is left alone",
+      by("fresh")?.[YUMENO]?.uses === 3 && Object.keys(by("fresh") || {}).length === 1);
+
+    stored = before;
+  }
+
+  console.log("");
   console.log("--- atomicity ---");
   writes = [];
-  await S.runOp("markUsed", { id: "univ" });
+  await S.runOp("markUsed", { id: "univ", channelId: SAKURA });
   check("one operation writes every key once",
     writes.length === 1 && writes[0] === "cards+channelMeta+decks");
 

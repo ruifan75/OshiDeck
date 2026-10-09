@@ -431,7 +431,7 @@
     // this channel by its member emoji — and that is what makes deleting it
     // feel different.
     for (const card of cards) card.bound = store.scopeOf(card) !== store.GLOBAL;
-    return orderDeck(cards, data.settings);
+    return orderDeck(cards, data.settings, channelId);
   }
 
   // Two answers to "what else can go in this deck", kept apart because they
@@ -537,13 +537,15 @@
     ...cards.filter((card) => card.locked)
   ];
 
-  function orderDeck(cards, settings) {
-    if (settings.sortBy !== "trend") return playableFirst(store.sortCards(cards, settings.sortBy));
+  function orderDeck(cards, settings, channelId) {
+    if (settings.sortBy !== "trend") {
+      return playableFirst(store.sortCards(cards, settings.sortBy, channelId));
+    }
 
     const ranking = watcher.ranking();
     // Personal habit is the tiebreak, so a quiet chat still gives a sane order.
     const fallback = new Map(
-      store.sortCards(cards, "heat").map((card, index) => [card.id, index])
+      store.sortCards(cards, "heat", channelId).map((card, index) => [card.id, index])
     );
 
     const ordered = cards
@@ -810,7 +812,7 @@
     if (willSend) submitChat(() => { sending = false; });
 
     // A drawn card is not in the pool, so there is no use count to raise.
-    if (!card.drawn) await store.apply("markUsed", { id: card.id });
+    if (!card.drawn) await store.apply("markUsed", { id: card.id, channelId: here });
   }
 
   // The renderer enables the button a beat after the input event lands.
@@ -1055,9 +1057,7 @@
       id: crypto.randomUUID(),
       tokens: captured,
       createdAt: Date.now(),
-      uses: 0,
-      heat: 0,
-      lastUsedAt: 0
+      by: {}
     };
 
     // Saving puts the card in the pool and, when we know the channel, straight

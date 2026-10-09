@@ -143,7 +143,17 @@
     return hueOfColor((n >> 16) & 255, (n >> 8) & 255, n & 255);
   };
 
-  const blank = () => ({ uses: 0, heat: 0, lastUsedAt: 0, createdAt: Date.now() });
+  const blank = () => ({ by: {}, createdAt: Date.now() });
+
+  // How often a card is used is a fact about a chat, not about the card.
+  //
+  // 👏 pressed fifty times in one channel says nothing about the next one,
+  // and one shared number put a card nobody there had ever pressed at the
+  // front of the hand. So every card keeps a count per channel, under `by`.
+  // A channel-only card has one channel to begin with, so for those this
+  // changes nothing.
+  const noCount = () => ({ uses: 0, heat: 0, lastUsedAt: 0 });
+  const countOn = (card, channelId) => (channelId && card.by?.[channelId]) || noCount();
 
   // Scope survives every earlier format, because every earlier format recorded
   // the same distinction under a different name. Deriving it from the content
@@ -153,13 +163,36 @@
     scope: forcedScope(card.tokens) || card.scope || implied || GLOBAL
   });
 
+  // Counts used to be one number per card, shared by every channel. Where
+  // they were earned cannot be recovered, so each deck holding the card keeps
+  // what there was: for a card in one deck — which is most of them — that is
+  // exactly right, and for a card in several it is the only answer that does
+  // not throw the order away on upgrade. They go their own ways from the next
+  // press onwards.
+  function splitCounts(card, decks) {
+    const was = { uses: card.uses || 0, heat: card.heat || 0, lastUsedAt: card.lastUsedAt || 0 };
+    delete card.uses; delete card.heat; delete card.lastUsedAt;
+
+    // `by` is empty, not missing: blank() puts one on every card before this
+    // runs, so "has it been split already" is whether anything is in it.
+    if (!was.uses && !was.heat && !was.lastUsedAt) return card;
+    if (Object.keys(card.by || {}).length) return card;
+
+    card.by = {};
+    for (const [channelId, ids] of Object.entries(decks || {})) {
+      if (ids.includes(card.id)) card.by[channelId] = { ...was };
+    }
+    return card;
+  }
+
   // A card lives in the pool once. A deck is an ordered list of ids drawn from
   // it, so the same card can sit in several decks and hold a different place
   // in each — which a single shared ordering could never express.
   function migrate(raw) {
     if (Array.isArray(raw[KEYS.CARDS]) && raw[KEYS.DECKS]) {
       return {
-        cards: raw[KEYS.CARDS].map((card) => withScope({ ...blank(), ...card })),
+        cards: raw[KEYS.CARDS].map((card) =>
+          splitCounts(withScope({ ...blank(), ...card }), raw[KEYS.DECKS])),
         decks: raw[KEYS.DECKS]
       };
     }
@@ -457,24 +490,29 @@
 
   /* ---------- ordering for display ---------- */
 
-  function score(card, now) {
-    return (card.heat || 0) * decay(now - (card.lastUsedAt || 0));
+  function score(card, channelId, now) {
+    const count = countOn(card, channelId);
+    return count.heat * decay(now - count.lastUsedAt);
   }
 
-  function sortCards(cards, sortBy) {
+  function sortCards(cards, sortBy, channelId) {
     if (sortBy === "manual") return cards.slice();
     if (sortBy === "uses") {
-      return cards.slice().sort((a, b) => (b.uses || 0) - (a.uses || 0));
+      return cards.slice()
+        .sort((a, b) => countOn(b, channelId).uses - countOn(a, channelId).uses);
     }
     const now = Date.now();
-    return cards.slice().sort((a, b) => score(b, now) - score(a, now));
+    return cards.slice().sort((a, b) => score(b, channelId, now) - score(a, channelId, now));
   }
 
-  function markUsed(card) {
+  function markUsed(card, channelId) {
+    if (!channelId) return card;
     const now = Date.now();
-    card.heat = (card.heat || 0) * decay(now - (card.lastUsedAt || now)) + 1;
-    card.lastUsedAt = now;
-    card.uses = (card.uses || 0) + 1;
+    const count = { ...countOn(card, channelId) };
+    count.heat = count.heat * decay(now - (count.lastUsedAt || now)) + 1;
+    count.lastUsedAt = now;
+    count.uses += 1;
+    card.by = { ...(card.by || {}), [channelId]: count };
     return card;
   }
 
@@ -595,9 +633,9 @@
       return true;
     },
 
-    markUsed(data, { id }) {
+    markUsed(data, { id, channelId }) {
       const card = data.cards.find((c) => c.id === id);
-      if (card) markUsed(card);
+      if (card) markUsed(card, channelId);
       return !!card;
     },
 
@@ -766,6 +804,6 @@
     deckOf, poolFor, compatibleWith, universal, usableOn, inDeck, decksHolding,
     addToDeck, removeFromDeck,
     deleteCard, restoreCard, deleteDeck, restoreDeck, reorderDeck,
-    sortCards, markUsed
+    sortCards, markUsed, countOn
   };
 })();

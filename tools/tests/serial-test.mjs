@@ -25,8 +25,8 @@ const check = (l, ok) => { if (!ok) fail++; console.log((ok ? "ok   " : "FAIL ")
 // unserialised: both read the same state, one write wins
 disk = { cards: [{ id: "a", tokens: [], uses: 0 }, { id: "b", tokens: [], uses: 0 }],
          decks: { [CH]: ["a", "b"] }, channelMeta: {} };
-await Promise.all([store.runOp("markUsed", { id: "a" }), store.runOp("reorderDeck", { channelId: CH, movedId: "a", targetId: "b", side: "after" })]);
-const racedUses = disk.cards.find((c) => c.id === "a").uses;
+await Promise.all([store.runOp("markUsed", { id: "a", channelId: CH }), store.runOp("reorderDeck", { channelId: CH, movedId: "a", targetId: "b", side: "after" })]);
+const racedUses = disk.cards.find((c) => c.id === "a").by?.[CH]?.uses ?? 0;
 const racedOrder = disk.decks[CH].join("");
 console.log(`  直列化なし: uses=${racedUses} order=${racedOrder}`);
 check("unserialised really does lose one of the two", racedUses === 0 || racedOrder === "ab");
@@ -35,10 +35,10 @@ check("unserialised really does lose one of the two", racedUses === 0 || racedOr
 disk = { cards: [{ id: "a", tokens: [], uses: 0 }, { id: "b", tokens: [], uses: 0 }],
          decks: { [CH]: ["a", "b"] }, channelMeta: {} };
 await Promise.all([
-  enqueue(() => store.runOp("markUsed", { id: "a" })),
+  enqueue(() => store.runOp("markUsed", { id: "a", channelId: CH })),
   enqueue(() => store.runOp("reorderDeck", { channelId: CH, movedId: "a", targetId: "b", side: "after" }))
 ]);
-const uses = disk.cards.find((c) => c.id === "a").uses;
+const uses = disk.cards.find((c) => c.id === "a").by?.[CH]?.uses ?? 0;
 const order = disk.decks[CH].join("");
 console.log(`  直列化あり: uses=${uses} order=${order}`);
 check("both survive when serialised", uses === 1 && order === "ba");

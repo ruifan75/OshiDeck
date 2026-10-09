@@ -176,6 +176,9 @@
 .od-text-button {
   display: inline-flex;
   align-items: center;
+  /* The bar's controls keep their size; the channel name is what gives way,
+     and it has its own ellipsis for that. */
+  flex-shrink: 0;
   gap: 4px;
   padding: 5px 8px;
   border: 0;

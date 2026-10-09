@@ -168,6 +168,54 @@ b.setPeek({ text: "" }, { isConnected: true });
 check("and moving to one that does not gives the bar back", b.peek() === null);
 check("which is worth the redraw", b.seen.refreshes === 2);
 
+/* ---------- the way into the pool ---------- */
+
+// It used to be a full-width row under the hand, which spent a line of a
+// short panel saying one short thing. The bar is already where this UI puts
+// anything that would otherwise take room of its own.
+{
+  const from = src.indexOf("  function buildBar(channel, hue, count, poolCount) {");
+  const to = src.indexOf("  function noticeRow(");
+  if (from < 0 || to < 0 || to <= from) {
+    console.log("FAIL could not lift buildBar out of content.js");
+    process.exit(1);
+  }
+
+  const bar = (poolOpen, poolCount) => new Function(
+    "poolOpen", "poolCount", "document", "t",
+    `const notice = null, peek = null, inputHasContent = false;
+     const noticeRow = () => ({ is: "notice" });
+     const peekReadout = () => ({ is: "peek" });
+     const poolBar = () => ({ is: "poolBar" });
+     const saveTargets = () => ({ is: "saveTargets" });
+     const deckIdentity = () => ({ is: "identity" });
+     const buildAction = (icon, text) => ({ is: "action", icon, text });
+     const render = () => {};
+     const openOptions = () => {};
+     ${src.slice(from, to)}
+     return buildBar(null, 0, 4, poolCount);`
+  )(
+    poolOpen,
+    poolCount,
+    { createElement: () => ({
+        kids: [],
+        append(...nodes) { this.kids.push(...nodes); },
+        appendChild(node) { this.kids.push(node); },
+        set className(v) {}
+      }) },
+    (key, ...rest) => [key, ...rest].join("|")
+  );
+
+  const wayIn = (built) => built.kids.find((k) => k.is === "action" && k.icon === "plus");
+
+  check("the way into the pool is in the bar", !!wayIn(bar(false, 7)));
+  check("and says how many are waiting in it", wayIn(bar(false, 7)).text.includes("7"));
+  check("an empty pool offers no way in", !wayIn(bar(false, 0)));
+  check("and the pool itself offers no way into itself", !wayIn(bar(true, 7)));
+  check("the builder is still there either way",
+    bar(false, 7).kids.some((k) => k.icon === "deck") && bar(false, 0).kids.some((k) => k.icon === "deck"));
+}
+
 /* ---------- where the skip is decided ---------- */
 
 // The signature can be tested as a pure function; whether render actually

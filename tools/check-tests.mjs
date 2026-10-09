@@ -611,6 +611,10 @@ const MUTATIONS = [
     "    const said = peekKey(next) ? next : null;",
     "    const said = next;"],
 
+  [VISIBILITY, CONTENT, "no way into the pool from anywhere",
+    "      if (poolCount) {",
+    "      if (false) {"],
+
   [VISIBILITY, CONTENT, "a notice left sitting over the controls it names",
     "    if (notice) clearNotice();",
     "    if (false) clearNotice();"],
@@ -730,6 +734,7 @@ const KILLS = {
   "a card's contents written into the bar as text": "the bar draws the stamps rather than naming them",
   "the bar's stamps built the way the editor's are": "the way a card face draws them, not the way the editor does",
   "an empty description treated as something to say": "a peek with nothing in it leaves the bar to the deck",
+  "no way into the pool from anywhere": "the way into the pool is in the bar",
   "a notice left sitting over the controls it names": "typing clears a notice that was in the way",
   "a refusal with nothing to show for it where it happened": "and marks the card that was pressed",
   "a card drawn in full when it is one thing repeated": "five of the same stamp draw as one picture and a count",

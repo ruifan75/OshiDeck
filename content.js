@@ -1585,7 +1585,7 @@
   // something worth keeping it becomes the destination picker, so choosing
   // where a card goes is one click on a labelled button — never a guess
   // followed by a correction.
-  function buildBar(channel, hue, count) {
+  function buildBar(channel, hue, count, poolCount) {
     const bar = document.createElement("div");
     bar.className = "od-bar";
     // Everything that would otherwise float over the chat lives here instead.
@@ -1600,6 +1600,14 @@
         render();
       }));
     } else {
+      // The way into the pool used to be a full-width row under the hand,
+      // which cost a line of the panel to say one short thing. The bar is
+      // already where this UI puts anything that would otherwise take room
+      // of its own, and it has a side for controls.
+      if (poolCount) {
+        bar.appendChild(buildAction("plus", t("pool.short", poolCount), t("aria.addFromPool"),
+          () => { poolOpen = true; render(); }));
+      }
       bar.appendChild(buildAction("deck", t("action.build"), t("aria.openBuilder"), () => openOptions()));
     }
     return bar;
@@ -1856,7 +1864,8 @@
 
   function refreshBar() {
     if (!barEl?.isConnected || !barContext) return;
-    const next = buildBar(barContext.channel, barContext.hue, barContext.count);
+    const next = buildBar(
+      barContext.channel, barContext.hue, barContext.count, barContext.poolCount);
     barEl.replaceWith(next);
     barEl = next;
   }
@@ -1989,8 +1998,8 @@
       rootEl.dataset.mode = data.settings.mode;
       rootEl.dataset.pool = String(poolOpen);
 
-      barContext = { channel, hue, count: shown.length };
-      barEl = buildBar(channel, hue, shown.length);
+      barContext = { channel, hue, count: shown.length, poolCount: pool.length };
+      barEl = buildBar(channel, hue, shown.length, pool.length);
       rootEl.appendChild(barEl);
 
       if (!shown.length && !drawn) {
@@ -2000,10 +2009,7 @@
           ? t("pool.empty")
           : t("pool.emptyHint");
         rootEl.appendChild(empty);
-        if (!poolOpen) {
-          appendPresetOffer(rootEl, channel);
-          appendPoolToggle(pool.length);
-        }
+        if (!poolOpen) appendPresetOffer(rootEl, channel);
         return;
       }
 
@@ -2027,26 +2033,10 @@
         more.addEventListener("click", () => { expanded = !expanded; render(); });
         rootEl.appendChild(more);
       }
-
-      if (!poolOpen) appendPoolToggle(pool.length);
     });
   }
 
   // Nothing joins a deck on its own, so there has to be a way in from here.
-  function appendPoolToggle(poolCount) {
-    if (!poolCount) return;
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "od-more";
-    button.append(svgIcon("plus"));
-    const label = document.createElement("span");
-    label.textContent = t("pool.addFromCount", poolCount);
-    button.appendChild(label);
-    button.setAttribute("aria-label", t("aria.addFromPool"));
-    button.addEventListener("click", () => { poolOpen = true; render(); });
-    rootEl.appendChild(button);
-  }
-
   // Once the context is gone nothing can be read, written or re-rendered.
   // Tear down rather than throwing on every chat message, and say why the
   // deck vanished — the page has to be reloaded to get it back.

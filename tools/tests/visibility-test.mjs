@@ -129,8 +129,12 @@ b.setPeek({ text: "このデッキから外す" }, button);
 check("hovering a control puts its description in the bar", b.peek()?.text === "このデッキから外す");
 
 button.isConnected = false;
-b.dropStalePeek();
+const dropped = b.dropStalePeek();
 check("and removing that control clears it", b.peek() === null);
+// The caller needs to know, because it may be about to return without
+// redrawing: the panel skips a render whose signature has not changed, and
+// the signature cannot see a peek.
+check("and says so, for a caller that is about to skip", dropped === true);
 check("with nothing left owning the bar", b.owner() === null);
 
 // A control still on the page keeps its description: the panel re-renders
@@ -138,8 +142,8 @@ check("with nothing left owning the bar", b.owner() === null);
 b = bar();
 const staying = { isConnected: true };
 b.setPeek({ text: "この札を編集" }, staying);
-b.dropStalePeek();
-check("a control still there keeps its description", b.peek()?.text === "この札を編集");
+check("a control still there keeps its description",
+  b.dropStalePeek() === false && b.peek()?.text === "この札を編集");
 
 // Clearing has no owner to remember.
 b = bar();
@@ -373,9 +377,12 @@ check("which is worth the redraw", b.seen.refreshes === 2);
   // changing anything the signature can see. Clearing that after the decision
   // is too late: the panel skips, and the bar keeps describing a button that
   // is no longer there.
-  const peekAt = src.indexOf("dropStalePeek();", renderAt);
-  check("and clears a stale description before deciding, not after",
-    peekAt > renderAt && peekAt < skipAt);
+  // And the skip itself has to put the bar right. Clearing the variables
+  // while leaving the bar as it was left the description on screen until
+  // something else happened to refresh it.
+  const skipBody = src.slice(skipAt, src.indexOf("painted = next;", skipAt));
+  check("and the skip refreshes the bar it just emptied",
+    skipBody.includes("if (dropped) refreshBar();"));
 }
 
 /* ---------- what the editor tells the panel ---------- */

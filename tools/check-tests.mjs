@@ -151,8 +151,8 @@ const MUTATIONS = [
     "if (false) return;"],
 
   [VISIBILITY, CONTENT, "a description left behind by a removed control",
-    "if (!peekOwner || peekOwner.isConnected) return;",
-    "if (true) return;"],
+    "if (!peekOwner || peekOwner.isConnected) return false;",
+    "if (true) return false;"],
 
   [VISIBILITY, CONTENT, "a panel that cannot tell its hand has been reordered",
     'shown.map(each).join(",")',
@@ -175,7 +175,12 @@ const MUTATIONS = [
     "      pool.length,"],
 
   [VISIBILITY, CONTENT, "a panel that never actually skips",
-    "    if (next === painted && rootEl.firstChild) return;",
+    `    if (next === painted && rootEl.firstChild) {
+      // Nothing else changed, so nothing else needs drawing — but the bar is
+      // still showing a description of something that is gone.
+      if (dropped) refreshBar();
+      return;
+    }`,
     "    // (no skip)"],
 
   [CONFIRM, OPTIONS, "a second press of the same button counting as consent",
@@ -253,7 +258,12 @@ const MUTATIONS = [
     "    return TUNING[group]?.[chosen];"],
 
   [VISIBILITY, CONTENT, "the skip decided after the panel has been torn down",
-    `    if (next === painted && rootEl.firstChild) return;
+    `    if (next === painted && rootEl.firstChild) {
+      // Nothing else changed, so nothing else needs drawing — but the bar is
+      // still showing a description of something that is gone.
+      if (dropped) refreshBar();
+      return;
+    }
     painted = next;
 
     keepChatPinned(() => {
@@ -332,12 +342,6 @@ const MUTATIONS = [
   [VISIBILITY, CONTENT, "an editor whose member emoji nobody notices",
     "    const pinned = filled && tokens.requiredChannels(tokens.collectTokens(input)).length > 0;",
     "    const pinned = false;"],
-
-  [VISIBILITY, CONTENT, "a stale description cleared after the decision, not before",
-    `    dropStalePeek();
-
-    const next = panelSignature(data, channel, hue, shown, [...mine, ...offered], drawn);`,
-    "    const next = panelSignature(data, channel, hue, shown, [...mine, ...offered], drawn);"],
 
   [PRESET, CONTENT, "a preset loaded without passing the name along",
     "      cards: presets.cardsFor(preset, channelId)",
@@ -913,7 +917,6 @@ const KILLS = {
   "a wake-up that comes straight away instead of at the end": "nor part of the way through the hold",
   "a second stream on one channel treated as the same chat": "but the same channel on a new video is a new chat",
   "an editor whose member emoji nobody notices": "a member emoji arriving rebuilds the bar",
-  "a stale description cleared after the decision, not before": "and clears a stale description before deciding, not after",
   "a preset loaded without passing the name along": "and names the channel while it is there",
 
   "a badge read from anywhere in the chat": "a chat full of other people's members is not me",

@@ -522,9 +522,12 @@
     }
   }
 
-  // Removing a deck is not removing its cards: they stay in the pool, and a
-  // card that is only usable on that channel stays there too, ready if the
-  // deck comes back.
+  // Removing a deck keeps the cards that outlive it and takes the ones that
+  // do not. A universal card belongs to every other pool, so it stays; a card
+  // scoped to this channel can belong to no other deck and appear in no other
+  // pool, so leaving it behind would strand it — paid for, invisible,
+  // impossible to delete. Those go with the deck, including ones that were
+  // only ever in the pool, and undo brings all of it back.
   function deleteDeck(data, channelId) {
     const ids = data.decks[channelId];
     if (!ids) return null;

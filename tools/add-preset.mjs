@@ -24,7 +24,11 @@ const bundle = `${root}presets/presets.json`;
 const args = argv.slice(2);
 const flag = args.indexOf("--channel");
 const channel = flag >= 0 ? args[flag + 1] : null;
-const paths = args.filter((a, at) => at !== flag && at !== flag + 1 && !a.startsWith("--"));
+// `indexOf` answers -1 when the flag is absent, and `at !== flag + 1` is then
+// `at !== 0` — which quietly dropped the first filename of every call that
+// did not use the flag, including the one the README gives.
+const paths = args.filter((a, at) =>
+  !a.startsWith("--") && (flag < 0 || (at !== flag && at !== flag + 1)));
 
 if (!paths.length || (flag >= 0 && !channel)) {
   console.log("usage: node tools/add-preset.mjs <preset.json …> [--channel UC…]");
@@ -45,7 +49,12 @@ await import(`${root}src/tokens.js`);
 await import(`${root}src/backup.js`);
 await import(`${root}src/store.js`);
 await import(`${root}src/presets.js`);
-const { presets } = globalThis.OshiDeck;
+// The validators answer with [key, ...args] now, for the pages to translate
+// where they show it. Without this the reason printed here was the key and
+// its arguments joined by a comma.
+await import(`${root}src/i18n.js`);
+const { presets, i18n } = globalThis.OshiDeck;
+const why = (problem) => (Array.isArray(problem) ? i18n.t(...problem) : String(problem));
 
 const die = (message) => { console.log(`FAIL ${message}`); exit(1); };
 
@@ -69,7 +78,7 @@ for (const path of paths) {
   }
 
   const problem = presets.validate(incoming);
-  if (problem) die(`${path} は使えません: ${problem}`);
+  if (problem) die(`${path} は使えません: ${why(problem)}`);
 
   // Said on the command line, when the deck had no member emoji to say it.
   if (channel) {

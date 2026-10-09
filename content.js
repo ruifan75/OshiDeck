@@ -589,10 +589,11 @@
   // the last one left off, and that needs the cycle length.
   const BREATH_MS = 2600;
 
-  // A reaction already in the hand is no offer at all, and member emoji are
-  // left out altogether: they belong to this channel, but YouTube serves them
-  // to members only, and a card that fails when pressed is worse than no card.
-  // When membership can be told apart, that is the line to revisit.
+  // A reaction already in the hand is no offer at all, and neither is one
+  // that would fail when pressed. Member emoji used to be left out whatever
+  // they were, because there was no way to ask whether this viewer could send
+  // them; now there is, so this channel's are offered to a member and nobody
+  // else's are offered to anyone.
   const worthOffering = (mine, channelId, member) => (seen) =>
     !mine.has(seen.key) &&
     tokens.hasSubstance(seen.tokens) &&
@@ -700,10 +701,11 @@
     return tools;
   }
 
-  // No tools, no dragging, nothing to reorder — there is nothing here to
-  // rearrange yet. Pressing it puts the reaction in the editor, which is also
-  // how keeping it works: the bar is already offering the two save targets by
-  // then, and saving puts it in the pool and in this deck together.
+  // No dragging and nothing to reorder — it is in nobody's deck yet, so
+  // there is no order for it to be in. It does carry a ＋, because the deck
+  // it is not in is the thing you would want it in: pressing the card puts
+  // the reaction in the editor and the bar offers the two save targets, and
+  // pressing the ＋ keeps it without going through the editor at all.
   function buildDrawn(card, { size }) {
     const el = document.createElement("div");
     el.className = "od-card od-drawn";
@@ -1512,8 +1514,9 @@
   //
   // Deliberately coarse about the chat: an exact hit count changes every few
   // seconds and would defeat the point, so only whether a card is trending at
-  // all counts as a change. The bar reads its count live instead, so nothing
-  // goes stale there either.
+  // all counts as a change. Nothing shows the count any more — the card
+  // breathes in the corner while it is being said, and five people or fifty
+  // does not change what anybody does about it.
   //
   // Everything else has to be here, because a signature that misses an input
   // leaves the panel showing what is no longer true — worse than redrawing for
@@ -1751,10 +1754,16 @@
   // ejected while the pointer was on its button left its description in the
   // bar for good — and with the bar stuck on a description, it could never
   // become the save targets, so nothing could be added either.
+  // Returns whether it dropped one, because the caller may be about to
+  // return without redrawing: the panel skips a render whose signature has
+  // not changed, and the signature cannot see a peek. Clearing the variables
+  // while leaving the bar as it was left the description on screen until
+  // something else happened to refresh it.
   function dropStalePeek() {
-    if (!peekOwner || peekOwner.isConnected) return;
+    if (!peekOwner || peekOwner.isConnected) return false;
     peek = null;
     peekOwner = null;
+    return true;
   }
 
   // The two halves, as two labels you switch between. A card you saved and a
@@ -2072,10 +2081,15 @@
     // Before the early return, not after: a control that replaces itself in
     // place — the drawn card's ＋ becoming the two targets — disconnects its
     // owner without changing anything the signature can see.
-    dropStalePeek();
+    const dropped = dropStalePeek();
 
     const next = panelSignature(data, channel, hue, shown, [...mine, ...offered], drawn);
-    if (next === painted && rootEl.firstChild) return;
+    if (next === painted && rootEl.firstChild) {
+      // Nothing else changed, so nothing else needs drawing — but the bar is
+      // still showing a description of something that is gone.
+      if (dropped) refreshBar();
+      return;
+    }
     painted = next;
 
     keepChatPinned(() => {

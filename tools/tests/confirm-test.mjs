@@ -1,6 +1,7 @@
 // Deleting a card that other decks are holding.
 //
-// Deleting from the pool empties every deck at once, so it asks first. The
+// Deleting from the pool removes the card from every deck at once, so it asks
+// first — the decks themselves stay. The
 // asking went wrong twice over: the question was written to the status line at
 // the foot of the options page, nowhere near the card, and pressing the same ×
 // again counted as answering it — so a second press deleted a card on the

@@ -131,7 +131,9 @@ const wave = { tokens: text("かわいい"), count: 9 };
 
 check("a burst is offered", draw({ chat: wave })?.tokens === wave.tokens);
 check("and is marked as not yours", draw({ chat: wave })?.drawn === true);
-check("carrying the count for the bar to show", draw({ chat: wave })?.hits === 9);
+// Nothing shows the number any more; the card breathes in the corner while
+// it is being said. It is still what the sort runs on.
+check("carrying the count it was drawn on", draw({ chat: wave })?.hits === 9);
 
 check("a quiet chat offers nothing", draw({ chat: null }) === null);
 check("turned off, nothing is offered", draw({ suggest: false, chat: wave }) === null);

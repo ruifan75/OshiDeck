@@ -26,7 +26,7 @@ await import("/Users/maintainer/OshiDeck/src/tokens.js");
 await import("/Users/maintainer/OshiDeck/src/backup.js");
 await import(`file://${process.env.OD_STORE || "/Users/maintainer/OshiDeck/src/store.js"}`);
 await import(`file://${src}`);
-const { store, presets } = globalThis.OshiDeck;
+const { store, presets, tokens } = globalThis.OshiDeck;
 
 let fail = 0;
 const check = (label, ok) => { if (!ok) fail++; console.log((ok ? "ok   " : "FAIL ") + label); };
@@ -293,6 +293,57 @@ disk = { cards: [], decks: { [OTHER]: [] }, channelMeta: {}, settings: {} };
 got = await importing(made, OTHER);
 check("a file for another channel is refused, not half-loaded", disk.cards.length === 0);
 check("and says which kind of no it is", got.said.join("").includes("opt.importNotForHere"));
+
+/* ---------- and what the builder says a card is ---------- */
+
+// The stripe means scope, and the two pages were answering that differently.
+// Reading the member emoji only says "forced to a channel"; a card set to
+// this channel in plain words is tied to it just as much — and a preset
+// carries those. `はのは〜` is Palette Project's and has no stamps in it, so
+// it was coloured in the panel and grey in the builder.
+{
+  const cardFrom = optionsSrc.indexOf("function buildCard(card, where) {");
+  const cardTo = optionsSrc.indexOf("\n}", cardFrom) + 2;
+  if (cardFrom < 0 || cardTo <= cardFrom) {
+    console.log("FAIL could not lift buildCard out of options.js");
+    process.exit(1);
+  }
+
+  // tokens.toFragment reaches for the global document, not the injected one.
+  const node = () => ({
+    dataset: {}, style: { setProperty() {} },
+    append() {}, appendChild() {}, setAttribute() {}, addEventListener() {},
+    set className(v) {}, set textContent(v) {}, set draggable(v) {}
+  });
+  const was = globalThis.document;
+  globalThis.document = {
+    createElement: node,
+    createTextNode: () => node(),
+    createDocumentFragment: node
+  };
+
+  const build = new Function(
+    "document", "store", "tokens", "t", "hueOf", "selected", "wireDrag", "cardAction",
+    `${optionsSrc.slice(cardFrom, cardTo)} return buildCard;`
+  )(
+    { createElement: node },
+    store, tokens,
+    (key) => key,
+    () => 0, CH, () => {}, () => ({})
+  );
+
+  const scoped = (scope, tokenList) => build({ tokens: tokenList, scope, uses: 0 }, "pool");
+
+  check("a card tied to a channel by its words is not universal here",
+    scoped(CH, [{ type: "text", value: "はのは〜" }]).dataset.universal === undefined);
+  check("while one that works anywhere is",
+    scoped(store.GLOBAL, [{ type: "text", value: "888" }]).dataset.universal === "true");
+  check("and a card forced by its stamps is still not",
+    scoped(store.GLOBAL, [{ type: "youtubeEmoji", emojiId: `${CH}/x`,
+      sharedTooltipText: ":_hai:" }]).dataset.universal === undefined);
+
+  globalThis.document = was;
+}
 
 // The portable kind has nobody to belong to, so it goes anywhere.
 disk = { cards: [], decks: { [OTHER]: [] }, channelMeta: {}, settings: {} };

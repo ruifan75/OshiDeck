@@ -370,8 +370,13 @@ function buildCard(card, where) {
   el.append(body, meta);
   wireDrag(el, card, where);
 
-  const bound = tokens.requiredChannels(card.tokens).length > 0;
-  if (!bound) el.dataset.universal = "true";
+  // What the stripe means is scope, which is the same question the panel
+  // asks — and it was being answered differently here. Reading the member
+  // emoji only says "this card is forced to a channel"; a card set to this
+  // channel in plain words is tied to it just as much, and a preset carries
+  // those (`はのは〜` is channel-only and has no stamps in it). Those cards
+  // were striped in the panel and grey in here.
+  if (store.scopeOf(card) === store.GLOBAL) el.dataset.universal = "true";
 
   // Every card has a pool to fall back to now, so leaving a deck always means
   // the same thing wherever you do it.

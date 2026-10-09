@@ -380,15 +380,23 @@ check("and with no channel there is no pool at all",
 // own yet is still one you could put in here.
 {
   const fresh = { tokens: text("おかえり"), scope: "global" };
+  // A preset's channel-only card need not have a stamp in it: `はのは〜` is
+  // this channel's and is nothing but words. Reading the stamps to decide
+  // the stripe drew it grey.
+  const theirs = { tokens: text("はのは〜"), scope: "channel" };
   const alreadyMine = { tokens: stamp(HERE), scope: "channel" };
-  offering = [{ name: "稀羽すう", channel: HERE, cards: [fresh, alreadyMine] }];
+  offering = [{ name: "稀羽すう", channel: HERE, cards: [fresh, theirs, alreadyMine] }];
 
   const shown = lift({ doc: page({ mine: true }) }).buildPool(shelved(HERE), HERE);
   const offered = shown.filter((c) => c.offered);
 
-  check("a card the channel uses and you do not have is offered", offered.length === 1);
-  check("and it is the one you do not have",
-    tokens.toPlainText(offered[0].tokens) === "おかえり");
+  check("cards the channel uses and you do not have are offered", offered.length === 2);
+  check("and they are the ones you do not have",
+    offered.map((c) => tokens.toPlainText(c.tokens)).sort().join("|") === "おかえり|はのは〜");
+  check("an offered card set to this channel wears its colour",
+    offered.find((c) => tokens.toPlainText(c.tokens) === "はのは〜")?.bound === true);
+  check("while a universal one does not",
+    offered.find((c) => tokens.toPlainText(c.tokens) === "おかえり")?.bound === false);
   check("while one you already own is not offered twice",
     shown.filter((c) => tokens.cardKey(c.tokens) === tokens.cardKey(stamp(HERE))).length === 1);
   check("an offered card carries what it was offered from", !!offered[0].offered);
@@ -398,15 +406,16 @@ check("and with no channel there is no pool at all",
   // every render makes the panel redraw forever.
   const again = lift({ doc: page({ mine: true }) }).buildPool(shelved(HERE), HERE);
   check("and the same offer has the same id every time",
-    again.find((c) => c.offered)?.id === offered[0].id);
+    again.filter((c) => c.offered).map((c) => c.id).join() ===
+    offered.map((c) => c.id).join());
 
   // Same rules as anything else in the pool.
   check("and its scope still shows",
     shown.find((c) => c.id === "ours")?.bound === true);
 
   const locked = lift({ doc: page({ mine: false }) }).buildPool(shelved(HERE), HERE);
-  check("an offered card nobody can send here is locked like any other",
-    locked.filter((c) => c.offered)[0]?.locked === false); // this one is plain words
+  check("an offered card of plain words is never locked",
+    locked.filter((c) => c.offered).every((c) => c.locked === false));
 
   offering = [];
 }

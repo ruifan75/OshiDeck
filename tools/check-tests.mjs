@@ -491,6 +491,10 @@ const MUTATIONS = [
     '      ? text.replace(/\\$(\\d)/g, (_, n) => String(args[Number(n) - 1] ?? ""))',
     "      ? text.replace(/\\$(\\d)/g, (_, n) => String(args[Number(n) - 1]))"],
 
+  [PRESET, OPTIONS, "the stripe read from the stamps instead of the scope",
+    "  if (store.scopeOf(card) === store.GLOBAL) el.dataset.universal = \"true\";",
+    "  if (!tokens.requiredChannels(card.tokens).length) el.dataset.universal = \"true\";"],
+
   [PRESET, OPTIONS, "a file taken in without asking whose it is",
     "  if (!presets.offeredOn(raw, selected)) return status(t(\"opt.importNotForHere\"));",
     "  if (false) return status(t(\"opt.importNotForHere\"));"],
@@ -695,6 +699,7 @@ const KILLS = {
   "member emoji accepted into a preset that names nobody": "nor can they ride in a preset that names nobody",
   "a preset offered to channels it was never for": "and nowhere else",
   "a preset forced onto a channel that cannot send it": "forced onto another channel, only what can be sent there loads",
+  "the stripe read from the stamps instead of the scope": "a card tied to a channel by its words is not universal here",
   "a file taken in without asking whose it is": "a file for another channel is refused, not half-loaded",
   "a file taken in without being read first": "a file that is not a preset is refused",
   "a preset that carries its ids along with its content": "no ids, no counts, no history",
@@ -750,7 +755,7 @@ const KILLS = {
   "an empty description treated as something to say": "a peek with nothing in it leaves the bar to the deck",
   "no way into the pool from anywhere": "the way into the pool is in the bar",
   "a notice left sitting over the controls it names": "typing clears a notice that was in the way",
-  "a preset's cards never offered from the pool": "a card the channel uses and you do not have is offered",
+  "a preset's cards never offered from the pool": "cards the channel uses and you do not have are offered",
   "a card offered that you already have": "while one you already own is not offered twice",
   "an offer that is a different card every render": "and the same offer has the same id every time",
   "the pool's scope stripe left grey on every card": "and its scope still shows",

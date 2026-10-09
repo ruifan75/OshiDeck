@@ -168,6 +168,47 @@ b.setPeek({ text: "" }, { isConnected: true });
 check("and moving to one that does not gives the bar back", b.peek() === null);
 check("which is worth the redraw", b.seen.refreshes === 2);
 
+/* ---------- nothing moves under the pointer ---------- */
+
+// Every automatic redraw goes through scheduleRender — the chat changing, a
+// drawn card's hold running out, a resize, the presets arriving — and it is
+// held while the pointer is on the panel. So a card cannot be swapped out
+// from under the cursor; a short hold means the card is gone sooner, not
+// that it goes while you are reaching for it.
+{
+  const from = src.indexOf("  function scheduleRender() {");
+  const to = src.indexOf("\n  }", from) + 4;
+  if (from < 0 || to <= from) {
+    console.log("FAIL could not lift scheduleRender out of content.js");
+    process.exit(1);
+  }
+
+  const panelWith = (frozen) => {
+    const seen = { renders: 0 };
+    const api = new Function(
+      "seen", "frozen",
+      `let stopped = false;
+       let pendingRender = false;
+       let refreshTimer = null;
+       const clearTimeout = () => {};
+       const setTimeout = (fn) => { fn(); return 1; };
+       const render = () => { seen.renders += 1; };
+       ${src.slice(from, to)}
+       return { scheduleRender, owed: () => pendingRender };`
+    )(seen, frozen);
+    return { ...api, seen };
+  };
+
+  let p = panelWith(false);
+  p.scheduleRender();
+  check("with nothing under the pointer the panel redraws", p.seen.renders === 1);
+
+  p = panelWith(true);
+  p.scheduleRender();
+  check("the pointer on the panel holds the redraw", p.seen.renders === 0);
+  check("and remembers that one is owed", p.owed() === true);
+}
+
 /* ---------- what the stripe is allowed to say ---------- */
 
 // The stripe means scope, and scope is the one thing you need while deciding

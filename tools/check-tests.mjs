@@ -634,6 +634,10 @@ const MUTATIONS = [
     '#oshideck-root[data-pool="true"] .od-card,',
     '#oshideck-root[data-pool="true"] .od-card::before { background: var(--od-common); }\n#oshideck-root[data-pool="true"] .od-card,'],
 
+  [VISIBILITY, CONTENT, "the hand reordered under the pointer",
+    "    if (frozen) { pendingRender = true; return; }",
+    "    if (false) { pendingRender = true; return; }"],
+
   [VISIBILITY, CONTENT, "a notice left sitting over the controls it names",
     "    if (notice) clearNotice();",
     "    if (false) clearNotice();"],
@@ -804,6 +808,7 @@ const KILLS = {
   "an empty description treated as something to say": "a peek with nothing in it leaves the bar to the deck",
   "no way into the pool from anywhere": "the way in is in the bar",
   "the pool painting over the scope stripe": "the pool does not paint over the scope stripe",
+  "the hand reordered under the pointer": "the pointer on the panel holds the redraw",
   "a notice left sitting over the controls it names": "typing clears a notice that was in the way",
   "a preset's cards never offered from the pool": "cards the channel uses and you do not have are offered",
   "a card offered that you already have": "while one you already own is not offered at all",

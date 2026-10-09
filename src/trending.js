@@ -5,18 +5,20 @@
   const { cardKey, collectTokens, harvestEmoji } = OD.tokens;
 
   // How far back messages are kept at all. With the decay below, anything
-  // this old is worth about 8% of a message arriving now, so falling out of
+  // this old is worth about 4% of a message arriving now, so falling out of
   // the window is no longer a visible event — it is a bound on memory.
   const WINDOW_MS = 90_000;
 
-  // What actually decides the order. A wave loses half its weight every
-  // half-life, so one that ended a minute ago cannot hold the front against
-  // one happening now: 40 claps from 80 seconds ago are worth about 4.4, so
-  // five fresh messages overtake them. A flat count could not do that — after
-  // a burst of applause the next song would start and the applause was still
-  // first, because every message in the window counted the same right up to
-  // the moment it fell off the end.
-  const HALF_LIFE_MS = 25_000;
+  // What actually decides the order, when the panel has not said otherwise:
+  // it passes the `pace` setting in, and this is the same as that setting's
+  // middle step. A wave loses half its weight every half-life, so one that
+  // ended a minute ago cannot hold the front against one happening now — 40
+  // claps from 80 seconds ago are worth about 2.5, so three fresh messages
+  // overtake them. A flat count could not do that: after a burst of applause
+  // the next song would start and the applause was still first, because every
+  // message in the window counted the same right up to the moment it fell off
+  // the end.
+  const HALF_LIFE_MS = 20_000;
 
   const RECENT_MAX = 600;
 

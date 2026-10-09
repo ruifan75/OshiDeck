@@ -6,7 +6,7 @@ globalThis.OshiDeck = { tokens: {
     .map((x) => /^(UC[A-Za-z0-9_-]{22})\//.exec(x.emojiId || "")?.[1])
     .filter(Boolean))]
 } };
-require("/Users/maintainer/OshiDeck/src/backup.js");
+require("../../src/backup.js");
 const B = globalThis.OshiDeck.backup;
 const t = (v) => [{ type: "text", value: v }];
 

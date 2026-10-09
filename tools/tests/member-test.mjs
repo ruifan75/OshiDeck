@@ -30,7 +30,9 @@ globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
 globalThis.crypto ??= (await import("node:crypto")).webcrypto;
 await import("../../src/tokens.js");
 await import("../../src/backup.js");
-await import(`file://${process.env.OD_STORE || "/Users/maintainer/OshiDeck/src/store.js"}`);
+await import(process.env.OD_STORE
+  ? `file://${process.env.OD_STORE}`
+  : new URL("../../src/store.js", import.meta.url).href);
 // The signature is what findDuplicate uses to spot a near-miss, so the real
 // one comes along too rather than a stand-in that would agree with anything.
 globalThis.document = { querySelector: () => null };
@@ -38,7 +40,9 @@ await import("../../src/trending.js");
 // What a preset's card becomes when it is offered is part of what is being
 // asked here, so the real one comes along rather than a copy that would only
 // agree with itself.
-await import(`file://${process.env.OD_PRESETS || "/Users/maintainer/OshiDeck/src/presets.js"}`);
+await import(process.env.OD_PRESETS
+  ? `file://${process.env.OD_PRESETS}`
+  : new URL("../../src/presets.js", import.meta.url).href);
 const { store, presets } = globalThis.OshiDeck;
 
 const source = process.env.OD_SOURCE

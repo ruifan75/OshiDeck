@@ -17,14 +17,18 @@ globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
 } } };
 globalThis.crypto ??= (await import("node:crypto")).webcrypto;
 
-const src = process.env.OD_PRESETS || "/Users/maintainer/OshiDeck/src/presets.js";
+const src = process.env.OD_PRESETS
+  ?? new URL("../../src/presets.js", import.meta.url).pathname;
 // content.js is read rather than run: it wants a browser, and all that is
 // wanted here is the one function that asks the store to load a preset.
 const src2 = (await import("node:fs")).readFileSync(
-  process.env.OD_SOURCE || "/Users/maintainer/OshiDeck/content.js", "utf8");
-await import("/Users/maintainer/OshiDeck/src/tokens.js");
-await import("/Users/maintainer/OshiDeck/src/backup.js");
-await import(`file://${process.env.OD_STORE || "/Users/maintainer/OshiDeck/src/store.js"}`);
+  process.env.OD_SOURCE
+  ?? new URL("../../content.js", import.meta.url).pathname, "utf8");
+await import(new URL("../../src/tokens.js", import.meta.url).href);
+await import(new URL("../../src/backup.js", import.meta.url).href);
+await import(process.env.OD_STORE
+  ? `file://${process.env.OD_STORE}`
+  : new URL("../../src/store.js", import.meta.url).href);
 await import(`file://${src}`);
 const { store, presets, tokens } = globalThis.OshiDeck;
 
@@ -256,7 +260,8 @@ check("and does not repeat itself in the deck", new Set(disk.decks[OTHER]).size 
 // left to get wrong is the line that calls them, which is the part nothing
 // was watching.
 const optionsSrc = (await import("node:fs")).readFileSync(
-  process.env.OD_OPTIONS || "/Users/maintainer/OshiDeck/options.js", "utf8");
+  process.env.OD_OPTIONS
+  ?? new URL("../../options.js", import.meta.url).pathname, "utf8");
 
 const from = optionsSrc.indexOf("async function importDeck(file) {");
 const to = optionsSrc.indexOf("\n}", from) + 2;

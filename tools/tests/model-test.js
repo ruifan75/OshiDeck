@@ -13,8 +13,8 @@ const stored = {
   decks: { [SAKURA]: ["univ", "sakuraS"], [YUMENO]: ["yumenoS"] }
 };
 globalThis.chrome = { runtime: { id: "x" }, storage: { local: { get: async () => stored, set: async () => {} } } };
-require("/Users/maintainer/OshiDeck/src/store.js");
-require("/Users/maintainer/OshiDeck/src/tokens.js");
+require("../../src/store.js");
+require("../../src/tokens.js");
 const S = globalThis.OshiDeck.store;
 
 (async () => {

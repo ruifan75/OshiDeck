@@ -12,8 +12,8 @@ globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
   set: async (patch) => { writes++; await slow(5); disk = { ...disk, ...JSON.parse(JSON.stringify(patch)) }; }
 } } };
 
-await import("/Users/maintainer/OshiDeck/src/tokens.js");
-await import("/Users/maintainer/OshiDeck/src/store.js");
+await import(new URL("../../src/tokens.js", import.meta.url).href);
+await import(new URL("../../src/store.js", import.meta.url).href);
 const { store } = globalThis.OshiDeck;
 
 let queue = Promise.resolve();

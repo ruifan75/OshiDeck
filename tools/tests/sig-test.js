@@ -1,7 +1,7 @@
 globalThis.OshiDeck = { tokens: { collectTokens: () => [], harvestEmoji: () => {} } };
 globalThis.Node = { ELEMENT_NODE: 1 };
 globalThis.document = { querySelector: () => null };
-require("/Users/maintainer/OshiDeck/src/trending.js");
+require("../../src/trending.js");
 const { signature } = globalThis.OshiDeck.trending;
 
 const t = (s) => [{ type: "text", value: s }];

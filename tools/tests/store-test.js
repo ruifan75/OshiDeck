@@ -18,8 +18,8 @@ globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
   get: async () => stored,
   set: async (patch) => { writes.push(Object.keys(patch).sort().join("+")); }
 } } };
-require(process.env.OD_STORE || "/Users/maintainer/OshiDeck/src/store.js");
-require("/Users/maintainer/OshiDeck/src/tokens.js");
+require(process.env.OD_STORE || "../../src/store.js");
+require("../../src/tokens.js");
 const S = globalThis.OshiDeck.store;
 
 (async () => {

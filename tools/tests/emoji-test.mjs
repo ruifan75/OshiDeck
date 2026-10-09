@@ -18,7 +18,8 @@
 //
 // `alt` is a display name. Reading it instead would have found no underscore
 // on anything and unlocked every member emoji there is.
-const src = process.env.OD_TOKENS || "/Users/maintainer/OshiDeck/src/tokens.js";
+const src = process.env.OD_TOKENS
+  ?? new URL("../../src/tokens.js", import.meta.url).pathname;
 
 globalThis.OshiDeck = {};
 globalThis.document = { createElement: () => ({ setAttribute() {}, appendChild() {} }) };

@@ -6,7 +6,7 @@ globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
   get: async () => ({}),
   set: async () => {}
 } } };
-await import("/Users/maintainer/OshiDeck/src/journal.js");
+await import(new URL("../../src/journal.js", import.meta.url).href);
 const { journal } = globalThis.OshiDeck;
 
 let fail = 0;

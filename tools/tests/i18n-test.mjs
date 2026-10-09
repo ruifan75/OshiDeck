@@ -5,7 +5,8 @@
 // nothing is still written into the code. What is left for here is the part
 // with decisions in it: which language answers, and what happens when the one
 // asked for has nothing to say.
-const src = process.env.OD_I18N || "/Users/maintainer/OshiDeck/src/i18n.js";
+const src = process.env.OD_I18N
+  ?? new URL("../../src/i18n.js", import.meta.url).pathname;
 
 // A browser whose own language is not the source one. Without this the guess
 // and the fallback are the same string, and a table that ignored the browser

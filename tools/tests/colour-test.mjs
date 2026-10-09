@@ -9,9 +9,10 @@ globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
   get: async () => ({}), set: async () => {}
 } } };
 
-const src = process.env.OD_STORE || "/Users/maintainer/OshiDeck/src/store.js";
-await import("/Users/maintainer/OshiDeck/src/tokens.js");
-await import("/Users/maintainer/OshiDeck/src/backup.js");
+const src = process.env.OD_STORE
+  ?? new URL("../../src/store.js", import.meta.url).pathname;
+await import(new URL("../../src/tokens.js", import.meta.url).href);
+await import(new URL("../../src/backup.js", import.meta.url).href);
 await import(`file://${src}`);
 const { store } = globalThis.OshiDeck;
 const { hueFromHex, hexOfHue, defaultHue, OSHI_HUES, HUES } = store;

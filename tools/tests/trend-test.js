@@ -36,11 +36,11 @@ Date.now = () => clock;
 const wait = (ms) => { clock += ms; };
 globalThis.MutationObserver = class { constructor(cb) { fire = cb; } observe() {} disconnect() {} };
 
-require("/Users/maintainer/OshiDeck/src/layout.js");
-require("/Users/maintainer/OshiDeck/src/store.js");
-require(process.env.OD_TOKENS || "/Users/maintainer/OshiDeck/src/tokens.js");
+require("../../src/layout.js");
+require("../../src/store.js");
+require(process.env.OD_TOKENS || "../../src/tokens.js");
 // OD_TRENDING lets the mutation checker swap in a deliberately broken copy.
-require(process.env.OD_TRENDING || "/Users/maintainer/OshiDeck/src/trending.js");
+require(process.env.OD_TRENDING || "../../src/trending.js");
 
 const { trending, store, tokens } = globalThis.OshiDeck;
 const CH = "UCsakura0000000000000000";

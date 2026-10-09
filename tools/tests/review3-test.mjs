@@ -11,9 +11,9 @@ globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
   get: async () => JSON.parse(JSON.stringify(disk)),
   set: async (p) => { sets.push(Object.keys(p).sort().join("+")); disk = { ...disk, ...JSON.parse(JSON.stringify(p)) }; }
 } } };
-await import("/Users/maintainer/OshiDeck/src/tokens.js");
-await import("/Users/maintainer/OshiDeck/src/backup.js");
-await import("/Users/maintainer/OshiDeck/src/store.js");
+await import(new URL("../../src/tokens.js", import.meta.url).href);
+await import(new URL("../../src/backup.js", import.meta.url).href);
+await import(new URL("../../src/store.js", import.meta.url).href);
 const { store } = globalThis.OshiDeck;
 
 let fail = 0;

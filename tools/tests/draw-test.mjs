@@ -36,7 +36,9 @@ globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
 await import(process.env.OD_LAYOUT ? `file://${process.env.OD_LAYOUT}` : "../../src/layout.js");
 await import("../../src/tokens.js");
 await import("../../src/backup.js");
-await import(`file://${process.env.OD_STORE || "/Users/maintainer/OshiDeck/src/store.js"}`);
+await import(process.env.OD_STORE
+  ? `file://${process.env.OD_STORE}`
+  : new URL("../../src/store.js", import.meta.url).href);
 const { layout, store } = globalThis.OshiDeck;
 
 let fail = 0;

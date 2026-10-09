@@ -5,6 +5,9 @@
 // nothing is still written into the code. What is left for here is the part
 // with decisions in it: which language answers, and what happens when the one
 // asked for has nothing to say.
+import { readFileSync } from "node:fs";
+import { checkI18n } from "../check-i18n.mjs";
+
 const src = process.env.OD_I18N
   ?? new URL("../../src/i18n.js", import.meta.url).pathname;
 
@@ -79,5 +82,135 @@ i18n.use("ja");
 check("an empty setting goes back to guessing, not to the last choice",
   i18n.use("") === "zh-TW");
 check("which is what the browser is in", i18n.current() === "zh-TW");
+
+/* ---------- validator errors follow the display language ---------- */
+
+await import(new URL("../../src/tokens.js", import.meta.url));
+await import(process.env.OD_BACKUP ?? new URL("../../src/backup.js", import.meta.url).href);
+await import(process.env.OD_PRESETS ?? new URL("../../src/presets.js", import.meta.url).href);
+const { backup, presets } = globalThis.OshiDeck;
+const CH = "UC" + "a".repeat(22);
+const OTHER = "UC" + "b".repeat(22);
+const text = (value = "hello") => [{ type: "text", value }];
+const stamp = (channel) => [{ type: "youtubeEmoji", emojiId: `${channel}/wave` }];
+const card = (over = {}) => ({ id: "card-a", tokens: text(), scope: "global", ...over });
+const saved = (over = {}) => ({ cards: [card()], decks: {}, ...over });
+const preset = (over = {}) => ({ name: "Test", cards: [{ tokens: text(), scope: "global" }], ...over });
+const withPresetCard = (over) => preset({ cards: [{ tokens: text(), scope: "global", ...over }] });
+
+check("valid backup and preset still return null",
+  backup.validate(saved()) === null && presets.validate(preset()) === null);
+
+// Check the reason and its arguments, rather than just that something failed.
+// Each error is then displayed through the same wrapper used by options.js.
+const cases = [
+  [backup, [], ["validation.notObject"]],
+  [backup, saved({ format: 99 }), ["validation.newBackupFormat", 99]],
+  [backup, saved({ cards: null }), ["validation.cardsNotArray"]],
+  [backup, saved({ decks: [] }), ["validation.decksInvalid"]],
+  [backup, saved({ cards: [null] }), ["validation.cardInvalid"]],
+  [backup, saved({ cards: [card({ id: "" })] }), ["validation.cardIdMissing"]],
+  [backup, saved({ cards: [card({ tokens: null })] }), ["validation.cardTokensMissing"]],
+  [backup, saved({ cards: [card({ tokens: [null] })] }), ["validation.cardTokenInvalid", "card-a"]],
+  [backup, saved({ cards: [card({ tokens: text(12) })] }), ["validation.cardTextInvalid", "card-a"]],
+  [backup, saved({ cards: [card({ tokens: [{ type: "youtubeEmoji" }] })] }), ["validation.emojiIdMissing", "card-a"]],
+  [backup, saved({ cards: [card({ tokens: [{ type: "unknown" }] })] }), ["validation.tokenTypeUnknown", "card-a", "unknown"]],
+  [backup, saved({ cards: [card(), card()] }), ["validation.cardIdDuplicate", "card-a"]],
+  [backup, saved({ decks: { [CH]: null } }), ["validation.deckNotArray", CH]],
+  [backup, saved({ decks: { [CH]: [12] } }), ["validation.deckIdInvalid", CH]],
+  [backup, saved({ decks: { [CH]: ["absent"] } }), ["validation.deckCardMissing", CH]],
+  [backup, saved({ decks: { [CH]: ["card-a", "card-a"] } }), ["validation.deckCardDuplicate", CH]],
+  [backup, saved({ cards: [card({ scope: null })] }), ["validation.cardScopeInvalid", "card-a"]],
+  [backup, saved({ cards: [card({ scope: "bad-scope" })] }), ["validation.cardScopeNotChannel", "card-a", "bad-scope"]],
+  [backup, saved({ cards: [card({ tokens: stamp(CH) })] }), ["validation.cardEmojiScope", "card-a", CH, "global"]],
+  [backup, saved({ cards: [card({ tokens: [...stamp(CH), ...stamp(OTHER)], scope: undefined })] }), ["validation.cardMixedChannels", "card-a"]],
+  [backup, saved({ cards: [card({ tokens: stamp(CH), scope: CH })], decks: { [OTHER]: ["card-a"] } }), ["validation.deckEmojiChannel", "card-a", CH, OTHER]],
+  [backup, saved({ cards: [card({ scope: CH })], decks: { [OTHER]: ["card-a"] } }), ["validation.deckScopeChannel", "card-a", CH, OTHER]],
+  [presets, [], ["validation.notObject"]],
+  [presets, preset({ format: 99 }), ["validation.newPresetFormat", 99]],
+  [presets, preset({ name: "" }), ["validation.presetNameMissing"]],
+  [presets, preset({ cards: [] }), ["validation.presetCardsEmpty"]],
+  [presets, preset({ channel: "bad-channel" }), ["validation.presetChannelInvalid", "bad-channel"]],
+  [presets, preset({ cards: [null] }), ["validation.cardInvalid"]],
+  [presets, withPresetCard({ tokens: null }), ["validation.presetTokensMissing"]],
+  [presets, withPresetCard({ tokens: text(" ") }), ["validation.presetCardEmpty"]],
+  [presets, withPresetCard({ scope: "bad-scope" }), ["validation.presetScopeInvalid", "bad-scope"]],
+  [presets, withPresetCard({ tokens: [...stamp(CH), ...stamp(OTHER)] }), ["validation.presetMixedChannels"]],
+  [presets, withPresetCard({ tokens: stamp(CH) }), ["validation.presetChannelMissing"]],
+  [presets, { ...withPresetCard({ tokens: stamp(OTHER) }), channel: CH }, ["validation.presetEmojiChannel", OTHER]],
+  [presets, preset({ cards: [{ tokens: text(), scope: "global" }, { tokens: text(), scope: "global" }] }), ["validation.presetCardDuplicate"]]
+];
+
+for (const [validator, raw, expected] of cases) {
+  i18n.use("ja");
+  const problem = validator.validate(raw);
+  let ok = JSON.stringify(problem) === JSON.stringify(expected);
+  const rendered = [];
+  for (const language of ["ja", "zh-TW"]) {
+    i18n.use(language);
+    ok &&= JSON.stringify(validator.validate(raw)) === JSON.stringify(expected);
+    const entry = MESSAGES[expected[0]]?.[language];
+    for (const wrapper of ["opt.cannotRead", "opt.cannotExport"]) {
+      const message = i18n.t(wrapper, problem);
+      ok &&= !!entry && message.includes(entry.split("$")[0]) &&
+        !message.includes("validation.") && !/\$\d|undefined|\[object Object\]/.test(message) &&
+        expected.slice(1).every((value) => message.includes(String(value)));
+      if (language === "zh-TW") ok &&= !/[぀-ヿ]/.test(message);
+      rendered.push(message);
+    }
+  }
+  ok &&= rendered[0] !== rendered[2];
+  check(`${validator === backup ? "backup" : "preset"}: ${expected[0]} translates at display time`, ok);
+}
+
+const future = backup.validate(saved({ format: 99 }));
+i18n.use("zh-TW");
+check("a Chinese status includes a Chinese validation reason and its format number",
+  i18n.t("opt.cannotRead", future) === "無法載入：這是較新的格式（format 99），請先更新擴充功能");
+i18n.use("ja");
+check("the same error switches back to Japanese without revalidating",
+  i18n.t("opt.cannotRead", future) === "読み込めません: 新しい形式（format 99）です。拡張機能を更新してください");
+i18n.use("zh-TW");
+check("interpolated file data is literal, even when it resembles a placeholder",
+  i18n.t("opt.cannotRead", ["validation.cardScopeNotChannel", "card-$2", "scope-$1"]) ===
+    "無法載入：牌 card-$2 的 scope（scope-$1）不是頻道 ID");
+check("a malformed file value resembling an error tuple stays literal",
+  i18n.t("opt.cannotRead", presets.validate(preset({ channel: ["validation.notObject"] }))) ===
+    "無法載入：channel 的值無效：validation.notObject");
+
+/* ---------- the checker sees errors behind the status wrappers ---------- */
+
+const read = (file) => readFileSync(new URL(`../../${file}`, import.meta.url), "utf8");
+function audit(file, before, after) {
+  const source = file ? read(file) : "";
+  if (file && !source.includes(before)) throw new Error(`missing checker fixture: ${before}`);
+  const output = [];
+  const bad = checkI18n({
+    ...i18n,
+    read: (path) => path === file ? source.replace(before, after) : read(path),
+    report: (message) => output.push(message)
+  });
+  return { bad, output: output.join("\n") };
+}
+
+check("the full i18n audit is green", audit().bad === 0);
+for (const file of ["src/backup.js", "src/presets.js"]) {
+  const before = 'return ["validation.notObject"];';
+  const japanese = audit(file, before, 'return "JSONオブジェクトではありません";');
+  check(`${file}: the checker catches a Japanese validator error`,
+    japanese.bad > 0 && japanese.output.includes(`${file}:`));
+  const english = audit(file, before, 'return "Not a JSON object";');
+  check(`${file}: a hardcoded English error also fails`,
+    english.bad > 0 && english.output.includes("not text"));
+  const unknown = audit(file, before, 'return ["validation.notThere"];');
+  check(`${file}: an unknown validator key fails`,
+    unknown.bad > 0 && unknown.output.includes("知らない key: validation.notThere"));
+}
+const missingTranslation = {
+  ...MESSAGES,
+  "validation.notObject": { ja: MESSAGES["validation.notObject"].ja }
+};
+check("validator translations are required in every language",
+  checkI18n({ ...i18n, MESSAGES: missingTranslation, read, report: () => {} }) > 0);
 
 process.exit(fail);

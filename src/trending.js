@@ -4,10 +4,10 @@
   const OD = (globalThis.OshiDeck ||= {});
   const { cardKey, collectTokens, harvestEmoji } = OD.tokens;
 
-  // How far back messages are kept at all. With the decay below, anything
-  // this old is worth about 4% of a message arriving now, so falling out of
-  // the window is no longer a visible event — it is a bound on memory.
-  const WINDOW_MS = 90_000;
+  // Keep messages for 4.5 of the chosen half-lives, when their weight is about
+  // 4%, so falling out of the window is no longer a visible event. Always
+  // keep at least the burst window, which also reads these messages.
+  const WINDOW_HALF_LIVES = 4.5;
 
   // What actually decides the order, when the panel has not said otherwise:
   // it passes the `pace` setting in, and this is the same as that setting's
@@ -20,6 +20,8 @@
   // the end.
   const HALF_LIFE_MS = 20_000;
 
+  // A longer pace keeps more history in time, not more captured wording:
+  // retain at most 600 tokenized messages to bound memory even in a busy chat.
   const RECENT_MAX = 600;
 
   // Just the times, for the share. Keeping wording costs memory, so `recent`
@@ -111,6 +113,7 @@
   // on its own — which is how the tests drive it.
   function createWatcher({ onChange, tuning = () => ({}) } = {}) {
     const halfLife = () => tuning().halfLife || HALF_LIFE_MS;
+    const windowMs = () => Math.max(BURST_MS, halfLife() * WINDOW_HALF_LIVES);
     const burstMin = () => tuning().burstMin || BURST_MIN;
     const burstShare = () => tuning().burstShare || BURST_SHARE;
 
@@ -167,7 +170,7 @@
     }
 
     function prune() {
-      const cutoff = Date.now() - WINDOW_MS;
+      const cutoff = Date.now() - windowMs();
       recent = recent.filter((entry) => entry.at >= cutoff);
       return recent.length;
     }
@@ -237,7 +240,7 @@
     // trending marks as they were until another message happened along.
     function ranking() {
       const now = Date.now();
-      const cutoff = now - WINDOW_MS;
+      const cutoff = now - windowMs();
       const out = new Map();
 
       for (const entry of recent) {
@@ -287,6 +290,6 @@
   }
 
   OD.trending = {
-    signature, createWatcher, WINDOW_MS, HALF_LIFE_MS, BURST_MS, BURST_MIN, BURST_SHARE
+    signature, createWatcher, WINDOW_HALF_LIVES, HALF_LIFE_MS, BURST_MS, BURST_MIN, BURST_SHARE
   };
 })();

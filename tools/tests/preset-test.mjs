@@ -117,7 +117,7 @@ check(
 // said *something* let the two guards cover for each other.
 check(
   "nor can they ride in a preset that names nobody",
-  (presets.validate({ ...made, channel: undefined }) || "").includes("channel が要ります")
+  presets.validate({ ...made, channel: undefined })?.[0] === "validation.presetChannelMissing"
 );
 check(
   "nor two channels' worth in one card",

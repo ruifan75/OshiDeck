@@ -64,43 +64,43 @@
     };
   }
 
-  // Returns an error string, or null when the preset is usable. A preset is
-  // read from the extension's own files, but it is also hand-edited, and a
-  // broken one must say so rather than half-load.
+  // Returns [message key, ...arguments], or null when the preset is usable.
+  // i18n.t translates it at display time. Presets can also be hand-edited,
+  // and a broken one must say so rather than half-load.
   function validate(raw) {
     if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
-      return "JSONオブジェクトではありません";
+      return ["validation.notObject"];
     }
     if (raw.format && raw.format > FORMAT) {
-      return `新しい形式（format ${raw.format}）です`;
+      return ["validation.newPresetFormat", raw.format];
     }
-    if (typeof raw.name !== "string" || !raw.name.trim()) return "name がありません";
-    if (!Array.isArray(raw.cards) || !raw.cards.length) return "cards が空です";
+    if (typeof raw.name !== "string" || !raw.name.trim()) return ["validation.presetNameMissing"];
+    if (!Array.isArray(raw.cards) || !raw.cards.length) return ["validation.presetCardsEmpty"];
     if (raw.channel !== undefined && !CHANNEL_ID.test(raw.channel)) {
-      return `channel が不正です: ${raw.channel}`;
+      return ["validation.presetChannelInvalid", raw.channel];
     }
 
     const seen = new Set();
     for (const card of raw.cards) {
-      if (!card || typeof card !== "object") return "札のデータが壊れています";
-      if (!Array.isArray(card.tokens)) return "札に tokens がありません";
-      if (!OD.tokens.hasSubstance(card.tokens)) return "中身のない札があります";
-      if (!SCOPES.has(card.scope)) return `scope が不正です: ${card.scope}`;
+      if (!card || typeof card !== "object") return ["validation.cardInvalid"];
+      if (!Array.isArray(card.tokens)) return ["validation.presetTokensMissing"];
+      if (!OD.tokens.hasSubstance(card.tokens)) return ["validation.presetCardEmpty"];
+      if (!SCOPES.has(card.scope)) return ["validation.presetScopeInvalid", card.scope];
 
       // Member emoji may travel, but only inside a preset that says whose
       // they are — otherwise it would be offered to decks that can never
       // send them.
       const required = OD.tokens.requiredChannels(card.tokens);
-      if (required.length > 1) return "複数のチャンネルのメン限スタンプが混ざっています";
+      if (required.length > 1) return ["validation.presetMixedChannels"];
       if (required.length && !raw.channel) {
-        return "メン限スタンプを入れるには channel が要ります";
+        return ["validation.presetChannelMissing"];
       }
       if (required.length && required[0] !== raw.channel) {
-        return `よそのチャンネルのメン限スタンプが入っています: ${required[0]}`;
+        return ["validation.presetEmojiChannel", required[0]];
       }
 
       const key = OD.tokens.cardKey(card.tokens);
-      if (seen.has(key)) return "同じ内容の札が二度入っています";
+      if (seen.has(key)) return ["validation.presetCardDuplicate"];
       seen.add(key);
     }
     return null;

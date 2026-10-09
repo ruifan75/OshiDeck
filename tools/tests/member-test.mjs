@@ -445,6 +445,24 @@ check("and with no channel there is no pool at all",
     offered.every((c) => tokens.cardKey(c.tokens) !== tokens.cardKey(stamp(HERE))));
   check("an offered card carries what it was offered from", !!offered[0].offered);
 
+  // Owning the words is not owning a card you can send. A copy tied to
+  // another channel cannot be played here, so counting it as owned left both
+  // halves empty: the pool excludes it because it is not compatible, and the
+  // offer excluded it because it existed.
+  {
+    const elsewhere = {
+      ...shelved(HERE),
+      cards: [{ id: "theirs", tokens: text("おかえり"), scope: AWAY, by: {} }],
+      decks: { [HERE]: [] }
+    };
+    const api2 = lift({ doc: page({ mine: true }) });
+    check("a card of the same words tied elsewhere is not in this pool",
+      api2.buildPool(elsewhere, HERE).length === 0);
+    check("so the preset still offers it here",
+      api2.buildOffered(elsewhere, HERE)
+        .some((c) => tokens.toPlainText(c.tokens) === "おかえり"));
+  }
+
   // cardsFor hands out a fresh uuid every time it is asked, and the panel's
   // signature is built from card ids: an offered card that is a new card on
   // every render makes the panel redraw forever.

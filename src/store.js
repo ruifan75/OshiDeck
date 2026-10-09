@@ -68,21 +68,47 @@
     return TUNING[group]?.[chosen] ?? TUNING[group]?.normal;
   };
 
-  // Settled on the way in, so nothing downstream has to wonder. An empty
-  // number field reads as NaN, and a step name that was never offered would
-  // silently become the middle one on every read instead of being refused
-  // once here.
+  // What each setting may be, so that nothing downstream has to wonder.
+  //
+  // Not only the two time steps, and not only the settings page: a backup is
+  // a file and a file can say anything. One with `mode: "not-a-mode"` passed
+  // validation and then threw on the options page, which reads the matching
+  // radio by value and set `.checked` on nothing.
+  const ALLOWED = {
+    autoSend: [true, false],
+    mode: ["hand", "list"],
+    cardSize: ["large", "medium", "small"],
+    rows: [1, 2],
+    sortBy: ["manual", "uses", "heat", "trend"],
+    suggest: [true, false],
+    draw: ["shy", "normal", "eager"],
+    hold: ["long", "normal", "short"],
+    pace: ["slow", "normal", "quick"]
+  };
+
   function cleanSettings(patch) {
-    const clean = { ...patch };
-    for (const group of BY_TIME) {
-      if (!(group in clean)) continue;
-      const value = clean[group];
-      if (typeof value === "number") {
-        if (Number.isFinite(value)) clean[group] = clampTime(value);
-        else delete clean[group];
-      } else if (!TUNING[group][value]) {
-        delete clean[group];
+    const clean = {};
+    for (const [key, value] of Object.entries(patch || {})) {
+      // Anything that is not a setting is not one by being written down.
+      if (!Object.hasOwn(DEFAULT_SETTINGS, key)) continue;
+
+      // Any string: i18n falls back from one it does not know, and a code it
+      // has never heard of is how "follow the browser" is written.
+      if (key === "language") {
+        if (typeof value === "string") clean[key] = value;
+        continue;
       }
+
+      // These two take a number of milliseconds as well as a step. An empty
+      // field arrives as NaN, which is a number and not an answer.
+      if (BY_TIME.has(key) && typeof value === "number") {
+        if (Number.isFinite(value)) clean[key] = clampTime(value);
+        continue;
+      }
+
+      // `includes`, not a lookup: `TUNING[group][value]` answered for
+      // "toString", and tuning() then handed its callers a function.
+      if (ALLOWED[key].includes(value)) clean[key] = value;
     }
     return clean;
   }
@@ -212,21 +238,39 @@
     if (!was.uses && !was.heat && !was.lastUsedAt) return card;
     if (Object.keys(card.by || {}).length) return card;
 
+    const held = Object.entries(decks || {})
+      .filter(([, ids]) => (ids || []).includes(card.id))
+      .map(([channelId]) => channelId);
+
+    // A card in no deck is usually one that was ejected into the pool, and it
+    // still says where it was used if it is tied to a channel: that is the
+    // only channel it could ever have been used on. Dropping its counts threw
+    // away a history that was right there in its scope.
+    const scope = scopeOf(card);
+    const where = held.length ? held : (scope === GLOBAL ? [] : [scope]);
+
     card.by = {};
-    for (const [channelId, ids] of Object.entries(decks || {})) {
-      if (ids.includes(card.id)) card.by[channelId] = { ...was };
-    }
+    for (const channelId of where) card.by[channelId] = { ...was };
     return card;
   }
 
   // A card lives in the pool once. A deck is an ordered list of ids drawn from
   // it, so the same card can sit in several decks and hold a different place
   // in each — which a single shared ordering could never express.
+  // Every shape goes through the same split, once the decks are known. It
+  // used to be applied inside the first branch only, so anything arriving in
+  // an older shape was given an empty `by` and its counts deleted unread: a
+  // card with forty uses came back as one the first time it was pressed.
   function migrate(raw) {
+    const { cards, decks } = shape(raw);
+    for (const card of cards) splitCounts(card, decks);
+    return { cards, decks };
+  }
+
+  function shape(raw) {
     if (Array.isArray(raw[KEYS.CARDS]) && raw[KEYS.DECKS]) {
       return {
-        cards: raw[KEYS.CARDS].map((card) =>
-          splitCounts(withScope({ ...blank(), ...card }), raw[KEYS.DECKS])),
+        cards: raw[KEYS.CARDS].map((card) => withScope({ ...blank(), ...card })),
         decks: raw[KEYS.DECKS]
       };
     }
@@ -311,7 +355,10 @@
     pruneImpossible(cards, decks);
 
     return {
-      settings: { ...DEFAULT_SETTINGS, ...(raw[KEYS.SETTINGS] || {}) },
+      // On the way out as well as the way in. A replace import writes the
+      // file's settings wholesale, and storage can also be edited by hand or
+      // written by a build that allowed something this one does not.
+      settings: { ...DEFAULT_SETTINGS, ...cleanSettings(raw[KEYS.SETTINGS]) },
       cards,
       decks,
       channelMeta: raw[KEYS.CHANNELS] || {}
@@ -570,8 +617,14 @@
 
       // Two fast saves, or two tabs, can both decide there is no duplicate.
       // Only here is that decision made against settled state.
+      //
+      // The same wording is not the same card. One tied to another channel
+      // cannot be sent here, so calling it a duplicate reported the save as
+      // handled while putting nothing in this deck — the same mistake
+      // loadPreset was fixed for, made again one function away.
       const key = OD.tokens.cardKey(card.tokens);
-      const existing = data.cards.find((c) => OD.tokens.cardKey(c.tokens) === key);
+      const existing = data.cards.find(
+        (c) => OD.tokens.cardKey(c.tokens) === key && usableOn(c, channelId));
       if (existing) {
         // The existing card keeps its own scope — silently re-scoping it would
         // change what every other deck holding it can do. Report what it is so

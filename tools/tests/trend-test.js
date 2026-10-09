@@ -28,6 +28,7 @@ globalThis.document = {
 };
 let fire = null;
 const host = new El("DIV");
+host.isConnected = true;
 
 // Decay is about elapsed time, so the test needs to move time rather than
 // wait for it.
@@ -35,6 +36,11 @@ let clock = 1_700_000_000_000;
 Date.now = () => clock;
 const wait = (ms) => { clock += ms; };
 globalThis.MutationObserver = class { constructor(cb) { fire = cb; } observe() {} disconnect() {} };
+// Drive the watcher's real notification path, including pruning, without
+// waiting for a timer or leaving other scenarios' watchers running.
+let tick = null;
+globalThis.setInterval = (callback) => { tick = callback; return 1; };
+globalThis.clearInterval = () => {};
 
 require("../../src/layout.js");
 require("../../src/store.js");
@@ -218,4 +224,110 @@ const order2 = two
   .sort((a, b) => b.trend - a.trend);
 expect("so the new reaction takes the front", order2[0].id, "kawaii");
 expect("other channel's stamp is locked", deck.find((c) => c.id === "far").tokens.length && true, true);
+
+/* ---------- retention follows the chosen pace ---------- */
+
+const fadingSig = sig([{ type: "text", value: "余韻" }]);
+for (const [label, pace, halfLife] of [
+  ["default", undefined, 20_000],
+  ["quick", "quick", 10_000],
+  ["slow", "slow", 30_000],
+  ["custom", 45_000, 45_000],
+  ["maximum", 600_000, 600_000]
+]) {
+  let changes = 0;
+  const paced = trending.createWatcher({
+    tuning: () => ({ halfLife: store.tuning({ pace }, "pace") }),
+    onChange: () => changes++
+  });
+  paced.start();
+  send(msg(text("余韻")));
+  tick(); // consume the initial message notification
+
+  if (pace === 600_000) {
+    // The reported cliff: the same message went from ~0.901 to zero over
+    // these two milliseconds, despite a ten-minute half-life.
+    wait(89_999);
+    const before = paced.ranking().get(fadingSig)?.score;
+    wait(2);
+    tick(); // pruning must keep it too, not just ranking
+    const after = paced.ranking().get(fadingSig)?.score;
+    expect("a ten-minute pace decays smoothly across the old 90-second cutoff",
+      before > 0.9 && after > 0.9 && before > after && before - after < 0.00001, true);
+    expect("the old cutoff does not notify an expiry", changes, 1);
+    wait(halfLife - 90_001);
+  } else {
+    wait(halfLife);
+  }
+  tick();
+  expect(`${label} pace keeps half the weight after one half-life`,
+    paced.ranking().get(fadingSig)?.score, 0.5);
+
+  wait(halfLife * 3.5);
+  tick();
+  const edge = paced.ranking().get(fadingSig);
+  expect(`${label} pace retains a message at 4.5 half-lives`, edge?.count, 1);
+  expect(`${label} pace has little weight left at its retention edge`,
+    edge?.score > 0.04 && edge?.score < 0.05, true);
+
+  wait(1);
+  expect(`${label} pace ignores expired messages before the timer runs`,
+    paced.ranking().has(fadingSig), false);
+  tick();
+  expect(`${label} pace notifies expiry even after ranking was read`, changes, 2);
+  tick();
+  expect(`${label} pace reports that expiry only once`, changes, 2);
+  paced.stop();
+}
+
+// Tuning is read live: changing the setting must change both readers' window,
+// rather than leaving the lifetime chosen when the watcher was created.
+let pace = 20_000;
+let changes = 0;
+const adjustable = trending.createWatcher({
+  tuning: () => ({ halfLife: pace }),
+  onChange: () => changes++
+});
+adjustable.start();
+send(msg(text("余韻")));
+tick();
+wait(80_000);
+pace = 600_000;
+wait(20_000);
+tick();
+expect("lengthening the pace keeps existing history past its old window",
+  adjustable.ranking().get(fadingSig)?.count, 1);
+expect("and does not report that history as expired", changes, 1);
+pace = 10_000;
+expect("shortening the pace applies to ranking immediately",
+  adjustable.ranking().has(fadingSig), false);
+tick();
+expect("and to expiry notifications", changes, 2);
+adjustable.stop();
+
+// The same buffer supplies the twelve-second burst count. A short custom
+// pace must not prune a wave before the suggestion code has seen all of it.
+const fast = trending.createWatcher({ tuning: () => ({ halfLife: 1_000 }) });
+fast.start();
+send(msg(text("きちゃ")), 6);
+tick();
+wait(10_000);
+tick();
+expect("the shortest pace still keeps a burst for its full window",
+  fast.burst(only("きちゃ"))?.count, 6);
+wait(2_001);
+expect("and the burst still ends after twelve seconds", fast.burst() === null, true);
+fast.stop();
+
+const bounded = trending.createWatcher({ tuning: () => ({ halfLife: 600_000 }) });
+bounded.start();
+send(msg(text("oldest")));
+send(msg(text("latest")), 600);
+const capped = bounded.ranking();
+expect("even the longest pace retains at most 600 captured messages",
+  [...capped.values()].reduce((sum, seen) => sum + seen.count, 0), 600);
+expect("the memory bound drops the oldest message",
+  capped.has(sig([{ type: "text", value: "oldest" }])), false);
+expect("and retains the newest ones", capped.get(sig([{ type: "text", value: "latest" }]))?.count, 600);
+bounded.stop();
 process.exit(fail);

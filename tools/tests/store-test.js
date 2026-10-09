@@ -53,13 +53,49 @@ const S = globalThis.OshiDeck.store;
     const by = (id) => old.cards.find((c) => c.id === id).by;
 
     check("an old count goes to every deck that holds the card",
-      by("shared")[SAKURA].uses === 40 && by("shared")[YUMENO].uses === 40);
+      by("shared")?.[SAKURA]?.uses === 40 && by("shared")?.[YUMENO]?.uses === 40);
     check("and the card stops carrying one of its own",
       old.cards.every((c) => c.uses === undefined && c.heat === undefined));
     check("a card in no deck has nowhere to put it",
       Object.keys(by("loose")).length === 0);
     check("and a card already counted per channel is left alone",
       by("fresh")?.[YUMENO]?.uses === 3 && Object.keys(by("fresh") || {}).length === 1);
+
+    stored = before;
+  }
+
+  // Every shape, not only the current one. The split used to live inside the
+  // branch that reads today's storage, so anything arriving in an older shape
+  // was handed an empty `by` and had its counts deleted unread — a card with
+  // forty uses came back as one the first time it was pressed.
+  {
+    const before = stored;
+
+    stored = { cards: [{ id: "old", tokens: text("888"), scope: SAKURA,
+                         uses: 40, heat: 40, lastUsedAt: 111 }] };
+    let d = await S.read();
+    check("a v0.3 card keeps the count it arrived with",
+      d.cards[0].by?.[SAKURA]?.uses === 40);
+
+    stored = { presets: { channels: { [YUMENO]: [{ id: "older", tokens: text("GG"),
+                                                   uses: 7, heat: 7, lastUsedAt: 5 }] } } };
+    d = await S.read();
+    check("and so does a v0.1 one", d.cards[0].by?.[YUMENO]?.uses === 7);
+
+    // A card nobody's deck holds is usually one that was ejected into the
+    // pool. If it is tied to a channel it still says where it was used.
+    stored = { cards: [{ id: "shelved", tokens: text("おかえり"), scope: SAKURA,
+                         uses: 12, heat: 12, lastUsedAt: 9 }], decks: { [SAKURA]: [] } };
+    d = await S.read();
+    check("a channel-only card in no deck keeps its count anyway",
+      d.cards[0].by?.[SAKURA]?.uses === 12);
+
+    // A universal one genuinely has nowhere to put it.
+    stored = { cards: [{ id: "loose", tokens: text("w"), uses: 3, heat: 3, lastUsedAt: 1 }],
+               decks: { [SAKURA]: [] } };
+    d = await S.read();
+    check("while a universal one in no deck has nowhere to put it",
+      Object.keys((await S.read()).cards[0].by || {}).length === 0);
 
     stored = before;
   }
@@ -85,6 +121,65 @@ const S = globalThis.OshiDeck.store;
       (await set({ pace: "quick" })).pace === "quick");
     check("and a setting that is not one of these is left alone",
       (await set({ cardSize: "large" })).cardSize === "large");
+
+    // Not only the two times, and not only this page. A backup is a file and
+    // a file can say anything; one with `mode: "not-a-mode"` passed and then
+    // threw on the options page, which reads the matching radio by value.
+    check("a mode nobody offers is refused", (await set({ mode: "not-a-mode" })).mode === "hand");
+    check("and a row count nobody offers", (await set({ rows: 99 })).rows === 2);
+    check("and a sort nobody offers", (await set({ sortBy: "whatever" })).sortBy === "trend");
+    check("something that is not a setting at all does not become one",
+      !("hack" in await set({ hack: "x" })));
+
+    // `TUNING[group][value]` answered for "toString", and tuning() then
+    // handed its callers a function.
+    const borrowed = await set({ hold: "toString" });
+    check("a step borrowed from Object.prototype is not a step", borrowed.hold === "normal");
+    check("and the time it buys is a number", typeof S.tuning(borrowed, "hold") === "number");
+  }
+
+  console.log("");
+  console.log("--- what a file says about settings is checked too ---");
+
+  // The same gate on the way out. A replace import writes the file's settings
+  // wholesale, and storage can be edited by hand.
+  {
+    const before = stored;
+    stored = { cards: [], decks: {}, settings: { mode: "not-a-mode", rows: 99, hold: "toString" } };
+    const d = await S.read();
+    check("a file's settings are cleaned when they are read",
+      d.settings.mode === "hand" && d.settings.rows === 2 && d.settings.hold === "normal");
+    stored = before;
+  }
+
+  console.log("");
+  console.log("--- the same wording is not the same card ---");
+
+  // One tied to another channel cannot be sent here, so calling it a
+  // duplicate reported the save as handled while putting nothing in the deck.
+  {
+    const before = stored;
+    stored = { cards: [{ id: "theirs", tokens: text("おかえり"), scope: SAKURA, by: {} }],
+               decks: { [SAKURA]: ["theirs"], [YUMENO]: [] }, channelMeta: {}, settings: {} };
+    // The fake storage above only records which keys were written, so this
+    // block keeps what was written as well — the point is where the card
+    // landed, not that a write happened.
+    const kept = {};
+    const set = globalThis.chrome.storage.local.set;
+    globalThis.chrome.storage.local.set = async (patch) => { Object.assign(kept, patch); };
+
+    const made = (await S.runOp("addCard", {
+      card: { id: "mine", tokens: text("おかえり"), by: {} },
+      channelId: YUMENO, scope: "global"
+    })).value;
+
+    globalThis.chrome.storage.local.set = set;
+
+    check("saving it on another channel is not a duplicate", made.duplicate === false);
+    check("and it actually arrives in that deck", (kept.decks[YUMENO] || []).includes("mine"));
+    check("while the one that was there is left alone",
+      kept.cards.find((c) => c.id === "theirs").scope === SAKURA);
+    stored = before;
   }
 
   console.log("");

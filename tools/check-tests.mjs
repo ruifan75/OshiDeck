@@ -200,9 +200,21 @@ const MUTATIONS = [
 
   [PRESET, PRESETS, "member emoji accepted into a preset that names nobody",
     `      if (required.length && !raw.channel) {
-        return "メン限スタンプを入れるには channel が要ります";
+        return ["validation.presetChannelMissing"];
       }`,
     "      // (allowed)"],
+
+  [I18N, I18NSRC, "a validator reason left untranslated inside a translated status",
+    '      Array.isArray(value) && typeof value[0] === "string" && value[0].startsWith("validation.")',
+    '      false && Array.isArray(value) && typeof value[0] === "string" && value[0].startsWith("validation.")'],
+
+  [I18N, I18NSRC, "a validator reason losing its arguments",
+    "        ? t(...value)",
+    "        ? t(value[0])"],
+
+  [I18N, I18NSRC, "file data mistaken for a nested validator error",
+    `      !String(key).startsWith("validation.") &&\n`,
+    ""],
 
   [PRESET, PRESETS, "a preset offered to channels it was never for",
     "  const offeredOn = (preset, channelId) => !preset?.channel || preset.channel === channelId;",
@@ -674,9 +686,33 @@ const MUTATIONS = [
     "    if (BY_TIME.has(group) && typeof chosen === \"number\" && Number.isFinite(chosen)) {",
     "    if (false) {"],
 
+  [STORED, STORE, "counts split only in the shape storage happens to be in",
+    "    const { cards, decks } = shape(raw);\n    for (const card of cards) splitCounts(card, decks);",
+    "    const { cards, decks } = shape(raw);"],
+
+  [STORED, STORE, "a shelved card losing a count its scope could have placed",
+    "    const where = held.length ? held : (scope === GLOBAL ? [] : [scope]);",
+    "    const where = held;"],
+
+  [STORED, STORE, "a file's settings taken as written",
+    "      settings: { ...DEFAULT_SETTINGS, ...cleanSettings(raw[KEYS.SETTINGS]) },",
+    "      settings: { ...DEFAULT_SETTINGS, ...(raw[KEYS.SETTINGS] || {}) },"],
+
+  [STORED, STORE, "a setting accepted because it was written down",
+    "      if (ALLOWED[key].includes(value)) clean[key] = value;",
+    "      clean[key] = value;"],
+
+  [STORED, STORE, "the same wording called a duplicate wherever it lives",
+    "        (c) => OD.tokens.cardKey(c.tokens) === key && usableOn(c, channelId));",
+    "        (c) => OD.tokens.cardKey(c.tokens) === key);"],
+
+  [MEMBER, CONTENT, "an offer suppressed by a card that cannot be sent here",
+    "        .filter((card) => store.usableOn(card, channelId))",
+    "        .filter(() => true)"],
+
   [STORED, STORE, "an old count handed to every channel, not the decks holding it",
-    "      if (ids.includes(card.id)) card.by[channelId] = { ...was };",
-    "      card.by[channelId] = { ...was };"],
+    "      .filter(([, ids]) => (ids || []).includes(card.id))",
+    "      .filter(() => true)"],
 
   [STORED, STORE, "a count already split overwritten by the flat one it replaced",
     "    if (Object.keys(card.by || {}).length) return card;",
@@ -685,6 +721,26 @@ const MUTATIONS = [
   [STORED, STORE, "the flat count left on the card beside the split one",
     "    delete card.uses; delete card.heat; delete card.lastUsedAt;",
     "    /* kept */"],
+
+  [TREND, TRENDING, "messages pruned at a fixed ninety seconds",
+    "      const cutoff = Date.now() - windowMs();",
+    "      const cutoff = Date.now() - 90_000;"],
+
+  [TREND, TRENDING, "the ranking cut off at a fixed ninety seconds",
+    "      const cutoff = now - windowMs();",
+    "      const cutoff = now - 90_000;"],
+
+  [TREND, TRENDING, "a long pace allowed unbounded captured history",
+    "  const RECENT_MAX = 600;",
+    "  const RECENT_MAX = Infinity;"],
+
+  [TREND, TRENDING, "a short pace pruning a burst before it finishes",
+    "Math.max(BURST_MS, halfLife() * WINDOW_HALF_LIVES)",
+    "halfLife() * WINDOW_HALF_LIVES"],
+
+  [VISIBILITY, STYLE, "a channel save target that refuses to shrink",
+    ".od-save-channel {\n  min-width: 0;\n  flex-shrink: 1;\n}",
+    ".od-save-channel {\n  min-width: 0;\n  flex-shrink: 0;\n}"],
 
   [COLOUR, STORE, "an out-of-gamut hue clipped instead of desaturated",
     "    for (let c = chroma; c > 0.01 && found.some((v) => v < -0.0005 || v > 1.0005); c -= 0.005) {\n      found = rgb(c);\n    }",
@@ -737,9 +793,20 @@ const KILLS = {
   "a setting taken on trust, whatever it says": "a step that was never offered is refused too",
   "a custom time left unbounded": "too short is pulled up to a second",
   "a number of milliseconds read as a step name": "a hold given in milliseconds is used as given",
+  "counts split only in the shape storage happens to be in": "a v0.3 card keeps the count it arrived with",
+  "a shelved card losing a count its scope could have placed": "a channel-only card in no deck keeps its count anyway",
+  "a file's settings taken as written": "a file's settings are cleaned when they are read",
+  "a setting accepted because it was written down": "a mode nobody offers is refused",
+  "the same wording called a duplicate wherever it lives": "saving it on another channel is not a duplicate",
+  "an offer suppressed by a card that cannot be sent here": "so the preset still offers it here",
   "an old count handed to every channel, not the decks holding it": "a card in no deck has nowhere to put it",
   "a count already split overwritten by the flat one it replaced": "and a card already counted per channel is left alone",
   "the flat count left on the card beside the split one": "and the card stops carrying one of its own",
+  "messages pruned at a fixed ninety seconds": "a ten-minute pace decays smoothly across the old 90-second cutoff",
+  "the ranking cut off at a fixed ninety seconds": "a ten-minute pace decays smoothly across the old 90-second cutoff",
+  "a long pace allowed unbounded captured history": "even the longest pace retains at most 600 captured messages",
+  "a short pace pruning a burst before it finishes": "the shortest pace still keeps a burst for its full window",
+  "a channel save target that refuses to shrink": "the channel save target can shrink below its long name",
   "an out-of-gamut hue clipped instead of desaturated": "every hue survives the round trip",
   "a card held for a different time than anyone was told": "out of the box a card is held for 30 seconds",
   "a wave redefined without saying so": "a wave is six messages and three tenths of the room",
@@ -747,6 +814,9 @@ const KILLS = {
 
   "another channel's member emoji carried into a preset": "another channel's are still left behind",
   "a preset that carries member emoji without saying whose": "and the preset says whose they are",
+  "a validator reason left untranslated inside a translated status": "a Chinese status includes a Chinese validation reason",
+  "a validator reason losing its arguments": "a Chinese status includes a Chinese validation reason",
+  "file data mistaken for a nested validator error": "a malformed file value resembling an error tuple stays literal",
   "member emoji accepted into a preset that names nobody": "nor can they ride in a preset that names nobody",
   "a preset offered to channels it was never for": "and nowhere else",
   "a preset forced onto a channel that cannot send it": "forced onto another channel, only what can be sent there loads",

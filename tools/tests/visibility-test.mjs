@@ -233,6 +233,50 @@ check("which is worth the redraw", b.seen.refreshes === 2);
     inThePool.every((rule) => !(rule.includes("::before") && rule.includes("background"))));
 }
 
+/* ---------- a long channel name gives the controls room ---------- */
+
+// The channel save target sits beside 通用, the pool and the builder. A
+// non-shrinking target overflows that row even though its label has ellipsis.
+// Pin the CSS sizing contract here; pixel geometry needs a browser.
+{
+  const css = readFileSync(
+    process.env.OD_CSS
+      ? new URL(`file://${process.env.OD_CSS}`)
+      : new URL("../../content.css", import.meta.url),
+    "utf8"
+  ).replace(/\/\*[\s\S]*?\*\//g, "");
+  const rules = [...css.matchAll(/([^{}]+)\{([^{}]*)\}/g)]
+    .flatMap(([, group, body]) => group.split(",").map((selector) => ({
+      selector: selector.trim(), body,
+      // These selectors have only classes, attributes and type names.
+      specificity: (selector.match(/[.\[]/g) || []).length
+    })));
+
+  // Only the selectors that apply to these elements in the bar. Resolve
+  // specificity and source order so an earlier or weaker override cannot pass.
+  const styleFor = (...selectors) => Object.fromEntries(rules
+    .filter((rule) => selectors.includes(rule.selector))
+    .sort((a, b) => a.specificity - b.specificity)
+    .flatMap(({ body }) => body.split(";").filter((declaration) => declaration.includes(":"))
+      .map((declaration) => declaration.split(":").map((part) => part.trim()))));
+
+  const target = styleFor(".od-text-button", ".od-save-channel", ".od-save-channel[data-primary]");
+  check("the channel save target can shrink below its long name",
+    target["flex-shrink"] === "1" && target["min-width"] === "0");
+  check("the save group can give room to the other bar controls",
+    styleFor(".od-bar-save")["min-width"] === "0");
+  check("the global save target keeps its size",
+    styleFor(".od-text-button")["flex-shrink"] === "0");
+  check("the pool and builder controls keep their size",
+    styleFor(".od-text-button", ".od-bar > .od-text-button")["flex-shrink"] === "0");
+
+  const label = styleFor(".od-text-button span");
+  check("the channel save label clips with an ellipsis on one line",
+    label.overflow === "hidden" && label["white-space"] === "nowrap" && label["text-overflow"] === "ellipsis");
+  check("the save icon keeps its size while the label shrinks",
+    styleFor(".od-text-button svg")["flex-shrink"] === "0");
+}
+
 /* ---------- the way into the pool ---------- */
 
 // It used to be a full-width row under the hand, which spent a line of a

@@ -458,10 +458,19 @@
   function buildOffered(data, channelId) {
     if (!channelId) return [];
 
-    // Anything already in the collection is answered for by the other half:
-    // it is in this deck or in the pool, and loadPreset would have reused it
-    // rather than making a second one.
-    const held = new Set(data.cards.map((card) => tokens.cardKey(card.tokens || [])));
+    // Anything already in the collection *that can be sent here* is answered
+    // for by the other half: it is in this deck or in the pool, and
+    // loadPreset would have reused it rather than making a second one.
+    //
+    // Usable here, not merely held. A card of the same wording tied to
+    // another channel cannot be played on this one, so counting it as owned
+    // left both halves empty: the pool excludes it because it is not
+    // compatible, and the offer excluded it because it existed.
+    const held = new Set(
+      data.cards
+        .filter((card) => store.usableOn(card, channelId))
+        .map((card) => tokens.cardKey(card.tokens || []))
+    );
     const offered = [];
     for (const preset of presetsOnHand(channelId)) {
       for (const source of preset.cards || []) {

@@ -197,8 +197,8 @@
 .od-text-button {
   display: inline-flex;
   align-items: center;
-  /* The bar's controls keep their size; the channel name is what gives way,
-     and it has its own ellipsis for that. */
+  /* The bar's controls keep their size; the channel save target below gives
+     way so its label can ellipsize. */
   flex-shrink: 0;
   gap: 4px;
   padding: 5px 8px;
@@ -235,8 +235,12 @@
 
 /* The channel target wears the channel's colour, so the two save buttons are
    telling apart at a glance rather than by reading them. */
-.od-save-channel[data-primary] {
+.od-save-channel {
   min-width: 0;
+  flex-shrink: 1;
+}
+
+.od-save-channel[data-primary] {
   background: oklch(0.74 0.19 var(--od-scope-hue) / .22);
   box-shadow: inset 0 0 0 1px oklch(0.74 0.19 var(--od-scope-hue) / .55);
 }

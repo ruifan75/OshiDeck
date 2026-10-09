@@ -21,37 +21,38 @@
     };
   }
 
-  // Returns an error string, or null when the file is usable. Nothing is
-  // applied unless the whole file passes.
+  // Returns [message key, ...arguments], or null when the file is usable.
+  // i18n.t translates the error when filling the caller's status message,
+  // after the page's language is chosen. Nothing is applied unless it passes.
   function validate(raw) {
     if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
-      return "JSONオブジェクトではありません";
+      return ["validation.notObject"];
     }
     if (raw.format && raw.format > FORMAT) {
-      return `新しい形式（format ${raw.format}）です。拡張機能を更新してください`;
+      return ["validation.newBackupFormat", raw.format];
     }
-    if (!Array.isArray(raw.cards)) return "cards が配列ではありません";
+    if (!Array.isArray(raw.cards)) return ["validation.cardsNotArray"];
     if (raw.decks && (typeof raw.decks !== "object" || Array.isArray(raw.decks))) {
-      return "decks の形式が不正です";
+      return ["validation.decksInvalid"];
     }
 
     for (const card of raw.cards) {
-      if (!card || typeof card !== "object") return "札のデータが壊れています";
-      if (typeof card.id !== "string" || !card.id) return "札にidがありません";
-      if (!Array.isArray(card.tokens)) return "札に中身がありません";
+      if (!card || typeof card !== "object") return ["validation.cardInvalid"];
+      if (typeof card.id !== "string" || !card.id) return ["validation.cardIdMissing"];
+      if (!Array.isArray(card.tokens)) return ["validation.cardTokensMissing"];
 
       // Anything reading these dereferences token.type; a null slips past an
       // Array.isArray check and throws during the merge instead.
       for (const token of card.tokens) {
-        if (!token || typeof token !== "object") return `札 ${card.id} に壊れた中身があります`;
+        if (!token || typeof token !== "object") return ["validation.cardTokenInvalid", card.id];
         if (token.type === "text") {
-          if (typeof token.value !== "string") return `札 ${card.id} のテキストが不正です`;
+          if (typeof token.value !== "string") return ["validation.cardTextInvalid", card.id];
         } else if (token.type === "youtubeEmoji") {
           if (typeof token.emojiId !== "string" || !token.emojiId) {
-            return `札 ${card.id} のスタンプにidがありません`;
+            return ["validation.emojiIdMissing", card.id];
           }
         } else {
-          return `札 ${card.id} に未知の種類 (${token.type}) があります`;
+          return ["validation.tokenTypeUnknown", card.id, token.type];
         }
       }
     }
@@ -61,15 +62,15 @@
     // something that cannot be reasoned about afterwards.
     const ids = new Set();
     for (const card of raw.cards) {
-      if (ids.has(card.id)) return `同じidの札が2枚あります: ${card.id}`;
+      if (ids.has(card.id)) return ["validation.cardIdDuplicate", card.id];
       ids.add(card.id);
     }
 
     for (const [channelId, list] of Object.entries(raw.decks || {})) {
-      if (!Array.isArray(list)) return `デッキ ${channelId} が配列ではありません`;
-      if (list.some((id) => typeof id !== "string")) return `デッキ ${channelId} に不正なidがあります`;
-      if (list.some((id) => !ids.has(id))) return `デッキ ${channelId} が存在しない札を指しています`;
-      if (new Set(list).size !== list.length) return `デッキ ${channelId} に同じ札が重複しています`;
+      if (!Array.isArray(list)) return ["validation.deckNotArray", channelId];
+      if (list.some((id) => typeof id !== "string")) return ["validation.deckIdInvalid", channelId];
+      if (list.some((id) => !ids.has(id))) return ["validation.deckCardMissing", channelId];
+      if (new Set(list).size !== list.length) return ["validation.deckCardDuplicate", channelId];
     }
 
     // A card carrying member emoji can only be sent on the channel that issues
@@ -82,13 +83,13 @@
     const owners = OD.tokens.requiredChannels;
     for (const card of raw.cards) {
       if (card.scope === undefined) continue;
-      if (typeof card.scope !== "string" || !card.scope) return `札 ${card.id} の scope が不正です`;
+      if (typeof card.scope !== "string" || !card.scope) return ["validation.cardScopeInvalid", card.id];
       if (card.scope !== "global" && !/^UC[A-Za-z0-9_-]{22}$/.test(card.scope)) {
-        return `札 ${card.id} の scope (${card.scope}) がチャンネルIDではありません`;
+        return ["validation.cardScopeNotChannel", card.id, card.scope];
       }
       const required = owners(card.tokens);
       if (required.length && card.scope !== required[0]) {
-        return `札 ${card.id} は ${required[0]} のメン限スタンプですが scope が ${card.scope} です`;
+        return ["validation.cardEmojiScope", card.id, required[0], card.scope];
       }
     }
 
@@ -98,7 +99,7 @@
     // would add something invisible and undeletable.
     for (const card of raw.cards) {
       if (owners(card.tokens).length > 1) {
-        return `札 ${card.id} が複数チャンネルのメン限スタンプを含んでいます`;
+        return ["validation.cardMixedChannels", card.id];
       }
     }
 
@@ -108,10 +109,10 @@
         const card = byId.get(id);
         const required = owners(card.tokens);
         if (required.length && required[0] !== channelId) {
-          return `札 ${id} は ${required[0]} のメン限スタンプですが ${channelId} のデッキにあります`;
+          return ["validation.deckEmojiChannel", id, required[0], channelId];
         }
         if (card.scope && card.scope !== "global" && card.scope !== channelId) {
-          return `札 ${id} は ${card.scope} 専用ですが ${channelId} のデッキにあります`;
+          return ["validation.deckScopeChannel", id, card.scope, channelId];
         }
       }
     }

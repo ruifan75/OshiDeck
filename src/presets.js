@@ -67,6 +67,20 @@
   // Returns [message key, ...arguments], or null when the preset is usable.
   // i18n.t translates it at display time. Presets can also be hand-edited,
   // and a broken one must say so rather than half-load.
+  // A card has to be a card before anything can be asked about it. These
+  // checks ran straight into cardKey and requiredChannels, so a `tokens:
+  // [null]` threw out of the validator instead of being reported — and
+  // background.js catches around the whole bundled file, so one bad preset
+  // discarded all 262.
+  const shapedCard = (card) =>
+    !!card && typeof card === "object" &&
+    Array.isArray(card.tokens) && card.tokens.length > 0 &&
+    card.tokens.every((token) =>
+      !!token && typeof token === "object" &&
+      (token.type === "text" ? typeof token.value === "string"
+        : token.type === "youtubeEmoji" ? typeof token.emojiId === "string" && !!token.emojiId
+          : false));
+
   function validate(raw) {
     if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
       return ["validation.notObject"];
@@ -84,6 +98,10 @@
     for (const card of raw.cards) {
       if (!card || typeof card !== "object") return ["validation.cardInvalid"];
       if (!Array.isArray(card.tokens)) return ["validation.presetTokensMissing"];
+      // Before anything reads them: a token that is not a token threw out of
+      // this function rather than being reported, and one bad preset in the
+      // bundled file discarded all of them.
+      if (!shapedCard(card)) return ["validation.presetTokensMissing"];
       if (!OD.tokens.hasSubstance(card.tokens)) return ["validation.presetCardEmpty"];
       if (!SCOPES.has(card.scope)) return ["validation.presetScopeInvalid", card.scope];
 
@@ -99,7 +117,13 @@
         return ["validation.presetEmojiChannel", required[0]];
       }
 
-      const key = OD.tokens.cardKey(card.tokens);
+      // Scope is part of what a card is, as it is everywhere else here: a
+      // deck may legitimately hold the same wording twice, once for anyone
+      // and once tied to this channel, and loadPreset chooses between them by
+      // what can be sent. Ignoring it meant an ordinary deck could not be
+      // exported at all — fromDeck wrote both and validate refused its own
+      // output.
+      const key = `${card.scope === "channel" ? "channel" : "global"}\u0000${OD.tokens.cardKey(card.tokens)}`;
       if (seen.has(key)) return ["validation.presetCardDuplicate"];
       seen.add(key);
     }

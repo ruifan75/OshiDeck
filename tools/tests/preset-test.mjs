@@ -115,6 +115,39 @@ check(
 // thing the person editing the file can act on, where "someone else's emoji"
 // sends them looking for an emoji that is not there. Checking only that it
 // said *something* let the two guards cover for each other.
+// A validator that throws is not a validator. These ran straight into
+// cardKey and requiredChannels, so a token that was not one came out as an
+// exception — and background.js catches around the whole bundled file, so one
+// bad preset discarded all 262 of them.
+for (const [what, tokenList] of [
+  ["a null token", [null]],
+  ["a text token with no text", [{ type: "text", value: 123 }]],
+  ["an emoji with no id", [{ type: "youtubeEmoji" }]],
+  ["a type nobody defined", [{ type: "constructor", value: "hidden" }]]
+]) {
+  let said;
+  try { said = presets.validate({ name: "x", cards: [{ tokens: tokenList, scope: "global" }] }); }
+  catch (_) { said = "threw"; }
+  check(`${what} is reported, not thrown`, Array.isArray(said));
+}
+
+// And a deck that holds the same wording twice — once for anyone, once tied
+// to this channel — is an ordinary deck. loadPreset chooses between them by
+// what can be sent, so the export has to be able to carry both: ignoring
+// scope here meant fromDeck wrote a file its own validator refused.
+{
+  const both = presets.fromDeck(
+    { cards: [{ id: "g", tokens: text("888"), scope: store.GLOBAL },
+              { id: "c", tokens: text("888"), scope: CH }],
+      decks: { [CH]: ["g", "c"] }, channelMeta: { [CH]: { name: "n" } } },
+    CH, { name: "t" }
+  );
+  check("a deck with both kinds of the same words exports", presets.validate(both) === null);
+  check("while the same card twice is still a duplicate",
+    presets.validate({ ...both, cards: [both.cards[0], both.cards[0]] })?.[0]
+      === "validation.presetCardDuplicate");
+}
+
 check(
   "nor can they ride in a preset that names nobody",
   presets.validate({ ...made, channel: undefined })?.[0] === "validation.presetChannelMissing"

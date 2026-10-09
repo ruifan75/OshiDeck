@@ -263,9 +263,22 @@
   // card with forty uses came back as one the first time it was pressed.
   function migrate(raw) {
     const { cards, decks } = shape(raw);
-    for (const card of cards) splitCounts(card, decks);
-    return { cards, decks };
+    const whole = cards.filter(readable);
+    for (const card of whole) splitCounts(card, decks);
+    return { cards: whole, decks };
   }
+
+  // A card that is not a card is dropped here rather than carried into the
+  // panel. Storage is only written by this extension, but it is also where a
+  // restored backup lands and where a hand edit goes — and one null token
+  // threw on the way out of read(), so nothing loaded at all until storage
+  // was cleared by hand. Losing one bad card is recoverable; losing the panel
+  // is not.
+  const readable = (card) =>
+    !!card && typeof card === "object" &&
+    typeof card.id === "string" && !!card.id &&
+    Array.isArray(card.tokens) &&
+    card.tokens.every((token) => !!token && typeof token === "object");
 
   function shape(raw) {
     if (Array.isArray(raw[KEYS.CARDS]) && raw[KEYS.DECKS]) {
@@ -323,6 +336,9 @@
   function pruneImpossible(cards, decks) {
     const byId = new Map(cards.map((card) => [card.id, card]));
     for (const [channelId, ids] of Object.entries(decks)) {
+      // A deck is a list of ids. Anything else is not a deck with problems in
+      // it, it is not a deck.
+      if (!Array.isArray(ids)) { decks[channelId] = []; continue; }
       decks[channelId] = ids.filter((id) => {
         const card = byId.get(id);
         return card && usableOn(card, channelId);
@@ -826,6 +842,13 @@
     // the queue and then writing the result wholesale would roll back anything
     // that committed in between.
     importBackup(data, { raw, mode }) {
+      // The pages that offer this check the file first, but the operation is
+      // what actually applies it — and an op can be dispatched without going
+      // past them. Checking here is what makes "nothing is applied unless it
+      // passes" true of the store rather than of one caller.
+      const wrong = OD.backup.validate(raw);
+      if (wrong) return false;
+
       const next = mode === "replace"
         ? OD.backup.replace(raw)
         : OD.backup.merge(data, raw);

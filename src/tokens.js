@@ -65,9 +65,13 @@
     return tokens;
   }
 
+  // Every one of these walks a list that came from somewhere: storage, a
+  // backup, a preset, the chat editor. A token that is not an object threw
+  // here rather than being ignored, and the throw came out of read() — so one
+  // null in one card meant the panel never loaded at all.
   const toPlainText = (tokens) =>
-    tokens.map((t) =>
-      t.type === "text" ? t.value : t.type === "youtubeEmoji" ? t.alt || "" : ""
+    (Array.isArray(tokens) ? tokens : []).map((t) =>
+      t?.type === "text" ? t.value : t?.type === "youtubeEmoji" ? t.alt || "" : ""
     ).join("");
 
   // ---- member emoji ----
@@ -105,7 +109,7 @@
   function requiredChannels(tokenList) {
     const owners = new Set();
     for (const token of tokenList || []) {
-      if (token.type !== "youtubeEmoji") continue;
+      if (token?.type !== "youtubeEmoji") continue;
       if (!needsMembership(token)) continue;
       const owner = emojiOwner(token.emojiId);
       if (owner) owners.add(owner);
@@ -263,11 +267,11 @@
   function repeated(tokenList) {
     const atoms = [];
     for (const token of tokenList || []) {
-      if (token.type === "youtubeEmoji") {
+      if (token?.type === "youtubeEmoji") {
         atoms.push({ picture: true, key: `\u0001${token.emojiId}`, token });
         continue;
       }
-      if (token.type !== "text") return null;
+      if (token?.type !== "text") return null;
       for (const part of splitEmoji(token.value || "")) {
         if (part.emoji) {
           atoms.push({ picture: true, key: part.value, token: { type: "text", value: part.value } });
@@ -309,9 +313,9 @@
   // what YouTube's renderer expects to observe.
   function toFragment(tokens, options) {
     const frag = document.createDocumentFragment();
-    for (const token of tokens) {
-      if (token.type === "text") appendText(frag, token.value || "", options);
-      else if (token.type === "youtubeEmoji") frag.appendChild(createEmojiNode(token, options));
+    for (const token of Array.isArray(tokens) ? tokens : []) {
+      if (token?.type === "text") appendText(frag, token.value || "", options);
+      else if (token?.type === "youtubeEmoji") frag.appendChild(createEmojiNode(token, options));
     }
     return frag;
   }
@@ -345,10 +349,14 @@
   // Identity of a card's content. Exact enough that "888" and "8888" stay
   // different cards, forgiving only about whitespace. (trending.signature is
   // the loose comparison — it deliberately treats those two as one reaction.)
+  // Tolerant of a token that is not one. This runs over everything that
+  // arrives — storage, a backup, a preset — and a null in the list used to
+  // throw here, which meant the panel never loaded rather than the one bad
+  // card being dropped.
   const cardKey = (tokenList) =>
-    (tokenList || [])
+    (Array.isArray(tokenList) ? tokenList : [])
       .map((token) =>
-        token.type === "youtubeEmoji" ? "\u0001" + token.emojiId : token.value || ""
+        token?.type === "youtubeEmoji" ? "\u0001" + token.emojiId : token?.value || ""
       )
       .join("")
       .replace(/\s+/g, " ")
@@ -360,8 +368,8 @@
   const hasSubstance = (tokenList) =>
     (tokenList || []).some(
       (token) =>
-        token.type === "youtubeEmoji" ||
-        (token.type === "text" && token.value && token.value.trim())
+        token?.type === "youtubeEmoji" ||
+        (token?.type === "text" && token.value && token.value.trim())
     );
 
   const hasContent = (input) =>

@@ -69,6 +69,9 @@
   };
 
   function line(entry) {
+    // The log is the thing you reach for when something has already gone
+    // wrong, so it has to survive its own contents being wrong.
+    if (!entry || typeof entry !== "object") return "";
     const { at, kind, repeat, ...rest } = entry;
     const body = Object.entries(rest)
       .filter(([, value]) => value !== undefined && value !== null && value !== "")
@@ -90,7 +93,7 @@
       "そして判定できなかったときにページに何があったかだけです。",
       "札の中身も、チャットの内容も入っていません。",
       "-".repeat(64),
-      ...entries.map(line),
+      ...entries.map(line).filter(Boolean),
       ""
     ].join("\n");
   }

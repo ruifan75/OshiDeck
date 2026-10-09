@@ -65,7 +65,9 @@ chrome.runtime.onMessage.addListener((message, _sender, respond) => {
   // card operation could otherwise drop it.
   if (message?.type === "journal") {
     enqueue(async () => {
-      if (message.clear) return chrome.storage.local.remove(journal.KEY);
+      // Exactly true. `clear: "false"` is a string, and a string is enough to
+      // throw the diagnostics away on the way to asking for them.
+      if (message.clear === true) return chrome.storage.local.remove(journal.KEY);
       const raw = await chrome.storage.local.get(journal.KEY);
       return chrome.storage.local.set({
         [journal.KEY]: journal.append(raw[journal.KEY], message.entry)

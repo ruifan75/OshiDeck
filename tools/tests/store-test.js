@@ -20,6 +20,7 @@ globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
 } } };
 require(process.env.OD_STORE || "../../src/store.js");
 require("../../src/tokens.js");
+require("../../src/backup.js");
 const S = globalThis.OshiDeck.store;
 
 (async () => {
@@ -149,6 +150,60 @@ const S = globalThis.OshiDeck.store;
     const d = await S.read();
     check("a file's settings are cleaned when they are read",
       d.settings.mode === "hand" && d.settings.rows === 2 && d.settings.hold === "normal");
+    stored = before;
+  }
+
+  console.log("");
+  console.log("--- a broken card does not take the panel with it ---");
+
+  // Storage is only written by this extension, but it is also where a
+  // restored backup lands and where a hand edit goes. One null token threw on
+  // the way out of read(), so nothing loaded at all until storage was cleared
+  // by hand — losing one bad card is recoverable, losing the panel is not.
+  {
+    const before = stored;
+    stored = {
+      cards: [
+        { id: "null-token", tokens: [null] },
+        { id: "tokens-not-a-list", tokens: "nope" },
+        { id: "", tokens: [{ type: "text", value: "x" }] },
+        { id: "fine", tokens: [{ type: "text", value: "888" }] }
+      ],
+      decks: { [SAKURA]: ["null-token", "fine"] },
+      channelMeta: {}, settings: {}
+    };
+    const d = await S.read();
+    check("the card that is not a card is dropped", d.cards.map((c) => c.id).join() === "fine");
+    check("and the deck that pointed at it is trimmed",
+      d.decks[SAKURA].join() === "fine");
+
+    // A deck that is not a list is not a deck with problems in it.
+    // Caught, because the mutant that removes the guard throws here — and a
+    // test that goes down with it reports nothing at all.
+    stored = { cards: [], decks: { [SAKURA]: {} }, channelMeta: {}, settings: {} };
+    let shaped = null;
+    try { shaped = (await S.read()).decks[SAKURA]; } catch (_) { shaped = "threw"; }
+    check("a deck that is not a list reads as empty", Array.isArray(shaped));
+
+    stored = before;
+  }
+
+  console.log("");
+  console.log("--- the worker checks the file it is told to apply ---");
+
+  // The pages that offer this check the file first, but the operation is what
+  // applies it, and an op can be dispatched without going past them.
+  {
+    const before = stored;
+    stored = { cards: [], decks: {}, channelMeta: {}, settings: {} };
+    const bad = await S.runOp("importBackup",
+      { raw: { cards: [{ id: "bad", tokens: [null] }], decks: {}, channelMeta: {} }, mode: "replace" });
+    check("a file the validator refuses is refused here too", bad.ok === false);
+
+    const good = await S.runOp("importBackup",
+      { raw: { cards: [{ id: "g", tokens: [{ type: "text", value: "888" }], scope: S.GLOBAL }],
+               decks: {}, channelMeta: {} }, mode: "replace" });
+    check("while a file that passes still applies", good.ok === true);
     stored = before;
   }
 

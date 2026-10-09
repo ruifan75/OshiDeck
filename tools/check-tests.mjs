@@ -691,12 +691,32 @@ const MUTATIONS = [
     "    if (false) {"],
 
   [STORED, STORE, "counts split only in the shape storage happens to be in",
-    "    const { cards, decks } = shape(raw);\n    for (const card of cards) splitCounts(card, decks);",
-    "    const { cards, decks } = shape(raw);"],
+    "    const whole = cards.filter(readable);\n    for (const card of whole) splitCounts(card, decks);",
+    "    const whole = cards.filter(readable);"],
 
   [STORED, STORE, "a shelved card losing a count its scope could have placed",
     "    const where = held.length ? held : (scope === GLOBAL ? [] : [scope]);",
     "    const where = held;"],
+
+  [STORED, STORE, "a card that is not a card carried into the panel",
+    "    const whole = cards.filter(readable);",
+    "    const whole = cards;"],
+
+  [STORED, STORE, "a deck that is not a list read as one",
+    "      if (!Array.isArray(ids)) { decks[channelId] = []; continue; }",
+    "      if (false) { decks[channelId] = []; continue; }"],
+
+  [STORED, STORE, "a file applied without the worker checking it",
+    "      const wrong = OD.backup.validate(raw);\n      if (wrong) return false;",
+    "      const wrong = null;\n      if (wrong) return false;"],
+
+  [PRESET, PRESETS, "a token read before it is known to be one",
+    "      if (!shapedCard(card)) return [\"validation.presetTokensMissing\"];",
+    "      if (false) return [\"validation.presetTokensMissing\"];"],
+
+  [PRESET, PRESETS, "two cards of the same words told apart by nothing",
+    '      const key = `${card.scope === "channel" ? "channel" : "global"}\\u0000${OD.tokens.cardKey(card.tokens)}`;',
+    "      const key = OD.tokens.cardKey(card.tokens);"],
 
   [STORED, STORE, "settings handed to a page without being checked",
     "      return { ...DEFAULT_SETTINGS, ...cleanSettings(raw?.[KEYS.SETTINGS]) };",
@@ -823,6 +843,11 @@ const KILLS = {
   "another channel's member emoji carried into a preset": "another channel's are still left behind",
   "a preset that carries member emoji without saying whose": "and the preset says whose they are",
   "a language borrowed from Object.prototype": "toString is not a language",
+  "a card that is not a card carried into the panel": "the card that is not a card is dropped",
+  "a deck that is not a list read as one": "a deck that is not a list reads as empty",
+  "a file applied without the worker checking it": "a file the validator refuses is refused here too",
+  "a token read before it is known to be one": "an emoji with no id is reported, not thrown",
+  "two cards of the same words told apart by nothing": "a deck with both kinds of the same words exports",
   "settings handed to a page without being checked": "a page asking for settings alone gets them checked",
   "a validator reason left untranslated inside a translated status": "a Chinese status includes a Chinese validation reason",
   "a validator reason losing its arguments": "a Chinese status includes a Chinese validation reason",

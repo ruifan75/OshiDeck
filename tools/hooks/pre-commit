@@ -1,15 +1,16 @@
 #!/bin/sh
 # The same rule for what goes into the files, not only the message.
 #
-# tools/channels.json is exempt: it is Holodex's own list of 3765 VTuber
-# channels, and one of them has a stage name that collides; they have nothing to
-# do with this repository. The hooks are exempt because they carry the
-# pattern they are looking for.
+# Nothing to ban is written down here either; see commit-msg for why.
+#
+# tools/channels.json is exempt. It is Holodex's own list of 3765 VTuber
+# channels and somebody's stage name will collide with somebody's account
+# name sooner or later — it did.
 set -e
 
-BANNED='***REMOVED***'
+bad=0
+me=$(basename "$HOME")
 
-found=0
 for file in $(git diff --cached --name-only --diff-filter=ACM); do
   case "$file" in
     tools/channels.json|tools/hooks/*) continue ;;
@@ -17,15 +18,25 @@ for file in $(git diff --cached --name-only --diff-filter=ACM); do
 
   # The status of a pipeline is its last command's, so asking `grep | sed`
   # whether it matched answers for sed — which succeeds on no input.
-  hits=$(git show ":$file" 2>/dev/null | grep -n "$BANNED" || true)
-  if [ -n "$hits" ]; then
-    echo "$hits" | sed "s|^|     $file:|"
-    found=1
+  hits=""
+  if [ ${#me} -ge 4 ]; then
+    hits=$(git show ":$file" 2>/dev/null | grep -ni "$me" || true)
   fi
+  home=$(git show ":$file" 2>/dev/null | grep -n "$HOME" || true)
+  mail=$(git show ":$file" 2>/dev/null |
+         grep -nE '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z][A-Za-z]+' |
+         grep -vE '@users\.noreply\.github\.com|noreply@anthropic\.com' || true)
+
+  for found in "$hits" "$home" "$mail"; do
+    if [ -n "$found" ]; then
+      echo "$found" | sed "s|^|     $file:|"
+      bad=1
+    fi
+  done
 done
 
-if [ "$found" = 1 ]; then
-  echo "FAIL ステージされた内容に名前か個人アドレスが入っています（上記）。"
-  echo "     公開リポジトリです。--no-verify で通せますが、履歴からは消えません。"
+if [ "$bad" = 1 ]; then
+  echo "FAIL ステージされた内容は公開に向きません（上記）。"
+  echo "     --no-verify で通せますが、履歴からは消えません。"
   exit 1
 fi

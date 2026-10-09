@@ -1,23 +1,48 @@
 #!/bin/sh
 # Keeps a name and an address out of the history.
 #
-# This repository is public. The person who maintains it is ruifan75 on
-# GitHub, and that is the only name it needs: a first name and a personal
-# address are not something a commit message should be carrying, and once
-# pushed they cannot be taken back without rewriting everything after them —
-# which is how this hook came to exist.
+# Nothing to ban is written down here. A hook in a public repository that
+# spells out the string it is protecting has published it, which is the
+# mistake this exists to prevent — so it asks the machine instead:
+#
+#   $HOME            the account name, which is usually the person's own
+#   any address      except the forge's noreply ones
 #
 # Installed by `git config core.hooksPath tools/hooks`, which is also what
-# tools/check-hooks.sh checks.
+# tools/check-hooks.sh checks. `--no-verify` passes anything, but the history
+# is the part you cannot take back.
 set -e
 
-BANNED='***REMOVED***'
+msg=$1
+bad=0
 
-if grep -q "$BANNED" "$1"; then
-  echo "FAIL このコミットメッセージには名前か個人アドレスが入っています:"
-  grep -n "$BANNED" "$1" | sed 's/^/     /'
+say() { echo "     $1"; }
+
+# The account name, only when it is long enough to mean something. A home
+# directory called `dev` would match half the English language.
+me=$(basename "$HOME")
+if [ ${#me} -ge 4 ] && grep -qi "$me" "$msg"; then
+  say "名前らしき語が入っています（$HOME の持ち主の名前）"
+  bad=1
+fi
+
+if grep -q "$HOME" "$msg"; then
+  say "ホームディレクトリのパスが入っています"
+  bad=1
+fi
+
+# Any address that is not a forge's noreply one.
+found=$(grep -oE '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z][A-Za-z]+' "$msg" |
+        grep -vE '@users\.noreply\.github\.com$|^noreply@anthropic\.com$' || true)
+if [ -n "$found" ]; then
+  say "個人アドレスらしきものが入っています: $found"
+  bad=1
+fi
+
+if [ "$bad" = 1 ]; then
+  echo "FAIL このコミットメッセージは公開に向きません:"
   echo
-  echo "     公開リポジトリです。GitHub の ruifan75 以外の呼び方は要りません。"
-  echo "     どうしても必要なら --no-verify で通せますが、履歴は書き換えないと消せません。"
+  say "公開リポジトリです。GitHub のアカウント名以外の呼び方は要りません。"
+  say "どうしても必要なら --no-verify。ただし履歴は書き換えないと消せません。"
   exit 1
 fi

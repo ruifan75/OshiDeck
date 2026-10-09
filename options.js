@@ -6,21 +6,30 @@ const t = (...args) => i18n.t(...args);
 // remembered to add it twice.
 const DEFAULTS = store.DEFAULT_SETTINGS;
 
-const SIZE_LABEL = { large: t("size.large"), medium: t("size.medium"), small: t("size.small") };
+// Asked for when they are needed, never kept.
+//
+// These were three tables built at module load, which is before the stored
+// language has been applied — so a browser in one language and a page set to
+// another showed the page's language everywhere except here, and switching
+// language left them behind entirely. A translated string cannot be a
+// constant on a page that can change language.
+// Spelled out rather than built from the value: a key that only exists as a
+// template is a key nothing can check, and check-i18n reads these files to
+// find what is used and what has been left untranslated.
+const sizeLabel = (size) =>
+  size === "large" ? t("size.large") : size === "medium" ? t("size.medium") : t("size.small");
 
-const SORT_LABEL = {
-  trend: t("sort.trend"),
-  heat: t("sort.heat"),
-  uses: t("sort.uses"),
-  manual: t("sort.manual")
-};
+const sortLabel = (sortBy) =>
+  sortBy === "trend" ? t("sort.trend")
+  : sortBy === "heat" ? t("sort.heat")
+  : sortBy === "uses" ? t("sort.uses")
+  : t("sort.manual");
 
-const SORT_NOTE = {
-  trend: t("sort.trendNote"),
-  heat: t("sort.heatNote"),
-  uses: t("sort.usesNote"),
-  manual: t("sort.manualNote")
-};
+const sortNote = (sortBy) =>
+  sortBy === "trend" ? t("sort.trendNote")
+  : sortBy === "heat" ? t("sort.heatNote")
+  : sortBy === "uses" ? t("sort.usesNote")
+  : t("sort.manualNote");
 const SIDEBAR_WIDTH = 400;
 const PANEL_PADDING = 24;
 
@@ -56,9 +65,9 @@ function paint() {
   const { CARD_SIZE, cardsPerRow } = globalThis.OshiDeck.layout;
   const perRow = cardsPerRow(SIDEBAR_WIDTH - PANEL_PADDING, CARD_SIZE[settings.cardSize]);
   document.querySelector("#capacity").textContent =
-    t("opt.capacity", SIZE_LABEL[settings.cardSize], settings.rows, perRow * settings.rows);
+    t("opt.capacity", sizeLabel(settings.cardSize), settings.rows, perRow * settings.rows);
 
-  document.querySelector("#sortNote").textContent = SORT_NOTE[settings.sortBy] || "";
+  document.querySelector("#sortNote").textContent = sortNote(settings.sortBy);
 
   // Say the actual numbers. A step called ふつう tells nobody what it will do,
   // and these are the values the panel was reported as getting wrong.
@@ -505,7 +514,7 @@ function paintCards() {
   hint.textContent =
     settings.sortBy === "manual"
       ? t("opt.deckHint")
-      : t("opt.deckHintSorted", SORT_LABEL[settings.sortBy]);
+      : t("opt.deckHintSorted", sortLabel(settings.sortBy));
 
   const cards = cardsOf(selected);
   if (!cards.length) {

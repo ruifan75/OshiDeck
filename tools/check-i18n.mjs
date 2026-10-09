@@ -53,6 +53,24 @@ for (const [, key] of html.matchAll(/data-i18n(?:-[\w-]+)?="([\w.]+)"/g)) {
   if (!MESSAGES[key]) fail(`options.html — 知らない key: ${key}`);
 }
 
+/* ---------- nothing translated once, at load ---------- */
+
+// A translated string cannot be a constant on a page that can change
+// language. Three tables of them were built at module load — before the
+// stored language is applied — so a browser in one language and a page set to
+// another showed the page's language everywhere except there, and switching
+// language left them behind for good.
+//
+// Module level is the test: anything inside a function is asked for when it
+// runs, which is after applyLanguage.
+for (const file of CODE) {
+  for (const line of read(file).split("\n")) {
+    if (/^(const|let|var)\s+\w+\s*=/.test(line) && /\bt\(\s*"/.test(line)) {
+      fail(`${file} — 読み込み時に訳している: ${line.trim().slice(0, 60)}`);
+    }
+  }
+}
+
 /* ---------- and nothing is left saying it in Japanese ---------- */
 
 // Comments are the one place Japanese stays: they are for whoever reads the

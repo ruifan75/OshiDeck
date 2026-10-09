@@ -567,6 +567,10 @@ const MUTATIONS = [
     "tokens.toFragment(list, { preview: true })",
     "tokens.toFragment(list)"],
 
+  [VISIBILITY, CONTENT, "a stamp measured by its width alone, not the room it takes",
+    "  const EMOJI_WIDTH = 3;",
+    "  const EMOJI_WIDTH = 2;"],
+
   [VISIBILITY, CONTENT, "an emoji measured by the length of its name",
     "      (wide, token) => wide + (token.type === \"text\" ? textWidth(token.value) : EMOJI_WIDTH),",
     "      (wide, token) => wide + (token.type === \"text\" ? textWidth(token.value) : (token.alt || \"\").length),"],
@@ -700,8 +704,9 @@ const KILLS = {
   "an empty description treated as something to say": "a peek with nothing in it leaves the bar to the deck",
   "a notice left sitting over the controls it names": "typing clears a notice that was in the way",
   "a refusal with nothing to show for it where it happened": "and marks the card that was pressed",
-  "an emoji measured by the length of its name": "three emoji are six characters wide, not twenty-one",
-  "an emoji in a sentence counted by its characters": "an emoji inside text is a picture, not its characters",
+  "a stamp measured by its width alone, not the room it takes": "seven shrink again, and that is the step that fades",
+  "an emoji measured by the length of its name": "three stamps are nine wide, not twenty-one",
+  "an emoji in a sentence counted by its characters": "a stamp inside text is a picture, not its characters",
 
   "a card face handing YouTube a tooltip to float": "but a card face hands YouTube nothing to pop up",
   "the chat editor given pictures instead of characters": "and the chat editor is still given the characters",

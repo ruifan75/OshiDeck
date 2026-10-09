@@ -1291,12 +1291,20 @@
   // How much a card at this size can show before it fades out.
   const BUDGET = { small: 6, medium: 9, large: 12 };
 
-  // How wide a card's contents are, in characters. An emoji is one picture
-  // about two characters across — not the length of its name, which is what
-  // measuring the plain text does: three `:_tadaima:` came to 21 characters
-  // because that is `tadaimatadaimatadaima`, and a card of three small
-  // pictures was shrunk and faded for being too long.
-  const EMOJI_WIDTH = 2;
+  // How much room a card's contents want, in characters.
+  //
+  // Not the length of their names, which is what measuring the plain text
+  // does: three `:_tadaima:` came to 21 characters, because that is
+  // `tadaimatadaimatadaima`, and a card of three small pictures was shrunk
+  // and faded for being too long.
+  //
+  // But not two either, which is only how wide a stamp is. The budget
+  // decides when the contents stop fitting, and fitting is an area: a stamp
+  // is also about one and a half lines tall, so a small card holds four of
+  // them where it holds eight characters. At two, the third row of stamps
+  // was being cut off at the card's edge while the budget still said there
+  // was room — the shrink arrived at ten stamps and the fade never did.
+  const EMOJI_WIDTH = 3;
 
   // An emoji sitting inside a text token is a picture too — the card draws it
   // as one — and counting its characters instead made two cards of the same
@@ -1312,8 +1320,6 @@
       0
     );
 
-  const runsOver = (card, size) => widthOf(card) > (BUDGET[size] || BUDGET.small) * 3;
-
   function cardBody(card, size) {
     const body = document.createElement("div");
     body.className = "od-card-body";
@@ -1324,7 +1330,7 @@
     const budget = BUDGET[size] || BUDGET.small;
     if (width > budget * 3) body.dataset.length = "long";
     else if (width > budget) body.dataset.length = "medium";
-    return { body, truncated: runsOver(card, size) };
+    return { body };
   }
 
   function buildCard(card, { size, hue }) {

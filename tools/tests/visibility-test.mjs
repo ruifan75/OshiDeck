@@ -395,25 +395,37 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
     check("and nothing is drawn for it", readout.kids.length === 0);
   }
 
-  // An emoji is a picture about two characters wide, not the length of its
-  // name — measuring the text shrank and faded a card of three small
-  // pictures for being 21 characters long.
-  check("three emoji are six characters wide, not twenty-one",
-    api.widthOf({ tokens: stamp(3) }) === 6);
+  // A picture is measured as a picture, never as the length of its name —
+  // measuring the text shrank and faded a card of three small stamps for
+  // being 21 characters long, which is `tadaimatadaimatadaima`.
+  check("three stamps are nine wide, not twenty-one",
+    api.widthOf({ tokens: stamp(3) }) === 9);
 
-  // The same is true of an emoji that arrived as part of a sentence, now
-  // that the card draws those as pictures too. Counting their characters
-  // made 🦢✨🦢✨🦢✨ nine wide — ✨ is one UTF-16 unit and 🦢 is two — so six
-  // pictures and three pictures faded at different points for no reason a
-  // reader could see.
-  check("an emoji inside text is a picture, not its characters",
-    api.widthOf({ tokens: words("🦢✨🦢✨🦢✨") }) === 12);
+  // The same for a stamp that arrived inside a sentence, now that the card
+  // draws those as pictures too. Counting their characters made 🦢✨🦢✨🦢✨
+  // nine wide — ✨ is one UTF-16 unit and 🦢 is two — so six pictures and
+  // three pictures faded at different points for no reason a reader could see.
+  check("a stamp inside text is a picture, not its characters",
+    api.widthOf({ tokens: words("🦢✨🦢✨🦢✨") }) === 18);
   check("and the words around it are still words",
-    api.widthOf({ tokens: words("おつ🦢") }) === 4);
-  check("so a card of them is not treated as overlong",
-    !api.cardBody({ tokens: stamp(3) }, "small").body.dataset.length);
-  check("while a card of actual words still is",
+    api.widthOf({ tokens: words("おつ🦢") }) === 5);
+  check("a card of actual words is treated as overlong",
     api.cardBody({ tokens: long }, "small").body.dataset.length === "long");
+
+  // How full is full. The budget decides when the contents stop fitting,
+  // and fitting is an area: a stamp is about two characters wide and about
+  // one and a half lines tall, so a small card holds four of them where it
+  // holds eight characters.
+  //
+  // Measuring only the width put every step out of reach of the stamps. The
+  // shrink arrived at ten of them and the fade never did, while the third
+  // row was already being cut off at the card's edge at five.
+  const step = (n, size) => api.cardBody({ tokens: stamp(n) }, size).body.dataset.length;
+  check("two stamps sit on a small card at full size", step(2, "small") === undefined);
+  check("four shrink a step", step(4, "small") === "medium");
+  check("seven shrink again, and that is the step that fades", step(7, "small") === "long");
+  check("a large card holds four at full size", step(4, "large") === undefined);
+  check("and reaches the fade later than a small one does", step(7, "large") === "medium");
 }
 
 /* ---------- keeping a card that was dealt to you ---------- */

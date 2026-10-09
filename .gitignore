@@ -25,6 +25,10 @@ chat-*/
 # what survives curation goes into presets/presets.json instead.
 tools/candidates/
 
-# The saved YouTube subscriptions page — 7MB of someone's signed-in session.
-# tools/subscriptions.json is what comes out of it, and that is committed.
+# The saved YouTube subscriptions page — 7MB of someone's signed-in session —
+# and what comes out of it. The list says who somebody follows, in the order
+# they arranged them, which is theirs and not the project's. It is an input to
+# mining, and mining has already been done: tools/subscriptions.mjs makes it
+# again from a saved page whenever it is needed.
 channels
+tools/subscriptions.json

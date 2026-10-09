@@ -462,8 +462,10 @@ tools/mine-org.sh --subscriptions    # 登録しているチャンネルを、�
 node tools/scope.mjs UC… --take 10 --name 稀羽すう
 ```
 
-**どのチャンネルからやるか**は `tools/subscriptions.json` の順です。youtube.com/feed/channels を
-保存したものを `tools/subscriptions.mjs` に読ませると、Holodex と突き合わせて書き出します ──
+**どのチャンネルからやるか**は `tools/subscriptions.json` の順です。**このファイルはリポジトリには
+入っていません** ── 誰を登録しているかとその並び順は、その人のものであってプロジェクトの
+ものではないからです。youtube.com/feed/channels を保存したものを `tools/subscriptions.mjs` に
+読ませると、Holodex と突き合わせて書き出します ──
 **並べた順がそのまま残ります**。登録者数より、本人が並べた順のほうが「次はどれ」の答えとして
 まともです。
 

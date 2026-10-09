@@ -43,6 +43,14 @@ ids=$(node -e '
 
   let want;
   if (org === "--subscriptions") {
+    // Not in the repository: who somebody follows, and in what order, is
+    // theirs. tools/subscriptions.mjs writes it from a saved page.
+    if (!fs.existsSync("tools/subscriptions.json")) {
+      console.error("FAIL tools/subscriptions.json がありません。");
+      console.error("     youtube.com/feed/channels を保存して、");
+      console.error("     node tools/subscriptions.mjs <保存したページ> を回してください");
+      process.exit(1);
+    }
     // Already in his order; keep it.
     want = JSON.parse(fs.readFileSync("tools/subscriptions.json", "utf8"))
       .filter((c) => !c.inactive);

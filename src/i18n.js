@@ -53,7 +53,7 @@
     "save.channelShort":     { ja: "このチャンネル専用", "zh-TW": "這個頻道專用" },
     "save.globalShort":      { ja: "共通", "zh-TW": "通用" },
     "save.pool":             { ja: "プールに保存", "zh-TW": "存進卡池" },
-    "save.poolWhy":          { ja: "チャンネルが分からないので、共通の札としてプールに置きます",
+    "save.poolWhy":          { ja: "チャンネル不明：共通の札をプールに保存",
                                "zh-TW": "認不出是哪個頻道，所以存成通用牌放進卡池" },
     "save.channelWhy":       { ja: "このチャンネルのデッキだけに出る札にします",
                                "zh-TW": "只會出現在這個頻道的牌組裡" },
@@ -61,7 +61,7 @@
                                "zh-TW": "任何頻道的牌組都能加入" },
     "save.forcedChannel":    { ja: "メン限スタンプなので、このチャンネル専用にしかできません",
                                "zh-TW": "含會員限定貼圖，只能存成這個頻道專用" },
-    "save.forcedWhy":        { ja: "メン限スタンプ入りなので、このチャンネル専用にしかできません",
+    "save.forcedWhy":        { ja: "メン限スタンプ入り：このチャンネル専用",
                                "zh-TW": "含會員限定貼圖，只能設成這個頻道專用" },
     "save.globalBlocked":    { ja: "メン限スタンプ入りの札は共通にできません",
                                "zh-TW": "含會員限定貼圖的牌不能設成通用" },
@@ -69,7 +69,7 @@
     /* ---------- what the bar says under the pointer ---------- */
     "peek.saveCard":         { ja: "この札を保存（⇧＋クリックで入力欄へ）",
                                "zh-TW": "儲存這張牌（⇧＋點擊只填入輸入欄）" },
-    "peek.takeComment":      { ja: "このコメントを札にする（⇧＋クリックで入力欄へ）",
+    "peek.takeComment":      { ja: "札にする（⇧＋クリックで入力欄へ）",
                                "zh-TW": "把這則留言存成牌（⇧＋點擊只填入輸入欄）" },
     "peek.eject":            { ja: "このデッキから外す", "zh-TW": "從這個牌組移除" },
     "peek.edit":             { ja: "この札を編集", "zh-TW": "編輯這張牌" },
@@ -98,8 +98,7 @@
     "toast.inputKept":       { ja: "入力はそのままです", "zh-TW": "輸入欄的內容保留著" },
     "toast.saveFailed":      { ja: "保存できませんでした", "zh-TW": "儲存失敗" },
     "toast.saveFailedKept":  { ja: "保存できませんでした。$1", "zh-TW": "儲存失敗。$1" },
-    "toast.ejected":         { ja: "デッキから外しました（プールに残っています）",
-                               "zh-TW": "已從牌組移除（牌還留在卡池裡）" },
+    "toast.ejected":         { ja: "プールに戻しました", "zh-TW": "已移回卡池" },
     "toast.deleted":         { ja: "札を削除しました", "zh-TW": "已刪除這張牌" },
     "toast.reloaded":        { ja: "OshiDeck を更新しました。ページを再読み込みしてください",
                                "zh-TW": "OshiDeck 已更新，請重新整理頁面" },
@@ -121,7 +120,9 @@
     "saved.global":          { ja: "共通の札として保存しました", "zh-TW": "已存成通用牌" },
     "saved.channel":         { ja: "このチャンネル専用の札として保存しました",
                                "zh-TW": "已存成這個頻道專用的牌" },
-    "saved.similar":         { ja: "$1（似た札がすでにあります）", "zh-TW": "$1（已經有內容相近的牌）" },
+    // This notice shares the bar with Undo. Summarise the save here instead
+    // of repeating the full global/channel caption supplied by the caller.
+    "saved.similar":         { ja: "保存しました（似た札あり）", "zh-TW": "已儲存（已有相近的牌）" },
 
     /* ---------- a starting hand ---------- */
     "preset.add":            { ja: "＋ $1（$2枚）を入れる", "zh-TW": "＋ 加入「$1」（$2 張）" },
@@ -256,72 +257,74 @@
                                "zh-TW": "（其他頻道的會員限定貼圖 $1 張沒有放進去）" },
 
     /* ---------- backup and preset validation ---------- */
-    "validation.notObject":       { ja: "JSONオブジェクトではありません",
-                                    "zh-TW": "JSON 資料必須是物件" },
-    "validation.newBackupFormat": { ja: "新しい形式（format $1）です。拡張機能を更新してください",
-                                    "zh-TW": "這是較新的格式（format $1），請先更新擴充功能" },
-    "validation.cardsNotArray":   { ja: "cards が配列ではありません",
-                                    "zh-TW": "cards 必須是陣列" },
-    "validation.decksInvalid":    { ja: "decks の形式が不正です",
-                                    "zh-TW": "decks 的格式有誤" },
-    "validation.cardInvalid":     { ja: "札のデータが壊れています",
-                                    "zh-TW": "牌的資料有誤" },
-    "validation.cardIdMissing":   { ja: "札にidがありません",
-                                    "zh-TW": "牌缺少 id" },
-    "validation.cardTokensMissing": { ja: "札に中身がありません",
-                                      "zh-TW": "牌缺少內容（tokens）" },
-    "validation.cardTokenInvalid": { ja: "札 $1 に壊れた中身があります",
-                                     "zh-TW": "牌 $1 含有格式錯誤的內容" },
-    "validation.cardTextInvalid": { ja: "札 $1 のテキストが不正です",
-                                    "zh-TW": "牌 $1 的文字格式有誤" },
-    "validation.emojiIdMissing":  { ja: "札 $1 のスタンプにidがありません",
-                                    "zh-TW": "牌 $1 的貼圖缺少 id" },
-    "validation.tokenTypeUnknown": { ja: "札 $1 に未知の種類（$2）があります",
-                                     "zh-TW": "牌 $1 含有未知的內容類型（$2）" },
-    "validation.cardIdDuplicate": { ja: "同じidの札が2枚あります: $1",
-                                    "zh-TW": "有兩張牌使用相同的 id：$1" },
-    "validation.deckNotArray":    { ja: "デッキ $1 が配列ではありません",
-                                    "zh-TW": "牌組 $1 必須是陣列" },
-    "validation.deckIdInvalid":   { ja: "デッキ $1 に不正なidがあります",
-                                    "zh-TW": "牌組 $1 含有無效的 id" },
-    "validation.deckCardMissing": { ja: "デッキ $1 が存在しない札を指しています",
-                                    "zh-TW": "牌組 $1 包含不存在的牌" },
-    "validation.deckCardDuplicate": { ja: "デッキ $1 に同じ札が重複しています",
-                                      "zh-TW": "牌組 $1 重複加入了同一張牌" },
-    "validation.cardScopeInvalid": { ja: "札 $1 の scope が不正です",
-                                     "zh-TW": "牌 $1 的 scope 無效" },
-    "validation.cardScopeNotChannel": { ja: "札 $1 の scope（$2）がチャンネルIDではありません",
-                                        "zh-TW": "牌 $1 的 scope（$2）不是頻道 ID" },
-    "validation.cardEmojiScope":  { ja: "札 $1 は $2 のメン限スタンプですが scope が $3 です",
-                                    "zh-TW": "牌 $1 含有 $2 的會員限定貼圖，但 scope 設為 $3" },
-    "validation.cardMixedChannels": { ja: "札 $1 が複数チャンネルのメン限スタンプを含んでいます",
-                                      "zh-TW": "牌 $1 混用了多個頻道的會員限定貼圖" },
-    "validation.deckEmojiChannel": { ja: "札 $1 は $2 のメン限スタンプですが $3 のデッキにあります",
-                                     "zh-TW": "牌 $1 含有 $2 的會員限定貼圖，卻放在 $3 的牌組裡" },
-    "validation.deckScopeChannel": { ja: "札 $1 は $2 専用ですが $3 のデッキにあります",
-                                     "zh-TW": "牌 $1 是 $2 專用的，卻放在 $3 的牌組裡" },
-    "validation.newPresetFormat": { ja: "新しい形式（format $1）です",
-                                    "zh-TW": "這是較新的格式（format $1）" },
-    "validation.presetNameMissing": { ja: "名前（name）がありません",
-                                      "zh-TW": "缺少名稱（name）" },
-    "validation.presetCardsEmpty": { ja: "cards が空です",
-                                     "zh-TW": "cards 裡沒有任何牌" },
-    "validation.presetChannelInvalid": { ja: "channel が不正です: $1",
-                                         "zh-TW": "channel 的值無效：$1" },
-    "validation.presetTokensMissing": { ja: "札に tokens がありません",
-                                        "zh-TW": "牌缺少 tokens" },
-    "validation.presetCardEmpty": { ja: "中身のない札があります",
-                                    "zh-TW": "有一張牌沒有內容" },
-    "validation.presetScopeInvalid": { ja: "scope が不正です: $1",
-                                       "zh-TW": "scope 的值無效：$1" },
-    "validation.presetMixedChannels": { ja: "複数のチャンネルのメン限スタンプが混ざっています",
-                                        "zh-TW": "混用了多個頻道的會員限定貼圖" },
-    "validation.presetChannelMissing": { ja: "メン限スタンプを入れるには channel が要ります",
-                                         "zh-TW": "含會員限定貼圖時，必須指定 channel" },
-    "validation.presetEmojiChannel": { ja: "よそのチャンネルのメン限スタンプが入っています: $1",
-                                       "zh-TW": "含有其他頻道的會員限定貼圖：$1" },
-    "validation.presetCardDuplicate": { ja: "同じ内容の札が二度入っています",
-                                        "zh-TW": "有兩張牌的內容相同" },
+    // Explain the failure and a recovery first; schema fields and file data
+    // belong in the trailing diagnostic, where they do not carry the sentence.
+    "validation.notObject":       { ja: "OshiDeckのファイルとして読めません。OshiDeckから新しく書き出したファイルを選んでください。（JSON）",
+                                    "zh-TW": "這份檔案不是 OshiDeck 可讀取的資料。請選擇重新從 OshiDeck 匯出的檔案。（JSON）" },
+    "validation.newBackupFormat": { ja: "このバックアップは新しい形式です。OshiDeckを更新してから読み込んでください。（format: $1）",
+                                    "zh-TW": "這份備份使用較新的格式。請先更新 OshiDeck，再載入檔案。（format: $1）" },
+    "validation.cardsNotArray":   { ja: "札の一覧が見つからないか、形式が崩れています。OshiDeckから新しく書き出したバックアップを選んでください。（cards）",
+                                    "zh-TW": "找不到牌的清單，或清單格式有誤。請選擇重新從 OshiDeck 匯出的備份。（cards）" },
+    "validation.decksInvalid":    { ja: "デッキの一覧の形式が崩れています。OshiDeckから新しく書き出したバックアップを選んでください。（decks）",
+                                    "zh-TW": "牌組清單的格式有誤。請選擇重新從 OshiDeck 匯出的備份。（decks）" },
+    "validation.cardInvalid":     { ja: "読み取れない札があります。作成者にOshiDeckで書き出し直してもらってください。（cards）",
+                                    "zh-TW": "有一張牌的資料無法讀取。請作者用 OshiDeck 重新匯出檔案。（cards）" },
+    "validation.cardIdMissing":   { ja: "どの札かを識別できません。OshiDeckから新しく書き出したバックアップを選んでください。（id）",
+                                    "zh-TW": "有一張牌缺少有效的識別資料。請選擇重新從 OshiDeck 匯出的備份。（id）" },
+    "validation.cardTokensMissing": { ja: "札の内容を読み取れません。作成者にOshiDeckで書き出し直してもらってください。（tokens）",
+                                      "zh-TW": "有一張牌的內容無法讀取。請作者用 OshiDeck 重新匯出檔案。（tokens）" },
+    "validation.cardTokenInvalid": { ja: "札の内容の一部を読み取れません。作成者にOshiDeckで書き出し直してもらってください。（札: $1／tokens）",
+                                     "zh-TW": "有一張牌的部分內容無法讀取。請作者用 OshiDeck 重新匯出檔案。（牌: $1／tokens）" },
+    "validation.cardTextInvalid": { ja: "札の文字を読み取れません。作成者にOshiDeckで書き出し直してもらってください。（札: $1／value）",
+                                    "zh-TW": "有一張牌的文字無法讀取。請作者用 OshiDeck 重新匯出檔案。（牌: $1／value）" },
+    "validation.emojiIdMissing":  { ja: "どのスタンプかを識別できません。作成者にOshiDeckで書き出し直してもらってください。（札: $1／emojiId）",
+                                    "zh-TW": "有一張牌的貼圖缺少有效的識別資料。請作者用 OshiDeck 重新匯出檔案。（牌: $1／emojiId）" },
+    "validation.tokenTypeUnknown": { ja: "読み取れない種類の内容が札に入っています。OshiDeckを更新するか、作成者に書き出し直してもらってください。（札: $1／type: $2）",
+                                     "zh-TW": "有一張牌含有無法辨識的內容類型。請更新 OshiDeck，或請作者重新匯出檔案。（牌: $1／type: $2）" },
+    "validation.cardIdDuplicate": { ja: "同じ識別情報の札が重複しています。重複する札を削除して書き出し直してください。（id: $1）",
+                                    "zh-TW": "有多張牌使用相同的識別資料。請刪除重複的牌，再重新匯出檔案。（id: $1）" },
+    "validation.deckNotArray":    { ja: "デッキの札の一覧を読み取れません。OshiDeckから新しく書き出したバックアップを選んでください。（デッキ: $1／decks）",
+                                    "zh-TW": "有一個牌組的牌清單無法讀取。請選擇重新從 OshiDeck 匯出的備份。（牌組: $1／decks）" },
+    "validation.deckIdInvalid":   { ja: "デッキに、どの札かを識別できない項目があります。OshiDeckから新しく書き出したバックアップを選んでください。（デッキ: $1／decks）",
+                                    "zh-TW": "有一個牌組的清單裡有無法辨識的牌。請選擇重新從 OshiDeck 匯出的備份。（牌組: $1／decks）" },
+    "validation.deckCardMissing": { ja: "ファイルにない札がデッキに含まれています。OshiDeckから新しく書き出したバックアップを選んでください。（デッキ: $1／decks）",
+                                    "zh-TW": "有一個牌組裡的牌不在這份檔案中。請選擇重新從 OshiDeck 匯出的備份。（牌組: $1／decks）" },
+    "validation.deckCardDuplicate": { ja: "デッキに同じ札が重複しています。重複する札をデッキから外して書き出し直してください。（デッキ: $1／decks）",
+                                      "zh-TW": "有一個牌組重複加入了同一張牌。請從牌組移除重複的牌，再重新匯出檔案。（牌組: $1／decks）" },
+    "validation.cardScopeInvalid": { ja: "札の保存範囲が正しく指定されていません。共通なら global、チャンネル専用なら有効なチャンネルIDを指定してください。（札: $1／scope）",
+                                     "zh-TW": "有一張牌的適用範圍設定有誤。通用牌請指定 global；頻道專用牌請指定有效的頻道 ID。（牌: $1／scope）" },
+    "validation.cardScopeNotChannel": { ja: "札の保存範囲が正しく指定されていません。共通なら global、チャンネル専用なら有効なチャンネルIDを指定してください。（札: $1／scope: $2）",
+                                        "zh-TW": "有一張牌的適用範圍設定有誤。通用牌請指定 global；頻道專用牌請指定有效的頻道 ID。（牌: $1／scope: $2）" },
+    "validation.cardEmojiScope":  { ja: "札に入っているメン限スタンプと保存範囲が一致しません。そのスタンプのチャンネル専用にしてください。（札: $1／スタンプのチャンネル: $2／scope: $3）",
+                                    "zh-TW": "有一張牌含有會員限定貼圖，但適用頻道設錯了。請把這張牌設為貼圖所屬的頻道專用。（牌: $1／貼圖所屬頻道: $2／scope: $3）" },
+    "validation.cardMixedChannels": { ja: "1枚の札に複数チャンネルのメン限スタンプが混ざっています。メン限スタンプは1枚につき同じチャンネルのものだけにしてください。（札: $1／tokens）",
+                                      "zh-TW": "有一張牌混用了多個頻道的會員限定貼圖。請讓每張牌的會員限定貼圖都來自同一個頻道。（牌: $1／tokens）" },
+    "validation.deckEmojiChannel": { ja: "メン限スタンプ入りの札が別チャンネルのデッキに入っています。スタンプのチャンネルのデッキに移してください。（札: $1／スタンプのチャンネル: $2／デッキ: $3／decks）",
+                                     "zh-TW": "含會員限定貼圖的牌放進了其他頻道的牌組。請把這張牌移到貼圖所屬頻道的牌組。（牌: $1／貼圖所屬頻道: $2／牌組: $3／decks）" },
+    "validation.deckScopeChannel": { ja: "チャンネル専用の札が別チャンネルのデッキに入っています。指定したチャンネルのデッキに移してください。（札: $1／scope: $2／デッキ: $3／decks）",
+                                     "zh-TW": "頻道專用牌放進了其他頻道的牌組。請把這張牌移到指定頻道的牌組。（牌: $1／scope: $2／牌組: $3／decks）" },
+    "validation.newPresetFormat": { ja: "このプリセットは新しい形式です。OshiDeckを更新してから読み込んでください。（format: $1）",
+                                    "zh-TW": "這份預組使用較新的格式。請先更新 OshiDeck，再載入檔案。（format: $1）" },
+    "validation.presetNameMissing": { ja: "プリセットの名前がないか、読み取れません。名前を付けて書き出し直してください。（name）",
+                                      "zh-TW": "預組沒有名稱，或名稱無法讀取。請填上名稱，再重新匯出檔案。（name）" },
+    "validation.presetCardsEmpty": { ja: "プリセットの札の一覧が空か、読み取れません。札の入ったデッキをOshiDeckで書き出し直してください。（cards）",
+                                     "zh-TW": "預組的牌清單是空的，或無法讀取。請用 OshiDeck 重新匯出含有牌的牌組。（cards）" },
+    "validation.presetChannelInvalid": { ja: "プリセットのチャンネルを特定できません。有効なチャンネルIDを指定してください。（channel: $1）",
+                                         "zh-TW": "無法辨識這份預組的頻道。請指定有效的頻道 ID。（channel: $1）" },
+    "validation.presetTokensMissing": { ja: "札の内容が空か、読み取れない部分があります。作成者にOshiDeckで書き出し直してもらってください。（tokens）",
+                                        "zh-TW": "有一張牌的內容是空的，或含有無法讀取的資料。請作者用 OshiDeck 重新匯出檔案。（tokens）" },
+    "validation.presetCardEmpty": { ja: "文字やスタンプのない札があります。内容を入れるか、空の札を削除して書き出し直してください。（tokens）",
+                                    "zh-TW": "有一張牌沒有文字或貼圖。請填入內容，或刪除空白的牌後重新匯出檔案。（tokens）" },
+    "validation.presetScopeInvalid": { ja: "札の保存範囲が正しく指定されていません。共通なら global、読み込み先のチャンネル専用なら channel を指定してください。（scope: $1）",
+                                       "zh-TW": "有一張牌的適用範圍設定有誤。通用牌請指定 global；只供載入的頻道使用時，請指定 channel。（scope: $1）" },
+    "validation.presetMixedChannels": { ja: "1枚の札に複数チャンネルのメン限スタンプが混ざっています。メン限スタンプは1枚につき同じチャンネルのものだけにしてください。（tokens）",
+                                        "zh-TW": "有一張牌混用了多個頻道的會員限定貼圖。請讓每張牌的會員限定貼圖都來自同一個頻道。（tokens）" },
+    "validation.presetChannelMissing": { ja: "メン限スタンプ入りのプリセットにチャンネルが指定されていません。スタンプのチャンネルIDを指定してください。（channel）",
+                                         "zh-TW": "這份預組含會員限定貼圖，卻沒有指定頻道。請指定貼圖所屬頻道的 ID。（channel）" },
+    "validation.presetEmojiChannel": { ja: "プリセットに指定したチャンネルとは別のメン限スタンプが入っています。指定したチャンネルのスタンプだけにするか、チャンネルの指定を直してください。（スタンプのチャンネル: $1／channel）",
+                                       "zh-TW": "預組含有不屬於指定頻道的會員限定貼圖。請只保留指定頻道的會員限定貼圖，或修正指定的頻道。（貼圖所屬頻道: $1／channel）" },
+    "validation.presetCardDuplicate": { ja: "同じ内容・同じ保存範囲の札が重複しています。重複する札を削除して書き出し直してください。（cards／scope）",
+                                        "zh-TW": "有多張牌的內容和適用範圍相同。請刪除重複的牌，再重新匯出檔案。（cards／scope）" },
 
     /* ---------- the diagnostic log ---------- */
     "opt.journalCount":      { ja: "$1件を記録しています", "zh-TW": "已記錄 $1 筆" },
@@ -450,6 +453,9 @@
 
   const use = (want) => (current = want ? resolve(want) : fromBrowser());
 
+  // Long enough for a channel id (24) or a uuid (36) to arrive whole.
+  const QUOTED_MAX = 48;
+
   function t(key, ...args) {
     // Validators return [key, ...arguments] instead of choosing a language.
     // Resolve those arguments now, so existing status wrappers translate both
@@ -462,6 +468,18 @@
         ? t(...value)
         : value
     );
+    // Missing file values get a visible marker in the diagnostic;
+    // ordinary UI messages still leave unfilled arguments empty. And a file
+    // can hold a value of any length with nothing to break it on, so what is
+    // quoted back is bounded — enough to recognise which value it means,
+    // which is all it is there for.
+    if (String(key).startsWith("validation.")) {
+      args = args.map((value) => {
+        if (value == null || value === "") return "—";
+        const shown = String(value);
+        return shown.length > QUOTED_MAX ? `${shown.slice(0, QUOTED_MAX)}…` : shown;
+      });
+    }
     const entry = MESSAGES[key];
     // A missing key is a bug, and showing the key is how it gets noticed.
     // A missing *translation* is not: the Japanese is still a sentence.

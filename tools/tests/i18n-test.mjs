@@ -41,6 +41,21 @@ check("and so does something nobody has heard of", i18n.use("xx") === "ja");
 // said yes to "toString", so it was taken for one — and then t() reached for
 // that entry, found a function and called .replace on it. A backup carries
 // the setting, so a file was enough to break the page.
+// A refusal quotes the value it refused, and a file can hold one of any
+// length with nothing to break it on. Bounded at 48, which is long enough for
+// a channel id or a uuid to arrive whole — recognising which value it means
+// is all the quote is there for.
+{
+  const long = i18n.t("validation.presetScopeInvalid", "x".repeat(400));
+  check("a quoted value is bounded", long.length < 160 && long.includes("…"));
+  check("while a channel id arrives whole",
+    i18n.t("validation.presetChannelInvalid", "UCeqIMtLuGc3YgwkhEaG8oDg")
+      .includes("UCeqIMtLuGc3YgwkhEaG8oDg"));
+  check("and so does a uuid",
+    i18n.t("validation.presetScopeInvalid", "f47ac10b-58cc-4372-a567-0e02b2c3d479")
+      .includes("0e02b2c3d479"));
+}
+
 for (const borrowed of ["toString", "constructor", "hasOwnProperty", "__proto__"]) {
   check(`${borrowed} is not a language`, i18n.use(borrowed) === "ja");
   let said = null;
@@ -121,7 +136,9 @@ const cases = [
   [backup, saved({ decks: [] }), ["validation.decksInvalid"]],
   [backup, saved({ cards: [null] }), ["validation.cardInvalid"]],
   [backup, saved({ cards: [card({ id: "" })] }), ["validation.cardIdMissing"]],
+  [backup, saved({ cards: [card({ id: 12 })] }), ["validation.cardIdMissing"]],
   [backup, saved({ cards: [card({ tokens: null })] }), ["validation.cardTokensMissing"]],
+  [backup, saved({ cards: [card({ tokens: "hello" })] }), ["validation.cardTokensMissing"]],
   [backup, saved({ cards: [card({ tokens: [null] })] }), ["validation.cardTokenInvalid", "card-a"]],
   [backup, saved({ cards: [card({ tokens: text(12) })] }), ["validation.cardTextInvalid", "card-a"]],
   [backup, saved({ cards: [card({ tokens: [{ type: "youtubeEmoji" }] })] }), ["validation.emojiIdMissing", "card-a"]],
@@ -141,9 +158,16 @@ const cases = [
   [presets, preset({ format: 99 }), ["validation.newPresetFormat", 99]],
   [presets, preset({ name: "" }), ["validation.presetNameMissing"]],
   [presets, preset({ cards: [] }), ["validation.presetCardsEmpty"]],
+  [presets, preset({ cards: null }), ["validation.presetCardsEmpty"]],
+  [presets, preset({ cards: {} }), ["validation.presetCardsEmpty"]],
   [presets, preset({ channel: "bad-channel" }), ["validation.presetChannelInvalid", "bad-channel"]],
   [presets, preset({ cards: [null] }), ["validation.cardInvalid"]],
   [presets, withPresetCard({ tokens: null }), ["validation.presetTokensMissing"]],
+  [presets, withPresetCard({ tokens: [] }), ["validation.presetTokensMissing"]],
+  [presets, withPresetCard({ tokens: [null] }), ["validation.presetTokensMissing"]],
+  [presets, withPresetCard({ tokens: ["hello"] }), ["validation.presetTokensMissing"]],
+  [presets, withPresetCard({ tokens: text(12) }), ["validation.presetTokensMissing"]],
+  [presets, withPresetCard({ tokens: [{ type: "youtubeEmoji", emojiId: "" }] }), ["validation.presetTokensMissing"]],
   [presets, withPresetCard({ tokens: text(" ") }), ["validation.presetCardEmpty"]],
   [presets, withPresetCard({ scope: "bad-scope" }), ["validation.presetScopeInvalid", "bad-scope"]],
   [presets, withPresetCard({ tokens: [...stamp(CH), ...stamp(OTHER)] }), ["validation.presetMixedChannels"]],
@@ -177,17 +201,77 @@ for (const [validator, raw, expected] of cases) {
 const future = backup.validate(saved({ format: 99 }));
 i18n.use("zh-TW");
 check("a Chinese status includes a Chinese validation reason and its format number",
-  i18n.t("opt.cannotRead", future) === "無法載入：這是較新的格式（format 99），請先更新擴充功能");
+  i18n.t("opt.cannotRead", future) === "無法載入：這份備份使用較新的格式。請先更新 OshiDeck，再載入檔案。（format: 99）");
 i18n.use("ja");
 check("the same error switches back to Japanese without revalidating",
-  i18n.t("opt.cannotRead", future) === "読み込めません: 新しい形式（format 99）です。拡張機能を更新してください");
+  i18n.t("opt.cannotRead", future) === "読み込めません: このバックアップは新しい形式です。OshiDeckを更新してから読み込んでください。（format: 99）");
 i18n.use("zh-TW");
 check("interpolated file data is literal, even when it resembles a placeholder",
   i18n.t("opt.cannotRead", ["validation.cardScopeNotChannel", "card-$2", "scope-$1"]) ===
-    "無法載入：牌 card-$2 的 scope（scope-$1）不是頻道 ID");
+    "無法載入：有一張牌的適用範圍設定有誤。通用牌請指定 global；頻道專用牌請指定有效的頻道 ID。（牌: card-$2／scope: scope-$1）");
 check("a malformed file value resembling an error tuple stays literal",
   i18n.t("opt.cannotRead", presets.validate(preset({ channel: ["validation.notObject"] }))) ===
-    "無法載入：channel 的值無效：validation.notObject");
+    "無法載入：無法辨識這份預組的頻道。請指定有效的頻道 ID。（channel: validation.notObject）");
+
+/* ---------- refusals explain recovery before the diagnostic ---------- */
+
+for (const language of ["ja", "zh-TW"]) {
+  i18n.use(language);
+  const recovery = language === "ja" ? /。.*ください/ : /。.*請/;
+  for (const key of new Set(cases.map(([, , [key]]) => key))) {
+    const entry = MESSAGES[key][language];
+    const at = entry.lastIndexOf("（");
+    const sentence = entry.slice(0, at);
+    check(`${language}: ${key} gives a recovery before its trailing diagnostic`,
+      at > 0 && entry.endsWith("）") && recovery.test(sentence) &&
+      !/\$\d/.test(sentence) &&
+      !/\b(?:JSON|format|cards|decks|id|tokens|value|emojiId|type|scope)\b/.test(sentence));
+  }
+
+  // The validators deliberately share these reasons across several shapes.
+  // Their wording must cover both empty and unreadable data, not diagnose
+  // an existing list as a missing field or a non-list as an empty list.
+  const tokensReason = i18n.t("validation.presetTokensMissing");
+  const cardsReason = i18n.t("validation.presetCardsEmpty");
+  const backupTokensReason = i18n.t("validation.cardTokensMissing");
+  const emptyOrUnreadable = language === "ja" ? /空.*読み取れ/ : /空.*無法讀取/;
+  const unreadable = language === "ja" ? /読み取れ/ : /無法讀取/;
+  check(`${language}: shared preset reasons cover empty and unreadable data`,
+    emptyOrUnreadable.test(tokensReason) && emptyOrUnreadable.test(cardsReason));
+  check(`${language}: a non-list backup content field is described as unreadable`,
+    unreadable.test(backupTokensReason) && !/空|ありません|缺少/.test(backupTokensReason));
+
+  const duplicate = i18n.t("validation.presetCardDuplicate");
+  check(`${language}: duplicate preset cards have both matching content and scope`,
+    language === "ja" ? /同じ内容・同じ保存範囲/.test(duplicate)
+      : /內容和適用範圍相同/.test(duplicate));
+
+  // Unset and empty values are real validator arguments. They must not leave
+  // an apparently unfinished sentence, and ordinary UI holes stay empty.
+  for (const [problem, field] of [
+    [presets.validate(withPresetCard({ scope: undefined })), "scope"],
+    [presets.validate(withPresetCard({ scope: "" })), "scope"],
+    [presets.validate(preset({ channel: null })), "channel"],
+    [presets.validate(preset({ channel: "" })), "channel"],
+    [backup.validate(saved({ cards: [card({ tokens: [{}] })] })), "type"]
+  ]) {
+    const message = i18n.t("opt.cannotRead", problem);
+    check(`${language}: an absent ${field} value stays readable in its diagnostic`,
+      message.includes(`${field}: —`) &&
+      !/\$\d|undefined|validation\./.test(message));
+  }
+  check(`${language}: ordinary missing arguments still leave an empty hole`,
+    i18n.t("count.cards", undefined) === i18n.t("count.cards", ""));
+
+  // Both save targets take this path and share its space with Undo. Keep the
+  // compact summary independent of the caller's longer success caption.
+  const summaries = ["saved.global", "saved.channel"].map((key) =>
+    i18n.t("saved.similar", i18n.t(key)));
+  check(`${language}: both similar-card save notices keep the compact save and warning`,
+    summaries[0] === summaries[1] &&
+    (language === "ja" ? /保存しました.*似た札/.test(summaries[0])
+      : /已儲存.*相近的牌/.test(summaries[0])));
+}
 
 /* ---------- the checker sees errors behind the status wrappers ---------- */
 

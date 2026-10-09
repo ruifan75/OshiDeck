@@ -209,6 +209,10 @@ const MUTATIONS = [
       }`,
     "      // (allowed)"],
 
+  [I18N, I18NSRC, "a quoted file value of any length at all",
+    "        return shown.length > QUOTED_MAX ? `${shown.slice(0, QUOTED_MAX)}…` : shown;",
+    "        return shown;"],
+
   [I18N, I18NSRC, "a language borrowed from Object.prototype",
     "    if (LANGUAGES.some((lang) => lang.code === code)) return code;",
     '    if (MESSAGES["bar.global"][code]) return code;'],
@@ -870,6 +874,7 @@ const KILLS = {
 
   "another channel's member emoji carried into a preset": "another channel's are still left behind",
   "a preset that carries member emoji without saying whose": "and the preset says whose they are",
+  "a quoted file value of any length at all": "a quoted value is bounded",
   "a language borrowed from Object.prototype": "toString is not a language",
   "a deck list taken on trust while counts are migrated": "and a count migrates past a deck that is not a list",
   "a token list walked before it is known to be a list": "a tokens field that cannot be walked is dropped, not fatal",

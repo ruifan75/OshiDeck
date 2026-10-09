@@ -1252,26 +1252,21 @@
         warning: true
       };
     }
-    // The bar says what the card cannot, and nothing else.
+    // The card itself, at a size that can be read.
     //
-    // A card is under the pointer when this runs, so repeating what is on it
-    // says nothing — and for member emoji it said something wrong, since
-    // their text is the name YouTube files them under and `:_tadaima:` ×3
-    // read out as `tadaimatadaimatadaima`.
+    // This was taken out once, for a reason that has since stopped being
+    // true: the bar could only spell a card out as text, and a member
+    // emoji's text is the name YouTube files it under, so `:_tadaima:` ×3
+    // came back as `tadaimatadaimatadaima`. The bar draws pictures now, so
+    // what it shows is what the card shows — only in full, rather than
+    // shrunk, faded and cut off, which is the state a full card is in.
     //
-    // The chat count went the same way. A card that is being said right now
-    // already breathes in the corner; whether it is five people or fifty
-    // does not change what anybody does about it, and the dot is the part
-    // that does. Nor does a drawn card need to be told how to be kept: its
-    // ＋ is right there on it, in the same place as every other card's.
-    //
-    // What is left is the one case where the card genuinely cannot show
-    // itself: too full, shrunk and faded out.
-    return {
-      text: runsOver(card, settingsCache.cardSize)
-        ? tokens.toPlainText(card.tokens || []).trim()
-        : ""
-    };
+    // Still not the things a card says about itself. A card being said
+    // right now already breathes in the corner, and five people or fifty
+    // does not change what anybody does about it; a drawn card's ＋ is on
+    // it, in the same place as every other card's.
+    const list = card.tokens || [];
+    return { key: tokens.cardKey(list), tokens: list };
   }
 
   function trackPeek(el, card) {
@@ -1606,11 +1601,13 @@
     return row;
   }
 
-  function peekReadout({ text, warning }) {
+  // A card's own contents are drawn; everything else the bar says is words.
+  function peekReadout({ text, tokens: list, warning }) {
     const readout = document.createElement("div");
     readout.className = "od-peek";
     if (warning) readout.dataset.warning = "true";
-    readout.textContent = text;
+    if (list) readout.appendChild(tokens.toFragment(list, { preview: true }));
+    else readout.textContent = text;
     return readout;
   }
 
@@ -1622,9 +1619,14 @@
   // deck's own name and scope had been. Worse, "" and null compare the same
   // two lines down, so moving the pointer off the card was not a change and
   // the name never came back: hovering one card emptied the bar for good.
+  // What makes one peek a different peek. A card answers with its key, since
+  // its words are the pictures' filenames and two cards can share them; a
+  // control answers with the words it put there.
+  const peekKey = (what) => what?.key || what?.text || null;
+
   function setPeek(next, owner = null) {
-    const said = next?.text ? next : null;
-    const changed = (peek?.text || null) !== (said?.text || null);
+    const said = peekKey(next) ? next : null;
+    const changed = peekKey(peek) !== peekKey(said);
     peek = said;
     peekOwner = said ? owner : null;
     if (changed && !notice) refreshBar();

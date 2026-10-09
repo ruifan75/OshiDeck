@@ -161,6 +161,10 @@
 
 .od-peek[data-warning] { color: oklch(0.78 0.14 25); }
 
+/* The bar shows the card in full, so its stamps are drawn here too — at the
+   bar's own height rather than a card's, which is the point of showing it. */
+.od-peek .od-emoji { width: 18px; height: 18px; }
+
 .od-save-label {
   flex-shrink: 0;
   font-size: 11px;

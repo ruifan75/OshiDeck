@@ -98,7 +98,7 @@ check("a root torn out of the page counts as not mounted", s.renders === 1);
 
 /* ---------- the bar, once what it describes is gone ---------- */
 
-const peekFrom = src.indexOf("  function setPeek(next, owner = null) {");
+const peekFrom = src.indexOf("  // What makes one peek a different peek.");
 const peekTo = src.indexOf("  function poolBar(", peekFrom);
 if (peekFrom < 0 || peekTo < 0 || peekTo <= peekFrom) {
   console.log("FAIL could not lift setPeek out of content.js");
@@ -147,15 +147,15 @@ b.setPeek({ text: "x" }, { isConnected: true });
 b.setPeek(null);
 check("clearing forgets the owner too", b.owner() === null);
 
-// Idle, the bar says which deck this is and how much of it travels. Once the
-// bar stopped reading cards back, cardPeek began answering `{ text: "" }` for
-// a card that can show itself — most of them — and an empty object is still
-// truthy, so the bar drew an empty row where the name had been. Then, because
-// "" and null compare the same inside setPeek, moving the pointer away was
-// not a change and the bar was never rebuilt: one hover emptied it for good.
+// Idle, the bar says which deck this is and how much of it travels, so a peek
+// with nothing in it has to leave it alone. An empty object is still truthy:
+// when cardPeek briefly answered `{ text: "" }` the bar drew an empty row
+// where the deck's name had been, and then — because "" and null compare the
+// same here — moving the pointer away was not a change and the bar was never
+// rebuilt. One hover emptied it for good.
 b = bar();
 b.setPeek({ text: "" }, { isConnected: true });
-check("a card that can show itself leaves the bar to the deck", b.peek() === null);
+check("a peek with nothing in it leaves the bar to the deck", b.peek() === null);
 check("with nothing owning it", b.owner() === null);
 check("and no redraw asked for on the way past", b.seen.refreshes === 0);
 
@@ -313,40 +313,87 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
   );
   const { splitEmoji } = globalThis.OshiDeck.tokens;
 
+  const drawFrom = src.indexOf("  function peekReadout({");
+  const drawTo = src.indexOf("  // What makes one peek a different peek.");
+  if (drawFrom < 0 || drawTo < 0) {
+    console.log("FAIL could not lift peekReadout out of content.js");
+    process.exit(1);
+  }
+
   const api = new Function(
     "tokens", "settingsCache", "watcher", "t", "document",
     `${src.slice(sizes, sizesTo)}
      ${src.slice(from, to)}
-     return { cardPeek, cardBody, widthOf };`
+     ${src.slice(drawFrom, drawTo)}
+     return { cardPeek, cardBody, widthOf, peekReadout };`
   )(
     { toPlainText: (list) => (list || []).map((x) => (x.type === "text" ? x.value : x.alt || "")).join(""),
-      toFragment: () => ({}), splitEmoji },
+      // A marker rather than a node: what matters is that the bar asked for
+      // the card to be drawn, and asked for it the way a card face is drawn.
+      toFragment: (list, options) => ({ drawn: list, preview: options?.preview }),
+      cardKey: (list) => (list || [])
+        .map((x) => (x.type === "text" ? x.value : `\u0001${x.emojiId}`)).join(""),
+      splitEmoji },
     { cardSize: "small" },
     { ranking: () => new Map() },
     (key, ...args) => [key, ...args].join("|"),
-    { createElement: () => ({ appendChild() {}, dataset: {}, set className(v) {} }) }
+    { createElement: () => ({
+        kids: [],
+        dataset: {},
+        appendChild(node) { this.kids.push(node); },
+        set className(v) {},
+        set textContent(v) { this.wrote = v; }
+      }) }
   );
 
   const stamp = (n) => new Array(n).fill(0).map(() => (
     { type: "youtubeEmoji", emojiId: "UCx/y", alt: "tadaima", sharedTooltipText: ":_tadaima:" }));
   const words = (value) => [{ type: "text", value }];
 
-  check("a card says what it says, so the bar does not repeat it",
-    api.cardPeek({ tokens: words("わこつ") }).text === "");
-  check("nor does it spell out an emoji's filename",
-    api.cardPeek({ tokens: stamp(3) }).text === "");
-
-  // The card breathes in the corner when it is being said right now, and
-  // five people or fifty does not change what anybody does about it.
-  check("nor count what the card is already showing it is doing",
-    api.cardPeek({ tokens: stamp(3), hits: 5 }).text === "");
-  check("and a drawn card is not told where its own ＋ is",
-    api.cardPeek({ tokens: stamp(3), drawn: true, hits: 7 }).text === "");
-
-  // The one thing a card genuinely cannot show: itself, when it is too full.
+  // The bar shows the card in full — shrunk, faded and cut off is the state
+  // a full card is in, and the bar has room the card does not.
+  //
+  // It carries the tokens, never a spelling of them. Spelling was why this
+  // was taken out once: a member emoji's text is the name YouTube files it
+  // under, so three stamps read back as `tadaimatadaimatadaima`.
   const long = words("あ".repeat(25));
-  check("a card too full to read is read out in the bar",
-    api.cardPeek({ tokens: long, hits: 4 }).text === "あ".repeat(25));
+  check("the bar carries the card's own tokens",
+    api.cardPeek({ tokens: stamp(3) }).tokens?.length === 3);
+  check("and no words that would spell the pictures out",
+    !api.cardPeek({ tokens: stamp(3) }).text);
+  check("words come through as words",
+    api.cardPeek({ tokens: long }).tokens?.[0]?.value === "あ".repeat(25));
+
+  // And it draws them the way a card face draws them.
+  {
+    const readout = api.peekReadout(api.cardPeek({ tokens: stamp(3) }));
+    check("the bar draws the stamps rather than naming them",
+      readout.kids[0]?.drawn?.length === 3);
+    // The same way a card face does. The editor's markup carries
+    // `shared-tooltip-text`, which is YouTube's own attribute, and a bar
+    // built that way would hand its tooltip the filenames all over again.
+    check("the way a card face draws them, not the way the editor does",
+      readout.kids[0]?.preview === true);
+    check("and writes no text alongside them", readout.wrote === undefined);
+  }
+
+  // Still not the things the card already says about itself: it breathes in
+  // the corner while it is being said, and its ＋ is on it.
+  check("no count of who else is saying it",
+    !api.cardPeek({ tokens: stamp(3), hits: 5 }).text);
+  check("and a drawn card is not told where its own ＋ is",
+    !api.cardPeek({ tokens: stamp(3), drawn: true, hits: 7 }).text);
+
+  // A locked card is the one case where the bar has something of its own to
+  // say, so there it is words — and they are drawn as words.
+  {
+    const locked = api.cardPeek({ tokens: stamp(3), locked: true, lapsed: true });
+    check("a locked card is told why instead", locked.text === "peek.lockMembership");
+    check("and marked as a warning", locked.warning === true);
+    const readout = api.peekReadout(locked);
+    check("which the bar writes out", readout.wrote === "peek.lockMembership");
+    check("and nothing is drawn for it", readout.kids.length === 0);
+  }
 
   // An emoji is a picture about two characters wide, not the length of its
   // name — measuring the text shrank and faded a card of three small

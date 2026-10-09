@@ -555,9 +555,17 @@ const MUTATIONS = [
     "      img.replaceWith(document.createTextNode(grapheme));",
     "      /* left showing nothing */"],
 
-  [VISIBILITY, CONTENT, "the bar repeating what the card already says",
-    "      text: runsOver(card, settingsCache.cardSize)\n        ? tokens.toPlainText(card.tokens || []).trim()\n        : \"\"",
-    "      text: tokens.toPlainText(card.tokens || []).trim()"],
+  [VISIBILITY, CONTENT, "the bar spelling a card out instead of carrying it",
+    "    return { key: tokens.cardKey(list), tokens: list };",
+    "    return { text: tokens.toPlainText(list).trim() };"],
+
+  [VISIBILITY, CONTENT, "a card's contents written into the bar as text",
+    '    if (list) readout.appendChild(tokens.toFragment(list, { preview: true }));\n    else readout.textContent = text;',
+    '    readout.textContent = text || tokens.toPlainText(list || []);'],
+
+  [VISIBILITY, CONTENT, "the bar's stamps built the way the editor's are",
+    "tokens.toFragment(list, { preview: true })",
+    "tokens.toFragment(list)"],
 
   [VISIBILITY, CONTENT, "an emoji measured by the length of its name",
     "      (wide, token) => wide + (token.type === \"text\" ? textWidth(token.value) : EMOJI_WIDTH),",
@@ -568,7 +576,7 @@ const MUTATIONS = [
     "    (value || \"\").trim().length;"],
 
   [VISIBILITY, CONTENT, "an empty description treated as something to say",
-    "    const said = next?.text ? next : null;",
+    "    const said = peekKey(next) ? next : null;",
     "    const said = next;"],
 
   [VISIBILITY, CONTENT, "a notice left sitting over the controls it names",
@@ -686,8 +694,10 @@ const KILLS = {
   "a card from before the shortcut existed read as free": "a card saved before the shortcut was collected still asks for a membership",
   "a shortcut that does not survive the editor": "writing a card keeps the shortcut with it",
   "a standard emoji kept as an emoji token": "a standard emoji comes back as text",
-  "the bar repeating what the card already says": "a card says what it says, so the bar does not repeat it",
-  "an empty description treated as something to say": "a card that can show itself leaves the bar to the deck",
+  "the bar spelling a card out instead of carrying it": "the bar carries the card's own tokens",
+  "a card's contents written into the bar as text": "the bar draws the stamps rather than naming them",
+  "the bar's stamps built the way the editor's are": "the way a card face draws them, not the way the editor does",
+  "an empty description treated as something to say": "a peek with nothing in it leaves the bar to the deck",
   "a notice left sitting over the controls it names": "typing clears a notice that was in the way",
   "a refusal with nothing to show for it where it happened": "and marks the card that was pressed",
   "an emoji measured by the length of its name": "three emoji are six characters wide, not twenty-one",

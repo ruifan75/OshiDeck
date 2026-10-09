@@ -277,11 +277,13 @@
   // threw on the way out of read(), so nothing loaded at all until storage
   // was cleared by hand. Losing one bad card is recoverable; losing the panel
   // is not.
+  const wholeTokens = (list) =>
+    Array.isArray(list) && list.every((token) => !!token && typeof token === "object");
+
   const readable = (card) =>
     !!card && typeof card === "object" &&
     typeof card.id === "string" && !!card.id &&
-    Array.isArray(card.tokens) &&
-    card.tokens.every((token) => !!token && typeof token === "object");
+    wholeTokens(card.tokens);
 
   function shape(raw) {
     if (Array.isArray(raw[KEYS.CARDS]) && raw[KEYS.DECKS]) {
@@ -299,6 +301,10 @@
     if (Array.isArray(raw[KEYS.CARDS])) {
       const commons = [];
       for (const card of raw[KEYS.CARDS]) {
+        // Before withScope reads its tokens. migrate() drops what is not a
+        // card, but only after the shapes have been built, and this branch
+        // builds one by reading it.
+        if (!card || typeof card !== "object") continue;
         // v0.3 stored the same idea in the same field.
         cards.push(withScope({ ...blank(), ...card }));
         if (card.scope && card.scope !== GLOBAL) add(card.scope, card.id);
@@ -625,6 +631,12 @@
   // extension where ordering can be guaranteed.
   const OPS = {
     addCard(data, { card, channelId, scope }) {
+      // Nothing is written that the next read would drop. The token walks
+      // tolerate a token that is not one so that a bad card costs you the
+      // card rather than the panel — which is right for reading, and would
+      // be silent acceptance here.
+      if (!card || typeof card !== "object" || !wholeTokens(card.tokens)) return false;
+
       // A card whose emoji come from two channels can be sent nowhere, and no
       // pool would ever show it.
       if (OD.tokens.requiredChannels(card.tokens).length > 1) return false;
@@ -684,6 +696,9 @@
       let reused = 0;
 
       for (const card of cards) {
+        // Same as addCard: not written if the next read would drop it.
+        if (!card || typeof card !== "object" || !wholeTokens(card.tokens)) continue;
+
         // A preset can carry this channel's member emoji — its readers watch
         // the same streamer — but nobody else's, and a hand-edited one might
         // try. Anything that cannot be sent here is not loaded here.
@@ -728,6 +743,10 @@
     editCard(data, { id, tokens }) {
       const card = data.cards.find((c) => c.id === id);
       if (!card) return false;
+      // The worst of the three: the card already exists, so writing tokens
+      // the next read would drop replaces something good with something that
+      // disappears — and says it worked.
+      if (!wholeTokens(tokens)) return false;
       if (OD.tokens.requiredChannels(tokens).length > 1) return false;
       card.tokens = tokens;
       // An edit can add member emoji, which pins a previously universal card.

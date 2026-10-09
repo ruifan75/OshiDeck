@@ -710,6 +710,18 @@ const MUTATIONS = [
     "      if (!store.usableOn(card, channelId)) continue;",
     "      if (false) continue;"],
 
+  [STORED, STORE, "an edit written without checking it is one",
+    "      if (!wholeTokens(tokens)) return false;",
+    "      if (false) return false;"],
+
+  [STORED, STORE, "a card added that the next read would drop",
+    "      if (!card || typeof card !== \"object\" || !wholeTokens(card.tokens)) return false;",
+    "      if (false) return false;"],
+
+  [STORED, STORE, "the oldest shape reading a card before it is one",
+    "        if (!card || typeof card !== \"object\") continue;",
+    "        if (false) continue;"],
+
   [STORED, STORE, "a card that is not a card carried into the panel",
     "    const whole = cards.filter(readable);",
     "    const whole = cards;"],
@@ -858,6 +870,9 @@ const KILLS = {
   "a deck list taken on trust while counts are migrated": "and a count migrates past a deck that is not a list",
   "a token list walked before it is known to be a list": "a tokens field that cannot be walked is dropped, not fatal",
   "the save path calling anything with the same words a duplicate": "a card of the same words tied elsewhere is not a duplicate here",
+  "an edit written without checking it is one": "an edit to nothing is refused",
+  "a card added that the next read would drop": "a card of nothing is not added",
+  "the oldest shape reading a card before it is one": "and a null beside a card in the oldest shape is skipped",
   "a card that is not a card carried into the panel": "the card that is not a card is dropped",
   "a deck that is not a list read as one": "a deck that is not a list reads as empty",
   "a file applied without the worker checking it": "a file the validator refuses is refused here too",

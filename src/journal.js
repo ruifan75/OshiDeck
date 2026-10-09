@@ -72,6 +72,14 @@
     // The log is the thing you reach for when something has already gone
     // wrong, so it has to survive its own contents being wrong.
     if (!entry || typeof entry !== "object") return "";
+    try {
+      return written(entry);
+    } catch (_) {
+      return ""; // a value whose own toString throws is still not worth the log
+    }
+  }
+
+  function written(entry) {
     const { at, kind, repeat, ...rest } = entry;
     const body = Object.entries(rest)
       .filter(([, value]) => value !== undefined && value !== null && value !== "")

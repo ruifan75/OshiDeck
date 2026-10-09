@@ -207,6 +207,37 @@ const S = globalThis.OshiDeck.store;
   }
 
   console.log("");
+  console.log("--- nothing is written that the next read would drop ---");
+
+  // The token walks tolerate a token that is not one so that a bad card costs
+  // you the card rather than the panel. That is right for reading and would
+  // be silent acceptance for writing — worst on an edit, where the card
+  // already exists, so writing something the next read discards replaces
+  // something good with nothing and reports that it worked.
+  {
+    const before = stored;
+    stored = { cards: [{ id: "keep", tokens: text("888"), scope: S.GLOBAL, by: {} }],
+               decks: {}, channelMeta: {}, settings: {} };
+
+    check("a card of nothing is not added",
+      (await S.runOp("addCard", { card: { id: "n", tokens: [null] }, scope: "global" })).ok === false);
+    check("an edit to nothing is refused",
+      (await S.runOp("editCard", { id: "keep", tokens: [null] })).ok === false);
+    check("and the card it would have replaced is still there",
+      (await S.read()).cards.map((c) => c.id).join() === "keep");
+    check("while an ordinary edit still goes through",
+      (await S.runOp("editCard", { id: "keep", tokens: text("999") })).ok === true);
+
+    // The oldest shape reads a card to place it, before migrate can drop one.
+    stored = { cards: [{ id: "g", tokens: text("8") }, null], channelMeta: {}, settings: {} };
+    let left = null;
+    try { left = (await S.read()).cards.map((c) => c.id).join(); } catch (_) { left = "threw"; }
+    check("and a null beside a card in the oldest shape is skipped", left === "g");
+
+    stored = before;
+  }
+
+  console.log("");
   console.log("--- the worker checks the file it is told to apply ---");
 
   // The pages that offer this check the file first, but the operation is what

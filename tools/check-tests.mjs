@@ -35,6 +35,7 @@ const COLOUR = "colour-test.mjs";
 const PRESET = "preset-test.mjs";
 const MEMBER = "member-test.mjs";
 const I18N = "i18n-test.mjs";
+const WIDTH = "width-test.mjs";
 const EMOJI = "emoji-test.mjs";
 const STORED = "store-test.js";
 
@@ -47,6 +48,9 @@ const OPTIONS = { file: "options.js", env: "OD_OPTIONS" };
 const STORE = { file: "src/store.js", env: "OD_STORE" };
 const PRESETS = { file: "src/presets.js", env: "OD_PRESETS" };
 const I18NSRC = { file: "src/i18n.js", env: "OD_I18N" };
+// Not shipped, but it is the only thing that can say whether the English
+// fits a 400px bar without opening one.
+const WIDTHSRC = { file: "tools/check-width.mjs", env: "OD_WIDTH" };
 // Not JavaScript, so `node --check` has nothing to say about it. Twice now a
 // decision made correctly in JS was painted over by a rule in CSS, which no
 // test could see.
@@ -208,6 +212,26 @@ const MUTATIONS = [
         return ["validation.presetChannelMissing"];
       }`,
     "      // (allowed)"],
+
+  [I18N, I18NSRC, "every number given the plural word",
+    "          return `${value} ${Number(value) === 1 ? one : many}`;",
+    "          return `${value} ${many}`;"],
+
+  [I18N, I18NSRC, "a choice printed without the number it counts",
+    "          if (one === undefined) return String(value);",
+    "          if (one === undefined) return String(value);\n          if (true) return Number(value) === 1 ? one : many;"],
+
+  [WIDTH, WIDTHSRC, "a bar given more room than it has",
+    "const ROOM = 238.2;",
+    "const ROOM = 999;"],
+
+  [WIDTH, WIDTHSRC, "a button that costs the notice nothing",
+    "    return w === null ? ROOM : ROOM - (w * BOLD + PADDING + GAP);",
+    "    return ROOM;"],
+
+  [WIDTH, WIDTHSRC, "a character of unknown width guessed at",
+    "    const advance = ADVANCE.get(c);",
+    "    const advance = ADVANCE.get(c) ?? 556;"],
 
   [I18N, I18NSRC, "a quoted file value of any length at all",
     "        return shown.length > QUOTED_MAX ? `${shown.slice(0, QUOTED_MAX)}…` : shown;",
@@ -544,8 +568,8 @@ const MUTATIONS = [
     "  const use = (want) => (current = resolve(want) || current);"],
 
   [I18N, I18NSRC, "a hole left saying undefined",
-    '      ? text.replace(/\\$(\\d)/g, (_, n) => String(args[Number(n) - 1] ?? ""))',
-    "      ? text.replace(/\\$(\\d)/g, (_, n) => String(args[Number(n) - 1]))"],
+    '          const value = args[Number(n) - 1] ?? "";',
+    "          const value = args[Number(n) - 1];"],
 
   [PRESET, OPTIONS, "the pool's stripe left on the stylesheet's default hue",
     '  el.style.setProperty("--hue", hueOf(selected));',
@@ -921,6 +945,11 @@ const KILLS = {
 
   "another channel's member emoji carried into a preset": "another channel's are still left behind",
   "a preset that carries member emoji without saying whose": "and the preset says whose they are",
+  "every number given the plural word": "one card is a card",
+  "a choice printed without the number it counts": "and one and a half are cards",
+  "a bar given more room than it has": "a notice that runs past the end of the bar is caught",
+  "a button that costs the notice nothing": "the button a notice carries takes its width off the room",
+  "a character of unknown width guessed at": "a character the table cannot measure is refused, not guessed",
   "a quoted file value of any length at all": "a quoted value is bounded",
   "a language borrowed from Object.prototype": "toString is not a language",
   "a deck list taken on trust while counts are migrated": "and a count migrates past a deck that is not a list",

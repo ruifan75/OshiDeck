@@ -29,7 +29,7 @@
     "bar.global":            { ja: "共通", "zh-TW": "通用", en: "Anywhere" },
     "bar.editing":           { ja: "編集中", "zh-TW": "編輯中", en: "Editing" },
     "channel.this":          { ja: "このチャンネル", "zh-TW": "這個頻道", en: "This channel" },
-    "count.cards":           { ja: "$1枚", "zh-TW": "$1 張", en: "$1 cards" },
+    "count.cards":           { ja: "$1枚", "zh-TW": "$1 張", en: "$1{card|cards}" },
 
     /* ---------- buttons ---------- */
     "action.close":          { ja: "閉じる", "zh-TW": "收起", en: "Close" },
@@ -73,7 +73,7 @@
                                en: "Member emoji inside: this channel only" },
     "save.globalBlocked":    { ja: "メン限スタンプ入りの札は共通にできません",
                                "zh-TW": "含會員限定貼圖的牌不能設成通用",
-                               en: "A card with a member emoji cannot be saved for any channel" },
+                               en: "A card with a member emoji can only be saved for its own channel" },
 
     /* ---------- what the bar says under the pointer ---------- */
     "peek.saveCard":         { ja: "この札を保存（⇧＋クリックで入力欄へ）",
@@ -111,7 +111,7 @@
                                en: "Type what you want to save" },
     "toast.mixedChannels":   { ja: "複数チャンネルのメン限が混ざっています",
                                "zh-TW": "混到了多個頻道的會員限定貼圖",
-                               en: "Member emoji from more than one channel are mixed in" },
+                               en: "Only one channel's member emoji at a time" },
     "toast.leftover":        { ja: "送れないスタンプが入力欄に残っています",
                                "zh-TW": "輸入欄裡還留著送不出去的貼圖",
                                en: "Emoji that cannot be sent are still in the box" },
@@ -129,23 +129,23 @@
     /* ---------- a card that is already there ---------- */
     "dup.globalExists":      { ja: "同じ札が共通の札としてもうあります",
                                "zh-TW": "已經有相同內容的通用牌",
-                               en: "The same card is already saved for any channel" },
+                               en: "That card is already saved for any channel" },
     "dup.channelExists":     { ja: "同じ札がこのチャンネル専用としてもうあります",
                                "zh-TW": "已經有相同內容的頻道專用牌",
-                               en: "The same card is already saved for this channel" },
+                               en: "That card is already saved for this channel" },
     "dup.globalExisted":     { ja: "同じ札が共通の札としてもうありました",
                                "zh-TW": "原本就有相同內容的通用牌",
-                               en: "The same card was already saved for any channel" },
+                               en: "That card was already saved for any channel" },
     "dup.channelExisted":    { ja: "同じ札がこのチャンネル専用としてもうありました",
                                "zh-TW": "原本就有相同內容的頻道專用牌",
-                               en: "The same card was already saved for this channel" },
+                               en: "That card was already saved for this channel" },
     "dup.inDeck":            { ja: "同じ札がこのデッキにもうあります", "zh-TW": "這個牌組裡已經有相同的牌",
                                en: "The same card is already in this deck" },
     "dup.inPool":            { ja: "同じ札がプールにもうあります", "zh-TW": "卡池裡已經有相同的牌",
                                en: "The same card is already in the pool" },
     "dup.movedFromPool":     { ja: "プールにあった同じ札をデッキに入れました",
                                "zh-TW": "把卡池裡相同的牌加進牌組了",
-                               en: "Put the matching card from your pool into the deck" },
+                               en: "Added the matching card from your pool" },
     "saved.pool":            { ja: "プールに保存しました", "zh-TW": "已存進卡池", en: "Saved to the pool" },
     "saved.global":          { ja: "共通の札として保存しました", "zh-TW": "已存成通用牌", en: "Saved for any channel" },
     "saved.channel":         { ja: "このチャンネル専用の札として保存しました",
@@ -162,18 +162,18 @@
     "preset.failed":         { ja: "読み込めませんでした", "zh-TW": "載入失敗", en: "Could not load it" },
     "preset.loadedReused":   { ja: "「$1」を入れました（うち$2枚はプールにあったもの）",
                                "zh-TW": "已加入「$1」（其中 $2 張原本就在卡池裡）",
-                               en: "Added “$1” ($2 of them were already in your pool)" },
+                               en: "Added “$1” ($2 already in your pool)" },
 
     /* ---------- the membership locks ---------- */
     "lock.membershipPlay":   { ja: "メンバー限定のスタンプです。メンバーになると使えます",
                                "zh-TW": "這是會員限定貼圖，成為會員後就能使用",
-                               en: "This is a members-only emoji. Become a member and you can use it" },
+                               en: "A members-only emoji — join to use it" },
     "lock.elsewherePlay":    { ja: "他チャンネルのメン限スタンプです",
                                "zh-TW": "這是其他頻道的會員限定貼圖",
                                en: "This is another channel's members-only emoji" },
     "lock.membershipSave":   { ja: "メンバー限定のスタンプです。メンバーになると保存できます",
                                "zh-TW": "這是會員限定貼圖，成為會員後就能儲存",
-                               en: "This is a members-only emoji. Become a member and you can save it" },
+                               en: "A members-only emoji — join to save it" },
     "lock.elsewhereSave":    { ja: "このチャンネルでは送れないスタンプです",
                                "zh-TW": "這個頻道送不出這個貼圖",
                                en: "This emoji cannot be sent on this channel" },
@@ -183,7 +183,7 @@
     "size.medium":           { ja: "中", "zh-TW": "中", en: "Medium" },
     "size.small":            { ja: "小", "zh-TW": "小", en: "Small" },
     "sort.trend":            { ja: "チャット連動", "zh-TW": "跟著聊天室", en: "Follow the chat" },
-    "sort.heat":             { ja: "最近よく使う順", "zh-TW": "最近常用", en: "Recently used" },
+    "sort.heat":             { ja: "最近よく使う順", "zh-TW": "最近常用", en: "Most used lately" },
     "sort.uses":             { ja: "使った回数順", "zh-TW": "使用次數", en: "Times used" },
     "sort.manual":           { ja: "自分で並べた順", "zh-TW": "自己排的順序", en: "The order I set" },
     "sort.trendNote":        { ja: "いまチャットで流れている反応に合う札を前に出します。新しい発言ほど重く数え、4秒ごとに並べ替え。カーソルが札の上にある間は動きません。",
@@ -208,13 +208,13 @@
                                "zh-TW": "聊天室越熱鬧，越需要保守一點。",
                                en: "The busier the chat, the shyer it needs to be." },
     "opt.holdNote":          { ja: "引いた札は$1秒そのまま残ります。", "zh-TW": "抽到的牌會留著 $1 秒。",
-                               en: "A drawn card stays for $1 seconds." },
+                               en: "A drawn card stays for $1{second|seconds}." },
     "opt.holdHint":          { ja: "短いと、気づく前に消えることがあります。カーソルがパネル上にある間は入れ替わりません。",
                                "zh-TW": "時間太短可能來不及點到。游標停在面板上時不會換牌。",
                                en: "Too short and it can be gone before you notice. It will not change while the pointer is on the panel." },
     "opt.paceNote":          { ja: "「チャット連動」の重みが半分になるまで$1秒。",
                                "zh-TW": "「跟著聊天室」的權重減半需要 $1 秒。",
-                               en: "“Follow the chat” halves its weight after $1 seconds." },
+                               en: "“Follow the chat” halves its weight after $1{second|seconds}." },
     "opt.paceHint":          { ja: "速いほど直前の波にすぐ反応し、遅いほど落ち着きます。",
                                "zh-TW": "越快越貼近最新反應，越慢排序越穩定。",
                                en: "Quicker follows the last surge sooner; slower stays settled." },
@@ -618,8 +618,18 @@
     // A missing key is a bug, and showing the key is how it gets noticed.
     // A missing *translation* is not: the Japanese is still a sentence.
     const text = entry ? entry[current] || entry[SOURCE] : key;
+    // `$1{card|cards}` is the number and then the word that belongs with it.
+    // English says one card and two cards; Japanese and Chinese count with 枚
+    // and 張 and do not care, so the choice lives in the string that needs it
+    // rather than in the caller — which would be English grammar written into
+    // content.js, where no translator can reach it. A `$n` on its own is
+    // untouched, which is all but three of these.
     return args.length
-      ? text.replace(/\$(\d)/g, (_, n) => String(args[Number(n) - 1] ?? ""))
+      ? text.replace(/\$(\d)(?:\{([^{}|]*)\|([^{}|]*)\})?/g, (_, n, one, many) => {
+          const value = args[Number(n) - 1] ?? "";
+          if (one === undefined) return String(value);
+          return `${value} ${Number(value) === 1 ? one : many}`;
+        })
       : text;
   }
 

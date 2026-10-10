@@ -28,6 +28,17 @@ export function checkI18n({ MESSAGES, LANGUAGES, SOURCE, read, report = console.
       if (entry[code] && slots(entry[code]) !== slots(entry[SOURCE])) {
         fail(`${key} — ${code} の $1,$2… が ${SOURCE} と合いません`);
       }
+      // `$1{card|cards}` picks the word that goes with the number. Anywhere
+      // else a brace is just text, and t() prints it as written — which is how
+      // a misplaced one reaches the panel instead of failing here.
+      for (const m of (entry[code] || "").matchAll(/\{[^{}]*\}/g)) {
+        const before = entry[code].slice(Math.max(0, m.index - 2), m.index);
+        if (!/^\$\d$/.test(before)) {
+          fail(`${key} — ${code} の ${m[0]} が $1,$2… の直後にありません`);
+        } else if ((m[0].match(/\|/g) || []).length !== 1) {
+          fail(`${key} — ${code} の ${m[0]} は「一つのとき|それ以外」の二つに分けてください`);
+        }
+      }
     }
   }
 

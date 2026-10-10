@@ -20,6 +20,7 @@ echo
 
 echo "言語"
 node tools/check-i18n.mjs
+node tools/check-width.mjs
 echo
 
 echo "css traps"

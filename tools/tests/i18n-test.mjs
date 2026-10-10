@@ -217,6 +217,36 @@ check("a malformed file value resembling an error tuple stays literal",
   i18n.t("opt.cannotRead", presets.validate(preset({ channel: ["validation.notObject"] }))) ===
     "無法載入：無法辨識這份預組的頻道。請指定有效的頻道 ID。（channel: validation.notObject）");
 
+/* ---------- one of something ---------- */
+
+// English needs a different word at one and the counting languages do not, so
+// the choice is written into the string that needs it. The caller passes a
+// number and nothing else: `count === 1 ? ... : ...` in content.js would be
+// English grammar in a file no translator opens.
+i18n.use("en");
+check("one card is a card", i18n.t("count.cards", 1) === "1 card");
+check("and two are cards", i18n.t("count.cards", 2) === "2 cards");
+check("and none are cards", i18n.t("count.cards", 0) === "0 cards");
+// 1.5 is one and a half of them, not one of them. The floor on these is a
+// whole second, but the step above it is not.
+check("and one and a half are cards", i18n.t("opt.holdNote", 1.5) ===
+  "A drawn card stays for 1.5 seconds.");
+check("the shortest hold the settings allow still reads as one second",
+  i18n.t("opt.holdNote", 1) === "A drawn card stays for 1 second.");
+
+// The counting languages never see the choice, and must not grow a stray
+// space where the English has one.
+i18n.use("ja");
+check("Japanese counts with its own counter and no choice", i18n.t("count.cards", 1) === "1枚");
+i18n.use("zh-TW");
+check("and so does Chinese", i18n.t("count.cards", 1) === "1 張");
+
+// Everything else is a plain $1, which is 235 of these.
+i18n.use("en");
+check("a placeholder with no choice after it is just the value",
+  i18n.t("preset.loadedReused", "Sakura Miko", 3) ===
+    "Added \u201cSakura Miko\u201d (3 already in your pool)");
+
 /* ---------- refusals explain recovery before the diagnostic ---------- */
 
 for (const language of ["ja", "zh-TW"]) {
@@ -311,5 +341,17 @@ const missingTranslation = {
 };
 check("validator translations are required in every language",
   checkI18n({ ...i18n, MESSAGES: missingTranslation, read, report: () => {} }) > 0);
+
+// A choice only means anything attached to a number. Loose, or cut into more
+// pieces than English has, t() leaves it alone and the braces reach the bar.
+const withChoice = (en) => checkI18n({
+  ...i18n,
+  MESSAGES: { ...MESSAGES, "count.cards": { ...MESSAGES["count.cards"], en } },
+  read,
+  report: () => {}
+});
+check("the audit is green with the choice written as it is", withChoice("$1{card|cards}") === 0);
+check("a choice not attached to a number fails", withChoice("{card|cards} $1") > 0);
+check("and one cut into three pieces fails", withChoice("$1{card|cards|more}") > 0);
 
 process.exit(fail);

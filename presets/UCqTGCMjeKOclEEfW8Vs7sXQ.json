@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ガッチマンV→休止中 ガッチマンの方で活動継続中",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCqTGCMjeKOclEEfW8Vs7sXQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCqTGCMjeKOclEEfW8Vs7sXQ/MZTqYbOtB52S8wS13IGYCg","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/45F54FUA0Qbdqoz7z0Y9BKqY5n5zFkDbd3b6WMN0Tk2fCoGbm8VOrJcJUN_8I7nh6nSktSrdwg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCqTGCMjeKOclEEfW8Vs7sXQ/MZTqYbOtB52S8wS13IGYCg","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/45F54FUA0Qbdqoz7z0Y9BKqY5n5zFkDbd3b6WMN0Tk2fCoGbm8VOrJcJUN_8I7nh6nSktSrdwg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCqTGCMjeKOclEEfW8Vs7sXQ/MZTqYbOtB52S8wS13IGYCg","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/45F54FUA0Qbdqoz7z0Y9BKqY5n5zFkDbd3b6WMN0Tk2fCoGbm8VOrJcJUN_8I7nh6nSktSrdwg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCqTGCMjeKOclEEfW8Vs7sXQ/J5XqYd79IpWs8wSuoqn4Aw","alt":"おつかれ","sharedTooltipText":":_おつかれ:","src":"https://yt3.ggpht.com/pQ28OITRvi1Lu3QB5jPxTVGlqvRrlmo2GIOhfQG7nhOAd2gY47kldZCMq_LD7AsQhHoxNvMX=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCqTGCMjeKOclEEfW8Vs7sXQ/J5XqYd79IpWs8wSuoqn4Aw","alt":"おつかれ","sharedTooltipText":":_おつかれ:","src":"https://yt3.ggpht.com/pQ28OITRvi1Lu3QB5jPxTVGlqvRrlmo2GIOhfQG7nhOAd2gY47kldZCMq_LD7AsQhHoxNvMX=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCqTGCMjeKOclEEfW8Vs7sXQ/J5XqYd79IpWs8wSuoqn4Aw","alt":"おつかれ","sharedTooltipText":":_おつかれ:","src":"https://yt3.ggpht.com/pQ28OITRvi1Lu3QB5jPxTVGlqvRrlmo2GIOhfQG7nhOAd2gY47kldZCMq_LD7AsQhHoxNvMX=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うんうん"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ないすぱ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なるほど"}], "scope": "global" }
+  ]
+}

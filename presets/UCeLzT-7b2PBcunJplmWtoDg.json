@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Patra Channel / 周防パトラ",
+  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "channel": "UCeLzT-7b2PBcunJplmWtoDg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんにちわんわん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわんわん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おわりやね"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCeLzT-7b2PBcunJplmWtoDg/QXe1Y6PNHd6P_9EP26ilsAs","alt":"PTRわらい","sharedTooltipText":":_PTRわらい:","src":"https://yt3.ggpht.com/l0h0ox5N8LjjnvKpDJUSkr2QGq6jeExRK5kmFwdypIetaK2_kM1TYbxGuIEtSyGfUZY7D74u=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" }
+  ]
+}

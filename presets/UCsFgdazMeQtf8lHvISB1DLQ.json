@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "kyOresu",
+  "note": "過去8配信のチャットから、常連が多い順に10枚",
+  "channel": "UCsFgdazMeQtf8lHvISB1DLQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"67"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nya"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"bye"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCsFgdazMeQtf8lHvISB1DLQ/DClGZsimPJDyi9oPwJ6AiA4","alt":"kyoKyopicheer","sharedTooltipText":":_kyoKyopicheer:","src":"https://yt3.ggpht.com/jPIF2cvqPyHBPoMA5Zxvy0O8Yi23W_I1k2k3E4D3W6Q0Dpu0rEUtro4bcuB27ooO7MbtpQVKng=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCsFgdazMeQtf8lHvISB1DLQ/DClGZsimPJDyi9oPwJ6AiA4","alt":"kyoKyopicheer","sharedTooltipText":":_kyoKyopicheer:","src":"https://yt3.ggpht.com/jPIF2cvqPyHBPoMA5Zxvy0O8Yi23W_I1k2k3E4D3W6Q0Dpu0rEUtro4bcuB27ooO7MbtpQVKng=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCsFgdazMeQtf8lHvISB1DLQ/DClGZsimPJDyi9oPwJ6AiA4","alt":"kyoKyopicheer","sharedTooltipText":":_kyoKyopicheer:","src":"https://yt3.ggpht.com/jPIF2cvqPyHBPoMA5Zxvy0O8Yi23W_I1k2k3E4D3W6Q0Dpu0rEUtro4bcuB27ooO7MbtpQVKng=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

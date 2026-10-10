@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "シスター・クレア -SisterClaire-",
+  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "channel": "UC1zFJrfEKvCixhsjNSb1toQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1zFJrfEKvCixhsjNSb1toQ/15n6XMOhMIubigT5zLXIBw","alt":"pachipachi","sharedTooltipText":":_pachipachi:","src":"https://yt3.ggpht.com/XrvFL1gOoN8ylF6gATZF_Jvrxv0xiYOa2klAtEXg5pqCms6D6SP1V1XqEfI9ubI4hDJbk6FQxQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1zFJrfEKvCixhsjNSb1toQ/15n6XMOhMIubigT5zLXIBw","alt":"pachipachi","sharedTooltipText":":_pachipachi:","src":"https://yt3.ggpht.com/XrvFL1gOoN8ylF6gATZF_Jvrxv0xiYOa2klAtEXg5pqCms6D6SP1V1XqEfI9ubI4hDJbk6FQxQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1zFJrfEKvCixhsjNSb1toQ/15n6XMOhMIubigT5zLXIBw","alt":"pachipachi","sharedTooltipText":":_pachipachi:","src":"https://yt3.ggpht.com/XrvFL1gOoN8ylF6gATZF_Jvrxv0xiYOa2klAtEXg5pqCms6D6SP1V1XqEfI9ubI4hDJbk6FQxQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ウス"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1zFJrfEKvCixhsjNSb1toQ/BACVXMS3C5fXNtWrpPgC","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/4dwtEMiIp5ONG3syfUmUy6Cp32_f1VenGNZQ7elwuMr2MTxErxJN2pa9HXUqp-xrEeMr-2e2=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1zFJrfEKvCixhsjNSb1toQ/BACVXMS3C5fXNtWrpPgC","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/4dwtEMiIp5ONG3syfUmUy6Cp32_f1VenGNZQ7elwuMr2MTxErxJN2pa9HXUqp-xrEeMr-2e2=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1zFJrfEKvCixhsjNSb1toQ/BACVXMS3C5fXNtWrpPgC","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/4dwtEMiIp5ONG3syfUmUy6Cp32_f1VenGNZQ7elwuMr2MTxErxJN2pa9HXUqp-xrEeMr-2e2=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

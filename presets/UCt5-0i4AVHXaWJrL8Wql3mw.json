@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "緑仙 / Ryushen",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCt5-0i4AVHXaWJrL8Wql3mw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ほうほう"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あっ"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCt5-0i4AVHXaWJrL8Wql3mw/ka3SYO-vPJ2s8wT_sJP4Dw","alt":"midoriPatipati","sharedTooltipText":":_midoriPatipati:","src":"https://yt3.ggpht.com/rPmHMKkB5uvjGzZKwEpmUHXtKg6IktHzkTXsnRWB8p-3uf_YNAS1G4ite_bwcPCKaAPiD0Vt=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCt5-0i4AVHXaWJrL8Wql3mw/ka3SYO-vPJ2s8wT_sJP4Dw","alt":"midoriPatipati","sharedTooltipText":":_midoriPatipati:","src":"https://yt3.ggpht.com/rPmHMKkB5uvjGzZKwEpmUHXtKg6IktHzkTXsnRWB8p-3uf_YNAS1G4ite_bwcPCKaAPiD0Vt=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCt5-0i4AVHXaWJrL8Wql3mw/ka3SYO-vPJ2s8wT_sJP4Dw","alt":"midoriPatipati","sharedTooltipText":":_midoriPatipati:","src":"https://yt3.ggpht.com/rPmHMKkB5uvjGzZKwEpmUHXtKg6IktHzkTXsnRWB8p-3uf_YNAS1G4ite_bwcPCKaAPiD0Vt=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCt5-0i4AVHXaWJrL8Wql3mw/ka3SYO-vPJ2s8wT_sJP4Dw","alt":"midoriPatipati","sharedTooltipText":":_midoriPatipati:","src":"https://yt3.ggpht.com/rPmHMKkB5uvjGzZKwEpmUHXtKg6IktHzkTXsnRWB8p-3uf_YNAS1G4ite_bwcPCKaAPiD0Vt=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

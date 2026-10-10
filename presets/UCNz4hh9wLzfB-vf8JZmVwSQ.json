@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Marikyuun",
+  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "channel": "UCNz4hh9wLzfB-vf8JZmVwSQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"YAY"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Mari"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"byeee"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"what"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "global" }
+  ]
+}

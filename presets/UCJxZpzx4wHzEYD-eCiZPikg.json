@@ -12,7 +12,7 @@
     { "tokens": [{"type":"text","value":"WOOOOO"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"OTSUSTARS"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"OMG"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"omg"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"lol"}], "scope": "global" }
   ]
 }

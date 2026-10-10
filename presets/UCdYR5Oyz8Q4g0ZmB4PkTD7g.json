@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "天使うと",
+  "note": "過去9配信のチャットから、常連が多い順に10枚",
+  "channel": "UCdYR5Oyz8Q4g0ZmB4PkTD7g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"konuto"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんうと"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"otsuuto"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdYR5Oyz8Q4g0ZmB4PkTD7g/iFWBZf7gDcqo_9EP-Ku4kAE","alt":"nadeuto","sharedTooltipText":":_nadeuto:","src":"https://yt3.ggpht.com/MsW_mvH3FTnakjcHaXIKYAcUs9jbgacSBqrm-xCtUkqUYf927m5aWfqy-_FD7oy_e3H_nHgJqQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdYR5Oyz8Q4g0ZmB4PkTD7g/iFWBZdbgDcqo_9EP-Ku4kAE","alt":"heartuto","sharedTooltipText":":_heartuto:","src":"https://yt3.ggpht.com/vuk3NIlO8nWn9vKvHPFX91WzUY-us3IMWsEMDhS4hM8Jax5UlxkbEo7_OfaukbZZzbCKbtOo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdYR5Oyz8Q4g0ZmB4PkTD7g/iFWBZdbgDcqo_9EP-Ku4kAE","alt":"heartuto","sharedTooltipText":":_heartuto:","src":"https://yt3.ggpht.com/vuk3NIlO8nWn9vKvHPFX91WzUY-us3IMWsEMDhS4hM8Jax5UlxkbEo7_OfaukbZZzbCKbtOo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdYR5Oyz8Q4g0ZmB4PkTD7g/iFWBZdbgDcqo_9EP-Ku4kAE","alt":"heartuto","sharedTooltipText":":_heartuto:","src":"https://yt3.ggpht.com/vuk3NIlO8nWn9vKvHPFX91WzUY-us3IMWsEMDhS4hM8Jax5UlxkbEo7_OfaukbZZzbCKbtOo=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdYR5Oyz8Q4g0ZmB4PkTD7g/iFWBZcDYDcqo_9EP-Ku4kAE","alt":"bikuriuto","sharedTooltipText":":_bikuriuto:","src":"https://yt3.ggpht.com/QOD8aGxj0QgBjWWgX-WfewVbJf1YPn6ksi1U2z_fvqXEs6rHOsK-RStXfiqxnCmmbuDZ9X3S=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdYR5Oyz8Q4g0ZmB4PkTD7g/iFWBZfHYDcqo_9EP-Ku4kAE","alt":"happyuto","sharedTooltipText":":_happyuto:","src":"https://yt3.ggpht.com/NrHP3QLr_-5wpbKJnFnYue9xGZQ1qqTEAVyqadvHmMCthAuxlQRER310e1U0I7ONpNNYpDY7Sw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdYR5Oyz8Q4g0ZmB4PkTD7g/sbB_ZbnBM9CR_9EP4buWmAs","alt":"mizuuto","sharedTooltipText":":_mizuuto:","src":"https://yt3.ggpht.com/3AZGF_3xf2GeL6LG_MfDRuLMHJMmOZF3G25IaqT4l5xHlzF6TFGkXRqB78bBptsspmaZSeHp=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

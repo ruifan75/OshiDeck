@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ましろ",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCS-XXTgVkotkbkDnGEprXpg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCS-XXTgVkotkbkDnGEprXpg/fysOY4nlC5-O_9EPt4WwyAk","alt":"hello","sharedTooltipText":":_hello:","src":"https://yt3.ggpht.com/Znfb1gdYzam7l2LxUVpGCOAi32M1HIzNyDgr95ps1wJn_drw2lM_sWddU9cGcZj1EgucVyeBBg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCS-XXTgVkotkbkDnGEprXpg/fysOY6zlC5-O_9EPt4WwyAk","alt":"seeyou","sharedTooltipText":":_seeyou:","src":"https://yt3.ggpht.com/SMI52_M7ozvJbmZAu9GoCnZf6fExfJmA4EMe63kXI-rOyFvR_WQ_z-VtqnqvDohPpE7lcT4KGP0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCS-XXTgVkotkbkDnGEprXpg/fysOY6zlC5-O_9EPt4WwyAk","alt":"seeyou","sharedTooltipText":":_seeyou:","src":"https://yt3.ggpht.com/SMI52_M7ozvJbmZAu9GoCnZf6fExfJmA4EMe63kXI-rOyFvR_WQ_z-VtqnqvDohPpE7lcT4KGP0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCS-XXTgVkotkbkDnGEprXpg/fysOY6zlC5-O_9EPt4WwyAk","alt":"seeyou","sharedTooltipText":":_seeyou:","src":"https://yt3.ggpht.com/SMI52_M7ozvJbmZAu9GoCnZf6fExfJmA4EMe63kXI-rOyFvR_WQ_z-VtqnqvDohPpE7lcT4KGP0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うわ"}], "scope": "channel" }
+  ]
+}

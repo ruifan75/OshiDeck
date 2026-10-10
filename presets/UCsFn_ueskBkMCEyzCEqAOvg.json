@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "花畑チャイカ",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCsFn_ueskBkMCEyzCEqAOvg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"がんばれー"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ガッチャ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス"}], "scope": "global" }
+  ]
+}

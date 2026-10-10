@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "河崎 翆 ch / Kawasaki Sui ch.",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCs86f6tbWatcKVt7emv9hfQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"スロット"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCs86f6tbWatcKVt7emv9hfQ/DlsgZNOcB-iJ_9EPrvOPuAo","alt":"nai","sharedTooltipText":":_nai:","src":"https://yt3.ggpht.com/-oanjZ8r-YuNfrBF5nhjAuNQRBYzTgXdnT4o3uqSWNeL5FMWt-pDv3V3VAfB-0dL4R9DJqnI1A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCs86f6tbWatcKVt7emv9hfQ/DlsgZIOdB-iJ_9EPrvOPuAo","alt":"supa","sharedTooltipText":":_supa:","src":"https://yt3.ggpht.com/ebZYNWN-dwHRtPtqpAuLlj-fr-Ge2HrdxOFDWL14pAi2KQ1DBu_YzXCh2w60d4UajGUS0EV17A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎰"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🪙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイスパ！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCs86f6tbWatcKVt7emv9hfQ/DlsgZNOcB-iJ_9EPrvOPuAo","alt":"nai","sharedTooltipText":":_nai:","src":"https://yt3.ggpht.com/-oanjZ8r-YuNfrBF5nhjAuNQRBYzTgXdnT4o3uqSWNeL5FMWt-pDv3V3VAfB-0dL4R9DJqnI1A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCs86f6tbWatcKVt7emv9hfQ/VQQfZZuLBvKI_9EPv4ub6Ag","alt":"gihu","sharedTooltipText":":_gihu:","src":"https://yt3.ggpht.com/N1LFZLw6_RFwBeYn3bp3gIk2hHR4nHW7o7VMVCKwACMg48prIZsRwEjIZC5MdeoeonvFhLJ16A=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

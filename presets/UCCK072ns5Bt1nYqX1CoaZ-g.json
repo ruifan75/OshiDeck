@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Mythia Batford",
+  "note": "過去11配信のチャットから、常連が多い順に10枚",
+  "channel": "UCCK072ns5Bt1nYqX1CoaZ-g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"aku"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"1"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"otsuuu"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/oPgfY_DoKfSXkNAPq8-AgAo","alt":"face-turquoise-covering-eyes","sharedTooltipText":":face-turquoise-covering-eyes:","src":"https://yt3.ggpht.com/H2HNPRO8f4SjMmPNh5fl10okSETW7dLTZtuE4jh9D6pSmaUiLfoZJ2oiY-qWU3Owfm1IsXg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/oPgfY_DoKfSXkNAPq8-AgAo","alt":"face-turquoise-covering-eyes","sharedTooltipText":":face-turquoise-covering-eyes:","src":"https://yt3.ggpht.com/H2HNPRO8f4SjMmPNh5fl10okSETW7dLTZtuE4jh9D6pSmaUiLfoZJ2oiY-qWU3Owfm1IsXg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/oPgfY_DoKfSXkNAPq8-AgAo","alt":"face-turquoise-covering-eyes","sharedTooltipText":":face-turquoise-covering-eyes:","src":"https://yt3.ggpht.com/H2HNPRO8f4SjMmPNh5fl10okSETW7dLTZtuE4jh9D6pSmaUiLfoZJ2oiY-qWU3Owfm1IsXg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"wow"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gas"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wtf"}], "scope": "channel" }
+  ]
+}

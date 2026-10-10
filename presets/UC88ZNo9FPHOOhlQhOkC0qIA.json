@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Kenji",
+  "note": "過去3配信のチャットから、常連が多い順に10枚",
+  "channel": "UC88ZNo9FPHOOhlQhOkC0qIA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"HI KENJI"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"KENJIIII"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"😭"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"HI TWITCH"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"HEYYY"}], "scope": "channel" }
+  ]
+}

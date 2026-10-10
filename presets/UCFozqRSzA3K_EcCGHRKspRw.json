@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "MOTHERv3",
+  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "channel": "UCFozqRSzA3K_EcCGHRKspRw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"!fish"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"1"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"2"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"!bp"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"!sellall"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "global" }
+  ]
+}

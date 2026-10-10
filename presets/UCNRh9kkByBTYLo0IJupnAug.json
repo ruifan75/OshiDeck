@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "VOLTACTION",
+  "note": "過去5配信のチャットから、常連が多い順に10枚",
+  "channel": "UCNRh9kkByBTYLo0IJupnAug",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ないす"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"きた"}], "scope": "global" }
+  ]
+}

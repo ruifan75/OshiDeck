@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Sonny Brisko 【NIJISANJI EN】",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCuuAb_72QzK0M1USPMEl1yw",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCuuAb_72QzK0M1USPMEl1yw/JM1DYtn6Dsjm8wTVn4SYAw","alt":"sonnyLmao","sharedTooltipText":":_sonnyLmao:","src":"https://yt3.ggpht.com/tOYtjzCJOdmbgfFe34nNp5-pOKat1n3ZKqMRVONdqJj7O48DFxvs0tbrO1h3jOfwzUYQBXhFeg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCuuAb_72QzK0M1USPMEl1yw/ZwSwY67ZBdKS_9EP-OK84Ac","alt":"sonnyKadethappy","sharedTooltipText":":_sonnyKadethappy:","src":"https://yt3.ggpht.com/V1Rrbg1hcfqYfmzwUPOjrzbN6kfrPyV0JdJlnG6yWKd6xj9BDrQIv5Eo43qtAexg3Jcv7deiXA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCuuAb_72QzK0M1USPMEl1yw/4SiLYuS0IIeg8gSWho2oAw","alt":"sonnyKadetlove","sharedTooltipText":":_sonnyKadetlove:","src":"https://yt3.ggpht.com/HqAUy_GLQSzUwxJZexJfO6WNIWNoJhYmSJGRUbxXzEKLqdJquoPmtenLTGTDNazqQ4SDaBClJw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCuuAb_72QzK0M1USPMEl1yw/4SiLYuS0IIeg8gSWho2oAw","alt":"sonnyKadetlove","sharedTooltipText":":_sonnyKadetlove:","src":"https://yt3.ggpht.com/HqAUy_GLQSzUwxJZexJfO6WNIWNoJhYmSJGRUbxXzEKLqdJquoPmtenLTGTDNazqQ4SDaBClJw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCuuAb_72QzK0M1USPMEl1yw/atJJYtO1IISG8wSIzLgI","alt":"sonnyNade","sharedTooltipText":":_sonnyNade:","src":"https://yt3.ggpht.com/g0ok8yCjJDMO4gSyJ9Hu2QNTNA5OzaKzFH6Fp20Or_rzfRg29HYF4Dh9Kbpvc7dqUYtvMl9gb_E=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCuuAb_72QzK0M1USPMEl1yw/atJJYtO1IISG8wSIzLgI","alt":"sonnyNade","sharedTooltipText":":_sonnyNade:","src":"https://yt3.ggpht.com/g0ok8yCjJDMO4gSyJ9Hu2QNTNA5OzaKzFH6Fp20Or_rzfRg29HYF4Dh9Kbpvc7dqUYtvMl9gb_E=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCuuAb_72QzK0M1USPMEl1yw/4SiLYpe1IIeg8gSWho2oAw","alt":"sonnyKadetnegi","sharedTooltipText":":_sonnyKadetnegi:","src":"https://yt3.ggpht.com/FvD2BneYd7k4nI4Ii_gl3KnveLyAqB37uj5YsMHrSTQ6LlmLQHaTw4x5hJiS2leuI5dggTw1qg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi sani"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"wb"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsuuu"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCuuAb_72QzK0M1USPMEl1yw/PWYKZ_uGO6Cn_9EPgYr8wAI","alt":"sonnyPleadet","sharedTooltipText":":_sonnyPleadet:","src":"https://yt3.ggpht.com/AQvy8zwch-bg9JJUgQsVCrmQR0_WOryyaR93h2Tpz_idy_yU4vD1ecGdnUKkdTj_rErg6Yq9xw=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

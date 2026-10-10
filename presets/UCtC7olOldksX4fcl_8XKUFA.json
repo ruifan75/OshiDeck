@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Harris Caine",
+  "note": "過去5配信のチャットから、常連が多い順に10枚",
+  "channel": "UCtC7olOldksX4fcl_8XKUFA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"otsuuu"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"akuu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"GG"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCtC7olOldksX4fcl_8XKUFA/JNMyaMy7C6K1_9EPmM-XmAc","alt":"HarrisNgakak","sharedTooltipText":":_HarrisNgakak:","src":"https://yt3.ggpht.com/dDdVcGkRFltoFtuvmSs2UwiwIubZACfvZpziu4TYwNvkmTrXUxF3tEmsSyOyxF6PYKQvcqlUtA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCtC7olOldksX4fcl_8XKUFA/JNMyaMy7C6K1_9EPmM-XmAc","alt":"HarrisNgakak","sharedTooltipText":":_HarrisNgakak:","src":"https://yt3.ggpht.com/dDdVcGkRFltoFtuvmSs2UwiwIubZACfvZpziu4TYwNvkmTrXUxF3tEmsSyOyxF6PYKQvcqlUtA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCtC7olOldksX4fcl_8XKUFA/JNMyaMy7C6K1_9EPmM-XmAc","alt":"HarrisNgakak","sharedTooltipText":":_HarrisNgakak:","src":"https://yt3.ggpht.com/dDdVcGkRFltoFtuvmSs2UwiwIubZACfvZpziu4TYwNvkmTrXUxF3tEmsSyOyxF6PYKQvcqlUtA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lah"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aman"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"seruuu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yeyyy"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yeayyy"}], "scope": "channel" }
+  ]
+}

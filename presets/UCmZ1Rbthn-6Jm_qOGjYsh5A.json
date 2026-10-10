@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "イブラヒム【にじさんじ】",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCmZ1Rbthn-6Jm_qOGjYsh5A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"わこつ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"がんばれー"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCmZ1Rbthn-6Jm_qOGjYsh5A/-bCeX_OaJsLv-gOIoaXwDg","alt":"IbrahimGoodGame","sharedTooltipText":":_IbrahimGoodGame:","src":"https://yt3.ggpht.com/dFIRqbU8WVxAAqLGowsMDpVzUdNTB3ZtIpzWWFWpvGNWmWFbbeNfwrtXu4auMH_uGEhPqjQt=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmZ1Rbthn-6Jm_qOGjYsh5A/-bCeX_OaJsLv-gOIoaXwDg","alt":"IbrahimGoodGame","sharedTooltipText":":_IbrahimGoodGame:","src":"https://yt3.ggpht.com/dFIRqbU8WVxAAqLGowsMDpVzUdNTB3ZtIpzWWFWpvGNWmWFbbeNfwrtXu4auMH_uGEhPqjQt=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmZ1Rbthn-6Jm_qOGjYsh5A/-bCeX_OaJsLv-gOIoaXwDg","alt":"IbrahimGoodGame","sharedTooltipText":":_IbrahimGoodGame:","src":"https://yt3.ggpht.com/dFIRqbU8WVxAAqLGowsMDpVzUdNTB3ZtIpzWWFWpvGNWmWFbbeNfwrtXu4auMH_uGEhPqjQt=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCmZ1Rbthn-6Jm_qOGjYsh5A/-bCeX4CYJsLv-gOIoaXwDg","alt":"IbrahimPien","sharedTooltipText":":_IbrahimPien:","src":"https://yt3.ggpht.com/G27Tu4ULs5IFYwVj4EKbcj18NnAjmgfOxx21tVnlDWuroVTJw0E-MdCqEHsBJOcGH-2MZhpGeb0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCmZ1Rbthn-6Jm_qOGjYsh5A/iNdPY-6sBYu48wSEnq7QBA","alt":"IbrahimOtu","sharedTooltipText":":_IbrahimOtu:","src":"https://yt3.ggpht.com/1tuZ0QaKdjPRx6qJDiLhNcfJhgj6t_USYwITqrVF0x7Qatr4mqY-ohe9eF4TEFdqGY-Z_cYlBC4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmZ1Rbthn-6Jm_qOGjYsh5A/iNdPY-6sBYu48wSEnq7QBA","alt":"IbrahimOtu","sharedTooltipText":":_IbrahimOtu:","src":"https://yt3.ggpht.com/1tuZ0QaKdjPRx6qJDiLhNcfJhgj6t_USYwITqrVF0x7Qatr4mqY-ohe9eF4TEFdqGY-Z_cYlBC4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmZ1Rbthn-6Jm_qOGjYsh5A/iNdPY-6sBYu48wSEnq7QBA","alt":"IbrahimOtu","sharedTooltipText":":_IbrahimOtu:","src":"https://yt3.ggpht.com/1tuZ0QaKdjPRx6qJDiLhNcfJhgj6t_USYwITqrVF0x7Qatr4mqY-ohe9eF4TEFdqGY-Z_cYlBC4=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

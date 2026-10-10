@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "健屋花那【にじさんじ】KanaSukoya",
+  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "channel": "UC8C1LLhBhf_E2IBPLSDJXlQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC8C1LLhBhf_E2IBPLSDJXlQ/XSu9XtPeLpKN-gOnlIvIDg","alt":"sukoさいしん","sharedTooltipText":":_sukoさいしん:","src":"https://yt3.ggpht.com/LpGOPtky88itdE-FRYN8Dwb3qX4k9VRcA9s4SAJTSXD-QyjvWPdTT0y_fPw_Ju0A8QYyKS7t=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8C1LLhBhf_E2IBPLSDJXlQ/XSu9XtDfLpKN-gOnlIvIDg","alt":"sukoさいしんです","sharedTooltipText":":_sukoさいしんです:","src":"https://yt3.ggpht.com/jH95R7ukmtuMHpHyxebUwqfnBi201jOBW-QGe7nCkKABE_xz5NrMBOmBRURaDiPxWv-SgHryhg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8C1LLhBhf_E2IBPLSDJXlQ/XSu9XvLULpKN-gOnlIvIDg","alt":"sukoですです","sharedTooltipText":":_sukoですです:","src":"https://yt3.ggpht.com/ASmkB9S4qN-d4_8pyfXr4yI-Uo1HLxQA_aXaxB3vc4NrBB-_bUDXBOUSGlNjz0W6ymtQC_8_4Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"それはそう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC8C1LLhBhf_E2IBPLSDJXlQ/XSu9XsXTLpKN-gOnlIvIDg","alt":"sukoこんすこ","sharedTooltipText":":_sukoこんすこ:","src":"https://yt3.ggpht.com/UB5F8KZUwk4uBqT0m7AeSnSagnQY630M8wAKPY9Nn97fIyFckO8qPlswXPZDBjQw-irjKFAhxQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8C1LLhBhf_E2IBPLSDJXlQ/5JCuXpSYBJCQ_APl1ICgCg","alt":"sukoすこすこ","sharedTooltipText":":_sukoすこすこ:","src":"https://yt3.ggpht.com/jokb-1UMRLe4HsbUe-9hfmcSJXZLixhGa1VDEMbp53U8aajkmtiJJNRjr1wBtmskrIpQ5bX6kQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC8C1LLhBhf_E2IBPLSDJXlQ/5JCuXpSYBJCQ_APl1ICgCg","alt":"sukoすこすこ","sharedTooltipText":":_sukoすこすこ:","src":"https://yt3.ggpht.com/jokb-1UMRLe4HsbUe-9hfmcSJXZLixhGa1VDEMbp53U8aajkmtiJJNRjr1wBtmskrIpQ5bX6kQ=w48-h48-c-k-nd"},{"type":"text","value":"や"},{"type":"youtubeEmoji","emojiId":"UC8C1LLhBhf_E2IBPLSDJXlQ/5JCuXpSYBJCQ_APl1ICgCg","alt":"sukoすこすこ","sharedTooltipText":":_sukoすこすこ:","src":"https://yt3.ggpht.com/jokb-1UMRLe4HsbUe-9hfmcSJXZLixhGa1VDEMbp53U8aajkmtiJJNRjr1wBtmskrIpQ5bX6kQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

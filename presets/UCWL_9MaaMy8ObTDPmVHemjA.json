@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "GreatMoonAroma 대월향",
+  "note": "過去3配信のチャットから、常連が多い順に10枚",
+  "channel": "UCWL_9MaaMy8ObTDPmVHemjA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"ㅋㅋㅋㅋㅋ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"moon"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"bye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"YOOOO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi moon"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "global" }
+  ]
+}

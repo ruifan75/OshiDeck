@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Shu Yamino【NIJISANJI EN】",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCG0rzBZV_QMP4MtWg6IjhEA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCG0rzBZV_QMP4MtWg6IjhEA/hMf9YcPrENiJ_9EPycueyAw","alt":"ShuOMEGALUL","sharedTooltipText":":_ShuOMEGALUL:","src":"https://yt3.ggpht.com/lCRD4EfCJ3qeyyZUprjMDiqW2aCl7n6B6m1lxsXny0IUFR9-e-AcU6Y-K4Q6ZCo3vcsLwMnmf9E=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCG0rzBZV_QMP4MtWg6IjhEA/hMf9YcPrENiJ_9EPycueyAw","alt":"ShuOMEGALUL","sharedTooltipText":":_ShuOMEGALUL:","src":"https://yt3.ggpht.com/lCRD4EfCJ3qeyyZUprjMDiqW2aCl7n6B6m1lxsXny0IUFR9-e-AcU6Y-K4Q6ZCo3vcsLwMnmf9E=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCG0rzBZV_QMP4MtWg6IjhEA/-eH9YbDXPNiJ_9EPycueyAw","alt":"ShuLove","sharedTooltipText":":_ShuLove:","src":"https://yt3.ggpht.com/HZB7nROQtJsYq4VOj5XCkDP8Al0Df_--K1_931c4lDUW-Hll8I204flhJhLFR1cP3cfpL-YY6Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCG0rzBZV_QMP4MtWg6IjhEA/-eH9YbDXPNiJ_9EPycueyAw","alt":"ShuLove","sharedTooltipText":":_ShuLove:","src":"https://yt3.ggpht.com/HZB7nROQtJsYq4VOj5XCkDP8Al0Df_--K1_931c4lDUW-Hll8I204flhJhLFR1cP3cfpL-YY6Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCG0rzBZV_QMP4MtWg6IjhEA/-eH9YbDXPNiJ_9EPycueyAw","alt":"ShuLove","sharedTooltipText":":_ShuLove:","src":"https://yt3.ggpht.com/HZB7nROQtJsYq4VOj5XCkDP8Al0Df_--K1_931c4lDUW-Hll8I204flhJhLFR1cP3cfpL-YY6Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"woah"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"omg"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCG0rzBZV_QMP4MtWg6IjhEA/7RTuYdjAH-GS8gSN57_gDg","alt":"ShuWut","sharedTooltipText":":_ShuWut:","src":"https://yt3.ggpht.com/T4oxxPRYyGLz4iYq1oWCJyq2Edj8S0rc5e4YhdnxyLZRjtOfRTh3aS1DTmzJ9goA5C6IHYb77Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"otshuuu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCG0rzBZV_QMP4MtWg6IjhEA/WKIWYoDECseJ_9EP1bKwgA4","alt":"ShuLETSGO","sharedTooltipText":":_ShuLETSGO:","src":"https://yt3.ggpht.com/E4UvVaJMnjTxvUc15zhvTpFCo-_UvUGj6ro43akEuIm87uCDEvJ93ekd7I2n_LlfXbi7NHNNcw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCG0rzBZV_QMP4MtWg6IjhEA/WKIWYoDECseJ_9EP1bKwgA4","alt":"ShuLETSGO","sharedTooltipText":":_ShuLETSGO:","src":"https://yt3.ggpht.com/E4UvVaJMnjTxvUc15zhvTpFCo-_UvUGj6ro43akEuIm87uCDEvJ93ekd7I2n_LlfXbi7NHNNcw=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

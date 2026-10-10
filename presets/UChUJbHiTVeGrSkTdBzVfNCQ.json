@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ジョー・力一 Joe Rikiichi",
+  "note": "過去13配信のチャットから、常連が多い順に10枚",
+  "channel": "UChUJbHiTVeGrSkTdBzVfNCQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChUJbHiTVeGrSkTdBzVfNCQ/roHmXO31HM7b8gTeiZbQBg","alt":"りきいちめんたいこ","sharedTooltipText":":_りきいちめんたいこ:","src":"https://yt3.ggpht.com/AiIbroujKOQUssFbIlC-TFEw3RfSgFefwtKoOgU1xz4no2tSZX-L1DmXZO2dWLHPiFs_EQoT2g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChUJbHiTVeGrSkTdBzVfNCQ/roHmXO31HM7b8gTeiZbQBg","alt":"りきいちめんたいこ","sharedTooltipText":":_りきいちめんたいこ:","src":"https://yt3.ggpht.com/AiIbroujKOQUssFbIlC-TFEw3RfSgFefwtKoOgU1xz4no2tSZX-L1DmXZO2dWLHPiFs_EQoT2g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChUJbHiTVeGrSkTdBzVfNCQ/roHmXO31HM7b8gTeiZbQBg","alt":"りきいちめんたいこ","sharedTooltipText":":_りきいちめんたいこ:","src":"https://yt3.ggpht.com/AiIbroujKOQUssFbIlC-TFEw3RfSgFefwtKoOgU1xz4no2tSZX-L1DmXZO2dWLHPiFs_EQoT2g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChUJbHiTVeGrSkTdBzVfNCQ/roHmXO31HM7b8gTeiZbQBg","alt":"りきいちめんたいこ","sharedTooltipText":":_りきいちめんたいこ:","src":"https://yt3.ggpht.com/AiIbroujKOQUssFbIlC-TFEw3RfSgFefwtKoOgU1xz4no2tSZX-L1DmXZO2dWLHPiFs_EQoT2g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChUJbHiTVeGrSkTdBzVfNCQ/roHmXO31HM7b8gTeiZbQBg","alt":"りきいちめんたいこ","sharedTooltipText":":_りきいちめんたいこ:","src":"https://yt3.ggpht.com/AiIbroujKOQUssFbIlC-TFEw3RfSgFefwtKoOgU1xz4no2tSZX-L1DmXZO2dWLHPiFs_EQoT2g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChUJbHiTVeGrSkTdBzVfNCQ/roHmXO31HM7b8gTeiZbQBg","alt":"りきいちめんたいこ","sharedTooltipText":":_りきいちめんたいこ:","src":"https://yt3.ggpht.com/AiIbroujKOQUssFbIlC-TFEw3RfSgFefwtKoOgU1xz4no2tSZX-L1DmXZO2dWLHPiFs_EQoT2g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"わかる"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"やったー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "global" }
+  ]
+}

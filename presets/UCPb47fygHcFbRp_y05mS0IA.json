@@ -12,7 +12,7 @@
     { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かっこいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かっこいい"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "global" }
   ]
 }

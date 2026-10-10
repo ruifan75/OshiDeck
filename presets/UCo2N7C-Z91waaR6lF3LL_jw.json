@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "甲斐田 晴 / Kaida Haru【にじさんじ】",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCo2N7C-Z91waaR6lF3LL_jw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCo2N7C-Z91waaR6lF3LL_jw/MicHX9P_IsyB-gPKtLyoBA","alt":"haroharu","sharedTooltipText":":_haroharu:","src":"https://yt3.ggpht.com/j4RgpgsQl-1WBvlLXo0xXt5nbCKVxd5l0wjd1HE7SgAQv6Xy5iHYhGvUhTXWoRUeAJSVXRyT3g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCo2N7C-Z91waaR6lF3LL_jw/wrYGYYeYI6mL8gSM9pOQCw","alt":"haru","sharedTooltipText":":_haru:","src":"https://yt3.ggpht.com/jZm3bLK_Q74cQ_k1sEbr5Shn_M-chwUnDlN_dZ_xgPMSBkLhxVGkbogh26-igeVb5zM5lK9Ky98=w48-h48-c-k-nd"},{"type":"text","value":"れた！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ないす"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" }
+  ]
+}

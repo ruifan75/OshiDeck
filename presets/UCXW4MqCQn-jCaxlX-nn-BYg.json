@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "長尾 景 / Nagao Kei【にじさんじ】",
+  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "channel": "UCXW4MqCQn-jCaxlX-nn-BYg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXW4MqCQn-jCaxlX-nn-BYg/nn0JX5mUHsyB-gOeh6yYCA","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/abTWsrSxSDKjbsEQ_NG5tfaDhsjQ6lob866WD4MzxOCBaaUjQ9dlH5k8HD1U0LAu9485cfKhPXU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXW4MqCQn-jCaxlX-nn-BYg/nn0JX5mUHsyB-gOeh6yYCA","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/abTWsrSxSDKjbsEQ_NG5tfaDhsjQ6lob866WD4MzxOCBaaUjQ9dlH5k8HD1U0LAu9485cfKhPXU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXW4MqCQn-jCaxlX-nn-BYg/nn0JX5mUHsyB-gOeh6yYCA","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/abTWsrSxSDKjbsEQ_NG5tfaDhsjQ6lob866WD4MzxOCBaaUjQ9dlH5k8HD1U0LAu9485cfKhPXU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXW4MqCQn-jCaxlX-nn-BYg/nn0JX5mUHsyB-gOeh6yYCA","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/abTWsrSxSDKjbsEQ_NG5tfaDhsjQ6lob866WD4MzxOCBaaUjQ9dlH5k8HD1U0LAu9485cfKhPXU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXW4MqCQn-jCaxlX-nn-BYg/nn0JX5mUHsyB-gOeh6yYCA","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/abTWsrSxSDKjbsEQ_NG5tfaDhsjQ6lob866WD4MzxOCBaaUjQ9dlH5k8HD1U0LAu9485cfKhPXU=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんまぶし〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXW4MqCQn-jCaxlX-nn-BYg/nn0JX9WUHsyB-gOeh6yYCA","alt":"おつまぶし1","sharedTooltipText":":_おつまぶし1:","src":"https://yt3.ggpht.com/mCNlgVp1vwHAr80iBoNgEOysCd--7ta88FeED-kVMlqEbGXLjzO3ecCKND8xmyIH2Z48wH6FKeo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXW4MqCQn-jCaxlX-nn-BYg/nn0JX52VHsyB-gOeh6yYCA","alt":"おつまぶし2","sharedTooltipText":":_おつまぶし2:","src":"https://yt3.ggpht.com/kSnkqTcKBT5ogLESL7VpV4nvXkKt2OUUuYVPjnlzM082Vx7kTtO7_oa6-81ib-rSRPhxEqm0ZGY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXW4MqCQn-jCaxlX-nn-BYg/nn0JX9iVHsyB-gOeh6yYCA","alt":"おつまぶし3","sharedTooltipText":":_おつまぶし3:","src":"https://yt3.ggpht.com/BZy5KzAJINHz7Lr2CyKn5GgoFyhfq0YTGjCoXccxCPPN5l7Tjqg-jhk-g0aboCRkiFlNUZWUWw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ナイス"}], "scope": "global" }
+  ]
+}

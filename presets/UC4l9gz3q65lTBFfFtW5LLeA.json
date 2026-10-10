@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "渡会雲雀 / Watarai Hibari",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UC4l9gz3q65lTBFfFtW5LLeA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC4l9gz3q65lTBFfFtW5LLeA/y-xJZonILeO9_9EPgIKwqA8","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/gz1Isv4_xdzdW7ekOLqgLogrpIBblnCFWWeDUXM1hTI2XxdeepAIRP9IX9YC-rF3IMVjI6D1HA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC4l9gz3q65lTBFfFtW5LLeA/y-xJZonILeO9_9EPgIKwqA8","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/gz1Isv4_xdzdW7ekOLqgLogrpIBblnCFWWeDUXM1hTI2XxdeepAIRP9IX9YC-rF3IMVjI6D1HA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC4l9gz3q65lTBFfFtW5LLeA/y-xJZonILeO9_9EPgIKwqA8","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/gz1Isv4_xdzdW7ekOLqgLogrpIBblnCFWWeDUXM1hTI2XxdeepAIRP9IX9YC-rF3IMVjI6D1HA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC4l9gz3q65lTBFfFtW5LLeA/qU3wYr3oIYSG_9EP7osZ","alt":"ないすー","sharedTooltipText":":_ないすー:","src":"https://yt3.ggpht.com/ABGqTa8lR514I-yBuTCtXEOm3YIkNTnneP5eUbwPHhX0WDru1ItUH9lX2ZsaGDsbiz2xPhGSTKc=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC4l9gz3q65lTBFfFtW5LLeA/qU3wYr3oIYSG_9EP7osZ","alt":"ないすー","sharedTooltipText":":_ないすー:","src":"https://yt3.ggpht.com/ABGqTa8lR514I-yBuTCtXEOm3YIkNTnneP5eUbwPHhX0WDru1ItUH9lX2ZsaGDsbiz2xPhGSTKc=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC4l9gz3q65lTBFfFtW5LLeA/qU3wYr3oIYSG_9EP7osZ","alt":"ないすー","sharedTooltipText":":_ないすー:","src":"https://yt3.ggpht.com/ABGqTa8lR514I-yBuTCtXEOm3YIkNTnneP5eUbwPHhX0WDru1ItUH9lX2ZsaGDsbiz2xPhGSTKc=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"すご"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おめでとう！"}], "scope": "global" }
+  ]
+}

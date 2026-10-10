@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Ren Zotto 【NIJISANJI EN】",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCKu59gTZ_rdEmerdx5rV4Yg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCKu59gTZ_rdEmerdx5rV4Yg/xlA5Y4zAB8GI_9EP9P2U6As","alt":"renCHEER","sharedTooltipText":":_renCHEER:","src":"https://yt3.ggpht.com/PNwysyqpjKS9LweY4iIs0iwk63vbRWaH7BeB_38nfSIqF5TrsBtwm3wpKdkHVYD1uBdbZgsvFH4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCKu59gTZ_rdEmerdx5rV4Yg/xlA5Y4zAB8GI_9EP9P2U6As","alt":"renCHEER","sharedTooltipText":":_renCHEER:","src":"https://yt3.ggpht.com/PNwysyqpjKS9LweY4iIs0iwk63vbRWaH7BeB_38nfSIqF5TrsBtwm3wpKdkHVYD1uBdbZgsvFH4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCKu59gTZ_rdEmerdx5rV4Yg/xlA5Y4zAB8GI_9EP9P2U6As","alt":"renCHEER","sharedTooltipText":":_renCHEER:","src":"https://yt3.ggpht.com/PNwysyqpjKS9LweY4iIs0iwk63vbRWaH7BeB_38nfSIqF5TrsBtwm3wpKdkHVYD1uBdbZgsvFH4=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCKu59gTZ_rdEmerdx5rV4Yg/xlA5Y_3AB8GI_9EP9P2U6As","alt":"renMOUTH","sharedTooltipText":":_renMOUTH:","src":"https://yt3.ggpht.com/-GAtQ40rjwsgp3qqfvPtXni-eM9tatsZXVHLbzS77015eAOxc975W9RCuUEqy4rNFCzYjTBaAg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCKu59gTZ_rdEmerdx5rV4Yg/xlA5Y_3AB8GI_9EP9P2U6As","alt":"renMOUTH","sharedTooltipText":":_renMOUTH:","src":"https://yt3.ggpht.com/-GAtQ40rjwsgp3qqfvPtXni-eM9tatsZXVHLbzS77015eAOxc975W9RCuUEqy4rNFCzYjTBaAg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCKu59gTZ_rdEmerdx5rV4Yg/56UAY7_qH7CI_9EP-pWAUA","alt":"renAYO","sharedTooltipText":":_renAYO:","src":"https://yt3.ggpht.com/dSzsJVSBkmzRFAIIS91lFD-7T5Na2DrtAShF_-xg0VpLVgigaBrULYGFoh1RKSlym1zZf-iP0Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCKu59gTZ_rdEmerdx5rV4Yg/TkECY5SaIrCI_9EP-pWAUA","alt":"renHUG","sharedTooltipText":":_renHUG:","src":"https://yt3.ggpht.com/z8S03Mu5e10qGXapm9Pw9azmhySE5let76JKOVn6a9ORac9YVHGpf0mfcUHeLRNVYwF1SPCHtnE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCKu59gTZ_rdEmerdx5rV4Yg/TkECY5SaIrCI_9EP-pWAUA","alt":"renHUG","sharedTooltipText":":_renHUG:","src":"https://yt3.ggpht.com/z8S03Mu5e10qGXapm9Pw9azmhySE5let76JKOVn6a9ORac9YVHGpf0mfcUHeLRNVYwF1SPCHtnE=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"hi ren"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":";D"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsuuu"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" }
+  ]
+}

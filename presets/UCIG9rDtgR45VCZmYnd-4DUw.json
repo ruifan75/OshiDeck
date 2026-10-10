@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ラトナ・プティ -Ratna Petit -にじさんじ所属",
+  "note": "過去13配信のチャットから、常連が多い順に10枚",
+  "channel": "UCIG9rDtgR45VCZmYnd-4DUw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おはにょ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんぷて〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ないふぁい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぷてー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" }
+  ]
+}

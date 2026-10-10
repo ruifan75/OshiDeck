@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "伊東ライフ",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCj_KuUzpOXAliYEesJwdrbw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"は？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCj_KuUzpOXAliYEesJwdrbw/2SppY9WzCMqK_9EPsL-3gAQ","alt":"おつらいふ","sharedTooltipText":":_おつらいふ:","src":"https://yt3.ggpht.com/cL1B8OcvWF8qE-_4CdoQi41KBTGzUW1eEPWxus6JDpC0nuqcypheir267fLuJ9rnTVIIjT80=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCj_KuUzpOXAliYEesJwdrbw/2SppY9WzCMqK_9EPsL-3gAQ","alt":"おつらいふ","sharedTooltipText":":_おつらいふ:","src":"https://yt3.ggpht.com/cL1B8OcvWF8qE-_4CdoQi41KBTGzUW1eEPWxus6JDpC0nuqcypheir267fLuJ9rnTVIIjT80=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCj_KuUzpOXAliYEesJwdrbw/2SppY9WzCMqK_9EPsL-3gAQ","alt":"おつらいふ","sharedTooltipText":":_おつらいふ:","src":"https://yt3.ggpht.com/cL1B8OcvWF8qE-_4CdoQi41KBTGzUW1eEPWxus6JDpC0nuqcypheir267fLuJ9rnTVIIjT80=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あっ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おーめでとー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "global" }
+  ]
+}

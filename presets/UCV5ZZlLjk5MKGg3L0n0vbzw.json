@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "鷹宮リオン / Rion Takamiya",
+  "note": "過去13配信のチャットから、常連が多い順に10枚",
+  "channel": "UCV5ZZlLjk5MKGg3L0n0vbzw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ごきげんよう～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ごきげんよう〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おやすみー"}], "scope": "channel" }
+  ]
+}

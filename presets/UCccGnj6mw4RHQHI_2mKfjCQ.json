@@ -1,0 +1,14 @@
+{
+  "format": 2,
+  "name": "Jaret Fajrianto 【GHOSTY's COMIC】",
+  "note": "過去4配信のチャットから、常連が多い順に6枚",
+  "channel": "UCccGnj6mw4RHQHI_2mKfjCQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"halo bang"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"malam bang"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Iya"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"absen bang"}], "scope": "channel" }
+  ]
+}

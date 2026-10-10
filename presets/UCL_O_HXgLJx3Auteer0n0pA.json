@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "周央 サンゴ / Suo Sango【にじさんじ】",
+  "note": "過去11配信のチャットから、常連が多い順に10枚",
+  "channel": "UCL_O_HXgLJx3Auteer0n0pA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おつかれさーんご！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ありがとうございました！"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ばよばよ〜"}], "scope": "channel" }
+  ]
+}

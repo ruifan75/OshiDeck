@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "天宮 こころ / Amamya Ch.",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCkIimWZ9gBJRamKF0rmPU8w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おはデーモン"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはみゃ〜"}], "scope": "channel" }
+  ]
+}

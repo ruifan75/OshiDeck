@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "A.I.Games",
+  "note": "過去6配信のチャットから、常連が多い順に10枚",
+  "channel": "UCbFwe3COkDrbNsbMyGNCsDg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"しーゆーまたねー！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCbFwe3COkDrbNsbMyGNCsDg/kIT6YM24GsKG8wTx1KOwAw","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/bK4MhVNrQPAQs55ZEhk5wMHhnZf6yoyoIwz728-IGqRVh1uDclaotH8Wn1i1A-fpGqpoGOh7bg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCbFwe3COkDrbNsbMyGNCsDg/kIT6YM24GsKG8wTx1KOwAw","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/bK4MhVNrQPAQs55ZEhk5wMHhnZf6yoyoIwz728-IGqRVh1uDclaotH8Wn1i1A-fpGqpoGOh7bg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCbFwe3COkDrbNsbMyGNCsDg/kIT6YM24GsKG8wTx1KOwAw","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/bK4MhVNrQPAQs55ZEhk5wMHhnZf6yoyoIwz728-IGqRVh1uDclaotH8Wn1i1A-fpGqpoGOh7bg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCbFwe3COkDrbNsbMyGNCsDg/Pas_XZDFNYfa-gPUy4PYDA","alt":"pyokopyoko","sharedTooltipText":":_pyokopyoko:","src":"https://yt3.ggpht.com/SN-e_vdi6NnDJ2r_Tk4mL_P3tyqp8Lqk3-RzuR04B7HSgrxW6-pg6iuJ9aor9yXq_b6FFhcjvVc=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCbFwe3COkDrbNsbMyGNCsDg/Pas_XZDFNYfa-gPUy4PYDA","alt":"pyokopyoko","sharedTooltipText":":_pyokopyoko:","src":"https://yt3.ggpht.com/SN-e_vdi6NnDJ2r_Tk4mL_P3tyqp8Lqk3-RzuR04B7HSgrxW6-pg6iuJ9aor9yXq_b6FFhcjvVc=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCbFwe3COkDrbNsbMyGNCsDg/Pas_XZDFNYfa-gPUy4PYDA","alt":"pyokopyoko","sharedTooltipText":":_pyokopyoko:","src":"https://yt3.ggpht.com/SN-e_vdi6NnDJ2r_Tk4mL_P3tyqp8Lqk3-RzuR04B7HSgrxW6-pg6iuJ9aor9yXq_b6FFhcjvVc=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"えらい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" }
+  ]
+}

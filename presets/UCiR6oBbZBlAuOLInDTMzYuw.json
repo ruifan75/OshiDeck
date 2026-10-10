@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ねるめろ / Nerumero",
+  "note": "過去11配信のチャットから、常連が多い順に10枚",
+  "channel": "UCiR6oBbZBlAuOLInDTMzYuw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ないす"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おつめろ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きた"}], "scope": "global" }
+  ]
+}

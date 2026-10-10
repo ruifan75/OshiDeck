@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Mikazuki Arion",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UCz_9zqgFPUYQBhDiZBFc00w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"aku"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCz_9zqgFPUYQBhDiZBFc00w/9MYvZb_qNIOLgwP117A4","alt":"arionUweeeeeeee","sharedTooltipText":":_arionUweeeeeeee:","src":"https://yt3.ggpht.com/abFMTIaIMVcQwry-zViE6Phqeqrtt5OdoOTa_M7VqWKCWRGP6sVyD4gsLNSoUFyF5U-9FKTakA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCz_9zqgFPUYQBhDiZBFc00w/9MYvZb_qNIOLgwP117A4","alt":"arionUweeeeeeee","sharedTooltipText":":_arionUweeeeeeee:","src":"https://yt3.ggpht.com/abFMTIaIMVcQwry-zViE6Phqeqrtt5OdoOTa_M7VqWKCWRGP6sVyD4gsLNSoUFyF5U-9FKTakA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCz_9zqgFPUYQBhDiZBFc00w/9MYvZb_qNIOLgwP117A4","alt":"arionUweeeeeeee","sharedTooltipText":":_arionUweeeeeeee:","src":"https://yt3.ggpht.com/abFMTIaIMVcQwry-zViE6Phqeqrtt5OdoOTa_M7VqWKCWRGP6sVyD4gsLNSoUFyF5U-9FKTakA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"otsuuu"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCz_9zqgFPUYQBhDiZBFc00w/mXEQZZmGNoWO_9EPtpGigAw","alt":"arionOtsuion","sharedTooltipText":":_arionOtsuion:","src":"https://yt3.ggpht.com/ixWU3bYwCy2nBG_R0UWOs3hGPpq6WcFePVUaiwRWw1EgIeBME_CZenTPBFZZyvSu8ZllWT2llg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCz_9zqgFPUYQBhDiZBFc00w/mXEQZZmGNoWO_9EPtpGigAw","alt":"arionOtsuion","sharedTooltipText":":_arionOtsuion:","src":"https://yt3.ggpht.com/ixWU3bYwCy2nBG_R0UWOs3hGPpq6WcFePVUaiwRWw1EgIeBME_CZenTPBFZZyvSu8ZllWT2llg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCz_9zqgFPUYQBhDiZBFc00w/mXEQZZmGNoWO_9EPtpGigAw","alt":"arionOtsuion","sharedTooltipText":":_arionOtsuion:","src":"https://yt3.ggpht.com/ixWU3bYwCy2nBG_R0UWOs3hGPpq6WcFePVUaiwRWw1EgIeBME_CZenTPBFZZyvSu8ZllWT2llg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"/salim"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"GG"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"aman"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCz_9zqgFPUYQBhDiZBFc00w/mXEQZbKJNoWO_9EPtpGigAw","alt":"arionGoodgame","sharedTooltipText":":_arionGoodgame:","src":"https://yt3.ggpht.com/J-T7_Drx__6wELV7qKmWYa5v3_KBB3c0d9IPV1afCvzxYubqfb-qUWeEvPC5hKkFgzeU9UQG=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCz_9zqgFPUYQBhDiZBFc00w/mXEQZbKJNoWO_9EPtpGigAw","alt":"arionGoodgame","sharedTooltipText":":_arionGoodgame:","src":"https://yt3.ggpht.com/J-T7_Drx__6wELV7qKmWYa5v3_KBB3c0d9IPV1afCvzxYubqfb-qUWeEvPC5hKkFgzeU9UQG=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCz_9zqgFPUYQBhDiZBFc00w/mXEQZbKJNoWO_9EPtpGigAw","alt":"arionGoodgame","sharedTooltipText":":_arionGoodgame:","src":"https://yt3.ggpht.com/J-T7_Drx__6wELV7qKmWYa5v3_KBB3c0d9IPV1afCvzxYubqfb-qUWeEvPC5hKkFgzeU9UQG=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "global" }
+  ]
+}

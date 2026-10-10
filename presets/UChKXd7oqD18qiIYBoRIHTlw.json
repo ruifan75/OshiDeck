@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Meloco Kyoran【NIJISANJI EN】",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UChKXd7oqD18qiIYBoRIHTlw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChKXd7oqD18qiIYBoRIHTlw/-SepY7TXI96P_9EPlM-8qAI","alt":"Love","sharedTooltipText":":_Love:","src":"https://yt3.ggpht.com/6cq-uQQdpUZaNh4Q6mFrJ09yuTQZuXSMl5j-YT98M5_lNgOtvkn7XTpe4eTUHrnWgkPk8keo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChKXd7oqD18qiIYBoRIHTlw/-SepY7TXI96P_9EPlM-8qAI","alt":"Love","sharedTooltipText":":_Love:","src":"https://yt3.ggpht.com/6cq-uQQdpUZaNh4Q6mFrJ09yuTQZuXSMl5j-YT98M5_lNgOtvkn7XTpe4eTUHrnWgkPk8keo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChKXd7oqD18qiIYBoRIHTlw/-SepY7TXI96P_9EPlM-8qAI","alt":"Love","sharedTooltipText":":_Love:","src":"https://yt3.ggpht.com/6cq-uQQdpUZaNh4Q6mFrJ09yuTQZuXSMl5j-YT98M5_lNgOtvkn7XTpe4eTUHrnWgkPk8keo=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"こんばんワイフ〜"}], "scope": "channel" }
+  ]
+}

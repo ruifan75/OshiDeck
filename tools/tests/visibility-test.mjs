@@ -714,7 +714,7 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
 
 /* ---------- what counts as having changed ---------- */
 
-const sigFrom = src.indexOf("  function panelSignature(data, channel, hue, shown, pool, drawn) {");
+const sigFrom = src.indexOf("  function panelSignature(data, channel, hue, shown, mine, offered, drawn) {");
 const sigTo = src.indexOf("  function renderHand(", sigFrom);
 if (sigFrom < 0 || sigTo < 0 || sigTo <= sigFrom) {
   console.log("FAIL could not lift panelSignature out of content.js");
@@ -728,7 +728,7 @@ if (sigFrom < 0 || sigTo < 0 || sigTo <= sigFrom) {
 function signature({ pool = false, tab = "mine", more = false, editing = null, flash = null,
                      typing = false, pinned = false, settings = {}, channel = "UCaaa", name = "さくら",
                      hue = 320, width = 400, presets = 1,
-                     shown = [], poolCards = [], drawn = null } = {}) {
+                     shown = [], mine = [], offered = [], drawn = null } = {}) {
   return new Function(
     "poolOpen", "poolTab", "expanded", "editingId", "flashId", "inputHasContent", "inputIsPinned",
     "tokens", "presetsOnHand", "rootEl", "flashKind",
@@ -741,7 +741,7 @@ function signature({ pool = false, tab = "mine", more = false, editing = null, f
     "found"
   )(
     { settings: { mode: "hand", cardSize: "small", rows: 2, sortBy: "heat", suggest: true, ...settings } },
-    { id: channel, name }, hue, shown, poolCards, drawn
+    { id: channel, name }, hue, shown, mine, offered, drawn
   );
 }
 
@@ -810,10 +810,23 @@ for (const [label, over] of [
   ["the channel being named at last", { name: "" }],
   ["a new colour", { hue: 90 }],
   ["the panel being resized", { width: 320 }],
-  ["the pool gaining a card", { poolCards: [{ id: "p" }] }],
+  ["the pool gaining a card", { mine: [{ id: "p" }] }],
+  ["the preset starting to offer one", { offered: [{ id: "p" }] }],
   ["the presets arriving", { presets: 0 }]
 ]) {
   check(`${label} is a change`, signature({ shown: hand }) !== signature({ shown: hand, ...over }));
 }
+
+// The two halves of the pool counted apart. Delete a card the preset also
+// carries and it leaves 「手持ち」 for 「プリセット」 in the same breath: one
+// fewer here, one more there, and a total that has not moved. Counted
+// together the panel saw nothing happen, skipped the render, and left the bar
+// showing the tab counts from before — 「プリセット」 missing while the preset
+// was offering a card.
+check(
+  "a card crossing from one half of the pool to the other is a change",
+  signature({ shown: hand, mine: [{ id: "p" }, { id: "q" }], offered: [] }) !==
+  signature({ shown: hand, mine: [{ id: "q" }], offered: [{ id: "p" }] })
+);
 
 process.exit(fail);

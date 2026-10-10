@@ -1524,7 +1524,7 @@
   // because an edit keeps the card's id. The channel name and the pool count,
   // because the bar and the toggle say them. And whether the presets have
   // arrived, because the empty-deck offer waits on them.
-  function panelSignature(data, channel, hue, shown, pool, drawn) {
+  function panelSignature(data, channel, hue, shown, mine, offered, drawn) {
     const s = data.settings;
     const each = (card) => [
       card.id,
@@ -1542,7 +1542,13 @@
       rootEl?.clientWidth || 0,
       poolOpen ? `pool:${poolTab}` : "deck", expanded ? "more" : "",
       editingId || "", flashId ? `${flashId}:${flashKind}` : "", inputHasContent ? "typing" : "",
-      pool.length, presetsOnHand(channel?.id).length,
+      // The two halves counted apart. Together they were one number, and a
+      // card deleted from the pool while its preset started offering it again
+      // — exactly what deleting a preset card does — moved one from each
+      // side and left the total where it was. The panel then skipped the
+      // render, and the bar went on showing the tab counts from before:
+      // 「預組」 missing while the preset was offering.
+      mine.length, offered.length, presetsOnHand(channel?.id).length,
       drawn?.key || "",
       shown.map(each).join(",")
     ].join("|");
@@ -2083,7 +2089,7 @@
     // owner without changing anything the signature can see.
     const dropped = dropStalePeek();
 
-    const next = panelSignature(data, channel, hue, shown, [...mine, ...offered], drawn);
+    const next = panelSignature(data, channel, hue, shown, mine, offered, drawn);
     if (next === painted && rootEl.firstChild) {
       // Nothing else changed, so nothing else needs drawing — but the bar is
       // still showing a description of something that is gone.
@@ -2201,7 +2207,7 @@
   // an index — so asking for all of them would mean reading all of them, and
   // a viewer needs one.
   const presetsByChannel = new Map();   // channelId -> preset[]
-  const asked = new Set();
+  const asked = new Set();              // answered, or still waiting to be
 
   // The worker answers for this channel, and `offeredOn` is asked again here
   // because this side is the one that knows which channel it is looking at.
@@ -2210,15 +2216,24 @@
     if (asked.has(channelId)) return held.filter((p) => presets.offeredOn(p, channelId));
     asked.add(channelId);
 
+    // Answered, not merely asked. A worker that had gone to sleep, or was
+    // torn down between the question and the reply, used to settle this for
+    // the life of the page: one failed ask, the channel marked as handled,
+    // and the bar never offered a preset again — while the builder, which
+    // keeps its own cache and asks much later, offered the same preset the
+    // whole time.
+    const unanswered = () => { asked.delete(channelId); };
+
     try {
       chrome.runtime.sendMessage({ type: "presets", channelId })
         .then((reply) => {
-          if (!reply?.ok || !reply.value?.length) return;
-          presetsByChannel.set(channelId, reply.value);
-          scheduleRender(); // they arrived after the panel had already drawn
-        })
-        .catch(() => {});
-    } catch (_) { /* extension reloaded: no starting hand, no harm */ }
+          if (!reply?.ok) return unanswered();
+          // An empty answer is an answer: this channel has no preset, and
+          // asking again on every render would not give it one.
+          presetsByChannel.set(channelId, reply.value || []);
+          if (reply.value?.length) scheduleRender(); // after the panel had drawn
+        }, unanswered);
+    } catch (_) { unanswered(); /* extension reloaded: ask again if it comes back */ }
 
     return held.filter((p) => presets.offeredOn(p, channelId));
   }

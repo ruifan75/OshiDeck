@@ -171,8 +171,8 @@ const MUTATIONS = [
     "      0,"],
 
   [VISIBILITY, CONTENT, "presets arriving after the panel has given up asking",
-    "      pool.length, presetsOnHand(channel?.id).length,",
-    "      pool.length,"],
+    "      mine.length, offered.length, presetsOnHand(channel?.id).length,",
+    "      mine.length, offered.length,"],
 
   [VISIBILITY, CONTENT, "a panel that never actually skips",
     `    if (next === painted && rootEl.firstChild) {
@@ -291,8 +291,8 @@ const MUTATIONS = [
     'channel?.id || "", "", hue ?? "",'],
 
   [VISIBILITY, CONTENT, "a pool that can gain a card unnoticed",
-    "      pool.length, presetsOnHand(channel?.id).length,",
-    "      presetsOnHand(channel?.id).length,"],
+    "      mine.length, offered.length, presetsOnHand(channel?.id).length,",
+    "      offered.length, presetsOnHand(channel?.id).length,"],
 
   [VISIBILITY, CONTENT, "a drawn card the list offers no way to keep",
     "    el.append(play, drawnTools(card));",
@@ -488,8 +488,21 @@ const MUTATIONS = [
     "    return drawFromChat(deck, { channelId: channel?.id, member: membership() === true });"],
 
   [VISIBILITY, CONTENT, "a skip that can never hold",
-    "    const next = panelSignature(data, channel, hue, shown, [...mine, ...offered], drawn);",
-    "    const next = panelSignature(data, channel, hue, shown, [...mine, ...offered], drawn);\n    painted = null;"],
+    "    const next = panelSignature(data, channel, hue, shown, mine, offered, drawn);",
+    "    const next = panelSignature(data, channel, hue, shown, mine, offered, drawn);\n    painted = null;"],
+
+  // Counted together, a card leaving the pool as the preset starts offering
+  // it moves one from each side and leaves the total alone — so the panel saw
+  // nothing happen and the bar kept the tab counts from before.
+  [VISIBILITY, CONTENT, "two halves of the pool counted as one",
+    "      mine.length, offered.length, presetsOnHand(channel?.id).length,",
+    "      mine.length + offered.length, presetsOnHand(channel?.id).length,"],
+
+  // One ask that nothing answered used to settle the question for the life of
+  // the page.
+  [PRESET, CONTENT, "a failed ask remembered as an answer",
+    "    const unanswered = () => { asked.delete(channelId); };",
+    "    const unanswered = () => {};"],
 
   [VISIBILITY, CONTENT, "a drawn card given nothing to press",
     `  function drawnTools(card) {
@@ -909,6 +922,9 @@ const KILLS = {
   "a card that can no longer be played looking the same": "and a card becoming unplayable here is",
   "the channel name left out of the signature": "the channel being named at last is a change",
   "a pool that can gain a card unnoticed": "the pool gaining a card is a change",
+  "two halves of the pool counted as one":
+    "a card crossing from one half of the pool to the other is a change",
+  "a failed ask remembered as an answer": "an ask nothing answered is asked again",
   "a drawn card the list offers no way to keep": "and so can one in the list",
 
   "a stream change that keeps the last chat's card": "which takes the card away",

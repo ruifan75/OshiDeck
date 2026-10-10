@@ -450,4 +450,80 @@ got = await importing({ name: "あやしい", cards: [{ tokens: text("x"), scope
 check("a file that is not a preset is refused", disk.cards.length === 0);
 check("with the reason it gave", got.said.join("").includes("opt.cannotRead"));
 
+/* ---------- asking the worker for them ---------- */
+
+// The page asks once per channel and keeps the answer. It used to keep a
+// *failure* just as long: the worker can be asleep, or torn down between the
+// question and the reply, and one such ask settled the matter for the life of
+// the page — the bar never offered that channel's preset again, while the
+// builder, which keeps its own cache and asks much later, went on offering it.
+{
+  const from = src2.indexOf("  const presetsByChannel = new Map();");
+  const to = src2.indexOf("  // Offered only where it means something", from);
+  if (from < 0 || to <= from) {
+    console.log("FAIL could not lift presetsOnHand out of content.js");
+    process.exit(1);
+  }
+
+  const THEIRS = { format: 2, name: "さくら", channel: CH, cards: [{ tokens: text("わこつ"), scope: "global" }] };
+
+  // `answer` is what the worker does with this ask, decided per call.
+  const asking = (answer) => {
+    const seen = { asks: 0, renders: 0 };
+    const api = new Function(
+      "chrome", "presets", "scheduleRender", "seen",
+      `${src2.slice(from, to)} return presetsOnHand;`
+    )(
+      { runtime: { sendMessage: () => { seen.asks += 1; return answer(seen.asks); } } },
+      presets,
+      () => { seen.renders += 1; },
+      seen
+    );
+    return { ask: api, seen };
+  };
+
+  const settle = () => new Promise((done) => setTimeout(done, 0));
+
+  // Nothing came back at all: the worker was gone, or the port closed first.
+  let a = asking(() => Promise.reject(new Error("message port closed")));
+  a.ask(CH);
+  await settle();
+  a.ask(CH);
+  check("an ask nothing answered is asked again", a.seen.asks === 2);
+
+  // The extension was reloaded under the page: sendMessage throws outright.
+  a = asking(() => { throw new Error("Extension context invalidated"); });
+  a.ask(CH);
+  await settle();
+  a.ask(CH);
+  check("and so is one that could not be sent", a.seen.asks === 2);
+
+  // The worker answered, so there is nothing left to ask.
+  a = asking(() => Promise.resolve({ ok: true, value: [THEIRS] }));
+  a.ask(CH);
+  await settle();
+  check("an answer arriving redraws the panel", a.seen.renders === 1);
+  check("and is what the channel is offered", a.ask(CH).length === 1);
+  check("and is not asked for twice", a.seen.asks === 1);
+
+  // No preset for this channel is a real answer too, and asking again every
+  // render would not produce one.
+  a = asking(() => Promise.resolve({ ok: true, value: [] }));
+  a.ask(CH);
+  await settle();
+  a.ask(CH);
+  check("a channel with no preset is asked about once", a.seen.asks === 1);
+  check("and offers nothing", a.ask(CH).length === 0);
+
+  // The failure is per channel: one unanswered ask must not make the page
+  // ask about every other channel again.
+  a = asking((n) => (n === 1 ? Promise.reject(new Error("gone")) : Promise.resolve({ ok: true, value: [THEIRS] })));
+  a.ask(CH);
+  await settle();
+  a.ask(OTHER);
+  await settle();
+  a.ask(OTHER);
+  check("a channel that did answer stays answered", a.seen.asks === 2);
+}
+
 process.exit(fail);

@@ -496,6 +496,37 @@ check("and with no channel there is no pool at all",
   check("an offered card of plain words is never locked",
     locked.every((c) => c.locked === false));
 
+  // The whole trip, because this is what a viewer actually does: take the
+  // preset, decide one of its cards is not for you, drop it out of the deck,
+  // then delete it from the pool. The preset still carries it, you no longer
+  // own it, so it is on offer again — the pool is where a card you do not
+  // have comes from, and that is the only way back to one you threw away.
+  {
+    const whole = presets.cardsFor({ cards: [fresh, theirs, alreadyMine] }, HERE);
+    const loaded = { cards: whole, decks: { [HERE]: whole.map((c) => c.id) },
+                     channelMeta: {}, settings: {} };
+    const api4 = lift({ doc: page({ mine: true }) });
+
+    check("the whole preset in the deck leaves nothing on offer",
+      api4.buildOffered(loaded, HERE).length === 0);
+
+    // Out of the deck, still owned: the pool has it, the preset does not
+    // offer what you already have.
+    const mine = whole.find((c) => tokens.cardKey(c.tokens) === tokens.cardKey(stamp(HERE)));
+    const ejected = { ...loaded, decks: { [HERE]: loaded.decks[HERE].filter((id) => id !== mine.id) } };
+    check("one taken out of the deck is in the pool, not on offer",
+      api4.buildPool(ejected, HERE).length === 1 && api4.buildOffered(ejected, HERE).length === 0);
+
+    // Deleted from the pool: nobody owns it now, and the preset is where it
+    // came from.
+    const deleted = { ...ejected, cards: whole.filter((c) => c.id !== mine.id) };
+    check("and deleted from the pool it is on offer again",
+      api4.buildOffered(deleted, HERE)
+        .some((c) => tokens.cardKey(c.tokens) === tokens.cardKey(stamp(HERE))));
+    check("with nothing of yours left to add",
+      api4.buildPool(deleted, HERE).length === 0);
+  }
+
   offering = [];
 }
 

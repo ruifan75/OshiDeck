@@ -3,6 +3,9 @@
 YouTube Live Chatのコメントやメンバー絵文字の組み合わせを保存し、ワンクリックで呼び出せるChrome拡張機能です。
 
 バージョンは `manifest.json` にあります ── ここに書き写すと、片方だけ古くなるので。
+直した挙動は patch、見える変化は minor。配布されるファイルを変えて version を
+据え置いたコミットは `tools/hooks/pre-commit` が止めます ── 一度、十四コミット
+ぶん据え置いたままにしたので。
 
 ## Features
 

@@ -40,3 +40,29 @@ if [ "$bad" = 1 ]; then
   echo "     --no-verify で通せますが、履歴からは消えません。"
   exit 1
 fi
+
+# The version has to move with the thing it names.
+#
+# It stopped: fourteen commits — everything the review turned up, the preset
+# split, 290 presets — all went out as 0.39.0, because bumping it was a habit
+# and habits lapse quietly. Chrome is the one that notices: an extension whose
+# files changed under the same version is an extension nobody is offered an
+# update to.
+#
+# Only what is actually shipped counts. Hooks, tests and the mining scripts
+# are not in the package and have no version to move.
+version() { sed -n 's/.*"version"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p'; }
+
+shipped=$(git diff --cached --name-only --diff-filter=ACMRD |
+          grep -E '^(manifest\.json|background\.js|content\.js|options\.js|options\.html|src/|presets/|icons/|[^/]*\.css)$|^(src|presets|icons)/' || true)
+
+if [ -n "$shipped" ]; then
+  was=$(git show HEAD:manifest.json 2>/dev/null | version || true)
+  now=$(git show :manifest.json 2>/dev/null | version || true)
+  if [ -n "$was" ] && [ "$was" = "$now" ]; then
+    echo "FAIL 配布されるファイルが変わったのに manifest.json の version は $was のままです。"
+    echo "     直した挙動なら patch、見える変化なら minor を上げてください。"
+    echo "$shipped" | sed 's|^|     |'
+    exit 1
+  fi
+fi

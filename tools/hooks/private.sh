@@ -120,7 +120,16 @@ ident_is_private() {
   for who in GIT_AUTHOR_IDENT GIT_COMMITTER_IDENT; do
     ident=$(git var "$who" 2>/dev/null) || ident=""
     [ -n "$ident" ] || continue
-    # `Name <address> 1700000000 +0900`
+
+    # `Name <address> 1700000000 +0900`. The name is read like any other text,
+    # because a commit made under the account name has published it just as
+    # surely as a file with it in.
+    [ -z "$(printf '+++ b/x\n+%s\n' "$ident" | scan)" ] || return 0
+
+    # The address is asked the other way round. Elsewhere the question is
+    # whether something looks private, which an address at an intranet host
+    # with no dot in it answers wrongly; here the set of right answers is
+    # known, so anything that is not one of them is refused.
     address=$(printf '%s\n' "$ident" | sed -n 's/.*<\([^>]*\)>.*/\1/p')
     [ -n "$address" ] || return 0
     printf '%s\n' "$address" | grep -qE "$ALLOWED" || return 0

@@ -285,6 +285,12 @@ staged "an identity nobody would publish is refused" 1
 message "and refused on the way past the message as well" "A perfectly ordinary message" 1
 (cd "$repo" && git config user.email nobody@users.noreply.github.com)
 
+# The name it is made under is as published as the address beside it.
+got=0
+(cd "$repo" && GIT_AUTHOR_NAME=alice HOME="$home" "$hooks/pre-commit" >"$lab/out" 2>&1) || got=$?
+expect "a commit made under the account name is refused" 1
+quiet "a commit made under the account name is refused"
+
 got=0
 (cd "$repo" && GIT_AUTHOR_EMAIL=pilot@private.example.com HOME="$home" "$hooks/pre-commit" >"$lab/out" 2>&1) || got=$?
 expect "an author nobody would publish is refused on its own" 1

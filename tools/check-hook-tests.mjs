@@ -25,7 +25,13 @@ const MUTATIONS = [
 
   ["the identity's address never looked at", "private.sh",
    `    printf '%s\\n' "$address" | grep -qE "$ALLOWED" || return 0`, "    :",
-   "an identity nobody would publish is refused"],
+   // The dotted one is caught by the scan as well, now that the name beside
+   // it is read too; this is the case only the known-good list can answer.
+   "an identity at a host with no dot is refused too"],
+
+  ["the name the commit is made under never looked at", "private.sh",
+   `    [ -z "$(printf '+++ b/x\\n+%s\\n' "$ident" | scan)" ] || return 0`, "    :",
+   "a commit made under the account name is refused"],
 
   ["only the author looked at", "private.sh",
    "for who in GIT_AUTHOR_IDENT GIT_COMMITTER_IDENT; do", "for who in GIT_AUTHOR_IDENT; do",

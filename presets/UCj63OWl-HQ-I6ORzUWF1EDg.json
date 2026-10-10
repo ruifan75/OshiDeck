@@ -12,7 +12,7 @@
     { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCj63OWl-HQ-I6ORzUWF1EDg/3bSYaKTUA6PA_9EPnbS_sAc","alt":"penlight","sharedTooltipText":":_penlight:","src":"https://yt3.ggpht.com/CqoqeeJ-EqQHibA66MvK53dGPSW0QjZj_a67AZx0Od3VBc0ZuuxmuBm7F7ux5FezEOUpVZy2=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCj63OWl-HQ-I6ORzUWF1EDg/3bSYaKTUA6PA_9EPnbS_sAc","alt":"penlight","sharedTooltipText":":_penlight:","src":"https://yt3.ggpht.com/CqoqeeJ-EqQHibA66MvK53dGPSW0QjZj_a67AZx0Od3VBc0ZuuxmuBm7F7ux5FezEOUpVZy2=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCj63OWl-HQ-I6ORzUWF1EDg/3bSYaKTUA6PA_9EPnbS_sAc","alt":"penlight","sharedTooltipText":":_penlight:","src":"https://yt3.ggpht.com/CqoqeeJ-EqQHibA66MvK53dGPSW0QjZj_a67AZx0Od3VBc0ZuuxmuBm7F7ux5FezEOUpVZy2=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCj63OWl-HQ-I6ORzUWF1EDg/3bSYaKTUA6PA_9EPnbS_sAc","alt":"penlight","sharedTooltipText":":_penlight:","src":"https://yt3.ggpht.com/CqoqeeJ-EqQHibA66MvK53dGPSW0QjZj_a67AZx0Od3VBc0ZuuxmuBm7F7ux5FezEOUpVZy2=w48-h48-c-k-nd"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"おつぬふ〜"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"可愛い"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"可愛い"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"www"}], "scope": "global" }
   ]
 }

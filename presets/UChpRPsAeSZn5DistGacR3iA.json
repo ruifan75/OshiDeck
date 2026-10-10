@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ACHRORA - mekPark",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UChpRPsAeSZn5DistGacR3iA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChpRPsAeSZn5DistGacR3iA/Cah-av25I5aIs8IPr4LVsA4","alt":"TEXTW","sharedTooltipText":":_TEXTW:","src":"https://yt3.ggpht.com/slnQ-r5YpN-T_YjWbEY60K4jpUTfR2jDK_VbydIhnz0yedPThHzGxtvJAtVF6urOzlgE8Qvw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChpRPsAeSZn5DistGacR3iA/Cah-av25I5aIs8IPr4LVsA4","alt":"TEXTW","sharedTooltipText":":_TEXTW:","src":"https://yt3.ggpht.com/slnQ-r5YpN-T_YjWbEY60K4jpUTfR2jDK_VbydIhnz0yedPThHzGxtvJAtVF6urOzlgE8Qvw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChpRPsAeSZn5DistGacR3iA/Cah-av25I5aIs8IPr4LVsA4","alt":"TEXTW","sharedTooltipText":":_TEXTW:","src":"https://yt3.ggpht.com/slnQ-r5YpN-T_YjWbEY60K4jpUTfR2jDK_VbydIhnz0yedPThHzGxtvJAtVF6urOzlgE8Qvw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChpRPsAeSZn5DistGacR3iA/Wo6BaojJJ56i7OsPtrDSgQE","alt":"PON","sharedTooltipText":":_PON:","src":"https://yt3.ggpht.com/OAuLbu3fQiFfxbyzi5M3N_DqQN2Mz1BQdajCyqguu__IAx_GKsFnY2KeS74TBiiKkkjeeGj2Gw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChpRPsAeSZn5DistGacR3iA/Wo6BaojJJ56i7OsPtrDSgQE","alt":"PON","sharedTooltipText":":_PON:","src":"https://yt3.ggpht.com/OAuLbu3fQiFfxbyzi5M3N_DqQN2Mz1BQdajCyqguu__IAx_GKsFnY2KeS74TBiiKkkjeeGj2Gw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChpRPsAeSZn5DistGacR3iA/Wo6BaojJJ56i7OsPtrDSgQE","alt":"PON","sharedTooltipText":":_PON:","src":"https://yt3.ggpht.com/OAuLbu3fQiFfxbyzi5M3N_DqQN2Mz1BQdajCyqguu__IAx_GKsFnY2KeS74TBiiKkkjeeGj2Gw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"あくろら〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんさやなー"}], "scope": "channel" }
+  ]
+}

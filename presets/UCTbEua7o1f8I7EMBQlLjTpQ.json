@@ -13,6 +13,6 @@
     { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"こんおばけ～"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんおばけ〜"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "channel" }
   ]
 }

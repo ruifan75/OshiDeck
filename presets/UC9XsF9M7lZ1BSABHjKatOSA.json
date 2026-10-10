@@ -8,7 +8,7 @@
     { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9XsF9M7lZ1BSABHjKatOSA/u9k7afunHNXb7OsPosaNoQM","alt":"こんそら","sharedTooltipText":":_こんそら:","src":"https://yt3.ggpht.com/tkmyQwaunRqZHoSht7RDTCbBKKLZG6afBc4gnnBRKgzyiraxIKGR77TTUOA8HKC18MRznVGshQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9XsF9M7lZ1BSABHjKatOSA/u9k7afunHNXb7OsPosaNoQM","alt":"こんそら","sharedTooltipText":":_こんそら:","src":"https://yt3.ggpht.com/tkmyQwaunRqZHoSht7RDTCbBKKLZG6afBc4gnnBRKgzyiraxIKGR77TTUOA8HKC18MRznVGshQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9XsF9M7lZ1BSABHjKatOSA/u9k7afunHNXb7OsPosaNoQM","alt":"こんそら","sharedTooltipText":":_こんそら:","src":"https://yt3.ggpht.com/tkmyQwaunRqZHoSht7RDTCbBKKLZG6afBc4gnnBRKgzyiraxIKGR77TTUOA8HKC18MRznVGshQ=w48-h48-c-k-nd"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"あい！あい！あい！あい！"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"いえーい！"}], "scope": "global" },

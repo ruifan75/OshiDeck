@@ -11,8 +11,8 @@
     { "tokens": [{"type":"text","value":"lol"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"nice"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"67"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"LMAO"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"what"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"what"}], "scope": "global" }
   ]
 }

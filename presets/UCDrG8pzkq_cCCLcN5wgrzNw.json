@@ -10,7 +10,7 @@
     { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"草"}], "scope": "global" }

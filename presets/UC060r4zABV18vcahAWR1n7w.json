@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Machina X Flayon Ch. HOLOSTARS-EN",
+  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "channel": "UC060r4zABV18vcahAWR1n7w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"no"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC060r4zABV18vcahAWR1n7w/lKl-ZOGoLJKA_9EP46WlwAQ","alt":"MachiLaugh","sharedTooltipText":":_MachiLaugh:","src":"https://yt3.ggpht.com/Z0vty0R43SbCt8MS-blho5ZU_eobFFvUN-fAyJ7Eu6cGA77IIc8ev8DjaxfW44kClf-EV6gv=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC060r4zABV18vcahAWR1n7w/kEq3ZfaJGe6I_9EPyua0-AQ","alt":"MachiPat","sharedTooltipText":":_MachiPat:","src":"https://yt3.ggpht.com/ZH3-kntISBU_j3T2fki-j3juZmPaT4BLKzfNhjq6bPMvMm7DRWvSRkvnoLo0zwYr4mGx4VkFXQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC060r4zABV18vcahAWR1n7w/G4HhY9PJHcqu8wTA0rvYBQ","alt":"MachiLIGHT","sharedTooltipText":":_MachiLIGHT:","src":"https://yt3.ggpht.com/F0iXUhyna3KrWoXdVR_AOpTqBVbFx7ZIwxrYcjNPs8R2IF0PIi8UNCzcH6lC3B5i9WVFfgUlkOQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC060r4zABV18vcahAWR1n7w/G4HhY9PJHcqu8wTA0rvYBQ","alt":"MachiLIGHT","sharedTooltipText":":_MachiLIGHT:","src":"https://yt3.ggpht.com/F0iXUhyna3KrWoXdVR_AOpTqBVbFx7ZIwxrYcjNPs8R2IF0PIi8UNCzcH6lC3B5i9WVFfgUlkOQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC060r4zABV18vcahAWR1n7w/G4HhY9PJHcqu8wTA0rvYBQ","alt":"MachiLIGHT","sharedTooltipText":":_MachiLIGHT:","src":"https://yt3.ggpht.com/F0iXUhyna3KrWoXdVR_AOpTqBVbFx7ZIwxrYcjNPs8R2IF0PIi8UNCzcH6lC3B5i9WVFfgUlkOQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"what"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"yeah"}], "scope": "channel" }
+  ]
+}

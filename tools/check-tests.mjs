@@ -494,6 +494,12 @@ const MUTATIONS = [
   // Counted together, a card leaving the pool as the preset starts offering
   // it moves one from each side and leaves the total alone — so the panel saw
   // nothing happen and the bar kept the tab counts from before.
+  // The panel can stop using the function that counts them, and everything
+  // that calls the function directly stays green.
+  [VISIBILITY, CONTENT, "the panel counting entries without the counting of cards",
+    "    const waiting = cardsWaiting(mine, offered);",
+    "    const waiting = mine.length + offered.length;"],
+
   [VISIBILITY, CONTENT, "the way in counting entries instead of cards",
     "    return new Set([...mine, ...offered].map((card) => card.id)).size;",
     "    return mine.length + offered.length;"],
@@ -1006,6 +1012,8 @@ const KILLS = {
   "a card added by what it says instead of which card it is":
     "pressing the card you own puts that very card in the deck",
   "the way in counting entries instead of cards": "a card in both halves is one card to add",
+  "the panel counting entries without the counting of cards":
+    "and the panel works the count out with it",
   "an offer that is a different card every render": "and the same offer has the same id every time",
   "the pool's scope stripe left grey on every card": "and a card of your own in the pool shows its scope too",
   "a refusal with nothing to show for it where it happened": "and marks the card that was pressed",

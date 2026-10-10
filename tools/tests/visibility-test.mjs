@@ -300,6 +300,12 @@ check("a card in both halves is one card to add",
 check("and two that are not the same card are two",
   cardsWaiting([{ id: "x" }], [{ id: "y" }]) === 2);
 
+// And that the panel still goes through it. The function can be right and
+// unused: putting the two lengths back into render() left every assertion
+// above green, because they all call the function directly.
+check("and the panel works the count out with it",
+  /\n    const waiting = cardsWaiting\(mine, offered\);\n/.test(src));
+
 // It used to be a full-width row under the hand, which spent a line of a
 // short panel saying one short thing. The bar is already where this UI puts
 // anything that would otherwise take room of its own.

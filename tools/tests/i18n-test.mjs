@@ -33,8 +33,12 @@ check("asked for Traditional Chinese, that", i18n.use("zh-TW") === "zh-TW");
 check("a nearby Chinese falls to the Chinese there is", i18n.use("zh-CN") === "zh-TW");
 check("and zh on its own does too", i18n.use("zh") === "zh-TW");
 
+// English is written now, and a dialect of it is still English: en-US and
+// en-GB are the same table, the way zh-CN reaches the Chinese there is.
+check("asked for English, English", i18n.use("en") === "en");
+check("and a dialect of it falls to the English there is", i18n.use("en-US") === "en");
+
 // A language nobody has written falls to the source, which is a language.
-check("English falls back to the source", i18n.use("en-US") === "ja");
 check("and so does something nobody has heard of", i18n.use("xx") === "ja");
 
 // A name every object answers to is not a language. `MESSAGES[key][code]`

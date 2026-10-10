@@ -6,38 +6,60 @@
 # tools/channels.json is exempt. It is Holodex's own list of 3765 VTuber
 # channels and somebody's stage name will collide with somebody's account
 # name sooner or later — it did.
+#
+# tools/check-hooks.sh is exempt for the opposite reason: its whole job is to
+# hold made-up versions of everything here refuses, and it cannot do that job
+# and pass this check. Made-up is the standing requirement for that file — a
+# test written against the real ones would have written them down, which is
+# the thing being prevented.
 set -e
 
-bad=0
-me=$(basename "$HOME")
+. "$(dirname "$0")/private.sh"
 
-for file in $(git diff --cached --name-only --diff-filter=ACM); do
+work=$(mktemp -d)
+trap 'rm -rf "$work"' EXIT
+: > "$work/report"
+note() { printf '     %s — %s\n' "$1" "$2" >> "$work/report"; }
+
+# Paths as git hands them over, not as the shell would cut them up. Split on
+# spaces, a name with a space in it arrived as two names that existed nowhere,
+# so the file was never read and whatever was in it went in with it. Renames
+# count as well: they were filtered out, and a file edited while being moved
+# was looked at by nobody.
+git diff --cached --name-only -z --diff-filter=ACMRTC | tr '\0' '\n' > "$work/files"
+
+while IFS= read -r file; do
+  [ -n "$file" ] || continue
   case "$file" in
-    tools/channels.json|tools/hooks/*) continue ;;
+    tools/channels.json|tools/hooks/*|tools/check-hooks.sh) continue ;;
   esac
 
-  # The status of a pipeline is its last command's, so asking `grep | sed`
-  # whether it matched answers for sed — which succeeds on no input.
-  hits=""
-  if [ ${#me} -ge 4 ]; then
-    hits=$(git show ":$file" 2>/dev/null | grep -ni "$me" || true)
+  # Fail closed. A path that does not resolve means the list was cut
+  # somewhere we did not expect, and a file that cannot be read is a file
+  # nobody can vouch for.
+  if ! git cat-file -e ":$file" 2>/dev/null; then
+    note "$file" "読み取れないパス"
+    continue
   fi
-  home=$(git show ":$file" 2>/dev/null | grep -n "$HOME" || true)
-  mail=$(git show ":$file" 2>/dev/null |
-         grep -nE '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z][A-Za-z]+' |
-         grep -vE '@users\.noreply\.github\.com|noreply@anthropic\.com' || true)
 
-  for found in "$hits" "$home" "$mail"; do
-    if [ -n "$found" ]; then
-      echo "$found" | sed "s|^|     $file:|"
-      bad=1
-    fi
-  done
-done
+  for n in $(git show ":$file" | name_lines); do note "$file:$n" "名前らしき語"; done
+  for n in $(git show ":$file" | home_lines); do note "$file:$n" "ホームディレクトリのパス"; done
+  for n in $(git show ":$file" | address_lines); do note "$file:$n" "個人アドレスらしきもの"; done
+done < "$work/files"
 
-if [ "$bad" = 1 ]; then
-  echo "FAIL ステージされた内容は公開に向きません（上記）。"
+if [ -s "$work/report" ]; then
+  echo "FAIL ステージされた内容は公開に向きません:"
+  cat "$work/report"
+  echo "     中身はここには出しません。出せば同じものを配ることになります。"
   echo "     --no-verify で通せますが、履歴からは消えません。"
+  exit 1
+fi
+
+# The commit's own identity, which no file shows.
+if ident_is_private; then
+  echo "FAIL このコミットが名乗る author / committer が公開に向きません。"
+  echo "     git config user.email を GitHub の noreply アドレスにしてください。"
+  echo "     ここまで作った commit も --amend で名乗り直す必要があります。"
   exit 1
 fi
 
@@ -53,11 +75,28 @@ fi
 # are not in the package and have no version to move.
 version() { sed -n 's/.*"version"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p'; }
 
-shipped=$(git diff --cached --name-only --diff-filter=ACMRD |
-          grep -E '^(manifest\.json|background\.js|content\.js|options\.js|options\.html|src/|presets/|icons/|[^/]*\.css)$|^(src|presets|icons)/' || true)
+# Both ends of a rename. --name-only names where a file landed, so moving a
+# shipped file out of the package read as nothing shipped having changed:
+# the file left, the version stayed.
+shipped=$(
+  { git diff --cached --name-only -z --diff-filter=ACMRTD
+    git diff --cached --name-status -z --diff-filter=RC | tr '\0' '\n' | awk 'NR % 3 == 2'
+  } | tr '\0' '\n' |
+  grep -E '^(manifest\.json|background\.js|content\.js|options\.js|options\.html|[^/]*\.css)$|^(src|presets|icons)/' || true)
 
 if [ -n "$shipped" ]; then
-  was=$(git show HEAD:manifest.json 2>/dev/null | version || true)
+  # --amend replaces HEAD, so the version it has to beat is the one before
+  # HEAD. Measured against HEAD itself, a release being amended looks like a
+  # commit that never moved the version — when moving it is what it did.
+  was_at=HEAD
+  for pid in "$PPID" "$(ps -o ppid= -p "$PPID" 2>/dev/null | tr -d ' ')"; do
+    [ -n "$pid" ] || continue
+    case "$(ps -o args= -p "$pid" 2>/dev/null)" in
+      *--amend*) was_at=HEAD^ ;;
+    esac
+  done
+
+  was=$(git show "$was_at:manifest.json" 2>/dev/null | version || true)
   now=$(git show :manifest.json 2>/dev/null | version || true)
   if [ -n "$was" ] && [ "$was" = "$now" ]; then
     echo "FAIL 配布されるファイルが変わったのに manifest.json の version は $was のままです。"

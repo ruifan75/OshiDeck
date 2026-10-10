@@ -16,11 +16,38 @@ set -e
 
 . "$(dirname "$0")/private.sh"
 
-# --text so that a file git calls binary still announces its path: without it
-# there is no +++ line for one, and the name is a place something private can
-# sit just as well as a line inside.
-found=$(git diff --cached -p --text --no-color --no-ext-diff --diff-filter=ACMRTC \
-          -- . ':(exclude)tools/channels.json' | scan tools/check-hooks.sh)
+# Read by name, not cut out of the diff; see below.
+SKIP=tools/channels.json
+
+# What git is asked for matters as much as what is done with it:
+#
+#   --text          a file git calls binary has no +++ line at all without it,
+#                   and the name is a place something private sits
+#   --no-textconv   a .gitattributes textconv driver shows git's idea of the
+#                   file instead of the bytes being committed
+#   --src/dst-prefix  diff.noprefix is somebody's ordinary setting, and it
+#                   takes `b/` off the front — two characters off every path,
+#                   which is a different path
+#   core.quotePath=false  so a non-ASCII name arrives as itself rather than as
+#                   octal escapes with the name hidden inside them
+#
+# tools/channels.json is left to the scanner to skip by name rather than
+# excluded here: a pathspec covers everything under a path as well as the path
+# itself, and a directory or a symlink could be put there.
+patch=$(mktemp)
+trap 'rm -f "$patch"' EXIT
+
+if ! git -c core.quotePath=false diff --cached -p --text --no-textconv --no-ext-diff \
+       --no-color --src-prefix=a/ --dst-prefix=b/ --diff-filter=ACMRTC > "$patch"; then
+  # Fail closed. The pipeline used to end in the scanner, whose silence is
+  # indistinguishable from a clean tree, so a git that could not answer read
+  # as nothing to answer for.
+  echo "FAIL ステージされた内容を読み出せませんでした（git diff が失敗）。"
+  echo "     何が入るのか分からないまま通すわけにはいきません。"
+  exit 1
+fi
+
+found=$(scan tools/check-hooks.sh < "$patch")
 
 if [ -n "$found" ]; then
   echo "FAIL ステージされた内容は公開に向きません:"
@@ -69,10 +96,11 @@ version() { sed -n 's/.*"version"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p'; }
 # the source of the *next* rename is read as a status and never looked at.
 # xargs counts NULs and cannot be shifted by anything inside a path.
 shipped=$(
-  { git diff --cached --name-only -z --diff-filter=ACMRTD
+  { git diff --cached --name-only -z --diff-filter=ACMRTD |
+      xargs -0 -n1 sh -c 'printf "%s\n" "$1" | head -1' _
     git diff --cached --name-status -z --diff-filter=RC |
-      xargs -0 -n3 sh -c 'printf "%s\0" "$2"' _
-  } | tr '\0' '\n' |
+      xargs -0 -n3 sh -c 'printf "%s\n" "$2" | head -1' _
+  } |
   grep -E '^(manifest\.json|background\.js|content\.js|options\.js|options\.html|[^/]*\.css)$|^(src|presets|icons)/' || true)
 
 if [ -n "$shipped" ]; then

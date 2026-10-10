@@ -1,0 +1,5 @@
+#!/bin/sh
+# A merge that resolves itself never reaches pre-commit — git runs this
+# instead, and for a while that meant whatever the other branch was bringing
+# in went by unread. The same checks, from the same file.
+exec "$(dirname "$0")/pre-commit"

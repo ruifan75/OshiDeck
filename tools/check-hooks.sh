@@ -84,6 +84,12 @@ echo "ordinary" > "$lab/a.txt"
 (cd "$lab" && git mv a.txt "$(printf 'one\ntwo.txt')" && git mv content.js tools-backup.js)
 try "a shipped file moved out beside a name with a newline in it" 1
 
+# Cut into lines, a name with a newline in it also *invents* paths: half of
+# one unshipped name read as a shipped file demands a version for nothing.
+(cd "$lab" && git reset -q --hard && git clean -qfd)
+printf 'x\n' > "$lab/$(printf 'notes\ncontent.js')"
+try "a newline in an unshipped name does not invent a shipped one" 0
+
 # --amend is not detected at all, on purpose: the only thing a hook can read
 # about it is somebody else's command line, and a commit whose message said
 # --amend was waved through. So a release being amended is refused like
@@ -121,8 +127,10 @@ tries=0
 fails=0
 home=$lab/home/alice
 dotted=$lab/home/j.doe
+# A name git would escape rather than hand over as itself.
+kana=$lab/home/さくらもち
 repo=$lab/repo
-mkdir -p "$home" "$dotted" "$repo"
+mkdir -p "$home" "$dotted" "$kana" "$repo"
 use_home=$home
 
 (
@@ -141,7 +149,7 @@ fresh() { use_home=$home; (cd "$repo" && git reset -q --hard && git clean -qfd);
 # Nothing the hooks refuse may come back out in what they print: the terminal,
 # the scrollback and the CI log are all places it would then exist.
 quiet() {
-  if grep -qi "alice\|j\.doe\|private\.example\.com" "$lab/out"; then
+  if grep -qi "alice\|j\.doe\|さくらもち\|private\.example\." "$lab/out"; then
     echo "FAIL $1 は拒否の理由として守っている文字列そのものを出しました"
     fails=$((fails + 1))
   fi
@@ -323,6 +331,103 @@ mkdir -p "$repo/tools"
 printf 'cd %s/work\n' "$use_home" > "$repo/tools/check-hooks.sh"
 add tools/check-hooks.sh
 staged "but it is not exempt from anything else" 1
+
+# An added line reading `++ something` arrives in the patch as `+++ something`,
+# which is exactly what a file header looks like. Believed, it moved every
+# line after it under a name of the commit's choosing — and one name has the
+# documentation addresses allowed in it.
+fresh
+printf '++ b/tools/check-hooks.sh\npilot@private.example.com\n' > "$repo/notes.txt"
+add notes.txt
+staged "a line that looks like a file header is not one" 1
+
+# A rename that changes nothing has no content in the patch at all, so the
+# name it landed under is the only thing there is to read.
+fresh
+(cd "$repo" && git mv seed.txt "pilot@private.example.invalid")
+staged_is R "a rename that changes nothing still lands under a name"
+staged "a rename that changes nothing still lands under a name" 1
+
+# awk stops at a NUL, and --text hands it lines that have them.
+fresh
+printf 'x\000pilot@private.example.com\n' > "$repo/notes.txt"
+add notes.txt
+staged "a NUL does not hide what comes after it" 1
+
+# The scanner saying nothing and git failing to say anything look identical
+# from the far end of a pipe.
+fresh
+printf 'nothing\n' > "$repo/notes.txt"
+add notes.txt
+cp "$repo/.git/index" "$lab/index.kept"
+printf 'not an index' > "$repo/.git/index"
+staged "a git that cannot answer is not a pass" 1
+cp "$lab/index.kept" "$repo/.git/index"
+
+# A textconv driver is somebody's idea of how a file should read, and what is
+# being committed is the bytes.
+fresh
+printf '*.txt diff=hider\n' > "$repo/.gitattributes"
+(cd "$repo" && git config diff.hider.textconv "sed s/.*/clean/")
+printf 'pilot@private.example.com\n' > "$repo/notes.txt"
+(cd "$repo" && git add -- .gitattributes notes.txt)
+staged "a textconv driver does not get to answer for the bytes" 1
+(cd "$repo" && git config --unset diff.hider.textconv)
+
+# diff.noprefix is an ordinary setting, and it takes two characters off the
+# front of every path — which is a different path.
+fresh
+(cd "$repo" && git config diff.noprefix true)
+mkdir -p "$repo/tools"
+printf 'pilot@private.example.com\n' > "$repo/tools/check-hooks.sh"
+add tools/check-hooks.sh
+staged "the path is still the path with diff.noprefix set" 0
+(cd "$repo" && git config --unset diff.noprefix)
+
+# A name git escapes is a name the hook reads as escapes, and the thing it is
+# looking for is not in them.
+fresh
+use_home=$kana
+printf 'nothing in here\n' > "$repo/さくらもち.txt"
+add "さくらもち.txt"
+staged "a name git would rather escape is read as itself" 1
+
+# Skipping by name is skipping that name.
+fresh
+mkdir -p "$repo/tools"
+printf 'pilot@private.example.com\n' > "$repo/tools/channels.json"
+add tools/channels.json
+staged "the list of channels is left alone" 0
+
+fresh
+rm -f "$repo/tools/channels.json"
+mkdir -p "$repo/tools/channels.json"
+printf 'pilot@private.example.com\n' > "$repo/tools/channels.json/x.txt"
+add tools/channels.json
+staged "but not whatever else could sit under that name" 1
+rm -rf "$repo/tools/channels.json"
+
+# Built here rather than written down: a real-looking address *in this file*
+# would stop this file being committed, which is the hook working.
+fresh
+mkdir -p "$repo/tools"
+printf 'pilot@mail.%s\n' "corp" > "$repo/tools/check-hooks.sh"
+add tools/check-hooks.sh
+staged "and a real-looking address is not allowed even there" 1
+
+# A merge that resolves itself never reaches pre-commit; git runs a different
+# hook, and for a while nothing read what the merge brought in.
+fresh
+here=$(cd "$repo" && git rev-parse --abbrev-ref HEAD)
+(cd "$repo" && git checkout -q -b side)
+printf 'pilot@private.example.com\n' > "$repo/merged.txt"
+(cd "$repo" && git add -- merged.txt && git -c core.hooksPath=/dev/null commit -qm "from the side")
+(cd "$repo" && git checkout -q "$here")
+got=0
+(cd "$repo" && HOME="$home" git -c core.hooksPath="$hooks" merge -q --no-ff side) >"$lab/out" 2>&1 || got=$?
+expect "a merge that resolves itself is read too" 1
+quiet "a merge that resolves itself is read too"
+(cd "$repo" && git merge --abort >/dev/null 2>&1; git branch -qD side >/dev/null 2>&1) || true
 
 fresh
 message "an address in the message is refused" "ask pilot@private.example.com" 1

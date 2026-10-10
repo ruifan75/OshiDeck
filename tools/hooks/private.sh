@@ -55,12 +55,19 @@ account=$(basename "$HOME" | tr '[:upper:]' '[:lower:]')
 #
 # $1, when given, is a path whose documentation addresses are allowed.
 scan() {
+  # NUL first, and into a space rather than a line break. awk stops reading a
+  # line at one, so anything a binary file kept after a NUL was invisible to
+  # it — and --text hands those lines over. Breaking the line instead would
+  # have taken the `+` off the front of what followed, which is the same
+  # blindness by another route.
+  tr '\0' ' ' |
   OD_ADDRESS="$ADDRESS" OD_ALLOWED="$ALLOWED" OD_RESERVED="$RESERVED" \
-  OD_ACCOUNT="$account" OD_HOME="$HOME" OD_EXEMPT="${1:-}" awk '
+  OD_ACCOUNT="$account" OD_HOME="$HOME" OD_EXEMPT="${1:-}" OD_SKIP="$SKIP" awk '
     BEGIN {
       addr = ENVIRON["OD_ADDRESS"]; allowed = ENVIRON["OD_ALLOWED"]
       reserved = ENVIRON["OD_RESERVED"]; account = ENVIRON["OD_ACCOUNT"]
       home = ENVIRON["OD_HOME"]; exempt = ENVIRON["OD_EXEMPT"]
+      skip = ENVIRON["OD_SKIP"]
     }
     function note(where, what,   key) {
       key = where "\t" what
@@ -94,16 +101,45 @@ scan() {
       }
       return hits
     }
-    /^\+\+\+ / {
-      path = ($0 == "+++ /dev/null") ? "" : substr($0, 7)
-      # The name itself is a place something can sit, and then it cannot be
-      # what the refusal points at either.
+    # Where a finding is, when saying so is safe. A name that is itself the
+    # private part cannot be what the refusal points at; neither can one this
+    # file cannot read back as written.
+    function where() {
+      return (hidden || path !~ /^[ -~]*$/) ? "（名前を伏せたファイル）" : path
+    }
+    function opened(name) {
+      path = name
       hidden = check(path, "（ファイル名そのもの）") > 0
+    }
+
+    # A new file in the patch. Everything resets, including whether the last
+    # line was the `---` half of a header.
+    /^diff --git / { path = ""; hidden = 0; dashed = 0; next }
+
+    # A rename or a copy that changed nothing has no content at all, so the
+    # name it landed under is the only thing to read — and a name is a place
+    # something private sits just as well as a line is.
+    /^rename to / || /^copy to / { opened(substr($0, index($0, " to ") + 4)); dashed = 0; next }
+
+    /^--- / { dashed = 1; next }
+
+    /^\+\+\+ / {
+      # Only after the `---` half. An added line reading `++ something` is
+      # shown as `+++ something`, and taken for a header it moved every line
+      # after it under any name the commit cares to give — including the one
+      # name whose documentation addresses are allowed.
+      if (!dashed) { check(substr($0, 2), where()); next }
+      dashed = 0
+      opened(($0 == "+++ /dev/null") ? "" : substr($0, 7))
       next
     }
-    substr($0, 1, 1) == "+" {
-      check(substr($0, 2), hidden ? "（名前を伏せたファイル）" : path)
-    }
+
+    { dashed = 0 }
+    # The skip is a name, so an unnamed file is not it. Compared the short
+    # way, a patch with no path yet — which is what a message read as a patch
+    # is — matched the empty skip and went unread.
+    substr($0, 1, 1) == "+" && !(skip != "" && path == skip) { check(substr($0, 2), where()) }
+
     END { for (i = 1; i <= n; i++) print order[i] }
   '
 }
@@ -124,7 +160,7 @@ ident_is_private() {
     # `Name <address> 1700000000 +0900`. The name is read like any other text,
     # because a commit made under the account name has published it just as
     # surely as a file with it in.
-    [ -z "$(printf '+++ b/x\n+%s\n' "$ident" | scan)" ] || return 0
+    [ -z "$(printf -- '--- a/x\n+++ b/x\n+%s\n' "$ident" | scan)" ] || return 0
 
     # The address is asked the other way round. Elsewhere the question is
     # whether something looks private, which an address at an intranet host

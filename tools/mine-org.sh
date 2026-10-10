@@ -4,6 +4,7 @@
 #   tools/mine-org.sh ReAcT
 #   tools/mine-org.sh Hololive 15
 #   tools/mine-org.sh --subscriptions      # the maintainer's own list, in order
+#   tools/mine-org.sh --all                # everybody Holodex lists as active
 #
 # Hours, not minutes — so it is resumable: a channel that already has a
 # candidates file is skipped, and stopping it anywhere loses at most the one
@@ -27,6 +28,7 @@ want=${2:-15}
 if [ -z "$org" ]; then
   echo "usage: tools/mine-org.sh <org> [streams]"
   echo "       tools/mine-org.sh --subscriptions [streams]"
+  echo "       tools/mine-org.sh --all [streams]   # Holodex の活動中すべて"
   echo "       node tools/channels.mjs --orgs   # で名前を確かめられます"
   exit 1
 fi
@@ -54,6 +56,13 @@ ids=$(node -e '
     // Already in that order; keep it.
     want = JSON.parse(fs.readFileSync("tools/subscriptions.json", "utf8"))
       .filter((c) => !c.inactive);
+  } else if (org === "--all") {
+    // Everybody Holodex still lists as active, biggest rooms first. Six days
+    // of this at three minutes a channel, so the order is the answer to
+    // "what if it stops halfway": the ones with the most chat to count.
+    want = JSON.parse(fs.readFileSync("tools/channels.json", "utf8"))
+      .filter((c) => !c.inactive)
+      .sort((a, b) => b.subscribers - a.subscribers);
   } else {
     want = JSON.parse(fs.readFileSync("tools/channels.json", "utf8"))
       .filter((c) => c.org === org && !c.inactive)

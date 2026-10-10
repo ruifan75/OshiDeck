@@ -287,15 +287,15 @@ check("which is worth the redraw", b.seen.refreshes === 2);
 // short panel saying one short thing. The bar is already where this UI puts
 // anything that would otherwise take room of its own.
 {
-  const from = src.indexOf("  function buildBar({ channel, hue, count, mine, offered }) {");
+  const from = src.indexOf("  function buildBar({ channel, hue, count, mine, offered, waiting }) {");
   const to = src.indexOf("  function noticeRow(");
   if (from < 0 || to < 0 || to <= from) {
     console.log("FAIL could not lift buildBar out of content.js");
     process.exit(1);
   }
 
-  const bar = (poolOpen, mine, offered = 0) => new Function(
-    "poolOpen", "mine", "offered", "document", "t",
+  const bar = (poolOpen, mine, offered = 0, waiting = mine + offered) => new Function(
+    "poolOpen", "mine", "offered", "waiting", "document", "t",
     `let poolTab = "mine";
      const notice = null, peek = null, inputHasContent = false;
      const noticeRow = () => ({ is: "notice" });
@@ -307,11 +307,12 @@ check("which is worth the redraw", b.seen.refreshes === 2);
      const render = () => {};
      const openOptions = () => {};
      ${src.slice(from, to)}
-     return buildBar({ channel: null, hue: 0, count: 4, mine, offered });`
+     return buildBar({ channel: null, hue: 0, count: 4, mine, offered, waiting });`
   )(
     poolOpen,
     mine,
     offered,
+    waiting,
     { createElement: () => ({
         kids: [],
         append(...nodes) { this.kids.push(...nodes); },
@@ -336,6 +337,13 @@ check("which is worth the redraw", b.seen.refreshes === 2);
   check("a preset alone is still a way in", !!wayIn(bar(false, 0, 10)));
   check("and the count is everything you could add",
     wayIn(bar(false, 7, 10)).text.includes("17"));
+
+  // Cards, not tabs. The same card is in both halves when you own something
+  // the preset also carries — yours, and the preset saying everyone here uses
+  // it — and adding the two labels up counted it twice.
+  check("a card in both halves is one card to add",
+    wayIn(bar(false, 7, 10, 12)).text.includes("12"));
+  check("and with nothing to add there is still no way in", !wayIn(bar(false, 3, 3, 0)));
 
   // Inside, they are two labels rather than one list: a card you saved and a
   // card a preset is offering are different things, and shown together the
@@ -714,7 +722,7 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
 
 /* ---------- what counts as having changed ---------- */
 
-const sigFrom = src.indexOf("  function panelSignature(data, channel, hue, shown, mine, offered, drawn) {");
+const sigFrom = src.indexOf("  function panelSignature(data, channel, hue, shown, mine, offered, waiting, drawn) {");
 const sigTo = src.indexOf("  function renderHand(", sigFrom);
 if (sigFrom < 0 || sigTo < 0 || sigTo <= sigFrom) {
   console.log("FAIL could not lift panelSignature out of content.js");
@@ -729,6 +737,8 @@ function signature({ pool = false, tab = "mine", more = false, editing = null, f
                      typing = false, pinned = false, settings = {}, channel = "UCaaa", name = "さくら",
                      hue = 320, width = 400, presets = 1,
                      shown = [], mine = [], offered = [], drawn = null } = {}) {
+  // What the panel works out for itself: the same card can be in both halves.
+  const waiting = new Set([...mine, ...offered].map((card) => card.id)).size;
   return new Function(
     "poolOpen", "poolTab", "expanded", "editingId", "flashId", "inputHasContent", "inputIsPinned",
     "tokens", "presetsOnHand", "rootEl", "flashKind",
@@ -741,7 +751,7 @@ function signature({ pool = false, tab = "mine", more = false, editing = null, f
     "found"
   )(
     { settings: { mode: "hand", cardSize: "small", rows: 2, sortBy: "heat", suggest: true, ...settings } },
-    { id: channel, name }, hue, shown, mine, offered, drawn
+    { id: channel, name }, hue, shown, mine, offered, waiting, drawn
   );
 }
 
@@ -823,6 +833,16 @@ for (const [label, over] of [
 // together the panel saw nothing happen, skipped the render, and left the bar
 // showing the tab counts from before — 「プリセット」 missing while the preset
 // was offering a card.
+// And the half it is in, which the total cannot answer either: save a card the
+// preset was already offering and it joins your half without leaving the
+// preset's — one more card you own, the same card on offer, the same number
+// of cards to add.
+check(
+  "saving a card the preset already offers is a change",
+  signature({ shown: hand, mine: [], offered: [{ id: "preset:x" }] }) !==
+  signature({ shown: hand, mine: [{ id: "x" }], offered: [{ id: "x" }] })
+);
+
 check(
   "a card crossing from one half of the pool to the other is a change",
   signature({ shown: hand, mine: [{ id: "p" }, { id: "q" }], offered: [] }) !==

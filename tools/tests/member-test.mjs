@@ -433,18 +433,32 @@ check("and with no channel there is no pool at all",
   const api = lift({ doc: page({ mine: true }) });
   const offered = api.buildOffered(shelved(HERE), HERE);
 
-  check("cards the channel uses and you do not have are offered", offered.length === 2);
+  // All of it, not the remainder. Owning a card used to take it out of here,
+  // so a preset of ten read as a preset of three the moment you had saved
+  // seven of them yourself — a list with holes punched in it wherever you
+  // happened to agree with it.
+  check("the whole preset is offered, not what is left of it", offered.length === 3);
   check("and they are kept apart from what you already have",
     api.buildPool(shelved(HERE), HERE).every((c) => !c.offered));
-  check("and they are the ones you do not have",
-    offered.map((c) => tokens.toPlainText(c.tokens)).sort().join("|") === "おかえり|はのは〜");
+  check("including the ones you have none of",
+    offered.filter((c) => c.offered).map((c) => tokens.toPlainText(c.tokens)).sort().join("|")
+      === "おかえり|はのは〜");
   check("an offered card set to this channel wears its colour",
     offered.find((c) => tokens.toPlainText(c.tokens) === "はのは〜")?.bound === true);
   check("while a universal one does not",
     offered.find((c) => tokens.toPlainText(c.tokens) === "おかえり")?.bound === false);
-  check("while one you already own is not offered at all",
-    offered.every((c) => tokens.cardKey(c.tokens) !== tokens.cardKey(stamp(HERE))));
-  check("an offered card carries what it was offered from", !!offered[0].offered);
+  check("an offered card carries what it was offered from",
+    !!offered.find((c) => tokens.toPlainText(c.tokens) === "おかえり")?.offered);
+
+  // The one you already have is offered as *your* card, so pressing it adds
+  // the card that has been earning a count here rather than a second one
+  // saying the same thing.
+  const both = offered.find((c) => tokens.cardKey(c.tokens) === tokens.cardKey(stamp(HERE)));
+  check("one you already own is offered too", !!both);
+  check("as the card you own, not a copy of it", both?.id === "ours");
+  check("so pressing it is not loading a preset", !both?.offered);
+  check("and it is in the pool as well", 
+    api.buildPool(shelved(HERE), HERE).some((c) => c.id === "ours"));
 
   // The viewer's own route to the same mistake, and the one they could see:
   // the input cleared, the bar said the card already existed on this channel,
@@ -475,9 +489,12 @@ check("and with no channel there is no pool at all",
     const api2 = lift({ doc: page({ mine: true }) });
     check("a card of the same words tied elsewhere is not in this pool",
       api2.buildPool(elsewhere, HERE).length === 0);
+    // As the preset's card, not as the one that cannot be sent: the same
+    // words read the same, so an offer that handed back the incompatible
+    // card looked right from here and added nothing when pressed.
     check("so the preset still offers it here",
       api2.buildOffered(elsewhere, HERE)
-        .some((c) => tokens.toPlainText(c.tokens) === "おかえり"));
+        .some((c) => tokens.toPlainText(c.tokens) === "おかえり" && !!c.offered));
   }
 
   // cardsFor hands out a fresh uuid every time it is asked, and the panel's
@@ -494,7 +511,12 @@ check("and with no channel there is no pool at all",
 
   const locked = lift({ doc: page({ mine: false }) }).buildOffered(shelved(HERE), HERE);
   check("an offered card of plain words is never locked",
-    locked.every((c) => c.locked === false));
+    locked.filter((c) => !tokens.requiredChannels(c.tokens).length)
+      .every((c) => c.locked === false));
+  // The other half of the same rule: the offer is judged the same way the
+  // pool is, so a stamp you cannot send sits at the back here too.
+  check("while an offered member stamp is, for someone who is not one",
+    locked.at(-1)?.lapsed === true);
 
   // The whole trip, because this is what a viewer actually does: take the
   // preset, decide one of its cards is not for you, drop it out of the deck,
@@ -510,12 +532,13 @@ check("and with no channel there is no pool at all",
     check("the whole preset in the deck leaves nothing on offer",
       api4.buildOffered(loaded, HERE).length === 0);
 
-    // Out of the deck, still owned: the pool has it, the preset does not
-    // offer what you already have.
+    // Out of the deck, still owned: it is in the pool, and the preset still
+    // says this channel uses it — so it is in both halves, as your card.
     const mine = whole.find((c) => tokens.cardKey(c.tokens) === tokens.cardKey(stamp(HERE)));
     const ejected = { ...loaded, decks: { [HERE]: loaded.decks[HERE].filter((id) => id !== mine.id) } };
-    check("one taken out of the deck is in the pool, not on offer",
-      api4.buildPool(ejected, HERE).length === 1 && api4.buildOffered(ejected, HERE).length === 0);
+    check("one taken out of the deck is in both halves",
+      api4.buildPool(ejected, HERE).length === 1 &&
+      api4.buildOffered(ejected, HERE).map((c) => c.id).join() === mine.id);
 
     // Deleted from the pool: nobody owns it now, and the preset is where it
     // came from.

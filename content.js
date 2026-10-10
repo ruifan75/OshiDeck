@@ -458,25 +458,43 @@
   function buildOffered(data, channelId) {
     if (!channelId) return [];
 
-    // Anything already in the collection *that can be sent here* is answered
-    // for by the other half: it is in this deck or in the pool, and
-    // loadPreset would have reused it rather than making a second one.
+    // What the preset holds, not what you are missing from it. Owning a card
+    // used to take it out of here, so a preset of ten read as a preset of
+    // three the moment you had saved seven of them yourself — a list with
+    // holes punched in it wherever you happened to agree with it. The two
+    // halves are two questions, and a card can answer both: 「手持ち」 is
+    // where it came from, 「プリセット」 is who else says it.
     //
     // Usable here, not merely held. A card of the same wording tied to
     // another channel cannot be played on this one, so counting it as owned
     // left both halves empty: the pool excludes it because it is not
     // compatible, and the offer excluded it because it existed.
-    const held = new Set(
-      data.cards
-        .filter((card) => store.usableOn(card, channelId))
-        .map((card) => tokens.cardKey(card.tokens || []))
-    );
+    const owned = new Map(); // wording -> the cards here that say it
+    for (const card of data.cards) {
+      if (!store.usableOn(card, channelId)) continue;
+      const key = tokens.cardKey(card.tokens || []);
+      (owned.get(key) || owned.set(key, []).get(key)).push(card);
+    }
+
+    const inDeck = new Set(data.decks[channelId] || []);
     const offered = [];
+    const seen = new Set();
     for (const preset of presetsOnHand(channelId)) {
       for (const source of preset.cards || []) {
         const key = tokens.cardKey(source.tokens || []);
-        if (held.has(key)) continue;
-        held.add(key); // two presets can carry the same card
+        if (seen.has(key)) continue; // two presets can carry the same card
+        seen.add(key);
+
+        // Your own copy, when you have one. Pressing it then adds the card
+        // you already own — its id, its colour, the count it has earned on
+        // this channel — rather than a second card saying the same thing.
+        const family = owned.get(key);
+        if (family) {
+          const spare = family.find((card) => !inDeck.has(card.id));
+          if (spare) offered.push({ ...spare });
+          continue; // every copy already in the hand: nothing left to add
+        }
+
         // The id has to be the same on every render or the panel's signature
         // changes for nothing and it redraws forever; cardsFor hands out a
         // fresh uuid each time it is asked.
@@ -1524,7 +1542,7 @@
   // because an edit keeps the card's id. The channel name and the pool count,
   // because the bar and the toggle say them. And whether the presets have
   // arrived, because the empty-deck offer waits on them.
-  function panelSignature(data, channel, hue, shown, mine, offered, drawn) {
+  function panelSignature(data, channel, hue, shown, mine, offered, waiting, drawn) {
     const s = data.settings;
     const each = (card) => [
       card.id,
@@ -1548,7 +1566,10 @@
       // side and left the total where it was. The panel then skipped the
       // render, and the bar went on showing the tab counts from before:
       // 「預組」 missing while the preset was offering.
-      mine.length, offered.length, presetsOnHand(channel?.id).length,
+      // ...and how many cards that is between them, which neither length
+      // answers: a card can be in both halves, and one leaving the preset
+      // without leaving your collection moves no count but the total.
+      mine.length, offered.length, waiting, presetsOnHand(channel?.id).length,
       drawn?.key || "",
       shown.map(each).join(",")
     ].join("|");
@@ -1669,7 +1690,7 @@
   // something worth keeping it becomes the destination picker, so choosing
   // where a card goes is one click on a labelled button — never a guess
   // followed by a correction.
-  function buildBar({ channel, hue, count, mine, offered }) {
+  function buildBar({ channel, hue, count, mine, offered, waiting }) {
     const bar = document.createElement("div");
     bar.className = "od-bar";
     // Everything that would otherwise float over the chat lives here instead.
@@ -1692,8 +1713,11 @@
       // Both halves counted, not just the pool. A channel whose preset is the
       // only thing on offer — nothing saved yet, which is every channel at
       // the start — would otherwise have no way in at all.
-      if (mine + offered) {
-        bar.appendChild(buildAction("plus", t("pool.short", mine + offered), t("aria.addFromPool"),
+      // Cards, not tabs. The same card can be in both halves — yours, and
+      // the preset's way of saying everyone here uses it — and adding it
+      // once is adding it.
+      if (waiting) {
+        bar.appendChild(buildAction("plus", t("pool.short", waiting), t("aria.addFromPool"),
           () => { poolOpen = true; poolTab = mine ? "mine" : "offered"; render(); }));
       }
       bar.appendChild(buildAction("deck", t("action.build"), t("aria.openBuilder"), () => openOptions()));
@@ -2067,6 +2091,10 @@
 
     const mine = buildPool(data, channel?.id);
     const offered = buildOffered(data, channel?.id);
+    // A card you own that the preset also carries is in both halves, so the
+    // way in counts cards rather than adding the tabs up: a preset of ten you
+    // already have nine of is one card to add, not nineteen.
+    const waiting = new Set([...mine, ...offered].map((card) => card.id)).size;
     // The last card of a half can be taken while you are looking at it.
     if (poolTab === "offered" && !offered.length) poolTab = "mine";
 
@@ -2089,7 +2117,7 @@
     // owner without changing anything the signature can see.
     const dropped = dropStalePeek();
 
-    const next = panelSignature(data, channel, hue, shown, mine, offered, drawn);
+    const next = panelSignature(data, channel, hue, shown, mine, offered, waiting, drawn);
     if (next === painted && rootEl.firstChild) {
       // Nothing else changed, so nothing else needs drawing — but the bar is
       // still showing a description of something that is gone.
@@ -2107,7 +2135,7 @@
       rootEl.dataset.pool = String(poolOpen);
 
       barContext = { channel, hue, count: shown.length,
-                     mine: mine.length, offered: offered.length };
+                     mine: mine.length, offered: offered.length, waiting };
       barEl = buildBar(barContext);
       rootEl.appendChild(barEl);
 

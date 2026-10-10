@@ -171,8 +171,8 @@ const MUTATIONS = [
     "      0,"],
 
   [VISIBILITY, CONTENT, "presets arriving after the panel has given up asking",
-    "      mine.length, offered.length, presetsOnHand(channel?.id).length,",
-    "      mine.length, offered.length,"],
+    "      mine.length, offered.length, waiting, presetsOnHand(channel?.id).length,",
+    "      mine.length, offered.length, waiting,"],
 
   [VISIBILITY, CONTENT, "a panel that never actually skips",
     `    if (next === painted && rootEl.firstChild) {
@@ -291,8 +291,8 @@ const MUTATIONS = [
     'channel?.id || "", "", hue ?? "",'],
 
   [VISIBILITY, CONTENT, "a pool that can gain a card unnoticed",
-    "      mine.length, offered.length, presetsOnHand(channel?.id).length,",
-    "      offered.length, presetsOnHand(channel?.id).length,"],
+    "      mine.length, offered.length, waiting, presetsOnHand(channel?.id).length,",
+    "      offered.length, waiting, presetsOnHand(channel?.id).length,"],
 
   [VISIBILITY, CONTENT, "a drawn card the list offers no way to keep",
     "    el.append(play, drawnTools(card));",
@@ -488,15 +488,15 @@ const MUTATIONS = [
     "    return drawFromChat(deck, { channelId: channel?.id, member: membership() === true });"],
 
   [VISIBILITY, CONTENT, "a skip that can never hold",
-    "    const next = panelSignature(data, channel, hue, shown, mine, offered, drawn);",
-    "    const next = panelSignature(data, channel, hue, shown, mine, offered, drawn);\n    painted = null;"],
+    "    const next = panelSignature(data, channel, hue, shown, mine, offered, waiting, drawn);",
+    "    const next = panelSignature(data, channel, hue, shown, mine, offered, waiting, drawn);\n    painted = null;"],
 
   // Counted together, a card leaving the pool as the preset starts offering
   // it moves one from each side and leaves the total alone — so the panel saw
   // nothing happen and the bar kept the tab counts from before.
   [VISIBILITY, CONTENT, "two halves of the pool counted as one",
-    "      mine.length, offered.length, presetsOnHand(channel?.id).length,",
-    "      mine.length + offered.length, presetsOnHand(channel?.id).length,"],
+    "      mine.length, offered.length, waiting, presetsOnHand(channel?.id).length,",
+    "      mine.length + offered.length, waiting, presetsOnHand(channel?.id).length,"],
 
   // One ask that nothing answered used to settle the question for the life of
   // the page.
@@ -664,7 +664,7 @@ const MUTATIONS = [
     "    const said = next;"],
 
   [VISIBILITY, CONTENT, "no way into the pool from anywhere",
-    "      if (mine + offered) {",
+    "      if (waiting) {",
     "      if (false) {"],
 
   [VISIBILITY, STYLE, "the pool painting over the scope stripe",
@@ -683,9 +683,13 @@ const MUTATIONS = [
     "      for (const source of preset.cards || []) {",
     "      for (const source of []) {"],
 
-  [MEMBER, CONTENT, "a card offered that you already have",
-    "        if (held.has(key)) continue;",
-    "        if (false) continue;"],
+  [MEMBER, CONTENT, "a card you own offered as a copy of itself",
+    "          if (spare) offered.push({ ...spare });",
+    "          if (spare) offered.push({ ...spare, id: `preset:${key}` });"],
+
+  [MEMBER, CONTENT, "a card already in the hand offered from the pool as well",
+    "          const spare = family.find((card) => !inDeck.has(card.id));",
+    "          const spare = family[0];"],
 
   [MEMBER, CONTENT, "an offer that is a different card every render",
     "                       id: `preset:${key}`, offered: source });",
@@ -728,8 +732,10 @@ const MUTATIONS = [
     "    for (const token of tokenList || []) {"],
 
   [MEMBER, CONTENT, "the save path calling anything with the same words a duplicate",
-    "      if (!store.usableOn(card, channelId)) continue;",
-    "      if (false) continue;"],
+    `      // existed on this channel, and nothing had been saved.
+      if (!store.usableOn(card, channelId)) continue;`,
+    `      // existed on this channel, and nothing had been saved.
+      if (false) continue;`],
 
   [STORED, STORE, "an edit written without checking it is one",
     "      if (!wholeTokens(tokens)) return false;",
@@ -780,8 +786,12 @@ const MUTATIONS = [
     "        (c) => OD.tokens.cardKey(c.tokens) === key);"],
 
   [MEMBER, CONTENT, "an offer suppressed by a card that cannot be sent here",
-    "        .filter((card) => store.usableOn(card, channelId))",
-    "        .filter(() => true)"],
+    `    const owned = new Map(); // wording -> the cards here that say it
+    for (const card of data.cards) {
+      if (!store.usableOn(card, channelId)) continue;`,
+    `    const owned = new Map(); // wording -> the cards here that say it
+    for (const card of data.cards) {
+      if (false) continue;`],
 
   [STORED, STORE, "an old count handed to every channel, not the decks holding it",
     "      .filter(([, ids]) => Array.isArray(ids) && ids.includes(card.id))",
@@ -921,7 +931,7 @@ const KILLS = {
   "a card becoming channel-only going unnoticed": "a card becoming channel-only is",
   "a card that can no longer be played looking the same": "and a card becoming unplayable here is",
   "the channel name left out of the signature": "the channel being named at last is a change",
-  "a pool that can gain a card unnoticed": "the pool gaining a card is a change",
+  "a pool that can gain a card unnoticed": "saving a card the preset already offers is a change",
   "two halves of the pool counted as one":
     "a card crossing from one half of the pool to the other is a change",
   "a failed ask remembered as an answer": "an ask nothing answered is asked again",
@@ -969,8 +979,10 @@ const KILLS = {
   "the pool painting over the scope stripe": "the pool does not paint over the scope stripe",
   "the hand reordered under the pointer": "the pointer on the panel holds the redraw",
   "a notice left sitting over the controls it names": "typing clears a notice that was in the way",
-  "a preset's cards never offered from the pool": "cards the channel uses and you do not have are offered",
-  "a card offered that you already have": "while one you already own is not offered at all",
+  "a preset's cards never offered from the pool": "the whole preset is offered, not what is left of it",
+  "a card you own offered as a copy of itself": "as the card you own, not a copy of it",
+  "a card already in the hand offered from the pool as well":
+    "the whole preset in the deck leaves nothing on offer",
   "an offer that is a different card every render": "and the same offer has the same id every time",
   "the pool's scope stripe left grey on every card": "and a card of your own in the pool shows its scope too",
   "a refusal with nothing to show for it where it happened": "and marks the card that was pressed",

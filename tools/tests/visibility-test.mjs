@@ -283,6 +283,23 @@ check("which is worth the redraw", b.seen.refreshes === 2);
 
 /* ---------- the way into the pool ---------- */
 
+// How many cards the two halves come to, lifted rather than worked out here.
+// Written into the fixture, "a card in both halves is one card to add" was a
+// fact about the fixture: the panel could go back to adding the two labels
+// together and every assertion below would have gone on agreeing with itself.
+const countFrom = src.indexOf("  function cardsWaiting(mine, offered) {");
+const countTo = src.indexOf("\n  }", countFrom);
+if (countFrom < 0 || countTo <= countFrom) {
+  console.log("FAIL could not lift cardsWaiting out of content.js");
+  process.exit(1);
+}
+const cardsWaiting = new Function(`${src.slice(countFrom, countTo + 4)} return cardsWaiting;`)();
+
+check("a card in both halves is one card to add",
+  cardsWaiting([{ id: "x" }], [{ id: "x" }]) === 1);
+check("and two that are not the same card are two",
+  cardsWaiting([{ id: "x" }], [{ id: "y" }]) === 2);
+
 // It used to be a full-width row under the hand, which spent a line of a
 // short panel saying one short thing. The bar is already where this UI puts
 // anything that would otherwise take room of its own.
@@ -341,7 +358,7 @@ check("which is worth the redraw", b.seen.refreshes === 2);
   // Cards, not tabs. The same card is in both halves when you own something
   // the preset also carries — yours, and the preset saying everyone here uses
   // it — and adding the two labels up counted it twice.
-  check("a card in both halves is one card to add",
+  check("the way in says how many cards, not how many entries",
     wayIn(bar(false, 7, 10, 12)).text.includes("12"));
   check("and with nothing to add there is still no way in", !wayIn(bar(false, 3, 3, 0)));
 
@@ -737,8 +754,8 @@ function signature({ pool = false, tab = "mine", more = false, editing = null, f
                      typing = false, pinned = false, settings = {}, channel = "UCaaa", name = "さくら",
                      hue = 320, width = 400, presets = 1,
                      shown = [], mine = [], offered = [], drawn = null } = {}) {
-  // What the panel works out for itself: the same card can be in both halves.
-  const waiting = new Set([...mine, ...offered].map((card) => card.id)).size;
+  // Worked out by the panel's own line, not by this file.
+  const waiting = cardsWaiting(mine, offered);
   return new Function(
     "poolOpen", "poolTab", "expanded", "editingId", "flashId", "inputHasContent", "inputIsPinned",
     "tokens", "presetsOnHand", "rootEl", "flashKind",
@@ -841,6 +858,15 @@ check(
   "saving a card the preset already offers is a change",
   signature({ shown: hand, mine: [], offered: [{ id: "preset:x" }] }) !==
   signature({ shown: hand, mine: [{ id: "x" }], offered: [{ id: "x" }] })
+);
+
+// And the total, which neither length can answer: the preset dropping the
+// card you own for one you do not leaves both halves exactly the size they
+// were, with one more card to add than there was.
+check(
+  "the preset trading a card you own for one you do not is a change",
+  signature({ shown: hand, mine: [{ id: "x" }], offered: [{ id: "x" }] }) !==
+  signature({ shown: hand, mine: [{ id: "x" }], offered: [{ id: "y" }] })
 );
 
 check(

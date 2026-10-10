@@ -494,6 +494,10 @@ const MUTATIONS = [
   // Counted together, a card leaving the pool as the preset starts offering
   // it moves one from each side and leaves the total alone — so the panel saw
   // nothing happen and the bar kept the tab counts from before.
+  [VISIBILITY, CONTENT, "the way in counting entries instead of cards",
+    "    return new Set([...mine, ...offered].map((card) => card.id)).size;",
+    "    return mine.length + offered.length;"],
+
   [VISIBILITY, CONTENT, "two halves of the pool counted as one",
     "      mine.length, offered.length, waiting, presetsOnHand(channel?.id).length,",
     "      mine.length + offered.length, waiting, presetsOnHand(channel?.id).length,"],
@@ -544,6 +548,12 @@ const MUTATIONS = [
   [PRESET, OPTIONS, "the stripe read from the stamps instead of the scope",
     "  if (store.scopeOf(card) === store.GLOBAL) el.dataset.universal = \"true\";",
     "  if (!tokens.requiredChannels(card.tokens).length) el.dataset.universal = \"true\";"],
+
+  // The same hole as the bar's, in the page's own cache: one unanswered ask
+  // and the channel was never offered a preset again.
+  [PRESET, OPTIONS, "the builder remembering an answer of no",
+    "    if (!reply?.ok || !Array.isArray(reply.value)) return [];",
+    "    if (!reply?.ok || !Array.isArray(reply.value)) { bundled.set(channelId, []); return []; }"],
 
   [PRESET, OPTIONS, "a file taken in without asking whose it is",
     "  if (!presets.offeredOn(raw, selected)) return status(t(\"opt.importNotForHere\"));",
@@ -684,12 +694,20 @@ const MUTATIONS = [
     "      for (const source of []) {"],
 
   [MEMBER, CONTENT, "a card you own offered as a copy of itself",
-    "          if (spare) offered.push({ ...spare });",
-    "          if (spare) offered.push({ ...spare, id: `preset:${key}` });"],
+    "        if (family) { offered.push({ ...family[0] }); continue; }",
+    "        if (family) { offered.push({ ...family[0], id: `preset:${key}` }); continue; }"],
 
-  [MEMBER, CONTENT, "a card already in the hand offered from the pool as well",
-    "          const spare = family.find((card) => !inDeck.has(card.id));",
-    "          const spare = family[0];"],
+  // Asked by id, the preset went on offering the other copy of something the
+  // deck already said — and pressing it put the same words in twice.
+  [MEMBER, CONTENT, "what the hand says asked about by id rather than wording",
+    "        if (inDeck.has(key)) continue; // the hand says it already",
+    "        if (false) continue; // the hand says it already"],
+
+  // The press itself. Everything else looks at the entry the pool built; the
+  // add could go out under the wording and leave all of it true.
+  [MEMBER, CONTENT, "a card added by what it says instead of which card it is",
+    '    const { ok } = await store.apply("addToDeck", { channelId: channel.id, cardId: card.id });',
+    '    const { ok } = await store.apply("addToDeck", { channelId: channel.id, cardId: tokens.cardKey(card.tokens || []) });'],
 
   [MEMBER, CONTENT, "an offer that is a different card every render",
     "                       id: `preset:${key}`, offered: source });",
@@ -935,6 +953,8 @@ const KILLS = {
   "two halves of the pool counted as one":
     "a card crossing from one half of the pool to the other is a change",
   "a failed ask remembered as an answer": "an ask nothing answered is asked again",
+  "the builder remembering an answer of no":
+    "and after one the worker itself could not answer",
   "a drawn card the list offers no way to keep": "and so can one in the list",
 
   "a stream change that keeps the last chat's card": "which takes the card away",
@@ -981,8 +1001,11 @@ const KILLS = {
   "a notice left sitting over the controls it names": "typing clears a notice that was in the way",
   "a preset's cards never offered from the pool": "the whole preset is offered, not what is left of it",
   "a card you own offered as a copy of itself": "as the card you own, not a copy of it",
-  "a card already in the hand offered from the pool as well":
-    "the whole preset in the deck leaves nothing on offer",
+  "what the hand says asked about by id rather than wording":
+    "a preset does not offer what the hand already says",
+  "a card added by what it says instead of which card it is":
+    "pressing the card you own puts that very card in the deck",
+  "the way in counting entries instead of cards": "a card in both halves is one card to add",
   "an offer that is a different card every render": "and the same offer has the same id every time",
   "the pool's scope stripe left grey on every card": "and a card of your own in the pool shows its scope too",
   "a refusal with nothing to show for it where it happened": "and marks the card that was pressed",

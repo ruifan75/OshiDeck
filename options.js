@@ -438,13 +438,20 @@ const bundled = new Map();
 
 async function loadBundled(channelId) {
   if (bundled.has(channelId)) return bundled.get(channelId);
-  let list = [];
   try {
     const reply = await chrome.runtime.sendMessage({ type: "presets", channelId });
-    list = reply?.ok && Array.isArray(reply.value) ? reply.value : [];
-  } catch (_) { /* worker gone: no starting hand, no harm */ }
-  bundled.set(channelId, list);
-  return list;
+    // Answered, not merely asked. The worker can be asleep, or torn down
+    // between the question and the reply, and remembering that as "this
+    // channel has no preset" settled it for as long as the page stayed
+    // open — the offer gone, with nothing to say it had ever been asked.
+    // An empty answer *is* an answer and is kept: asking again on every
+    // repaint would not produce a preset that does not exist.
+    if (!reply?.ok || !Array.isArray(reply.value)) return [];
+    bundled.set(channelId, reply.value);
+    return reply.value;
+  } catch (_) {
+    return []; // the extension was reloaded under the page: ask again later
+  }
 }
 
 function presetOffer() {

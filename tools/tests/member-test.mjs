@@ -73,6 +73,8 @@ const lifted = [
   cut("  function reconcileChannel(", "  function flashCard("),
   // what the panel does when the page changes under it, and what it watches
   cut("  let lastMembership = null;", "  const observer = watchPage("),
+  // pressing what either half of the pool is offering
+  cut("  async function addToDeck(card) {", "  /* ---------- arranging by hand ---------- */"),
   // pressing a card
   cut("  let sending = false;", "  // The renderer enables the button a beat after")
 ].join("\n");
@@ -129,7 +131,8 @@ function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "
     "presets", "presetsOnHand",
     `${lifted}
      return { membership, whyNotSendable, markLocked, playableFirst, orderDeck,
-              buildDeck, buildPool, buildOffered, saveTokens, reconcileChannel, onPageChanged,
+              buildDeck, buildPool, buildOffered, addToDeck,
+              saveTokens, reconcileChannel, onPageChanged,
               findDuplicate,
               watchPage, playCard };`
   )(
@@ -548,6 +551,52 @@ check("and with no channel there is no pool at all",
         .some((c) => tokens.cardKey(c.tokens) === tokens.cardKey(stamp(HERE))));
     check("with nothing of yours left to add",
       api4.buildPool(deleted, HERE).length === 0);
+  }
+
+  // The same words under two ids: saved here for this channel, and saved
+  // again as a card that works anywhere while watching somebody else. One of
+  // them is in the deck. Asked by id, the preset went on offering the other
+  // copy of something the hand already said, and pressing it put the same
+  // words in twice.
+  {
+    const twice = {
+      cards: [
+        { id: "bound", tokens: text("おかえり"), scope: HERE, by: {} },
+        { id: "free", tokens: text("おかえり"), scope: store.GLOBAL, by: {} }
+      ],
+      decks: { [HERE]: ["bound"] }, channelMeta: {}, settings: {}
+    };
+    const api5 = lift({ doc: page({ mine: true }) });
+    check("a preset does not offer what the hand already says",
+      !api5.buildOffered(twice, HERE).some((c) => tokens.toPlainText(c.tokens) === "おかえり"));
+    // Which is not the same as the card being gone: it is still a card you
+    // own and have not put in this deck.
+    check("while the other copy is still yours to add",
+      api5.buildPool(twice, HERE).some((c) => c.id === "free"));
+  }
+
+  // Pressing one, rather than reading what it would be. Everything above
+  // looks at the entry; the add could have gone out under the wording
+  // instead of the id and every one of them would still have passed.
+  {
+    disk = { cards: [{ id: "ours", tokens: stamp(HERE), scope: HERE, by: {} }],
+             decks: { [HERE]: [] }, channelMeta: {}, settings: {} };
+    const api6 = lift({ doc: page({ mine: true }) });
+
+    const ours = api6.buildOffered(await store.read(), HERE)
+      .find((c) => tokens.cardKey(c.tokens) === tokens.cardKey(stamp(HERE)));
+    await api6.addToDeck(ours);
+    check("pressing the card you own puts that very card in the deck",
+      disk.decks[HERE].join() === "ours");
+    check("and does not save a second one saying the same thing",
+      disk.cards.length === 1);
+
+    const stranger = api6.buildOffered(await store.read(), HERE).find((c) => c.offered);
+    await api6.addToDeck(stranger);
+    check("pressing one nobody owns yet saves it on the way in",
+      disk.cards.length === 2);
+    check("and the card it saved is the one in the deck",
+      disk.decks[HERE].length === 2 && disk.decks[HERE].includes(disk.cards[1].id));
   }
 
   offering = [];

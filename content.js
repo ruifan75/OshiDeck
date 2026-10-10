@@ -435,8 +435,9 @@
   }
 
   // Two answers to "what else can go in this deck", kept apart because they
-  // are different things. A card in the pool is one you saved; a card from a
-  // preset is one you have never had. Mixed together, the pool showed cards
+  // are different questions: where a card came from, and who else here says
+  // it. They are not exclusive — a card you saved that the preset also
+  // carries answers both — but mixed into one list the pool showed cards
   // that were not in it.
   //
   // Assembled here rather than inline in render(), where nothing could reach
@@ -448,7 +449,7 @@
     return readyToAdd(store.poolFor(data, channelId).map((card) => ({ ...card })), channelId);
   }
 
-  // What this channel's regulars use that you have none of.
+  // What this channel's regulars use, minus whatever is in the deck.
   //
   // A preset used to be all-or-nothing and only on an empty deck — ten cards
   // or none, and the moment the deck had one card of its own the offer was
@@ -476,7 +477,19 @@
       (owned.get(key) || owned.set(key, []).get(key)).push(card);
     }
 
-    const inDeck = new Set(data.decks[channelId] || []);
+    // What the hand already says, asked by wording rather than by id. A deck
+    // is a list of ids, and the same words can be held under two of them —
+    // saved here for this channel, and saved again as a card that works
+    // anywhere while watching someone else. Asking whether *that* id was in
+    // the deck let the preset offer the other copy of something the hand
+    // already said, and pressing it put the same words in twice.
+    const byId = new Map(data.cards.map((card) => [card.id, card]));
+    const inDeck = new Set();
+    for (const id of data.decks[channelId] || []) {
+      const card = byId.get(id);
+      if (card) inDeck.add(tokens.cardKey(card.tokens || []));
+    }
+
     const offered = [];
     const seen = new Set();
     for (const preset of presetsOnHand(channelId)) {
@@ -484,16 +497,15 @@
         const key = tokens.cardKey(source.tokens || []);
         if (seen.has(key)) continue; // two presets can carry the same card
         seen.add(key);
+        if (inDeck.has(key)) continue; // the hand says it already
 
         // Your own copy, when you have one. Pressing it then adds the card
         // you already own — its id, its colour, the count it has earned on
         // this channel — rather than a second card saying the same thing.
+        // Any of them will do: none can be in the deck, or the words would
+        // have been in it.
         const family = owned.get(key);
-        if (family) {
-          const spare = family.find((card) => !inDeck.has(card.id));
-          if (spare) offered.push({ ...spare });
-          continue; // every copy already in the hand: nothing left to add
-        }
+        if (family) { offered.push({ ...family[0] }); continue; }
 
         // The id has to be the same on every render or the panel's signature
         // changes for nothing and it redraws forever; cardsFor hands out a
@@ -512,6 +524,15 @@
     const ready = playableFirst(markLocked(cards, channelId, membership()));
     for (const card of ready) card.bound = store.scopeOf(card) !== store.GLOBAL;
     return ready;
+  }
+
+  // How many cards the two halves come to, which is not how many entries they
+  // show: the same card is in both when you own something the preset also
+  // carries, and adding the labels up called a preset of ten you have nine of
+  // nineteen cards waiting. Out here rather than inline in render() so that
+  // getting it wrong is something a test can see.
+  function cardsWaiting(mine, offered) {
+    return new Set([...mine, ...offered].map((card) => card.id)).size;
   }
 
   // Am I a member of the channel running this chat?
@@ -2091,10 +2112,7 @@
 
     const mine = buildPool(data, channel?.id);
     const offered = buildOffered(data, channel?.id);
-    // A card you own that the preset also carries is in both halves, so the
-    // way in counts cards rather than adding the tabs up: a preset of ten you
-    // already have nine of is one card to add, not nineteen.
-    const waiting = new Set([...mine, ...offered].map((card) => card.id)).size;
+    const waiting = cardsWaiting(mine, offered);
     // The last card of a half can be taken while you are looking at it.
     if (poolTab === "offered" && !offered.length) poolTab = "mine";
 

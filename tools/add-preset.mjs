@@ -71,8 +71,11 @@ try {
   list = []; // the first one written makes the index
 }
 
-let added = 0;
-let replaced = 0;
+// Everything read and checked before anything is written. Written as it went,
+// a run of twenty files that tripped on the nineteenth left eighteen presets
+// in the directory and an index naming none of them — files the loader never
+// looks at, in a repository that is wrong in a way nothing here notices.
+const ready = [];
 
 for (const path of paths) {
   let incoming;
@@ -100,9 +103,18 @@ for (const path of paths) {
       "--channel UC… を付けるか、そのチャンネルのメン限スタンプを入れて書き出してください。");
   }
 
+  // Again, because --channel has just put a channel on it that nobody has
+  // checked yet.
   const problemAgain = presets.validate(incoming);
-  if (problemAgain) die(`${path} は使えません: ${problemAgain}`);
+  if (problemAgain) die(`${path} は使えません: ${why(problemAgain)}`);
 
+  ready.push(incoming);
+}
+
+let added = 0;
+let replaced = 0;
+
+for (const incoming of ready) {
   // The channel, not the name. Two presets for one channel would both be
   // offered to the same empty deck, which is the collision that matters;
   // two channels sharing a display name are never offered together, and

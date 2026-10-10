@@ -526,4 +526,108 @@ check("with the reason it gave", got.said.join("").includes("opt.cannotRead"));
   check("a channel that did answer stays answered", a.seen.asks === 2);
 }
 
+// The builder asks the same question from its own cache, and had the same
+// hole in it — found only once both were looked at together. Two caches is
+// itself the reason: the page kept offering a preset the bar had given up on.
+{
+  const begin = optionsSrc.indexOf("async function loadBundled(channelId) {");
+  const stop = optionsSrc.indexOf("\n}", begin) + 2;
+  if (begin < 0 || stop <= begin) {
+    console.log("FAIL could not lift loadBundled out of options.js");
+    process.exit(1);
+  }
+
+  const asking = (answer) => {
+    const seen = { asks: 0 };
+    const api = new Function(
+      "chrome", "seen",
+      `const bundled = new Map();
+       ${optionsSrc.slice(begin, stop)} return loadBundled;`
+    )(
+      { runtime: { sendMessage: () => { seen.asks += 1; return answer(seen.asks); } } },
+      seen
+    );
+    return { ask: api, seen };
+  };
+
+  let b = asking(() => Promise.reject(new Error("message port closed")));
+  await b.ask(CH);
+  await b.ask(CH);
+  check("the builder asks again after an ask nothing answered", b.seen.asks === 2);
+
+  b = asking(() => { throw new Error("Extension context invalidated"); });
+  await b.ask(CH);
+  await b.ask(CH);
+  check("and after one that could not be sent", b.seen.asks === 2);
+
+  // The worker answered, and what it said was no: the files could not be
+  // read. That is not "this channel has no preset" either.
+  b = asking(() => Promise.resolve({ ok: false, error: "presets unreadable" }));
+  await b.ask(CH);
+  await b.ask(CH);
+  check("and after one the worker itself could not answer", b.seen.asks === 2);
+
+  b = asking(() => Promise.resolve({ ok: true, value: [] }));
+  check("while a channel with no preset is asked about once there too",
+    (await b.ask(CH)).length === 0 && (await b.ask(CH)).length === 0 && b.seen.asks === 1);
+}
+
+/* ---------- the script that puts one in the repository ---------- */
+
+// Not shipped, but it writes into what is. Run in a copy of the tree: the
+// real presets/ is the thing being protected, and a test that writes there to
+// prove it writes there has already lost.
+{
+  const { mkdtempSync, mkdirSync, writeFileSync, cpSync, readFileSync, readdirSync } =
+    await import("node:fs");
+  const { execFileSync } = await import("node:child_process");
+  const { tmpdir } = await import("node:os");
+
+  const here = new URL("../../", import.meta.url).pathname;
+  const lab = mkdtempSync(`${tmpdir()}/oshideck-preset-`);
+  cpSync(`${here}src`, `${lab}/src`, { recursive: true });
+  mkdirSync(`${lab}/tools`);
+  mkdirSync(`${lab}/presets`);
+  cpSync(`${here}tools/add-preset.mjs`, `${lab}/tools/add-preset.mjs`);
+  writeFileSync(`${lab}/presets/index.json`, `${JSON.stringify({ format: 2, presets: [] }, null, 2)}\n`);
+
+  const file = (name, body) => {
+    writeFileSync(`${lab}/${name}`, JSON.stringify(body));
+    return `${lab}/${name}`;
+  };
+  const run = (...args) => {
+    try {
+      return { code: 0, said: execFileSync(process.execPath,
+        [`${lab}/tools/add-preset.mjs`, ...args], { stdio: "pipe" }).toString() };
+    } catch (error) {
+      return { code: error.status, said: `${error.stdout}${error.stderr}` };
+    }
+  };
+  const inPresets = () => readdirSync(`${lab}/presets`).sort().join();
+
+  const good = file("good.json",
+    { format: 2, name: "さくら", channel: CH, cards: [{ tokens: text("わこつ"), scope: "global" }] });
+  const broken = file("broken.json", { format: 2, name: "こわれ", channel: OTHER, cards: "いいえ" });
+
+  // One good file and one that cannot be used. The write happened as it went,
+  // so the good one landed in presets/ while the index — written only at the
+  // end — never heard about it: a file nothing names and nothing loads.
+  let got = run(good, broken);
+  check("a batch with an unusable file in it fails", got.code === 1);
+  check("and leaves nothing behind it", inPresets() === "index.json");
+
+  got = run(good);
+  check("while the good one on its own is written", inPresets() === `${CH}.json,index.json`);
+  check("and named in the index",
+    JSON.parse(readFileSync(`${lab}/presets/index.json`, "utf8")).presets[0].channel === CH);
+
+  // The second check, the one --channel makes necessary, printed the key and
+  // its arguments joined by a comma — the thing i18n was added here to stop.
+  const unnamed = file("unnamed.json",
+    { format: 2, name: "だれか", cards: [{ tokens: text("わこつ"), scope: "global" }] });
+  got = run(unnamed, "--channel", "not-a-channel");
+  check("a channel named on the command line is checked too", got.code === 1);
+  check("and the reason is said, not keyed", !got.said.includes("validation."));
+}
+
 process.exit(fail);

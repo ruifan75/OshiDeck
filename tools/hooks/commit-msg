@@ -14,27 +14,18 @@ set -e
 . "$(dirname "$0")/private.sh"
 
 msg=$1
-bad=0
 
 say() { echo "     $1"; }
 
-if [ -n "$(name_lines < "$msg")" ]; then
-  say "名前らしき語が入っています（このマシンのアカウント名）"
-  bad=1
-fi
+# The message read as a patch of one file, so that one scanner answers for
+# both hooks: what is in the message is what is being added, and the file it
+# is "in" is the message itself.
+found=$({ printf '+++ b/x\n'; sed 's/^/+/' "$msg"; } | scan | cut -f2 | sort -u)
 
-if [ -n "$(home_lines < "$msg")" ]; then
-  say "ホームディレクトリのパスが入っています"
-  bad=1
-fi
-
-if [ -n "$(address_lines < "$msg")" ]; then
-  say "個人アドレスらしきものが入っています"
-  bad=1
-fi
-
-if [ "$bad" = 1 ]; then
+if [ -n "$found" ]; then
   echo "FAIL このコミットメッセージは公開に向きません:"
+  echo
+  printf '%s\n' "$found" | sed 's|^|     |'
   echo
   say "公開リポジトリです。GitHub のアカウント名以外の呼び方は要りません。"
   say "どれのことかはここには書きません。書けば同じものを配ることになります。"

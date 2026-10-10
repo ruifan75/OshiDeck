@@ -6,6 +6,7 @@ cd "$(dirname "$0")/.."
 
 echo "hooks"
 sh tools/check-hooks.sh
+node tools/check-hook-tests.mjs
 echo
 
 echo "syntax"

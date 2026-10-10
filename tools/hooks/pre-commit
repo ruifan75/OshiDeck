@@ -7,49 +7,24 @@
 # channels and somebody's stage name will collide with somebody's account
 # name sooner or later — it did.
 #
-# tools/check-hooks.sh is exempt for the opposite reason: its whole job is to
-# hold made-up versions of everything here refuses, and it cannot do that job
-# and pass this check. Made-up is the standing requirement for that file — a
-# test written against the real ones would have written them down, which is
-# the thing being prevented.
+# tools/check-hooks.sh is half exempt, and only in one direction: its job is
+# to hold made-up versions of everything here refuses, so addresses in the
+# domains reserved for documentation are allowed *there*. A real-looking one
+# is refused in that file like anywhere else. An outright exemption would have
+# been a hole with a comment over it.
 set -e
 
 . "$(dirname "$0")/private.sh"
 
-work=$(mktemp -d)
-trap 'rm -rf "$work"' EXIT
-: > "$work/report"
-note() { printf '     %s — %s\n' "$1" "$2" >> "$work/report"; }
+# --text so that a file git calls binary still announces its path: without it
+# there is no +++ line for one, and the name is a place something private can
+# sit just as well as a line inside.
+found=$(git diff --cached -p --text --no-color --no-ext-diff --diff-filter=ACMRTC \
+          -- . ':(exclude)tools/channels.json' | scan tools/check-hooks.sh)
 
-# Paths as git hands them over, not as the shell would cut them up. Split on
-# spaces, a name with a space in it arrived as two names that existed nowhere,
-# so the file was never read and whatever was in it went in with it. Renames
-# count as well: they were filtered out, and a file edited while being moved
-# was looked at by nobody.
-git diff --cached --name-only -z --diff-filter=ACMRTC | tr '\0' '\n' > "$work/files"
-
-while IFS= read -r file; do
-  [ -n "$file" ] || continue
-  case "$file" in
-    tools/channels.json|tools/hooks/*|tools/check-hooks.sh) continue ;;
-  esac
-
-  # Fail closed. A path that does not resolve means the list was cut
-  # somewhere we did not expect, and a file that cannot be read is a file
-  # nobody can vouch for.
-  if ! git cat-file -e ":$file" 2>/dev/null; then
-    note "$file" "読み取れないパス"
-    continue
-  fi
-
-  for n in $(git show ":$file" | name_lines); do note "$file:$n" "名前らしき語"; done
-  for n in $(git show ":$file" | home_lines); do note "$file:$n" "ホームディレクトリのパス"; done
-  for n in $(git show ":$file" | address_lines); do note "$file:$n" "個人アドレスらしきもの"; done
-done < "$work/files"
-
-if [ -s "$work/report" ]; then
+if [ -n "$found" ]; then
   echo "FAIL ステージされた内容は公開に向きません:"
-  cat "$work/report"
+  printf '%s\n' "$found" | sed 's|^|     |'
   echo "     中身はここには出しません。出せば同じものを配ることになります。"
   echo "     --no-verify で通せますが、履歴からは消えません。"
   exit 1
@@ -73,34 +48,40 @@ fi
 #
 # Only what is actually shipped counts. Hooks, tests and the mining scripts
 # are not in the package and have no version to move.
+#
+# HEAD, with no exception made for `--amend`. There was one: it read the
+# parent process's command line, which meant a commit whose *message*
+# mentioned --amend was taken for an amend and waved through — an exception
+# anybody could ask for by typing it. Git tells a hook nothing that separates
+# the two (only GIT_AUTHOR_DATE differs, and only by being reused, which an
+# ordinary commit in the same second reproduces). So amending a release means
+# moving the version again, which is honest: it is a different commit, and
+# what it publishes is different.
 version() { sed -n 's/.*"version"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p'; }
 
 # Both ends of a rename. --name-only names where a file landed, so moving a
 # shipped file out of the package read as nothing shipped having changed:
 # the file left, the version stayed.
+#
+# --name-status -z gives status, source and destination as three NUL records,
+# and the grouping is what has to survive: cut the stream into lines first and
+# a single path containing a newline shifts every record after it by one, so
+# the source of the *next* rename is read as a status and never looked at.
+# xargs counts NULs and cannot be shifted by anything inside a path.
 shipped=$(
   { git diff --cached --name-only -z --diff-filter=ACMRTD
-    git diff --cached --name-status -z --diff-filter=RC | tr '\0' '\n' | awk 'NR % 3 == 2'
+    git diff --cached --name-status -z --diff-filter=RC |
+      xargs -0 -n3 sh -c 'printf "%s\0" "$2"' _
   } | tr '\0' '\n' |
   grep -E '^(manifest\.json|background\.js|content\.js|options\.js|options\.html|[^/]*\.css)$|^(src|presets|icons)/' || true)
 
 if [ -n "$shipped" ]; then
-  # --amend replaces HEAD, so the version it has to beat is the one before
-  # HEAD. Measured against HEAD itself, a release being amended looks like a
-  # commit that never moved the version — when moving it is what it did.
-  was_at=HEAD
-  for pid in "$PPID" "$(ps -o ppid= -p "$PPID" 2>/dev/null | tr -d ' ')"; do
-    [ -n "$pid" ] || continue
-    case "$(ps -o args= -p "$pid" 2>/dev/null)" in
-      *--amend*) was_at=HEAD^ ;;
-    esac
-  done
-
-  was=$(git show "$was_at:manifest.json" 2>/dev/null | version || true)
+  was=$(git show HEAD:manifest.json 2>/dev/null | version || true)
   now=$(git show :manifest.json 2>/dev/null | version || true)
   if [ -n "$was" ] && [ "$was" = "$now" ]; then
     echo "FAIL 配布されるファイルが変わったのに manifest.json の version は $was のままです。"
     echo "     直した挙動なら patch、見える変化なら minor を上げてください。"
+    echo "     リリースを --amend で直す場合もこれは同じです（もう一段上げるか --no-verify）。"
     echo "$shipped" | sed 's|^|     |'
     exit 1
   fi

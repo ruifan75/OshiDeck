@@ -20,7 +20,9 @@ echo "ok   hooks ($want)"
 # actually fire would be the same mistake with a file in front of it. The
 # privacy hooks had been taken on trust the same way for longer, and four
 # ways through them turned up the first time anybody ran them.
-hooks=$(pwd)/tools/hooks
+# OD_HOOKS so that tools/check-hook-tests.mjs can point this at a copy
+# with one promise broken and watch a case go red.
+hooks=${OD_HOOKS:-$(pwd)/tools/hooks}
 lab=$(mktemp -d)
 trap 'rm -rf "$lab"' EXIT
 
@@ -72,10 +74,20 @@ try "something that is not shipped needs no version at all" 0
 (cd "$lab" && git mv content.js tools-backup.js)
 try "a shipped file moved out of the package still needs a version" 1
 
-# --amend replaces HEAD, so the version it has to beat is the one before
-# HEAD. Measured against HEAD itself, a release being amended looks like a
-# commit that never moved the version — when moving it is what it did. This
-# one has to be a real amend: the hook works it out from how git was called.
+# Two renames at once, one of them through a name with a newline in it. Cut
+# into lines, that name becomes two records and shifts every record after it:
+# the shipped file's old path lands where a status is expected and is never
+# read, so content.js could leave the package unnoticed in its company.
+(cd "$lab" && git reset -q --hard && git clean -qfd)
+echo "ordinary" > "$lab/a.txt"
+(cd "$lab" && git add -- a.txt && git -c core.hooksPath=/dev/null commit -qm fourth)
+(cd "$lab" && git mv a.txt "$(printf 'one\ntwo.txt')" && git mv content.js tools-backup.js)
+try "a shipped file moved out beside a name with a newline in it" 1
+
+# --amend is not detected at all, on purpose: the only thing a hook can read
+# about it is somebody else's command line, and a commit whose message said
+# --amend was waved through. So a release being amended is refused like
+# anything else, and the refusal says what to do about it.
 (cd "$lab" && git reset -q --hard && git clean -qfd)
 sed -i.bak 's/1\.2\.4/1.2.5/' "$lab/manifest.json" && rm -f "$lab/manifest.json.bak"
 echo "e" >> "$lab/content.js"
@@ -85,49 +97,51 @@ echo "f" >> "$lab/content.js"
 got=0
 (cd "$lab" && git add -- content.js &&
  git -c core.hooksPath="$hooks" commit -q --amend --no-edit) >/dev/null 2>&1 || got=$?
-expect "amending a release that already moved the version is allowed" 0
+expect "amending a release is still a shipped change without a version" 1
 
-# And not a way round the rule: amend into a commit that did not move it and
-# the answer is the same as it would be for an ordinary commit.
-echo "g" >> "$lab/tools-ish.txt"
-(cd "$lab" && git add -- tools-ish.txt && git -c core.hooksPath="$hooks" commit -qm notes)
-echo "h" >> "$lab/content.js"
+# And the way that exception used to be asked for: the rule read the parent
+# process's command line, so saying the word was enough to be believed.
+(cd "$lab" && git reset -q --hard && git clean -qfd)
+echo "g" >> "$lab/content.js"
 got=0
 (cd "$lab" && git add -- content.js &&
- git -c core.hooksPath="$hooks" commit -q --amend --no-edit) >/dev/null 2>&1 || got=$?
-expect "but amending a shipped change into one that did not is refused" 1
+ git -c core.hooksPath="$hooks" commit -q -m "Fix --amend detection") >/dev/null 2>&1 || got=$?
+expect "a message that merely mentions --amend is not an amend" 1
 
 if [ "$fails" != 0 ]; then exit 1; fi
 echo "ok   version rule ($tries)"
 
 # ---------------------------------------------------------------- privacy
 
-# Made-up, both of them: a test for these hooks cannot be written against the
+# Made-up, all of it: a test for these hooks cannot be written against the
 # real name and address without writing them down, which is the thing being
 # prevented. The hooks ask $HOME and git for what to look for, so a throwaway
 # home directory is all it takes to give them something else to find.
 tries=0
 fails=0
 home=$lab/home/alice
+dotted=$lab/home/j.doe
 repo=$lab/repo
-mkdir -p "$home" "$repo"
+mkdir -p "$home" "$dotted" "$repo"
+use_home=$home
 
 (
   cd "$repo"
   git init -q .
   git config user.email nobody@users.noreply.github.com
   git config user.name nobody
-  echo "seed" > seed.txt
+  # Long enough that a rename of it is recognised as one.
+  seq 1 40 > seed.txt
   git add -- seed.txt
   git -c core.hooksPath=/dev/null commit -qm seed
 )
 
-fresh() { (cd "$repo" && git reset -q --hard && git clean -qfd); }
+fresh() { use_home=$home; (cd "$repo" && git reset -q --hard && git clean -qfd); }
 
 # Nothing the hooks refuse may come back out in what they print: the terminal,
 # the scrollback and the CI log are all places it would then exist.
 quiet() {
-  if grep -qi "alice\|private\.example\.com" "$lab/out"; then
+  if grep -qi "alice\|j\.doe\|private\.example\.com" "$lab/out"; then
     echo "FAIL $1 は拒否の理由として守っている文字列そのものを出しました"
     fails=$((fails + 1))
   fi
@@ -135,7 +149,7 @@ quiet() {
 
 staged() {
   got=0
-  (cd "$repo" && HOME="$home" "$hooks/pre-commit" >"$lab/out" 2>&1) || got=$?
+  (cd "$repo" && HOME="$use_home" "$hooks/pre-commit" >"$lab/out" 2>&1) || got=$?
   expect "$1" "$2"
   if [ "$2" = 1 ]; then quiet "$1"; fi
 }
@@ -143,12 +157,22 @@ staged() {
 message() {
   printf '%s\n' "$2" > "$lab/msg"
   got=0
-  (cd "$repo" && HOME="$home" "$hooks/commit-msg" "$lab/msg" >"$lab/out" 2>&1) || got=$?
+  (cd "$repo" && HOME="$use_home" "$hooks/commit-msg" "$lab/msg" >"$lab/out" 2>&1) || got=$?
   expect "$1" "$3"
   if [ "$3" = 1 ]; then quiet "$1"; fi
 }
 
 add() { (cd "$repo" && git add -- "$1"); }
+
+# A fixture that quietly stops being what it says it is tests nothing. This
+# one did: the rename case was an add and a delete, and passed against a hook
+# that never looked at renames.
+staged_is() {
+  if ! (cd "$repo" && git diff --cached --name-status --diff-filter="$1" | grep -q "^$1"); then
+    echo "FAIL $2 の仕掛けが $1 になっていません"
+    fails=$((fails + 1))
+  fi
+}
 
 # An allowed address does not make the line it is on a safe place to stand.
 fresh
@@ -163,10 +187,28 @@ printf 'pilot@private.example.com\n' > "$repo/a note.txt"
 add "a note.txt"
 staged "a filename with a space does not hide what is in it" 1
 
+# And one with a newline in it used to arrive as two real ones — these two,
+# which are clean, so the hook read them and said nothing about the file that
+# was actually being added.
+fresh
+printf 'nothing\n' > "$repo/one"
+printf 'nothing\n' > "$repo/two.txt"
+printf 'pilot@private.example.com\n' > "$repo/$(printf 'one\ntwo.txt')"
+(cd "$repo" && git add -- one two.txt "$(printf 'one\ntwo.txt')")
+staged "a filename with a newline does not hand the hook two other files" 1
+
 # Filtered out by status, a file edited while being moved was read by nobody.
 fresh
 (cd "$repo" && git mv seed.txt moved.txt && printf 'pilot@private.example.com\n' >> moved.txt && git add -- moved.txt)
+staged_is R "a rename carries its contents and is read too"
 staged "a rename carries its contents and is read too" 1
+
+# The name itself is a place something can sit, and then it cannot be what the
+# refusal points at either.
+fresh
+printf 'nothing in here\n' > "$repo/pilot@private.example.invalid"
+add "pilot@private.example.invalid"
+staged "a filename that is itself an address is caught" 1
 
 # Unanchored, the permitted suffix only had to appear somewhere.
 fresh
@@ -178,6 +220,24 @@ fresh
 printf 'nobody@users.noreply.github.com\n' > "$repo/notes.txt"
 add notes.txt
 staged "the permitted address itself goes through" 0
+
+# What a commit takes away is already in the history; refusing to let it go
+# would be exactly backwards — both the whole file, and the one line of a file
+# that is being cleaned up.
+fresh
+printf 'pilot@private.example.com\n' > "$repo/leak.txt"
+printf 'keep\npilot@private.example.com\n' > "$repo/history.txt"
+(cd "$repo" && git add -- leak.txt history.txt)
+(cd "$repo" && git -c core.hooksPath=/dev/null commit -qm "a leak, for the test")
+
+(cd "$repo" && git rm -q leak.txt)
+staged "taking a file like that back out is allowed" 0
+
+fresh
+printf 'keep\nnothing here now\n' > "$repo/history.txt"
+add history.txt
+staged "and so is taking the line out of one that stays" 0
+(cd "$repo" && git add -- history.txt && git -c core.hooksPath=/dev/null commit -qm "cleaned")
 
 fresh
 printf 'written by alice, probably\n' > "$repo/notes.txt"
@@ -196,19 +256,67 @@ printf 'Clarify malice handling\n' > "$repo/notes.txt"
 add notes.txt
 staged "a longer word that merely contains it is not a mention" 0
 
+# A name can hold a `.`, and as a pattern that matches any character at all.
 fresh
-printf 'cd %s/work\n' "$home" > "$repo/notes.txt"
+use_home=$dotted
+printf 'written by j.doe, probably\n' > "$repo/notes.txt"
+add notes.txt
+staged "a name with a dot in it is caught" 1
+
+fresh
+use_home=$dotted
+printf 'jxdoe is somebody else entirely\n' > "$repo/notes.txt"
+add notes.txt
+staged "and the dot is a dot, not any letter" 0
+
+fresh
+printf 'cd %s/work\n' "$use_home" > "$repo/notes.txt"
 add notes.txt
 staged "the home directory path is caught" 1
 
 # No file and no message shows this one; it rides on the commit itself.
+# Author and committer are set apart, because one fixture answering for both
+# cannot tell a hook that checks only one from a hook that checks both.
 fresh
-(cd "$repo" && git config user.email alice@private.example.com)
 printf 'nothing to see\n' > "$repo/notes.txt"
 add notes.txt
-staged "an identity nobody would publish is refused too" 1
+(cd "$repo" && git config user.email pilot@private.example.com)
+staged "an identity nobody would publish is refused" 1
 message "and refused on the way past the message as well" "A perfectly ordinary message" 1
 (cd "$repo" && git config user.email nobody@users.noreply.github.com)
+
+got=0
+(cd "$repo" && GIT_AUTHOR_EMAIL=pilot@private.example.com HOME="$home" "$hooks/pre-commit" >"$lab/out" 2>&1) || got=$?
+expect "an author nobody would publish is refused on its own" 1
+quiet "an author nobody would publish is refused on its own"
+
+got=0
+(cd "$repo" && GIT_COMMITTER_EMAIL=pilot@private.example.com HOME="$home" "$hooks/pre-commit" >"$lab/out" 2>&1) || got=$?
+expect "and so is a committer" 1
+quiet "and so is a committer"
+
+# An address at a host with no dot in it does not look like an address at all,
+# which is why the identity is asked the other way round: not whether it looks
+# private, but whether it is one of the two that are allowed.
+got=0
+(cd "$repo" && GIT_AUTHOR_EMAIL=pilot@intranet HOME="$home" "$hooks/pre-commit" >"$lab/out" 2>&1) || got=$?
+expect "an identity at a host with no dot is refused too" 1
+
+# The one file allowed to hold made-up versions of all this, and only that far:
+# documentation domains yes, anything else no. (The refusal case cannot be
+# written here — a non-reserved address in this file would stop this file
+# being committed, which is the hook working.)
+fresh
+mkdir -p "$repo/tools"
+printf 'pilot@private.example.com\n' > "$repo/tools/check-hooks.sh"
+add tools/check-hooks.sh
+staged "the file that must hold examples may hold them" 0
+
+fresh
+mkdir -p "$repo/tools"
+printf 'cd %s/work\n' "$use_home" > "$repo/tools/check-hooks.sh"
+add tools/check-hooks.sh
+staged "but it is not exempt from anything else" 1
 
 fresh
 message "an address in the message is refused" "ask pilot@private.example.com" 1

@@ -98,7 +98,7 @@
     "pool.empty":            { ja: "入れられる札がありません", "zh-TW": "沒有可以加入的牌", en: "Nothing left to add" },
     "pool.emptyHint":        { ja: "コメントを入力して保存すると札になります",
                                "zh-TW": "輸入留言並儲存，就會變成一張牌",
-                               en: "Type a comment and save it, and it becomes a card" },
+                               en: "Type a comment and save it to make a card" },
 
     /* ---------- what went wrong, and what just happened ---------- */
     "toast.noInput":         { ja: "入力欄が見つかりません", "zh-TW": "找不到輸入欄",

@@ -54,6 +54,16 @@ check("both sides of a choice are read, not just the first",
   [...noticeKeys(toast('a ? t("dup.inDeck") : t("dup.inPool")')).keys()].sort().join() ===
     "dup.inDeck,dup.inPool");
 
+// A notice holds the row for a few seconds; what the bar says of itself
+// holds it for as long as the deck is empty, which is longer. Same row, same
+// cut, same budget — and it arrives through a different call.
+check("what the bar says of itself is measured too, not only the toasts",
+  [...noticeKeys('function f() { barLine(t("pool.emptyHint")); }').keys()].join() ===
+    "pool.emptyHint");
+
+check("and the panel's own empty line is one of the ones measured",
+  noticeKeys(read("content.js")).has("pool.emptyHint"));
+
 check("the button's own label is not measured as the message",
   [...noticeKeys(toast('t("toast.ejected"), { actionLabel: t("action.undo") }')).keys()].join() ===
     "toast.ejected");

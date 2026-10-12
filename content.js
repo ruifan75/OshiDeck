@@ -1711,14 +1711,14 @@
   // something worth keeping it becomes the destination picker, so choosing
   // where a card goes is one click on a labelled button — never a guess
   // followed by a correction.
-  function buildBar({ channel, hue, count, mine, offered, waiting }) {
+  function buildBar({ channel, hue, count, mine, offered, waiting, empty }) {
     const bar = document.createElement("div");
     bar.className = "od-bar";
     // Everything that would otherwise float over the chat lives here instead.
     if (notice) bar.append(noticeRow(notice));
     else if (peek) bar.append(peekReadout(peek));
     else if (poolOpen) bar.append(poolTabs(mine, offered));
-    else bar.append(inputHasContent ? saveTargets(channel, hue) : deckIdentity(channel, hue, count));
+    else bar.append(inputHasContent ? saveTargets(channel, hue) : deckIdentity(channel, hue, count, empty));
 
     if (poolOpen) {
       bar.appendChild(buildAction("close", t("action.close"), t("aria.closePool"), () => {
@@ -1744,6 +1744,18 @@
       bar.appendChild(buildAction("deck", t("action.build"), t("aria.openBuilder"), () => openOptions()));
     }
     return bar;
+  }
+
+  // The bar saying something in its own voice, rather than reading a card
+  // back or offering a target. It gets the room a notice gets and is cut the
+  // same way, so it goes through a function of its own: tools/check-width.mjs
+  // reads what lands here by reading the calls, exactly as it does for the
+  // notices, and a sentence added later is measured without being listed.
+  function barLine(message) {
+    const line = document.createElement("span");
+    line.className = "od-bar-line";
+    line.textContent = message;
+    return line;
   }
 
   function noticeRow({ message, actionLabel, onAction }) {
@@ -1840,7 +1852,21 @@
     return group;
   }
 
-  function deckIdentity(channel, hue, count) {
+  // With nothing in the deck the two dots and the zero are a legend for a
+  // list that is not there — and under them sat a row of hint text, a blank
+  // line and the padding around both. That was most of what a new deck ever
+  // showed, in a chat column 400px tall. The bar already has a line; the one
+  // useful sentence goes on it, and the row goes away.
+  //
+  // Which sentence depends on what is wrong. A card saved with no channel
+  // does still become a card — it goes to the pool — but it has no deck to
+  // appear in, because decks are per channel and there is no channel. So the
+  // hint would answer a question nobody asked and leave the real one, why is
+  // this empty, unanswered. A popped-out chat window has no owner to find and
+  // stays this way for good; it should say so.
+  function deckIdentity(channel, hue, count, empty) {
+    if (empty) return barLine(channel?.id ? t("pool.emptyHint") : t("toast.noChannel"));
+
     const group = document.createElement("div");
     group.className = "od-bar-identity";
 
@@ -2151,20 +2177,30 @@
       dropStalePeek();
       rootEl.dataset.mode = data.settings.mode;
       rootEl.dataset.pool = String(poolOpen);
+      // Nothing to draw: the panel pulls itself in to the one line it cannot
+      // give up. An attribute rather than a class, because the whole panel
+      // tightens — its own padding as much as what is inside it — and that
+      // is the root's business, not a child's.
+      const empty = !shown.length && !drawn;
+      rootEl.toggleAttribute("data-empty", empty);
 
       barContext = { channel, hue, count: shown.length,
-                     mine: mine.length, offered: offered.length, waiting };
+                     mine: mine.length, offered: offered.length, waiting, empty };
       barEl = buildBar(barContext);
       rootEl.appendChild(barEl);
 
-      if (!shown.length && !drawn) {
-        const empty = document.createElement("div");
-        empty.className = "od-empty";
-        empty.textContent = poolOpen
-          ? t("pool.empty")
-          : t("pool.emptyHint");
-        rootEl.appendChild(empty);
-        if (!poolOpen) appendPresetOffer(rootEl, channel);
+      if (empty) {
+        // The pool is a place you opened on purpose, and finding it bare is
+        // an answer to a question you asked — that one keeps its line. The
+        // deck's hint does not: the bar is saying it now.
+        if (poolOpen) {
+          const nothing = document.createElement("div");
+          nothing.className = "od-empty";
+          nothing.textContent = t("pool.empty");
+          rootEl.appendChild(nothing);
+        } else {
+          appendPresetOffer(rootEl, channel);
+        }
         return;
       }
 

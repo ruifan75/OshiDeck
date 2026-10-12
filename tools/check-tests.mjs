@@ -538,6 +538,32 @@ const MUTATIONS = [
     "    const unanswered = () => { asked.delete(channelId); };",
     "    const unanswered = () => {};"],
 
+  // The empty panel. A bar, a row of hint text and the padding around both
+  // was most of what a new deck ever showed, and all a popped-out chat window
+  // would ever show.
+  [VISIBILITY, CONTENT, "an empty panel that still counts to zero",
+    '    if (empty) return barLine(channel?.id ? t("pool.emptyHint") : t("toast.noChannel"));',
+    ""],
+
+  [VISIBILITY, CONTENT, "a hint pointing at a deck that cannot exist",
+    '    if (empty) return barLine(channel?.id ? t("pool.emptyHint") : t("toast.noChannel"));',
+    '    if (empty) return barLine(t("pool.emptyHint"));'],
+
+  // The bar can be right about everything it is told and be told nothing.
+  [VISIBILITY, CONTENT, "a bar never told the panel has nothing in it",
+    "                     mine: mine.length, offered: offered.length, waiting, empty };",
+    "                     mine: mine.length, offered: offered.length, waiting };"],
+
+  // Most of what an empty panel costs is the padding around it, and that is
+  // a rule rather than a line of code.
+  [VISIBILITY, STYLE, "an empty panel that keeps its padding",
+    "#oshideck-root[data-empty] {\n  padding-top: 3px;",
+    "#oshideck-root[data-empty] {\n  padding-top: 7px;"],
+
+  [WIDTH, WIDTHSRC, "the bar's own line never measured",
+    '  for (const call of [...calls(source, "showToast"), ...calls(source, "barLine")]) {',
+    '  for (const call of calls(source, "showToast")) {'],
+
   [VISIBILITY, CONTENT, "a drawn card given nothing to press",
     `  function drawnTools(card) {
     const tools = document.createElement("div");
@@ -905,6 +931,11 @@ const KILLS = {
   "a resize that the fan is never told about": "the panel being resized is a change",
   "presets arriving after the panel has given up asking": "the presets arriving is a change",
   "a panel that never actually skips": "render still decides whether to skip",
+  "an empty panel that still counts to zero": "an empty deck says what to do instead of counting to zero",
+  "a hint pointing at a deck that cannot exist": "a chat whose channel cannot be worked out says that instead",
+  "a bar never told the panel has nothing in it": "the bar is given the same answer the panel acted on",
+  "an empty panel that keeps its padding": "the panel gives up its padding when it has nothing to show",
+  "the bar's own line never measured": "the panel's own empty line is one of the ones measured",
 
   "a flat count instead of recency": "so the new reaction takes the front",
   "a burst with no floor under it": "two of a thing is never a wave, however quiet the room",

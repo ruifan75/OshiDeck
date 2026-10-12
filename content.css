@@ -32,6 +32,20 @@
   padding-bottom: 7px;
 }
 
+/* Nothing to show — no cards in this deck yet, or a chat whose channel cannot
+   be worked out at all. The panel cannot simply go: the way into the builder
+   is in it, and the save targets appear in it the moment you type. So it
+   keeps its one line and gives up everything around it. Written after the
+   list-mode rule above, which matches at the same weight and would otherwise
+   put the padding back. */
+#oshideck-root[data-empty] {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+#oshideck-root[data-empty] .od-bar { min-height: 20px; }
+#oshideck-root[data-empty] .od-empty { padding: 5px 0 2px; }
+
 /* Taking someone else's comment.
 
    YouTube keeps a 32px gutter at the right of every chat row for its own ⋮,
@@ -164,6 +178,19 @@
 /* The bar shows the card in full, so its stamps are drawn here too — at the
    bar's own height rather than a card's, which is the point of showing it. */
 .od-peek .od-emoji { width: 18px; height: 18px; }
+
+/* What the bar says when the deck is empty. One line, cut rather than
+   wrapped: the bar is one line, and a second one is the block this is here
+   to avoid. */
+.od-bar-line {
+  flex: 1;
+  min-width: 0;
+  font-size: 11px;
+  color: var(--od-faint);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 /* The pool's two halves. Quiet until it is the one you are looking at — the
    bar has one line and these share it with the close button. */

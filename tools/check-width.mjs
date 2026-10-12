@@ -1,11 +1,11 @@
 // Does the English fit the bar?
 //
-// `.od-notice-text` is `white-space: nowrap` with `text-overflow: ellipsis`,
-// so a notice that runs long is not wrapped — it is cut, mid-sentence, with
-// no sign of what it was going to say. Japanese says most of these in a dozen
-// characters and never came close; English took five of them past the end,
-// and nobody saw it, because seeing it means opening a 400px sidebar on a
-// live stream.
+// `.od-notice-text` and `.od-bar-line` are both `white-space: nowrap` with
+// `text-overflow: ellipsis`, so a line that runs long is not wrapped — it is
+// cut, mid-sentence, with no sign of what it was going to say. Japanese says
+// most of these in a dozen characters and never came close; English took five
+// of them past the end, and nobody saw it, because seeing it means opening a
+// 400px sidebar on a live stream.
 //
 // So it is measured here instead. The widths are Helvetica/Arial advances in
 // units of 1/1000 em — the font the bar actually gets, since `Roboto` is
@@ -75,12 +75,17 @@ export function width(text, { report } = {}) {
   return units * SIZE / 1000;
 }
 
-// Every key that reaches the notice row, read from the calls rather than
+// Every key that reaches the bar's one line, read from the calls rather than
 // listed here: a list goes stale the first time somebody adds a toast, and
 // goes stale silently.
+//
+// Two doors into the same row. A notice takes it over for a few seconds; what
+// the bar says when the deck is empty sits there for as long as the deck is
+// empty, which is longer. Both are cut at the same place by the same CSS, so
+// both are measured against the same room.
 export function noticeKeys(source) {
   const found = new Map();
-  for (const call of calls(source, "showToast")) {
+  for (const call of [...calls(source, "showToast"), ...calls(source, "barLine")]) {
     const withButton = /\bactionLabel\s*:/.test(call);
     for (const [, key] of call.matchAll(/\bt\(\s*"([\w.]+)"/g)) {
       // The action's own label is a button, not the message.
@@ -121,7 +126,7 @@ export function checkWidth({ MESSAGES, read, report = console.log }) {
   const source = read("content.js");
   const keys = noticeKeys(source);
   if (!keys.size) {
-    report("FAIL showToast の呼び出しが読み取れませんでした");
+    report("FAIL バーに出る文言の呼び出しが読み取れませんでした");
     return 1;
   }
 
@@ -150,7 +155,7 @@ export function checkWidth({ MESSAGES, read, report = console.log }) {
     }
   }
 
-  if (!bad) report(`ok   ${keys.size}件の通知、400pxのバーに収まります`);
+  if (!bad) report(`ok   ${keys.size}件の文言、400pxのバーに収まります`);
   return bad;
 }
 

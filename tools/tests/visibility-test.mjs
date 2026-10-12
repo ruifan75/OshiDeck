@@ -310,32 +310,33 @@ check("and the panel works the count out with it",
 // short panel saying one short thing. The bar is already where this UI puts
 // anything that would otherwise take room of its own.
 {
-  const from = src.indexOf("  function buildBar({ channel, hue, count, mine, offered, waiting }) {");
+  const from = src.indexOf("  function buildBar({ channel, hue, count, mine, offered, waiting, empty }) {");
   const to = src.indexOf("  function noticeRow(");
   if (from < 0 || to < 0 || to <= from) {
     console.log("FAIL could not lift buildBar out of content.js");
     process.exit(1);
   }
 
-  const bar = (poolOpen, mine, offered = 0, waiting = mine + offered) => new Function(
-    "poolOpen", "mine", "offered", "waiting", "document", "t",
+  const bar = (poolOpen, mine, offered = 0, waiting = mine + offered, empty = false) => new Function(
+    "poolOpen", "mine", "offered", "waiting", "empty", "document", "t",
     `let poolTab = "mine";
      const notice = null, peek = null, inputHasContent = false;
      const noticeRow = () => ({ is: "notice" });
      const peekReadout = () => ({ is: "peek" });
      const poolTabs = (m, o) => ({ is: "tabs", mine: m, offered: o });
      const saveTargets = () => ({ is: "saveTargets" });
-     const deckIdentity = () => ({ is: "identity" });
+     const deckIdentity = (channel, hue, count, empty) => ({ is: "identity", empty });
      const buildAction = (icon, text) => ({ is: "action", icon, text });
      const render = () => {};
      const openOptions = () => {};
      ${src.slice(from, to)}
-     return buildBar({ channel: null, hue: 0, count: 4, mine, offered, waiting });`
+     return buildBar({ channel: null, hue: 0, count: 4, mine, offered, waiting, empty });`
   )(
     poolOpen,
     mine,
     offered,
     waiting,
+    empty,
     { createElement: () => ({
         kids: [],
         append(...nodes) { this.kids.push(...nodes); },
@@ -371,10 +372,134 @@ check("and the panel works the count out with it",
   // Inside, they are two labels rather than one list: a card you saved and a
   // card a preset is offering are different things, and shown together the
   // pool was full of cards that were not in it.
+  const identity = (built) => built.kids.find((k) => k.is === "identity");
+  check("the bar is told when there is nothing below it to identify",
+    identity(bar(false, 0, 0, 0, true))?.empty === true);
+  check("and when there is", identity(bar(false, 7))?.empty === false);
+
   const tabs = (built) => built.kids.find((k) => k.is === "tabs");
   check("the pool shows its two halves apart", !!tabs(bar(true, 7, 10)));
   check("each counted on its own",
     tabs(bar(true, 7, 10)).mine === 7 && tabs(bar(true, 7, 10)).offered === 10);
+}
+
+/* ---------- the panel with nothing in it ---------- */
+
+// An empty deck used to cost a bar, a row of hint text, and the padding
+// around both. In a chat column 400px tall that was most of what a new deck
+// ever showed — and all a popped-out chat window ever showed, forever, since
+// a window with no owner to find can never have a deck at all.
+//
+// So the sentence moved onto the bar's own line and the row went away. Which
+// sentence it is matters. A card saved with no channel still becomes a card —
+// it goes to the pool — but it has no deck to appear in, decks being per
+// channel, so the hint would answer a question nobody asked and leave the
+// real one unanswered. The panel has to say it cannot tell where it is.
+{
+  const lift = (name, until) => {
+    const from = src.indexOf(`  function ${name}(`);
+    const to = src.indexOf(until, from);
+    if (from < 0 || to < 0 || to <= from) {
+      console.log(`FAIL could not lift ${name} out of content.js`);
+      process.exit(1);
+    }
+    return src.slice(from, to);
+  };
+
+  const element = () => ({
+    kids: [],
+    className: "",
+    textContent: "",
+    style: { setProperty() {} },
+    append(...nodes) { this.kids.push(...nodes); },
+    appendChild(node) { this.kids.push(node); }
+  });
+
+  const said = lift("deckIdentity", "  function saveTargets(");
+  const identity = (channel, empty) => new Function(
+    "channel", "empty", "document", "t",
+    `${lift("barLine", "  function noticeRow(")}
+     ${said}
+     return deckIdentity(channel, 200, empty ? 0 : 4, empty);`
+  )(channel, empty, { createElement: element }, (key, ...rest) => [key, ...rest].join("|"));
+
+  const here = { id: "UC1", name: "さくらみこ" };
+
+  check("an empty deck says what to do instead of counting to zero",
+    identity(here, true).textContent === "pool.emptyHint");
+  check("and a chat whose channel cannot be worked out says that instead",
+    identity(null, true).textContent === "toast.noChannel");
+
+  // Through barLine, which is the door tools/check-width.mjs reads. A
+  // sentence written straight into a span is a sentence nothing measures,
+  // and this one shares its room with the pool and builder controls.
+  check("and says it on the bar's own measured line",
+    identity(here, true).className === "od-bar-line");
+  check("which is all the bar puts there, not a row underneath",
+    identity(here, true).kids.length === 0);
+
+  // The collapse is not allowed to eat the ordinary bar on its way past.
+  check("a deck with cards in it still names its channel and counts them",
+    identity(here, false).kids.some((k) => k.textContent === "さくらみこ") &&
+      identity(here, false).kids.some((k) => k.textContent === "count.cards|4"));
+
+  // render needs a DOM, so what can be pinned is that it decides the same
+  // thing the bar is told, and that the hint has exactly one home. Two of
+  // them — one on the bar and one in a row below — is the block this removed.
+  check("render works out whether there is anything to show",
+    /\n      const empty = !shown\.length && !drawn;\n/.test(src));
+  check("and the whole panel is told, not only the bar",
+    /rootEl\.toggleAttribute\("data-empty", empty\);/.test(src));
+  check("and the bar is given the same answer the panel acted on",
+    /offered: offered\.length, waiting, empty \};/.test(src));
+  check("the hint is said once, on the bar, and nowhere else",
+    (src.match(/t\("pool\.emptyHint"\)/g) || []).length === 1 &&
+      said.includes('t("pool.emptyHint")'));
+}
+
+/* ---------- and the room that gives back ---------- */
+
+// Most of what an empty panel costs is the padding around it, which is set on
+// the root — so collapsing it is a rule rather than a line of code, and no
+// other test here could see it. List mode sets the same padding at the same
+// weight, so the collapsed rule has to be written after it; before it, an
+// empty panel in list mode keeps the whole block.
+{
+  const css = readFileSync(
+    process.env.OD_CSS
+      ? new URL(`file://${process.env.OD_CSS}`)
+      : new URL("../../content.css", import.meta.url),
+    "utf8"
+  ).replace(/\/\*[\s\S]*?\*\//g, "");
+
+  // Anchored to the start of a line, or `.od-bar` finds the descendant rule
+  // `#oshideck-root[data-empty] .od-bar` written above it and compares the
+  // collapsed height with itself.
+  const bodyOf = (selector) => {
+    const at = css.indexOf(`\n${selector} {`);
+    return at < 0 ? "" : css.slice(at, css.indexOf("}", at));
+  };
+  const px = (body, name) => Number(body.match(new RegExp(`${name}:\\s*(\\d+)px`))?.[1] ?? NaN);
+
+  // Smaller than, not equal to a number written here as well: a test that
+  // copies the stylesheet agrees with whatever the stylesheet says.
+  const collapsed = bodyOf("#oshideck-root[data-empty]");
+  check("the panel gives up its padding when it has nothing to show",
+    px(collapsed, "padding-top") < px(bodyOf("#oshideck-root"), "padding") &&
+      px(collapsed, "padding-bottom") < px(bodyOf("#oshideck-root"), "padding"));
+
+  check("and keeps a line for the bar, a shorter one",
+    px(bodyOf("#oshideck-root[data-empty] .od-bar"), "min-height") <
+      px(bodyOf(".od-bar"), "min-height"));
+
+  check("written after list mode, which sets the same padding at the same weight",
+    css.indexOf("#oshideck-root[data-empty] {") >
+      css.indexOf('#oshideck-root[data-mode="list"] {'));
+
+  const line = bodyOf(".od-bar-line");
+  check("the bar's line is cut rather than wrapped onto a second one",
+    /white-space:\s*nowrap/.test(line) && /text-overflow:\s*ellipsis/.test(line) &&
+      /overflow:\s*hidden/.test(line));
 }
 
 /* ---------- where the skip is decided ---------- */

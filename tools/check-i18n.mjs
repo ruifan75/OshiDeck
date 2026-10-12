@@ -39,6 +39,12 @@ export function checkI18n({ MESSAGES, LANGUAGES, SOURCE, read, report = console.
           fail(`${key} — ${code} の ${m[0]} は「一つのとき|それ以外」の二つに分けてください`);
         }
       }
+      // A brace with no partner. The rule above only ever sees closed pairs,
+      // so `$1{card|cards` walked past it and t(), which prints what it does
+      // not recognise, put the brace on the panel.
+      if (/[{}]/.test((entry[code] || "").replace(/\{[^{}]*\}/g, ""))) {
+        fail(`${key} — ${code} に相手のいない { か } があります`);
+      }
     }
   }
 

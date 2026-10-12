@@ -4,7 +4,7 @@
 import { readFileSync } from "node:fs";
 
 // Loaded by path so the mutation runner can hand over a broken copy.
-const { checkWidth, noticeKeys, width } = await import(
+const { checkWidth, noticeKeys, roomIn, width } = await import(
   process.env.OD_WIDTH ? `file://${process.env.OD_WIDTH}` : "../check-width.mjs");
 
 globalThis.OshiDeck = {};
@@ -41,11 +41,36 @@ for (const [text, real] of MEASURED) {
 check("a character the table cannot measure is refused, not guessed",
   width("枚", { report: () => {} }) === null);
 
+/* ---------- how much room there is ---------- */
+
+// 238.2px is what a real Chromium reported for the busiest bar: the pool tab
+// reading `Pool 24` beside the `Build` button. That number used to be written
+// down; now it is worked out, so this is where the two have to meet. If the
+// arithmetic drifts every budget below drifts with it, and nothing else here
+// would say so. Handed the exact label that bar carried, the arithmetic has
+// to come out at what was measured off it.
+check("the room worked out for a bar reading Pool 24 is the one measured",
+  Math.abs(roomIn({
+    MESSAGES: { ...MESSAGES, "pool.short": { ...MESSAGES["pool.short"], en: "Pool 24" } },
+    source: "\n  const MOST_SHOWN = 99;"
+  }) - 238.2) < 0.1);
+
+// A pool of four figures drew `Pool 10000` and took the width out of the
+// sentence beside it, which was then cut. The cap belongs to content.js; what
+// matters here is that the budget follows it instead of keeping its own idea.
+check("a bar whose count may grow wider leaves the words less room",
+  roomIn({ MESSAGES, source: "\n  const MOST_SHOWN = 9999;" }) <
+    roomIn({ MESSAGES, source: "\n  const MOST_SHOWN = 24;" }));
+
+check("and a panel whose cap cannot be read is not guessed at",
+  roomIn({ MESSAGES, source: "there is no cap in here" }) === null);
+
 /* ---------- what it reads ---------- */
 
 check("every English notice fits the bar as it stands", run().bad === 0);
 
 const toast = (body) => `function f() { showToast(${body}); }`;
+const panel = (body) => `\n  const MOST_SHOWN = 99;\n  function f() { ${body} }`;
 
 check("the keys come from the calls, so a new toast is measured too",
   [...noticeKeys(toast('t("toast.deleted")')).keys()].join() === "toast.deleted");
@@ -67,6 +92,30 @@ check("and the panel's own empty line is one of the ones measured",
 check("the button's own label is not measured as the message",
   [...noticeKeys(toast('t("toast.ejected"), { actionLabel: t("action.undo") }')).keys()].join() ===
     "toast.ejected");
+
+// Every saved.* sentence reaches the row as `showToast(saved)`, with the
+// sentence chosen a few lines above. None of them were measured.
+check("a notice handed its sentence by name is measured too",
+  noticeKeys(panel('const saved = ok ? t("saved.pool") : t("saved.global"); showToast(saved);'))
+    .size === 2);
+
+// Silently measuring nothing is the failure that looks like success.
+check("and one whose sentence cannot be worked out at all is a failure",
+  run({ read: (f) => (f === "content.js"
+    ? panel('showToast(t("toast.deleted")); showToast(whateverThisHolds);')
+    : read(f)) }).bad > 0);
+
+// toast.saveFailedKept is handed a whole sentence rather than a name, and
+// standing a channel name in its $1 understated it by 90px.
+check("a $1 the call fills with another message is measured as that message",
+  run({ MESSAGES: { ...MESSAGES,
+    "toast.inputKept": { ...MESSAGES["toast.inputKept"], en: "W".repeat(40) } } }).bad > 0);
+
+// Reporting the unknown character and then handing the notice the button's
+// space as well is the one outcome worse than either on its own.
+check("a button label the table cannot measure fails instead of passing",
+  run({ MESSAGES: { ...MESSAGES,
+    "action.undo": { ...MESSAGES["action.undo"], en: "↶ Undo" } } }).bad > 0);
 
 // A bar with no toasts in it is not a bar that fits; it is a file this
 // checker failed to read, which looked exactly like success before.

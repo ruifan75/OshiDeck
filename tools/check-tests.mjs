@@ -51,6 +51,9 @@ const I18NSRC = { file: "src/i18n.js", env: "OD_I18N" };
 // Not shipped, but it is the only thing that can say whether the English
 // fits a 400px bar without opening one.
 const WIDTHSRC = { file: "tools/check-width.mjs", env: "OD_WIDTH" };
+// Likewise the audit of the message table: its rules are worth what their
+// being able to fail is worth.
+const I18NCHECK = { file: "tools/check-i18n.mjs", env: "OD_I18NCHECK" };
 // Not JavaScript, so `node --check` has nothing to say about it. Twice now a
 // decision made correctly in JS was painted over by a rule in CSS, which no
 // test could see.
@@ -222,11 +225,11 @@ const MUTATIONS = [
     "          if (one === undefined) return String(value);\n          if (true) return Number(value) === 1 ? one : many;"],
 
   [WIDTH, WIDTHSRC, "a bar given more room than it has",
-    "const ROOM = 238.2;",
-    "const ROOM = 999;"],
+    "const BAR = 376;",
+    "const BAR = 999;"],
 
   [WIDTH, WIDTHSRC, "a button that costs the notice nothing",
-    "    return w === null ? ROOM : ROOM - (w * BOLD + PADDING + GAP);",
+    "    return ROOM - (w * BOLD + PADDING + GAP);",
     "    return ROOM;"],
 
   [WIDTH, WIDTHSRC, "a character of unknown width guessed at",
@@ -561,8 +564,57 @@ const MUTATIONS = [
     "#oshideck-root[data-empty] {\n  padding-top: 7px;"],
 
   [WIDTH, WIDTHSRC, "the bar's own line never measured",
-    '  for (const call of [...calls(source, "showToast"), ...calls(source, "barLine")]) {',
-    '  for (const call of calls(source, "showToast")) {'],
+    'const notices = (source) => [...calls(source, "showToast"), ...calls(source, "barLine")];',
+    'const notices = (source) => calls(source, "showToast");'],
+
+  // Setting the mark and never taking it off reads correctly in the source;
+  // the panel then keeps the collapsed padding with cards in it.
+  [VISIBILITY, CONTENT, "a collapsed mark that is never taken off",
+    '      rootEl.toggleAttribute("data-empty", empty);',
+    '      if (empty) rootEl.toggleAttribute("data-empty", empty);'],
+
+  [VISIBILITY, STYLE, "a collapsed panel with more under it than it replaced",
+    "  padding-top: 3px;\n  padding-bottom: 3px;",
+    "  padding-top: 3px;\n  padding-bottom: 6px;"],
+
+  // `Pool 10000` takes 23px out of the sentence beside it, and the budget
+  // that says the sentence fits is worked out from the capped label.
+  [VISIBILITY, CONTENT, "a count printed however large it gets",
+    "  const atMost = (count) => (count > MOST_SHOWN ? `${MOST_SHOWN}+` : count);",
+    "  const atMost = (count) => count;"],
+
+  // The room is worked out from what shares the bar; drop a control and
+  // every budget grows by its width.
+  [WIDTH, WIDTHSRC, "a bar measured as if nothing shared it",
+    "  return BAR - pool - build;",
+    "  return BAR - build;"],
+
+  [WIDTH, WIDTHSRC, "a budget that ignores how wide the count may get",
+    '  const pool = control(MESSAGES["pool.short"]?.en?.replace(/\\$\\d/, `${cap}+`));',
+    '  const pool = control(MESSAGES["pool.short"]?.en?.replace(/\\$\\d/, "1"));'],
+
+  // Every saved.* sentence reaches the row by name, and none of them were
+  // measured while the checker went on saying everything fits.
+  [WIDTH, WIDTHSRC, "a sentence handed over by name never measured",
+    "  return name ? boundTo(source, name) : [];",
+    "  return [];"],
+
+  [WIDTH, WIDTHSRC, "a notice nobody can identify quietly passed over",
+    "  for (const call of unreadable(source)) {",
+    "  for (const call of []) {"],
+
+  [WIDTH, WIDTHSRC, "an unmeasurable button given the notice's own space",
+    `      report(\`FAIL \${label} — ボタンの幅が出せないので、文言に残る幅も出せません\`);
+      return null;`,
+    "      return ROOM;"],
+
+  [WIDTH, WIDTHSRC, "a $1 measured as a name when it is handed a sentence",
+    '    const inner = messagesIn(source, args[Number(slot) - 1] ?? "")',
+    '    const inner = messages(args[Number(slot) - 1] ?? "")'],
+
+  [I18N, I18NCHECK, "a choice left open reaching the panel as braces",
+    '      if (/[{}]/.test((entry[code] || "").replace(/\\{[^{}]*\\}/g, ""))) {',
+    "      if (false) {"],
 
   [VISIBILITY, CONTENT, "a drawn card given nothing to press",
     `  function drawnTools(card) {
@@ -933,9 +985,19 @@ const KILLS = {
   "a panel that never actually skips": "render still decides whether to skip",
   "an empty panel that still counts to zero": "an empty deck says what to do instead of counting to zero",
   "a hint pointing at a deck that cannot exist": "a chat whose channel cannot be worked out says that instead",
-  "a bar never told the panel has nothing in it": "the bar is given the same answer the panel acted on",
+  "a bar never told the panel has nothing in it": "a panel with nothing to show is marked collapsed",
   "an empty panel that keeps its padding": "the panel gives up its padding when it has nothing to show",
   "the bar's own line never measured": "the panel's own empty line is one of the ones measured",
+  "a collapsed mark that is never taken off": "the mark comes off the moment it has a card",
+  "a collapsed panel with more under it than it replaced": "the panel gives up its padding when it has nothing to show",
+  "a count printed however large it gets": "a pool too large to print is not printed in full",
+  "a bar measured as if nothing shared it": "the room worked out for a bar reading Pool 24 is the one measured",
+  "a budget that ignores how wide the count may get": "a bar whose count may grow wider leaves the words less room",
+  "a sentence handed over by name never measured": "a notice handed its sentence by name is measured too",
+  "a notice nobody can identify quietly passed over": "one whose sentence cannot be worked out at all is a failure",
+  "an unmeasurable button given the notice's own space": "a button label the table cannot measure fails instead of passing",
+  "a $1 measured as a name when it is handed a sentence": "a $1 the call fills with another message is measured as that message",
+  "a choice left open reaching the panel as braces": "a choice left open fails",
 
   "a flat count instead of recency": "so the new reaction takes the front",
   "a burst with no floor under it": "two of a thing is never a wave, however quiet the room",

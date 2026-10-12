@@ -1738,7 +1738,7 @@
       // the preset's way of saying everyone here uses it — and adding it
       // once is adding it.
       if (waiting) {
-        bar.appendChild(buildAction("plus", t("pool.short", waiting), t("aria.addFromPool"),
+        bar.appendChild(buildAction("plus", t("pool.short", atMost(waiting)), t("aria.addFromPool"),
           () => { poolOpen = true; poolTab = mine ? "mine" : "offered"; render(); }));
       }
       bar.appendChild(buildAction("deck", t("action.build"), t("aria.openBuilder"), () => openOptions()));
@@ -1757,6 +1757,16 @@
     line.textContent = message;
     return line;
   }
+
+  // The one line of words in the bar is as wide as what sits beside it leaves
+  // it, and this button is one of those things. A pool of four figures drew
+  // `Pool 10000` and took 23px out of the sentence, which was then cut — and
+  // a ten-thousand-card pool is not far-fetched: a backup that size validates
+  // and is under a megabyte. Past ninety-nine the exact number is not what
+  // anyone is reading anyway. tools/check-width.mjs reads this cap to know
+  // how wide the button can get, so the budget and the button cannot drift.
+  const MOST_SHOWN = 99;
+  const atMost = (count) => (count > MOST_SHOWN ? `${MOST_SHOWN}+` : count);
 
   function noticeRow({ message, actionLabel, onAction }) {
     const row = document.createElement("div");

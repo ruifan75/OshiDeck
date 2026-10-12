@@ -6,7 +6,12 @@
 // with decisions in it: which language answers, and what happens when the one
 // asked for has nothing to say.
 import { readFileSync } from "node:fs";
-import { checkI18n } from "../check-i18n.mjs";
+
+// By path, so the mutation runner can hand over a broken copy of the audit
+// itself — the rules it keeps are only worth as much as their being able to
+// fail.
+const { checkI18n } = await import(
+  process.env.OD_I18NCHECK ? `file://${process.env.OD_I18NCHECK}` : "../check-i18n.mjs");
 
 const src = process.env.OD_I18N
   ?? new URL("../../src/i18n.js", import.meta.url).pathname;
@@ -353,5 +358,11 @@ const withChoice = (en) => checkI18n({
 check("the audit is green with the choice written as it is", withChoice("$1{card|cards}") === 0);
 check("a choice not attached to a number fails", withChoice("{card|cards} $1") > 0);
 check("and one cut into three pieces fails", withChoice("$1{card|cards|more}") > 0);
+
+// The rules above only ever see a closed pair, so a brace left open walked
+// straight past them and t() — which prints what it does not recognise —
+// put it on the panel as `1{card|cards`.
+check("a choice left open fails", withChoice("$1{card|cards") > 0);
+check("and a stray closing brace fails too", withChoice("$1 cards}") > 0);
 
 process.exit(fail);

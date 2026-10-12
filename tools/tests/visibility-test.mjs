@@ -367,6 +367,16 @@ check("and the panel works the count out with it",
   // it — and adding the two labels up counted it twice.
   check("the way in says how many cards, not how many entries",
     wayIn(bar(false, 7, 10, 12)).text.includes("12"));
+
+  // The button shares its line with the words beside it. `Pool 10000` took
+  // 23px out of the sentence, which was then cut — and a pool that size is
+  // not far-fetched, since a backup holding it validates and is under a
+  // megabyte. tools/check-width.mjs budgets for the capped label, so a count
+  // printed in full would overrun a bar the checker thinks is fine.
+  check("a pool too large to print is not printed in full",
+    wayIn(bar(false, 100000, 0, 100000)).text.includes("99+"));
+  check("and one small enough is printed as it is",
+    wayIn(bar(false, 7)).text.includes("7"));
   check("and with nothing to add there is still no way in", !wayIn(bar(false, 3, 3, 0)));
 
   // Inside, they are two labels rather than one list: a card you saved and a
@@ -443,18 +453,47 @@ check("and the panel works the count out with it",
     identity(here, false).kids.some((k) => k.textContent === "さくらみこ") &&
       identity(here, false).kids.some((k) => k.textContent === "count.cards|4"));
 
-  // render needs a DOM, so what can be pinned is that it decides the same
-  // thing the bar is told, and that the hint has exactly one home. Two of
-  // them — one on the bar and one in a row below — is the block this removed.
-  check("render works out whether there is anything to show",
-    /\n      const empty = !shown\.length && !drawn;\n/.test(src));
-  check("and the whole panel is told, not only the bar",
-    /rootEl\.toggleAttribute\("data-empty", empty\);/.test(src));
-  check("and the bar is given the same answer the panel acted on",
-    /offered: offered\.length, waiting, empty \};/.test(src));
   check("the hint is said once, on the bar, and nowhere else",
     (src.match(/t\("pool\.emptyHint"\)/g) || []).length === 1 &&
       said.includes('t("pool.emptyHint")'));
+
+  // Setting the mark is not the whole of it: the panel has to take it off
+  // again when a card turns up. Guarded with `if (empty)` the source still
+  // reads correctly, and a populated panel keeps the collapsed padding — so
+  // the decision is run here rather than read.
+  const from = src.indexOf("      rootEl.dataset.mode = data.settings.mode;");
+  const to = src.indexOf("      rootEl.appendChild(barEl);", from);
+  if (from < 0 || to < 0 || to <= from) {
+    console.log("FAIL could not lift the collapse out of render");
+    process.exit(1);
+  }
+
+  const root = {
+    dataset: {},
+    marks: new Set(),
+    toggleAttribute(name, on) { if (on) this.marks.add(name); else this.marks.delete(name); },
+    appendChild() {}
+  };
+  const seen = {};
+  const step = new Function("rootEl", "seen", "shown", "drawn", `
+    let barContext, barEl;
+    const data = { settings: { mode: "hand" } };
+    const poolOpen = false, channel = null, hue = 0, waiting = 0;
+    const mine = [], offered = [];
+    const buildBar = (context) => { seen.context = context; return {}; };
+    ${src.slice(from, to)}`);
+
+  step(root, seen, [], null);
+  check("a panel with nothing to show is marked collapsed",
+    root.marks.has("data-empty") && seen.context.empty === true);
+
+  step(root, seen, [{ id: "a" }], null);
+  check("and the mark comes off the moment it has a card",
+    !root.marks.has("data-empty") && seen.context.empty === false);
+
+  step(root, seen, [], { key: "drawn" });
+  check("a card drawn from chat is something to show, so it is not collapsed",
+    !root.marks.has("data-empty"));
 }
 
 /* ---------- and the room that gives back ---------- */
@@ -481,12 +520,26 @@ check("and the panel works the count out with it",
   };
   const px = (body, name) => Number(body.match(new RegExp(`${name}:\\s*(\\d+)px`))?.[1] ?? NaN);
 
+  // `padding: 7px 12px 5px` is top, sides, bottom. Read against the first
+  // number, a collapsed bottom of 6px — more than the 5px it replaces —
+  // counted as an improvement.
+  const shorthand = (body) => {
+    const parts = (body.match(/padding:\s*([^;]+)/)?.[1] || "")
+      .trim().split(/\s+/).map((value) => Number(value.replace("px", "")));
+    const [top, , bottom = top] = parts;
+    return { top, bottom };
+  };
+
   // Smaller than, not equal to a number written here as well: a test that
-  // copies the stylesheet agrees with whatever the stylesheet says.
+  // copies the stylesheet agrees with whatever the stylesheet says. And
+  // smaller than both bottoms, since list mode sets its own.
   const collapsed = bodyOf("#oshideck-root[data-empty]");
+  const normal = shorthand(bodyOf("#oshideck-root"));
+  const lowest = Math.min(normal.bottom,
+    px(bodyOf('#oshideck-root[data-mode="list"]'), "padding-bottom"));
   check("the panel gives up its padding when it has nothing to show",
-    px(collapsed, "padding-top") < px(bodyOf("#oshideck-root"), "padding") &&
-      px(collapsed, "padding-bottom") < px(bodyOf("#oshideck-root"), "padding"));
+    px(collapsed, "padding-top") < normal.top &&
+      px(collapsed, "padding-bottom") < lowest);
 
   check("and keeps a line for the bar, a shorter one",
     px(bodyOf("#oshideck-root[data-empty] .od-bar"), "min-height") <

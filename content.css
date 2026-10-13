@@ -32,18 +32,23 @@
   padding-bottom: 7px;
 }
 
-/* Nothing to show — no cards in this deck yet, or a chat whose channel cannot
-   be worked out at all. The panel cannot simply go: the way into the builder
-   is in it, and the save targets appear in it the moment you type. So it
-   keeps its one line and gives up everything around it. Written after the
-   list-mode rule above, which matches at the same weight and would otherwise
-   put the padding back. */
-#oshideck-root[data-empty] {
+/* Down to the one line it cannot give up, for either of the two reasons there
+   are. Nothing to show — no cards in this deck yet, or a chat whose channel
+   cannot be worked out at all — or nothing wanted shown, which is the bar's
+   own chevron and is remembered. The panel cannot simply go: the way into the
+   builder is in it, and the save targets appear in it the moment you type. So
+   it keeps that line and gives up everything around it.
+
+   Written after the list-mode rule above, which matches at the same weight and
+   would otherwise put the padding back. */
+#oshideck-root[data-empty],
+#oshideck-root[data-folded] {
   padding-top: 3px;
   padding-bottom: 3px;
 }
 
-#oshideck-root[data-empty] .od-bar { min-height: 20px; }
+#oshideck-root[data-empty] .od-bar,
+#oshideck-root[data-folded] .od-bar { min-height: 20px; }
 #oshideck-root[data-empty] .od-empty { padding: 5px 0 2px; }
 
 /* Taking someone else's comment.
@@ -162,6 +167,35 @@
 }
 
 .od-bar-save { gap: 4px; }
+
+/* The deck's own line is also the handle that folds the panel down to it — a
+   button, so it is reachable by keyboard and says what it does, and so it has
+   to be talked back out of looking like one. */
+button.od-bar-identity {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Pointing the way the panel will go: down to open it, up to put it away.
+   Same chevron and same turn as the one under the hand. */
+.od-fold svg {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+  margin-left: 2px;
+  color: var(--od-faint);
+  transform: rotate(180deg);
+  transition: transform .15s ease;
+}
+
+.od-fold[data-folded="true"] svg { transform: none; }
+.od-fold:hover svg { color: var(--od-text); }
 
 .od-peek {
   flex: 1;

@@ -129,6 +129,15 @@ const S = globalThis.OshiDeck.store;
     check("a mode nobody offers is refused", (await set({ mode: "not-a-mode" })).mode === "hand");
     check("and a row count nobody offers", (await set({ rows: 99 })).rows === 2);
     check("and a sort nobody offers", (await set({ sortBy: "whatever" })).sortBy === "trend");
+
+    // Whether the panel is folded down to its bar is written here too, so
+    // that the choice made on one stream is the one found on the next. A
+    // string that merely looks true is not an answer: the panel asks the
+    // attribute for `String(folded)` and would have drawn `data-folded="yes"`.
+    check("folding the panel away is remembered", (await set({ folded: true })).folded === true);
+    check("and unfolding it", (await set({ folded: false })).folded === false);
+    check("and anything that is not either is refused",
+      (await set({ folded: "yes" })).folded === false);
     check("something that is not a setting at all does not become one",
       !("hack" in await set({ hack: "x" })));
 

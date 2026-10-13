@@ -49,6 +49,8 @@
     "aria.showRest":         { ja: "残りの札を出す", "zh-TW": "顯示其餘的牌", en: "Show the rest of the hand" },
     "aria.addFromPool":      { ja: "プールから札を追加する", "zh-TW": "從卡池加入牌",
                                en: "Add a card from the pool" },
+    "aria.fold":             { ja: "デッキをたたむ", "zh-TW": "收起牌組", en: "Fold the deck away" },
+    "aria.unfold":           { ja: "デッキをひらく", "zh-TW": "展開牌組", en: "Show the deck" },
 
     /* ---------- where a card is saved ---------- */
     "save.channelOnly":      { ja: "$1専用として保存", "zh-TW": "存成 $1 專用", en: "Save for $1 only" },

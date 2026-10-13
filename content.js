@@ -1574,7 +1574,7 @@
     ].join(":");
 
     return [
-      s.mode, s.cardSize, s.rows, s.sortBy, s.suggest ? "draw" : "",
+      s.mode, s.folded ? "folded" : "", s.cardSize, s.rows, s.sortBy, s.suggest ? "draw" : "",
       s.draw, s.hold, s.pace, s.language,
       inputIsPinned ? "pinned" : "",
       channel?.id || "", channel?.name || "", hue ?? "",
@@ -1711,14 +1711,14 @@
   // something worth keeping it becomes the destination picker, so choosing
   // where a card goes is one click on a labelled button — never a guess
   // followed by a correction.
-  function buildBar({ channel, hue, count, mine, offered, waiting, empty }) {
+  function buildBar({ channel, hue, count, mine, offered, waiting, empty, folded }) {
     const bar = document.createElement("div");
     bar.className = "od-bar";
     // Everything that would otherwise float over the chat lives here instead.
     if (notice) bar.append(noticeRow(notice));
     else if (peek) bar.append(peekReadout(peek));
     else if (poolOpen) bar.append(poolTabs(mine, offered));
-    else bar.append(inputHasContent ? saveTargets(channel, hue) : deckIdentity(channel, hue, count, empty));
+    else bar.append(inputHasContent ? saveTargets(channel, hue) : deckIdentity(channel, hue, count, empty, folded));
 
     if (poolOpen) {
       bar.appendChild(buildAction("close", t("action.close"), t("aria.closePool"), () => {
@@ -1874,11 +1874,22 @@
   // hint would answer a question nobody asked and leave the real one, why is
   // this empty, unanswered. A popped-out chat window has no owner to find and
   // stays this way for good; it should say so.
-  function deckIdentity(channel, hue, count, empty) {
+  function deckIdentity(channel, hue, count, empty, folded) {
     if (empty) return barLine(channel?.id ? t("pool.emptyHint") : t("toast.noChannel"));
 
-    const group = document.createElement("div");
-    group.className = "od-bar-identity";
+    // The line that names the deck is also the handle that folds it away.
+    // Not a control of its own beside the other two: the bar's one line of
+    // words is cut to whatever those leave it, and the tightest sentence
+    // there has 6.8px to spare — a third button and half a dozen notices
+    // would be cut mid-word. This costs nothing, because it is the thing it
+    // sits on, and it is the widest target the bar has.
+    const group = document.createElement("button");
+    group.type = "button";
+    group.className = "od-bar-identity od-fold";
+    group.dataset.folded = String(!!folded);
+    group.setAttribute("aria-expanded", String(!folded));
+    group.setAttribute("aria-label", folded ? t("aria.unfold") : t("aria.fold"));
+    group.addEventListener("click", () => setFolded(!folded));
 
     if (channel?.id) {
       const dot = document.createElement("span");
@@ -1903,8 +1914,17 @@
     total.className = "od-count";
     total.textContent = t("count.cards", count);
 
-    group.append(commonDot, commonLabel, total);
+    group.append(commonDot, commonLabel, total, svgIcon("chevron"));
     return group;
+  }
+
+  // Written down rather than kept here, so that the panel comes back the way
+  // it was left — next render, next stream, next day. Storage answers with a
+  // change event of its own, but only after the round trip; rendering here as
+  // well is what makes the chevron answer the click.
+  async function setFolded(folded) {
+    await store.apply("setSettings", { patch: { folded } });
+    render();
   }
 
   function saveTargets(channel, hue) {
@@ -2193,9 +2213,13 @@
       // is the root's business, not a child's.
       const empty = !shown.length && !drawn;
       rootEl.toggleAttribute("data-empty", empty);
+      // The same line, asked for. Not while the pool is open: that is a place
+      // you went to on purpose, and the way back out of it is its own button.
+      const folded = !empty && !poolOpen && data.settings.folded;
+      rootEl.toggleAttribute("data-folded", folded);
 
       barContext = { channel, hue, count: shown.length,
-                     mine: mine.length, offered: offered.length, waiting, empty };
+                     mine: mine.length, offered: offered.length, waiting, empty, folded };
       barEl = buildBar(barContext);
       rootEl.appendChild(barEl);
 
@@ -2213,6 +2237,11 @@
         }
         return;
       }
+
+      // Folded: the bar is the panel. Nothing under it — not the hand, not
+      // the rest of it, not the card the chat drew. The bar still names the
+      // deck and counts it, which is what you are left looking at.
+      if (folded) return;
 
       const hidden =
         data.settings.mode === "list"

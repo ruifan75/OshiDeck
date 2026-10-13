@@ -13,6 +13,11 @@
   const DEFAULT_SETTINGS = {
     autoSend: false,
     mode: "hand",      // hand | list
+    // Whether the panel keeps itself to its bar. A choice, not a mood: it is
+    // written down so that the one made on one stream is the one found on the
+    // next, which is the whole of the preference — there is no second setting
+    // for what it should normally be, because this is what it normally is.
+    folded: false,
     cardSize: "small", // large | medium | small
     rows: 2,           // 1 | 2
     sortBy: "trend",   // manual | uses | heat | trend
@@ -77,6 +82,7 @@
   const ALLOWED = {
     autoSend: [true, false],
     mode: ["hand", "list"],
+    folded: [true, false],
     cardSize: ["large", "medium", "small"],
     rows: [1, 2],
     sortBy: ["manual", "uses", "heat", "trend"],

@@ -310,33 +310,36 @@ check("and the panel works the count out with it",
 // short panel saying one short thing. The bar is already where this UI puts
 // anything that would otherwise take room of its own.
 {
-  const from = src.indexOf("  function buildBar({ channel, hue, count, mine, offered, waiting, empty }) {");
+  const from = src.indexOf(
+    "  function buildBar({ channel, hue, count, mine, offered, waiting, empty, folded }) {");
   const to = src.indexOf("  function noticeRow(");
   if (from < 0 || to < 0 || to <= from) {
     console.log("FAIL could not lift buildBar out of content.js");
     process.exit(1);
   }
 
-  const bar = (poolOpen, mine, offered = 0, waiting = mine + offered, empty = false) => new Function(
-    "poolOpen", "mine", "offered", "waiting", "empty", "document", "t",
+  const bar = (poolOpen, mine, offered = 0, waiting = mine + offered,
+               empty = false, folded = false) => new Function(
+    "poolOpen", "mine", "offered", "waiting", "empty", "folded", "document", "t",
     `let poolTab = "mine";
      const notice = null, peek = null, inputHasContent = false;
      const noticeRow = () => ({ is: "notice" });
      const peekReadout = () => ({ is: "peek" });
      const poolTabs = (m, o) => ({ is: "tabs", mine: m, offered: o });
      const saveTargets = () => ({ is: "saveTargets" });
-     const deckIdentity = (channel, hue, count, empty) => ({ is: "identity", empty });
+     const deckIdentity = (channel, hue, count, empty, folded) => ({ is: "identity", empty, folded });
      const buildAction = (icon, text) => ({ is: "action", icon, text });
      const render = () => {};
      const openOptions = () => {};
      ${src.slice(from, to)}
-     return buildBar({ channel: null, hue: 0, count: 4, mine, offered, waiting, empty });`
+     return buildBar({ channel: null, hue: 0, count: 4, mine, offered, waiting, empty, folded });`
   )(
     poolOpen,
     mine,
     offered,
     waiting,
     empty,
+    folded,
     { createElement: () => ({
         kids: [],
         append(...nodes) { this.kids.push(...nodes); },
@@ -387,6 +390,12 @@ check("and the panel works the count out with it",
     identity(bar(false, 0, 0, 0, true))?.empty === true);
   check("and when there is", identity(bar(false, 7))?.empty === false);
 
+  // And which way the handle on that line points. The bar is the only thing
+  // a folded panel still draws, so the way back out is on it.
+  check("the bar is told when the panel is folded away",
+    identity(bar(false, 7, 0, 7, false, true))?.folded === true);
+  check("and when it is open", identity(bar(false, 7))?.folded === false);
+
   const tabs = (built) => built.kids.find((k) => k.is === "tabs");
   check("the pool shows its two halves apart", !!tabs(bar(true, 7, 10)));
   check("each counted on its own",
@@ -416,22 +425,34 @@ check("and the panel works the count out with it",
     return src.slice(from, to);
   };
 
-  const element = () => ({
+  const element = (tag) => ({
+    tag,
     kids: [],
     className: "",
     textContent: "",
+    dataset: {},
+    attrs: {},
     style: { setProperty() {} },
+    setAttribute(name, value) { this.attrs[name] = value; },
+    addEventListener(type, handler) { this.handlers = [...this.handlers || [], handler]; },
+    click() { for (const handler of this.handlers || []) handler(); },
     append(...nodes) { this.kids.push(...nodes); },
     appendChild(node) { this.kids.push(node); }
   });
 
-  const said = lift("deckIdentity", "  function saveTargets(");
-  const identity = (channel, empty) => new Function(
-    "channel", "empty", "document", "t",
+  // What the handle asked for, in order. Nothing is stored here: the panel
+  // writes the answer to settings and draws itself again from what comes
+  // back, so all this end of it does is ask.
+  const asked = [];
+  const said = lift("deckIdentity", "  // Written down rather than kept here");
+  const identity = (channel, empty, folded = false) => new Function(
+    "channel", "empty", "folded", "document", "t", "svgIcon", "setFolded",
     `${lift("barLine", "  function noticeRow(")}
      ${said}
-     return deckIdentity(channel, 200, empty ? 0 : 4, empty);`
-  )(channel, empty, { createElement: element }, (key, ...rest) => [key, ...rest].join("|"));
+     return deckIdentity(channel, 200, empty ? 0 : 4, empty, folded);`
+  )(channel, empty, folded, { createElement: element },
+    (key, ...rest) => [key, ...rest].join("|"),
+    (name) => ({ is: "icon", name }), (next) => asked.push(next));
 
   const here = { id: "UC1", name: "さくらみこ" };
 
@@ -452,6 +473,28 @@ check("and the panel works the count out with it",
   check("a deck with cards in it still names its channel and counts them",
     identity(here, false).kids.some((k) => k.textContent === "さくらみこ") &&
       identity(here, false).kids.some((k) => k.textContent === "count.cards|4"));
+
+  // The deck's own line doubles as the handle, rather than a third control
+  // beside the pool and the builder: the bar's one line of words is cut to
+  // whatever those leave it, and the tightest sentence on it has under 7px
+  // to spare. A handle that costs nothing is one that is part of the line.
+  const open = identity(here, false);
+  const shut = identity(here, false, true);
+
+  check("the line that names the deck is the handle that folds it",
+    open.tag === "button" && open.className.includes("od-fold"));
+  check("and it says, to a reader that cannot see it, which state it is in",
+    open.attrs["aria-expanded"] === "true" && open.attrs["aria-label"] === "aria.fold" &&
+      shut.attrs["aria-expanded"] === "false" && shut.attrs["aria-label"] === "aria.unfold");
+  check("the chevron turns with it rather than being two different marks",
+    open.dataset.folded === "false" && shut.dataset.folded === "true" &&
+      open.kids.some((k) => k.is === "icon" && k.name === "chevron"));
+
+  asked.length = 0;
+  open.click();
+  shut.click();
+  check("and each asks for the state it is not in",
+    asked.length === 2 && asked[0] === true && asked[1] === false);
 
   check("the hint is said once, on the bar, and nowhere else",
     (src.match(/t\("pool\.emptyHint"\)/g) || []).length === 1 &&
@@ -475,25 +518,52 @@ check("and the panel works the count out with it",
     appendChild() {}
   };
   const seen = {};
-  const step = new Function("rootEl", "seen", "shown", "drawn", `
+  const step = new Function("rootEl", "seen", "shown", "drawn", "wants", "poolOpen", `
     let barContext, barEl;
-    const data = { settings: { mode: "hand" } };
-    const poolOpen = false, channel = null, hue = 0, waiting = 0;
+    const data = { settings: { mode: "hand", folded: wants } };
+    const channel = null, hue = 0, waiting = 0;
     const mine = [], offered = [];
     const buildBar = (context) => { seen.context = context; return {}; };
     ${src.slice(from, to)}`);
 
-  step(root, seen, [], null);
+  step(root, seen, [], null, false, false);
   check("a panel with nothing to show is marked collapsed",
     root.marks.has("data-empty") && seen.context.empty === true);
 
-  step(root, seen, [{ id: "a" }], null);
+  step(root, seen, [{ id: "a" }], null, false, false);
   check("and the mark comes off the moment it has a card",
     !root.marks.has("data-empty") && seen.context.empty === false);
 
-  step(root, seen, [], { key: "drawn" });
+  step(root, seen, [], { key: "drawn" }, false, false);
   check("a card drawn from chat is something to show, so it is not collapsed",
     !root.marks.has("data-empty"));
+
+  // The other way down to one line: a full deck the viewer has put away.
+  step(root, seen, [{ id: "a" }], null, true, false);
+  check("a panel asked to stay folded is marked folded",
+    root.marks.has("data-folded") && seen.context.folded === true);
+
+  step(root, seen, [{ id: "a" }], null, false, false);
+  check("and opens again when it is asked to",
+    !root.marks.has("data-folded") && seen.context.folded === false);
+
+  // Two different reasons for the same line, and only one of them has a
+  // handle on it: an empty panel marked folded as well could not be opened,
+  // because the line it shows is a sentence and not the deck.
+  step(root, seen, [], null, true, false);
+  check("a panel with nothing in it is empty rather than folded",
+    root.marks.has("data-empty") && !root.marks.has("data-folded"));
+
+  step(root, seen, [{ id: "a" }], null, true, true);
+  check("and the pool, which you opened on purpose, is not folded shut under you",
+    !root.marks.has("data-folded"));
+
+  // The mark only takes the padding away. What a folded panel does not draw
+  // is decided by the lines after the ones lifted above.
+  const rest = src.slice(to);
+  check("a folded panel stops at the bar",
+    rest.indexOf("\n      if (folded) return;\n") > 0 &&
+      rest.indexOf("if (folded) return;") < rest.indexOf("const hidden ="));
 }
 
 /* ---------- and the room that gives back ---------- */
@@ -514,9 +584,15 @@ check("and the panel works the count out with it",
   // Anchored to the start of a line, or `.od-bar` finds the descendant rule
   // `#oshideck-root[data-empty] .od-bar` written above it and compares the
   // collapsed height with itself.
+  // Either the whole of a rule's selector or the first name in a list of
+  // them: the collapsed padding is now asked for by two, and a rule found by
+  // its second name would still be the rule.
   const bodyOf = (selector) => {
-    const at = css.indexOf(`\n${selector} {`);
-    return at < 0 ? "" : css.slice(at, css.indexOf("}", at));
+    for (const end of [" {", ",\n"]) {
+      const at = css.indexOf(`\n${selector}${end}`);
+      if (at >= 0) return css.slice(at, css.indexOf("}", at));
+    }
+    return "";
   };
   const px = (body, name) => Number(body.match(new RegExp(`${name}:\\s*(\\d+)px`))?.[1] ?? NaN);
 
@@ -546,8 +622,29 @@ check("and the panel works the count out with it",
       px(bodyOf(".od-bar"), "min-height"));
 
   check("written after list mode, which sets the same padding at the same weight",
-    css.indexOf("#oshideck-root[data-empty] {") >
+    css.indexOf("#oshideck-root[data-empty],") >
       css.indexOf('#oshideck-root[data-mode="list"] {'));
+
+  // Folded away is the same line, for the other reason, and gets the same
+  // room back. Asked for by the same rules rather than by a second set with
+  // numbers of their own, which is a thing to keep true and not only to do.
+  check("a panel folded away gives up exactly what an empty one does",
+    px(bodyOf("#oshideck-root[data-folded]"), "padding-top") === px(collapsed, "padding-top") &&
+      px(bodyOf("#oshideck-root[data-folded]"), "padding-bottom") ===
+        px(collapsed, "padding-bottom") &&
+      px(bodyOf("#oshideck-root[data-folded] .od-bar"), "min-height") ===
+        px(bodyOf("#oshideck-root[data-empty] .od-bar"), "min-height"));
+
+  // The handle is a button for the keyboard's sake and has to be talked out
+  // of looking like one, since what it is drawn as is the deck's own line.
+  const handle = bodyOf("button.od-bar-identity");
+  check("the handle is a button nobody can tell is a button",
+    /border:\s*0/.test(handle) && /background:\s*none/.test(handle) &&
+      /font:\s*inherit/.test(handle) && /cursor:\s*pointer/.test(handle));
+
+  check("and its chevron faces the way the panel will go, not two marks",
+    /transform:\s*rotate\(180deg\)/.test(bodyOf(".od-fold svg")) &&
+      /transform:\s*none/.test(bodyOf('.od-fold[data-folded="true"] svg')));
 
   const line = bodyOf(".od-bar-line");
   check("the bar's line is cut rather than wrapped onto a second one",
@@ -1017,6 +1114,11 @@ for (const [label, over] of [
   ["typing", { typing: true }],
   ["typing something only this channel can send", { typing: true, pinned: true }],
   ["a settings change", { settings: { rows: 1 } }],
+  // Folding is one of those, and the one that changes the most: the hand,
+  // the rest of it and the drawn card all go. Left out of the signature the
+  // panel would skip the redraw and stay exactly as it was, and the chevron
+  // would answer a click by doing nothing.
+  ["folding the panel away", { settings: { folded: true } }],
   ["switching channel", { channel: "UCbbb" }],
   ["the channel being named at last", { name: "" }],
   ["a new colour", { hue: 90 }],

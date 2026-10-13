@@ -554,14 +554,14 @@ const MUTATIONS = [
 
   // The bar can be right about everything it is told and be told nothing.
   [VISIBILITY, CONTENT, "a bar never told the panel has nothing in it",
-    "                     mine: mine.length, offered: offered.length, waiting, empty };",
-    "                     mine: mine.length, offered: offered.length, waiting };"],
+    "                     mine: mine.length, offered: offered.length, waiting, empty, folded };",
+    "                     mine: mine.length, offered: offered.length, waiting, folded };"],
 
   // Most of what an empty panel costs is the padding around it, and that is
   // a rule rather than a line of code.
   [VISIBILITY, STYLE, "an empty panel that keeps its padding",
-    "#oshideck-root[data-empty] {\n  padding-top: 3px;",
-    "#oshideck-root[data-empty] {\n  padding-top: 7px;"],
+    "#oshideck-root[data-folded] {\n  padding-top: 3px;",
+    "#oshideck-root[data-folded] {\n  padding-top: 7px;"],
 
   [WIDTH, WIDTHSRC, "the bar's own line never measured",
     'const notices = (source) => [...calls(source, "showToast"), ...calls(source, "barLine")];',
@@ -576,6 +576,68 @@ const MUTATIONS = [
   [VISIBILITY, STYLE, "a collapsed panel with more under it than it replaced",
     "  padding-top: 3px;\n  padding-bottom: 3px;",
     "  padding-top: 3px;\n  padding-bottom: 6px;"],
+
+  // The panel folded away by choice: the same one line, asked for. Everything
+  // about it can be right and never reach the root.
+  [VISIBILITY, CONTENT, "a panel that is never told it was folded away",
+    '      rootEl.toggleAttribute("data-folded", folded);',
+    ""],
+
+  // The two reasons for the one line are not the same reason. Folded on top
+  // of empty leaves a panel whose only line is a sentence rather than the
+  // deck — and the handle out of it is on the deck.
+  [VISIBILITY, CONTENT, "an empty panel folded away on top of being empty",
+    "      const folded = !empty && !poolOpen && data.settings.folded;",
+    "      const folded = !poolOpen && data.settings.folded;"],
+
+  // The pool is somewhere you went on purpose. Folding it shut under you
+  // leaves the Close button as the only thing in it.
+  [VISIBILITY, CONTENT, "a pool folded shut the moment it is opened",
+    "      const folded = !empty && !poolOpen && data.settings.folded;",
+    "      const folded = !empty && data.settings.folded;"],
+
+  // The mark takes the padding away; the lines under the bar are what is
+  // actually being put away, and they are drawn by the code after it.
+  [VISIBILITY, CONTENT, "a folded panel that draws its hand anyway",
+    "      if (folded) return;",
+    ""],
+
+  // A line you cannot click is a state you cannot leave: the bar is all a
+  // folded panel draws.
+  [VISIBILITY, CONTENT, "a handle that is only a line of words",
+    '    const group = document.createElement("button");\n    group.type = "button";',
+    '    const group = document.createElement("div");'],
+
+  [VISIBILITY, CONTENT, "a handle that always says it is about to fold",
+    '    group.setAttribute("aria-label", folded ? t("aria.unfold") : t("aria.fold"));',
+    '    group.setAttribute("aria-label", t("aria.fold"));'],
+
+  [VISIBILITY, CONTENT, "a handle that asks for the state it is already in",
+    "    group.addEventListener(\"click\", () => setFolded(!folded));",
+    "    group.addEventListener(\"click\", () => setFolded(folded));"],
+
+  // Which way the chevron points is the only thing on a folded panel that
+  // says it can be opened at all.
+  [VISIBILITY, STYLE, "a chevron pointing the same way either way",
+    '.od-fold[data-folded="true"] svg { transform: none; }',
+    '.od-fold[data-folded="true"] svg { transform: rotate(180deg); }'],
+
+  [VISIBILITY, STYLE, "a handle drawn as the button it is",
+    "button.od-bar-identity {\n  appearance: none;\n  border: 0;",
+    "button.od-bar-identity {\n  appearance: none;\n  border: 1px solid #555;"],
+
+  // Folded is a preference and preferences are written down. Anything the
+  // settings gate does not know about is dropped on the way in and on the
+  // way back out of a backup.
+  [STORED, STORE, "a fold nobody is allowed to remember",
+    "    folded: [true, false],",
+    '    folded: ["yes", "no"],'],
+
+  // The panel skips a render whose signature has not changed, and the
+  // signature is the only thing that can see a setting change.
+  [VISIBILITY, CONTENT, "a fold the panel never notices",
+    '      s.mode, s.folded ? "folded" : "", s.cardSize,',
+    "      s.mode, s.cardSize,"],
 
   // `Pool 10000` takes 23px out of the sentence beside it, and the budget
   // that says the sentence fits is worked out from the capped label.
@@ -991,6 +1053,20 @@ const KILLS = {
   "a collapsed mark that is never taken off": "the mark comes off the moment it has a card",
   "a collapsed panel with more under it than it replaced": "the panel gives up its padding when it has nothing to show",
   "a count printed however large it gets": "a pool too large to print is not printed in full",
+  "a panel that is never told it was folded away": "a panel asked to stay folded is marked folded",
+  "an empty panel folded away on top of being empty": "a panel with nothing in it is empty rather than folded",
+  "a pool folded shut the moment it is opened":
+    "the pool, which you opened on purpose, is not folded shut under you",
+  "a folded panel that draws its hand anyway": "a folded panel stops at the bar",
+  "a handle that is only a line of words": "the line that names the deck is the handle that folds it",
+  "a handle that always says it is about to fold":
+    "it says, to a reader that cannot see it, which state it is in",
+  "a handle that asks for the state it is already in": "each asks for the state it is not in",
+  "a chevron pointing the same way either way":
+    "its chevron faces the way the panel will go, not two marks",
+  "a handle drawn as the button it is": "the handle is a button nobody can tell is a button",
+  "a fold nobody is allowed to remember": "folding the panel away is remembered",
+  "a fold the panel never notices": "folding the panel away is a change",
   "a bar measured as if nothing shared it": "the room worked out for a bar reading Pool 24 is the one measured",
   "a budget that ignores how wide the count may get": "a bar whose count may grow wider leaves the words less room",
   "a sentence handed over by name never measured": "a notice handed its sentence by name is measured too",

@@ -141,6 +141,34 @@ const MUTATIONS = [
     "        if (seen.count < said * share) continue;",
     "        if (false) continue;"],
 
+  // A membership gift puts out one announcement per recipient, all naming the
+  // same giver and so all saying the same thing, fifty inside a few seconds.
+  // Every measure in trending.js reads that as a wave.
+  [TREND, TRENDING, "a gift announcement counted as somebody talking",
+    "      const row = node.matches?.(COMMENT_ROWS) ? node : node.querySelector?.(COMMENT_ROWS);\n      if (!row) return;",
+    "      const row = node;"],
+
+  // The allow list is the whole point: what YouTube says in these rows is in
+  // the viewer's language, and what kind of row it is is not.
+  [TREND, TRENDING, "an announcement let onto the list of what people say",
+    '    "yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer";',
+    '    "yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer, " +\n    "yt-live-chat-sponsorships-gift-redemption-announcement-renderer";'],
+
+  [TREND, TRENDING, "a Super Chat no longer counted as a comment",
+    '    "yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer";',
+    '    "yt-live-chat-text-message-renderer";'],
+
+  // Strict was the first reading, and it fails silently: an empty ranking
+  // looks exactly like a quiet chat.
+  [TREND, TRENDING, "a comment inside a wrapper turned away with the rest",
+    "      const row = node.matches?.(COMMENT_ROWS) ? node : node.querySelector?.(COMMENT_ROWS);",
+    "      const row = node.matches?.(COMMENT_ROWS) ? node : null;"],
+
+  // The urls are the one thing worth having from a row that is turned away.
+  [TREND, TRENDING, "an emoji url thrown away with the row that carried it",
+    "      harvestEmoji(node);\n",
+    ""],
+
   [TREND, TRENDING, "bursts counted by the loose signature",
     "recent.push({ sig, key: cardKey(captured), at, tokens: captured });",
     "recent.push({ sig, key: sig, at, tokens: captured });"],
@@ -1053,6 +1081,15 @@ const KILLS = {
   "a collapsed mark that is never taken off": "the mark comes off the moment it has a card",
   "a collapsed panel with more under it than it replaced": "the panel gives up its padding when it has nothing to show",
   "a count printed however large it gets": "a pool too large to print is not printed in full",
+  "a gift announcement counted as somebody talking":
+    "fifty gift announcements are not fifty people saying something",
+  "an announcement let onto the list of what people say":
+    "fifty gift announcements are not fifty people saying something",
+  "a Super Chat no longer counted as a comment": "a Super Chat is still somebody talking",
+  "a comment inside a wrapper turned away with the rest":
+    "a comment inside a wrapper is still that comment",
+  "an emoji url thrown away with the row that carried it":
+    "an emoji url is still worth having from a row that is turned away",
   "a panel that is never told it was folded away": "a panel asked to stay folded is marked folded",
   "an empty panel folded away on top of being empty": "a panel with nothing in it is empty rather than folded",
   "a pool folded shut the moment it is opened":

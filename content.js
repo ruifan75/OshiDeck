@@ -885,9 +885,10 @@
   /* ---------- taking a comment from the chat ---------- */
 
   // Only the kinds that carry a comment anyone could say themselves. A
-  // membership or gift announcement has no `#message` worth keeping.
-  const COMMENT_ROWS =
-    "yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer";
+  // membership or gift announcement has no `#message` worth keeping — and
+  // src/trending.js has to make the same call about the same rows, so the
+  // rule lives there and is read from here rather than written twice.
+  const COMMENT_ROWS = trending.COMMENT_ROWS;
 
   // The button rides in the same right-hand gutter YouTube keeps for its own
   // per-message menu, just inside it. That gutter is absolutely positioned, so

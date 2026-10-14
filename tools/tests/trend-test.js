@@ -6,12 +6,37 @@ class El extends Element {
     this.tagName = tag; this.nodeType = 1; this.childNodes = childNodes; this._attrs = attrs;
   }
   getAttribute(n) { return this._attrs[n] ?? null; }
-  querySelector(sel) { return sel === "#message" ? this._attrs.__message ?? null : null; }
-  querySelectorAll() { return []; }
+  matches(sel) { return sel.split(",").some((one) => one.trim().toUpperCase() === this.tagName); }
+  querySelector(sel) {
+    if (sel === "#message") return this._attrs.__message ?? null;
+    return this.childNodes.find((kid) => kid.matches?.(sel)) ?? null;
+  }
+  // Only the one selector anything asks this harness for: the emoji harvest.
+  querySelectorAll(sel) {
+    if (sel !== "img[data-emoji-id]") return [];
+    const found = [];
+    const walk = (node) => {
+      for (const kid of node.childNodes || []) {
+        if (kid.getAttribute?.("data-emoji-id")) found.push(kid);
+        walk(kid);
+      }
+    };
+    walk(this);
+    return found;
+  }
 }
 const text = (value) => ({ nodeType: 3, textContent: value });
 const msg  = (...kids) => new El("DIV", kids);
-const item = (message) => new El("YT-LIVE-CHAT-TEXT-MESSAGE-RENDERER", [], { __message: message });
+// The message hangs under the row as well as answering `#message`, because
+// the emoji harvest walks the row rather than asking it anything.
+const item = (message) => new El("YT-LIVE-CHAT-TEXT-MESSAGE-RENDERER", [message], { __message: message });
+// The rows that are not somebody talking. A membership gift puts one of these
+// out per recipient, all naming the same giver and so all saying exactly the
+// same thing, fifty of them inside a few seconds.
+const gift = (message) =>
+  new El("YT-LIVE-CHAT-SPONSORSHIPS-GIFT-REDEMPTION-ANNOUNCEMENT-RENDERER", [message],
+    { __message: message });
+const paid = (message) => new El("YT-LIVE-CHAT-PAID-MESSAGE-RENDERER", [message], { __message: message });
 const emoji = (id) => new El("IMG", [], { "data-emoji-id": id, src: "https://yt3/" + id, alt: ":x:" });
 // YouTube appends one of these inside the message the first time it is
 // hovered, and its text is the emoji shortcode.
@@ -171,6 +196,55 @@ bw.start();
 send(msg(text("こん")), 2);
 expect("two of a thing is never a wave, however quiet the room",
   bw.burst(only("こん")) === null, true);
+
+/* ---------- only the rows that are somebody talking ---------- */
+
+// The reported case: a membership gift. YouTube puts out one announcement per
+// recipient — 「@ようかん-MP さんからメンバーシップを受け取りました」 — and a
+// batch of fifty lands inside a few seconds, every one of them saying the same
+// thing, because every one of them names the same giver. By every measure in
+// this file that is a wave, so the panel held the announcement out as a card
+// to save.
+//
+// Read by the element and never by the words: the wording is YouTube's and
+// changes with the viewer's language, so a list of sentences would need every
+// language they ship and would still be wrong the next time they reword one.
+bw = trending.createWatcher({ onChange: () => {} });
+bw.start();
+const gifted = msg(text("@ようかん-MP さんからメンバーシップを受け取りました"));
+for (let i = 0; i < 50; i++) fire([{ addedNodes: [gift(gifted)] }]);
+
+expect("fifty gift announcements are not fifty people saying something",
+  bw.burst() === null, true);
+expect("and nothing about them is ranked", bw.ranking().size, 0);
+
+// The ones that are. A Super Chat is a comment somebody paid to put there,
+// and the ＋ has always offered itself on those too.
+bw = trending.createWatcher({ onChange: () => {} });
+bw.start();
+for (let i = 0; i < 7; i++) fire([{ addedNodes: [paid(msg(text("おめでとう")))] }]);
+expect("a Super Chat is still somebody talking", bw.burst(only("おめでとう"))?.count, 7);
+
+// A wrapper is not a different kind of row. YouTube has nested these before,
+// and the strict reading would have stopped the panel reacting to the chat at
+// all — silently, since an empty ranking looks exactly like a quiet chat.
+bw = trending.createWatcher({ onChange: () => {} });
+bw.start();
+for (let i = 0; i < 7; i++) {
+  fire([{ addedNodes: [new El("DIV", [item(msg(text("すき")))])] }]);
+}
+expect("a comment inside a wrapper is still that comment", bw.burst(only("すき"))?.count, 7);
+
+// The emoji urls are taken from every row, which is the one thing that does
+// not care what kind of row it was: a member emoji in a milestone or a gift
+// announcement is the same picture at the same address, and the address is
+// all that is kept. So the harvest has to happen before the row is turned
+// away, not after.
+bw = trending.createWatcher({ onChange: () => {} });
+bw.start();
+fire([{ addedNodes: [gift(msg(emoji(CH + "/gifted")))] }]);
+expect("but an emoji url is still worth having from a row that is turned away",
+  tokens.freshSrc({ emojiId: CH + "/gifted" }), "https://yt3/" + CH + "/gifted");
 
 /* ---------- a tooltip is not part of the comment ---------- */
 

@@ -33,6 +33,29 @@
   // than inventing one — the safe direction.
   const SAID_MAX = 4000;
 
+  // Which rows are somebody talking.
+  //
+  // Not every row in the chat is a comment. A membership gift puts out one
+  // announcement per recipient — `@ようかん-MP さんからメンバーシップを受け
+  // 取りました` — and a batch of fifty of them lands in a few seconds, all
+  // saying the same thing because they all name the same giver. That is a
+  // burst by every measure this file has, so the panel held the announcement
+  // out as a card to save. The same goes for 新規メンバー rows, Super Sticker
+  // rows and YouTube's own notices.
+  //
+  // Read by the element, never by the words. The wording is YouTube's and
+  // changes with the viewer's language — matching it would mean a list in
+  // every language YouTube has, which would still be wrong the next time they
+  // reword one. What kind of row it is does not change: the custom element is
+  // the same for every viewer. So this is an allow list of the two kinds that
+  // carry something a viewer typed, and everything else is left alone without
+  // this file needing to know what it was.
+  //
+  // The same two the ＋ offers itself on, for the same reason, which is why
+  // content.js reads this one rather than keeping a second copy.
+  const COMMENT_ROWS =
+    "yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer";
+
   // A burst is not the same as popular. Offering a card is about catching a
   // wave as it breaks, so it counts plain repetitions over a few seconds
   // rather than the decayed weight above — and it counts them by exact
@@ -130,10 +153,18 @@
       document.querySelector("#item-scroller #items");
 
     function record(node) {
-      // Every message is a chance to refresh an emoji url, whatever the mode.
+      // Every row is a chance to refresh an emoji url, whatever the mode and
+      // whatever the row — a member emoji in a milestone message is the same
+      // picture at the same address, and the url is all that is taken.
       harvestEmoji(node);
 
-      const message = node.querySelector?.("#message");
+      // ...but only a comment counts as something the chat is doing. The row
+      // itself, or the one inside it: YouTube has wrapped these before, and a
+      // wrapper that still holds one comment is still that comment.
+      const row = node.matches?.(COMMENT_ROWS) ? node : node.querySelector?.(COMMENT_ROWS);
+      if (!row) return;
+
+      const message = row.querySelector?.("#message");
       if (!message) return;
 
       // The tokens are kept, not just their signature: a reaction can only be
@@ -290,6 +321,7 @@
   }
 
   OD.trending = {
-    signature, createWatcher, WINDOW_HALF_LIVES, HALF_LIFE_MS, BURST_MS, BURST_MIN, BURST_SHARE
+    signature, createWatcher, COMMENT_ROWS,
+    WINDOW_HALF_LIVES, HALF_LIFE_MS, BURST_MS, BURST_MIN, BURST_SHARE
   };
 })();

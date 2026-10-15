@@ -566,6 +566,51 @@ check("and the panel works the count out with it",
       rest.indexOf("if (folded) return;") < rest.indexOf("const hidden ="));
 }
 
+/* ---------- the keyboard keeps its place ---------- */
+
+// Found by review. Folding redraws the panel, which replaces the button the
+// press came from — so focus fell back to <body>, a second Enter did nothing,
+// and the handle was reachable by keyboard exactly once.
+{
+  const from = src.indexOf("  async function setFolded(folded) {");
+  const to = src.indexOf("  function saveTargets(", from);
+  if (from < 0 || to < 0 || to <= from) {
+    console.log("FAIL could not lift setFolded out of content.js");
+    process.exit(1);
+  }
+
+  // Whatever has the focus when the press lands — the handle itself, or the
+  // chat input the panel sits under.
+  const fold = async ({ inside }) => {
+    const order = [];
+    const active = { what: inside ? "the handle" : "the chat input" };
+    const handle = { focus(options) { order.push(["focus", options]); } };
+    const root = {
+      contains: (node) => inside && node === active,
+      querySelector: (sel) => (sel === ".od-fold" ? handle : null)
+    };
+    const run = new Function("rootEl", "store", "render", "document", `
+      ${src.slice(from, to)} return setFolded;`)(
+      root,
+      { apply: async (name, args) => { order.push(["write", args.patch.folded]); return { ok: true }; } },
+      async () => { order.push(["render"]); },
+      { activeElement: active }
+    );
+    await run(true);
+    return order;
+  };
+
+  const kept = await fold({ inside: true });
+  check("the handle is written down, drawn again, and then given the focus back",
+    kept.map(([what]) => what).join() === "write,render,focus");
+  check("and asked for it without scrolling the chat",
+    kept.at(-1)[1]?.preventScroll === true);
+
+  const elsewhere = await fold({ inside: false });
+  check("but a panel that did not have the focus does not take it",
+    elsewhere.map(([what]) => what).join() === "write,render");
+}
+
 /* ---------- and the room that gives back ---------- */
 
 // Most of what an empty panel costs is the padding around it, which is set on

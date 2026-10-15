@@ -1923,9 +1923,18 @@
   // it was left — next render, next stream, next day. Storage answers with a
   // change event of its own, but only after the round trip; rendering here as
   // well is what makes the chevron answer the click.
+  //
+  // And the focus is put back. Rendering replaces the panel, so the button
+  // the keyboard was on stops existing and focus falls back to <body> — the
+  // first Enter folded it and the second did nothing, which made the handle
+  // reachable by keyboard exactly once. Only when the panel had the focus to
+  // begin with: a render asked for by storage must not take it off whatever
+  // the viewer is actually using.
   async function setFolded(folded) {
+    const held = rootEl?.contains(document.activeElement);
     await store.apply("setSettings", { patch: { folded } });
-    render();
+    await render();
+    if (held) rootEl?.querySelector(".od-fold")?.focus({ preventScroll: true });
   }
 
   function saveTargets(channel, hue) {

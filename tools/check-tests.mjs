@@ -591,6 +591,44 @@ const MUTATIONS = [
     "#oshideck-root[data-folded] {\n  padding-top: 3px;",
     "#oshideck-root[data-folded] {\n  padding-top: 7px;"],
 
+  // Found by review. The map kept one call per key, so a sentence shown from
+  // two places was measured at whichever of them came first.
+  [WIDTH, WIDTHSRC, "a key measured at only one of the places it is shown",
+    "      if (!found.has(key)) found.set(key, []);\n      found.get(key).push({ call, args });",
+    "      if (!found.has(key)) found.set(key, [{ call, args }]);"],
+
+  // Reading the branch written out in full and calling the expression
+  // understood.
+  [WIDTH, WIDTHSRC, "a name beside a t() never looked at",
+    "  for (const name of namesIn(expression)) out.push(...boundTo(source, name, from));",
+    ""],
+
+  // The hop is by name, so it has to be able to say no: an unrelated const of
+  // the same name in another function is not what a parameter holds.
+  [WIDTH, WIDTHSRC, "a name answered by whatever const shares it",
+    '  take(new RegExp(`(?:^|[\\\\s{(,;])${escaped}\\\\s*[:=]\\\\s*`, "g"), functionAt(source, from), from);',
+    '  take(new RegExp(`(?:^|[\\\\s{(,;])${escaped}\\\\s*[:=]\\\\s*`, "g"), 0, source.length);'],
+
+  // …and still has to find the two shapes that do say what a name holds.
+  [WIDTH, WIDTHSRC, "a sentence handed in under a name never found",
+    '  take(new RegExp(`[{,]\\\\s*${escaped}\\\\s*:\\\\s*`, "g"), 0, source.length);',
+    ""],
+
+  // An unmeasurable alternative weighed nothing, lost the pick to whichever
+  // sibling the table did know, and the unknown character went unreported.
+  [WIDTH, WIDTHSRC, "an unmeasurable alternative quietly losing the pick",
+    "    if (measured.some(([, w]) => w === null)) return null;",
+    ""],
+
+  // Rendering replaces the button the press came from.
+  [VISIBILITY, CONTENT, "a fold that drops the keyboard on the floor",
+    '    if (held) rootEl?.querySelector(".od-fold")?.focus({ preventScroll: true });',
+    ""],
+
+  [VISIBILITY, CONTENT, "a fold that takes the focus off whatever had it",
+    "    const held = rootEl?.contains(document.activeElement);",
+    "    const held = true;"],
+
   [WIDTH, WIDTHSRC, "the bar's own line never measured",
     'const notices = (source) => [...calls(source, "showToast"), ...calls(source, "barLine")];',
     'const notices = (source) => calls(source, "showToast");'],
@@ -686,8 +724,8 @@ const MUTATIONS = [
   // Every saved.* sentence reaches the row by name, and none of them were
   // measured while the checker went on saying everything fits.
   [WIDTH, WIDTHSRC, "a sentence handed over by name never measured",
-    "  return name ? boundTo(source, name) : [];",
-    "  return [];"],
+    '  take(new RegExp(`(?:^|[\\\\s{(,;])${escaped}\\\\s*[:=]\\\\s*`, "g"), functionAt(source, from), from);',
+    ""],
 
   [WIDTH, WIDTHSRC, "a notice nobody can identify quietly passed over",
     "  for (const call of unreadable(source)) {",
@@ -699,7 +737,7 @@ const MUTATIONS = [
     "      return ROOM;"],
 
   [WIDTH, WIDTHSRC, "a $1 measured as a name when it is handed a sentence",
-    '    const inner = messagesIn(source, args[Number(slot) - 1] ?? "")',
+    '    const inner = messagesIn(source, args[Number(slot) - 1] ?? "", at)',
     '    const inner = messages(args[Number(slot) - 1] ?? "")'],
 
   [I18N, I18NCHECK, "a choice left open reaching the panel as braces",
@@ -1081,6 +1119,20 @@ const KILLS = {
   "a collapsed mark that is never taken off": "the mark comes off the moment it has a card",
   "a collapsed panel with more under it than it replaced": "the panel gives up its padding when it has nothing to show",
   "a count printed however large it gets": "a pool too large to print is not printed in full",
+  "a key measured at only one of the places it is shown":
+    "a key shown from two places is measured at both of them",
+  "a name beside a t() never looked at":
+    "a name on the other side of a choice is read as well as the t() beside it",
+  "a name answered by whatever const shares it":
+    "a name nothing here gives a value is a failure, not someone else's const",
+  "a sentence handed in under a name never found":
+    "a property handed in under that name",
+  "an unmeasurable alternative quietly losing the pick":
+    "an alternative the table cannot measure fails rather than losing the pick",
+  "a fold that drops the keyboard on the floor":
+    "the handle is written down, drawn again, and then given the focus back",
+  "a fold that takes the focus off whatever had it":
+    "a panel that did not have the focus does not take it",
   "a gift announcement counted as somebody talking":
     "fifty gift announcements are not fifty people saying something",
   "an announcement let onto the list of what people say":

@@ -124,11 +124,15 @@ export function roomIn({ MESSAGES, source, report = () => {} }) {
 export function noticeKeys(source) {
   const found = new Map();
   for (const call of notices(source)) {
-    const withButton = /\bactionLabel\s*:/.test(call);
     for (const [key, args] of shown(source, call)) {
       // The action's own label is a button, not the message.
       if (key.startsWith("action.")) continue;
-      if (!found.has(key) || withButton) found.set(key, { call, args });
+      // Every call, not one per key. The map used to keep the first — and
+      // `toast.saveFailedKept` is shown from two places with different
+      // arguments, so the one handed a whole sentence to put in its `$1`
+      // was never measured while the one handed a short word said it fit.
+      if (!found.has(key)) found.set(key, []);
+      found.get(key).push({ call, args });
     }
   }
   return found;
@@ -147,32 +151,89 @@ export function unreadable(source) {
 // Which messages a call shows, as [key, the arguments after it]. A call is
 // usually handed `t("…")` outright; `showToast(saved)` is handed a name, and
 // the sentence it holds was chosen a few lines further up. One hop, by name,
-// across the file — not dataflow, but it either finds the keys or it does
-// not, and saying so is the part that was missing.
-const shown = (source, call) => messagesIn(source, argumentsOf(call)[0] ?? "");
+// within the function the call is in — not dataflow, but it either finds the
+// keys or it does not, and saying so is the part that was missing.
+const shown = (source, call) => messagesIn(source, argumentsOf(call.text)[0] ?? "", call.at);
 
-// The messages an expression will produce: the ones written into it, or — if
-// it is nothing but a name — the ones wherever that name is given its value.
-function messagesIn(source, expression) {
-  const direct = messages(expression);
-  if (direct.length) return direct;
-  const name = expression.trim().match(/^[A-Za-z_$][\w$]*$/)?.[0];
-  return name ? boundTo(source, name) : [];
+// The messages an expression will produce: the ones written into it, **and**
+// the ones held by any bare name in it. Both, rather than the first that
+// answers. `ok ? t("toast.deleted") : other` has one branch written out in
+// full, and reading that as the answer left `other` — which can be wider —
+// never looked at at all.
+function messagesIn(source, expression, from = source.length) {
+  const out = [...messages(expression)];
+  for (const name of namesIn(expression)) out.push(...boundTo(source, name, from));
+  return out;
 }
 
 const messages = (text) => calls(text, "t")
-  .map((c) => argumentsOf(c))
+  .map((c) => argumentsOf(c.text))
   .map(([key, ...rest]) => [key?.trim().match(/^"([\w.]+)"$/)?.[1], rest])
   .filter(([key]) => key);
 
-// Everywhere this name is given a value, and the messages in it. The name is
-// escaped because `$` is legal in one and an anchor in a pattern.
-function boundTo(source, name) {
-  const out = [];
-  const at = new RegExp(`(?:^|[\\s{(,;])${name.replace(/\$/g, "\\$")}\\s*[:=]\\s*`, "g");
-  for (const m of source.matchAll(at)) {
-    out.push(...messages(valueAt(source, m.index + m[0].length)));
+// The bare names in an expression — every `t(…)` call and every quoted string
+// blanked out first, so that neither `t` itself nor a message key inside one
+// is read as a name to go looking for.
+const RESERVED = new Set(["true", "false", "null", "undefined", "typeof", "void", "new"]);
+function namesIn(expression) {
+  let rest = expression;
+  for (const call of calls(expression, "t")) rest = rest.replace(call.text, " ");
+  rest = rest.replace(/"[^"]*"|'[^']*'|`[^`]*`/g, " ");
+  return [...new Set(rest.match(/[A-Za-z_$][\w$]*/g) || [])].filter((name) => !RESERVED.has(name));
+}
+
+// Where the function holding an offset begins. Every function in content.js
+// sits at one indent inside the file's IIFE, so the last line that opens one
+// before the call is the one the call is in.
+//
+// A heuristic, and deliberately a narrow one. The whole file used to be
+// searched, which is how an opaque `saved` parameter came to be answered by a
+// `const saved` in a different function entirely: the checker then reported a
+// sentence it had never seen as measured and fitting. Looking too far finds
+// the wrong binding; looking too narrowly finds none, and finding none is a
+// failure that says so.
+function functionAt(source, from) {
+  const opens = /^  (?:async function|function|const [\w$]+ = (?:async )?(?:function|\())/gm;
+  let start = 0;
+  for (const m of source.matchAll(opens)) {
+    if (m.index >= from) break;
+    start = m.index;
   }
+  return start;
+}
+
+// What a bare name holds, in the two places a sentence is ever written down
+// under it.
+//
+// A local, inside the function the call is in and above it: that is
+// `const saved = ok ? t("saved.pool") : t("saved.global")`, three lines above
+// the `showToast(saved)` that shows it.
+//
+// Or a property written under that name anywhere in the file, which is how a
+// sentence reaches a parameter: `kept` is a parameter of saveTokens, and
+// `kept: t("toast.inputKept")` in its caller is the only place that sentence
+// is written out at all.
+//
+// The whole file used to be searched for either shape, and that is how an
+// opaque parameter came to be answered by an unrelated `const` of the same
+// name in another function — the checker then called a sentence it had never
+// seen measured and fitting. A property is at least something handed over
+// under this name; a const in a function the call is not in is not.
+//
+// Not dataflow: it does not check that the object carrying that property is
+// the one this call's function was given. One hop, by name, and it either
+// finds something or says it could not.
+function boundTo(source, name, from) {
+  const escaped = name.replace(/\$/g, "\\$");
+  const out = [];
+  const take = (pattern, start, end) => {
+    const where = source.slice(start, end);
+    for (const m of where.matchAll(pattern)) {
+      out.push(...messages(valueAt(where, m.index + m[0].length)));
+    }
+  };
+  take(new RegExp(`(?:^|[\\s{(,;])${escaped}\\s*[:=]\\s*`, "g"), functionAt(source, from), from);
+  take(new RegExp(`[{,]\\s*${escaped}\\s*:\\s*`, "g"), 0, source.length);
   return out;
 }
 
@@ -216,8 +277,11 @@ function argumentsOf(call) {
   return out;
 }
 
-// The text of each `name(...)` call, parens balanced, quotes skipped. Where
-// the function is declared is not a call — its parameter list holds no
+// Each `name(...)` call as `{ text, at }`, parens balanced, quotes skipped.
+// Where it is matters as well as what it says: a name handed to it is looked
+// up in the function the call is in, and that cannot be found from the text.
+//
+// Where the function is declared is not a call — its parameter list holds no
 // message, which read as a call nobody could identify.
 function calls(source, name) {
   const out = [];
@@ -237,7 +301,7 @@ function calls(source, name) {
       if (c === "(") depth += 1;
       else if (c === ")" && --depth === 0) break;
     }
-    out.push(source.slice(start, i + 1));
+    out.push({ text: source.slice(start, i + 1), at: start });
   }
   return out;
 }
@@ -255,7 +319,7 @@ export function checkWidth({ MESSAGES, read, report = console.log }) {
   if (ROOM === null) return bad + 1;
 
   for (const call of unreadable(source)) {
-    report(`FAIL どの文言が出るのか読み取れません: ${call.trim().replace(/\s+/g, " ").slice(0, 60)}`);
+    report(`FAIL どの文言が出るのか読み取れません: ${call.text.trim().replace(/\s+/g, " ").slice(0, 60)}`);
     bad += 1;
   }
 
@@ -264,7 +328,7 @@ export function checkWidth({ MESSAGES, read, report = console.log }) {
   // unknown character and then handing the notice the button's space as well
   // is the one outcome worse than either.
   const buttonRoom = (call) => {
-    const label = call.match(/actionLabel:\s*t\(\s*"([\w.]+)"/)?.[1];
+    const label = call.text.match(/actionLabel:\s*t\(\s*"([\w.]+)"/)?.[1];
     if (!label) return ROOM;
     const text = MESSAGES[label]?.en;
     const w = text === undefined ? null : width(text, { report });
@@ -278,31 +342,58 @@ export function checkWidth({ MESSAGES, read, report = console.log }) {
   // What the call puts in a `$1`: the message it hands over, where it hands
   // one over. `toast.saveFailedKept` is given a whole sentence, and standing
   // a channel name in its place understated it by 90px.
-  const widest = (list) => list
-    .map((text) => [text, width(text) ?? 0])
-    .sort((a, b) => b[1] - a[1])[0]?.[0];
-  const fill = (args, slot) => {
-    const inner = messagesIn(source, args[Number(slot) - 1] ?? "")
+  //
+  // Null when one of the alternatives cannot be measured. `?? 0` was the
+  // quiet answer: an unmeasurable sentence weighed nothing, lost the pick to
+  // whichever of its siblings the table did know, and the unknown character
+  // was never reported. Every alternative that can reach the bar has to be
+  // measurable, because any of them can be the one that shows.
+  const widest = (list) => {
+    const measured = list.map((text) => [text, width(text, { report })]);
+    if (measured.some(([, w]) => w === null)) return null;
+    return measured.sort((a, b) => b[1] - a[1])[0]?.[0];
+  };
+  const fill = (args, slot, at) => {
+    const inner = messagesIn(source, args[Number(slot) - 1] ?? "", at)
       .map(([key]) => MESSAGES[key]?.en)
       .filter(Boolean);
-    return widest(inner) ?? (slot === "1" ? STAND_IN.name : STAND_IN.number);
+    const pick = widest(inner);
+    if (pick === null) return null;
+    return pick ?? (slot === "1" ? STAND_IN.name : STAND_IN.number);
   };
 
-  for (const [key, { call, args }] of [...keys].sort()) {
+  // Every call of every key, not one call per key: the same sentence shown
+  // from two places is two sentences to measure, and the wider argument was
+  // the one being skipped.
+  for (const [key, where] of [...keys].sort()) {
     const entry = MESSAGES[key];
     if (!entry?.en) { report(`FAIL ${key} — en がありません`); bad += 1; continue; }
-    const text = entry.en
+    for (const { call, args } of where) bad += tooWide(key, entry.en, call, args);
+  }
+
+  function tooWide(key, en, call, args) {
+    let unmeasurable = false;
+    const text = en
       .replace(/\$(\d)\{([^{}|]*)\|([^{}|]*)\}/g, (_, n, one, many) => `${STAND_IN.number} ${many}`)
-      .replace(/\$(\d)/g, (_, slot) => fill(args, slot));
+      .replace(/\$(\d)/g, (_, slot) => {
+        const value = fill(args, slot, call.at);
+        if (value === null) unmeasurable = true;
+        return value ?? "";
+      });
+    if (unmeasurable) {
+      report(`FAIL ${key} — $1 に入る文言の幅が出せないので、全体の幅も出せません`);
+      return 1;
+    }
     const w = width(text, { report });
-    if (w === null) { bad += 1; continue; }
+    if (w === null) return 1;
     const room = buttonRoom(call);
-    if (room === null) { bad += 1; continue; }
+    if (room === null) return 1;
     if (w > room) {
-      bad += 1;
       report(`FAIL ${key} — ${w.toFixed(1)}px、入るのは ${room.toFixed(1)}px まで`);
       report(`     ${text}`);
+      return 1;
     }
+    return 0;
   }
 
   if (!bad) report(`ok   ${keys.size}件の文言、400pxのバーに収まります`);

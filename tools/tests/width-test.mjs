@@ -117,6 +117,65 @@ check("a button label the table cannot measure fails instead of passing",
   run({ MESSAGES: { ...MESSAGES,
     "action.undo": { ...MESSAGES["action.undo"], en: "↶ Undo" } } }).bad > 0);
 
+/* ---------- and what it used to let past ---------- */
+
+// Found by review. The map kept one call per key, so the same sentence shown
+// from two places was measured once — and `toast.saveFailedKept` is shown
+// from two, one of them handed a whole sentence for its $1.
+check("a key shown from two places is measured at both of them",
+  run({ read: (f) => (f === "content.js"
+    ? panel('showToast(t("toast.saveFailedKept", t("toast.noInput")));' +
+            ' showToast(t("toast.saveFailedKept", t("toast.inputKept")));')
+    : read(f)),
+    // Wide enough that the sentence built around it runs over, narrow enough
+    // that it fits the bar on its own — so the only thing that can fail here
+    // is the second call being measured at all.
+    MESSAGES: { ...MESSAGES,
+      "toast.inputKept": { ...MESSAGES["toast.inputKept"], en: "W".repeat(16) } } }).bad > 0);
+
+// Reading the branch written out in full and calling the expression
+// understood: `other` can be the wider of the two and was never looked at.
+check("a name on the other side of a choice is read as well as the t() beside it",
+  run({ read: (f) => (f === "content.js"
+    ? panel('const other = t("toast.inputKept"); showToast(ok ? t("toast.deleted") : other);')
+    : read(f)),
+    MESSAGES: { ...MESSAGES,
+      "toast.inputKept": { ...MESSAGES["toast.inputKept"], en: "W".repeat(40) } } }).bad > 0);
+
+// The hop is one hop and it is by name, so it has to be able to say no. An
+// unrelated const of the same name in another function is not what this
+// parameter holds, and answering with it reports a sentence never seen as
+// measured and fitting.
+check("a name nothing here gives a value is a failure, not someone else's const",
+  run({ read: (f) => (f === "content.js"
+    ? '\n  const MOST_SHOWN = 99;\n  function g() { const saved = t("toast.deleted"); return saved; }' +
+      '\n  function f(saved) { showToast(saved); }'
+    : read(f)) }).bad > 0);
+
+// …while the two shapes that do say what a name holds still do.
+check("but a const in the same function still answers",
+  run({ read: (f) => (f === "content.js"
+    ? panel('const saved = t("toast.deleted"); showToast(saved);')
+    : read(f)) }).bad === 0);
+check("and so does a property handed in under that name",
+  run({ read: (f) => (f === "content.js"
+    ? '\n  const MOST_SHOWN = 99;\n  function g() { h({ kept: t("toast.inputKept") }); }' +
+      '\n  function f({ kept }) { showToast(t("toast.saveFailedKept", kept)); }'
+    : read(f)),
+    MESSAGES: { ...MESSAGES,
+      "toast.inputKept": { ...MESSAGES["toast.inputKept"], en: "W".repeat(16) } } }).bad > 0);
+
+// `width(text) ?? 0` let an unmeasurable alternative weigh nothing: it lost
+// the pick to whichever of its siblings the table did know, and the unknown
+// character went unreported. Any of them can be the one that shows.
+check("an alternative the table cannot measure fails rather than losing the pick",
+  run({ read: (f) => (f === "content.js"
+    ? panel('const kept = ok ? t("toast.noInput") : t("toast.inputKept");' +
+            ' showToast(t("toast.saveFailedKept", kept));')
+    : read(f)),
+    MESSAGES: { ...MESSAGES,
+      "toast.inputKept": { ...MESSAGES["toast.inputKept"], en: "↶ kept" } } }).bad > 0);
+
 // A bar with no toasts in it is not a bar that fits; it is a file this
 // checker failed to read, which looked exactly like success before.
 check("a content.js it cannot read fails loudly",

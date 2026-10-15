@@ -1024,7 +1024,10 @@
 
     return saveTokens(captured, target, {
       clear: () => clearInput(input),
-      kept: t("toast.inputKept"),
+      // A flag, not the sentence. Handing a sentence to a parameter is
+      // handing it to something tools/check-width.mjs cannot read — and it
+      // is the widest thing on that line, so it is the one worth measuring.
+      keeping: true,
       editing: true
     });
   }
@@ -1032,7 +1035,7 @@
   // Saving is the same wherever the content came from — the editor, a comment
   // in the chat, or a card the chat held out. Only the tidying up differs, and
   // only the editor can be in the middle of re-recording a card.
-  async function saveTokens(captured, target, { clear = () => {}, kept = "", editing = false } = {}) {
+  async function saveTokens(captured, target, { clear = () => {}, keeping = false, editing = false } = {}) {
     // Both read now, before anything is awaited, and kept together: the page
     // can move to another chat while storage is being read, and a membership
     // answer is only ever about the channel it was read from.
@@ -1060,7 +1063,9 @@
       if (data.cards.some((c) => c.id === id)) {
         // Nothing is cleared until the write is known to have landed.
         if (!(await store.apply("editCard", { id, tokens: captured })).ok) {
-          return showToast(t("toast.saveFailedKept", kept));
+          return showToast(keeping
+            ? t("toast.saveFailedKept", t("toast.inputKept"))
+            : t("toast.saveFailed"));
         }
         clear();
         // No toast: the card's own contents change under the pointer, which
@@ -1120,7 +1125,9 @@
     const added = await store.apply("addCard", { card, channelId: channel?.id, scope });
     if (!added.ok) {
       // Quota, or the context went away. Keep what was typed.
-      return showToast(t("toast.saveFailedKept", kept));
+      return showToast(keeping
+        ? t("toast.saveFailedKept", t("toast.inputKept"))
+        : t("toast.saveFailed"));
     }
     if (added.value?.duplicate) {
       clear();
@@ -1934,7 +1941,13 @@
     const held = rootEl?.contains(document.activeElement);
     await store.apply("setSettings", { patch: { folded } });
     await render();
-    if (held) rootEl?.querySelector(".od-fold")?.focus({ preventScroll: true });
+    // Asked again, after the redraw. The write is awaited, and in that time
+    // the viewer can click into the chat box — focus is then on something
+    // that still exists, and taking it back would be this panel grabbing the
+    // cursor out of what they are typing in. Focus falling to <body> is what
+    // the redraw removing the button looks like, and only that is put right.
+    const loose = !document.activeElement || document.activeElement === document.body;
+    if (held && loose) rootEl?.querySelector(".od-fold")?.focus({ preventScroll: true });
   }
 
   function saveTargets(channel, hue) {

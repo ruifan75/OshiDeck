@@ -176,6 +176,71 @@ check("an alternative the table cannot measure fails rather than losing the pick
     MESSAGES: { ...MESSAGES,
       "toast.inputKept": { ...MESSAGES["toast.inputKept"], en: "↶ kept" } } }).bad > 0);
 
+/* ---------- and what a second review found it still let past ---------- */
+
+// All four were the same shape: it found one thing it could read and called
+// the expression understood. The reader asks a different question now — have
+// I accounted for everything this can produce — and answers null when it has
+// not. `other`, `saved` and the rest below all hold the 40-W translation.
+const wide = { ...MESSAGES,
+  "toast.inputKept": { ...MESSAGES["toast.inputKept"], en: "W".repeat(40) } };
+const reading = (body) => run({ MESSAGES: wide,
+  read: (f) => (f === "content.js" ? `\n  const MOST_SHOWN = 99;\n${body}` : read(f)) }).bad > 0;
+
+check("a branch it cannot read is not excused by the branch beside it",
+  reading('  function f(other) { showToast(ok ? t("toast.deleted") : other); }'));
+
+check("a const in one function does not answer a parameter in another",
+  reading('  function g() { const saved = t("toast.deleted"); }\n' +
+          '  const f = saved => { showToast(saved); };'));
+
+check("and a parameter shadowing a const of the same name answers for itself",
+  reading('  const saved = t("toast.deleted");\n  function f(saved) { showToast(saved); }'));
+
+check("an unrelated property is not what a parameter holds",
+  reading('  const unrelated = { saved: t("toast.deleted") };\n' +
+          '  function f(saved) { showToast(saved); }'));
+
+const narrow = (body) => run({
+  read: (f) => (f === "content.js" ? `\n  const MOST_SHOWN = 99;\n${body}` : read(f)) }).bad > 0;
+
+// Everything here fits, so the only thing that can make it red is the reader
+// saying it could not account for the expression.
+check("and a name wrapped in a template is not a name it has read",
+  narrow('  function f() { const other = t("toast.deleted");' +
+         ' showToast(ok ? t("toast.deleted") : `${other}`); }'));
+
+check("and a name bound in two places is not read from either",
+  narrow('  function g() { const other = t("toast.deleted"); }\n' +
+         '  function h() { const other = t("toast.deleted"); }\n' +
+         '  function f() { showToast(other); }'));
+
+// …while the one shape it does read still reads: a const nothing else in the
+// file can be, written out of t() calls and nothing else.
+check("a const of t() calls, bound once and never a parameter, still answers",
+  run({ read: (f) => (f === "content.js"
+    ? '\n  const MOST_SHOWN = 99;\n  function f() {' +
+      ' const saved = ok ? t("saved.pool") : t("saved.global"); showToast(saved); }'
+    : read(f)) }).bad === 0);
+check("and both of its branches are measured, not just the first",
+  [...noticeKeys('\n  function f() {' +
+     ' const saved = ok ? t("saved.pool") : t("saved.global"); showToast(saved); }').keys()]
+    .sort().join() === "saved.global,saved.pool");
+
+// A `$1` is a different question from the message itself. A name may be
+// holding a sentence, so one that cannot be read is a failure; a property or
+// a count is a value, and a value is what the stand-in was always for.
+check("a $1 handed a name it cannot read is a failure",
+  reading('  function f(kept) { showToast(t("toast.saveFailedKept", kept)); }'));
+check("and a name destructured out of a parameter list is a parameter too",
+  narrow('  const kept = t("toast.deleted");\n' +
+         '  function f({ kept }) { showToast(t("toast.saveFailedKept", kept)); }'));
+check("but a $1 handed something that was never a message takes the stand-in",
+  run({ read: (f) => (f === "content.js"
+    ? '\n  const MOST_SHOWN = 99;\n  function f(preset) {' +
+      ' showToast(t("preset.loadedReused", preset.name, preset.cards.length)); }'
+    : read(f)) }).bad === 0);
+
 // A bar with no toasts in it is not a bar that fits; it is a file this
 // checker failed to read, which looked exactly like success before.
 check("a content.js it cannot read fails loudly",

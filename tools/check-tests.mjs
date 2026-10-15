@@ -597,22 +597,33 @@ const MUTATIONS = [
     "      if (!found.has(key)) found.set(key, []);\n      found.get(key).push({ call, args });",
     "      if (!found.has(key)) found.set(key, [{ call, args }]);"],
 
-  // Reading the branch written out in full and calling the expression
-  // understood.
-  [WIDTH, WIDTHSRC, "a name beside a t() never looked at",
-    "  for (const name of namesIn(expression)) out.push(...boundTo(source, name, from));",
+  // Reading one branch of a choice and calling the whole expression
+  // understood is what two reviews in a row found here.
+  [WIDTH, WIDTHSRC, "a branch nobody could read excused by the one beside it",
+    "    if (held === null) return null;\n    out.push(...held);",
+    "    if (held !== null) out.push(...held);"],
+
+  // The grammar is closed on purpose: anything outside it is refused, not
+  // guessed at.
+  [WIDTH, WIDTHSRC, "an expression of any shape at all read as a value",
+    "  return [text];\n}",
+    "  return [text.replace(/[`${}]/g, \"\").trim()];\n}"],
+
+  // A name is read only where the file leaves no room to wonder: bound once,
+  // and never a parameter.
+  [WIDTH, WIDTHSRC, "a name answered although something else is called it",
+    "  if (parameters(source).has(name)) return null;",
     ""],
 
-  // The hop is by name, so it has to be able to say no: an unrelated const of
-  // the same name in another function is not what a parameter holds.
-  [WIDTH, WIDTHSRC, "a name answered by whatever const shares it",
-    '  take(new RegExp(`(?:^|[\\\\s{(,;])${escaped}\\\\s*[:=]\\\\s*`, "g"), functionAt(source, from), from);',
-    '  take(new RegExp(`(?:^|[\\\\s{(,;])${escaped}\\\\s*[:=]\\\\s*`, "g"), 0, source.length);'],
+  [WIDTH, WIDTHSRC, "a name answered by one of several bindings",
+    "  if (found.length !== 1) return null;",
+    "  if (!found.length) return null;"],
 
-  // …and still has to find the two shapes that do say what a name holds.
-  [WIDTH, WIDTHSRC, "a sentence handed in under a name never found",
-    '  take(new RegExp(`[{,]\\\\s*${escaped}\\\\s*:\\\\s*`, "g"), 0, source.length);',
-    ""],
+  // Destructuring in a parameter list is parameters: `{ clear, kept }` is
+  // two names whose values only the caller knows.
+  [WIDTH, WIDTHSRC, "a destructured parameter not counted as one",
+    "    add(within(source, m.index + m[0].length - 1));",
+    "    add(within(source, m.index + m[0].length - 1).replace(/\\{[^{}]*\\}/g, \" \"));"],
 
   // An unmeasurable alternative weighed nothing, lost the pick to whichever
   // sibling the table did know, and the unknown character went unreported.
@@ -622,8 +633,14 @@ const MUTATIONS = [
 
   // Rendering replaces the button the press came from.
   [VISIBILITY, CONTENT, "a fold that drops the keyboard on the floor",
-    '    if (held) rootEl?.querySelector(".od-fold")?.focus({ preventScroll: true });',
+    '    if (held && loose) rootEl?.querySelector(".od-fold")?.focus({ preventScroll: true });',
     ""],
+
+  // The write is awaited, and the viewer can click into the chat box while it
+  // is in flight: focus is then on something that still exists.
+  [VISIBILITY, CONTENT, "a fold that takes the focus back from wherever it went",
+    "    const loose = !document.activeElement || document.activeElement === document.body;",
+    "    const loose = true;"],
 
   [VISIBILITY, CONTENT, "a fold that takes the focus off whatever had it",
     "    const held = rootEl?.contains(document.activeElement);",
@@ -724,8 +741,8 @@ const MUTATIONS = [
   // Every saved.* sentence reaches the row by name, and none of them were
   // measured while the checker went on saying everything fits.
   [WIDTH, WIDTHSRC, "a sentence handed over by name never measured",
-    '  take(new RegExp(`(?:^|[\\\\s{(,;])${escaped}\\\\s*[:=]\\\\s*`, "g"), functionAt(source, from), from);',
-    ""],
+    "  return messagesIn(source, valueAt(source, found[0].index + found[0][0].length), seen);",
+    "  return [];"],
 
   [WIDTH, WIDTHSRC, "a notice nobody can identify quietly passed over",
     "  for (const call of unreadable(source)) {",
@@ -737,8 +754,8 @@ const MUTATIONS = [
     "      return ROOM;"],
 
   [WIDTH, WIDTHSRC, "a $1 measured as a name when it is handed a sentence",
-    '    const inner = messagesIn(source, args[Number(slot) - 1] ?? "", at)',
-    '    const inner = messages(args[Number(slot) - 1] ?? "")'],
+    "      if (parts.some((part) => bare.test(part.trim()))) return STAND_IN.unreadable;",
+    ""],
 
   [I18N, I18NCHECK, "a choice left open reaching the panel as braces",
     '      if (/[{}]/.test((entry[code] || "").replace(/\\{[^{}]*\\}/g, ""))) {',
@@ -1121,12 +1138,18 @@ const KILLS = {
   "a count printed however large it gets": "a pool too large to print is not printed in full",
   "a key measured at only one of the places it is shown":
     "a key shown from two places is measured at both of them",
-  "a name beside a t() never looked at":
-    "a name on the other side of a choice is read as well as the t() beside it",
-  "a name answered by whatever const shares it":
-    "a name nothing here gives a value is a failure, not someone else's const",
-  "a sentence handed in under a name never found":
-    "a property handed in under that name",
+  "a branch nobody could read excused by the one beside it":
+    "a branch it cannot read is not excused by the branch beside it",
+  "an expression of any shape at all read as a value":
+    "a name wrapped in a template is not a name it has read",
+  "a name answered although something else is called it":
+    "a const in one function does not answer a parameter in another",
+  "a name answered by one of several bindings":
+    "a name bound in two places is not read from either",
+  "a destructured parameter not counted as one":
+    "a name destructured out of a parameter list is a parameter too",
+  "a fold that takes the focus back from wherever it went":
+    "neither does one whose focus went somewhere real in the meantime",
   "an unmeasurable alternative quietly losing the pick":
     "an alternative the table cannot measure fails rather than losing the pick",
   "a fold that drops the keyboard on the floor":
@@ -1161,7 +1184,7 @@ const KILLS = {
   "a sentence handed over by name never measured": "a notice handed its sentence by name is measured too",
   "a notice nobody can identify quietly passed over": "one whose sentence cannot be worked out at all is a failure",
   "an unmeasurable button given the notice's own space": "a button label the table cannot measure fails instead of passing",
-  "a $1 measured as a name when it is handed a sentence": "a $1 the call fills with another message is measured as that message",
+  "a $1 measured as a name when it is handed a sentence": "a $1 handed a name it cannot read is a failure",
   "a choice left open reaching the panel as braces": "a choice left open fails",
 
   "a flat count instead of recency": "so the new reaction takes the front",

@@ -580,11 +580,14 @@ check("and the panel works the count out with it",
   }
 
   // Whatever has the focus when the press lands — the handle itself, or the
-  // chat input the panel sits under.
-  const fold = async ({ inside }) => {
+  // chat input the panel sits under — and whatever has it by the time the
+  // write comes back, which is not necessarily the same thing.
+  const body = { what: "<body>" };
+  const fold = async ({ inside, movesTo = null }) => {
     const order = [];
     const active = { what: inside ? "the handle" : "the chat input" };
     const handle = { focus(options) { order.push(["focus", options]); } };
+    const page = { activeElement: active, body };
     const root = {
       contains: (node) => inside && node === active,
       querySelector: (sel) => (sel === ".od-fold" ? handle : null)
@@ -593,8 +596,10 @@ check("and the panel works the count out with it",
       ${src.slice(from, to)} return setFolded;`)(
       root,
       { apply: async (name, args) => { order.push(["write", args.patch.folded]); return { ok: true }; } },
-      async () => { order.push(["render"]); },
-      { activeElement: active }
+      // The redraw is what drops the focus: the button the press came from
+      // stops existing and the page falls back to <body>.
+      async () => { order.push(["render"]); page.activeElement = movesTo ?? body; },
+      page
     );
     await run(true);
     return order;
@@ -609,6 +614,13 @@ check("and the panel works the count out with it",
   const elsewhere = await fold({ inside: false });
   check("but a panel that did not have the focus does not take it",
     elsewhere.map(([what]) => what).join() === "write,render");
+
+  // Found by review. The write is awaited, and a viewer can click into the
+  // chat box while it is in flight. Deciding this before the await and not
+  // looking again took the cursor out of what they were typing in.
+  const moved = await fold({ inside: true, movesTo: { what: "the chat box" } });
+  check("and neither does one whose focus went somewhere real in the meantime",
+    moved.map(([what]) => what).join() === "write,render");
 }
 
 /* ---------- and the room that gives back ---------- */

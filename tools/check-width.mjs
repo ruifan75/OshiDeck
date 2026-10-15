@@ -67,7 +67,7 @@ put("–", 556); put("…", 1000);
 // `Sakura Miko` is a real channel name and about as long as they get; a
 // longer one runs over in Japanese too, which is the channel's doing and not
 // the wording's.
-const STAND_IN = { name: "Sakura Miko", number: "24" };
+const STAND_IN = { name: "Sakura Miko", number: "24", unreadable: Symbol("unreadable") };
 
 export function width(text, { report } = {}) {
   let units = 0;
@@ -124,7 +124,7 @@ export function roomIn({ MESSAGES, source, report = () => {} }) {
 export function noticeKeys(source) {
   const found = new Map();
   for (const call of notices(source)) {
-    for (const [key, args] of shown(source, call)) {
+    for (const [key, args] of shown(source, call) || []) {
       // The action's own label is a button, not the message.
       if (key.startsWith("action.")) continue;
       // Every call, not one per key. The map used to keep the first — and
@@ -145,24 +145,121 @@ const notices = (source) => [...calls(source, "showToast"), ...calls(source, "ba
 // `saved.*` reaches the row — was never measured while the checker went on
 // reporting that everything fits.
 export function unreadable(source) {
-  return notices(source).filter((call) => !shown(source, call).length);
+  return notices(source).filter((call) => !shown(source, call)?.length);
 }
 
-// Which messages a call shows, as [key, the arguments after it]. A call is
-// usually handed `t("…")` outright; `showToast(saved)` is handed a name, and
-// the sentence it holds was chosen a few lines further up. One hop, by name,
-// within the function the call is in — not dataflow, but it either finds the
-// keys or it does not, and saying so is the part that was missing.
-const shown = (source, call) => messagesIn(source, argumentsOf(call.text)[0] ?? "", call.at);
+// Which messages a call shows, as [key, the arguments after it] — or null
+// when the call cannot be read at all.
+const shown = (source, call) => messagesIn(source, argumentsOf(call.text)[0] ?? "");
 
-// The messages an expression will produce: the ones written into it, **and**
-// the ones held by any bare name in it. Both, rather than the first that
-// answers. `ok ? t("toast.deleted") : other` has one branch written out in
-// full, and reading that as the answer left `other` — which can be wider —
-// never looked at at all.
-function messagesIn(source, expression, from = source.length) {
-  const out = [...messages(expression)];
-  for (const name of namesIn(expression)) out.push(...boundTo(source, name, from));
+// The values an expression can produce, as text — or null when this cannot
+// say. A closed grammar, and deliberately a small one: a `t(…)` call, a bare
+// name, or a choice between those. A template, a call to something else, a
+// property, a string built up by hand — none of those are read, they are
+// refused.
+//
+// Reading part of an expression and calling it understood is the whole of
+// what kept going wrong here. `ok ? t("toast.deleted") : other` has one
+// branch written out in full; finding that branch and stopping left `other`,
+// which could be the wider of the two, never looked at — while the checker
+// reported that everything fits. The question is not "did I find a message",
+// it is "have I accounted for everything this can produce".
+function alternatives(expression) {
+  const text = expression.trim();
+  if (!text) return null;
+
+  // A branch written inside brackets of its own is that branch. Without this
+  // the whole of `(a ? t("x") : t("y"))` sits at depth 1 and reads as one
+  // value nobody can identify.
+  if (text.startsWith("(") && openerOf(text, closerOf(text, 0)) === 0 &&
+      closerOf(text, 0) === text.length - 1) {
+    return alternatives(text.slice(1, -1));
+  }
+
+  const ask = splitAt(text, "?");
+  if (ask >= 0) {
+    const colon = matchingColon(text, ask + 1);
+    if (colon < 0) return null;
+    // The condition is not one of the values; the two branches are.
+    return both(alternatives(text.slice(ask + 1, colon)), alternatives(text.slice(colon + 1)));
+  }
+
+  for (const op of ["||", "??"]) {
+    const or = splitAt(text, op);
+    if (or >= 0) {
+      return both(alternatives(text.slice(0, or)), alternatives(text.slice(or + op.length)));
+    }
+  }
+
+  return [text];
+}
+
+const both = (left, right) => (left === null || right === null ? null : [...left, ...right]);
+
+// The first `op` that is not inside brackets, quotes or a template. `?.` and
+// `??` are not the conditional, and `?` is looked for before `??` is, so the
+// second character has to be checked here.
+function splitAt(text, op) {
+  let depth = 0, quote = "";
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (quote) {
+      if (c === "\\") i += 1;
+      else if (c === quote) quote = "";
+      continue;
+    }
+    if (c === '"' || c === "'" || c === "`") { quote = c; continue; }
+    if ("([{".includes(c)) { depth += 1; continue; }
+    if (")]}".includes(c)) { depth -= 1; continue; }
+    if (depth) continue;
+    if (op === "?" && c === "?" && (text[i + 1] === "?" || text[i + 1] === ".")) { i += 1; continue; }
+    if (text.startsWith(op, i)) return i;
+  }
+  return -1;
+}
+
+// The `:` that closes the `?` this started from, counting the pairs between.
+function matchingColon(text, from) {
+  let depth = 0, nested = 0, quote = "";
+  for (let i = from; i < text.length; i++) {
+    const c = text[i];
+    if (quote) {
+      if (c === "\\") i += 1;
+      else if (c === quote) quote = "";
+      continue;
+    }
+    if (c === '"' || c === "'" || c === "`") { quote = c; continue; }
+    if ("([{".includes(c)) { depth += 1; continue; }
+    if (")]}".includes(c)) { depth -= 1; continue; }
+    if (depth) continue;
+    if (c === "?") { if (text[i + 1] === "?" || text[i + 1] === ".") i += 1; else nested += 1; continue; }
+    if (c === ":") { if (!nested) return i; nested -= 1; }
+  }
+  return -1;
+}
+
+// The messages an expression will produce — every one of them, or null if any
+// part of it cannot be accounted for.
+function messagesIn(source, expression, seen = new Set()) {
+  const parts = alternatives(expression);
+  if (parts === null) return null;
+
+  const out = [];
+  for (const part of parts) {
+    // A `t(…)` call, and the whole of this value rather than something with a
+    // call in it: `` `${t("x")} ok` `` is a string this cannot measure.
+    // `at` is where the bracket is, so the name is what stands before it.
+    const call = calls(part, "t")[0];
+    if (call && part.slice(0, call.at).trim() === "t" &&
+        call.at + call.text.length === part.length) {
+      out.push(...messages(part));
+      continue;
+    }
+    const name = part.match(/^[A-Za-z_$][\w$]*$/)?.[0];
+    const held = name && !seen.has(name) ? boundTo(source, name, new Set([...seen, name])) : null;
+    if (held === null) return null;
+    out.push(...held);
+  }
   return out;
 }
 
@@ -171,70 +268,83 @@ const messages = (text) => calls(text, "t")
   .map(([key, ...rest]) => [key?.trim().match(/^"([\w.]+)"$/)?.[1], rest])
   .filter(([key]) => key);
 
-// The bare names in an expression — every `t(…)` call and every quoted string
-// blanked out first, so that neither `t` itself nor a message key inside one
-// is read as a name to go looking for.
-const RESERVED = new Set(["true", "false", "null", "undefined", "typeof", "void", "new"]);
-function namesIn(expression) {
-  let rest = expression;
-  for (const call of calls(expression, "t")) rest = rest.replace(call.text, " ");
-  rest = rest.replace(/"[^"]*"|'[^']*'|`[^`]*`/g, " ");
-  return [...new Set(rest.match(/[A-Za-z_$][\w$]*/g) || [])].filter((name) => !RESERVED.has(name));
+// What a name holds — and only where the file leaves no room to wonder.
+//
+// Exactly one `const <name> =` in the whole file, the name never used as a
+// parameter anywhere in it, and an initializer this same grammar can read.
+// Short of any of those it answers null and the call is reported unreadable.
+//
+// Three readings were tried before this one and each answered a name with
+// something that was not its value: the whole file searched for any binding
+// at all, then the enclosing function guessed at from indentation, then a
+// property written under the same name anywhere. All three answered an opaque
+// parameter with somebody else's sentence, and one of them could fail a
+// message that fits because an unrelated property was wider. A name whose
+// value is not written down once, plainly, is not read.
+function boundTo(source, name, seen) {
+  if (parameters(source).has(name)) return null;
+
+  const found = [...source.matchAll(new RegExp(`\\bconst\\s+${name.replace(/\$/g, "\\$")}\\s*=\\s*`, "g"))];
+  if (found.length !== 1) return null;
+
+  return messagesIn(source, valueAt(source, found[0].index + found[0][0].length), seen);
 }
 
-// Where the function holding an offset begins. Every function in content.js
-// sits at one indent inside the file's IIFE, so the last line that opens one
-// before the call is the one the call is in.
+// Every name that is a parameter anywhere in the file: inside the parentheses
+// of a `function (…)`, inside a `(…)` an arrow follows, or standing alone
+// before one. Destructuring counts — `{ clear, kept, editing }` in a
+// parameter list is three parameters — because every name in there is given
+// its value by whoever calls, which is not something this file can read.
 //
-// A heuristic, and deliberately a narrow one. The whole file used to be
-// searched, which is how an opaque `saved` parameter came to be answered by a
-// `const saved` in a different function entirely: the checker then reported a
-// sentence it had never seen as measured and fitting. Looking too far finds
-// the wrong binding; looking too narrowly finds none, and finding none is a
-// failure that says so.
-function functionAt(source, from) {
-  const opens = /^  (?:async function|function|const [\w$]+ = (?:async )?(?:function|\())/gm;
-  let start = 0;
-  for (const m of source.matchAll(opens)) {
-    if (m.index >= from) break;
-    start = m.index;
+// Crude, and crude in the direction of refusing: a name wrongly taken for a
+// parameter is a call reported as unreadable, which is a failure somebody
+// looks at. The other direction is a sentence nobody measured.
+const paramCache = new Map();
+function parameters(source) {
+  if (paramCache.has(source)) return paramCache.get(source);
+  const names = new Set();
+  const add = (text) => { for (const n of text.match(/[A-Za-z_$][\w$]*/g) || []) names.add(n); };
+
+  for (const m of source.matchAll(/\bfunction\s*[\w$]*\s*\(/g)) {
+    add(within(source, m.index + m[0].length - 1));
   }
-  return start;
+  for (const m of source.matchAll(/([A-Za-z_$][\w$]*)\s*=>/g)) names.add(m[1]);
+  for (const m of source.matchAll(/\)\s*=>/g)) {
+    const open = openerOf(source, m.index);
+    if (open >= 0) add(within(source, open));
+  }
+
+  paramCache.set(source, names);
+  return names;
 }
 
-// What a bare name holds, in the two places a sentence is ever written down
-// under it.
-//
-// A local, inside the function the call is in and above it: that is
-// `const saved = ok ? t("saved.pool") : t("saved.global")`, three lines above
-// the `showToast(saved)` that shows it.
-//
-// Or a property written under that name anywhere in the file, which is how a
-// sentence reaches a parameter: `kept` is a parameter of saveTokens, and
-// `kept: t("toast.inputKept")` in its caller is the only place that sentence
-// is written out at all.
-//
-// The whole file used to be searched for either shape, and that is how an
-// opaque parameter came to be answered by an unrelated `const` of the same
-// name in another function — the checker then called a sentence it had never
-// seen measured and fitting. A property is at least something handed over
-// under this name; a const in a function the call is not in is not.
-//
-// Not dataflow: it does not check that the object carrying that property is
-// the one this call's function was given. One hop, by name, and it either
-// finds something or says it could not.
-function boundTo(source, name, from) {
-  const escaped = name.replace(/\$/g, "\\$");
-  const out = [];
-  const take = (pattern, start, end) => {
-    const where = source.slice(start, end);
-    for (const m of where.matchAll(pattern)) {
-      out.push(...messages(valueAt(where, m.index + m[0].length)));
-    }
-  };
-  take(new RegExp(`(?:^|[\\s{(,;])${escaped}\\s*[:=]\\s*`, "g"), functionAt(source, from), from);
-  take(new RegExp(`[{,]\\s*${escaped}\\s*:\\s*`, "g"), 0, source.length);
-  return out;
+// The text between a `(` and the `)` that closes it.
+function within(source, open) {
+  let depth = 0;
+  for (let i = open; i < source.length; i++) {
+    if (source[i] === "(") depth += 1;
+    else if (source[i] === ")" && --depth === 0) return source.slice(open + 1, i);
+  }
+  return "";
+}
+
+// The `)` that closes the `(` at `open`, and the `(` that a `)` closes.
+function closerOf(source, open) {
+  let depth = 0;
+  for (let i = open; i < source.length; i++) {
+    if (source[i] === "(") depth += 1;
+    else if (source[i] === ")" && --depth === 0) return i;
+  }
+  return -1;
+}
+
+function openerOf(source, close) {
+  let depth = 0;
+  for (let i = close; i >= 0; i--) {
+    if (source[i] === ")") depth += 1;
+    else if (source[i] === "(" && --depth === 0) return i;
+  }
+  return -1;
 }
 
 // From here to the end of what is being assigned: the first `;` or `,` — or
@@ -353,10 +463,21 @@ export function checkWidth({ MESSAGES, read, report = console.log }) {
     if (measured.some(([, w]) => w === null)) return null;
     return measured.sort((a, b) => b[1] - a[1])[0]?.[0];
   };
-  const fill = (args, slot, at) => {
-    const inner = messagesIn(source, args[Number(slot) - 1] ?? "", at)
-      .map(([key]) => MESSAGES[key]?.en)
-      .filter(Boolean);
+  const bare = /^[A-Za-z_$][\w$]*$/;
+  const fill = (args, slot) => {
+    const text = args[Number(slot) - 1] ?? "";
+    const held = messagesIn(source, text);
+    // A name is how a sentence is handed around in this file, so one that
+    // cannot be read may well be holding one: standing a channel name in its
+    // place understated `toast.saveFailedKept` by 90px. Anything else refused
+    // — a property, a count, a call to something else — is a value, and a
+    // value is what the stand-in was always for.
+    if (held === null) {
+      const parts = alternatives(text) || [];
+      if (parts.some((part) => bare.test(part.trim()))) return STAND_IN.unreadable;
+      return slot === "1" ? STAND_IN.name : STAND_IN.number;
+    }
+    const inner = held.map(([key]) => MESSAGES[key]?.en).filter(Boolean);
     const pick = widest(inner);
     if (pick === null) return null;
     return pick ?? (slot === "1" ? STAND_IN.name : STAND_IN.number);
@@ -376,9 +497,9 @@ export function checkWidth({ MESSAGES, read, report = console.log }) {
     const text = en
       .replace(/\$(\d)\{([^{}|]*)\|([^{}|]*)\}/g, (_, n, one, many) => `${STAND_IN.number} ${many}`)
       .replace(/\$(\d)/g, (_, slot) => {
-        const value = fill(args, slot, call.at);
-        if (value === null) unmeasurable = true;
-        return value ?? "";
+        const value = fill(args, slot);
+        if (value === null || value === STAND_IN.unreadable) { unmeasurable = true; return ""; }
+        return value;
       });
     if (unmeasurable) {
       report(`FAIL ${key} — $1 に入る文言の幅が出せないので、全体の幅も出せません`);

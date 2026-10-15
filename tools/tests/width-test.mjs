@@ -235,6 +235,40 @@ check("a $1 handed a name it cannot read is a failure",
 check("and a name destructured out of a parameter list is a parameter too",
   narrow('  const kept = t("toast.deleted");\n' +
          '  function f({ kept }) { showToast(t("toast.saveFailedKept", kept)); }'));
+
+/* ---------- and the shapes a list of shapes kept missing ---------- */
+
+// The reader asked "is this name a parameter" for three rounds, and answering
+// it means listing the shapes a parameter comes in. `function f(x)`, `(x) =>`
+// and `x =>` were listed; these four walked straight past and were answered
+// with somebody else's sentence. So it counts instead of listing: every
+// mention of a name has to be one already read, and anything else refuses it.
+const shadowed = (body) =>
+  narrow('  const saved = t("toast.deleted");\n' + body);
+
+check("a parameter of an object method is still a parameter",
+  shadowed('  const api = { go(saved) { showToast(saved); } };'));
+check("and of a class method", shadowed('  class A { go(saved) { showToast(saved); } }'));
+check("a catch binding is not that const either",
+  shadowed('  function f() { try {} catch (saved) { showToast(saved); } }'));
+check("nor is a loop binding",
+  shadowed('  function f() { for (const saved of xs) showToast(saved); }'));
+check("nor a parameter with a default",
+  shadowed('  function f(saved = 1) { showToast(saved); }'));
+
+// Not a shape at all — just a use this file has not read. If it cannot say
+// what happened to the name there, it cannot say what the name holds.
+check("and a name handed to something this file never read is refused",
+  shadowed('  function f() { other(saved); showToast(saved); }'));
+
+// Comments are blanked before any of this: a commented-out notice is not a
+// notice, and a name mentioned in prose is not a use of it. Measured, the
+// 40-W translation in here would fail.
+check("a notice that is commented out is not a notice",
+  run({ MESSAGES: wide, read: (f) => (f === "content.js"
+    ? '\n  const MOST_SHOWN = 99;\n  function f() {' +
+      ' /* showToast(t("toast.inputKept")); */ showToast(t("toast.deleted")); }'
+    : read(f)) }).bad === 0);
 check("but a $1 handed something that was never a message takes the stand-in",
   run({ read: (f) => (f === "content.js"
     ? '\n  const MOST_SHOWN = 99;\n  function f(preset) {' +

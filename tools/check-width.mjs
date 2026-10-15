@@ -110,7 +110,8 @@ export function roomIn({ MESSAGES, source, report = () => {} }) {
 }
 
 // Every key that reaches the bar's one line, read from the calls rather than
-// listed here: a list goes stale the first time somebody adds a toast, and
+// listed here. The source has had its comments taken out already — checkWidth
+// does that, once, where the file is read: a list goes stale the first time somebody adds a toast, and
 // goes stale silently.
 //
 // Two doors into the same row. A notice takes it over for a few seconds; what
@@ -270,62 +271,43 @@ const messages = (text) => calls(text, "t")
 
 // What a name holds — and only where the file leaves no room to wonder.
 //
-// Exactly one `const <name> =` in the whole file, the name never used as a
-// parameter anywhere in it, and an initializer this same grammar can read.
-// Short of any of those it answers null and the call is reported unreadable.
+// Not "is this name a parameter", which is the question the last three
+// readings tried to answer. Answering it means listing the shapes a
+// parameter comes in, and a list of shapes is never finished: `function
+// f(x)`, `(x) =>` and `x =>` were listed, and an object method `go(x) {}`, a
+// class method, a `catch (x)` and a `for (const x of …)` all walked straight
+// past and were answered with somebody else's sentence.
 //
-// Three readings were tried before this one and each answered a name with
-// something that was not its value: the whole file searched for any binding
-// at all, then the enclosing function guessed at from indentation, then a
-// property written under the same name anywhere. All three answered an opaque
-// parameter with somebody else's sentence, and one of them could fail a
-// message that fits because an unrelated property was wider. A name whose
-// value is not written down once, plainly, is not read.
+// So this counts instead of listing. Every mention of the name in the file
+// has to be one already read: its single `const`, and uses sitting inside the
+// calls being read. One mention anywhere else — a parameter list of any
+// shape, a property key, a use this file knows nothing about — and the name
+// is refused. There is no list to be missing an entry from.
 function boundTo(source, name, seen) {
-  if (parameters(source).has(name)) return null;
+  const escaped = name.replace(/\$/g, "\\$");
 
-  const found = [...source.matchAll(new RegExp(`\\bconst\\s+${name.replace(/\$/g, "\\$")}\\s*=\\s*`, "g"))];
-  if (found.length !== 1) return null;
+  const declared = [...source.matchAll(new RegExp(`\\bconst\\s+${escaped}\\s*=\\s*`, "g"))];
+  if (!declared.length) return null;
 
-  return messagesIn(source, valueAt(source, found[0].index + found[0][0].length), seen);
+  const spans = readable(source);
+  const inside = (at) => spans.some(([from, to]) => at >= from && at < to);
+  const itself = declared[0].index + declared[0][0].indexOf(name);
+
+  for (const m of source.matchAll(new RegExp(`\\b${escaped}\\b`, "g"))) {
+    if (m.index !== itself && !inside(m.index)) return null;
+  }
+
+  return messagesIn(source, valueAt(source, declared[0].index + declared[0][0].length), seen);
 }
 
-// Every name that is a parameter anywhere in the file: inside the parentheses
-// of a `function (…)`, inside a `(…)` an arrow follows, or standing alone
-// before one. Destructuring counts — `{ clear, kept, editing }` in a
-// parameter list is three parameters — because every name in there is given
-// its value by whoever calls, which is not something this file can read.
-//
-// Crude, and crude in the direction of refusing: a name wrongly taken for a
-// parameter is a call reported as unreadable, which is a failure somebody
-// looks at. The other direction is a sentence nobody measured.
-const paramCache = new Map();
-function parameters(source) {
-  if (paramCache.has(source)) return paramCache.get(source);
-  const names = new Set();
-  const add = (text) => { for (const n of text.match(/[A-Za-z_$][\w$]*/g) || []) names.add(n); };
-
-  for (const m of source.matchAll(/\bfunction\s*[\w$]*\s*\(/g)) {
-    add(within(source, m.index + m[0].length - 1));
+// Where a name may stand and still have been read: inside the brackets of a
+// `t(…)`, or of one of the calls whose message is being worked out.
+function readable(source) {
+  const spans = [];
+  for (const name of ["t", "showToast", "barLine"]) {
+    for (const call of calls(source, name)) spans.push([call.at, call.at + call.text.length]);
   }
-  for (const m of source.matchAll(/([A-Za-z_$][\w$]*)\s*=>/g)) names.add(m[1]);
-  for (const m of source.matchAll(/\)\s*=>/g)) {
-    const open = openerOf(source, m.index);
-    if (open >= 0) add(within(source, open));
-  }
-
-  paramCache.set(source, names);
-  return names;
-}
-
-// The text between a `(` and the `)` that closes it.
-function within(source, open) {
-  let depth = 0;
-  for (let i = open; i < source.length; i++) {
-    if (source[i] === "(") depth += 1;
-    else if (source[i] === ")" && --depth === 0) return source.slice(open + 1, i);
-  }
-  return "";
+  return spans;
 }
 
 // The `)` that closes the `(` at `open`, and the `(` that a `)` closes.
@@ -345,6 +327,39 @@ function openerOf(source, close) {
     else if (source[i] === "(" && --depth === 0) return i;
   }
   return -1;
+}
+
+// Comments blanked, one space per character so that every offset above still
+// points where it did. A commented-out `showToast(t("…"))` is not a notice,
+// and a name mentioned in prose is not a use of it.
+function withoutComments(source) {
+  // Split into UTF-16 units, not code points: every offset above is a string
+  // index, and one astral character would slide the whole file by one.
+  const out = source.split("");
+  let quote = "", comment = "";
+  for (let i = 0; i < source.length; i++) {
+    const c = source[i], next = source[i + 1];
+    if (comment) {
+      const ends = comment === "//" ? c === "\n" : c === "*" && next === "/";
+      if (comment === "/*") { out[i] = c === "\n" ? c : " "; if (ends) out[i + 1] = " "; }
+      if (ends) { if (comment === "/*") i += 1; comment = ""; }
+      else if (comment === "//") out[i] = " ";
+      continue;
+    }
+    if (quote) {
+      if (c === "\\") { i += 1; continue; }
+      if (c === quote) quote = "";
+      continue;
+    }
+    if (c === '"' || c === "'" || c === "`") { quote = c; continue; }
+    if (c === "/" && (next === "/" || next === "*")) {
+      comment = c + next;
+      out[i] = " ";
+      out[i + 1] = " ";
+      i += 1;
+    }
+  }
+  return out.join("");
 }
 
 // From here to the end of what is being assigned: the first `;` or `,` — or
@@ -418,7 +433,7 @@ function calls(source, name) {
 
 export function checkWidth({ MESSAGES, read, report = console.log }) {
   let bad = 0;
-  const source = read("content.js");
+  const source = withoutComments(read("content.js"));
   const keys = noticeKeys(source);
   if (!keys.size) {
     report("FAIL バーに出る文言の呼び出しが読み取れませんでした");

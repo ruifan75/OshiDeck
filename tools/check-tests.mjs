@@ -610,20 +610,22 @@ const MUTATIONS = [
     "  return [text.replace(/[`${}]/g, \"\").trim()];\n}"],
 
   // A name is read only where the file leaves no room to wonder: bound once,
-  // and never a parameter.
+  // and every other mention of it one already read. Counting, not listing —
+  // three rounds of listing the shapes a parameter comes in missed four more.
   [WIDTH, WIDTHSRC, "a name answered although something else is called it",
-    "  if (parameters(source).has(name)) return null;",
+    "    if (m.index !== itself && !inside(m.index)) return null;",
     ""],
 
-  [WIDTH, WIDTHSRC, "a name answered by one of several bindings",
-    "  if (found.length !== 1) return null;",
-    "  if (!found.length) return null;"],
+  // A use inside a call being read is read; the brackets of anything else are
+  // not somewhere this file can follow a name into.
+  [WIDTH, WIDTHSRC, "a mention anywhere at all counted as one already read",
+    '  for (const name of ["t", "showToast", "barLine"]) {',
+    '  for (const name of ["t", "showToast", "barLine", "other"]) {'],
 
-  // Destructuring in a parameter list is parameters: `{ clear, kept }` is
-  // two names whose values only the caller knows.
-  [WIDTH, WIDTHSRC, "a destructured parameter not counted as one",
-    "    add(within(source, m.index + m[0].length - 1));",
-    "    add(within(source, m.index + m[0].length - 1).replace(/\\{[^{}]*\\}/g, \" \"));"],
+  // Code is what is read; prose about code is not.
+  [WIDTH, WIDTHSRC, "a commented-out notice read as a notice",
+    '  const source = withoutComments(read("content.js"));',
+    '  const source = read("content.js");'],
 
   // An unmeasurable alternative weighed nothing, lost the pick to whichever
   // sibling the table did know, and the unknown character went unreported.
@@ -741,7 +743,7 @@ const MUTATIONS = [
   // Every saved.* sentence reaches the row by name, and none of them were
   // measured while the checker went on saying everything fits.
   [WIDTH, WIDTHSRC, "a sentence handed over by name never measured",
-    "  return messagesIn(source, valueAt(source, found[0].index + found[0][0].length), seen);",
+    "  return messagesIn(source, valueAt(source, declared[0].index + declared[0][0].length), seen);",
     "  return [];"],
 
   [WIDTH, WIDTHSRC, "a notice nobody can identify quietly passed over",
@@ -1143,11 +1145,11 @@ const KILLS = {
   "an expression of any shape at all read as a value":
     "a name wrapped in a template is not a name it has read",
   "a name answered although something else is called it":
-    "a const in one function does not answer a parameter in another",
-  "a name answered by one of several bindings":
-    "a name bound in two places is not read from either",
-  "a destructured parameter not counted as one":
-    "a name destructured out of a parameter list is a parameter too",
+    "a parameter of an object method is still a parameter",
+  "a mention anywhere at all counted as one already read":
+    "a name handed to something this file never read is refused",
+  "a commented-out notice read as a notice":
+    "a notice that is commented out is not a notice",
   "a fold that takes the focus back from wherever it went":
     "neither does one whose focus went somewhere real in the meantime",
   "an unmeasurable alternative quietly losing the pick":

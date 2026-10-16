@@ -711,6 +711,25 @@ const MUTATIONS = [
     "button.od-bar-identity {\n  appearance: none;\n  border: 0;",
     "button.od-bar-identity {\n  appearance: none;\n  border: 1px solid #555;"],
 
+  // A page whose owner could not be worked out has no deck, no pool and
+  // nowhere to save to. The panel is off there, and each half of being off
+  // can be turned back on by itself.
+  [DRAW, CONTENT, "a card drawn where there is no deck to keep it in",
+    "    if (!channelId || !settingsCache.suggest) return (drawn = null);",
+    "    if (!settingsCache.suggest) return (drawn = null);"],
+
+  [VISIBILITY, CONTENT, "a panel with no channel that keeps its controls",
+    "    if (off) return bar;\n\n",
+    ""],
+
+  [VISIBILITY, CONTENT, "somewhere to file what you typed when there is nowhere",
+    "    else if (inputHasContent && !off) bar.append(saveTargets(channel, hue));",
+    "    else if (inputHasContent) bar.append(saveTargets(channel, hue));"],
+
+  [VISIBILITY, CONTENT, "a \uff0b over every comment in a chat that cannot save one",
+    "    if (stopped || !rootEl || rootEl.hidden || !barContext?.channel?.id) return null;",
+    "    if (stopped || !rootEl || rootEl.hidden) return null;"],
+
   // Folded is a preference and preferences are written down. Anything the
   // settings gate does not know about is dropped on the way in and on the
   // way back out of a backup.
@@ -1179,6 +1198,14 @@ const KILLS = {
   "a chevron pointing the same way either way":
     "its chevron faces the way the panel will go, not two marks",
   "a handle drawn as the button it is": "the handle is a button nobody can tell is a button",
+  "a card drawn where there is no deck to keep it in":
+    "a chat with no channel draws nothing, however loud it gets",
+  "a panel with no channel that keeps its controls": "and none to the builder either",
+  "somewhere to file what you typed when there is nowhere":
+    "typing something with no channel is offered nowhere to put it",
+  "a \uff0b over every comment in a chat that cannot save one":
+    "and a chat whose owner could not be worked out offers nothing either",
+
   "a fold nobody is allowed to remember": "folding the panel away is remembered",
   "a fold the panel never notices": "folding the panel away is a change",
   "a bar measured as if nothing shared it": "the room worked out for a bar reading Pool 24 is the one measured",

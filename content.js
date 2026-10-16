@@ -642,7 +642,13 @@
     !whyNotSendable(seen.tokens, channelId, member);
 
   function drawFromChat(deck, { channelId, member } = {}) {
-    if (!settingsCache.suggest) return (drawn = null);
+    // Off wherever the rest of the panel is off. A drawn card is a card to
+    // send here and keep here, and with no channel neither of those has an
+    // answer: there is no deck for it to join, and whyNotSendable answers
+    // "cannot judge" rather than "no" when asked without one — so a chat whose
+    // owner could not be found offered somebody else's member emoji, which
+    // would have failed the moment it was pressed.
+    if (!channelId || !settingsCache.suggest) return (drawn = null);
 
     const now = Date.now();
     const mine = new Set();
@@ -919,6 +925,20 @@
       askWhere(grabRow);
     });
     grabButton().replaceChildren(plus);
+  }
+
+  // Which comment, if any, is offered the ＋. Named rather than written into
+  // the listener for the same reason as onPageChanged: it is a decision, and
+  // inside the listener nothing could reach it to ask.
+  //
+  // The channel is part of it. The ＋ saves a card, a card is saved against a
+  // channel, and on a page whose owner could not be found the panel is off —
+  // the bar is one line saying so, and a ＋ sitting over every comment in the
+  // chat said otherwise.
+  function grabFor(target) {
+    if (stopped || !rootEl || rootEl.hidden || !barContext?.channel?.id) return null;
+    const row = target instanceof Element ? target.closest(COMMENT_ROWS) : null;
+    return row?.querySelector("#message") ? row : null;
   }
 
   function offerGrab(row) {
@@ -1722,11 +1742,23 @@
   function buildBar({ channel, hue, count, mine, offered, waiting, empty, folded }) {
     const bar = document.createElement("div");
     bar.className = "od-bar";
+
+    // Nothing this panel does works without a channel: a deck belongs to one,
+    // a pool card is saved against one. So on a page whose owner could not be
+    // found the panel is off, and the bar is the whole of it — one line
+    // saying so. Everything else goes: the pool it would open is empty by
+    // construction, the builder opens onto a deck that does not exist, and
+    // offering to save what is being typed is offering to file it nowhere.
+    const off = !channel?.id;
+
     // Everything that would otherwise float over the chat lives here instead.
     if (notice) bar.append(noticeRow(notice));
     else if (peek) bar.append(peekReadout(peek));
     else if (poolOpen) bar.append(poolTabs(mine, offered));
-    else bar.append(inputHasContent ? saveTargets(channel, hue) : deckIdentity(channel, hue, count, empty, folded));
+    else if (inputHasContent && !off) bar.append(saveTargets(channel, hue));
+    else bar.append(deckIdentity(channel, hue, count, empty, folded));
+
+    if (off) return bar;
 
     if (poolOpen) {
       bar.appendChild(buildAction("close", t("action.close"), t("aria.closePool"), () => {
@@ -1976,14 +2008,10 @@
     // The choice is what kind of card this is, not whether it joins the deck
     // — you are saving it here because you want it here. A card carrying
     // member emoji has no choice: it can only ever be this channel's.
-    if (!channel?.id) {
-      const only = buildAction("plus", t("save.pool"),
-        t("save.poolWhy"), () => saveCurrentInput("global"));
-      only.dataset.primary = "true";
-      group.appendChild(only);
-      return group;
-    }
-
+    //
+    // There is no third case for a chat with no channel. There used to be —
+    // one button saving to the pool — and the panel is off there now, so
+    // buildBar never asks.
     const forced = tokens.requiredChannels(currentTokens).length > 0;
 
     const toChannel = buildAction("plus", channel.name || t("save.channelShort"),
@@ -2471,9 +2499,7 @@
   // Delegated, so a chat that adds a row a second costs nothing: one button
   // moves to whichever comment the pointer is on.
   document.addEventListener("pointerover", (event) => {
-    if (stopped || !rootEl || rootEl.hidden) return offerGrab(null);
-    const row = event.target instanceof Element ? event.target.closest(COMMENT_ROWS) : null;
-    offerGrab(row?.querySelector("#message") ? row : null);
+    offerGrab(grabFor(event.target));
   }, true);
 
   window.addEventListener("yt-navigate-finish", scheduleRender);

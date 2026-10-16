@@ -318,11 +318,17 @@ check("and the panel works the count out with it",
     process.exit(1);
   }
 
+  // The channel is one of the inputs now: without one the panel is off, and
+  // the bar is the whole of what is left of it.
+  const HERE = { id: "UC1", name: "さくらみこ" };
+
   const bar = (poolOpen, mine, offered = 0, waiting = mine + offered,
-               empty = false, folded = false) => new Function(
-    "poolOpen", "mine", "offered", "waiting", "empty", "folded", "document", "t",
+               empty = false, folded = false,
+               channel = HERE, typing = false) => new Function(
+    "poolOpen", "mine", "offered", "waiting", "empty", "folded", "channel",
+    "inputHasContent", "document", "t",
     `let poolTab = "mine";
-     const notice = null, peek = null, inputHasContent = false;
+     const notice = null, peek = null;
      const noticeRow = () => ({ is: "notice" });
      const peekReadout = () => ({ is: "peek" });
      const poolTabs = (m, o) => ({ is: "tabs", mine: m, offered: o });
@@ -332,7 +338,7 @@ check("and the panel works the count out with it",
      const render = () => {};
      const openOptions = () => {};
      ${src.slice(from, to)}
-     return buildBar({ channel: null, hue: 0, count: 4, mine, offered, waiting, empty, folded });`
+     return buildBar({ channel, hue: 0, count: 4, mine, offered, waiting, empty, folded });`
   )(
     poolOpen,
     mine,
@@ -340,6 +346,8 @@ check("and the panel works the count out with it",
     waiting,
     empty,
     folded,
+    channel,
+    typing,
     { createElement: () => ({
         kids: [],
         append(...nodes) { this.kids.push(...nodes); },
@@ -395,6 +403,23 @@ check("and the panel works the count out with it",
   check("the bar is told when the panel is folded away",
     identity(bar(false, 7, 0, 7, false, true))?.folded === true);
   check("and when it is open", identity(bar(false, 7))?.folded === false);
+
+  // And a bar with no channel above it. Every control here is about one: the
+  // pool fills from the channel's presets and its own saved cards, the
+  // builder opens onto its deck, and saving files what you typed against it.
+  // With no channel the pool is empty by construction, so the way in was
+  // already gone — but the builder and the save targets were not, and the
+  // panel was inviting you to use a deck that cannot exist.
+  const off = bar(false, 7, 10, 17, true, false, null);
+  check("with nothing to go on, there is no way into the pool", !wayIn(off));
+  check("and none to the builder either", !off.kids.some((k) => k.icon === "deck"));
+  check("the line that says why is all that is left of the panel",
+    off.kids.length === 1 && off.kids[0].is === "identity");
+
+  const saving = (channel) =>
+    bar(false, 0, 0, 0, false, false, channel, true).kids.some((k) => k.is === "saveTargets");
+  check("typing something with no channel is offered nowhere to put it", !saving(null));
+  check("and with one, the targets are back", saving(HERE));
 
   const tabs = (built) => built.kids.find((k) => k.is === "tabs");
   check("the pool shows its two halves apart", !!tabs(bar(true, 7, 10)));
@@ -564,6 +589,80 @@ check("and the panel works the count out with it",
   check("a folded panel stops at the bar",
     rest.indexOf("\n      if (folded) return;\n") > 0 &&
       rest.indexOf("if (folded) return;") < rest.indexOf("const hidden ="));
+}
+
+/* ---------- the ＋ in the chat, and where it is not ---------- */
+
+// The ＋ rides in YouTube's own right-hand gutter on whichever comment the
+// pointer is on. What it saves is a card, and a card is saved against a
+// channel — so on a page whose owner could not be worked out the panel is
+// off and the ＋ goes with it, rather than sitting over every comment in the
+// chat offering something the bar has just said is impossible.
+{
+  const from = src.indexOf("  function grabFor(target) {");
+  const to = src.indexOf("  function offerGrab(", from);
+  if (from < 0 || to < 0 || to <= from) {
+    console.log("FAIL could not lift grabFor out of content.js");
+    process.exit(1);
+  }
+
+  class Node {
+    constructor(tag, { message = true, inside = null } = {}) {
+      this.tag = tag;
+      this.message = message;
+      this.inside = inside;
+    }
+    // Only the kinds grabFor is given; a row that is not one of them answers
+    // with whatever it is standing in.
+    closest(selector) {
+      if (this.inside) return this.inside.closest(selector);
+      return selector.includes(this.tag) ? this : null;
+    }
+    querySelector(selector) {
+      return selector === "#message" && this.message ? { is: "message" } : null;
+    }
+  }
+
+  const asked = (target, { stopped = false, mounted = true, hidden = false,
+                           channel = { id: "UC1" } } = {}) => new Function(
+    "stopped", "rootEl", "barContext", "COMMENT_ROWS", "Element", "target",
+    `${src.slice(from, to)}
+     return grabFor(target);`
+  )(
+    stopped,
+    mounted ? { hidden } : null,
+    { channel },
+    "yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer",
+    Node,
+    target
+  );
+
+  const comment = new Node("yt-live-chat-text-message-renderer");
+  const superChat = new Node("yt-live-chat-paid-message-renderer");
+  const gift = new Node("yt-live-chat-sponsorships-gift-purchase-announcement-renderer");
+  const word = new Node("span", { inside: comment });
+
+  check("a comment under the pointer is offered the ＋", asked(comment) === comment);
+  check("and so is a super chat, which is somebody talking too", asked(superChat) === superChat);
+  check("the row is found from whatever inside it the pointer is actually on",
+    asked(word) === comment);
+  check("an announcement nobody typed is not offered one", asked(gift) === null);
+  check("nor is a row with no message in it",
+    asked(new Node("yt-live-chat-text-message-renderer", { message: false })) === null);
+  check("nor is something that is not an element at all", asked("a string") === null);
+
+  // The three ways the panel is not there to save into.
+  check("a torn-down panel offers nothing", asked(comment, { stopped: true }) === null);
+  check("nor an unmounted one", asked(comment, { mounted: false }) === null);
+  check("nor a hidden one", asked(comment, { hidden: true }) === null);
+
+  // And the one this change is about.
+  check("and a chat whose owner could not be worked out offers nothing either",
+    asked(comment, { channel: null }) === null);
+
+  // The decision has to be the listener's, not merely available to it.
+  check("and the listener asks it rather than deciding for itself",
+    /\n    offerGrab\(grabFor\(event\.target\)\);\n/.test(src));
 }
 
 /* ---------- the keyboard keeps its place ---------- */

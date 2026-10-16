@@ -67,14 +67,20 @@ const tokenStub = {
 // test that asks the code how long it holds for agrees with whatever it says,
 // so it can only tell that holding happens — not that it happens for as long
 // as anybody was told.
+// Every one of these runs on a page whose owner is known, because that is now
+// the precondition for drawing anything at all: pass `channelId: null` to get
+// the chat whose owner could not be found.
+const HERE = "UChere00000000000000000";
+
 function panel({ suggest = true, now = 1_000_000, hold = 45_000,
-                 channelId = null, member = null } = {}) {
+                 channelId = HERE, member = null } = {}) {
   // `null` is a page that has not rendered the chip, not one that says no —
   // building a definite non-member page for it meant the unknown case could
   // never be driven through offerFromChat at all.
   const asPage = (answer) => (answer === null ? page({ chip: false }) : page({ mine: answer }));
 
-  const state = { chat: null, now, renders: 0, forgotten: 0, member, showing: asPage(member) };
+  const state = { chat: null, now, renders: 0, forgotten: 0, member, channelId,
+                  showing: asPage(member) };
 
   // `painted` starts dirty so that clearing it can be seen: a stream that is
   // not the one before it must repaint from scratch, not skip on a signature
@@ -118,13 +124,19 @@ function panel({ suggest = true, now = 1_000_000, hold = 45_000,
       state.showing = asPage(next);
       return this;
     },
+    // And so can the page's hold on its own owner: an in-page navigation can
+    // leave the chat where it was with nothing left to read the channel off.
+    loses() {
+      state.channelId = null;
+      return this;
+    },
     // What render() actually calls: it reads the badge off the page itself.
-    offer: (deck = []) => api.offerFromChat(deck, channelId ? { id: channelId } : null),
-    draw: (deck = []) => api.drawFromChat(deck, { channelId, member: state.member })
+    offer: (deck = []) => api.offerFromChat(deck, state.channelId ? { id: state.channelId } : null),
+    draw: (deck = []) => api.drawFromChat(deck, { channelId: state.channelId, member: state.member })
   };
 }
 
-const draw = ({ suggest = true, chat = null, deck = [], channelId = null, member = null } = {}) =>
+const draw = ({ suggest = true, chat = null, deck = [], channelId = HERE, member = null } = {}) =>
   panel({ suggest, channelId, member }).chat(chat).draw(deck);
 
 const wave = { tokens: text("かわいい"), count: 9 };
@@ -168,6 +180,34 @@ check(
   "nor is something with no substance",
   draw({ chat: { tokens: text("   "), count: 20 } }) === null
 );
+
+/* ---------- and nothing at all where the panel is off ---------- */
+
+// A chat whose owner could not be worked out has no deck for a card to join
+// and no way to ask whether it could be sent. The panel says so on its one
+// line and does nothing else; drawing is part of that nothing.
+check(
+  "a chat with no channel draws nothing, however loud it gets",
+  draw({ chat: { tokens: text("かわいい"), count: 400 }, channelId: null }) === null
+);
+
+// This is the half that was wrong rather than merely unwanted: asked without
+// a channel, whyNotSendable answers "cannot judge", not "no" — so somebody
+// else's member emoji passed every test offering puts in the way, and the
+// card would have failed the moment it was pressed.
+check(
+  "least of all a member emoji it has no way to judge",
+  draw({ chat: heart, channelId: null, member: true }) === null
+);
+
+// And a card already in hand goes with it: the page can lose its owner under
+// a card that is being held, and a held card was only ever checked when it
+// was drawn.
+const adrift = panel({ hold: 45_000 });
+const beforehand = adrift.chat(wave).draw();
+check("a card drawn on a known channel is held", !!beforehand && adrift.draw() === beforehand);
+check("and is let go when the page stops being able to say where it is",
+  adrift.loses().draw() === null);
 
 /* ---------- exact wording, not the sort's loose one ---------- */
 

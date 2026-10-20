@@ -2223,6 +2223,23 @@
     // The last card of a half can be taken while you are looking at it.
     if (poolTab === "offered" && !offered.length) poolTab = "mine";
 
+    // Two things that outlive a redraw, and the off state has to put both
+    // back itself.
+    //
+    // The pool is somewhere you opened on purpose and the way out of it is
+    // its own button — which being off takes away with the other controls.
+    // Losing the channel with it open left the two tabs on the bar, nothing
+    // to close them with, and no line saying what had happened.
+    //
+    // And a ＋ already sitting in the chat: it lives in a row of YouTube's,
+    // not in the panel, so redrawing does not touch it. grabFor only decides
+    // where the next one goes, and a pointer that never moves again leaves
+    // the last one there, still able to open save targets.
+    if (!channel) {
+      poolOpen = false;
+      offerGrab(null);
+    }
+
     const shown = poolOpen ? (poolTab === "offered" ? offered : mine) : deck;
     // Only alongside your own deck. The pool is a place to choose from, not
     // somewhere to be handed things.
@@ -2374,10 +2391,22 @@
   function retryUnresolved(video) {
     if (!video) return;
     if (retry.video !== video) retry = { video, left: 5 };
-    if (retry.left <= 0) return;
-    retry.left -= 1;
+
+    // Five quick tries for the parts of a watch page that fill in a moment
+    // late, and then a slow one that does not give up. Giving up for good
+    // was survivable while the panel still worked without a channel; now
+    // that it turns itself off, the owner arriving three seconds late and
+    // the owner arriving a minute late are the difference between a panel
+    // and a sentence. Nothing else would notice: with suggestions off and a
+    // plain sort, a quiet chat never renders on its own, and the page
+    // observer only re-renders for the input or the membership badge.
+    //
+    // It costs nothing where the answer is never coming: a popped-out chat
+    // window has no video, and returned above.
+    const soon = retry.left > 0;
+    if (soon) retry.left -= 1;
     clearTimeout(refreshTimer);
-    refreshTimer = setTimeout(render, 600);
+    refreshTimer = setTimeout(render, soon ? 600 : 5000);
   }
 
   /* ---------- a starting hand ---------- */

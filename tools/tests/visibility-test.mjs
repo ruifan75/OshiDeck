@@ -561,8 +561,14 @@ check("and the panel works the count out with it",
       seen.presets += 1;
       container.appendChild({ is: "preset" });
     };
-    const renderHand = (container, cards) => { container.appendChild({ is: "hand", cards }); return 0; };
-    const renderList = (container, cards) => { container.appendChild({ is: "list", cards }); return 0; };
+    const renderHand = (container, cards, settings, hue, dealt) => {
+      container.appendChild({ is: "hand", cards, dealt });
+      return 0;
+    };
+    const renderList = (container, cards, settings, hue, dealt) => {
+      container.appendChild({ is: "list", cards, dealt });
+      return 0;
+    };
     const svgIcon = () => ({ is: "icon" });
     const render = () => {};
     const t = (key) => key;
@@ -579,6 +585,8 @@ check("and the panel works the count out with it",
   step(root, seen, [{ id: "a" }], null, false, false);
   check("and the mark comes off the moment it has a card",
     !root.marks.has("data-empty") && seen.context.empty === false);
+  check("and a hand with nothing dealt to it is handed nothing",
+    root.kids.find((k) => k.is === "hand")?.dealt === null);
 
   step(root, seen, [], { key: "drawn" }, false, false);
   check("a card drawn from chat is something to show, so it is not collapsed",
@@ -623,8 +631,12 @@ check("and the panel works the count out with it",
   step(root, seen, [], { key: "drawn" }, false, false);
   check("an empty deck dealt a card is still offered the preset that would fill it",
     seen.presets === 1);
+  // The card itself, not merely a hand row: a stub that appends a marker
+  // whatever it was handed says yes to this with the card dropped on the
+  // floor, which is what it used to do.
   check("and shows the card as well as the offer",
-    root.kids.some((k) => k.is === "hand") && root.kids.some((k) => k.is === "preset"));
+    root.kids.find((k) => k.is === "hand")?.dealt?.key === "drawn" &&
+      root.kids.some((k) => k.is === "preset"));
   check("with the offer under the card rather than over it",
     root.kids.findIndex((k) => k.is === "preset") >
       root.kids.findIndex((k) => k.is === "hand"));
@@ -664,17 +676,30 @@ check("and the panel works the count out with it",
     process.exit(1);
   }
 
+  // The real list, from the module that owns it — content.js reads it from
+  // there too. A fixture with its own copy agrees with itself: the selector
+  // could be changed to accept gift announcements and nothing here would
+  // notice.
+  globalThis.OshiDeck ||= {};
+  await import(new URL("../../src/tokens.js", import.meta.url).href);  // trending reads it
+  await import(process.env.OD_TRENDING
+    ? `file://${process.env.OD_TRENDING}`
+    : new URL("../../src/trending.js", import.meta.url).href);
+  const ROWS = globalThis.OshiDeck.trending.COMMENT_ROWS;
+
   class Node {
     constructor(tag, { message = true, inside = null } = {}) {
       this.tag = tag;
       this.message = message;
       this.inside = inside;
     }
-    // Only the kinds grabFor is given; a row that is not one of them answers
-    // with whatever it is standing in.
+    // Matched the way a browser matches it: one of the comma-separated
+    // selectors has to be this element, whole. Asking whether the list
+    // *contains* the tag name says yes to `yt-live-chat-paid-message-renderer
+    // [data-nothing]`, which no element on the page would answer to.
     closest(selector) {
       if (this.inside) return this.inside.closest(selector);
-      return selector.includes(this.tag) ? this : null;
+      return selector.split(",").some((one) => one.trim() === this.tag) ? this : null;
     }
     querySelector(selector) {
       return selector === "#message" && this.message ? { is: "message" } : null;
@@ -690,7 +715,7 @@ check("and the panel works the count out with it",
     stopped,
     mounted ? { hidden } : null,
     { channel },
-    "yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer",
+    ROWS,
     Node,
     target
   );
@@ -699,6 +724,11 @@ check("and the panel works the count out with it",
   const superChat = new Node("yt-live-chat-paid-message-renderer");
   const gift = new Node("yt-live-chat-sponsorships-gift-purchase-announcement-renderer");
   const word = new Node("span", { inside: comment });
+
+  check("the list the panel reads is the one src/trending.js owns",
+    ROWS.includes("yt-live-chat-text-message-renderer") &&
+      ROWS.includes("yt-live-chat-paid-message-renderer") &&
+      ROWS.split(",").length === 2);
 
   check("a comment under the pointer is offered the ＋", asked(comment) === comment);
   check("and so is a super chat, which is somebody talking too", asked(superChat) === superChat);
@@ -721,6 +751,92 @@ check("and the panel works the count out with it",
   // The decision has to be the listener's, not merely available to it.
   check("and the listener asks it rather than deciding for itself",
     /\n    offerGrab\(grabFor\(event\.target\)\);\n/.test(src));
+}
+
+/* ---------- what the off state has to put back itself ---------- */
+
+// Two things outlive a redraw, so turning the panel off does not reach them
+// on its own. Both found by review.
+{
+  const from = src.indexOf("    // Two things that outlive a redraw");
+  const to = src.indexOf("    const shown = poolOpen ?", from);
+  if (from < 0 || to < 0 || to <= from) {
+    console.log("FAIL could not lift the off-state reset out of render");
+    process.exit(1);
+  }
+
+  const after = (channel) => {
+    const state = { grab: "a row in the chat" };
+    const open = new Function("channel", "state", `
+      let poolOpen = true;
+      const offerGrab = (row) => { state.grab = row; };
+      ${src.slice(from, to)}
+      return poolOpen;`)(channel, state);
+    return { poolOpen: open, grab: state.grab };
+  };
+
+  // The pool is a place you opened on purpose and the way out is its own
+  // button, which being off takes away with the other controls. Losing the
+  // channel with it open left two tabs on the bar, nothing to close them
+  // with, and no line saying what had happened.
+  const lost = after(null);
+  check("losing the channel closes a pool there is no longer a button to close",
+    lost.poolOpen === false);
+
+  // And the ＋ lives in a row of YouTube's, not in the panel, so the redraw
+  // never touches it. grabFor only decides where the next one goes — a
+  // pointer that does not move again leaves the last one sitting there,
+  // still able to open save targets.
+  check("and takes back the ＋ already sitting in a chat row", lost.grab === null);
+
+  const kept = after({ id: "UC1" });
+  check("while a page that knows where it is leaves both where they were",
+    kept.poolOpen === true && kept.grab === "a row in the chat");
+}
+
+/* ---------- and the owner that turns up late ---------- */
+
+// The parts of a watch page that carry a channel id can fill in after the
+// chat does. Five quick tries covered that and then gave up for good, which
+// was survivable while the panel still worked without a channel — now that
+// it turns itself off, an owner arriving a minute late is the difference
+// between a panel and a sentence, and nothing else would notice: with
+// suggestions off and a plain sort a quiet chat never renders on its own,
+// and the page observer only re-renders for the input or the badge.
+{
+  const from = src.indexOf("  function retryUnresolved(video) {");
+  const to = src.indexOf("  /* ---------- a starting hand ---------- */", from);
+  if (from < 0 || to < 0 || to <= from) {
+    console.log("FAIL could not lift retryUnresolved out of content.js");
+    process.exit(1);
+  }
+
+  const tries = (videos) => {
+    const waits = [];
+    const ask = new Function("waits", `
+      let retry = { video: null, left: 0 };
+      let refreshTimer = null;
+      const render = () => {};
+      const clearTimeout = () => {};
+      const setTimeout = (fn, ms) => { waits.push(ms); return ms; };
+      ${src.slice(from, to)}
+      return retryUnresolved;`)(waits);
+    for (const video of videos) ask(video);
+    return waits;
+  };
+
+  // A popped-out chat window has no video and no owner to find, ever. That
+  // is the case the giving up was for, and it costs nothing to keep.
+  check("a chat with no video to go by never asks again", tries([null, null, null]).length === 0);
+
+  const waits = tries(Array(8).fill("dQw4w9WgXcQ"));
+  check("a watch page is asked again quickly, five times",
+    waits.slice(0, 5).every((ms) => ms === 600));
+  check("and then goes on asking slowly rather than giving up",
+    waits.length === 8 && waits.slice(5).every((ms) => ms === 5000));
+
+  check("and a different video gets its own five",
+    tries([...Array(7).fill("a"), "b"]).slice(-1)[0] === 600);
 }
 
 /* ---------- the keyboard keeps its place ---------- */

@@ -711,6 +711,31 @@ const MUTATIONS = [
     "button.od-bar-identity {\n  appearance: none;\n  border: 0;",
     "button.od-bar-identity {\n  appearance: none;\n  border: 1px solid #555;"],
 
+  // Found by review, all five. Two things outlive a redraw, so the off state
+  // has to put them back itself — and the retries that stopped mattered
+  // much more once the panel turned itself off.
+  [VISIBILITY, CONTENT, "a pool left open with nothing to close it",
+    "      poolOpen = false;\n      offerGrab(null);",
+    "      offerGrab(null);"],
+
+  [VISIBILITY, CONTENT, "a \uff0b left in the chat after the panel turns off",
+    "      poolOpen = false;\n      offerGrab(null);",
+    "      poolOpen = false;"],
+
+  [VISIBILITY, CONTENT, "retries that give up on an owner for good",
+    "    refreshTimer = setTimeout(render, soon ? 600 : 5000);",
+    "    if (soon) refreshTimer = setTimeout(render, 600);"],
+
+  // And the fixture that wrote its own selector policy: both of these left
+  // every grab assertion green.
+  [VISIBILITY, TRENDING, "the rows a \uff0b is offered on widened to an announcement",
+    '    "yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer";',
+    '    "yt-live-chat-sponsorships-gift-purchase-announcement-renderer";'],
+
+  [VISIBILITY, TRENDING, "a row selector no element on the page could answer to",
+    '    "yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer";',
+    '    "yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer[data-nothing]";'],
+
   // The one press that fills an empty deck, going the moment the chat says
   // anything — a drawn card is in the panel, not in the deck.
   [VISIBILITY, CONTENT, "a preset offer taken away by a card nobody owns",
@@ -1204,6 +1229,17 @@ const KILLS = {
   "a chevron pointing the same way either way":
     "its chevron faces the way the panel will go, not two marks",
   "a handle drawn as the button it is": "the handle is a button nobody can tell is a button",
+  "a pool left open with nothing to close it":
+    "losing the channel closes a pool there is no longer a button to close",
+  "a \uff0b left in the chat after the panel turns off":
+    "and takes back the \uff0b already sitting in a chat row",
+  "retries that give up on an owner for good":
+    "and then goes on asking slowly rather than giving up",
+  "the rows a \uff0b is offered on widened to an announcement":
+    "a comment under the pointer is offered the \uff0b",
+  "a row selector no element on the page could answer to":
+    "and so is a super chat, which is somebody talking too",
+
   "a preset offer taken away by a card nobody owns":
     "an empty deck dealt a card is still offered the preset that would fill it",
 

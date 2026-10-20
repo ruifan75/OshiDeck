@@ -711,6 +711,12 @@ const MUTATIONS = [
     "button.od-bar-identity {\n  appearance: none;\n  border: 0;",
     "button.od-bar-identity {\n  appearance: none;\n  border: 1px solid #555;"],
 
+  // The one press that fills an empty deck, going the moment the chat says
+  // anything — a drawn card is in the panel, not in the deck.
+  [VISIBILITY, CONTENT, "a preset offer taken away by a card nobody owns",
+    "      if (!shown.length) appendPresetOffer(rootEl, channel);",
+    "      if (!shown.length && !drawn) appendPresetOffer(rootEl, channel);"],
+
   // A page whose owner could not be worked out has no deck, no pool and
   // nowhere to save to. The panel is off there, and each half of being off
   // can be turned back on by itself.
@@ -1198,6 +1204,9 @@ const KILLS = {
   "a chevron pointing the same way either way":
     "its chevron faces the way the panel will go, not two marks",
   "a handle drawn as the button it is": "the handle is a button nobody can tell is a button",
+  "a preset offer taken away by a card nobody owns":
+    "an empty deck dealt a card is still offered the preset that would fill it",
+
   "a card drawn where there is no deck to keep it in":
     "a chat with no channel draws nothing, however loud it gets",
   "a panel with no channel that keeps its controls": "and none to the builder either",

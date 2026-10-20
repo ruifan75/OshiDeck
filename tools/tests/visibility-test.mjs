@@ -530,7 +530,11 @@ check("and the panel works the count out with it",
   // reads correctly, and a populated panel keeps the collapsed padding — so
   // the decision is run here rather than read.
   const from = src.indexOf("      rootEl.dataset.mode = data.settings.mode;");
-  const to = src.indexOf("      rootEl.appendChild(barEl);", from);
+  // All the way to the end of the redraw, not just the marks: what the panel
+  // puts under the bar is decided by the same two questions, and asking them
+  // of a slice that stops at the bar is how the preset offer came to depend
+  // on whether the chat had said anything.
+  const to = src.indexOf("\n    });", from);
   if (from < 0 || to < 0 || to <= from) {
     console.log("FAIL could not lift the collapse out of render");
     process.exit(1);
@@ -539,16 +543,33 @@ check("and the panel works the count out with it",
   const root = {
     dataset: {},
     marks: new Set(),
+    kids: [],
     toggleAttribute(name, on) { if (on) this.marks.add(name); else this.marks.delete(name); },
-    appendChild() {}
+    appendChild(node) { this.kids.push(node); }
   };
   const seen = {};
   const step = new Function("rootEl", "seen", "shown", "drawn", "wants", "poolOpen", `
+    rootEl.kids.length = 0;
+    seen.presets = 0;
     let barContext, barEl;
+    const expanded = false;
     const data = { settings: { mode: "hand", folded: wants } };
-    const channel = null, hue = 0, waiting = 0;
+    const channel = { id: "UC1" }, hue = 0, waiting = 0;
     const mine = [], offered = [];
-    const buildBar = (context) => { seen.context = context; return {}; };
+    const buildBar = (context) => { seen.context = context; return { is: "bar" }; };
+    const appendPresetOffer = (container) => {
+      seen.presets += 1;
+      container.appendChild({ is: "preset" });
+    };
+    const renderHand = (container, cards) => { container.appendChild({ is: "hand", cards }); return 0; };
+    const renderList = (container, cards) => { container.appendChild({ is: "list", cards }); return 0; };
+    const svgIcon = () => ({ is: "icon" });
+    const render = () => {};
+    const t = (key) => key;
+    const document = { createElement: () => ({
+      className: "", textContent: "", dataset: {},
+      setAttribute() {}, append() {}, appendChild() {}, addEventListener() {}
+    }) };
     ${src.slice(from, to)}`);
 
   step(root, seen, [], null, false, false);
@@ -583,12 +604,49 @@ check("and the panel works the count out with it",
   check("and the pool, which you opened on purpose, is not folded shut under you",
     !root.marks.has("data-folded"));
 
-  // The mark only takes the padding away. What a folded panel does not draw
-  // is decided by the lines after the ones lifted above.
-  const rest = src.slice(to);
+  // The mark only takes the padding away; what a folded panel does not draw
+  // is the rest of it. This used to be two lines of source read in order,
+  // because the slice stopped at the bar. The whole redraw is lifted now, so
+  // it can be run.
+  step(root, seen, [{ id: "a" }, { id: "b" }], null, true, false);
   check("a folded panel stops at the bar",
-    rest.indexOf("\n      if (folded) return;\n") > 0 &&
-      rest.indexOf("if (folded) return;") < rest.indexOf("const hidden ="));
+    root.kids.length === 1 && root.kids[0].is === "bar");
+
+  /* ---------- an empty deck, dealt a card, is still an empty deck ---------- */
+
+  // A card the chat held out is in the panel but not in the deck: it is on
+  // loan until the hold runs out, and nobody owns it until it is kept. The
+  // one press that fills an empty deck used to go the moment anything was
+  // drawn — so on a new channel, where the deck is empty and the chat is
+  // the only thing happening, the offer appeared and vanished with whatever
+  // the room was saying.
+  step(root, seen, [], { key: "drawn" }, false, false);
+  check("an empty deck dealt a card is still offered the preset that would fill it",
+    seen.presets === 1);
+  check("and shows the card as well as the offer",
+    root.kids.some((k) => k.is === "hand") && root.kids.some((k) => k.is === "preset"));
+  check("with the offer under the card rather than over it",
+    root.kids.findIndex((k) => k.is === "preset") >
+      root.kids.findIndex((k) => k.is === "hand"));
+
+  step(root, seen, [], null, false, false);
+  check("an empty deck with a quiet chat is offered it as it was before",
+    seen.presets === 1);
+
+  // One card of its own is a deck that has been started, and starting it is
+  // what the offer is for.
+  step(root, seen, [{ id: "a" }], { key: "drawn" }, false, false);
+  check("a deck with a card of its own is not offered one", seen.presets === 0);
+
+  // Put away is put away: the bar is the whole panel, offer included.
+  step(root, seen, [], { key: "drawn" }, true, false);
+  check("and a panel folded away shows neither the card nor the offer",
+    seen.presets === 0 && root.kids.length === 1);
+
+  // The pool is somewhere else. Nothing is drawn while it is open, so a bare
+  // half is a bare panel and says so on its own line.
+  step(root, seen, [], null, false, true);
+  check("the pool, found bare, is not offered the deck's preset", seen.presets === 0);
 }
 
 /* ---------- the ＋ in the chat, and where it is not ---------- */

@@ -2314,6 +2314,17 @@
         more.addEventListener("click", () => { expanded = !expanded; render(); });
         rootEl.appendChild(more);
       }
+
+      // A card the chat held out is in the panel but not in the deck: it is
+      // on loan, it goes when the hold runs out, and nobody owns it until it
+      // is kept. So a deck with nothing in it but a dealt card is still a
+      // deck with nothing in it, and the one press that fills it has to stay
+      // where it was — under the card, rather than vanishing because
+      // somebody in the chat happened to say something.
+      //
+      // The pool does not reach here: with it open nothing is drawn, so an
+      // empty half is an empty panel and has already returned above.
+      if (!shown.length) appendPresetOffer(rootEl, channel);
     });
   }
 

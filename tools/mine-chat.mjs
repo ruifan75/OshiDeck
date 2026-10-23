@@ -65,8 +65,29 @@ try {
 // images that matches no card anybody saved by hand.
 const CUSTOM = /^UC[A-Za-z0-9_-]{22}\//;
 
+// A member emoji the channel has since deleted comes back from the export as
+// a text run holding one U+25A1 — one run for each dead emoji. That is how it
+// can be told from somebody typing the character: a typed `□□□` is a single
+// run of three characters, while three retired emoji are three runs of one.
+// Checked on a stream where every sender of one was a member, and where the
+// message `□□` arrived as two runs rather than as two characters.
+//
+// The run is dropped rather than the message, because what sits either side
+// of a dead emoji is usually live ones — of 1251 candidates carrying a square
+// across the mined channels, 1240 had real emoji in the same card. Left in,
+// it rode into three of the bundled presets as a card that sends `□□□`.
+//
+// Only this one character, and only when it is the whole run. ⬛ U+2B1B turns
+// up 36 times and is never a ghost: it is the second half of 🐈‍⬛, which
+// arrives as one run of three code points and must not be taken apart.
+//
+// This is an export-only repair. The live page has no such fallback — a
+// deleted emoji simply stops being in the chat — so tokens.js says nothing
+// about it.
+const GHOST = /^\u25a1$/u;
+
 const asTokens = (message) =>
-  (message?.runs || []).map((run) => {
+  (message?.runs || []).filter((run) => !("text" in run) || !GHOST.test(run.text)).map((run) => {
     if ("text" in run) return { type: "text", value: run.text };
     const id = run.emoji?.emojiId || "";
     if (!CUSTOM.test(id)) return { type: "text", value: id };

@@ -114,11 +114,21 @@
     return out;
   }
 
-  // A call repeated any number of times is that call once.
+  // A call repeated any number of times is that call once — including when
+  // the last turn is cut short, which is what letting go of the key looks
+  // like. `n % k` had to be zero, so a cycle only collapsed when it happened
+  // to come out even: `:_penlight1::_penlight2:` three times was one card and
+  // two and a half times was another, 🎶💮 collapsed at four repeats and not
+  // at three and a half, and a cycle of two never collapsed at any odd
+  // length. One channel spent two of its ten slots on the same penlight.
+  //
+  // `k <= n / 2` stays: a cycle has to go round at least twice before it is
+  // one. Without it `なるほどな` reads as `なるほど` and a quarter, and 3743
+  // pairs of candidates across the mined channels merged that way — `わかる`
+  // with `わかるわ`, `だれ？` with `だれだ`.
   function collapseCycle(list, max = 1) {
     const n = list.length;
     for (let k = 1; k <= n / 2; k++) {
-      if (n % k) continue;
       let repeats = true;
       for (let i = k; i < n && repeats; i++) repeats = list[i] === list[i % k];
       if (repeats) return list.slice(0, k * Math.min(max, n / k));
@@ -126,8 +136,16 @@
     return list;
   }
 
+  // The cycle is looked for first. Collapsing runs beforehand joins the end
+  // of one turn to the start of the next whenever they are the same atom,
+  // which destroys the real cycle and leaves a shorter false one: `いたい`
+  // said twice is い-た-い-い-た-い, flattening the doubled い makes it
+  // い-た-い-た-い, and that reads as `いた` two and a half times — so `いた`
+  // and `いたいいたい` were the same card, as were `ya` and `yay yay`.
+  // Runs still collapse afterwards, so `888` and `88888888` are one card as
+  // they have always been.
   const signature = (tokenList) =>
-    collapseCycle(collapseRuns(atoms(tokenList))).join(JOINER);
+    collapseRuns(collapseCycle(atoms(tokenList))).join(JOINER);
 
   /* ---------- the watcher ---------- */
 

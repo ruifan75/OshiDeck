@@ -125,6 +125,18 @@ const MUTATIONS = [
     "seen.score += 2 ** (-(now - entry.at) / halfLife());",
     "seen.score += 1;"],
 
+  [TREND, TRENDING, "a cycle that only collapses when it comes out even",
+    "    for (let k = 1; k <= n / 2; k++) {\n      let repeats = true;",
+    "    for (let k = 1; k <= n / 2; k++) {\n      if (n % k) continue;\n      let repeats = true;"],
+
+  [TREND, TRENDING, "runs flattened before the cycle is looked for",
+    "    collapseRuns(collapseCycle(atoms(tokenList))).join(JOINER);",
+    "    collapseCycle(collapseRuns(atoms(tokenList))).join(JOINER);"],
+
+  [TREND, TRENDING, "a cycle counted after going round once",
+    "    for (let k = 1; k <= n / 2; k++) {",
+    "    for (let k = 1; k < n; k++) {"],
+
   [DRAW, CONTENT, "a reaction already in the deck offered again",
     "    !mine.has(seen.key) &&",
     "    true &&"],
@@ -1160,6 +1172,9 @@ const MUTATIONS = [
 // assertion, so deleting the reorder case would have left the checker green —
 // naming the assertion is what makes each mutation answer for its own.
 const KILLS = {
+  "a cycle that only collapses when it comes out even": "and the same when the last turn is cut short",
+  "runs flattened before the cycle is looked for": "a word said twice is not the shorter word inside it",
+  "a cycle counted after going round once": "a word is not a shorter word it happens to begin with",
   "a handle that rejects non-ASCII names": "encoded card handle matches a plain non-ASCII owner handle",
   "a handle compared as a whole path": "a card linking to a channel tab matches the plain owner handle",
   "the owner selectors collapsed into one document-order list": "an empty #owner earlier in the document does not win",

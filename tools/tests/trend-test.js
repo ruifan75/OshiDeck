@@ -404,4 +404,37 @@ expect("the memory bound drops the oldest message",
   capped.has(sig([{ type: "text", value: "oldest" }])), false);
 expect("and retains the newest ones", capped.get(sig([{ type: "text", value: "latest" }]))?.count, 600);
 bounded.stop();
+
+/* ---------- one call, however it was typed ---------- */
+
+// A cycle is one card whatever length it was sent at, and letting go of the
+// key mid-turn is a length. These are written as token lists rather than
+// through the DOM because what is under test is the signature itself.
+const PEN = (turns) => {
+  const out = [];
+  for (let i = 0; i < turns; i++) out.push({ type: "youtubeEmoji", emojiId: CH + (i % 2 ? "/pen2" : "/pen1") });
+  return out;
+};
+expect("a two-emoji call is the same card at three turns and at two",
+  sig(PEN(6)), sig(PEN(4)));
+expect("and the same when the last turn is cut short",
+  sig(PEN(6)), sig(PEN(5)));
+expect("a repeated character is one card at any length",
+  sig([{ type: "text", value: "888" }]), sig([{ type: "text", value: "88888888" }]));
+expect("and so is a repeated word",
+  sig([{ type: "text", value: "🎶💮🎶💮🎶💮🎶💮" }]), sig([{ type: "text", value: "🎶💮🎶💮🎶💮🎶" }]));
+
+// The cycle has to be found before runs are flattened. Flattening first joins
+// the end of one turn to the start of the next when they are the same atom,
+// which hides the real cycle and leaves a shorter false one.
+expect("a word said twice is not the shorter word inside it",
+  sig([{ type: "text", value: "いたいいたい" }]) === sig([{ type: "text", value: "いた" }]), false);
+expect("nor is it when the repeat is spaced",
+  sig([{ type: "text", value: "yay yay" }]) === sig([{ type: "text", value: "ya" }]), false);
+
+// And a cycle has to go round twice before it is one, or every word that
+// starts the way it ends collapses into its own opening.
+expect("a word is not a shorter word it happens to begin with",
+  sig([{ type: "text", value: "なるほどな" }]) === sig([{ type: "text", value: "なるほど" }]), false);
+
 process.exit(fail);

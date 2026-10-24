@@ -79,8 +79,20 @@ const MUTATIONS = [
    "a rename that changes nothing still lands under a name"],
 
   ["a NUL left to hide what follows it", "private.sh",
-   `  tr '\\0' ' ' |`, "  cat |",
+   `  { tr '\\0' ' ' ||`, "  { cat ||",
    "a NUL does not hide what comes after it"],
+
+  ["the scan left to whatever locale the shell has", "private.sh",
+   "export LC_ALL=C\n", "",
+   "a binary file with nothing private in it goes through"],
+
+  ["a tr that stops short taken for a clean read", "private.sh",
+   `{ tr '\\0' ' ' || printf '\\n%s\\n' "$UNREAD"; } |`, `tr '\\0' ' ' |`,
+   "a scan that stops halfway is not a pass"],
+
+  ["an address spelt as a pattern read as it stands", "private.sh",
+   `      gsub(/\\\\\\./, ".", rest)\n`, "",
+   "an address written as a pattern is still an address"],
 
   ["a git that cannot answer taken as a clean tree", "pre-commit",
    `  echo "     何が入るのか分からないまま通すわけにはいきません。"\n  exit 1`,

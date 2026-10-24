@@ -224,6 +224,13 @@ printf 'pilot@users.noreply.github.com.private.example.com\n' > "$repo/notes.txt
 add notes.txt
 staged "a lookalike of a permitted address is not one" 1
 
+# A pattern spells the dot `\.`. Written that way — as the list of what to
+# refuse, once — an address is still one.
+fresh
+printf '%s\n' "grep -q 'pilot@private\.example\.com'" > "$repo/notes.txt"
+add notes.txt
+staged "an address written as a pattern is still an address" 1
+
 fresh
 printf 'nobody@users.noreply.github.com\n' > "$repo/notes.txt"
 add notes.txt
@@ -354,6 +361,60 @@ printf 'x\000pilot@private.example.com\n' > "$repo/notes.txt"
 add notes.txt
 staged "a NUL does not hide what comes after it" 1
 
+# The system's tools read text the way the locale says, and under a UTF-8 one
+# — the ordinary setting — tr, sed and awk all stop at the first byte that is
+# not UTF-8. An image is mostly those. tr stopping went unheard at the far end
+# of the pipe, so what sorted after the image was never read: icons/ hid src/
+# and tools/ in any commit that touched both. The cases below run under such a
+# locale on purpose, and a system whose tr does not stop there cannot show it.
+utf8=$(locale -a 2>/dev/null | grep -m1 -iE '^(C|en_US)\.UTF-?8$' || true)
+if [ -z "$utf8" ] || printf 'x\377\n' | LC_ALL=$utf8 tr '\0' ' ' >/dev/null 2>&1; then
+  echo "FAIL UTF-8 の locale で tr が止まる仕掛けを作れません（${utf8:-locale なし}）"
+  fails=$((fails + 1))
+fi
+
+fresh
+printf 'GIF89a\377\376\375\n' > "$repo/a.bin"
+printf 'pilot@private.example.com\n' > "$repo/b.txt"
+(cd "$repo" && git add -- a.bin b.txt)
+got=0
+(cd "$repo" && LC_ALL=$utf8 HOME="$use_home" "$hooks/pre-commit" >"$lab/out" 2>&1) || got=$?
+expect "a binary file does not hide what comes after it" 1
+quiet "a binary file does not hide what comes after it"
+
+# Read to the end is also what lets the clean case through: refusing every
+# commit that carries an image would be its own way of not working.
+fresh
+printf 'GIF89a\377\376\375\n' > "$repo/a.bin"
+printf 'nothing\n' > "$repo/b.txt"
+(cd "$repo" && git add -- a.bin b.txt)
+got=0
+(cd "$repo" && LC_ALL=$utf8 HOME="$use_home" "$hooks/pre-commit" >"$lab/out" 2>&1) || got=$?
+expect "a binary file with nothing private in it goes through" 0
+
+# And should tr stop anyway, for whatever reason, the scanner hears about it.
+# This one stops at the image's first odd byte and fails, which is what the
+# system's did under UTF-8 — whatever the locale is now. Only there: stopping
+# everywhere would cut the commit's own identity short as well, and a mangled
+# noreply address is refused for the wrong reason, which proves nothing about
+# this one. Anything else asked of tr goes to the real one.
+mkdir -p "$lab/bin"
+real_tr=$(command -v tr)
+cat > "$lab/bin/tr" <<EOF
+#!/bin/sh
+[ "\$1" = '\\0' ] || exec "$real_tr" "\$@"
+exec awk '{ at = index(\$0, "\\377"); if (at) { printf "%s", substr(\$0, 1, at - 1); exit 1 } print }'
+EOF
+chmod +x "$lab/bin/tr"
+fresh
+printf 'GIF89a\377\376\375\n' > "$repo/a.bin"
+printf 'pilot@private.example.com\n' > "$repo/b.txt"
+(cd "$repo" && git add -- a.bin b.txt)
+got=0
+(cd "$repo" && PATH="$lab/bin:$PATH" HOME="$use_home" "$hooks/pre-commit" >"$lab/out" 2>&1) || got=$?
+expect "a scan that stops halfway is not a pass" 1
+quiet "a scan that stops halfway is not a pass"
+
 # The scanner saying nothing and git failing to say anything look identical
 # from the far end of a pipe.
 fresh
@@ -434,6 +495,14 @@ message "an address in the message is refused" "ask pilot@private.example.com" 1
 message "the account name in the message is refused" "alice looked at this" 1
 message "a word that contains it is not" "Clarify malice handling" 0
 message "an ordinary message goes through" "A hook that names nothing it is protecting" 0
+
+# The message goes through sed on its way to the scanner, and under a UTF-8
+# locale sed gave up on the whole of it at one bad byte.
+printf 'caf\351 pilot@private.example.com\n' > "$lab/msg"
+got=0
+(cd "$repo" && LC_ALL=$utf8 HOME="$use_home" "$hooks/commit-msg" "$lab/msg" >"$lab/out" 2>&1) || got=$?
+expect "a byte that is not UTF-8 does not hide the message" 1
+quiet "a byte that is not UTF-8 does not hide the message"
 
 if [ "$fails" != 0 ]; then exit 1; fi
 echo "ok   privacy rule ($tries)"

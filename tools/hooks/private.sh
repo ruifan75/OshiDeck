@@ -13,6 +13,19 @@
 # where it is; the person can look. When the *path* is the private part, even
 # that is withheld.
 
+# Bytes, not characters. Under a UTF-8 locale — the ordinary setting, and this
+# machine's — tr, sed and awk each stop at the first byte that is not UTF-8,
+# and an image is mostly those. tr stopped without a word reaching the end of
+# the pipe, so everything that sorted after the image went unread and the
+# commit went through: any commit touching icons/ hid src/ and tools/ behind
+# it. Exported, so that the message hook's sed reads bytes too.
+export LC_ALL=C
+
+# What scan says when tr does not finish. Git never writes a line like it, and
+# every line of content arrives behind a mark of its own; and if something did
+# forge it, what that buys is a refusal, which is the safe way to be wrong.
+UNREAD='od-scan: the patch was not read to the end'
+
 ADDRESS='[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z][A-Za-z]+'
 
 # The exceptions are anchored, both ends. Unanchored, anything ending in a
@@ -60,14 +73,19 @@ scan() {
   # it — and --text hands those lines over. Breaking the line instead would
   # have taken the `+` off the front of what followed, which is the same
   # blindness by another route.
-  tr '\0' ' ' |
+  #
+  # And a tr that fails says so. Not being the last thing in the pipe, its
+  # exit status goes nowhere; a line after its output is what the scanner
+  # hears. The line break first, because it can stop in the middle of one.
+  { tr '\0' ' ' || printf '\n%s\n' "$UNREAD"; } |
   OD_ADDRESS="$ADDRESS" OD_ALLOWED="$ALLOWED" OD_RESERVED="$RESERVED" \
-  OD_ACCOUNT="$account" OD_HOME="$HOME" OD_EXEMPT="${1:-}" OD_SKIP="$SKIP" awk '
+  OD_ACCOUNT="$account" OD_HOME="$HOME" OD_EXEMPT="${1:-}" OD_SKIP="$SKIP" \
+  OD_UNREAD="$UNREAD" awk '
     BEGIN {
       addr = ENVIRON["OD_ADDRESS"]; allowed = ENVIRON["OD_ALLOWED"]
       reserved = ENVIRON["OD_RESERVED"]; account = ENVIRON["OD_ACCOUNT"]
       home = ENVIRON["OD_HOME"]; exempt = ENVIRON["OD_EXEMPT"]
-      skip = ENVIRON["OD_SKIP"]
+      skip = ENVIRON["OD_SKIP"]; unread = ENVIRON["OD_UNREAD"]
     }
     function note(where, what,   key) {
       key = where "\t" what
@@ -92,6 +110,10 @@ scan() {
       if (home != "" && index(s, home)) { note(where, "ホームディレクトリのパス"); hits++ }
       if (says_name(s))                 { note(where, "名前らしき語"); hits++ }
       rest = s
+      # A pattern spells the dot `\.`, and the one address that got out was
+      # written that way: a grep pattern listing what to refuse. Read as it
+      # stood, `\.` is not a dot and the address was not an address.
+      gsub(/\\\./, ".", rest)
       while (match(rest, addr)) {
         one = substr(rest, RSTART, RLENGTH)
         if (one !~ allowed && !(exempt != "" && path == exempt && one ~ reserved)) {
@@ -111,6 +133,10 @@ scan() {
       path = name
       hidden = check(path, "（ファイル名そのもの）") > 0
     }
+
+    # tr stopped short. What came before this was read; what came after it
+    # was not, and that is not the same thing as clean.
+    $0 == unread { note("（パッチ全体）", "最後まで読めなかった内容"); next }
 
     # A new file in the patch. Everything resets, including whether the last
     # line was the `---` half of a header.

@@ -424,6 +424,17 @@ expect("a repeated character is one card at any length",
 expect("and so is a repeated word",
   sig([{ type: "text", value: "🎶💮🎶💮🎶💮🎶💮" }]), sig([{ type: "text", value: "🎶💮🎶💮🎶💮🎶" }]));
 
+const uneven = [..."AABBAB"].map((part) => ({
+  type: "youtubeEmoji", emojiId: CH + (part === "A" ? "/pen1" : "/pen2")
+}));
+expect("uneven runs still spell the same two-emoji call", sig(uneven), sig(PEN(4)));
+expect("and uneven runs of text are the same call too",
+  sig([{ type: "text", value: "wkwkkwkw" }]), sig([{ type: "text", value: "wkwkwk" }]));
+expect("including an extra run at the end",
+  sig([{ type: "text", value: "wkkwkww" }]), sig([{ type: "text", value: "wkwkwk" }]));
+expect("the same rhythm with different run lengths stays together",
+  sig([{ type: "text", value: "ダンダンダダン" }]), sig([{ type: "text", value: "ダンダダン" }]));
+
 // The cycle has to be found before runs are flattened. Flattening first joins
 // the end of one turn to the start of the next when they are the same atom,
 // which hides the real cycle and leaves a shorter false one.

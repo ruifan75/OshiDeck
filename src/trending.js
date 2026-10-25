@@ -142,10 +142,15 @@
   // said twice is い-た-い-い-た-い, flattening the doubled い makes it
   // い-た-い-た-い, and that reads as `いた` two and a half times — so `いた`
   // and `いたいいたい` were the same card, as were `ya` and `yay yay`.
-  // Runs still collapse afterwards, so `888` and `88888888` are one card as
-  // they have always been.
-  const signature = (tokenList) =>
-    collapseRuns(collapseCycle(atoms(tokenList))).join(JOINER);
+  // If there is no cycle to preserve, flatten runs and look again: AABBAB
+  // and ABAB are the same call with different lengths of each note.
+  // Runs still collapse afterwards, so 888 and 88888888 stay one card too.
+  function signature(tokenList) {
+    const list = atoms(tokenList);
+    const cycle = collapseCycle(list);
+    const unit = cycle === list ? collapseCycle(collapseRuns(list)) : cycle;
+    return collapseRuns(unit).join(JOINER);
+  }
 
   /* ---------- the watcher ---------- */
 

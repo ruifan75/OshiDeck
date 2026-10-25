@@ -130,8 +130,12 @@ const MUTATIONS = [
     "    for (let k = 1; k <= n / 2; k++) {\n      if (n % k) continue;\n      let repeats = true;"],
 
   [TREND, TRENDING, "runs flattened before the cycle is looked for",
-    "    collapseRuns(collapseCycle(atoms(tokenList))).join(JOINER);",
-    "    collapseCycle(collapseRuns(atoms(tokenList))).join(JOINER);"],
+    "    const list = atoms(tokenList);",
+    "    const list = collapseRuns(atoms(tokenList));"],
+
+  [TREND, TRENDING, "uneven runs never given a second look for a cycle",
+    "    const unit = cycle === list ? collapseCycle(collapseRuns(list)) : cycle;",
+    "    const unit = cycle;"],
 
   [TREND, TRENDING, "a cycle counted after going round once",
     "    for (let k = 1; k <= n / 2; k++) {",
@@ -1174,6 +1178,7 @@ const MUTATIONS = [
 const KILLS = {
   "a cycle that only collapses when it comes out even": "and the same when the last turn is cut short",
   "runs flattened before the cycle is looked for": "a word said twice is not the shorter word inside it",
+  "uneven runs never given a second look for a cycle": "uneven runs still spell the same two-emoji call",
   "a cycle counted after going round once": "a word is not a shorter word it happens to begin with",
   "a handle that rejects non-ASCII names": "encoded card handle matches a plain non-ASCII owner handle",
   "a handle compared as a whole path": "a card linking to a channel tab matches the plain owner handle",

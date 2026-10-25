@@ -12,6 +12,7 @@
 // commit that added the attribute observer.
 import { readFileSync } from "node:fs";
 import { page, documentFor } from "./page.mjs";
+import { contentPage, CHANNEL as CHAT_CHANNEL } from "./content-page.mjs";
 
 const source = process.env.OD_SOURCE
   ? new URL(`file://${process.env.OD_SOURCE}`)
@@ -525,140 +526,72 @@ check("and the panel works the count out with it",
     (src.match(/t\("pool\.emptyHint"\)/g) || []).length === 1 &&
       said.includes('t("pool.emptyHint")'));
 
-  // Setting the mark is not the whole of it: the panel has to take it off
-  // again when a card turns up. Guarded with `if (empty)` the source still
-  // reads correctly, and a populated panel keeps the collapsed padding — so
-  // the decision is run here rather than read.
-  const from = src.indexOf("      rootEl.dataset.mode = data.settings.mode;");
-  // All the way to the end of the redraw, not just the marks: what the panel
-  // puts under the bar is decided by the same two questions, and asking them
-  // of a slice that stops at the bar is how the preset offer came to depend
-  // on whether the chat had said anything.
-  const to = src.indexOf("\n    });", from);
-  if (from < 0 || to < 0 || to <= from) {
-    console.log("FAIL could not lift the collapse out of render");
-    process.exit(1);
-  }
+}
 
-  const root = {
-    dataset: {},
-    marks: new Set(),
-    kids: [],
-    toggleAttribute(name, on) { if (on) this.marks.add(name); else this.marks.delete(name); },
-    appendChild(node) { this.kids.push(node); }
-  };
-  const seen = {};
-  const step = new Function("rootEl", "seen", "shown", "drawn", "wants", "poolOpen", `
-    rootEl.kids.length = 0;
-    seen.presets = 0;
-    let barContext, barEl;
-    const expanded = false;
-    const data = { settings: { mode: "hand", folded: wants } };
-    const channel = { id: "UC1" }, hue = 0, waiting = 0;
-    const mine = [], offered = [];
-    const buildBar = (context) => { seen.context = context; return { is: "bar" }; };
-    const appendPresetOffer = (container) => {
-      seen.presets += 1;
-      container.appendChild({ is: "preset" });
-    };
-    const renderHand = (container, cards, settings, hue, dealt) => {
-      container.appendChild({ is: "hand", cards, dealt });
-      return 0;
-    };
-    const renderList = (container, cards, settings, hue, dealt) => {
-      container.appendChild({ is: "list", cards, dealt });
-      return 0;
-    };
-    const svgIcon = () => ({ is: "icon" });
-    const render = () => {};
-    const t = (key) => key;
-    const document = { createElement: () => ({
-      className: "", textContent: "", dataset: {},
-      setAttribute() {}, append() {}, appendChild() {}, addEventListener() {}
-    }) };
-    ${src.slice(from, to)}`);
+/* ---------- the complete panel, in both modes ---------- */
 
-  step(root, seen, [], null, false, false);
-  check("a panel with nothing to show is marked collapsed",
-    root.marks.has("data-empty") && seen.context.empty === true);
+// Chrome, time and layout are fixture boundaries. The application loads its
+// own modules, observes real chat nodes and chooses its renderer itself.
+for (const mode of ["hand", "list"]) {
+  const panel = await contentPage({ source: src, mode });
+  const say = (label, ok) => check(`${mode}: ${label}`, ok);
+  const offer = () => [...panel.root.querySelectorAll("button.od-more")]
+    .find((button) => button.textContent.includes("Fixture preset"));
+  const own = { id: "owned", tokens: [{ type: "text", value: "owned card" }],
+    scope: "global", createdAt: 1, by: {} };
+  try {
+    say("a panel with nothing to show is marked collapsed", panel.root.hasAttribute("data-empty"));
+    say("an empty panel passes its empty state to the bar",
+      panel.root.querySelector(".od-bar-line")?.textContent ===
+        panel.window.OshiDeck.i18n.t("pool.emptyHint"));
+    say("an empty deck with a quiet chat is offered it as it was before", !!offer());
 
-  step(root, seen, [{ id: "a" }], null, false, false);
-  check("and the mark comes off the moment it has a card",
-    !root.marks.has("data-empty") && seen.context.empty === false);
-  check("and a hand with nothing dealt to it is handed nothing",
-    root.kids.find((k) => k.is === "hand")?.dealt === null);
+    await panel.draw();
+    say("a card drawn from chat is something to show, so it is not collapsed",
+      !panel.root.hasAttribute("data-empty"));
+    const dealt = panel.root.querySelector(`.od-${mode === "hand" ? "hand" : "list"} .od-drawn`);
+    say("an empty deck dealt a card is still offered the preset that would fill it", !!offer());
+    say("and shows the card as well as the offer",
+      dealt?.textContent.includes("drawn reaction") && !!offer());
+    if (mode === "list") {
+      say("list mode shows the card the chat dealt", !!dealt);
+    }
+    const row = dealt?.closest(".od-hand, .od-list");
+    const kids = [...panel.root.children];
+    say("with the offer under the card rather than over it",
+      !!row && !!offer() && kids.indexOf(offer()) > kids.indexOf(row));
 
-  step(root, seen, [], { key: "drawn" }, false, false);
-  check("a card drawn from chat is something to show, so it is not collapsed",
-    !root.marks.has("data-empty"));
+    panel.root.querySelector(".od-fold")?.click();
+    await panel.advance();
+    say("a panel asked to stay folded is marked folded", panel.root.hasAttribute("data-folded"));
+    say("a folded panel stops at the bar",
+      panel.root.children.length === 1 && panel.root.firstElementChild.classList.contains("od-bar"));
+    say("and a panel folded away shows neither the card nor the offer",
+      !panel.root.querySelector(".od-drawn") && !offer());
 
-  // The other way down to one line: a full deck the viewer has put away.
-  step(root, seen, [{ id: "a" }], null, true, false);
-  check("a panel asked to stay folded is marked folded",
-    root.marks.has("data-folded") && seen.context.folded === true);
+    panel.root.querySelector(".od-fold")?.click();
+    await panel.advance();
+    say("and opens again when it is asked to",
+      !panel.root.hasAttribute("data-folded") && !!panel.root.querySelector(".od-drawn"));
+    await panel.update({ cards: [own], decks: { [CHAT_CHANNEL]: [own.id] } });
+    say("and the mark comes off the moment it has a card", !panel.root.hasAttribute("data-empty"));
+    say("a deck with a card of its own is not offered one", !offer());
+    await panel.settings({ suggest: false });
+    say("and a hand with nothing dealt to it is handed nothing", !panel.root.querySelector(".od-drawn"));
 
-  step(root, seen, [{ id: "a" }], null, false, false);
-  check("and opens again when it is asked to",
-    !root.marks.has("data-folded") && seen.context.folded === false);
-
-  // Two different reasons for the same line, and only one of them has a
-  // handle on it: an empty panel marked folded as well could not be opened,
-  // because the line it shows is a sentence and not the deck.
-  step(root, seen, [], null, true, false);
-  check("a panel with nothing in it is empty rather than folded",
-    root.marks.has("data-empty") && !root.marks.has("data-folded"));
-
-  step(root, seen, [{ id: "a" }], null, true, true);
-  check("and the pool, which you opened on purpose, is not folded shut under you",
-    !root.marks.has("data-folded"));
-
-  // The mark only takes the padding away; what a folded panel does not draw
-  // is the rest of it. This used to be two lines of source read in order,
-  // because the slice stopped at the bar. The whole redraw is lifted now, so
-  // it can be run.
-  step(root, seen, [{ id: "a" }, { id: "b" }], null, true, false);
-  check("a folded panel stops at the bar",
-    root.kids.length === 1 && root.kids[0].is === "bar");
-
-  /* ---------- an empty deck, dealt a card, is still an empty deck ---------- */
-
-  // A card the chat held out is in the panel but not in the deck: it is on
-  // loan until the hold runs out, and nobody owns it until it is kept. The
-  // one press that fills an empty deck used to go the moment anything was
-  // drawn — so on a new channel, where the deck is empty and the chat is
-  // the only thing happening, the offer appeared and vanished with whatever
-  // the room was saying.
-  step(root, seen, [], { key: "drawn" }, false, false);
-  check("an empty deck dealt a card is still offered the preset that would fill it",
-    seen.presets === 1);
-  // The card itself, not merely a hand row: a stub that appends a marker
-  // whatever it was handed says yes to this with the card dropped on the
-  // floor, which is what it used to do.
-  check("and shows the card as well as the offer",
-    root.kids.find((k) => k.is === "hand")?.dealt?.key === "drawn" &&
-      root.kids.some((k) => k.is === "preset"));
-  check("with the offer under the card rather than over it",
-    root.kids.findIndex((k) => k.is === "preset") >
-      root.kids.findIndex((k) => k.is === "hand"));
-
-  step(root, seen, [], null, false, false);
-  check("an empty deck with a quiet chat is offered it as it was before",
-    seen.presets === 1);
-
-  // One card of its own is a deck that has been started, and starting it is
-  // what the offer is for.
-  step(root, seen, [{ id: "a" }], { key: "drawn" }, false, false);
-  check("a deck with a card of its own is not offered one", seen.presets === 0);
-
-  // Put away is put away: the bar is the whole panel, offer included.
-  step(root, seen, [], { key: "drawn" }, true, false);
-  check("and a panel folded away shows neither the card nor the offer",
-    seen.presets === 0 && root.kids.length === 1);
-
-  // The pool is somewhere else. Nothing is drawn while it is open, so a bare
-  // half is a bare panel and says so on its own line.
-  step(root, seen, [], null, false, true);
-  check("the pool, found bare, is not offered the deck's preset", seen.presets === 0);
+    await panel.update({ cards: [], decks: { [CHAT_CHANNEL]: [] } });
+    await panel.settings({ folded: true });
+    say("a panel with nothing in it is empty rather than folded",
+      panel.root.hasAttribute("data-empty") && !panel.root.hasAttribute("data-folded"));
+    panel.root.querySelector('[aria-label="Add a card from the pool"]').click();
+    await panel.advance();
+    say("and the pool, which you opened on purpose, is not folded shut under you",
+      panel.root.dataset.pool === "true" && !panel.root.hasAttribute("data-folded"));
+    panel.root.querySelector(".od-pool-tab").click();
+    await panel.advance();
+    say("the pool, found bare, is not offered the deck's preset",
+      panel.root.hasAttribute("data-empty") && !offer());
+  } finally { panel.close(); }
 }
 
 /* ---------- the ＋ in the chat, and where it is not ---------- */
@@ -669,88 +602,46 @@ check("and the panel works the count out with it",
 // off and the ＋ goes with it, rather than sitting over every comment in the
 // chat offering something the bar has just said is impossible.
 {
-  const from = src.indexOf("  function grabFor(target) {");
-  const to = src.indexOf("  function offerGrab(", from);
-  if (from < 0 || to < 0 || to <= from) {
-    console.log("FAIL could not lift grabFor out of content.js");
-    process.exit(1);
-  }
+  const panel = await contentPage({ source: src, cards: ["owned card"], preset: false });
+  try {
+    const rows = panel.window.OshiDeck.trending.COMMENT_ROWS;
+    check("the list the panel reads is the one src/trending.js owns",
+      rows.includes("yt-live-chat-text-message-renderer") &&
+      rows.includes("yt-live-chat-paid-message-renderer") && rows.split(",").length === 2);
+    const comment = panel.comment("a comment");
+    const superChat = panel.comment("a super chat", "yt-live-chat-paid-message-renderer");
+    const gift = panel.comment("a gift", "yt-live-chat-sponsorships-gift-purchase-announcement-renderer");
+    // YouTube repeats #message in every row; the DOM must scope that lookup.
+    check("each chat row can find its own message despite the repeated id",
+      superChat.querySelector("#message")?.textContent === "a super chat");
+    check("a comment under the pointer is offered the ＋", panel.point(comment) === comment);
+    check("and so is a super chat, which is somebody talking too", panel.point(superChat) === superChat);
+    check("the row is found from whatever inside it the pointer is actually on",
+      panel.point(comment.querySelector("#message")) === comment);
+    check("an announcement nobody typed is not offered one", panel.point(gift) === null);
+    check("nor is a row with no message in it",
+      panel.point(panel.comment("", "yt-live-chat-text-message-renderer", { message: false })) === null);
+    const text = panel.document.createTextNode("not an element");
+    comment.appendChild(text);
+    check("nor is something that is not an element at all", panel.point(text) === null);
+    panel.root.hidden = true;
+    check("nor a hidden one", panel.point(comment) === null);
+    panel.root.hidden = false;
+    panel.stop();
+    await panel.settings({ rows: 1 });
+    check("a torn-down panel offers nothing", panel.point(comment) === null);
+  } finally { panel.close(); }
 
-  // The real list, from the module that owns it — content.js reads it from
-  // there too. A fixture with its own copy agrees with itself: the selector
-  // could be changed to accept gift announcements and nothing here would
-  // notice.
-  globalThis.OshiDeck ||= {};
-  await import(new URL("../../src/tokens.js", import.meta.url).href);  // trending reads it
-  await import(process.env.OD_TRENDING
-    ? `file://${process.env.OD_TRENDING}`
-    : new URL("../../src/trending.js", import.meta.url).href);
-  const ROWS = globalThis.OshiDeck.trending.COMMENT_ROWS;
-
-  class Node {
-    constructor(tag, { message = true, inside = null } = {}) {
-      this.tag = tag;
-      this.message = message;
-      this.inside = inside;
-    }
-    // Matched the way a browser matches it: one of the comma-separated
-    // selectors has to be this element, whole. Asking whether the list
-    // *contains* the tag name says yes to `yt-live-chat-paid-message-renderer
-    // [data-nothing]`, which no element on the page would answer to.
-    closest(selector) {
-      if (this.inside) return this.inside.closest(selector);
-      return selector.split(",").some((one) => one.trim() === this.tag) ? this : null;
-    }
-    querySelector(selector) {
-      return selector === "#message" && this.message ? { is: "message" } : null;
-    }
-  }
-
-  const asked = (target, { stopped = false, mounted = true, hidden = false,
-                           channel = { id: "UC1" } } = {}) => new Function(
-    "stopped", "rootEl", "barContext", "COMMENT_ROWS", "Element", "target",
-    `${src.slice(from, to)}
-     return grabFor(target);`
-  )(
-    stopped,
-    mounted ? { hidden } : null,
-    { channel },
-    ROWS,
-    Node,
-    target
-  );
-
-  const comment = new Node("yt-live-chat-text-message-renderer");
-  const superChat = new Node("yt-live-chat-paid-message-renderer");
-  const gift = new Node("yt-live-chat-sponsorships-gift-purchase-announcement-renderer");
-  const word = new Node("span", { inside: comment });
-
-  check("the list the panel reads is the one src/trending.js owns",
-    ROWS.includes("yt-live-chat-text-message-renderer") &&
-      ROWS.includes("yt-live-chat-paid-message-renderer") &&
-      ROWS.split(",").length === 2);
-
-  check("a comment under the pointer is offered the ＋", asked(comment) === comment);
-  check("and so is a super chat, which is somebody talking too", asked(superChat) === superChat);
-  check("the row is found from whatever inside it the pointer is actually on",
-    asked(word) === comment);
-  check("an announcement nobody typed is not offered one", asked(gift) === null);
-  check("nor is a row with no message in it",
-    asked(new Node("yt-live-chat-text-message-renderer", { message: false })) === null);
-  check("nor is something that is not an element at all", asked("a string") === null);
-
-  // The three ways the panel is not there to save into.
-  check("a torn-down panel offers nothing", asked(comment, { stopped: true }) === null);
-  check("nor an unmounted one", asked(comment, { mounted: false }) === null);
-  check("nor a hidden one", asked(comment, { hidden: true }) === null);
-
-  // And the one this change is about.
-  check("and a chat whose owner could not be worked out offers nothing either",
-    asked(comment, { channel: null }) === null);
-
-  // The decision has to be the listener's, not merely available to it.
-  check("and the listener asks it rather than deciding for itself",
-    /\n    offerGrab\(grabFor\(event\.target\)\);\n/.test(src));
+  const beforeMount = await contentPage({ source: src, start: false });
+  try {
+    check("nor an unmounted one", beforeMount.root === null &&
+      beforeMount.point(beforeMount.comment("a comment")) === null);
+  } finally { beforeMount.close(); }
+  const unknown = await contentPage({ source: src, channel: false });
+  try {
+    check("and a chat whose owner could not be worked out offers nothing either",
+      unknown.point(unknown.comment("a comment")) === null);
+  } finally { unknown.close(); }
 }
 
 /* ---------- what the off state has to put back itself ---------- */

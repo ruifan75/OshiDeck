@@ -4,6 +4,11 @@
 set -e
 cd "$(dirname "$0")/.."
 
+if ! node -e 'require.resolve("jsdom")' >/dev/null 2>&1; then
+  echo "FAIL test dependencies are missing; run npm ci first"
+  exit 1
+fi
+
 echo "hooks"
 sh tools/check-hooks.sh
 node tools/check-hook-tests.mjs

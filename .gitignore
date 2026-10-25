@@ -32,3 +32,6 @@ tools/candidates/
 # again from a saved page whenever it is needed.
 channels
 tools/subscriptions.json
+
+# Browserless integration-test dependencies
+node_modules/

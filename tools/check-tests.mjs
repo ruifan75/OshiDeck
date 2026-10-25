@@ -141,6 +141,14 @@ const MUTATIONS = [
     "    if (!video || new URLSearchParams(location.search).get(\"is_popout\") === \"1\") return;",
     "    if (!video) return;"],
 
+  [VISIBILITY, CONTENT, "the panel's row selector disconnected from the watcher",
+    "  const COMMENT_ROWS = trending.COMMENT_ROWS;",
+    "  const COMMENT_ROWS = \"yt-live-chat-not-a-comment-renderer\";"],
+
+  [VISIBILITY, CONTENT, "a dealt card dropped by the list caller",
+    "? renderList(rootEl, shown, data.settings, hue, drawn)",
+    "? renderList(rootEl, shown, data.settings, hue, null)"],
+
   [TREND, TRENDING, "a cycle counted after going round once",
     "    for (let k = 1; k <= n / 2; k++) {",
     "    for (let k = 1; k < n; k++) {"],
@@ -1184,6 +1192,8 @@ const KILLS = {
   "runs flattened before the cycle is looked for": "a word said twice is not the shorter word inside it",
   "uneven runs never given a second look for a cycle": "uneven runs still spell the same two-emoji call",
   "a popped-out chat mistaken for a watch page to retry": "a popped-out chat with a video does not keep asking",
+  "the panel's row selector disconnected from the watcher": "a comment under the pointer is offered the ＋",
+  "a dealt card dropped by the list caller": "list mode shows the card the chat dealt",
   "a cycle counted after going round once": "a word is not a shorter word it happens to begin with",
   "a handle that rejects non-ASCII names": "encoded card handle matches a plain non-ASCII owner handle",
   "a handle compared as a whole path": "a card linking to a channel tab matches the plain owner handle",
@@ -1207,7 +1217,7 @@ const KILLS = {
   "a panel that never actually skips": "render still decides whether to skip",
   "an empty panel that still counts to zero": "an empty deck says what to do instead of counting to zero",
   "a hint pointing at a deck that cannot exist": "a chat whose channel cannot be worked out says that instead",
-  "a bar never told the panel has nothing in it": "a panel with nothing to show is marked collapsed",
+  "a bar never told the panel has nothing in it": "an empty panel passes its empty state to the bar",
   "an empty panel that keeps its padding": "the panel gives up its padding when it has nothing to show",
   "the bar's own line never measured": "the panel's own empty line is one of the ones measured",
   "a collapsed mark that is never taken off": "the mark comes off the moment it has a card",

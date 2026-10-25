@@ -30,7 +30,7 @@ const MUTATIONS = [
    "an identity at a host with no dot is refused too"],
 
   ["the name the commit is made under never looked at", "private.sh",
-   `    [ -z "$(printf -- '--- a/x\\n+++ b/x\\n+%s\\n' "$ident" | scan)" ] || return 0`, "    :",
+   `    [ -z "$(printf '%s\\n' "$ident" | text_patch | scan)" ] || return 0`, "    :",
    "a commit made under the account name is refused"],
 
   ["only the author looked at", "private.sh",
@@ -79,20 +79,32 @@ const MUTATIONS = [
    "a rename that changes nothing still lands under a name"],
 
   ["a NUL left to hide what follows it", "private.sh",
-   `  { tr '\\0' ' ' ||`, "  { cat ||",
+   "    $text =~ s/\\0/ /g;\n", "",
    "a NUL does not hide what comes after it"],
 
-  ["the scan left to whatever locale the shell has", "private.sh",
-   "export LC_ALL=C\n", "",
+  ["the scan forced to ASCII case folding", "private.sh",
+   "export LC_ALL=\"$utf8_locale\"", "export LC_ALL=C",
+   "an accented account name is caught in another case"],
+
+  ["invalid bytes handed straight to the text scanner", "private.sh",
+   "    my $text = decode(\"UTF-8\", scalar(<STDIN>) // \"\");", "    print scalar(<STDIN>) // \"\"; exit;",
    "a binary file with nothing private in it goes through"],
 
-  ["a tr that stops short taken for a clean read", "private.sh",
-   `{ tr '\\0' ' ' || printf '\\n%s\\n' "$UNREAD"; } |`, `tr '\\0' ' ' |`,
+  ["a reader that stops short taken for a clean read", "private.sh",
+   "{ read_text || printf '\\n%s\\n' \"$UNREAD\"; } |", "read_text |",
    "a scan that stops halfway is not a pass"],
 
+  ["a message reader that stops short taken for a clean read", "private.sh",
+   "  read_text added || printf '\\n%s\\n' \"$UNREAD\"", "  read_text added || true",
+   "a message reader that stops halfway is not a pass"],
+
   ["an address spelt as a pattern read as it stands", "private.sh",
-   `      gsub(/\\\\\\./, ".", rest)\n`, "",
+   "      gsub(/\\\\/, \"\", rest)\n", "",
    "an address written as a pattern is still an address"],
+
+  ["only one layer of address escaping read", "private.sh",
+   "      gsub(/\\\\/, \"\", rest)", "      gsub(/\\\\\\./, \".\", rest)",
+   "an address inside an escaped pattern is still an address"],
 
   ["a git that cannot answer taken as a clean tree", "pre-commit",
    `  echo "     何が入るのか分からないまま通すわけにはいきません。"\n  exit 1`,

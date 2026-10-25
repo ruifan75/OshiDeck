@@ -127,10 +127,11 @@ tries=0
 fails=0
 home=$lab/home/alice
 dotted=$lab/home/j.doe
+accented=$lab/home/élise
 # A name git would escape rather than hand over as itself.
 kana=$lab/home/さくらもち
 repo=$lab/repo
-mkdir -p "$home" "$dotted" "$kana" "$repo"
+mkdir -p "$home" "$dotted" "$accented" "$kana" "$repo"
 use_home=$home
 
 (
@@ -149,7 +150,7 @@ fresh() { use_home=$home; (cd "$repo" && git reset -q --hard && git clean -qfd);
 # Nothing the hooks refuse may come back out in what they print: the terminal,
 # the scrollback and the CI log are all places it would then exist.
 quiet() {
-  if grep -qi "alice\|j\.doe\|さくらもち\|private\.example\." "$lab/out"; then
+  if grep -qi "alice\|j\.doe\|élise\|ÉLISE\|さくらもち\|private\.example\." "$lab/out"; then
     echo "FAIL $1 は拒否の理由として守っている文字列そのものを出しました"
     fails=$((fails + 1))
   fi
@@ -231,6 +232,13 @@ printf '%s\n' "grep -q 'pilot@private\.example\.com'" > "$repo/notes.txt"
 add notes.txt
 staged "an address written as a pattern is still an address" 1
 
+# A JavaScript string can escape the pattern's backslashes in turn.
+fresh
+printf '%s\n' '"pilot@private\\.example\\.com"' > "$repo/notes.txt"
+add notes.txt
+staged "an address inside an escaped pattern is still an address" 1
+message "an escaped pattern in a message is still an address" '"pilot@private\\.example\\.com"' 1
+
 fresh
 printf 'nobody@users.noreply.github.com\n' > "$repo/notes.txt"
 add notes.txt
@@ -283,6 +291,13 @@ use_home=$dotted
 printf 'jxdoe is somebody else entirely\n' > "$repo/notes.txt"
 add notes.txt
 staged "and the dot is a dot, not any letter" 0
+
+fresh
+use_home=$accented
+printf 'written by ÉLISE, probably\n' > "$repo/notes.txt"
+add notes.txt
+staged "an accented account name is caught in another case" 1
+message "an accented account name in a message is caught too" "ÉLISE looked at this" 1
 
 fresh
 printf 'cd %s/work\n' "$use_home" > "$repo/notes.txt"
@@ -361,15 +376,11 @@ printf 'x\000pilot@private.example.com\n' > "$repo/notes.txt"
 add notes.txt
 staged "a NUL does not hide what comes after it" 1
 
-# The system's tools read text the way the locale says, and under a UTF-8 one
-# — the ordinary setting — tr, sed and awk all stop at the first byte that is
-# not UTF-8. An image is mostly those. tr stopping went unheard at the far end
-# of the pipe, so what sorted after the image was never read: icons/ hid src/
-# and tools/ in any commit that touched both. The cases below run under such a
-# locale on purpose, and a system whose tr does not stop there cannot show it.
+# Invalid bytes must not hide later content, regardless of whether this
+# machine's text tools would stop at them. A failed reader is injected below.
 utf8=$(locale -a 2>/dev/null | grep -m1 -iE '^(C|en_US)\.UTF-?8$' || true)
-if [ -z "$utf8" ] || printf 'x\377\n' | LC_ALL=$utf8 tr '\0' ' ' >/dev/null 2>&1; then
-  echo "FAIL UTF-8 の locale で tr が止まる仕掛けを作れません（${utf8:-locale なし}）"
+if [ -z "$utf8" ]; then
+  echo "FAIL UTF-8 の locale がありません"
   fails=$((fails + 1))
 fi
 
@@ -392,20 +403,21 @@ got=0
 (cd "$repo" && LC_ALL=$utf8 HOME="$use_home" "$hooks/pre-commit" >"$lab/out" 2>&1) || got=$?
 expect "a binary file with nothing private in it goes through" 0
 
-# And should tr stop anyway, for whatever reason, the scanner hears about it.
-# This one stops at the image's first odd byte and fails, which is what the
-# system's did under UTF-8 — whatever the locale is now. Only there: stopping
-# everywhere would cut the commit's own identity short as well, and a mangled
-# noreply address is refused for the wrong reason, which proves nothing about
-# this one. Anything else asked of tr goes to the real one.
+# A reader that stops halfway is injected, rather than assumed of the host.
+# It stops only at the image's first odd byte; cutting the commit identity
+# short as well would make the address check refuse for the wrong reason.
 mkdir -p "$lab/bin"
-real_tr=$(command -v tr)
-cat > "$lab/bin/tr" <<EOF
+real_perl=$(command -v perl)
+cat > "$lab/bin/perl" <<EOF
 #!/bin/sh
-[ "\$1" = '\\0' ] || exec "$real_tr" "\$@"
-exec awk '{ at = index(\$0, "\\377"); if (at) { printf "%s", substr(\$0, 1, at - 1); exit 1 } print }'
+exec "$real_perl" -0777 -e '
+  my \$text = <STDIN> // "";
+  my \$at = index(\$text, "\377");
+  if (\$at >= 0) { print substr(\$text, 0, \$at); exit 1; }
+  print \$text;
+'
 EOF
-chmod +x "$lab/bin/tr"
+chmod +x "$lab/bin/perl"
 fresh
 printf 'GIF89a\377\376\375\n' > "$repo/a.bin"
 printf 'pilot@private.example.com\n' > "$repo/b.txt"
@@ -414,6 +426,12 @@ got=0
 (cd "$repo" && PATH="$lab/bin:$PATH" HOME="$use_home" "$hooks/pre-commit" >"$lab/out" 2>&1) || got=$?
 expect "a scan that stops halfway is not a pass" 1
 quiet "a scan that stops halfway is not a pass"
+
+printf 'ordinary\377tail\n' > "$lab/msg"
+got=0
+(cd "$repo" && PATH="$lab/bin:$PATH" HOME="$use_home" "$hooks/commit-msg" "$lab/msg" >"$lab/out" 2>&1) || got=$?
+expect "a message reader that stops halfway is not a pass" 1
+quiet "a message reader that stops halfway is not a pass"
 
 # The scanner saying nothing and git failing to say anything look identical
 # from the far end of a pipe.
@@ -496,13 +514,17 @@ message "the account name in the message is refused" "alice looked at this" 1
 message "a word that contains it is not" "Clarify malice handling" 0
 message "an ordinary message goes through" "A hook that names nothing it is protecting" 0
 
-# The message goes through sed on its way to the scanner, and under a UTF-8
-# locale sed gave up on the whole of it at one bad byte.
+# Plain messages are decoded before being marked as added lines too.
 printf 'caf\351 pilot@private.example.com\n' > "$lab/msg"
 got=0
 (cd "$repo" && LC_ALL=$utf8 HOME="$use_home" "$hooks/commit-msg" "$lab/msg" >"$lab/out" 2>&1) || got=$?
 expect "a byte that is not UTF-8 does not hide the message" 1
 quiet "a byte that is not UTF-8 does not hide the message"
+
+printf 'ordinary\377tail\n' > "$lab/msg"
+got=0
+(cd "$repo" && LC_ALL=$utf8 HOME="$use_home" "$hooks/commit-msg" "$lab/msg" >"$lab/out" 2>&1) || got=$?
+expect "a message with a bad byte and nothing private goes through" 0
 
 if [ "$fails" != 0 ]; then exit 1; fi
 echo "ok   privacy rule ($tries)"

@@ -20,7 +20,7 @@ say() { echo "     $1"; }
 # The message read as a patch of one file, so that one scanner answers for
 # both hooks: what is in the message is what is being added, and the file it
 # is "in" is the message itself.
-found=$({ printf -- '--- a/x\n+++ b/x\n'; sed 's/^/+/' "$msg"; } | scan | cut -f2 | sort -u)
+found=$(text_patch < "$msg" | scan | cut -f2 | sort -u)
 
 if [ -n "$found" ]; then
   echo "FAIL このコミットメッセージは公開に向きません:"

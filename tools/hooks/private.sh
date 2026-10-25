@@ -13,18 +13,37 @@
 # where it is; the person can look. When the *path* is the private part, even
 # that is withheld.
 
-# Bytes, not characters. Under a UTF-8 locale — the ordinary setting, and this
-# machine's — tr, sed and awk each stop at the first byte that is not UTF-8,
-# and an image is mostly those. tr stopped without a word reaching the end of
-# the pipe, so everything that sorted after the image went unread and the
-# commit went through: any commit touching icons/ hid src/ and tools/ behind
-# it. Exported, so that the message hook's sed reads bytes too.
-export LC_ALL=C
+# Text readers see valid UTF-8, including when git hands over binary content.
+# Reading bytes under C avoided conversion errors but also lost non-ASCII
+# case folding: an accented account name written in capitals went unnoticed.
+utf8_locale=$(LC_ALL=C locale -a 2>/dev/null | grep -m1 -iE '^(C|en_US)\.UTF-?8$' || true)
+if [ -z "$utf8_locale" ]; then
+  echo "FAIL UTF-8 の locale がありません。内容を確認できません。"
+  exit 1
+fi
+export LC_ALL="$utf8_locale"
 
-# What scan says when tr does not finish. Git never writes a line like it, and
+# What scan says when its reader does not finish. Git never writes a line like it, and
 # every line of content arrives behind a mark of its own; and if something did
 # forge it, what that buys is a refusal, which is the safe way to be wrong.
 UNREAD='od-scan: the patch was not read to the end'
+
+# Decode before any text tool sees the input. Invalid sequences become U+FFFD;
+# a NUL becomes a space, so neither hides the rest of its added line from awk.
+# The optional argument marks plain text as added lines, after decoding it.
+read_text() {
+  perl -MEncode=decode,encode -0777 -e '
+    my $text = decode("UTF-8", scalar(<STDIN>) // "");
+    $text =~ s/\0/ /g;
+    $text =~ s/^/+/mg if @ARGV;
+    print encode("UTF-8", $text);
+  ' "$@"
+}
+
+text_patch() {
+  printf -- '--- a/x\n+++ b/x\n'
+  read_text added || printf '\n%s\n' "$UNREAD"
+}
 
 ADDRESS='[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z][A-Za-z]+'
 
@@ -68,16 +87,9 @@ account=$(basename "$HOME" | tr '[:upper:]' '[:lower:]')
 #
 # $1, when given, is a path whose documentation addresses are allowed.
 scan() {
-  # NUL first, and into a space rather than a line break. awk stops reading a
-  # line at one, so anything a binary file kept after a NUL was invisible to
-  # it — and --text hands those lines over. Breaking the line instead would
-  # have taken the `+` off the front of what followed, which is the same
-  # blindness by another route.
-  #
-  # And a tr that fails says so. Not being the last thing in the pipe, its
-  # exit status goes nowhere; a line after its output is what the scanner
-  # hears. The line break first, because it can stop in the middle of one.
-  { tr '\0' ' ' || printf '\n%s\n' "$UNREAD"; } |
+  # A reader's exit status would disappear inside the pipe. Its failure is a
+  # record the scanner can hear, even when the reader stopped mid-line.
+  { read_text || printf '\n%s\n' "$UNREAD"; } |
   OD_ADDRESS="$ADDRESS" OD_ALLOWED="$ALLOWED" OD_RESERVED="$RESERVED" \
   OD_ACCOUNT="$account" OD_HOME="$HOME" OD_EXEMPT="${1:-}" OD_SKIP="$SKIP" \
   OD_UNREAD="$UNREAD" awk '
@@ -110,10 +122,10 @@ scan() {
       if (home != "" && index(s, home)) { note(where, "ホームディレクトリのパス"); hits++ }
       if (says_name(s))                 { note(where, "名前らしき語"); hits++ }
       rest = s
-      # A pattern spells the dot `\.`, and the one address that got out was
-      # written that way: a grep pattern listing what to refuse. Read as it
-      # stood, `\.` is not a dot and the address was not an address.
-      gsub(/\\\./, ".", rest)
+      # Patterns can be escaped again inside strings. Remove every backslash,
+      # however many layers were written. This guards accidental disclosure;
+      # it does not decode deliberate hiding such as %40, [at] or HTML entities.
+      gsub(/\\/, "", rest)
       while (match(rest, addr)) {
         one = substr(rest, RSTART, RLENGTH)
         if (one !~ allowed && !(exempt != "" && path == exempt && one ~ reserved)) {
@@ -134,7 +146,7 @@ scan() {
       hidden = check(path, "（ファイル名そのもの）") > 0
     }
 
-    # tr stopped short. What came before this was read; what came after it
+    # The reader stopped short. What came before this was read; what came after it
     # was not, and that is not the same thing as clean.
     $0 == unread { note("（パッチ全体）", "最後まで読めなかった内容"); next }
 
@@ -186,7 +198,7 @@ ident_is_private() {
     # `Name <address> 1700000000 +0900`. The name is read like any other text,
     # because a commit made under the account name has published it just as
     # surely as a file with it in.
-    [ -z "$(printf -- '--- a/x\n+++ b/x\n+%s\n' "$ident" | scan)" ] || return 0
+    [ -z "$(printf '%s\n' "$ident" | text_patch | scan)" ] || return 0
 
     # The address is asked the other way round. Elsewhere the question is
     # whether something looks private, which an address at an intranet host

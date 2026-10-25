@@ -137,6 +137,10 @@ const MUTATIONS = [
     "    const unit = cycle === list ? collapseCycle(collapseRuns(list)) : cycle;",
     "    const unit = cycle;"],
 
+  [VISIBILITY, CONTENT, "a popped-out chat mistaken for a watch page to retry",
+    "    if (!video || new URLSearchParams(location.search).get(\"is_popout\") === \"1\") return;",
+    "    if (!video) return;"],
+
   [TREND, TRENDING, "a cycle counted after going round once",
     "    for (let k = 1; k <= n / 2; k++) {",
     "    for (let k = 1; k < n; k++) {"],
@@ -1179,6 +1183,7 @@ const KILLS = {
   "a cycle that only collapses when it comes out even": "and the same when the last turn is cut short",
   "runs flattened before the cycle is looked for": "a word said twice is not the shorter word inside it",
   "uneven runs never given a second look for a cycle": "uneven runs still spell the same two-emoji call",
+  "a popped-out chat mistaken for a watch page to retry": "a popped-out chat with a video does not keep asking",
   "a cycle counted after going round once": "a word is not a shorter word it happens to begin with",
   "a handle that rejects non-ASCII names": "encoded card handle matches a plain non-ASCII owner handle",
   "a handle compared as a whole path": "a card linking to a channel tab matches the plain owner handle",

@@ -2384,12 +2384,12 @@
 
   // The parts of a watch page that carry a channel id can arrive after the
   // chat does, and nothing already watched here would fire again once they
-  // do. Bounded, so a page that genuinely has no channel — a popped-out chat
-  // window — settles instead of retrying forever.
+  // do. A popped-out chat has no watch-page owner to arrive, even when its
+  // URL carries a video id, so it is left alone.
   let retry = { video: null, left: 0 };
 
   function retryUnresolved(video) {
-    if (!video) return;
+    if (!video || new URLSearchParams(location.search).get("is_popout") === "1") return;
     if (retry.video !== video) retry = { video, left: 5 };
 
     // Five quick tries for the parts of a watch page that fill in a moment
@@ -2401,8 +2401,7 @@
     // plain sort, a quiet chat never renders on its own, and the page
     // observer only re-renders for the input or the membership badge.
     //
-    // It costs nothing where the answer is never coming: a popped-out chat
-    // window has no video, and returned above.
+    // A popped-out chat returned above; only watch pages keep polling.
     const soon = retry.left > 0;
     if (soon) retry.left -= 1;
     clearTimeout(refreshTimer);

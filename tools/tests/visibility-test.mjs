@@ -811,16 +811,32 @@ check("and the panel works the count out with it",
     process.exit(1);
   }
 
-  const tries = (videos) => {
+  const videoFrom = src.indexOf("  function currentVideo() {");
+  const videoTo = src.indexOf("\n  // An answer is kept", videoFrom);
+  if (videoFrom < 0 || videoTo <= videoFrom) {
+    console.log("FAIL could not lift currentVideo out of content.js");
+    process.exit(1);
+  }
+
+  const retrying = (href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ") => {
     const waits = [];
-    const ask = new Function("waits", `
+    const location = new URL(href);
+    const window = { location };
+    window.top = window;
+    const api = new Function("waits", "window", "location", `
       let retry = { video: null, left: 0 };
       let refreshTimer = null;
       const render = () => {};
       const clearTimeout = () => {};
       const setTimeout = (fn, ms) => { waits.push(ms); return ms; };
+      ${src.slice(videoFrom, videoTo)}
       ${src.slice(from, to)}
-      return retryUnresolved;`)(waits);
+      return { ask: retryUnresolved, currentVideo };`)(waits, window, location);
+    return { ...api, waits };
+  };
+
+  const tries = (videos) => {
+    const { ask, waits } = retrying();
     for (const video of videos) ask(video);
     return waits;
   };
@@ -828,6 +844,13 @@ check("and the panel works the count out with it",
   // A popped-out chat window has no video and no owner to find, ever. That
   // is the case the giving up was for, and it costs nothing to keep.
   check("a chat with no video to go by never asks again", tries([null, null, null]).length === 0);
+
+  // Popouts can carry v too. Read it through the production URL reader, then
+  // exercise the retry decision against the same location.
+  const popped = retrying("https://www.youtube.com/live_chat?is_popout=1&v=dQw4w9WgXcQ");
+  for (let i = 0; i < 8; i++) popped.ask(popped.currentVideo());
+  check("a popped-out chat with a video does not keep asking",
+    popped.currentVideo() === "dQw4w9WgXcQ" && popped.waits.length === 0);
 
   const waits = tries(Array(8).fill("dQw4w9WgXcQ"));
   check("a watch page is asked again quickly, five times",

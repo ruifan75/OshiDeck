@@ -30,6 +30,9 @@
     "bar.editing":           { ja: "編集中", "zh-TW": "編輯中", en: "Editing" },
     "channel.this":          { ja: "このチャンネル", "zh-TW": "這個頻道", en: "This channel" },
     "count.cards":           { ja: "$1枚", "zh-TW": "$1 張", en: "$1{card|cards}" },
+    "filter.channel":        { ja: "$1専用の札を表示", "zh-TW": "顯示 $1 專用的卡片", en: "Show cards for $1 only" },
+    "filter.global":         { ja: "共通の札を表示", "zh-TW": "顯示通用卡片", en: "Show cards for any channel" },
+    "filter.empty":          { ja: "この種類の札はデッキにありません", "zh-TW": "這個牌組沒有這類卡片", en: "No cards of this kind in this deck" },
 
     /* ---------- buttons ---------- */
     "action.close":          { ja: "閉じる", "zh-TW": "收起", en: "Close" },
@@ -53,6 +56,7 @@
     "aria.unfold":           { ja: "デッキをひらく", "zh-TW": "展開牌組", en: "Show the deck" },
 
     /* ---------- where a card is saved ---------- */
+    "save.choose":           { ja: "保存先", "zh-TW": "儲存為", en: "Save as" },
     "save.channelOnly":      { ja: "$1専用として保存", "zh-TW": "存成 $1 專用", en: "Save for $1 only" },
     "save.global":           { ja: "共通の札として保存", "zh-TW": "存成通用牌", en: "Save for any channel" },
     "save.channelShort":     { ja: "このチャンネル専用", "zh-TW": "這個頻道專用", en: "This channel" },

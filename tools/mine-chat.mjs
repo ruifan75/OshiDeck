@@ -14,6 +14,8 @@
 // singing stream the two orderings disagree completely at the top.
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { argv, exit } from "node:process";
+import { chatLines } from "./chat-lines.mjs";
+import { resolve, dirname, basename } from "node:path";
 
 const root = new URL("..", import.meta.url).pathname;
 
@@ -30,7 +32,24 @@ await import(`${root}src/store.js`);
 await import(`${root}src/trending.js`);
 const { tokens, trending } = globalThis.OshiDeck;
 
-const [, , channel, ...files] = argv;
+let [, , channel, ...files] = argv;
+let manifest = null;
+let manifestDir;
+if (channel === "--manifest") {
+  if (files.length !== 1) throw new Error("--manifest needs one file");
+  manifestDir = dirname(resolve(files[0]));
+  manifest = JSON.parse(readFileSync(files[0], "utf8"));
+  channel = manifest.channel;
+  if (!Array.isArray(manifest.streams) || !manifest.streams.length ||
+      manifest.streams.some((stream) => !stream || !["singing", "ordinary"].includes(stream.kind) ||
+        typeof stream.file !== "string" || !/^[A-Za-z0-9_-]{11}$/.test(stream.id)) ||
+      manifest.streams.filter((stream) => stream.kind === "singing").length > 2 ||
+      manifest.streams.filter((stream) => stream.kind === "ordinary").length > 13 ||
+      new Set(manifest.streams.map((stream) => stream.id)).size !== manifest.streams.length ||
+      typeof manifest.output !== "string") throw new Error("Invalid mining manifest");
+  files = manifest.streams.map((stream) => resolve(manifestDir, stream.file));
+  if (new Set(files).size !== files.length) throw new Error("Duplicate chat file");
+}
 if (!channel || !files.length) {
   console.log("usage: node tools/mine-chat.mjs <UC…> <chat.json> [more.json …]");
   exit(1);
@@ -66,11 +85,14 @@ try {
 const CUSTOM = /^UC[A-Za-z0-9_-]{22}\//;
 
 // A member emoji the channel has since deleted comes back from the export as
-// a text run holding one U+25A1 — one run for each dead emoji. That is how it
-// can be told from somebody typing the character: a typed `□□□` is a single
-// run of three characters, while three retired emoji are three runs of one.
-// Checked on a stream where every sender of one was a member, and where the
-// message `□□` arrived as two runs rather than as two characters.
+// a text run holding one U+25A1 — one run for each dead emoji. That shape is
+// not proof on its own: an unbadged viewer's （・□・；） had the square in
+// its own run too. In 153 chat exports, members sent 11,454 single-square
+// runs, while senders without a badge sent just that one.
+//
+// Only repair a member's message. Their badge has a customThumbnail; an
+// icon such as MODERATOR is not a membership. A member typing a single □
+// can still look exactly like a deleted emoji, so this remains a heuristic.
 //
 // The run is dropped rather than the message, because what sits either side
 // of a dead emoji is usually live ones — of 1251 candidates carrying a square
@@ -86,45 +108,62 @@ const CUSTOM = /^UC[A-Za-z0-9_-]{22}\//;
 // about it.
 const GHOST = /^\u25a1$/u;
 
-const asTokens = (message) =>
-  (message?.runs || []).filter((run) => !("text" in run) || !GHOST.test(run.text)).map((run) => {
-    if ("text" in run) return { type: "text", value: run.text };
-    const id = run.emoji?.emojiId || "";
-    if (!CUSTOM.test(id)) return { type: "text", value: id };
-    // The picture, too. Without it a member-emoji card has nothing to draw
-    // until that emoji happens to go past in the chat and harvestEmoji picks
-    // up a url — so a freshly loaded preset is a row of blank squares, which
-    // is the first thing anybody sees of it. The export carries two sizes;
-    // the larger survives a card at any size.
-    const sizes = run.emoji?.image?.thumbnails || [];
-    const biggest = sizes[sizes.length - 1];
-    return {
-      type: "youtubeEmoji",
-      emojiId: id,
-      alt: run.emoji?.image?.accessibility?.accessibilityData?.label || "",
-      sharedTooltipText: (run.emoji?.shortcuts || [])[0] || "",
-      ...(biggest?.url ? { src: biggest.url } : {})
-    };
-  });
+const asTokens = (item) => {
+  const member = (item.authorBadges || []).some((badge) =>
+    Boolean(badge?.liveChatAuthorBadgeRenderer?.customThumbnail)
+  );
+  return (item.message?.runs || [])
+    .filter((run) => !member || !("text" in run) || !GHOST.test(run.text))
+    .map((run) => {
+      if ("text" in run) return { type: "text", value: run.text };
+      const id = run.emoji?.emojiId || "";
+      if (!CUSTOM.test(id)) return { type: "text", value: id };
+      // The picture, too. Without it a member-emoji card has nothing to draw
+      // until that emoji happens to go past in the chat and harvestEmoji picks
+      // up a url — so a freshly loaded preset is a row of blank squares, which
+      // is the first thing anybody sees of it. The export carries two sizes;
+      // the larger survives a card at any size.
+      const sizes = run.emoji?.image?.thumbnails || [];
+      const biggest = sizes[sizes.length - 1];
+      return {
+        type: "youtubeEmoji",
+        emojiId: id,
+        alt: run.emoji?.image?.accessibility?.accessibilityData?.label || "",
+        sharedTooltipText: (run.emoji?.shortcuts || [])[0] || "",
+        ...(biggest?.url ? { src: biggest.url } : {})
+      };
+    });
+};
 
-const seen = new Map();      // signature -> what was said, and by whom
+const byKind = new Map([["singing", new Map()], ["ordinary", new Map()]]);
+const kinds = new Map(files.map((file, index) => [file, manifest?.streams[index].kind || "ordinary"]));
+const chatters = new Map(files.map((file) => [file, new Set()]));
 const guests = new Map();    // other channels' member emoji, and how often
 let messages = 0;
 let skipped = 0;
 
 for (const file of files) {
+  const seen = byKind.get(kinds.get(file));
   const streams = new Set();
-  for (const line of readFileSync(file, "utf8").split("\n")) {
+  const lines = chatLines(file);
+  for await (const line of lines) {
     if (!line.trim()) continue;
     let entry;
-    try { entry = JSON.parse(line); } catch (_) { continue; }
+    try { entry = JSON.parse(line); } catch (_) {
+      if (manifest) throw new Error(`Invalid JSON in ${basename(file)}`);
+      continue;
+    }
 
     for (const action of entry.replayChatItemAction?.actions || []) {
       const item = action.addChatItemAction?.item?.liveChatTextMessageRenderer;
       if (!item) continue;
       messages += 1;
+      // The denominator is everyone who spoke, including people whose message
+      // is later rejected as somebody else's emoji or has no usable signature.
+      if (item.authorExternalChannelId) chatters.get(file).add(item.authorExternalChannelId);
+      if (manifest && !item.authorExternalChannelId) continue;
 
-      const list = asTokens(item.message);
+      const list = asTokens(item);
       if (!tokens.hasSubstance(list)) continue;
 
       const required = tokens.requiredChannels(list);
@@ -165,6 +204,7 @@ for (const file of files) {
       streams.add(file);
     }
   }
+  if (manifest && !chatters.get(file).size) throw new Error(`No identifiable chatters in ${basename(file)}`);
 }
 
 /* ---------- what came out ---------- */
@@ -189,14 +229,19 @@ const secondCrowd = (crowds) => {
   return sizes[1] || 0;
 };
 
-const candidates = [...seen.values()]
-  .map((c) => {
+const describe = (seen) => [...seen]
+  .map(([signature, c]) => {
     const list = commonest(c.wordings);
     return {
+      signature,
       people: c.people.size,
       regulars: secondCrowd(c.crowds),
       count: c.count,
       streams: c.crowds.size,
+      perStream: files.map((file) => ({
+        people: c.crowds.get(file)?.size || 0, chatters: chatters.get(file).size,
+        kind: kinds.get(file)
+      })),
       member: c.member,
       text: tokens.toPlainText(list).trim(),
       wordings: c.wordings.size,
@@ -207,7 +252,9 @@ const candidates = [...seen.values()]
               sharedTooltipText: t.sharedTooltipText,
               ...(t.src ? { src: t.src } : {}) })
     };
-  })
+  });
+
+const ordinaryCandidates = describe(byKind.get("ordinary"))
   // One person saying a thing is not something the room does, and one stream
   // is one night: a joke that landed once looks identical to a greeting until
   // there is a second night to compare it with.
@@ -220,13 +267,41 @@ const candidates = [...seen.values()]
   // talks is not a fault in it.
   .sort((a, b) => b.regulars - a.regulars || b.people - a.people || b.count - a.count);
 
+const singingFiles = files.filter((file) => kinds.get(file) === "singing");
+const singingCandidates = describe(byKind.get("singing"))
+  .map((card) => ({ ...card, source: "singing", share: card.perStream
+    .filter((stream) => stream.kind === "singing")
+    .reduce((sum, stream) => sum + stream.people / stream.chatters, 0) / singingFiles.length }))
+  .filter((card) => card.streams === singingFiles.length && card.share >= 0.1 - Number.EPSILON)
+  .sort((a, b) => b.share - a.share || b.people - a.people || b.count - a.count);
+
+// Ten is a fill target, not a cap. Keep every qualifying karaoke card, then
+// walk the ordinary ranking until the hand is full, passing over duplicates.
+const candidates = [];
+const signatures = new Set();
+for (const card of [...singingCandidates, ...ordinaryCandidates]) {
+  if (signatures.has(card.signature)) continue;
+  signatures.add(card.signature);
+  candidates.push({ ...card, source: card.source || "ordinary" });
+}
+const selected = candidates.filter((card, index) => card.source === "singing" || index < 10)
+  .map((card) => card.signature);
+
 // One file per channel, because the interesting question needs more than
 // one of them: whether a phrase belongs to this channel or to everybody is
 // not answerable from inside a single chat. tools/scope.mjs reads the lot.
-const dir = `${root}tools/candidates`;
+const out = manifest ? resolve(manifestDir, manifest.output) : `${root}tools/candidates/${channel}.json`;
+const dir = dirname(out);
 mkdirSync(dir, { recursive: true });
-const out = `${dir}/${channel}.json`;
-writeFileSync(out, `${JSON.stringify({ channel, streams: files.length, candidates }, null, 2)}\n`);
+const result = { channel, streams: files.length, candidates };
+if (manifest) {
+  result.recipe = "karaoke-10pct-2-plus-ordinary-13-v1";
+  result.selected = selected;
+  result.sources = manifest.streams.map((stream, index) => ({
+    id: stream.id, kind: stream.kind, chatters: chatters.get(files[index]).size
+  }));
+}
+writeFileSync(out, `${JSON.stringify(result, null, 2)}\n`);
 
 // Built from the tokens rather than from the text, so a member emoji reads
 // as `:_curry:` and not as `currycurrycurry` — its label is a bare word, and

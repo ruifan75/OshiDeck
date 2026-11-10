@@ -28,11 +28,11 @@
 // other channels and ただいま is in none; going to ten would start taking
 // うおおおおお (4) and はい！はい！はい！はい！ (9) away as well, and those
 // really do belong to everybody.
-import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from "node:fs";
 import { argv, exit } from "node:process";
+import { resolve } from "node:path";
 
 const root = new URL("..", import.meta.url).pathname;
-const dir = `${root}tools/candidates`;
 
 // How far down somebody else's list still counts as "they say this too".
 const NEAR_THE_TOP = 20;
@@ -68,6 +68,8 @@ const channel = args.find((a) => /^UC[A-Za-z0-9_-]{22}$/.test(a));
 const every = args.includes("--all");
 const take = Number(flag("--take", 10));
 const name = flag("--name", null);
+const dir = resolve(flag("--dir", `${root}tools/candidates`));
+const outputDir = resolve(flag("--out", dir));
 
 if (!channel && !every) {
   console.log("usage: node tools/scope.mjs <UC…> [--take N] [--name 名前]");
@@ -156,7 +158,14 @@ try {
 
 function decide(mine) {
   const rooms = loaded.length - 1;
-  return mine.candidates.slice(0, take).map((c) => {
+  // A rebuilt hand has already kept every eligible karaoke card and filled
+  // from ordinary streams. Applying the legacy top-ten cut here loses cards.
+  const selected = Array.isArray(mine.selected) ? new Set(mine.selected) : null;
+  const cards = selected
+    ? mine.candidates.filter((c) => selected.has(trending.signature(c.tokens)))
+    : mine.candidates.slice(0, take);
+  if (selected && cards.length !== selected.size) throw new Error("A selected signature is missing or duplicated");
+  return cards.map((c) => {
     const sig = trending.signature(c.tokens);
     // Everyone who says it, less this channel if it is one of them.
     const others = (everywhere.get(sig) || 0) - (mine.near.has(sig) ? 1 : 0);
@@ -177,7 +186,10 @@ function write(mine, judged, title) {
   const preset = {
     format: 2,
     name: title,
-    note: `過去${mine.streams}配信のチャットから、常連が多い順に${judged.length}枚`,
+    note: mine.sources
+      ? `歌枠${mine.sources.filter((s) => s.kind === "singing").length}配信・` +
+        `通常${mine.sources.filter((s) => s.kind === "ordinary").length}配信のチャットから${judged.length}枚`
+      : `過去${mine.streams}配信のチャットから、常連が多い順に${judged.length}枚`,
     channel: mine.channel,
     cards: judged.map((c) => ({
       tokens: c.tokens.map((t) =>
@@ -196,7 +208,8 @@ function write(mine, judged, title) {
       scope: c.scope
     }))
   };
-  const out = `${dir}/${mine.channel}.preset.json`;
+  mkdirSync(outputDir, { recursive: true });
+  const out = `${outputDir}/${mine.channel}.preset.json`;
   writeFileSync(out, `${JSON.stringify(preset, null, 2)}\n`);
   return out;
 }

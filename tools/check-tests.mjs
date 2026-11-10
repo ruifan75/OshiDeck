@@ -38,6 +38,13 @@ const I18N = "i18n-test.mjs";
 const WIDTH = "width-test.mjs";
 const EMOJI = "emoji-test.mjs";
 const STORED = "store-test.js";
+const MINER = "miner-test.mjs";
+const KARAOKE = "karaoke-test.mjs";
+const PRODUCTION = "production-test.mjs";
+const DOWNLOAD = "download-test.mjs";
+const RECOVERY = "recovery-test.mjs";
+const SAVE_MENU = "save-menu-test.mjs";
+const SCOPE_FILTER = "scope-filter-test.mjs";
 
 // Which file a mutation edits, and how its test is told to load the copy.
 const CONTENT = { file: "content.js", env: "OD_SOURCE" };
@@ -54,6 +61,10 @@ const WIDTHSRC = { file: "tools/check-width.mjs", env: "OD_WIDTH" };
 // Likewise the audit of the message table: its rules are worth what their
 // being able to fail is worth.
 const I18NCHECK = { file: "tools/check-i18n.mjs", env: "OD_I18NCHECK" };
+const MINERSRC = { file: "tools/mine-chat.mjs", env: "OD_MINER" };
+const SCOPESRC = { file: "tools/scope.mjs", env: "OD_SCOPE" };
+const PRODSRC = { file: "tools/produce-presets.mjs", env: "OD_PRODUCTION" };
+const CHATLINES = { file: "tools/chat-lines.mjs", env: "OD_CHAT_LINES" };
 // Not JavaScript, so `node --check` has nothing to say about it. Twice now a
 // decision made correctly in JS was painted over by a rule in CSS, which no
 // test could see.
@@ -68,6 +79,127 @@ const read = ({ file }) => {
 // [test, subject, name, find, replace] — `find` must appear exactly once, so a
 // mutation cannot quietly stop applying when the code around it moves.
 const MUTATIONS = [
+  [SCOPE_FILTER, CONTENT, "the deck bypassing its scope filter",
+    '    const shown = poolOpen ? (poolTab === "offered" ? offered : mine) : filteredDeck(deck);',
+    '    const shown = poolOpen ? (poolTab === "offered" ? offered : mine) : deck;'],
+  [SCOPE_FILTER, CONTENT, "both selected treated as channel only",
+    "    if (scopeFilter.channel === scopeFilter.global) return deck;",
+    "    if (!scopeFilter.channel && !scopeFilter.global) return deck;"],
+  [SCOPE_FILTER, CONTENT, "turning off the last scope hiding part of the deck",
+    "    if (scopeFilter.channel === scopeFilter.global) return deck;",
+    "    if (scopeFilter.channel && scopeFilter.global) return deck;"],
+  [SCOPE_FILTER, CONTENT, "an empty filter removing its own way out",
+    "      const empty = !shown.length && !drawn && (poolOpen || allScopes);",
+    "      const empty = !shown.length && !drawn;"],
+  [SCOPE_FILTER, CONTENT, "an unchanged card list hiding a changed filter state",
+    '      scopeFilter.channel ? "channel" : "", scopeFilter.global ? "global" : "",', ""],
+  [SCOPE_FILTER, CONTENT, "a new channel inheriting the previous channel's filter",
+    "      scopeFilter = { channel: false, global: false };", ""],
+  [SCOPE_FILTER, CONTENT, "a deck filter hiding cards in the pool",
+    '    const shown = poolOpen ? (poolTab === "offered" ? offered : mine) : filteredDeck(deck);',
+    '    const shown = filteredDeck(poolOpen ? (poolTab === "offered" ? offered : mine) : deck);'],
+  [SAVE_MENU, CONTENT, "the popup following the next hovered comment",
+    "    if (saveMenu) return;", "    if (false) return;"],
+  [SAVE_MENU, CONTENT, "both popup choices saving globally",
+    "        onPick(scope);", '        onPick("global");'],
+  [SAVE_MENU, CONTENT, "member emoji offered a global popup choice",
+    "      global.disabled = true;", "      global.disabled = false;"],
+  [SAVE_MENU, CONTENT, "a popup surviving removal of its source",
+    "      saveMenu.anchor.isConnected && saveMenu.video === currentVideo() &&",
+    "      true && saveMenu.video === currentVideo() &&"],
+  [SAVE_MENU, CONTENT, "a stale popup choice saving on another page",
+    "      if (!saveMenuUsable() || !getChatInput()) return closeSaveMenu();",
+    "      if (false) return closeSaveMenu();"],
+  [SAVE_MENU, CONTENT, "Escape leaving the save menu open",
+    '      if (event.key === "Escape") {\n        event.preventDefault();',
+    '      if (event.key === "F1") {\n        event.preventDefault();'],
+  [RECOVERY, PRODSRC, "a members-only refusal treated as a network failure",
+    'return "members-only";', "return null;"],
+  [RECOVERY, PRODSRC, "a public title mistaken for a membership refusal",
+    'output.split("\\n").filter((line) => /^ERROR:/.test(line))', 'output.split("\\n")'],
+  [RECOVERY, PRODSRC, "a saved membership refusal requested again",
+    'const previousReason = status?.state === "error" ? unavailableReason(status.reason || "") : null;',
+    "const previousReason = null;"],
+  [RECOVERY, PRODSRC, "a cached invalid fragment reused on resume",
+    'if (status?.state === "error" && fragmentParseFailure(status.reason || "")) quarantinePartial(run, video.id);',
+    "// stale fragment retained"],
+  [RECOVERY, PRODSRC, "an invalid fragment reused on the next retry",
+    "if (fragmentParseFailure(result.output)) quarantinePartial(run, video.id);",
+    "// failed fragment retained"],
+  [RECOVERY, PRODSRC, "retry quarantine moving a completed chat",
+    'file === `${base}.part`', "file.startsWith(base)"],
+  [RECOVERY, PRODSRC, "failed partial data deleted instead of preserved",
+    "renameSync(join(raw, file), join(dir, file));", "unlinkSync(join(raw, file));"],
+  [DOWNLOAD, PRODSRC, "parallel workers starting concurrent miners",
+    "const result = queue.then(task);", "const result = Promise.resolve().then(task);"],
+  [DOWNLOAD, PRODSRC, "two requested download workers reduced to one",
+    "    await Promise.all(Array.from({ length: jobs }, worker));\n    progress(true);",
+    "    await Promise.all(Array.from({ length: 1 }, worker));\n    progress(true);"],
+  [PRODUCTION, CHATLINES, "Unicode separators mistaken for JSON record boundaries",
+    'pending.indexOf("\\n", start)', 'pending.slice(start).search(/[\\n\\u2028\\u2029]/u) < 0 ? -1 : start + pending.slice(start).search(/[\\n\\u2028\\u2029]/u)'],
+  [KARAOKE, MINERSRC, "a karaoke phrase accepted from only one of two nights",
+    "card.streams === singingFiles.length", "card.streams > 0"],
+  [KARAOKE, MINERSRC, "karaoke's threshold raised to fifteen percent",
+    "card.share >= 0.1 - Number.EPSILON", "card.share >= 0.15"],
+  [KARAOKE, MINERSRC, "karaoke's denominator counting only its own phrase",
+    "sum + stream.people / stream.chatters", "sum + stream.people / Math.max(1, stream.people)"],
+  [KARAOKE, MINERSRC, "karaoke repeats counted as different people",
+    "people: c.crowds.get(file)?.size || 0", "people: c.count"],
+  [KARAOKE, MINERSRC, "karaoke's selected cards capped at ten",
+    'card.source === "singing" || index < 10', "index < 10"],
+  [KARAOKE, MINERSRC, "ordinary fill keeping a karaoke duplicate",
+    "if (signatures.has(card.signature)) continue;", "if (false) continue;"],
+  [KARAOKE, MINERSRC, "ordinary cards accepted after two nights",
+    "const MIN_STREAMS = 3;", "const MIN_STREAMS = 2;"],
+  [KARAOKE, MINERSRC, "ordinary ranking led by raw posts",
+    "b.regulars - a.regulars || b.people - a.people || b.count - a.count",
+    "b.count - a.count || b.people - a.people"],
+  [KARAOKE, MINERSRC, "a single karaoke night given a higher threshold",
+    "card.share >= 0.1 - Number.EPSILON", "card.share >= (singingFiles.length === 1 ? 0.2 : 0.1)"],
+  [KARAOKE, SCOPESRC, "scope capping the selected hand at ten",
+    "new Set(mine.selected)", "new Set(mine.selected.slice(0, 10))"],
+  [PRODUCTION, PRODSRC, "a known karaoke collaboration accepted as solo",
+    "(video.mentions || []).length === 0", "(video.mentions || []).length >= 0"],
+  [PRODUCTION, PRODSRC, "singing streams also entering ordinary reserves",
+    'video.topic_id !== "singing"', 'video.topic_id !== "membersonly"'],
+  [PRODUCTION, PRODSRC, "the ordinary search stopping at a full karaoke page",
+    "if (page.length < 50) { exhausted = true; break; }",
+    "if (page.length <= 50) { exhausted = true; break; }"],
+  [PRODUCTION, PRODSRC, "a failed plan treated as a successful empty search",
+    'if (failed) throw Object.assign(new Error(`${failed} channels failed planning; run --plan again to retry`), { retryable: true });', "// swallowed"],
+  [PRODUCTION, PRODSRC, "a login refusal not requesting browser cookies",
+    "export const needsLogin = (output) => /sign in|log ?in|not a bot|confirm your age|age.restricted|HTTP Error 403/i.test(output);",
+    "export const needsLogin = (output) => false;"],
+  [MINER, MINERSRC, "a square removed without a membership badge",
+    '!member || !("text" in run) || !GHOST.test(run.text)',
+    '!("text" in run) || !GHOST.test(run.text)'],
+
+  [MINER, MINERSRC, "any author badge mistaken for a membership",
+    "Boolean(badge?.liveChatAuthorBadgeRenderer?.customThumbnail)",
+    "Boolean(badge?.liveChatAuthorBadgeRenderer)"],
+
+  [MINER, MINERSRC, "only the first author badge checked for a membership",
+    `  const member = (item.authorBadges || []).some((badge) =>
+    Boolean(badge?.liveChatAuthorBadgeRenderer?.customThumbnail)
+  );`,
+    "  const member = Boolean(item.authorBadges?.[0]?.liveChatAuthorBadgeRenderer?.customThumbnail);"],
+
+  [MINER, MINERSRC, "the miner discarding the sender before converting tokens",
+    "const list = asTokens(item);",
+    "const list = asTokens(item.message);"],
+
+  [MINER, MINERSRC, "a deleted member emoji kept as a square",
+    '!member || !("text" in run) || !GHOST.test(run.text)',
+    "true"],
+
+  [MINER, MINERSRC, "a square inside a longer run treated as deleted",
+    "const GHOST = /^\\u25a1$/u;",
+    "const GHOST = /\\u25a1/u;"],
+
+  [MINER, MINERSRC, "a black square treated as a deleted member emoji",
+    "const GHOST = /^\\u25a1$/u;",
+    "const GHOST = /^[\\u25a1\\u2b1b]$/u;"],
+
   [CHANNEL, CONTENT, "a handle that rejects non-ASCII names",
     'if (!path.startsWith("/@")) return null;',
     'if (!path.startsWith("/@") || !/^[\\x00-\\x7F]*$/.test(path)) return null;'],
@@ -669,12 +801,12 @@ const MUTATIONS = [
   // The write is awaited, and the viewer can click into the chat box while it
   // is in flight: focus is then on something that still exists.
   [VISIBILITY, CONTENT, "a fold that takes the focus back from wherever it went",
-    "    const loose = !document.activeElement || document.activeElement === document.body;",
-    "    const loose = true;"],
+    '    const loose = !document.activeElement || document.activeElement === document.body;\n    if (held && loose) rootEl?.querySelector(".od-fold")?.focus({ preventScroll: true });',
+    '    const loose = true;\n    if (held && loose) rootEl?.querySelector(".od-fold")?.focus({ preventScroll: true });'],
 
   [VISIBILITY, CONTENT, "a fold that takes the focus off whatever had it",
-    "    const held = rootEl?.contains(document.activeElement);",
-    "    const held = true;"],
+    "  async function setFolded(folded) {\n    const held = rootEl?.contains(document.activeElement);",
+    "  async function setFolded(folded) {\n    const held = true;"],
 
   [WIDTH, WIDTHSRC, "the bar's own line never measured",
     'const notices = (source) => [...calls(source, "showToast"), ...calls(source, "barLine")];',
@@ -718,16 +850,16 @@ const MUTATIONS = [
   // A line you cannot click is a state you cannot leave: the bar is all a
   // folded panel draws.
   [VISIBILITY, CONTENT, "a handle that is only a line of words",
-    '    const group = document.createElement("button");\n    group.type = "button";',
-    '    const group = document.createElement("div");'],
+    '    const fold = document.createElement("button");',
+    '    const fold = document.createElement("span");'],
 
   [VISIBILITY, CONTENT, "a handle that always says it is about to fold",
-    '    group.setAttribute("aria-label", folded ? t("aria.unfold") : t("aria.fold"));',
-    '    group.setAttribute("aria-label", t("aria.fold"));'],
+    '    fold.setAttribute("aria-label", folded ? t("aria.unfold") : t("aria.fold"));',
+    '    fold.setAttribute("aria-label", t("aria.fold"));'],
 
   [VISIBILITY, CONTENT, "a handle that asks for the state it is already in",
-    "    group.addEventListener(\"click\", () => setFolded(!folded));",
-    "    group.addEventListener(\"click\", () => setFolded(folded));"],
+    "    fold.addEventListener(\"click\", () => setFolded(!folded));",
+    "    fold.addEventListener(\"click\", () => setFolded(folded));"],
 
   // Which way the chevron points is the only thing on a folded panel that
   // says it can be opened at all.
@@ -736,8 +868,8 @@ const MUTATIONS = [
     '.od-fold[data-folded="true"] svg { transform: rotate(180deg); }'],
 
   [VISIBILITY, STYLE, "a handle drawn as the button it is",
-    "button.od-bar-identity {\n  appearance: none;\n  border: 0;",
-    "button.od-bar-identity {\n  appearance: none;\n  border: 1px solid #555;"],
+    ".od-fold,\n.od-scope-filter {\n  appearance: none;\n  border: 0;",
+    ".od-fold,\n.od-scope-filter {\n  appearance: none;\n  border: 1px solid #555;"],
 
   // Found by review, all five. Two things outlive a redraw, so the off state
   // has to put them back itself — and the retries that stopped mattered
@@ -767,8 +899,8 @@ const MUTATIONS = [
   // The one press that fills an empty deck, going the moment the chat says
   // anything — a drawn card is in the panel, not in the deck.
   [VISIBILITY, CONTENT, "a preset offer taken away by a card nobody owns",
-    "      if (!shown.length) appendPresetOffer(rootEl, channel);",
-    "      if (!shown.length && !drawn) appendPresetOffer(rootEl, channel);"],
+    "      if (!deck.length && !poolOpen) appendPresetOffer(rootEl, channel);",
+    "      if (!deck.length && !poolOpen && !drawn) appendPresetOffer(rootEl, channel);"],
 
   // A page whose owner could not be worked out has no deck, no pool and
   // nowhere to save to. The panel is off there, and each half of being off
@@ -1015,8 +1147,8 @@ const MUTATIONS = [
     '#oshideck-root[data-pool="true"] .od-card::before { background: var(--od-common); }\n#oshideck-root[data-pool="true"] .od-card,'],
 
   [VISIBILITY, CONTENT, "the hand reordered under the pointer",
-    "    if (frozen) { pendingRender = true; return; }",
-    "    if (false) { pendingRender = true; return; }"],
+    "    if (frozen || saveMenu) { pendingRender = true; return; }",
+    "    if (saveMenu) { pendingRender = true; return; }"],
 
   [VISIBILITY, CONTENT, "a notice left sitting over the controls it names",
     "    if (notice) clearNotice();",
@@ -1188,6 +1320,51 @@ const MUTATIONS = [
 // assertion, so deleting the reorder case would have left the checker green —
 // naming the assertion is what makes each mutation answer for its own.
 const KILLS = {
+  "the deck bypassing its scope filter": "channel alone shows only channel cards",
+  "both selected treated as channel only": "both selected show the full deck",
+  "turning off the last scope hiding part of the deck": "turning off the last scope returns to the full deck",
+  "an empty filter removing its own way out": "zero matches keep both filters available with an honest empty message",
+  "an unchanged card list hiding a changed filter state": "a scope selection updates even when every visible card stays the same",
+  "a new channel inheriting the previous channel's filter": "another channel starts with neither selected and its whole deck visible",
+  "a deck filter hiding cards in the pool": "the channel filter does not hide global cards in the pool",
+  "the popup following the next hovered comment": "moving across chat rows to the popup keeps the original source",
+  "both popup choices saving globally": "the channel choice saves exactly the captured comment for this channel",
+  "member emoji offered a global popup choice": "member emoji disable global and explain why in visible text",
+  "a popup surviving removal of its source": "removing the source row dismisses its popup",
+  "a stale popup choice saving on another page": "a stale choice cannot save against another channel",
+  "Escape leaving the save menu open": "Escape dismisses, consumes the key and restores the opener",
+  "a members-only refusal treated as a network failure": "a members-only response is an ineligible video",
+  "a public title mistaken for a membership refusal": "public titles and network failures are not membership evidence",
+  "a saved membership refusal requested again": "a known membership failure resumes without another request",
+  "a cached invalid fragment reused on resume": "a cached bad fragment is replaced before resuming",
+  "an invalid fragment reused on the next retry": "a failed fragment is replaced before its next attempt",
+  "retry quarantine moving a completed chat": "quarantine preserves complete chats and other videos",
+  "failed partial data deleted instead of preserved": "failed partial data is retained for inspection",
+  "parallel workers starting concurrent miners": "real mining subprocesses run one at a time",
+  "two requested download workers reduced to one": "two download workers overlap",
+  "Unicode separators mistaken for JSON record boundaries": "chat inspection preserves literal Unicode separators across chunks",
+  "a karaoke phrase accepted from only one of two nights": "a karaoke phrase must appear in both streams",
+  "karaoke's threshold raised to fifteen percent": "karaoke uses the average of both streams",
+  "karaoke's denominator counting only its own phrase": "the ten percent denominator includes rejected messages",
+  "karaoke repeats counted as different people": "repeated posts do not become distinct people",
+  "karaoke's selected cards capped at ten": "all karaoke cards survive above ten without a people floor",
+  "ordinary fill keeping a karaoke duplicate": "ordinary cards fill to ten after skipping karaoke duplicates",
+  "ordinary cards accepted after two nights": "ordinary cards retain the three-night rule",
+  "ordinary ranking led by raw posts": "ordinary ranking uses the second busiest crowd",
+  "a single karaoke night given a higher threshold": "one karaoke stream keeps the same ten percent threshold",
+  "scope capping the selected hand at ten": "scope keeps every chosen karaoke card",
+  "a known karaoke collaboration accepted as solo": "karaoke rejects a known collaboration",
+  "singing streams also entering ordinary reserves": "ordinary streams exclude singing and members-only",
+  "the ordinary search stopping at a full karaoke page": "the ordinary scan continues past a page of karaoke",
+  "a failed plan treated as a successful empty search": "a failed fetch is reported as failure rather than no streams",
+  "a login refusal not requesting browser cookies": "login failures request cookies instead of meaning no replay",
+  "a square removed without a membership badge": "an unbadged sender keeps a square inside an emoticon",
+  "any author badge mistaken for a membership": "a moderator badge alone does not make the sender a member",
+  "only the first author badge checked for a membership": "a membership badge still counts after a moderator badge",
+  "the miner discarding the sender before converting tokens": "a member's deleted emoji leave the live emoji intact",
+  "a deleted member emoji kept as a square": "deleted member emoji alone do not become a candidate",
+  "a square inside a longer run treated as deleted": "a member's multi-square text run stays intact",
+  "a black square treated as a deleted member emoji": "a standalone black square is not a deleted emoji",
   "a cycle that only collapses when it comes out even": "and the same when the last turn is cut short",
   "runs flattened before the cycle is looked for": "a word said twice is not the shorter word inside it",
   "uneven runs never given a second look for a cycle": "uneven runs still spell the same two-emoji call",
@@ -1257,7 +1434,7 @@ const KILLS = {
   "a pool folded shut the moment it is opened":
     "the pool, which you opened on purpose, is not folded shut under you",
   "a folded panel that draws its hand anyway": "a folded panel stops at the bar",
-  "a handle that is only a line of words": "the line that names the deck is the handle that folds it",
+  "a handle that is only a line of words": "the chevron is the separate handle that folds the deck",
   "a handle that always says it is about to fold":
     "it says, to a reader that cannot see it, which state it is in",
   "a handle that asks for the state it is already in": "each asks for the state it is not in",
@@ -1501,7 +1678,7 @@ function run(file, mutant, subject) {
 let failed = 0;
 
 // A suite already red would make every mutation look caught.
-for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM, COLOUR, PRESET, MEMBER, I18N, EMOJI, STORED]) {
+for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM, COLOUR, PRESET, MEMBER, I18N, EMOJI, STORED, MINER, KARAOKE, PRODUCTION, DOWNLOAD, RECOVERY, SAVE_MENU, SCOPE_FILTER]) {
   if (run(file, null).failed) {
     console.log(`FAIL ${file} is red before any mutation`);
     failed = 1;

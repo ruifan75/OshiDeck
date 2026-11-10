@@ -129,7 +129,8 @@ function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "
     "findChatInput", "currentInput", "rootEl", "scheduleRender",
     "getChatInput", "settingsCache", "submitChat", "MutationObserver",
     "presets", "presetsOnHand",
-    `${lifted}
+    `const saveMenu = null;
+     ${lifted}
      return { membership, whyNotSendable, markLocked, playableFirst, orderDeck,
               buildDeck, buildPool, buildOffered, addToDeck,
               saveTokens, reconcileChannel, onPageChanged,

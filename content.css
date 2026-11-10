@@ -92,32 +92,72 @@
   outline-offset: 1px;
 }
 
-/* Where a card is about to go. The same two colours the panel uses everywhere
-   for it: the channel's own, and the grey that means anywhere. */
+/* A body-level popup escapes the clipping of both chat rows and dealt cards.
+   Scope is written out: a neutral channel colour must still be unambiguous. */
+.od-save-menu {
+  position: fixed;
+  z-index: 10000;
+  box-sizing: border-box;
+  width: 240px;
+  max-width: calc(100vw - 16px);
+  max-height: calc(100vh - 16px);
+  overflow-y: auto;
+  padding: 5px;
+  border: 1px solid var(--yt-live-chat-border-color, #555);
+  border-radius: 8px;
+  background: var(--yt-live-chat-background-color, #181818);
+  color: var(--yt-live-chat-primary-text-color, #f1f1f1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .35);
+  font: 13px/1.4 Roboto, Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+.od-save-heading {
+  padding: 5px 9px;
+  color: var(--yt-live-chat-secondary-text-color, #aaa);
+  font-size: 11px;
+}
+
 .od-target {
-  width: 22px;
-  height: 22px;
-  padding: 0;
-  border: 2px solid rgba(0, 0, 0, .55);
-  border-radius: 50%;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 9px 8px 28px;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  overflow-wrap: anywhere;
   cursor: pointer;
 }
 
-/* These sit in YouTube's own chat rows, outside #oshideck-root, so the
-   panel's variables do not reach them — hence the fallbacks. */
-.od-target[data-scope="channel"] { background: oklch(0.74 0.19 var(--od-scope-hue, 320)); }
-.od-target[data-scope="global"] { background: var(--od-common, #8a8a8a); }
-
-.od-target:hover { transform: scale(1.12); }
-
-.od-target:disabled {
-  opacity: .3;
-  cursor: not-allowed;
-  transform: none;
+.od-target::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 9px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(128, 128, 128, .7);
+  border-radius: 50%;
+  background: var(--od-common, #8a8a8a);
 }
 
-/* On a card the tools sit in a row of their own, so the targets fill it. */
-.od-card-tools .od-target { width: 20px; height: 20px; }
+.od-target[data-scope="channel"]::before { background: oklch(0.74 0.19 var(--od-scope-hue, 320)); }
+.od-target:not(:disabled):hover { background: rgba(128, 128, 128, .18); }
+
+.od-target-label { display: block; }
+.od-target-detail {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  color: var(--yt-live-chat-secondary-text-color, #aaa);
+}
+
+.od-target:disabled { cursor: not-allowed; }
+.od-target:disabled .od-target-label { opacity: .5; }
 
 /* ---------- top bar ---------- */
 
@@ -145,7 +185,7 @@
 }
 
 .od-channel {
-  max-width: 118px;
+  min-width: 0;
   overflow: hidden;
   font-size: 12px;
   font-weight: 500;
@@ -153,9 +193,7 @@
   text-overflow: ellipsis;
 }
 
-.od-plus-sign { font-size: 11px; color: var(--od-faint); }
 .od-common { font-size: 11px; color: #999; }
-.od-count { margin-left: 4px; font-size: 11px; color: var(--od-faint); }
 
 .od-bar-identity,
 .od-bar-save {
@@ -168,10 +206,10 @@
 
 .od-bar-save { gap: 4px; }
 
-/* The deck's own line is also the handle that folds the panel down to it — a
-   button, so it is reachable by keyboard and says what it does, and so it has
-   to be talked back out of looking like one. */
-button.od-bar-identity {
+/* Scope names filter the hand. Folding has its own chevron, so choosing a
+   category cannot hide the panel. All three stay within the identity line. */
+.od-fold,
+.od-scope-filter {
   appearance: none;
   border: 0;
   padding: 0;
@@ -180,6 +218,32 @@ button.od-bar-identity {
   font: inherit;
   text-align: left;
   cursor: pointer;
+}
+
+.od-scope-filter {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  padding: 3px 4px;
+  border-radius: 4px;
+}
+
+.od-scope-filter[data-filter="channel"] { flex: 0 1 auto; }
+.od-scope-filter[data-filter="global"] { flex-shrink: 0; }
+.od-scope-filter[aria-pressed="true"] { background: rgba(128, 128, 128, .22); }
+.od-scope-filter:hover { background: rgba(128, 128, 128, .14); }
+.od-scope-filter:focus-visible,
+.od-fold:focus-visible { outline: 2px solid #3ea6ff; outline-offset: 1px; }
+
+.od-fold {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 20px;
+  min-height: 20px;
+  padding: 3px 0;
 }
 
 /* Pointing the way the panel will go: down to open it, up to put it away.

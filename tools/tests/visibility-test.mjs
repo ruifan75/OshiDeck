@@ -43,6 +43,7 @@ function scene({ mounted = true, connected = true, hidden = false, usable = true
      let rootEl = state.root;
      const getChatInput = () => state.usable ? {} : null;
      const scheduleRender = () => { state.renders += 1; };
+     const closeSaveMenu = () => {};
      const journal = { record: (entry) => state.notes.push(entry.what) };
      ${body}
      return { syncVisibility, frozen: () => frozen };`
@@ -195,6 +196,7 @@ check("which is worth the redraw", b.seen.refreshes === 2);
       `let stopped = false;
        let pendingRender = false;
        let refreshTimer = null;
+       const saveMenu = null;
        const clearTimeout = () => {};
        const setTimeout = (fn) => { fn(); return 1; };
        const render = () => { seen.renders += 1; };
@@ -472,13 +474,13 @@ check("and the panel works the count out with it",
   const asked = [];
   const said = lift("deckIdentity", "  // Written down rather than kept here");
   const identity = (channel, empty, folded = false) => new Function(
-    "channel", "empty", "folded", "document", "t", "svgIcon", "setFolded",
+    "channel", "empty", "folded", "document", "t", "svgIcon", "setFolded", "scopeFilter",
     `${lift("barLine", "  function noticeRow(")}
      ${said}
      return deckIdentity(channel, 200, empty ? 0 : 4, empty, folded);`
   )(channel, empty, folded, { createElement: element },
     (key, ...rest) => [key, ...rest].join("|"),
-    (name) => ({ is: "icon", name }), (next) => asked.push(next));
+    (name) => ({ is: "icon", name }), (next) => asked.push(next), { channel: false, global: false });
 
   const here = { id: "UC1", name: "さくらみこ" };
 
@@ -496,18 +498,19 @@ check("and the panel works the count out with it",
     identity(here, true).kids.length === 0);
 
   // The collapse is not allowed to eat the ordinary bar on its way past.
-  check("a deck with cards in it still names its channel and counts them",
-    identity(here, false).kids.some((k) => k.textContent === "さくらみこ") &&
-      identity(here, false).kids.some((k) => k.textContent === "count.cards|4"));
+  check("a deck with cards in it names both scopes without a plus or count",
+    identity(here, false).kids[0]?.kids.some((k) => k.textContent === "さくらみこ") &&
+      identity(here, false).kids[1]?.kids.some((k) => k.textContent === "bar.global") &&
+      !identity(here, false).kids.some((k) => /od-(count|plus-sign)/.test(k.className)));
 
   // The deck's own line doubles as the handle, rather than a third control
   // beside the pool and the builder: the bar's one line of words is cut to
   // whatever those leave it, and the tightest sentence on it has under 7px
   // to spare. A handle that costs nothing is one that is part of the line.
-  const open = identity(here, false);
-  const shut = identity(here, false, true);
+  const open = identity(here, false).kids.at(-1);
+  const shut = identity(here, false, true).kids.at(-1);
 
-  check("the line that names the deck is the handle that folds it",
+  check("the chevron is the separate handle that folds the deck",
     open.tag === "button" && open.className.includes("od-fold"));
   check("and it says, to a reader that cannot see it, which state it is in",
     open.attrs["aria-expanded"] === "true" && open.attrs["aria-label"] === "aria.fold" &&
@@ -881,7 +884,7 @@ for (const mode of ["hand", "list"]) {
 
   // The handle is a button for the keyboard's sake and has to be talked out
   // of looking like one, since what it is drawn as is the deck's own line.
-  const handle = bodyOf("button.od-bar-identity");
+  const handle = bodyOf(".od-scope-filter");
   check("the handle is a button nobody can tell is a button",
     /border:\s*0/.test(handle) && /background:\s*none/.test(handle) &&
       /font:\s*inherit/.test(handle) && /cursor:\s*pointer/.test(handle));
@@ -1227,7 +1230,7 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
 
   const document = documentFor(page());
   const made = new Function(
-    "t", "document", "cardPeek", "stageForSaving", "saveTokens", "targetButtons", "svgIcon", "describe",
+    "t", "document", "cardPeek", "stageForSaving", "saveTokens", "openSaveMenu", "svgIcon", "describe",
     [src.slice(toolsFrom, toolsTo), src.slice(iconFrom, iconTo), "return drawnTools;"].join("\n")
   )(
     (key) => key,
@@ -1278,19 +1281,20 @@ if (sigFrom < 0 || sigTo < 0 || sigTo <= sigFrom) {
 function signature({ pool = false, tab = "mine", more = false, editing = null, flash = null,
                      typing = false, pinned = false, settings = {}, channel = "UCaaa", name = "さくら",
                      hue = 320, width = 400, presets = 1,
-                     shown = [], mine = [], offered = [], drawn = null } = {}) {
+                     shown = [], mine = [], offered = [], drawn = null,
+                     filter = { channel: false, global: false } } = {}) {
   // Worked out by the panel's own line, not by this file.
   const waiting = cardsWaiting(mine, offered);
   return new Function(
     "poolOpen", "poolTab", "expanded", "editingId", "flashId", "inputHasContent", "inputIsPinned",
-    "tokens", "presetsOnHand", "rootEl", "flashKind",
+    "tokens", "presetsOnHand", "rootEl", "flashKind", "scopeFilter",
     `${src.slice(sigFrom, sigTo)} return panelSignature;`
   )(
     pool, tab, more, editing, flash, typing, pinned,
     { cardKey: (t) => (t || []).map((x) => x.value ?? x.emojiId).join("") },
     () => new Array(presets),
     { clientWidth: width },
-    "found"
+    "found", filter
   )(
     { settings: { mode: "hand", cardSize: "small", rows: 2, sortBy: "heat", suggest: true, ...settings } },
     { id: channel, name }, hue, shown, mine, offered, waiting, drawn

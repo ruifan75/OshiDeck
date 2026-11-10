@@ -26,6 +26,7 @@
   let watchedRenderer = null;
   let grabEl = null;
   let grabRow = null;
+  let saveMenu = null;
   let expanded = false;
   let flashId = null;
   let flashKind = "found";
@@ -33,6 +34,8 @@
   let poolOpen = false;
   // Which half of it is on show: what you have, or what a preset offers.
   let poolTab = "mine";
+  let scopeFilter = { channel: false, global: false };
+  let filterChannel = null;
   let peek = null;
   let peekOwner = null; // the element whose description the bar is showing
   let painted = null;   // what the panel is already showing
@@ -109,6 +112,7 @@
   function syncVisibility() {
     if (stopped) return;
     const hide = !getChatInput();
+    if (hide) closeSaveMenu();
 
     // Nothing mounted yet — the first render found the input collapsed and
     // returned before mounting. Returning here too left the deck missing
@@ -735,13 +739,17 @@
     const tools = document.createElement("div");
     tools.className = "od-card-tools";
 
-    tools.appendChild(iconButton("plus", t("peek.saveCard"), (event) => {
+    const plus = iconButton("plus", t("peek.saveCard"), (event) => {
       event.stopPropagation();
-      if (event.shiftKey) return stageForSaving(card);
-      tools.replaceChildren(...targetButtons(card.tokens || [], {
-        onPick: (target) => saveTokens(card.tokens || [], target)
-      }));
-    }, () => cardPeek(card)));
+      if (event.shiftKey) {
+        closeSaveMenu();
+        return stageForSaving(card);
+      }
+      openSaveMenu(card.tokens || [], event.currentTarget);
+    }, () => cardPeek(card));
+    plus.setAttribute("aria-haspopup", "menu");
+    plus.setAttribute("aria-expanded", "false");
+    tools.appendChild(plus);
 
     return tools;
   }
@@ -917,12 +925,17 @@
     const label = t("peek.takeComment");
     plus.setAttribute("aria-label", label);
     plus.title = label;
+    plus.setAttribute("aria-haspopup", "menu");
+    plus.setAttribute("aria-expanded", "false");
     plus.addEventListener("click", (event) => {
       // The row underneath opens YouTube's own menus on click.
       event.preventDefault();
       event.stopPropagation();
-      if (event.shiftKey) return takeComment(grabRow);
-      askWhere(grabRow);
+      if (event.shiftKey) {
+        closeSaveMenu();
+        return takeComment(grabRow);
+      }
+      askWhere(grabRow, plus);
     });
     grabButton().replaceChildren(plus);
   }
@@ -942,6 +955,9 @@
   }
 
   function offerGrab(row) {
+    // The popup belongs to the captured comment, even as the pointer crosses
+    // other rows on the way to it.
+    if (saveMenu) return;
     if (row === grabRow && grabEl?.isConnected) return;
     grabRow = row;
     if (!row) return grabEl?.remove();
@@ -949,33 +965,39 @@
     row.appendChild(grabEl);
   }
 
-  // The two save targets, offered where the press happened. They used to be
-  // offered only on the bar at the top of the panel, which is a long way from
-  // a ＋ down in the chat — the same mistake as a warning at the foot of a
-  // settings page.
+  // Colour is a hint; the words carry both scope and what that scope means.
   function targetButtons(captured, { onPick }) {
     const forced = tokens.requiredChannels(captured).length > 0;
     const hue = barContext?.hue;
     const here = barContext?.channel?.name || t("channel.this");
 
-    const make = (target, scope, label) => {
+    const make = (scope, label, detail, accessible) => {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "od-target";
       button.dataset.scope = scope;
+      button.setAttribute("role", "menuitem");
+      button.tabIndex = -1;
       if (scope === "channel" && hue != null) button.style.setProperty("--od-scope-hue", hue);
-      button.setAttribute("aria-label", label);
-      button.title = label;
+      button.setAttribute("aria-label", `${accessible}. ${detail}`);
+      const title = document.createElement("span");
+      title.className = "od-target-label";
+      title.textContent = label;
+      const note = document.createElement("span");
+      note.className = "od-target-detail";
+      note.textContent = detail;
+      button.append(title, note);
       button.addEventListener("click", (event) => {
         event.preventDefault();
         event.stopPropagation();
-        onPick(target);
+        onPick(scope);
       });
       return button;
     };
 
-    const channel = make("channel", "channel", t("save.channelOnly", here));
-    const global = make("global", "global", t("save.global"));
+    const channel = make("channel", t("save.channelShort"), t("save.channelWhy"), t("save.channelOnly", here));
+    const global = make("global", t("save.globalShort"),
+      t(forced ? "save.forcedWhy" : "save.globalWhy"), t("save.global"));
 
     if (forced) {
       global.disabled = true;
@@ -988,6 +1010,93 @@
       channel.title = t("toast.noChannel");
     }
     return [channel, global];
+  }
+
+  function saveMenuUsable() {
+    return saveMenu && !stopped && store.alive() && rootEl?.isConnected && !rootEl.hidden &&
+      saveMenu.anchor.isConnected && saveMenu.video === currentVideo() &&
+      saveMenu.channelId === getChannel()?.id;
+  }
+
+  function closeSaveMenu({ restoreFocus = false } = {}) {
+    if (!saveMenu) return;
+    const { el, anchor, cleanup } = saveMenu;
+    saveMenu = null;
+    cleanup();
+    el.remove();
+    anchor.setAttribute("aria-expanded", "false");
+    if (restoreFocus && anchor.isConnected) anchor.focus({ preventScroll: true });
+    if (pendingRender) { pendingRender = false; scheduleRender(); }
+  }
+
+  function openSaveMenu(captured, anchor) {
+    const wasOpen = saveMenu?.anchor === anchor;
+    closeSaveMenu();
+    if (wasOpen || stopped || !anchor?.isConnected || rootEl?.hidden || !barContext?.channel?.id) return;
+
+    const el = document.createElement("div");
+    el.className = "od-save-menu";
+    el.setAttribute("role", "menu");
+    el.setAttribute("aria-label", t("save.choose"));
+    const heading = document.createElement("div");
+    heading.className = "od-save-heading";
+    heading.setAttribute("role", "presentation");
+    heading.textContent = t("save.choose");
+    const buttons = targetButtons(captured, { onPick: (target) => {
+      if (!saveMenuUsable() || !getChatInput()) return closeSaveMenu();
+      closeSaveMenu({ restoreFocus: true });
+      saveTokens(captured, target);
+    } });
+    el.append(heading, ...buttons);
+
+    const position = () => {
+      if (!saveMenuUsable()) return closeSaveMenu();
+      const rect = anchor.getBoundingClientRect();
+      const menu = el.getBoundingClientRect();
+      const width = document.documentElement.clientWidth;
+      const height = document.documentElement.clientHeight;
+      el.style.left = `${Math.max(8, Math.min(rect.right - menu.width, width - menu.width - 8))}px`;
+      const below = rect.bottom + 4;
+      el.style.top = `${Math.max(8, Math.min(below + menu.height <= height - 8
+        ? below : rect.top - menu.height - 4, height - menu.height - 8))}px`;
+    };
+    const outside = (event) => {
+      if (!el.contains(event.target) && !anchor.contains(event.target)) closeSaveMenu();
+    };
+    const keys = (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        event.stopPropagation();
+        closeSaveMenu({ restoreFocus: true });
+      } else if (event.key === "Tab") {
+        // Resume the page's tab order from the ＋, rather than from this
+        // body-level popup at the end of the document.
+        closeSaveMenu({ restoreFocus: true });
+      } else if (el.contains(event.target)) {
+        const enabled = buttons.filter((button) => !button.disabled);
+        const index = enabled.indexOf(document.activeElement);
+        const next = { ArrowDown: (index + 1) % enabled.length,
+          ArrowUp: (index + enabled.length - 1) % enabled.length,
+          Home: 0, End: enabled.length - 1 };
+        if (!Object.hasOwn(next, event.key)) return;
+        event.preventDefault();
+        enabled[next[event.key]].focus();
+      }
+    };
+    saveMenu = { el, anchor, channelId: barContext.channel.id, video: currentVideo(), cleanup: () => {
+      document.removeEventListener("pointerdown", outside, true);
+      document.removeEventListener("keydown", keys, true);
+      window.removeEventListener("resize", position);
+      document.removeEventListener("scroll", position, true);
+    } };
+    anchor.setAttribute("aria-expanded", "true");
+    document.body.appendChild(el);
+    document.addEventListener("pointerdown", outside, true);
+    document.addEventListener("keydown", keys, true);
+    window.addEventListener("resize", position);
+    document.addEventListener("scroll", position, true);
+    position();
+    buttons.find((button) => !button.disabled)?.focus({ preventScroll: true });
   }
 
   function readComment(row) {
@@ -1008,15 +1117,10 @@
     return captured;
   }
 
-  function askWhere(row) {
+  function askWhere(row, anchor) {
     const captured = readComment(row);
     if (!captured) return;
-    grabButton().replaceChildren(...targetButtons(captured, {
-      onPick: (target) => {
-        resetGrab();
-        saveTokens(captured, target);
-      }
-    }));
+    openSaveMenu(captured, anchor);
   }
 
   // The other thing someone might want a comment for: to say it too. Shift
@@ -1608,6 +1712,7 @@
       channel?.id || "", channel?.name || "", hue ?? "",
       rootEl?.clientWidth || 0,
       poolOpen ? `pool:${poolTab}` : "deck", expanded ? "more" : "",
+      scopeFilter.channel ? "channel" : "", scopeFilter.global ? "global" : "",
       editingId || "", flashId ? `${flashId}:${flashKind}` : "", inputHasContent ? "typing" : "",
       // The two halves counted apart. Together they were one number, and a
       // card deleted from the pool while its preset started offering it again
@@ -1917,45 +2022,74 @@
   function deckIdentity(channel, hue, count, empty, folded) {
     if (empty) return barLine(channel?.id ? t("pool.emptyHint") : t("toast.noChannel"));
 
-    // The line that names the deck is also the handle that folds it away.
-    // Not a control of its own beside the other two: the bar's one line of
-    // words is cut to whatever those leave it, and the tightest sentence
-    // there has 6.8px to spare — a third button and half a dozen notices
-    // would be cut mid-word. This costs nothing, because it is the thing it
-    // sits on, and it is the widest target the bar has.
-    const group = document.createElement("button");
-    group.type = "button";
-    group.className = "od-bar-identity od-fold";
-    group.dataset.folded = String(!!folded);
-    group.setAttribute("aria-expanded", String(!folded));
-    group.setAttribute("aria-label", folded ? t("aria.unfold") : t("aria.fold"));
-    group.addEventListener("click", () => setFolded(!folded));
+    const group = document.createElement("div");
+    group.className = "od-bar-identity";
+    group.setAttribute("role", "group");
+    group.setAttribute("aria-label", t("count.cards", count));
+    const filter = (scope, label) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "od-scope-filter";
+      button.dataset.filter = scope;
+      button.setAttribute("aria-pressed", String(scopeFilter[scope]));
+      button.setAttribute("aria-label", label);
+      button.addEventListener("click", () => setScopeFilter(scope));
+      return button;
+    };
 
     if (channel?.id) {
+      const channelName = channel.name || t("channel.this");
+      const button = filter("channel", t("filter.channel", channelName));
       const dot = document.createElement("span");
       dot.className = "od-dot";
+      dot.setAttribute("aria-hidden", "true");
       dot.style.setProperty("--od-scope-hue", hue);
       const name = document.createElement("span");
       name.className = "od-channel";
-      name.textContent = channel.name || t("channel.this");
-      const plus = document.createElement("span");
-      plus.className = "od-plus-sign";
-      plus.textContent = "＋";
-      group.append(dot, name, plus);
+      name.textContent = channelName;
+      button.title = channelName;
+      button.append(dot, name);
+      group.appendChild(button);
     }
 
+    const common = filter("global", t("filter.global"));
     const commonDot = document.createElement("span");
     commonDot.className = "od-dot od-dot-common";
+    commonDot.setAttribute("aria-hidden", "true");
     const commonLabel = document.createElement("span");
     commonLabel.className = "od-common";
     commonLabel.textContent = t("bar.global");
 
-    const total = document.createElement("span");
-    total.className = "od-count";
-    total.textContent = t("count.cards", count);
+    common.append(commonDot, commonLabel);
 
-    group.append(commonDot, commonLabel, total, svgIcon("chevron"));
+    // Names now filter; the chevron remains a separate fold control within
+    // the same flexible line, so notices keep their existing width budget.
+    const fold = document.createElement("button");
+    fold.type = "button";
+    fold.className = "od-fold";
+    fold.dataset.folded = String(!!folded);
+    fold.setAttribute("aria-expanded", String(!folded));
+    fold.setAttribute("aria-label", folded ? t("aria.unfold") : t("aria.fold"));
+    fold.addEventListener("click", () => setFolded(!folded));
+    fold.appendChild(svgIcon("chevron"));
+    group.append(common, fold);
     return group;
+  }
+
+  function filteredDeck(deck) {
+    // Both selected and neither selected mean the whole deck. In particular,
+    // switching off the last category must never make every card disappear.
+    if (scopeFilter.channel === scopeFilter.global) return deck;
+    return deck.filter((card) => card.bound === scopeFilter.channel);
+  }
+
+  async function setScopeFilter(scope) {
+    const held = rootEl?.contains(document.activeElement);
+    scopeFilter[scope] = !scopeFilter[scope];
+    expanded = false;
+    await render();
+    const loose = !document.activeElement || document.activeElement === document.body;
+    if (held && loose) rootEl?.querySelector(`[data-filter="${scope}"]`)?.focus({ preventScroll: true });
   }
 
   // Written down rather than kept here, so that the panel comes back the way
@@ -2166,6 +2300,7 @@
 
     const input = getChatInput();
     if (!input) {
+      closeSaveMenu();
       // The chat input is there but collapsed: YouTube is showing Super Chat
       // over it. Staying put would draw the deck on top of that panel.
       if (rootEl && !rootEl.hidden) {
@@ -2190,6 +2325,13 @@
 
     const data = await store.read();
     if (!data) return shutdown();
+    // Check after the await too: ＋ can be pressed while storage is being
+    // read. Neither an in-flight redraw nor a queued timer may remove the
+    // chosen source before the choice is made.
+    if (saveMenu) {
+      if (saveMenuUsable()) { pendingRender = true; return; }
+      closeSaveMenu();
+    }
     settingsCache = data.settings;
     i18n.use(settingsCache.language);
     watcher.start(); // no-op once attached; retries while chat is still loading
@@ -2211,6 +2353,10 @@
       ? data.channelMeta[channel.id]?.hue ?? store.defaultHue(channel.id)
       : null;
     const deck = buildDeck(data, channel?.id);
+    if (filterChannel !== channel?.id) {
+      filterChannel = channel?.id;
+      scopeFilter = { channel: false, global: false };
+    }
 
     watchInput(input);
     inputHasContent = readInput(input);
@@ -2240,10 +2386,14 @@
       offerGrab(null);
     }
 
-    const shown = poolOpen ? (poolTab === "offered" ? offered : mine) : deck;
+    const shown = poolOpen ? (poolTab === "offered" ? offered : mine) : filteredDeck(deck);
     // Only alongside your own deck. The pool is a place to choose from, not
     // somewhere to be handed things.
-    const drawn = poolOpen ? null : offerFromChat(deck, channel);
+    const dealt = poolOpen ? null : offerFromChat(deck, channel);
+    // A loan has no saved scope yet. Show it in the default view, rather
+    // than claiming it belongs to either category while one is selected.
+    const allScopes = scopeFilter.channel === scopeFilter.global;
+    const drawn = allScopes ? dealt : null;
 
     // Chat-driven mode renders every few seconds whether or not anything it
     // shows has changed, and rebuilding is not free: the elements are new, so
@@ -2254,9 +2404,8 @@
     // just after replaceChildren(), where rootEl.firstChild is null by
     // construction — so the test never passed and the panel was rebuilt every
     // time regardless.
-    // Before the early return, not after: a control that replaces itself in
-    // place — the drawn card's ＋ becoming the two targets — disconnects its
-    // owner without changing anything the signature can see.
+    // Before the early return, not after: replacing a control can disconnect
+    // the owner of a description without changing the panel's signature.
     const dropped = dropStalePeek();
 
     const next = panelSignature(data, channel, hue, shown, mine, offered, waiting, drawn);
@@ -2279,7 +2428,8 @@
       // give up. An attribute rather than a class, because the whole panel
       // tightens — its own padding as much as what is inside it — and that
       // is the root's business, not a child's.
-      const empty = !shown.length && !drawn;
+      // A filter with no matches still needs its controls to get back out.
+      const empty = !shown.length && !drawn && (poolOpen || allScopes);
       rootEl.toggleAttribute("data-empty", empty);
       // The same line, asked for. Not while the pool is open: that is a place
       // you went to on purpose, and the way back out of it is its own button.
@@ -2308,8 +2458,17 @@
 
       // Folded: the bar is the panel. Nothing under it — not the hand, not
       // the rest of it, not the card the chat drew. The bar still names the
-      // deck and counts it, which is what you are left looking at.
+      // deck, which is what you are left looking at.
       if (folded) return;
+
+      if (!shown.length && !drawn) {
+        const nothing = document.createElement("div");
+        nothing.className = "od-empty";
+        nothing.textContent = t("filter.empty");
+        rootEl.appendChild(nothing);
+        if (!deck.length) appendPresetOffer(rootEl, channel);
+        return;
+      }
 
       const hidden =
         data.settings.mode === "list"
@@ -2341,7 +2500,7 @@
       //
       // The pool does not reach here: with it open nothing is drawn, so an
       // empty half is an empty panel and has already returned above.
-      if (!shown.length) appendPresetOffer(rootEl, channel);
+      if (!deck.length && !poolOpen) appendPresetOffer(rootEl, channel);
     });
   }
 
@@ -2354,6 +2513,7 @@
   function shutdown() {
     if (stopped) return;
     stopped = true;
+    closeSaveMenu();
 
     observer.disconnect();
     resizeObserver?.disconnect();
@@ -2377,7 +2537,8 @@
 
   function scheduleRender() {
     if (stopped) return;
-    if (frozen) { pendingRender = true; return; }
+    if (saveMenu && !store.alive()) return shutdown();
+    if (frozen || saveMenu) { pendingRender = true; return; }
     clearTimeout(refreshTimer);
     refreshTimer = setTimeout(render, 200);
   }
@@ -2489,6 +2650,7 @@
   // under it is a decision, and it was being made inside the observer where
   // nothing could reach it.
   function onPageChanged() {
+    if (saveMenu && !saveMenuUsable()) closeSaveMenu();
     const input = findChatInput(); // existence only: measuring here costs a layout
     if (input && (input !== currentInput || !rootEl?.isConnected)) return scheduleRender();
 
@@ -2541,7 +2703,11 @@
     offerGrab(grabFor(event.target));
   }, true);
 
-  window.addEventListener("yt-navigate-finish", scheduleRender);
+  window.addEventListener("yt-navigate-finish", () => {
+    closeSaveMenu();
+    frozen = false;
+    scheduleRender();
+  });
   window.addEventListener("load", scheduleRender);
 
   log("Loaded.", location.href);

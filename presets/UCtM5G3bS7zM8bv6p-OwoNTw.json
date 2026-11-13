@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "リクム",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCtM5G3bS7zM8bv6p-OwoNTw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"},{"type":"text","value":"🌃"},{"type":"text","value":"🎩"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCtM5G3bS7zM8bv6p-OwoNTw/iCUzY58c2aTyBOXWsfgM","alt":"雄たけび","sharedTooltipText":":_雄たけび:","src":"https://yt3.ggpht.com/0v_M69hCZq8i9VbzhJtAJR7xzQ4t0A5r3I6QjGjUnoYyT5TgKJMwj0pZdOqRFSWCVLCU0VD9TE0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCtM5G3bS7zM8bv6p-OwoNTw/iCUzY58c2aTyBOXWsfgM","alt":"雄たけび","sharedTooltipText":":_雄たけび:","src":"https://yt3.ggpht.com/0v_M69hCZq8i9VbzhJtAJR7xzQ4t0A5r3I6QjGjUnoYyT5TgKJMwj0pZdOqRFSWCVLCU0VD9TE0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCtM5G3bS7zM8bv6p-OwoNTw/iCUzY58c2aTyBOXWsfgM","alt":"雄たけび","sharedTooltipText":":_雄たけび:","src":"https://yt3.ggpht.com/0v_M69hCZq8i9VbzhJtAJR7xzQ4t0A5r3I6QjGjUnoYyT5TgKJMwj0pZdOqRFSWCVLCU0VD9TE0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさい"},{"type":"text","value":"🌃"},{"type":"text","value":"🎩"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なるほど"}], "scope": "channel" }
+  ]
+}

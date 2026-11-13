@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "どっとライブ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCAZ_LA7f0sjuZ1Ni8L2uITw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいばーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あっ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"な、なんだってー！？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やさしい"}], "scope": "channel" }
+  ]
+}

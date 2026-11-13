@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "VEXZ Inc. / AceeeZ",
+  "note": "歌枠0配信・通常3配信のチャットから10枚",
+  "channel": "UCVKWJcuZlcaiF8_oUXuixPw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いえーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとうございました！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" }
+  ]
+}

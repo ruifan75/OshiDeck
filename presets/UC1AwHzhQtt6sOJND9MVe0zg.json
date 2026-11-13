@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Shumi Shumikea",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UC1AwHzhQtt6sOJND9MVe0zg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo kak"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo kak shumi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hai"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo shumi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aloo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"shumiii"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hai kak"}], "scope": "channel" }
+  ]
+}

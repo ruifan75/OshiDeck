@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Vtuber Mochi【GLITCH☆STARS】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCFrHf8DmvNQRj_IWYu956VA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFrHf8DmvNQRj_IWYu956VA/sjoLaNbuDoCO_9EP0vOU4A4","alt":"MochiLaugh","sharedTooltipText":":_MochiLaugh:","src":"https://yt3.ggpht.com/me-mJ_xQE17B9eDY1nbWbFJ6xnwRml-n0_B0WIpth9wo0yKyvmCfnK-SStLguKLmK5n_XSk_=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFrHf8DmvNQRj_IWYu956VA/sjoLaNbuDoCO_9EP0vOU4A4","alt":"MochiLaugh","sharedTooltipText":":_MochiLaugh:","src":"https://yt3.ggpht.com/me-mJ_xQE17B9eDY1nbWbFJ6xnwRml-n0_B0WIpth9wo0yKyvmCfnK-SStLguKLmK5n_XSk_=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFrHf8DmvNQRj_IWYu956VA/sjoLaI3wDoCO_9EP0vOU4A4","alt":"MochiLove","sharedTooltipText":":_MochiLove:","src":"https://yt3.ggpht.com/cQ9zcqLU5AnW45hKG41Rej3eEyOxGYbVX88zN79Rl0es-YPCMCs3HKe42UunlGUlQUJ_i6xa=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFrHf8DmvNQRj_IWYu956VA/sjoLaI3wDoCO_9EP0vOU4A4","alt":"MochiLove","sharedTooltipText":":_MochiLove:","src":"https://yt3.ggpht.com/cQ9zcqLU5AnW45hKG41Rej3eEyOxGYbVX88zN79Rl0es-YPCMCs3HKe42UunlGUlQUJ_i6xa=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFrHf8DmvNQRj_IWYu956VA/sjoLaI3wDoCO_9EP0vOU4A4","alt":"MochiLove","sharedTooltipText":":_MochiLove:","src":"https://yt3.ggpht.com/cQ9zcqLU5AnW45hKG41Rej3eEyOxGYbVX88zN79Rl0es-YPCMCs3HKe42UunlGUlQUJ_i6xa=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"huh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMFAO"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFrHf8DmvNQRj_IWYu956VA/sjoLaI7xDoCO_9EP0vOU4A4","alt":"MochiCry","sharedTooltipText":":_MochiCry:","src":"https://yt3.ggpht.com/Tklg6Jf3hBg3LwdHNDrpyTPwGI5Uy3WKDw66NvtqeDKC4JZmvVynObWP5_j2SOn2eo7JsZ12Fw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Oh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Mochi"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFrHf8DmvNQRj_IWYu956VA/gyIMaPzRIdyj_9EPt6SdqAI","alt":"MochiHype","sharedTooltipText":":_MochiHype:","src":"https://yt3.ggpht.com/5p6tlHUDTtQCApiLhk17yR9ClbHeTnyGOh4FaPpDXfUSRD1o7M9WTWgVsgwEi7evfvXZtVkPmA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFrHf8DmvNQRj_IWYu956VA/gyIMaPzRIdyj_9EPt6SdqAI","alt":"MochiHype","sharedTooltipText":":_MochiHype:","src":"https://yt3.ggpht.com/5p6tlHUDTtQCApiLhk17yR9ClbHeTnyGOh4FaPpDXfUSRD1o7M9WTWgVsgwEi7evfvXZtVkPmA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFrHf8DmvNQRj_IWYu956VA/gyIMaPzRIdyj_9EPt6SdqAI","alt":"MochiHype","sharedTooltipText":":_MochiHype:","src":"https://yt3.ggpht.com/5p6tlHUDTtQCApiLhk17yR9ClbHeTnyGOh4FaPpDXfUSRD1o7M9WTWgVsgwEi7evfvXZtVkPmA=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

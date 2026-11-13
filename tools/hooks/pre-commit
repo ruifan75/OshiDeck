@@ -47,7 +47,7 @@ if ! git -c core.quotePath=false diff --cached -p --text --no-textconv --no-ext-
   exit 1
 fi
 
-found=$(scan tools/check-hooks.sh < "$patch")
+found=$(scan tools/check-hooks.sh "$(dirname "$0")/public-names.tsv" < "$patch")
 
 if [ -n "$found" ]; then
   echo "FAIL ステージされた内容は公開に向きません:"

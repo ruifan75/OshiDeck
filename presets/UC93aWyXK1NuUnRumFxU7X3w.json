@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "YUY",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC93aWyXK1NuUnRumFxU7X3w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"y7"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"1"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"2"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yyes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi yuy"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye bye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"what"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "のじゃおじ@VRChat",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCt8tmsv8kL9Nc1sxvCo9j4Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCt8tmsv8kL9Nc1sxvCo9j4Q/nowpYIm3L4np_AO-hrCoAQ","alt":"tasu","sharedTooltipText":":_tasu:","src":"https://yt3.ggpht.com/RZXjxMJabDfZeDlNC-_z_ipipkZ6G9s54725QgyyvB7ZptQTmpkafg_GrQh2JUq3nxoSSfPuQw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCt8tmsv8kL9Nc1sxvCo9j4Q/nowpYKi3L4np_AO-hrCoAQ","alt":"karu","sharedTooltipText":":_karu:","src":"https://yt3.ggpht.com/j9pCVtiCEfy_PGbuxGFFTQxYXphtWPt48IDRe8oG-UkjiRY1vBz7yxeeLLpRdPA0IfTEsAQb=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCt8tmsv8kL9Nc1sxvCo9j4Q/yI8pYJHyF5fE-QON5IvYBw","alt":"kawaii","sharedTooltipText":":_kawaii:","src":"https://yt3.ggpht.com/OXOVy4rMFMEGzjoERThmsEU8o9y6HxWc6lckhhjUw9WGfcirEjx91s152PfnTy0ADsH8F8_T=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ふぉっくちゅふぉっくちゅ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCt8tmsv8kL9Nc1sxvCo9j4Q/2a8WYJGzBdX6-QPJw53ABg","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/cL-CuQewz475v_gVWtqL3ND3vWFZ2d9KetLHN41aLUSNTde61Xnaifp1b3KMErJbN6veavomzw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかれさまでしたー"}], "scope": "channel" }
+  ]
+}

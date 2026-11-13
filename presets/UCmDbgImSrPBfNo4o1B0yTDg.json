@@ -1,0 +1,13 @@
+{
+  "format": 2,
+  "name": "Fumi",
+  "note": "歌枠0配信・通常13配信のチャットから5枚",
+  "channel": "UCmDbgImSrPBfNo4o1B0yTDg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"you got this"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Bless you"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice "}], "scope": "channel" }
+  ]
+}

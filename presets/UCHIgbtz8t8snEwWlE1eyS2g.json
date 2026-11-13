@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "少女革命計画",
+  "note": "歌枠0配信・通常9配信のチャットから10枚",
+  "channel": "UCHIgbtz8t8snEwWlE1eyS2g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとうございました！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"G.R.P！G.R.P！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🤙"},{"type":"text","value":"🤙"},{"type":"text","value":"🤙"}], "scope": "channel" }
+  ]
+}

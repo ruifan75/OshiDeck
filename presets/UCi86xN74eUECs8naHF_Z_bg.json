@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Okapi Ch. ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCi86xN74eUECs8naHF_Z_bg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"✨"},{"type":"text","value":"🦌"},{"type":"text","value":"✨"},{"type":"text","value":"🦌"},{"type":"text","value":"✨"},{"type":"text","value":"🦌"},{"type":"text","value":"✨"},{"type":"text","value":"🦌"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんおかぴ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつおかぴ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"888888"}], "scope": "channel" }
+  ]
+}

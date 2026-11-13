@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ごきげんななめちゃん",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCAE1yQeCWiv1eSxAmzpzD4Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye bye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nt"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"naisu"}], "scope": "channel" }
+  ]
+}

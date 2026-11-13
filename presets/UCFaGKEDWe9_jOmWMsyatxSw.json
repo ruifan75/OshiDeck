@@ -1,0 +1,19 @@
+{
+  "format": 2,
+  "name": "終末むくろ / Mukuro Owarino",
+  "note": "歌枠2配信・通常13配信のチャットから11枚",
+  "channel": "UCFaGKEDWe9_jOmWMsyatxSw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFaGKEDWe9_jOmWMsyatxSw/xN3SZo7OLb-V_9EPlfaOoAU","alt":"glowstick","sharedTooltipText":":_glowstick:","src":"https://yt3.ggpht.com/8u2A_jR2pLNJ-gH7ubQBiTA8ZEUABKgH6yYP-yqWvg4sXOJ-tj5ywFFQnC22TLfEJzd7BAMV=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFaGKEDWe9_jOmWMsyatxSw/xN3SZo7OLb-V_9EPlfaOoAU","alt":"glowstick","sharedTooltipText":":_glowstick:","src":"https://yt3.ggpht.com/8u2A_jR2pLNJ-gH7ubQBiTA8ZEUABKgH6yYP-yqWvg4sXOJ-tj5ywFFQnC22TLfEJzd7BAMV=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFaGKEDWe9_jOmWMsyatxSw/xN3SZo7OLb-V_9EPlfaOoAU","alt":"glowstick","sharedTooltipText":":_glowstick:","src":"https://yt3.ggpht.com/8u2A_jR2pLNJ-gH7ubQBiTA8ZEUABKgH6yYP-yqWvg4sXOJ-tj5ywFFQnC22TLfEJzd7BAMV=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんむくろー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"☠"},{"type":"text","value":"✝"},{"type":"text","value":"🎶"},{"type":"text","value":"☠"},{"type":"text","value":"✝"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつむくろ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつむくろー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFaGKEDWe9_jOmWMsyatxSw/8B5haNzSGa6X_9EP-LiRsAI","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/0imCbdh6Sz4U3OohMdiRl7B7TsV0aKJbnDzrfuIa73QYFXJlCaNo0EcxKEH9CjIwnFjL_O-IPmg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFaGKEDWe9_jOmWMsyatxSw/8B5haNzSGa6X_9EP-LiRsAI","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/0imCbdh6Sz4U3OohMdiRl7B7TsV0aKJbnDzrfuIa73QYFXJlCaNo0EcxKEH9CjIwnFjL_O-IPmg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFaGKEDWe9_jOmWMsyatxSw/8B5haNzSGa6X_9EP-LiRsAI","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/0imCbdh6Sz4U3OohMdiRl7B7TsV0aKJbnDzrfuIa73QYFXJlCaNo0EcxKEH9CjIwnFjL_O-IPmg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんむくろ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおお"}], "scope": "channel" }
+  ]
+}

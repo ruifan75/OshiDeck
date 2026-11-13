@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "館乃いと---Tateno Ito---",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCD8i-h5iqOaysEkDnF1CQ_A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"konchaa"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCD8i-h5iqOaysEkDnF1CQ_A/nqp7YbqZMaXQ8gTGxrrwDw","alt":"喜んでる","sharedTooltipText":":_喜んでる:","src":"https://yt3.ggpht.com/KZ_5Dp1Wn3lm4qsWUp8DvxrhIr9FPMbhnvoeymScKkZM9vlRn01Nh6NDxNVSJXYQhvvD-mnb=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCD8i-h5iqOaysEkDnF1CQ_A/9JaHYcrWL5yQ8wSTubagAg","alt":"light","sharedTooltipText":":_light:","src":"https://yt3.ggpht.com/BbPxYGbfP4kz2rzbrf0qmiljT9Z9VbfQUIHQZhFCAqwCVSg1Nutek0uSPVe2vNnkcbbEjApELg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCD8i-h5iqOaysEkDnF1CQ_A/nqp7YeWbMaXQ8gTGxrrwDw","alt":"サングラス","sharedTooltipText":":_サングラス:","src":"https://yt3.ggpht.com/ghYBULQ0U5gxyw_h2TKpAIxVMUZS4Iroolgn6vxW8wHES9tJZM93jJQ8diwYP3DmSBsw4OO9=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCD8i-h5iqOaysEkDnF1CQ_A/9JaHYcrWL5yQ8wSTubagAg","alt":"light","sharedTooltipText":":_light:","src":"https://yt3.ggpht.com/BbPxYGbfP4kz2rzbrf0qmiljT9Z9VbfQUIHQZhFCAqwCVSg1Nutek0uSPVe2vNnkcbbEjApELg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCD8i-h5iqOaysEkDnF1CQ_A/nqp7YeWbMaXQ8gTGxrrwDw","alt":"サングラス","sharedTooltipText":":_サングラス:","src":"https://yt3.ggpht.com/ghYBULQ0U5gxyw_h2TKpAIxVMUZS4Iroolgn6vxW8wHES9tJZM93jJQ8diwYP3DmSBsw4OO9=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCD8i-h5iqOaysEkDnF1CQ_A/9JaHYcrWL5yQ8wSTubagAg","alt":"light","sharedTooltipText":":_light:","src":"https://yt3.ggpht.com/BbPxYGbfP4kz2rzbrf0qmiljT9Z9VbfQUIHQZhFCAqwCVSg1Nutek0uSPVe2vNnkcbbEjApELg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCD8i-h5iqOaysEkDnF1CQ_A/nqp7YeWbMaXQ8gTGxrrwDw","alt":"サングラス","sharedTooltipText":":_サングラス:","src":"https://yt3.ggpht.com/ghYBULQ0U5gxyw_h2TKpAIxVMUZS4Iroolgn6vxW8wHES9tJZM93jJQ8diwYP3DmSBsw4OO9=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCD8i-h5iqOaysEkDnF1CQ_A/9JaHYcrWL5yQ8wSTubagAg","alt":"light","sharedTooltipText":":_light:","src":"https://yt3.ggpht.com/BbPxYGbfP4kz2rzbrf0qmiljT9Z9VbfQUIHQZhFCAqwCVSg1Nutek0uSPVe2vNnkcbbEjApELg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCD8i-h5iqOaysEkDnF1CQ_A/nqp7YeWbMaXQ8gTGxrrwDw","alt":"サングラス","sharedTooltipText":":_サングラス:","src":"https://yt3.ggpht.com/ghYBULQ0U5gxyw_h2TKpAIxVMUZS4Iroolgn6vxW8wHES9tJZM93jJQ8diwYP3DmSBsw4OO9=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"またねぇ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちゃ"}], "scope": "channel" }
+  ]
+}

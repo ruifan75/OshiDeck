@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "黒井しば【にじさんじの犬】",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCmeyo5pRj_6PXG-CsGUuWWg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんしばー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あっ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "format": 2,
+  "name": "おらんじ〜な",
+  "note": "歌枠0配信・通常13配信のチャットから7枚",
+  "channel": "UC1VN5GzTwrOrn70zgEm6T3w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1VN5GzTwrOrn70zgEm6T3w/wJ4fZqCoE9Wo_9EP8sy52Ac","alt":"otsu","sharedTooltipText":":_otsu:","src":"https://yt3.ggpht.com/qOEgBDkJCPPkDLayecG0GPfSgMiG6YsO13ywVfQKJWIMWpAEB2yRqxghRW2sKpPWBaAli-zSJQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1VN5GzTwrOrn70zgEm6T3w/wJ4fZqCoE9Wo_9EP8sy52Ac","alt":"otsu","sharedTooltipText":":_otsu:","src":"https://yt3.ggpht.com/qOEgBDkJCPPkDLayecG0GPfSgMiG6YsO13ywVfQKJWIMWpAEB2yRqxghRW2sKpPWBaAli-zSJQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1VN5GzTwrOrn70zgEm6T3w/wJ4fZrikE9Wo_9EP8sy52Ac","alt":"wako","sharedTooltipText":":_wako:","src":"https://yt3.ggpht.com/IXb8JMquYqtRe20wrauj149YutHlNscj-uILoPEQKvd1Vux1_1dy5OuzglP5QfEf4m1JFK7F=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1VN5GzTwrOrn70zgEm6T3w/wJ4fZrikE9Wo_9EP8sy52Ac","alt":"wako","sharedTooltipText":":_wako:","src":"https://yt3.ggpht.com/IXb8JMquYqtRe20wrauj149YutHlNscj-uILoPEQKvd1Vux1_1dy5OuzglP5QfEf4m1JFK7F=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"まじか"}], "scope": "channel" }
+  ]
+}

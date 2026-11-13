@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Grimus Grimm Ch. Pixela Destiny",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCW0EhUBJrTtjSywG4-MGgrQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"555555555"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"สวัสดีค่าา"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"น่ารักก"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ว้ายยยย"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"สวัสดีค้าบบ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"เอ็นดู5555555"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"เริ่ดดด"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"เอ็นดู"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"เย้"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"อุ้ยย"}], "scope": "channel" }
+  ]
+}

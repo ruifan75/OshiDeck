@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "森永みう",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UChN7P9OhRltW3w9IesC92PA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChN7P9OhRltW3w9IesC92PA/xA9kYbGnDdDRgwO8_5_QBg","alt":"wakuwaku","sharedTooltipText":":_wakuwaku:","src":"https://yt3.ggpht.com/jAqx0JS371D23SnF58FzeIfP2TZPbeErE-GxTu-PcTCUzlkxMtw8Fvl_yIGkqLKHJzMr5i6Ktw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChN7P9OhRltW3w9IesC92PA/xA9kYbGnDdDRgwO8_5_QBg","alt":"wakuwaku","sharedTooltipText":":_wakuwaku:","src":"https://yt3.ggpht.com/jAqx0JS371D23SnF58FzeIfP2TZPbeErE-GxTu-PcTCUzlkxMtw8Fvl_yIGkqLKHJzMr5i6Ktw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChN7P9OhRltW3w9IesC92PA/xA9kYbGnDdDRgwO8_5_QBg","alt":"wakuwaku","sharedTooltipText":":_wakuwaku:","src":"https://yt3.ggpht.com/jAqx0JS371D23SnF58FzeIfP2TZPbeErE-GxTu-PcTCUzlkxMtw8Fvl_yIGkqLKHJzMr5i6Ktw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おめでとう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" }
+  ]
+}

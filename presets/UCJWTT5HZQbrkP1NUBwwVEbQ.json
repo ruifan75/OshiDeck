@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "望月ほぐの / Hoguno Mochizuki",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCJWTT5HZQbrkP1NUBwwVEbQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはほぐ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCJWTT5HZQbrkP1NUBwwVEbQ/EfVHadyBCdr27OsPgvD32AM","alt":"爆笑ほぐの","sharedTooltipText":":_爆笑ほぐの:","src":"https://yt3.ggpht.com/6vxZYD3R0OLcyyMBFu_wRVvJHgNPo1EBrT3FbR9Ov6jzoI1S-XeG-B3VLke2KcgQLhYXddHR7w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJWTT5HZQbrkP1NUBwwVEbQ/EfVHadyBCdr27OsPgvD32AM","alt":"爆笑ほぐの","sharedTooltipText":":_爆笑ほぐの:","src":"https://yt3.ggpht.com/6vxZYD3R0OLcyyMBFu_wRVvJHgNPo1EBrT3FbR9Ov6jzoI1S-XeG-B3VLke2KcgQLhYXddHR7w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJWTT5HZQbrkP1NUBwwVEbQ/EfVHadyBCdr27OsPgvD32AM","alt":"爆笑ほぐの","sharedTooltipText":":_爆笑ほぐの:","src":"https://yt3.ggpht.com/6vxZYD3R0OLcyyMBFu_wRVvJHgNPo1EBrT3FbR9Ov6jzoI1S-XeG-B3VLke2KcgQLhYXddHR7w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんほぐ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCJWTT5HZQbrkP1NUBwwVEbQ/Z9ZmZ7-oN5eI_9EPsdHUoQU","alt":"くろまる咀嚼ほぐの","sharedTooltipText":":_くろまる咀嚼ほぐの:","src":"https://yt3.ggpht.com/PftRuQzO34ELDbPVx8ENBiZ-zrzyNCkEPbDjbVjSZKYs7qO6YRQjyAdqwxRJ9Ftib3Hr_sPt2Xk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJWTT5HZQbrkP1NUBwwVEbQ/Z9ZmZ7-oN5eI_9EPsdHUoQU","alt":"くろまる咀嚼ほぐの","sharedTooltipText":":_くろまる咀嚼ほぐの:","src":"https://yt3.ggpht.com/PftRuQzO34ELDbPVx8ENBiZ-zrzyNCkEPbDjbVjSZKYs7qO6YRQjyAdqwxRJ9Ftib3Hr_sPt2Xk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJWTT5HZQbrkP1NUBwwVEbQ/Z9ZmZ7-oN5eI_9EPsdHUoQU","alt":"くろまる咀嚼ほぐの","sharedTooltipText":":_くろまる咀嚼ほぐの:","src":"https://yt3.ggpht.com/PftRuQzO34ELDbPVx8ENBiZ-zrzyNCkEPbDjbVjSZKYs7qO6YRQjyAdqwxRJ9Ftib3Hr_sPt2Xk=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつほぐ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" }
+  ]
+}

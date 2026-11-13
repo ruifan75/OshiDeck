@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "MissFushi",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCXOG00AT1ts8aKutvdZfvBg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hi fushi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXOG00AT1ts8aKutvdZfvBg/1_Gcaf2-K5mQrr4Prdr9oAQ","alt":"FushiLOVE","sharedTooltipText":":_FushiLOVE:","src":"https://yt3.ggpht.com/SX-J5uKDXq0v1I4ju_bNq9Mxi-7jRCmgXmEdonb78c34BVDa8I20rPa5saNV48Ykznsr77GR=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXOG00AT1ts8aKutvdZfvBg/1_Gcaf2-K5mQrr4Prdr9oAQ","alt":"FushiLOVE","sharedTooltipText":":_FushiLOVE:","src":"https://yt3.ggpht.com/SX-J5uKDXq0v1I4ju_bNq9Mxi-7jRCmgXmEdonb78c34BVDa8I20rPa5saNV48Ykznsr77GR=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXOG00AT1ts8aKutvdZfvBg/1_Gcaf2-K5mQrr4Prdr9oAQ","alt":"FushiLOVE","sharedTooltipText":":_FushiLOVE:","src":"https://yt3.ggpht.com/SX-J5uKDXq0v1I4ju_bNq9Mxi-7jRCmgXmEdonb78c34BVDa8I20rPa5saNV48Ykznsr77GR=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yess"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":":D"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Yoyoyoyo!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no "}], "scope": "channel" }
+  ]
+}

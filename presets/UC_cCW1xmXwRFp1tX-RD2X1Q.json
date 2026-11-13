@@ -1,18 +1,22 @@
 {
   "format": 2,
   "name": "Palette Project Channel",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから14枚",
   "channel": "UC_cCW1xmXwRFp1tX-RD2X1Q",
   "cards": [
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ばいばーい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"いえーい！"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"はのは〜"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"待機"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いえーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいばーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" }
   ]
 }

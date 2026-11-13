@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "輝常うどん",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCX2w__Ry85MpNQcI898K3KA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🦊"},{"type":"text","value":"🌾"},{"type":"text","value":"🎶"},{"type":"text","value":"🦊"},{"type":"text","value":"🌾"},{"type":"text","value":"🎶"},{"type":"text","value":"🦊"},{"type":"text","value":"🌾"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こーんちゃ"},{"type":"text","value":"🦊"},{"type":"text","value":"🌾"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🦊"},{"type":"text","value":"🎶"},{"type":"text","value":"🌸"},{"type":"text","value":"🦊"},{"type":"text","value":"🎶"},{"type":"text","value":"🌸"},{"type":"text","value":"🦊"},{"type":"text","value":"🎶"},{"type":"text","value":"🌸"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🦊"},{"type":"text","value":"🌾"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

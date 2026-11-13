@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "イツミちゃんねる",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCk1qKLPaznd5gnKms-2XHaA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💎"},{"type":"text","value":"☄"},{"type":"text","value":"💎"},{"type":"text","value":"☄"},{"type":"text","value":"💎"},{"type":"text","value":"☄"},{"type":"text","value":"💎"},{"type":"text","value":"☄"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCk1qKLPaznd5gnKms-2XHaA/PmlKZLC_NInBgwPlqZPQBw","alt":"こんこん","sharedTooltipText":":_こんこん:","src":"https://yt3.ggpht.com/ssJI_xBp1NOyc1lSiEvR5lQkMA2YmgZ99yU_CYujUFE7jau_h_SPTEY4za6JAcRSPLUoB9Zknw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCk1qKLPaznd5gnKms-2XHaA/TuJEZMq5EPeP_9EPpb65mAY","alt":"イツミ","sharedTooltipText":":_イツミ:","src":"https://yt3.ggpht.com/KRuBpA6dentBfohp-wzk1w399Xy5VGs0yTep-v9gTi9NXNmMlqmdfLCL2p2fTDOcWfj2fbNEqw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCk1qKLPaznd5gnKms-2XHaA/JP9MZIKzH4nBgwPk9rnIBw","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/OhO41X-oyZvu9OMqDgHcsKtrq8WKqenAb8SwShwJLw4jqpnmvV4CyEFyJlOzl5E43XoB0rYcFg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいつみー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいつみ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんイツミ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんイツミ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんいつみ〜"}], "scope": "channel" }
+  ]
+}

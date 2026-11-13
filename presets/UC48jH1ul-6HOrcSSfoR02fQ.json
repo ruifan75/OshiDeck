@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Yuhi Riri Official",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC48jH1ul-6HOrcSSfoR02fQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんリリ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつリリー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ふぁいてぃん！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"がんばれー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" }
+  ]
+}

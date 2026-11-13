@@ -1,0 +1,12 @@
+{
+  "format": 2,
+  "name": "Raelice",
+  "note": "歌枠2配信・通常13配信のチャットから4枚",
+  "channel": "UCvFS_og2AnvkcKIRVo1HlUQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Yes."}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Sunny Seiki",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCsuu8qrlqJMNcZO1TS_vKTQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"kkkkkk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oi sunny"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"KAKAKAKA"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"boa noite"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wa wa"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"mds"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"sim"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"AEEEEE"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oieee"}], "scope": "channel" }
+  ]
+}

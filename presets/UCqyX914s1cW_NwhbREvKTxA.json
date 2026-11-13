@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Cole Calamello【CRIMS:on】",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCqyX914s1cW_NwhbREvKTxA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"1"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwkwkwkkwkwkwkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCqyX914s1cW_NwhbREvKTxA/bshmZvyRMb-i_9EPpZWKuAQ","alt":"calanangis","sharedTooltipText":":_calanangis:","src":"https://yt3.ggpht.com/-lfXeW3IbYUy1TZYM23WvYGwA5dQqertCKSfzqTSaZNytC_CtDkGylJonfjfP2y7m_WKcDlMWe8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCqyX914s1cW_NwhbREvKTxA/bshmZvyRMb-i_9EPpZWKuAQ","alt":"calanangis","sharedTooltipText":":_calanangis:","src":"https://yt3.ggpht.com/-lfXeW3IbYUy1TZYM23WvYGwA5dQqertCKSfzqTSaZNytC_CtDkGylJonfjfP2y7m_WKcDlMWe8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCqyX914s1cW_NwhbREvKTxA/bshmZvyRMb-i_9EPpZWKuAQ","alt":"calanangis","sharedTooltipText":":_calanangis:","src":"https://yt3.ggpht.com/-lfXeW3IbYUy1TZYM23WvYGwA5dQqertCKSfzqTSaZNytC_CtDkGylJonfjfP2y7m_WKcDlMWe8=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsuuu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"haloo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😭"},{"type":"text","value":"😭"},{"type":"text","value":"😭"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yahhh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aloo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gasss"}], "scope": "channel" }
+  ]
+}

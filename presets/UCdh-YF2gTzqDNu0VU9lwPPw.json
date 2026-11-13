@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Claude Clawmark 【NIJISANJI EN】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCdh-YF2gTzqDNu0VU9lwPPw",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdh-YF2gTzqDNu0VU9lwPPw/P191aN_sA--X_9EP9LikgQY","alt":"clawmarkCheer","sharedTooltipText":":_clawmarkCheer:","src":"https://yt3.ggpht.com/tSM_XXi83ss-FwgCv9h9Pv4P27brdkE_dub9gscck9EOYDlRDjyD-S_ozCGvYPn0csamQ1anUw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdh-YF2gTzqDNu0VU9lwPPw/P191aN_sA--X_9EP9LikgQY","alt":"clawmarkCheer","sharedTooltipText":":_clawmarkCheer:","src":"https://yt3.ggpht.com/tSM_XXi83ss-FwgCv9h9Pv4P27brdkE_dub9gscck9EOYDlRDjyD-S_ozCGvYPn0csamQ1anUw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdh-YF2gTzqDNu0VU9lwPPw/P191aN_sA--X_9EP9LikgQY","alt":"clawmarkCheer","sharedTooltipText":":_clawmarkCheer:","src":"https://yt3.ggpht.com/tSM_XXi83ss-FwgCv9h9Pv4P27brdkE_dub9gscck9EOYDlRDjyD-S_ozCGvYPn0csamQ1anUw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdh-YF2gTzqDNu0VU9lwPPw/-ESmaaDKPK_FjMwPoNDl6Qo","alt":"clawmarkHeart","sharedTooltipText":":_clawmarkHeart:","src":"https://yt3.ggpht.com/IooMMyK6gp44FHax_htyRmeOr4NG-ZBpqXrdmHUCUE3TVe4MhIXTA1wXap_B3-tSYmcT52vh8g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdh-YF2gTzqDNu0VU9lwPPw/-ESmaaDKPK_FjMwPoNDl6Qo","alt":"clawmarkHeart","sharedTooltipText":":_clawmarkHeart:","src":"https://yt3.ggpht.com/IooMMyK6gp44FHax_htyRmeOr4NG-ZBpqXrdmHUCUE3TVe4MhIXTA1wXap_B3-tSYmcT52vh8g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdh-YF2gTzqDNu0VU9lwPPw/-ESmaaDKPK_FjMwPoNDl6Qo","alt":"clawmarkHeart","sharedTooltipText":":_clawmarkHeart:","src":"https://yt3.ggpht.com/IooMMyK6gp44FHax_htyRmeOr4NG-ZBpqXrdmHUCUE3TVe4MhIXTA1wXap_B3-tSYmcT52vh8g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"3"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"2"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"1"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdh-YF2gTzqDNu0VU9lwPPw/-ESmabTJPK_FjMwPoNDl6Qo","alt":"clawmarkHAHA","sharedTooltipText":":_clawmarkHAHA:","src":"https://yt3.ggpht.com/EIk6YVn1Utm21FvR5Wow8pO151RR7JX_PlHaCGSRsP-ePJGS2bRJh1t4d8PEHIYFDVV9-UAtxg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdh-YF2gTzqDNu0VU9lwPPw/-ESmabTJPK_FjMwPoNDl6Qo","alt":"clawmarkHAHA","sharedTooltipText":":_clawmarkHAHA:","src":"https://yt3.ggpht.com/EIk6YVn1Utm21FvR5Wow8pO151RR7JX_PlHaCGSRsP-ePJGS2bRJh1t4d8PEHIYFDVV9-UAtxg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdh-YF2gTzqDNu0VU9lwPPw/-ESmabjNPK_FjMwPoNDl6Qo","alt":"clawmarkWave","sharedTooltipText":":_clawmarkWave:","src":"https://yt3.ggpht.com/aGVxTFpDnDYNApGAZZppKMl04E4UcFnLEUsdUM7AOkaVW82mb4hFbs52B8nuFRqG7b53yd3ocQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdh-YF2gTzqDNu0VU9lwPPw/-ESmabjNPK_FjMwPoNDl6Qo","alt":"clawmarkWave","sharedTooltipText":":_clawmarkWave:","src":"https://yt3.ggpht.com/aGVxTFpDnDYNApGAZZppKMl04E4UcFnLEUsdUM7AOkaVW82mb4hFbs52B8nuFRqG7b53yd3ocQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

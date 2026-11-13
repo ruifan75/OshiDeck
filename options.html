@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-i18n="ui.title">OshiDeck 設定</title>
+  <link rel="stylesheet" href="src/channel-marks.css">
   <link rel="stylesheet" href="options.css">
 </head>
 <body>
@@ -228,6 +229,7 @@
         <div class="row-label">
           <strong data-i18n="ui.export"></strong>
           <small data-i18n="ui.journalNote"></small>
+          <small data-i18n="ui.journalPrivacy"></small>
         </div>
         <button id="journalBtn" type="button" class="action" data-i18n="ui.saveToFile"></button>
       </div>
@@ -243,8 +245,9 @@
       <p id="journalStatus" class="import-status" aria-live="polite"></p>
     </section>
 
-    <p id="saved" aria-live="polite"></p>
   </main>
+
+  <div id="saved" role="status" aria-live="polite" aria-atomic="true"></div>
 
   <script src="src/i18n.js"></script>
   <script src="src/layout.js"></script>
@@ -253,6 +256,7 @@
   <script src="src/backup.js"></script>
   <script src="src/journal.js"></script>
   <script src="src/presets.js"></script>
+  <script src="src/channel-marks.js"></script>
   <script src="options.js"></script>
 </body>
 </html>

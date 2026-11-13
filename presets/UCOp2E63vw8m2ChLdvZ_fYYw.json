@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "かかげ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCOp2E63vw8m2ChLdvZ_fYYw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんかげ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんかげです"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あー"}], "scope": "channel" }
+  ]
+}

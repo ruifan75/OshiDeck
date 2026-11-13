@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "好狐星レイ / rei CH.【虫食いアイドルVTuber】",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCNxKbKlIa1BTCq05pp384Mg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんすこー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつすこー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNxKbKlIa1BTCq05pp384Mg/mDfXZLLbIt-J_9EPicSJ6Ak","alt":"lol","sharedTooltipText":":_lol:","src":"https://yt3.ggpht.com/LkSjMMgu9uQASNOiN8PGQeyAB4laL39oQQlnbDI0qklEU41nBJ5bJEABp1oOlTzfUQcAdFnq=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNxKbKlIa1BTCq05pp384Mg/mDfXZJ_lIt-J_9EPicSJ6Ak","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/z-JfAZ4udI9--XlRDFzbc3xSQ-mU-5_EgRbxfVSumyl2yDYS3Yw2BH6p2iqWkBDITdFrAqobxg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNxKbKlIa1BTCq05pp384Mg/mDfXZJ_lIt-J_9EPicSJ6Ak","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/z-JfAZ4udI9--XlRDFzbc3xSQ-mU-5_EgRbxfVSumyl2yDYS3Yw2BH6p2iqWkBDITdFrAqobxg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNxKbKlIa1BTCq05pp384Mg/mDfXZJ_lIt-J_9EPicSJ6Ak","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/z-JfAZ4udI9--XlRDFzbc3xSQ-mU-5_EgRbxfVSumyl2yDYS3Yw2BH6p2iqWkBDITdFrAqobxg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNxKbKlIa1BTCq05pp384Mg/mDfXZOPRIt-J_9EPicSJ6Ak","alt":"nice","sharedTooltipText":":_nice:","src":"https://yt3.ggpht.com/xyf4VzhotXiBeFTm6Bo55VVh0bbqG27x17ytsaQaDCTcGbgXUkrDuLXcNPqLpeG3CM5WozjO5w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNxKbKlIa1BTCq05pp384Mg/mDfXZJy-It-J_9EPicSJ6Ak","alt":"pants","sharedTooltipText":":_pants:","src":"https://yt3.ggpht.com/Y6CTvOjNXrXHxfQRWLpc5YTIurQlSHRovqC-i_c7TAGUHixOQw_ak4E5Xp2NmtdIrUWUHTHlqg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんすこ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんすこ〜い"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNxKbKlIa1BTCq05pp384Mg/6QIHasayNKz7s8IPz8_cgAQ","alt":"otu","sharedTooltipText":":_otu:","src":"https://yt3.ggpht.com/gGjOG_Xcc-ri_WPAP_a-WSO3tslAwmYL_ISFMj22aiyFh6m-3h2JR4212wfDHgUc2ioC_Ad7qA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNxKbKlIa1BTCq05pp384Mg/YHTvZMXiAfiG_9EPku6TuAg","alt":"HiraganaSu","sharedTooltipText":":_HiraganaSu:","src":"https://yt3.ggpht.com/evAuE24EEH26kmUHE4_3XiAJWoWVcYZq5p1XdVkdYhRiMqAj5zg3BkPBIeJh3lKHOJgLpXPj24s=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNxKbKlIa1BTCq05pp384Mg/YHTvZIPlAfiG_9EPku6TuAg","alt":"HiraganaKo","sharedTooltipText":":_HiraganaKo:","src":"https://yt3.ggpht.com/Qd-eZzqXkwZGNEOJRTO08W4SnNXDAbSEOrvd4YMfq7h_83Cv1eB5JEyC5yGH7_-sVlRRoSn-sQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

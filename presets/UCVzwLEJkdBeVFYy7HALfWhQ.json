@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "羅々華セーラ-Raraka Sera-",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCVzwLEJkdBeVFYy7HALfWhQ",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVzwLEJkdBeVFYy7HALfWhQ/qtldZqjVNLmd_9EPj-2P-Aw","alt":"草ww","sharedTooltipText":":_草ww:","src":"https://yt3.ggpht.com/iJ06y1IrwmBxlI7ujZnQ7ZjHPq1e5JHSjIhkoBddrpLsW5r4LHXIUxB00QMS0iRbUfmnzL5P5w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVzwLEJkdBeVFYy7HALfWhQ/qtldZuzUNLmd_9EPj-2P-Aw","alt":"こんセーラ","sharedTooltipText":":_こんセーラ:","src":"https://yt3.ggpht.com/gKOPjwszU9eGy2JzuTtP7LqjYW71mzyvrSaqN_ImBXZFzbIoXHxUDGKeuDVTxLVAXagirw1KTg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVzwLEJkdBeVFYy7HALfWhQ/AutFZ6vLN-a0_9EP66aUwAE","alt":"セーラ","sharedTooltipText":":_セーラ:","src":"https://yt3.ggpht.com/adh3qshdULmtS2igCk2s7fzm_27epmvXKhJYqhlt8I3c51W_MGPNLErfiIY0iR09joavEmVK4w=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

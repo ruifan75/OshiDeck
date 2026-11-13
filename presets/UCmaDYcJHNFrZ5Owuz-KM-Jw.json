@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "輝海まりなkagamimarina",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCmaDYcJHNFrZ5Owuz-KM-Jw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはよう"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCmaDYcJHNFrZ5Owuz-KM-Jw/DmsrYN2AGJfE-QOwiI6ACA","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/aplYSgOPD1jxNv0nG22eGaDBfY-n_eN5ll26qSxMFO0aBGPvIfuMQKvl3LdbTkBJ-0tU8Vct2oA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはよ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCmaDYcJHNFrZ5Owuz-KM-Jw/Ho5AYLrwC8Xf_APk-4z4BA","alt":"ナイスタ","sharedTooltipText":":_ナイスタ:","src":"https://yt3.ggpht.com/Dc7b_aLDXJxDSz6eszNHsGyZQhMZ5wdmzGd0DLa-wGrq6NCup6RqR2Hvsyl1aSJg8j8mrO2HoQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmaDYcJHNFrZ5Owuz-KM-Jw/Ho5AYLrwC8Xf_APk-4z4BA","alt":"ナイスタ","sharedTooltipText":":_ナイスタ:","src":"https://yt3.ggpht.com/Dc7b_aLDXJxDSz6eszNHsGyZQhMZ5wdmzGd0DLa-wGrq6NCup6RqR2Hvsyl1aSJg8j8mrO2HoQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmaDYcJHNFrZ5Owuz-KM-Jw/Ho5AYLrwC8Xf_APk-4z4BA","alt":"ナイスタ","sharedTooltipText":":_ナイスタ:","src":"https://yt3.ggpht.com/Dc7b_aLDXJxDSz6eszNHsGyZQhMZ5wdmzGd0DLa-wGrq6NCup6RqR2Hvsyl1aSJg8j8mrO2HoQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはまりな"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"},{"type":"text","value":"☀"}], "scope": "channel" }
+  ]
+}

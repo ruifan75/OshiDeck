@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Marie☆FD",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCaIcWouDRr_y5MJxiaNMGAA",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaIcWouDRr_y5MJxiaNMGAA/yWXPaO_tLdLYoPwP08LHgQg","alt":"MariieWheeze","sharedTooltipText":":_MariieWheeze:","src":"https://yt3.ggpht.com/JKKFcSr5Fnl6we7dYWzOFR3XmyqOiGLCzVbb1NQaWIr2yaRyIscoWVa40pS7PKz3SMgovEjVew=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaIcWouDRr_y5MJxiaNMGAA/yWXPaMfvLdLYoPwP08LHgQg","alt":"MariieHeart","sharedTooltipText":":_MariieHeart:","src":"https://yt3.ggpht.com/o8d9is9lf4-5RSg52SlXTTG6V51RkUaGcRcMEy5Kbu05DaTH7ShX6y1kUyfgDDORBx3H87cCng=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaIcWouDRr_y5MJxiaNMGAA/yWXPaMfvLdLYoPwP08LHgQg","alt":"MariieHeart","sharedTooltipText":":_MariieHeart:","src":"https://yt3.ggpht.com/o8d9is9lf4-5RSg52SlXTTG6V51RkUaGcRcMEy5Kbu05DaTH7ShX6y1kUyfgDDORBx3H87cCng=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaIcWouDRr_y5MJxiaNMGAA/yWXPaMfvLdLYoPwP08LHgQg","alt":"MariieHeart","sharedTooltipText":":_MariieHeart:","src":"https://yt3.ggpht.com/o8d9is9lf4-5RSg52SlXTTG6V51RkUaGcRcMEy5Kbu05DaTH7ShX6y1kUyfgDDORBx3H87cCng=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaIcWouDRr_y5MJxiaNMGAA/yWXPaN3uLdLYoPwP08LHgQg","alt":"MariieNervous","sharedTooltipText":":_MariieNervous:","src":"https://yt3.ggpht.com/eWAAGTXqy1va9vIaxHIV-oM9AbzRiXFzRYb496IZhgHTagnIFmMi95JkKwQMagY9LUwQFYl7Sao=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OtsuMarie"},{"type":"youtubeEmoji","emojiId":"UCaIcWouDRr_y5MJxiaNMGAA/yWXPaMfvLdLYoPwP08LHgQg","alt":"MariieHeart","sharedTooltipText":":_MariieHeart:","src":"https://yt3.ggpht.com/o8d9is9lf4-5RSg52SlXTTG6V51RkUaGcRcMEy5Kbu05DaTH7ShX6y1kUyfgDDORBx3H87cCng=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"konmarie"},{"type":"youtubeEmoji","emojiId":"UCaIcWouDRr_y5MJxiaNMGAA/yWXPaMfvLdLYoPwP08LHgQg","alt":"MariieHeart","sharedTooltipText":":_MariieHeart:","src":"https://yt3.ggpht.com/o8d9is9lf4-5RSg52SlXTTG6V51RkUaGcRcMEy5Kbu05DaTH7ShX6y1kUyfgDDORBx3H87cCng=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaIcWouDRr_y5MJxiaNMGAA/yWXPaIrxLdLYoPwP08LHgQg","alt":"MariieCheer","sharedTooltipText":":_MariieCheer:","src":"https://yt3.ggpht.com/1zKzzG83iHLas8vFCTkOQ7yEVjn8xXyMEB7I7Pj_6z4p7CdI-K8trd99L1ZmTX-Mfa_t-LfS9Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaIcWouDRr_y5MJxiaNMGAA/yWXPaJ7wLdLYoPwP08LHgQg","alt":"MariieCry","sharedTooltipText":":_MariieCry:","src":"https://yt3.ggpht.com/BicbQ745MEUNyzVL0NMAuQ3QkVAeVA21dnUPX9EDJGqu-BYmRCMTT9K4bcaaJGCSGR-fUMDx9w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaIcWouDRr_y5MJxiaNMGAA/OWhUabrYLearrr4PjbuA2A4","alt":"MariiePOPCAT","sharedTooltipText":":_MariiePOPCAT:","src":"https://yt3.ggpht.com/FUPipy7BYb44jYVWYhihrXxlA9WI4VlrBF75cUxWPxY_34Yb_XfoCSwq_2Oe2Fm0nVg1KCCisg=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

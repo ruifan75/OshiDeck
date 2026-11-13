@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "DanteWill",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCCOgOae02L-GF6_EFqfAgpA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"kkkkk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"sim"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"a"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aeeee"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"dante"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bodia"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"mds"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"não"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bom dia"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"KAKAKAKA"}], "scope": "channel" }
+  ]
+}

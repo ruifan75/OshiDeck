@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "飛良ひかり / Hikari Channel【ななしいんく】",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCFsWaTQ7kT76jNNGeGIKNSA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんひらー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ハニーフラッシュ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFsWaTQ7kT76jNNGeGIKNSA/49kIZ-rZFqCn_9EPju_t8Qc","alt":"kon","sharedTooltipText":":_kon:","src":"https://yt3.ggpht.com/tTzyhuQlC3jWWiEirw1oWc__fNDfiwHAImh98TNBrQjtNTCYi94oBd9voxbC-nfjg4hQ0dwd=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFsWaTQ7kT76jNNGeGIKNSA/49kIZ-rZFqCn_9EPju_t8Qc","alt":"kon","sharedTooltipText":":_kon:","src":"https://yt3.ggpht.com/tTzyhuQlC3jWWiEirw1oWc__fNDfiwHAImh98TNBrQjtNTCYi94oBd9voxbC-nfjg4hQ0dwd=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Aoi ch.",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC3Ruo_5doyu514PesWGvCAg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🗻"},{"type":"text","value":"🎶"},{"type":"text","value":"🗻"},{"type":"text","value":"🎶"},{"type":"text","value":"🗻"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"みなっ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でしたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつふじー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおおおおお"}], "scope": "channel" }
+  ]
+}

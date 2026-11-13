@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "でる汰 / Deluta Channel",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCHyoRjhtov-qos0YNM6EO-w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCHyoRjhtov-qos0YNM6EO-w/-8ezarzBDsjSs8IP8vW0uAM","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/7_Hd_8tmANFDkPt_unMYMMA4x6XK_y4rLN-TFKkRJFse53e2u9EkzJl0N5XFv5mVljmW_Sq11Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCHyoRjhtov-qos0YNM6EO-w/-8ezapnDDsjSs8IP8vW0uAM","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/3S1kTp_n1hszhJ7oDRSkc5nhFuaI-O6DDC_8eVwp9__d6uWEsZyDI7rf0ZBjgldqlqPXNveuUw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCHyoRjhtov-qos0YNM6EO-w/-8ezatrEDsjSs8IP8vW0uAM","alt":"またね","sharedTooltipText":":_またね:","src":"https://yt3.ggpht.com/5R-kWTghrsLVKFFzXJiw096JUfc7KgatuMhLa4uqLnnRJJKS3GLLB64uxwVXQ91HRa49qOtveg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCHyoRjhtov-qos0YNM6EO-w/-8ezatrEDsjSs8IP8vW0uAM","alt":"またね","sharedTooltipText":":_またね:","src":"https://yt3.ggpht.com/5R-kWTghrsLVKFFzXJiw096JUfc7KgatuMhLa4uqLnnRJJKS3GLLB64uxwVXQ91HRa49qOtveg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCHyoRjhtov-qos0YNM6EO-w/-8ezatrEDsjSs8IP8vW0uAM","alt":"またね","sharedTooltipText":":_またね:","src":"https://yt3.ggpht.com/5R-kWTghrsLVKFFzXJiw096JUfc7KgatuMhLa4uqLnnRJJKS3GLLB64uxwVXQ91HRa49qOtveg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

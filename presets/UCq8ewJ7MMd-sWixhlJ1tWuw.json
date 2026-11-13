@@ -1,0 +1,9 @@
+{
+  "format": 2,
+  "name": "鬼倉 蒼/Onikura Sou",
+  "note": "歌枠0配信・通常13配信のチャットから1枚",
+  "channel": "UCq8ewJ7MMd-sWixhlJ1tWuw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"あー"}], "scope": "channel" }
+  ]
+}

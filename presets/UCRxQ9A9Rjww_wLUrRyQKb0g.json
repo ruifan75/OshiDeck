@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Kyuru Rin【Aegis-Link】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCRxQ9A9Rjww_wLUrRyQKb0g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRxQ9A9Rjww_wLUrRyQKb0g/icRzao6LGMec7L4P2eTqSA","alt":"Cheer","sharedTooltipText":":_Cheer:","src":"https://yt3.ggpht.com/p5ZzVsxLVvqlSZieAD8t7QZr7kp9hbVaGgUmc830ocRT617SjlSvHAHDSqu5he4CUgGhgzNAbQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCRxQ9A9Rjww_wLUrRyQKb0g/icRzao6LGMec7L4P2eTqSA","alt":"Cheer","sharedTooltipText":":_Cheer:","src":"https://yt3.ggpht.com/p5ZzVsxLVvqlSZieAD8t7QZr7kp9hbVaGgUmc830ocRT617SjlSvHAHDSqu5he4CUgGhgzNAbQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCRxQ9A9Rjww_wLUrRyQKb0g/icRzao6LGMec7L4P2eTqSA","alt":"Cheer","sharedTooltipText":":_Cheer:","src":"https://yt3.ggpht.com/p5ZzVsxLVvqlSZieAD8t7QZr7kp9hbVaGgUmc830ocRT617SjlSvHAHDSqu5he4CUgGhgzNAbQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Lmao "}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRxQ9A9Rjww_wLUrRyQKb0g/o0l3aqWAB8ec7L4PxPHc2QU","alt":"LOL","sharedTooltipText":":_LOL:","src":"https://yt3.ggpht.com/s_AoHLT75wAdR0UqCNhzqJKpxstbLfKt9QHJw5ZJD7rRxpS125DVob72XkivG0N_C1loM1OZ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Who ordered PHiSH n' Chips?!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Welcome raiders!"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" }
+  ]
+}

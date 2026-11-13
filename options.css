@@ -201,16 +201,60 @@ kbd {
   font-size: 10px;
 }
 
-/* A refusal quotes the value it refused, and a file can hold a value with no
-   spaces in it at all — one 200 characters long gave this line a 1259px
-   scroll width. It wraps anywhere, and what it quotes is bounded besides. */
+/* Outside the page's flow: an undo must remain visible wherever the cards
+   have been scrolled to. Only the message gives up room on a narrow window. */
 #saved {
-  min-height: 1.4em;
+  position: fixed;
+  left: 50%;
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  width: max-content;
+  max-width: min(680px, calc(100% - 32px));
   margin: 0;
-  font-size: 12px;
-  opacity: .72;
-  overflow-wrap: anywhere;
+  padding: 8px 10px 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: Canvas;
+  color: CanvasText;
+  box-shadow: 0 6px 24px #0003;
+  font-size: 13px;
 }
+
+/* Keep the live region connected while its empty box takes no space. */
+#saved:empty { padding: 0; border: 0; box-shadow: none; pointer-events: none; }
+
+.status-message {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.status-action,
+.status-close {
+  flex-shrink: 0;
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  cursor: pointer;
+}
+
+.status-action { font-weight: 700; }
+.status-action:disabled { opacity: .55; cursor: default; }
+.status-close { width: 32px; height: 32px; padding: 0; color: inherit; font-size: 20px; line-height: 1; }
+.status-action:hover,
+.status-close:hover { background: color-mix(in srgb, CanvasText 8%, transparent); }
+.status-action:focus-visible,
+.status-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* ---------- deck browser ---------- */
 
@@ -245,11 +289,12 @@ kbd {
 }
 
 .deck-dot {
+  box-shadow: 0 0 0 1px color-mix(in srgb, CanvasText 55%, Canvas);
   flex-shrink: 0;
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: oklch(0.72 0.19 var(--hue, 320));
+  background: var(--od-neutral, oklch(0.72 0.19 var(--hue, 320)));
 }
 
 
@@ -329,24 +374,45 @@ kbd {
   margin-top: -3px;
   border: 2px solid Canvas;
   border-radius: 50%;
-  background: oklch(0.72 0.19 var(--hue, 320));
+  background: var(--od-neutral, oklch(0.72 0.19 var(--hue, 320)));
   box-shadow: 0 0 0 1px color-mix(in srgb, CanvasText 35%, transparent);
 }
 
-.hue-pick {
-  width: 18px;
-  height: 18px;
-  padding: 0;
-  border: 1px solid color-mix(in srgb, CanvasText 28%, transparent);
-  border-radius: 50%;
-  background: oklch(0.72 0.19 var(--hue, 320));
+.hue-picker {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  --od-mark-surface: Canvas;
   cursor: pointer;
 }
 
-/* The native swatch would paint over the colour above with the input's own
-   value, which is only ever a starting point. */
-.hue-pick::-webkit-color-swatch-wrapper { padding: 0; }
-.hue-pick::-webkit-color-swatch { border: 0; border-radius: 50%; background: transparent; }
+.hue-picker > .od-channel-mark:not([data-mark]) {
+  width: 18px;
+  height: 18px;
+  border: 1px solid color-mix(in srgb, CanvasText 28%, transparent);
+  box-shadow: none;
+}
+.hue-picker > .od-channel-mark[data-mark] { transform: scale(1.5); }
+
+.hue-picker:has(.hue-pick:focus-visible) > .od-channel-mark {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.hue-pick {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  cursor: pointer;
+}
 
 .deck-cards {
   display: grid;
@@ -361,16 +427,18 @@ kbd {
   padding: 8px;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, CanvasText 14%, transparent);
-  border-top: 3px solid oklch(0.72 0.19 var(--hue, 320));
+  border-top: 3px solid var(--od-neutral, oklch(0.72 0.19 var(--hue, 320)));
   border-radius: 8px;
 }
 
+.browse-card[data-neutral] {
+  box-shadow: 0 -1px 0 color-mix(in srgb, CanvasText 40%, transparent),
+              inset 0 1px 0 color-mix(in srgb, CanvasText 40%, transparent);
+}
 
-/* Deleting from the pool empties every deck holding the card, so the question
-   is asked on the card. It used to go to the status line at the foot of the
-   page — 12px at 72% opacity, nowhere near where the pointer was — and then a
-   second press of × counted as the answer. The card is already positioned
-   for its remove button, so the overlay has something to sit in. */
+
+/* Shared-card deletion asks on the card, beside the control being used.
+   Completed actions offer Undo in the fixed #saved notice. */
 .browse-card[data-confirming] { border-color: #e5534b; }
 
 .browse-confirm {

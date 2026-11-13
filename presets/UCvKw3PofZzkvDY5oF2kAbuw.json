@@ -1,0 +1,21 @@
+{
+  "format": 2,
+  "name": "甘神すう Su Amagami ch.",
+  "note": "歌枠1配信・通常13配信のチャットから13枚",
+  "channel": "UCvKw3PofZzkvDY5oF2kAbuw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎵"},{"type":"text","value":"💗"},{"type":"text","value":"🦇"},{"type":"text","value":"🎵"},{"type":"text","value":"💗"},{"type":"text","value":"🦇"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ノ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あれ？"}], "scope": "channel" }
+  ]
+}

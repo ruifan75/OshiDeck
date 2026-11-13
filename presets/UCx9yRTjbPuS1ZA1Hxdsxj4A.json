@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "寧々丸",
+  "note": "歌枠0配信・通常3配信のチャットから10枚",
+  "channel": "UCx9yRTjbPuS1ZA1Hxdsxj4A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんねね"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"w"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こん"},{"type":"youtubeEmoji","emojiId":"UCx9yRTjbPuS1ZA1Hxdsxj4A/JZMvX4G2Oo2y-wPmk6TgAg","alt":"ねスタンプ","sharedTooltipText":":_ねスタンプ:","src":"https://yt3.ggpht.com/5-0OP3az_vTJyByt3CUd74hkTI8rmfWA6o0nUsRjuI_wPR5y0iVRPpiFzDCuS0CsVNxbp-x4bQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCx9yRTjbPuS1ZA1Hxdsxj4A/JZMvX4G2Oo2y-wPmk6TgAg","alt":"ねスタンプ","sharedTooltipText":":_ねスタンプ:","src":"https://yt3.ggpht.com/5-0OP3az_vTJyByt3CUd74hkTI8rmfWA6o0nUsRjuI_wPR5y0iVRPpiFzDCuS0CsVNxbp-x4bQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うんうん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつ"},{"type":"youtubeEmoji","emojiId":"UCx9yRTjbPuS1ZA1Hxdsxj4A/JZMvX4G2Oo2y-wPmk6TgAg","alt":"ねスタンプ","sharedTooltipText":":_ねスタンプ:","src":"https://yt3.ggpht.com/5-0OP3az_vTJyByt3CUd74hkTI8rmfWA6o0nUsRjuI_wPR5y0iVRPpiFzDCuS0CsVNxbp-x4bQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCx9yRTjbPuS1ZA1Hxdsxj4A/JZMvX4G2Oo2y-wPmk6TgAg","alt":"ねスタンプ","sharedTooltipText":":_ねスタンプ:","src":"https://yt3.ggpht.com/5-0OP3az_vTJyByt3CUd74hkTI8rmfWA6o0nUsRjuI_wPR5y0iVRPpiFzDCuS0CsVNxbp-x4bQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"たしかに"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほう"}], "scope": "channel" }
+  ]
+}

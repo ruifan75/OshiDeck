@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Amaya Whisper CH.",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCiL8200wgmCEpT83Q9oTxqg",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCiL8200wgmCEpT83Q9oTxqg/vghrZvbAKbe7_9EP6dqRmAY","alt":"AmayaPat","sharedTooltipText":":_AmayaPat:","src":"https://yt3.ggpht.com/2zVh-R3V6uiT207Q5JUxZjJY2Ff2WMYye0ZH9x-yl8P8TmcMBdTbRaVbr7arUb0U4gNk9FdiX0I=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCiL8200wgmCEpT83Q9oTxqg/vghrZvbAKbe7_9EP6dqRmAY","alt":"AmayaPat","sharedTooltipText":":_AmayaPat:","src":"https://yt3.ggpht.com/2zVh-R3V6uiT207Q5JUxZjJY2Ff2WMYye0ZH9x-yl8P8TmcMBdTbRaVbr7arUb0U4gNk9FdiX0I=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCiL8200wgmCEpT83Q9oTxqg/vghrZvbAKbe7_9EP6dqRmAY","alt":"AmayaPat","sharedTooltipText":":_AmayaPat:","src":"https://yt3.ggpht.com/2zVh-R3V6uiT207Q5JUxZjJY2Ff2WMYye0ZH9x-yl8P8TmcMBdTbRaVbr7arUb0U4gNk9FdiX0I=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCiL8200wgmCEpT83Q9oTxqg/IqpuZve1I7-i_9EPh_6N2A0","alt":"AmayaPray","sharedTooltipText":":_AmayaPray:","src":"https://yt3.ggpht.com/Jo4k2ijYNlz3MnAaK-z8GESDmTyecuUtT2A17A-vqqu7fLZ3E7Z6nv3dbYOVKun0HF_9gXzF=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCiL8200wgmCEpT83Q9oTxqg/IqpuZve1I7-i_9EPh_6N2A0","alt":"AmayaPray","sharedTooltipText":":_AmayaPray:","src":"https://yt3.ggpht.com/Jo4k2ijYNlz3MnAaK-z8GESDmTyecuUtT2A17A-vqqu7fLZ3E7Z6nv3dbYOVKun0HF_9gXzF=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCiL8200wgmCEpT83Q9oTxqg/IqpuZve1I7-i_9EPh_6N2A0","alt":"AmayaPray","sharedTooltipText":":_AmayaPray:","src":"https://yt3.ggpht.com/Jo4k2ijYNlz3MnAaK-z8GESDmTyecuUtT2A17A-vqqu7fLZ3E7Z6nv3dbYOVKun0HF_9gXzF=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCiL8200wgmCEpT83Q9oTxqg/vghrZsi6Kbe7_9EP6dqRmAY","alt":"AmayaKEK","sharedTooltipText":":_AmayaKEK:","src":"https://yt3.ggpht.com/l1jpmfw6sKqXQK-rxMgizzynwmPSehchoPw1la_HA0KyqohIYGw6Dxc1if5UUwxbdU6edN1v=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCiL8200wgmCEpT83Q9oTxqg/IqpuZvywI7-i_9EPh_6N2A0","alt":"AmayaRave","sharedTooltipText":":_AmayaRave:","src":"https://yt3.ggpht.com/Q3peXbITMknCpBsxqnhjX8758VxGXD63K7ufVvp99Bf-zeGezJFyjT3L1jfp4Ne8tqEagUnNkA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCiL8200wgmCEpT83Q9oTxqg/IqpuZvywI7-i_9EPh_6N2A0","alt":"AmayaRave","sharedTooltipText":":_AmayaRave:","src":"https://yt3.ggpht.com/Q3peXbITMknCpBsxqnhjX8758VxGXD63K7ufVvp99Bf-zeGezJFyjT3L1jfp4Ne8tqEagUnNkA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCiL8200wgmCEpT83Q9oTxqg/IqpuZvywI7-i_9EPh_6N2A0","alt":"AmayaRave","sharedTooltipText":":_AmayaRave:","src":"https://yt3.ggpht.com/Q3peXbITMknCpBsxqnhjX8758VxGXD63K7ufVvp99Bf-zeGezJFyjT3L1jfp4Ne8tqEagUnNkA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCiL8200wgmCEpT83Q9oTxqg/fLMbZqDUEPmJ_9EPjr6F-AU","alt":"AmayaPain","sharedTooltipText":":_AmayaPain:","src":"https://yt3.ggpht.com/7RqDaqa4AF7GTjbLWfrF1FS2ZCaC-CsBhYVu2Qm-yoxi4crc8ZW5y-2XSyUVJvbgifkTf5sLBt8=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Amaya!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Welcome raiders!"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Stronny Cuttles",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCwmG_7y6pToRWHJ9TwFdZ1Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🫂"},{"type":"text","value":"🫂"},{"type":"text","value":"🫂"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🫳"},{"type":"text","value":"🫳"},{"type":"text","value":"🫳"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👀"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"happy birthday"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bless you"}], "scope": "channel" }
+  ]
+}

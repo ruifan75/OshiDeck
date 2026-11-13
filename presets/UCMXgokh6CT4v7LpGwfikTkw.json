@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ぽっぷん・パーラー",
+  "note": "歌枠0配信・通常6配信のチャットから10枚",
+  "channel": "UCMXgokh6CT4v7LpGwfikTkw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"ばいばーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きた！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あー"},{"type":"text","value":"w"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わかる"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほう"}], "scope": "channel" }
+  ]
+}

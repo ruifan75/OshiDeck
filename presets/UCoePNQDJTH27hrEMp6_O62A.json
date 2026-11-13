@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "YadiDoll zaotome",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCoePNQDJTH27hrEMp6_O62A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"XD"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hola"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"jajaja"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"a"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"si"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hola yadi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😆"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"F"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCoePNQDJTH27hrEMp6_O62A/sH48ZOqxIveP_9EPv9eS4AU","alt":"YadidianoYadiClown","sharedTooltipText":":_YadidianoYadiClown:","src":"https://yt3.ggpht.com/_o4zGrcTW40Kx85XBxfBxY4kbS7uKLClNrhjTQ1aq7lioQxoA3g3VR3ZhO0I93nVfMgemWafXQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

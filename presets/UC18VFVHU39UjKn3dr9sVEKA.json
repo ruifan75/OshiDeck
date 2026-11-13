@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ミトゥン【Mitwun】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC18VFVHU39UjKn3dr9sVEKA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うんうん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス！"}], "scope": "channel" }
+  ]
+}

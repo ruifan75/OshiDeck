@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "デラハド",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC0QzO6nK1cEDZvJSt2769Zw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC0QzO6nK1cEDZvJSt2769Zw/fYfXYbXTLs2E8wTYsIOICA","alt":"TGIF","sharedTooltipText":":_TGIF:","src":"https://yt3.ggpht.com/G6aW5B8sriRI3qYZe5OrTq57qiyOYS3MwU3b7yI7RB85CAaTW5FvmwKIgo1qVUXyncb-9pI1jQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"},{"type":"youtubeEmoji","emojiId":"UC0QzO6nK1cEDZvJSt2769Zw/fYfXYbXTLs2E8wTYsIOICA","alt":"TGIF","sharedTooltipText":":_TGIF:","src":"https://yt3.ggpht.com/G6aW5B8sriRI3qYZe5OrTq57qiyOYS3MwU3b7yI7RB85CAaTW5FvmwKIgo1qVUXyncb-9pI1jQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC0QzO6nK1cEDZvJSt2769Zw/fYfXYfbTLs2E8wTYsIOICA","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/73sTVDjopCe3qcvDeOTrWd2dUsSPoR9EMu1ASM3mz91FcKpKHjCYDZfVbasZLSGZ60mlccHZngM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC0QzO6nK1cEDZvJSt2769Zw/fYfXYfbTLs2E8wTYsIOICA","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/73sTVDjopCe3qcvDeOTrWd2dUsSPoR9EMu1ASM3mz91FcKpKHjCYDZfVbasZLSGZ60mlccHZngM=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"GG"}], "scope": "channel" }
+  ]
+}

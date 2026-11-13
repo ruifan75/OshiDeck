@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "琶舞 - BEMA HOLIC",
+  "note": "歌枠0配信・通常7配信のチャットから10枚",
+  "channel": "UCPH0ZS-AGZbt2JC51qFGrkw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"べまべま"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとうございました！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCPH0ZS-AGZbt2JC51qFGrkw/XVvWaPjnOc_f7OsPt4LimQQ","alt":"ぱちぱち","sharedTooltipText":":_ぱちぱち:","src":"https://yt3.ggpht.com/7O7l-ChX9PlKsPzpBUh0mcifAeAJ_ZPJ06exVsw5nzuUSKXb2o64Ipw8SGqNCd85VBaXv1embg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPH0ZS-AGZbt2JC51qFGrkw/XVvWaPjnOc_f7OsPt4LimQQ","alt":"ぱちぱち","sharedTooltipText":":_ぱちぱち:","src":"https://yt3.ggpht.com/7O7l-ChX9PlKsPzpBUh0mcifAeAJ_ZPJ06exVsw5nzuUSKXb2o64Ipw8SGqNCd85VBaXv1embg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPH0ZS-AGZbt2JC51qFGrkw/XVvWaPjnOc_f7OsPt4LimQQ","alt":"ぱちぱち","sharedTooltipText":":_ぱちぱち:","src":"https://yt3.ggpht.com/7O7l-ChX9PlKsPzpBUh0mcifAeAJ_ZPJ06exVsw5nzuUSKXb2o64Ipw8SGqNCd85VBaXv1embg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPH0ZS-AGZbt2JC51qFGrkw/XVvWaPjnOc_f7OsPt4LimQQ","alt":"ぱちぱち","sharedTooltipText":":_ぱちぱち:","src":"https://yt3.ggpht.com/7O7l-ChX9PlKsPzpBUh0mcifAeAJ_ZPJ06exVsw5nzuUSKXb2o64Ipw8SGqNCd85VBaXv1embg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPH0ZS-AGZbt2JC51qFGrkw/XVvWaPjnOc_f7OsPt4LimQQ","alt":"ぱちぱち","sharedTooltipText":":_ぱちぱち:","src":"https://yt3.ggpht.com/7O7l-ChX9PlKsPzpBUh0mcifAeAJ_ZPJ06exVsw5nzuUSKXb2o64Ipw8SGqNCd85VBaXv1embg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCPH0ZS-AGZbt2JC51qFGrkw/XVvWaLDnOc_f7OsPt4LimQQ","alt":"べまさま","sharedTooltipText":":_べまさま:","src":"https://yt3.ggpht.com/ZAli8cIljZ3uR7IRZV6BMP86wMWdV3wMK6QolutdwmQFWW1KBSC8m2zaZci652EfA5Cr_-_IXA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPH0ZS-AGZbt2JC51qFGrkw/XVvWaLDnOc_f7OsPt4LimQQ","alt":"べまさま","sharedTooltipText":":_べまさま:","src":"https://yt3.ggpht.com/ZAli8cIljZ3uR7IRZV6BMP86wMWdV3wMK6QolutdwmQFWW1KBSC8m2zaZci652EfA5Cr_-_IXA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPH0ZS-AGZbt2JC51qFGrkw/XVvWaMDoOc_f7OsPt4LimQQ","alt":"親指をたてる","sharedTooltipText":":_親指をたてる:","src":"https://yt3.ggpht.com/e4la_FvspUpDa-Qm1gHFx6QAU7RcOQB7qRlVcacoUDwvDV8od4EIT5aKf3eV6z-eQqmM3ynKzAM=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

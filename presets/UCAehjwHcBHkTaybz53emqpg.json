@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Starr【AKA Virtual】",
+  "note": "歌枠0配信・通常11配信のチャットから10枚",
+  "channel": "UCAehjwHcBHkTaybz53emqpg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"BYE BYE"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🤣"},{"type":"text","value":"🤣"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👀"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye everyone"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/dv90XtfhAurw8gTgzar4DA","alt":"virtualhug","sharedTooltipText":":virtualhug:","src":"https://yt3.ggpht.com/U1TjOZlqtS58NGqQhE8VWDptPSrmJNkrbVRp_8jI4f84QqIGflq2Ibu7YmuOg5MmVYnpevc=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/dv90XtfhAurw8gTgzar4DA","alt":"virtualhug","sharedTooltipText":":virtualhug:","src":"https://yt3.ggpht.com/U1TjOZlqtS58NGqQhE8VWDptPSrmJNkrbVRp_8jI4f84QqIGflq2Ibu7YmuOg5MmVYnpevc=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/dv90XtfhAurw8gTgzar4DA","alt":"virtualhug","sharedTooltipText":":virtualhug:","src":"https://yt3.ggpht.com/U1TjOZlqtS58NGqQhE8VWDptPSrmJNkrbVRp_8jI4f84QqIGflq2Ibu7YmuOg5MmVYnpevc=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😂"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"HAHAHAHAHA"}], "scope": "channel" }
+  ]
+}

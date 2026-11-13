@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "GEEGA",
+  "note": "歌枠0配信・通常11配信のチャットから10枚",
+  "channel": "UCUERxnZSjCq-G7OfYL7Nukg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"Clap"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"xdd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"KEKW"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"CEASE"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/vQF1XpyaG_XG8gTs77bACQ","alt":"chillwcat","sharedTooltipText":":chillwcat:","src":"https://yt3.ggpht.com/y03dFcPc1B7CO20zgQYzhcRPka5Bhs6iSg57MaxJdhaLidFvvXBLf_i4_SHG7zJ_2VpBMNs=w48-h48-c-k-nd"},{"type":"text","value":"🔥"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/vQF1XpyaG_XG8gTs77bACQ","alt":"chillwcat","sharedTooltipText":":chillwcat:","src":"https://yt3.ggpht.com/y03dFcPc1B7CO20zgQYzhcRPka5Bhs6iSg57MaxJdhaLidFvvXBLf_i4_SHG7zJ_2VpBMNs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/vQF1XpyaG_XG8gTs77bACQ","alt":"chillwcat","sharedTooltipText":":chillwcat:","src":"https://yt3.ggpht.com/y03dFcPc1B7CO20zgQYzhcRPka5Bhs6iSg57MaxJdhaLidFvvXBLf_i4_SHG7zJ_2VpBMNs=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/hcMfY5_zAbbxvwKLooCoCA","alt":"face-fuchsia-tongue-out","sharedTooltipText":":face-fuchsia-tongue-out:","src":"https://yt3.ggpht.com/EURfJZi_heNulV3mfHzXBk8PIs9XmZ9lOOYi5za6wFMCGrps4i2BJX9j-H2gK6LIhW6h7sY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Grimmi",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UChpppq5ezHdxvIFjp6nbS7A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChpppq5ezHdxvIFjp6nbS7A/enpKZ6f4KdDJ_9EPgeyv4AQ","alt":"Grimmlin","sharedTooltipText":":_Grimmlin:","src":"https://yt3.ggpht.com/feIc8DTuqUuHcVvGhKOf5pY-_JqetxtgFGaIqFvO4nlvIU123Xvp9rdkl0VSBo4VDkPt4990gQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChpppq5ezHdxvIFjp6nbS7A/8Vtkaa-aIOKbrr4Pp9ypyQE","alt":"vibe","sharedTooltipText":":_vibe:","src":"https://yt3.ggpht.com/QIzaRw2kNhfmghS2nY6-ezuT5J3jCS7AddGrcuq5DtcWK-1a9ksl3yLSxeg5hUyUh0aEMSL1=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChpppq5ezHdxvIFjp6nbS7A/M849ZuWgC-O9_9EPhtCCsA8","alt":"Ogey","sharedTooltipText":":_Ogey:","src":"https://yt3.ggpht.com/HnrYpSTt2t9ZDCjV7bkGfp-XfvP1fEbzxm7tvjCpcbS_HQKJfkXALmQHJIZwJj_F5ELeLU-miw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yo"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "翠匣タルタ / Mihako Tarta",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCP0Eq4VN3bUB5EJUerAugSQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍏"},{"type":"text","value":"📜"},{"type":"text","value":"🎶"},{"type":"text","value":"🍏"},{"type":"text","value":"📜"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こん"},{"type":"youtubeEmoji","emojiId":"UCP0Eq4VN3bUB5EJUerAugSQ/y-B9Z5ezKqC8_9EPg_6iGA","alt":"tata","sharedTooltipText":":_tata:","src":"https://yt3.ggpht.com/SRwH1rgfQt2wXR3t-x-eoAQu4lRu_qMxhy7IsWwtqNJIzOKaX9aaAz_MYmmZTojLNS4cLDlVmtA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCP0Eq4VN3bUB5EJUerAugSQ/y-B9Z5O0KqC8_9EPg_6iGA","alt":"ruru","sharedTooltipText":":_ruru:","src":"https://yt3.ggpht.com/Qfdhe5VaRfsxmcHH2ho34roLX-XYNOOUkKdBLTIooL1qtYZyEXthmjcn1s7ZgCiZ9sb-DGtVTQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCP0Eq4VN3bUB5EJUerAugSQ/y-B9Z5ezKqC8_9EPg_6iGA","alt":"tata","sharedTooltipText":":_tata:","src":"https://yt3.ggpht.com/SRwH1rgfQt2wXR3t-x-eoAQu4lRu_qMxhy7IsWwtqNJIzOKaX9aaAz_MYmmZTojLNS4cLDlVmtA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんタルタ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCP0Eq4VN3bUB5EJUerAugSQ/y-B9Z8ayKqC8_9EPg_6iGA","alt":"mori","sharedTooltipText":":_mori:","src":"https://yt3.ggpht.com/PaX7Oa_0ejeh3sZu9AUjGVeIaHFfkYnZ4IGoC85obyhnN8yVycnAPIiASh7eJRT2Ffx7jAfd=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCP0Eq4VN3bUB5EJUerAugSQ/y-B9Z8ayKqC8_9EPg_6iGA","alt":"mori","sharedTooltipText":":_mori:","src":"https://yt3.ggpht.com/PaX7Oa_0ejeh3sZu9AUjGVeIaHFfkYnZ4IGoC85obyhnN8yVycnAPIiASh7eJRT2Ffx7jAfd=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お世話になりました"}], "scope": "channel" }
+  ]
+}

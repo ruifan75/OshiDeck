@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "でび縺」縺。縺ッ豁サ縺ォ縺セ縺励",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCP19rQ5V-46B-6ZeLDJqp5w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"わこつ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あっ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こわい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"でびっち？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "vivi(焔機パイロ)",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCx45gypxj0fME6zxsLKsNow",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おつパイロー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんパイロー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でしたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつパイロ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんぱいろー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"GG"}], "scope": "channel" }
+  ]
+}

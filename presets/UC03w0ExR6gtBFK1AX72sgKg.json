@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Furtrap",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC03w0ExR6gtBFK1AX72sgKg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"space jam dvd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"E"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"zing"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"XD"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😆"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aww"}], "scope": "channel" }
+  ]
+}

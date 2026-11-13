@@ -1,9 +1,4 @@
-// 推し色: which hue a channel gets, and how a picked colour becomes one.
-//
-// Only a hue is ever stored. The palette fixes lightness and chroma —
-// oklch(0.74 0.19 H) — so every channel reads the same against a dark panel,
-// and keeping a whole colour would let one land unreadable. So a colour picked
-// from a swatch, a code or an eyedropper is asked one question: what hue.
+// Chromatic choices use the palette's hue; low-chroma choices keep their HEX.
 globalThis.OshiDeck = {};
 globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
   get: async () => ({}), set: async () => {}
@@ -16,6 +11,7 @@ await import(new URL("../../src/backup.js", import.meta.url).href);
 await import(`file://${src}`);
 const { store } = globalThis.OshiDeck;
 const { hueFromHex, hexOfHue, defaultHue, OSHI_HUES, HUES } = store;
+const { channelColor, neutralFromHex, OSHI_NEUTRALS } = store;
 
 let fail = 0;
 const check = (label, ok) => { if (!ok) fail++; console.log((ok ? "ok   " : "FAIL ") + label); };
@@ -28,6 +24,7 @@ check("red", near(hueFromHex("#ff0000"), 29));
 check("green", near(hueFromHex("#00ff00"), 142));
 check("blue", near(hueFromHex("#0000ff"), 264));
 check("cyan", near(hueFromHex("#00ffff"), 195));
+check("rounding across the hue origin wraps to zero", hueFromHex("#E5A1B5") === 0);
 
 check("a leading # is optional", hueFromHex("ff0000") === hueFromHex("#ff0000"));
 check("case does not matter", hueFromHex("#FF0000") === hueFromHex("#ff0000"));
@@ -46,11 +43,14 @@ check("and so does white", hueFromHex("#ffffff") === 0);
 // nine degrees. The chroma comes down instead, so the hue — the part actually
 // being chosen — survives the trip.
 let worst = 0;
+let canonical = true;
 for (let hue = 0; hue < 360; hue++) {
   const back = hueFromHex(hexOfHue(hue));
+  canonical &&= Number.isInteger(back) && back >= 0 && back < 360;
   worst = Math.max(worst, Math.min(Math.abs(back - hue), 360 - Math.abs(back - hue)));
 }
 check(`every hue survives the round trip (worst ${worst}°)`, worst <= 2);
+check("every picker colour returns a canonical hue", canonical);
 
 check("a hue becomes a six-digit code", /^#[0-9a-f]{6}$/.test(hexOfHue(320)));
 check("and the eight presets all do", HUES.every((h) => /^#[0-9a-f]{6}$/.test(hexOfHue(h))));
@@ -72,5 +72,80 @@ check("and it need not be one of the eight", !HUES.includes(12));
 check("while everyone else is unaffected", HUES.includes(defaultHue(B)));
 delete OSHI_HUES[A];
 check("removing the line puts it back", HUES.includes(defaultHue(A)));
+
+// The source CSV contains both HSV-era columns and OKLCH-derived values.
+// The selected HEX is the colour choice; the shipped angles must use the
+// same conversion as the app's picker, not whichever old column was filled.
+check("the bundled Hololive brand hue comes from its selected HEX",
+  defaultHue("UCJFZiqLMntJufDCHc6bQixg") === hueFromHex("#17B6E1"));
+check("Marine starts with the selected red hue",
+  defaultHue("UCCzUftO8KOVkV4wQG1vkUvg") === hueFromHex("#BA2C2B"));
+check("Nuhu starts with her selected pink hue",
+  defaultHue("UCj63OWl-HQ-I6ORzUWF1EDg") === hueFromHex("#F1B9BC"));
+check("MUZU starts with the approved blue from her channel artwork",
+  defaultHue("UCBY1b_TPZx3rA0F1KJnXkNQ") === hueFromHex("#4A90C4"));
+check("a catalogue hue of zero is a real colour",
+  defaultHue("UC-ruxaqjQ5fP7q3UTWi4lWw") === 0);
+const { readFileSync } = await import("node:fs");
+const bundled = new Set(JSON.parse(readFileSync(new URL("../../presets/index.json", import.meta.url))).presets
+  .map((entry) => entry.channel));
+check("catalogue entries name bundled channels and valid OKLCH angles",
+  Object.entries(OSHI_HUES).every(([id, hue]) => bundled.has(id) && Number.isInteger(hue) && hue >= 0 && hue < 360));
+check("prototype names do not become catalogue colours",
+  ["toString", "constructor", "__proto__"].every((id) => HUES.includes(defaultHue(id)) && channelColor(id) === null));
+
+const WHITE = "UCF_U2GCKHvDz52jWdizppIA";
+const BLACK = "UCLlJpxXt6L5d-XQ0cDdIyDQ";
+check("white and black starting colours remain white and black",
+  channelColor(WHITE) === "#FFFFFF" && channelColor(BLACK) === "#000000");
+check("the neutral catalogue contains valid bundled colours",
+  Object.entries(OSHI_NEUTRALS).every(([id, hex]) => bundled.has(id) && neutralFromHex(hex) === hex && !(id in OSHI_HUES)));
+// Aibare's colour remains unresolved.
+const uncoloured = ["UCjjIr39JMBz7RpgAa0XhqwA"];
+check("every bundled channel has a catalogue colour or an explicit fallback",
+  Object.keys(OSHI_HUES).length + Object.keys(OSHI_NEUTRALS).length === bundled.size - uncoloured.length &&
+  uncoloured.every((id) => bundled.has(id) && !Object.hasOwn(OSHI_HUES, id) && !Object.hasOwn(OSHI_NEUTRALS, id) &&
+    channelColor(id) === null && HUES.includes(defaultHue(id))));
+check("an old selected hue of zero takes priority over the new neutral default",
+  channelColor(WHITE, { hue: 0 }) === null);
+check("a selected neutral overrides a chromatic starting colour",
+  channelColor("UCCzUftO8KOVkV4wQG1vkUvg", { hue: 26, color: "#808080" }) === "#808080");
+check("invalid stored colours never become CSS",
+  ["red", "#ff0000", "#fff", "var(--other)", {}, 0].every((color) => channelColor(A, { hue: 0, color }) === null));
+check("native neutral selections preserve their lightness",
+  ["#000000", "#808080", "#ffffff", "#DBE2E5"].every((hex) => neutralFromHex(hex) === hex.toUpperCase()));
+check("native chromatic selections still use a hue",
+  ["#ff0000", "#00ff00", "#0000ff", "var(--other)"].every((hex) => neutralFromHex(hex) === null));
+
+let disk = { cards: [], decks: {}, channelMeta: {}, settings: {} };
+chrome.storage.local.get = async () => structuredClone(disk);
+chrome.storage.local.set = async (patch) => Object.assign(disk, structuredClone(patch));
+const loaded = await store.runOp("loadPreset", { channelId: WHITE, name: "White channel", cards: [
+  { id: "white-card", scope: WHITE, tokens: [{ type: "text", value: "White card" }] }
+] });
+check("loading a starting deck keeps its neutral colour after saving the name",
+  loaded.ok && disk.channelMeta[WHITE]?.name === "White channel" &&
+  channelColor(WHITE, disk.channelMeta[WHITE]) === "#FFFFFF");
+await store.runOp("setChannel", { channelId: WHITE, name: "Renamed" });
+check("renaming a channel preserves its neutral selection",
+  disk.channelMeta[WHITE].name === "Renamed" && channelColor(WHITE, disk.channelMeta[WHITE]) === "#FFFFFF");
+await store.runOp("setChannel", { channelId: WHITE, hue: 0 });
+check("choosing a hue clears the old neutral even at zero",
+  disk.channelMeta[WHITE].hue === 0 && !disk.channelMeta[WHITE].color && channelColor(WHITE, disk.channelMeta[WHITE]) === null);
+await store.runOp("setChannel", { channelId: WHITE, hue: 0, color: "#000000" });
+check("choosing black stores black rather than a red hue alone",
+  disk.channelMeta[WHITE].color === "#000000" && channelColor(WHITE, disk.channelMeta[WHITE]) === "#000000");
+const payload = OshiDeck.backup.toPayload(disk, "test");
+disk = { cards: [], decks: {}, channelMeta: {}, settings: {} };
+await store.runOp("importBackup", { raw: payload, mode: "replace" });
+check("a backup round trip keeps a chosen neutral colour",
+  channelColor(WHITE, disk.channelMeta[WHITE]) === "#000000");
+
+// Existing preferences, including zero, stay owned by the viewer.
+const brand = "UCJFZiqLMntJufDCHc6bQixg";
+chrome.storage.local.get = async () => ({ cards: [], decks: { [brand]: [] },
+  channelMeta: { [brand]: { name: "Example", hue: 0 } }, settings: {} });
+check("loading preserves an existing selected hue of zero",
+  (await store.read()).channelMeta[brand].hue === 0);
 
 process.exit(fail);

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "八神ツクモ / Yagami Tsukumo",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCKuwxopq9c3cldzSOo4ceSA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"🌂"},{"type":"text","value":"🌂"},{"type":"text","value":"🌂"},{"type":"text","value":"🌂"},{"type":"text","value":"🌂"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつくもー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わこつくも〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCKuwxopq9c3cldzSOo4ceSA/LCuxZbXpLq2j_9EP4oe2wAM","alt":"nice","sharedTooltipText":":_nice:","src":"https://yt3.ggpht.com/y9Xorkvb637WMQ4ICrmE4Rh0NAOlQ3R3vdznadhz3J9W80yTZ-CUvSNXdxJO014DpLr6UNTAcw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ntgg"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Mikado Ch. 帝",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCO-FZDAG0mOvgu6jmGg1tiA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんみかー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎨"},{"type":"text","value":"👑"},{"type":"text","value":"🎶"},{"type":"text","value":"✨"},{"type":"text","value":"🎨"},{"type":"text","value":"👑"},{"type":"text","value":"🎶"},{"type":"text","value":"✨"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつみかー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんみか～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつみか～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ハイタッチ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"大丈夫！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"しっかりね！"}], "scope": "channel" }
+  ]
+}

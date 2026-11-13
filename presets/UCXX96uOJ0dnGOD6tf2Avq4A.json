@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Midas",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCXX96uOJ0dnGOD6tf2Avq4A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"betti"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"!boo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"based"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"3"}], "scope": "channel" }
+  ]
+}

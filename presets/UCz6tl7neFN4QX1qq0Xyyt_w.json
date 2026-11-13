@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "BEASTIEZ",
+  "note": "歌枠0配信・通常6配信のチャットから10枚",
+  "channel": "UCz6tl7neFN4QX1qq0Xyyt_w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"🐊"},{"type":"text","value":"🐊"},{"type":"text","value":"🐊"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🪑"},{"type":"text","value":"🪑"},{"type":"text","value":"🪑"},{"type":"text","value":"🪑"},{"type":"text","value":"🪑"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yay"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"NOOOOO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Bye"}], "scope": "channel" }
+  ]
+}

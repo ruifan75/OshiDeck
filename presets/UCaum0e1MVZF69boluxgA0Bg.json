@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Ushio Ebi Ch.",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCaum0e1MVZF69boluxgA0Bg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"RAILGUN WARNING"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ORANGE"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oof"}], "scope": "channel" }
+  ]
+}

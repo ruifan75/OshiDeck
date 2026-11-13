@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "Siro Channel",
-  "note": "過去13配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
   "channel": "UCLhUvJ_wO9hOvv_yYENu4fQ",
   "cards": [
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCLhUvJ_wO9hOvv_yYENu4fQ/qhZhYsTYF4P48gSi_5CYBg","alt":"ハート目シロぐみさん","sharedTooltipText":":_ハート目シロぐみさん:","src":"https://yt3.ggpht.com/BRwt5jQKmxRavzrHCgP4afndU4lsLX-SKAPPOAe46Vm3PnhuHQmcLD4qRRT73Eqq5AsFFaj6fQo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCLhUvJ_wO9hOvv_yYENu4fQ/qhZhYsTYF4P48gSi_5CYBg","alt":"ハート目シロぐみさん","sharedTooltipText":":_ハート目シロぐみさん:","src":"https://yt3.ggpht.com/BRwt5jQKmxRavzrHCgP4afndU4lsLX-SKAPPOAe46Vm3PnhuHQmcLD4qRRT73Eqq5AsFFaj6fQo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCLhUvJ_wO9hOvv_yYENu4fQ/qhZhYsTYF4P48gSi_5CYBg","alt":"ハート目シロぐみさん","sharedTooltipText":":_ハート目シロぐみさん:","src":"https://yt3.ggpht.com/BRwt5jQKmxRavzrHCgP4afndU4lsLX-SKAPPOAe46Vm3PnhuHQmcLD4qRRT73Eqq5AsFFaj6fQo=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"ばいばーい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"おほほい！おほほい！"}], "scope": "channel" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCLhUvJ_wO9hOvv_yYENu4fQ/qhZhYqDYF4P48gSi_5CYBg","alt":"天使のシロぐみさん","sharedTooltipText":":_天使のシロぐみさん:","src":"https://yt3.ggpht.com/Pd2SMFCV4s9dBg434EEylYsT6aUzyeubDypYCugW88yd5-vTQv9-lE4Ktv3z-NC57wOZJrTMDg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCLhUvJ_wO9hOvv_yYENu4fQ/qhZhYqDYF4P48gSi_5CYBg","alt":"天使のシロぐみさん","sharedTooltipText":":_天使のシロぐみさん:","src":"https://yt3.ggpht.com/Pd2SMFCV4s9dBg434EEylYsT6aUzyeubDypYCugW88yd5-vTQv9-lE4Ktv3z-NC57wOZJrTMDg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCLhUvJ_wO9hOvv_yYENu4fQ/qhZhYqDYF4P48gSi_5CYBg","alt":"天使のシロぐみさん","sharedTooltipText":":_天使のシロぐみさん:","src":"https://yt3.ggpht.com/Pd2SMFCV4s9dBg434EEylYsT6aUzyeubDypYCugW88yd5-vTQv9-lE4Ktv3z-NC57wOZJrTMDg=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"},{"type":"text","value":"🐬"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCLhUvJ_wO9hOvv_yYENu4fQ/qhZhYsTYF4P48gSi_5CYBg","alt":"ハート目シロぐみさん","sharedTooltipText":":_ハート目シロぐみさん:","src":"https://yt3.ggpht.com/BRwt5jQKmxRavzrHCgP4afndU4lsLX-SKAPPOAe46Vm3PnhuHQmcLD4qRRT73Eqq5AsFFaj6fQo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCLhUvJ_wO9hOvv_yYENu4fQ/qhZhYsTYF4P48gSi_5CYBg","alt":"ハート目シロぐみさん","sharedTooltipText":":_ハート目シロぐみさん:","src":"https://yt3.ggpht.com/BRwt5jQKmxRavzrHCgP4afndU4lsLX-SKAPPOAe46Vm3PnhuHQmcLD4qRRT73Eqq5AsFFaj6fQo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCLhUvJ_wO9hOvv_yYENu4fQ/qhZhYsTYF4P48gSi_5CYBg","alt":"ハート目シロぐみさん","sharedTooltipText":":_ハート目シロぐみさん:","src":"https://yt3.ggpht.com/BRwt5jQKmxRavzrHCgP4afndU4lsLX-SKAPPOAe46Vm3PnhuHQmcLD4qRRT73Eqq5AsFFaj6fQo=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいばーい！"}], "scope": "channel" }
   ]
 }

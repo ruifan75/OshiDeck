@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Hasami Ch. / 紙木はさみ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCaqZ6JrBEITeUBjYL9kIffg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんはさー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつはさー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんはさ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaqZ6JrBEITeUBjYL9kIffg/hJHwacKaF6z7s8IP5bmkwQs","alt":"かわいい","sharedTooltipText":":_かわいい:","src":"https://yt3.ggpht.com/NmSYF8_fdnX8LWxdIVCPkBtxSkPTIR7FI4Rw0z24WWQmvS5sR53DAROQ1QLvl9bdHn3_ld3PEAY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaqZ6JrBEITeUBjYL9kIffg/hJHwacKaF6z7s8IP5bmkwQs","alt":"かわいい","sharedTooltipText":":_かわいい:","src":"https://yt3.ggpht.com/NmSYF8_fdnX8LWxdIVCPkBtxSkPTIR7FI4Rw0z24WWQmvS5sR53DAROQ1QLvl9bdHn3_ld3PEAY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaqZ6JrBEITeUBjYL9kIffg/hJHwacKaF6z7s8IP5bmkwQs","alt":"かわいい","sharedTooltipText":":_かわいい:","src":"https://yt3.ggpht.com/NmSYF8_fdnX8LWxdIVCPkBtxSkPTIR7FI4Rw0z24WWQmvS5sR53DAROQ1QLvl9bdHn3_ld3PEAY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" }
+  ]
+}

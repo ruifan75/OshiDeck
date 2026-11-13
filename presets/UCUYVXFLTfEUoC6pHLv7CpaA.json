@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "鴨神にゅう 麻雀チャンネル",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCUYVXFLTfEUoC6pHLv7CpaA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こん"},{"type":"youtubeEmoji","emojiId":"UCUYVXFLTfEUoC6pHLv7CpaA/LhRaYIHGLI_Y-QO7oKbgCg","alt":"new","sharedTooltipText":":_new:","src":"https://yt3.ggpht.com/MRMvXy3JDbhcAQio3tGSfDzv9xyBmLh0d2jBy7t69OwCSSQqeBBHeBHf7fQIb5d0Y3h1ZcIykg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCUYVXFLTfEUoC6pHLv7CpaA/LhRaYIHGLI_Y-QO7oKbgCg","alt":"new","sharedTooltipText":":_new:","src":"https://yt3.ggpht.com/MRMvXy3JDbhcAQio3tGSfDzv9xyBmLh0d2jBy7t69OwCSSQqeBBHeBHf7fQIb5d0Y3h1ZcIykg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCUYVXFLTfEUoC6pHLv7CpaA/LhRaYK3HLI_Y-QO7oKbgCg","alt":"waai","sharedTooltipText":":_waai:","src":"https://yt3.ggpht.com/34NhYoI5LzzX8B7wu2vF4W1ZOUGX8MtGwXFfxLhf5lWAo_-GSGVSXjfmK8z0Zy11awulk-65LA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCUYVXFLTfEUoC6pHLv7CpaA/WCeIYKafOseE8wSo_66wAg","alt":"kanasihimi","sharedTooltipText":":_kanasihimi:","src":"https://yt3.ggpht.com/NVe8wu0_L2kLJ8ZoMPCMK3XlIb8w5cFq8F3A9IKYkc721YvsLxGfDWoXnkWyPkerA4_H5wkx=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにゅう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" }
+  ]
+}

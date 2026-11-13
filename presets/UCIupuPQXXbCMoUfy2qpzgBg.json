@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Tokaku~ん Ch.【SVP】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCIupuPQXXbCMoUfy2qpzgBg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"weh~"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIupuPQXXbCMoUfy2qpzgBg/BrZ4Z6zMMpeI_9EPib2EuQg","alt":"TokaCheer","sharedTooltipText":":_TokaCheer:","src":"https://yt3.ggpht.com/UZVrflcNnav1ph0xyHSdMYsPLnBfwgswSORFRRK2mYYKj10HrQcUSvFZ5FyH2qLJ2qxUf6XGdw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIupuPQXXbCMoUfy2qpzgBg/BrZ4Z6zMMpeI_9EPib2EuQg","alt":"TokaCheer","sharedTooltipText":":_TokaCheer:","src":"https://yt3.ggpht.com/UZVrflcNnav1ph0xyHSdMYsPLnBfwgswSORFRRK2mYYKj10HrQcUSvFZ5FyH2qLJ2qxUf6XGdw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIupuPQXXbCMoUfy2qpzgBg/BrZ4Z6zMMpeI_9EPib2EuQg","alt":"TokaCheer","sharedTooltipText":":_TokaCheer:","src":"https://yt3.ggpht.com/UZVrflcNnav1ph0xyHSdMYsPLnBfwgswSORFRRK2mYYKj10HrQcUSvFZ5FyH2qLJ2qxUf6XGdw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIupuPQXXbCMoUfy2qpzgBg/_xxzZ4SgL5eI_9EPsdHUoQU","alt":"TokaBeam","sharedTooltipText":":_TokaBeam:","src":"https://yt3.ggpht.com/B1dqDqKSGhrfN4IyF46etmrmUBkqLB5FYigfsAspuHXyOWkyN8SeBddeaFg0An_SgAEX23nD8Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIupuPQXXbCMoUfy2qpzgBg/_xxzZ4SgL5eI_9EPsdHUoQU","alt":"TokaBeam","sharedTooltipText":":_TokaBeam:","src":"https://yt3.ggpht.com/B1dqDqKSGhrfN4IyF46etmrmUBkqLB5FYigfsAspuHXyOWkyN8SeBddeaFg0An_SgAEX23nD8Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIupuPQXXbCMoUfy2qpzgBg/_xxzZ4SgL5eI_9EPsdHUoQU","alt":"TokaBeam","sharedTooltipText":":_TokaBeam:","src":"https://yt3.ggpht.com/B1dqDqKSGhrfN4IyF46etmrmUBkqLB5FYigfsAspuHXyOWkyN8SeBddeaFg0An_SgAEX23nD8Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIupuPQXXbCMoUfy2qpzgBg/nfoSaN3yGNyj_9EPrO71qQ8","alt":"TokaTea","sharedTooltipText":":_TokaTea:","src":"https://yt3.ggpht.com/x6jIX7ScRvKQCmnq4L0j1U-WfumUc6Knda6Jhx7z9igqAFs_Q0ARoLC739-yRAiHxqy28u884KU=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIupuPQXXbCMoUfy2qpzgBg/f-trZ8mID6C8_9EP19PD4Qs","alt":"TokaPOG","sharedTooltipText":":_TokaPOG:","src":"https://yt3.ggpht.com/Hu7UYg-zSHpSwvRWpIcAZL2nvQBhcNXTRWdYuX6WqTiSL47FlS29oI3a8dh8_Mltwenw44ds=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIupuPQXXbCMoUfy2qpzgBg/f-trZ9uJD6C8_9EP19PD4Qs","alt":"TokaHeart","sharedTooltipText":":_TokaHeart:","src":"https://yt3.ggpht.com/VFxuQC_D_0L0d7mXXobiyOxE-YZ9q58-uYaF7HdP2tzdt4Kbk09IgZpry3eNK5Dzf1YyylwN47c=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIupuPQXXbCMoUfy2qpzgBg/f-trZ_uJD6C8_9EP19PD4Qs","alt":"TokaLOOK","sharedTooltipText":":_TokaLOOK:","src":"https://yt3.ggpht.com/vGbPT4Js0cpDIOdoYNAtvysHB7au_TS6iaRtkWIIxrBAQSOwEeHRAk3_5nHUyeESa8DZ7Vcr=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

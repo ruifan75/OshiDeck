@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "矢車りね / Rine Yaguruma【にじさんじ】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCvzVB-EYuHFXHZrObB8a_Og",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おめでとう！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつりね〜"}], "scope": "channel" }
+  ]
+}

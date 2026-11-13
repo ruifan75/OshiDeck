@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Jun Akane",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCuTNHY_b7EvqhRO7COboxsQ",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCuTNHY_b7EvqhRO7COboxsQ/nTIZaambOLKGjPgP3puYmQY","alt":"junCheer","sharedTooltipText":":_junCheer:","src":"https://yt3.ggpht.com/iiGnxpdsFgl-vpPAdMCV9BtvLufjQiUphQ4V70teTiiV-Jn128yvG8u7kQHEpdSho0RrD6HqSW0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCuTNHY_b7EvqhRO7COboxsQ/nTIZaambOLKGjPgP3puYmQY","alt":"junCheer","sharedTooltipText":":_junCheer:","src":"https://yt3.ggpht.com/iiGnxpdsFgl-vpPAdMCV9BtvLufjQiUphQ4V70teTiiV-Jn128yvG8u7kQHEpdSho0RrD6HqSW0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCuTNHY_b7EvqhRO7COboxsQ/nTIZaambOLKGjPgP3puYmQY","alt":"junCheer","sharedTooltipText":":_junCheer:","src":"https://yt3.ggpht.com/iiGnxpdsFgl-vpPAdMCV9BtvLufjQiUphQ4V70teTiiV-Jn128yvG8u7kQHEpdSho0RrD6HqSW0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"YEAHH"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OH"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Bye bye!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oof"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ah"}], "scope": "channel" }
+  ]
+}

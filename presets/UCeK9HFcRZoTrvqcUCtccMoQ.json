@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "渋谷ハジメのはじめ支部",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCeK9HFcRZoTrvqcUCtccMoQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはじめー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥒"},{"type":"text","value":"🥒"},{"type":"text","value":"🥒"},{"type":"text","value":"🥒"},{"type":"text","value":"🥒"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつじめ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"w"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCeK9HFcRZoTrvqcUCtccMoQ/ufW2XrmEH6em_AOboqygCw","alt":"ないすぅ","sharedTooltipText":":_ないすぅ:","src":"https://yt3.ggpht.com/ujKb71bzXC4dUOx7nxoWRj2w4mPziSteZEbMw0genBYMFrIhDBxx38MhPNFO-ajV8IXW3k5OUho=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

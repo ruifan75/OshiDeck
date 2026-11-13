@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "漆瀬レイ / Ray Nanase【ななしいんく】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCpFy8D37SUStmeWh38NuppA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんななせー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつななせ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつななせ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCpFy8D37SUStmeWh38NuppA/aFM6ar72NLbH5t0P2ZzAMA","alt":"白サイリウム","sharedTooltipText":":_白サイリウム:","src":"https://yt3.ggpht.com/HVTvisN9OtWgMwLpNbwcraZowbxf4wIOR0whJxinAYpJgraF1pQ98OxQu5huST5E8lINK5f5=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpFy8D37SUStmeWh38NuppA/6Ig6avLZKKuP9fwP1qC54Qw","alt":"ピンクサイリウム","sharedTooltipText":":_ピンクサイリウム:","src":"https://yt3.ggpht.com/_AJ5bRicCR_wDm7MmzXv7FDWH4cUhmG0rtmrkEBQ8HnqPIAwksRKGyG-ZsO9e4oC_woo63_u=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpFy8D37SUStmeWh38NuppA/aFM6ar72NLbH5t0P2ZzAMA","alt":"白サイリウム","sharedTooltipText":":_白サイリウム:","src":"https://yt3.ggpht.com/HVTvisN9OtWgMwLpNbwcraZowbxf4wIOR0whJxinAYpJgraF1pQ98OxQu5huST5E8lINK5f5=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpFy8D37SUStmeWh38NuppA/6Ig6avLZKKuP9fwP1qC54Qw","alt":"ピンクサイリウム","sharedTooltipText":":_ピンクサイリウム:","src":"https://yt3.ggpht.com/_AJ5bRicCR_wDm7MmzXv7FDWH4cUhmG0rtmrkEBQ8HnqPIAwksRKGyG-ZsO9e4oC_woo63_u=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpFy8D37SUStmeWh38NuppA/aFM6ar72NLbH5t0P2ZzAMA","alt":"白サイリウム","sharedTooltipText":":_白サイリウム:","src":"https://yt3.ggpht.com/HVTvisN9OtWgMwLpNbwcraZowbxf4wIOR0whJxinAYpJgraF1pQ98OxQu5huST5E8lINK5f5=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpFy8D37SUStmeWh38NuppA/6Ig6avLZKKuP9fwP1qC54Qw","alt":"ピンクサイリウム","sharedTooltipText":":_ピンクサイリウム:","src":"https://yt3.ggpht.com/_AJ5bRicCR_wDm7MmzXv7FDWH4cUhmG0rtmrkEBQ8HnqPIAwksRKGyG-ZsO9e4oC_woo63_u=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんななせ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおお"}], "scope": "channel" }
+  ]
+}

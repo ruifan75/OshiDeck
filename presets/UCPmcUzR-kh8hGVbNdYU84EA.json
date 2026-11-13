@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "柘榴シロ@Zakuro shiro",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCPmcUzR-kh8hGVbNdYU84EA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCPmcUzR-kh8hGVbNdYU84EA/mfnsZrqsDL-V_9EP_6-zoQ4","alt":"シロリウム","sharedTooltipText":":_シロリウム:","src":"https://yt3.ggpht.com/gCdsVh4cLyoOPTyCKfzjc3wqwn7BjqEvXLh0zQJ9gwhb2q6HHDg_Z9bIkNdyftgQTx4W30wh=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPmcUzR-kh8hGVbNdYU84EA/mfnsZrqsDL-V_9EP_6-zoQ4","alt":"シロリウム","sharedTooltipText":":_シロリウム:","src":"https://yt3.ggpht.com/gCdsVh4cLyoOPTyCKfzjc3wqwn7BjqEvXLh0zQJ9gwhb2q6HHDg_Z9bIkNdyftgQTx4W30wh=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPmcUzR-kh8hGVbNdYU84EA/mfnsZrqsDL-V_9EP_6-zoQ4","alt":"シロリウム","sharedTooltipText":":_シロリウム:","src":"https://yt3.ggpht.com/gCdsVh4cLyoOPTyCKfzjc3wqwn7BjqEvXLh0zQJ9gwhb2q6HHDg_Z9bIkNdyftgQTx4W30wh=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPmcUzR-kh8hGVbNdYU84EA/mfnsZrqsDL-V_9EP_6-zoQ4","alt":"シロリウム","sharedTooltipText":":_シロリウム:","src":"https://yt3.ggpht.com/gCdsVh4cLyoOPTyCKfzjc3wqwn7BjqEvXLh0zQJ9gwhb2q6HHDg_Z9bIkNdyftgQTx4W30wh=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPmcUzR-kh8hGVbNdYU84EA/mfnsZrqsDL-V_9EP_6-zoQ4","alt":"シロリウム","sharedTooltipText":":_シロリウム:","src":"https://yt3.ggpht.com/gCdsVh4cLyoOPTyCKfzjc3wqwn7BjqEvXLh0zQJ9gwhb2q6HHDg_Z9bIkNdyftgQTx4W30wh=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCPmcUzR-kh8hGVbNdYU84EA/UTn0Zvm1LIiY_9EPq-m0oAU","alt":"こんシロ","sharedTooltipText":":_こんシロ:","src":"https://yt3.ggpht.com/9kL3kHGXwlusv_ucI51-xTr7QQ_PtkviN92UJCPZaZajIfcXMEjw33yByZ9GuoAE48hB5wmEnfU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPmcUzR-kh8hGVbNdYU84EA/UTn0Zvm1LIiY_9EPq-m0oAU","alt":"こんシロ","sharedTooltipText":":_こんシロ:","src":"https://yt3.ggpht.com/9kL3kHGXwlusv_ucI51-xTr7QQ_PtkviN92UJCPZaZajIfcXMEjw33yByZ9GuoAE48hB5wmEnfU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPmcUzR-kh8hGVbNdYU84EA/UTn0Zvm1LIiY_9EPq-m0oAU","alt":"こんシロ","sharedTooltipText":":_こんシロ:","src":"https://yt3.ggpht.com/9kL3kHGXwlusv_ucI51-xTr7QQ_PtkviN92UJCPZaZajIfcXMEjw33yByZ9GuoAE48hB5wmEnfU=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんしろー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" }
+  ]
+}

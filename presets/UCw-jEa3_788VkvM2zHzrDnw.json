@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Tenten Ch. / 鳳玲天々",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCw-jEa3_788VkvM2zHzrDnw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんてんてん！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCw-jEa3_788VkvM2zHzrDnw/0jZKatWGAYqk7OsP34LPwAc","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/3p9Un32X_TkGOMbS91Or_bSauPsvHMtGPqMHoTzgEcDcGiY31XU2zuNgzn1c0xOxFIlQG3bh=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCw-jEa3_788VkvM2zHzrDnw/0jZKatWGAYqk7OsP34LPwAc","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/3p9Un32X_TkGOMbS91Or_bSauPsvHMtGPqMHoTzgEcDcGiY31XU2zuNgzn1c0xOxFIlQG3bh=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCw-jEa3_788VkvM2zHzrDnw/0jZKatWGAYqk7OsP34LPwAc","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/3p9Un32X_TkGOMbS91Or_bSauPsvHMtGPqMHoTzgEcDcGiY31XU2zuNgzn1c0xOxFIlQG3bh=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCw-jEa3_788VkvM2zHzrDnw/0jZKaqOGAYqk7OsP34LPwAc","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/PY1PHc9NQgioL0lAFd8nDUd7H0OwT32cLM9qlrlhNucJxUR0QWh1ldstvm2bpuiVZCvdMt9l=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCw-jEa3_788VkvM2zHzrDnw/0jZKaqOGAYqk7OsP34LPwAc","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/PY1PHc9NQgioL0lAFd8nDUd7H0OwT32cLM9qlrlhNucJxUR0QWh1ldstvm2bpuiVZCvdMt9l=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCw-jEa3_788VkvM2zHzrDnw/0jZKaqOGAYqk7OsP34LPwAc","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/PY1PHc9NQgioL0lAFd8nDUd7H0OwT32cLM9qlrlhNucJxUR0QWh1ldstvm2bpuiVZCvdMt9l=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんてんてん～"}], "scope": "channel" }
+  ]
+}

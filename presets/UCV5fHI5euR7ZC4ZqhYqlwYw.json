@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "RUKI Ch. 凰牙るき",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCV5fHI5euR7ZC4ZqhYqlwYw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👁"},{"type":"text","value":"💜"},{"type":"text","value":"🎶"},{"type":"text","value":"👁"},{"type":"text","value":"💜"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんるき！だ！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCV5fHI5euR7ZC4ZqhYqlwYw/TobhZ6SDH7XA_9EPhcmv8QI","alt":"KPPPP","sharedTooltipText":":_KPPPP:","src":"https://yt3.ggpht.com/XWmt_hBjsa37cJRoLMaLo7aqVLkdBufTWDAhzXPJeFEubstcNHk5EjZ41EUf3QZWZMqTyyOS=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCV5fHI5euR7ZC4ZqhYqlwYw/TobhZ6SDH7XA_9EPhcmv8QI","alt":"KPPPP","sharedTooltipText":":_KPPPP:","src":"https://yt3.ggpht.com/XWmt_hBjsa37cJRoLMaLo7aqVLkdBufTWDAhzXPJeFEubstcNHk5EjZ41EUf3QZWZMqTyyOS=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCV5fHI5euR7ZC4ZqhYqlwYw/TobhZ6SDH7XA_9EPhcmv8QI","alt":"KPPPP","sharedTooltipText":":_KPPPP:","src":"https://yt3.ggpht.com/XWmt_hBjsa37cJRoLMaLo7aqVLkdBufTWDAhzXPJeFEubstcNHk5EjZ41EUf3QZWZMqTyyOS=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🗽"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCV5fHI5euR7ZC4ZqhYqlwYw/LB0NaPHUOICO_9EP9qrGgAw","alt":"サラダバー","sharedTooltipText":":_サラダバー:","src":"https://yt3.ggpht.com/vi2cJGUnwK0hbZtfOzljoxsF_kl40zPUlXSjohRSG5SnZlr5VIb1K1HqNv8aaaQJr-SJPGxsMxg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCV5fHI5euR7ZC4ZqhYqlwYw/LB0NaPHUOICO_9EP9qrGgAw","alt":"サラダバー","sharedTooltipText":":_サラダバー:","src":"https://yt3.ggpht.com/vi2cJGUnwK0hbZtfOzljoxsF_kl40zPUlXSjohRSG5SnZlr5VIb1K1HqNv8aaaQJr-SJPGxsMxg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCV5fHI5euR7ZC4ZqhYqlwYw/LB0NaPHUOICO_9EP9qrGgAw","alt":"サラダバー","sharedTooltipText":":_サラダバー:","src":"https://yt3.ggpht.com/vi2cJGUnwK0hbZtfOzljoxsF_kl40zPUlXSjohRSG5SnZlr5VIb1K1HqNv8aaaQJr-SJPGxsMxg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんるき"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"サラダバー"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Gemini Ch. 제미니",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UClgYOnvfPW9Yyb47UheMIkQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"제하"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ㅋㅋㅋㅋㅋㅋㅋ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"오"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"안녕하세요"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ㄱㅇㅇ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"와"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"제하ㅏ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"네"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"아"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"우와"}], "scope": "channel" }
+  ]
+}

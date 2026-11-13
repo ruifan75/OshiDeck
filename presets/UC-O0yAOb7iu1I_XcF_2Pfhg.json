@@ -1,0 +1,23 @@
+{
+  "format": 2,
+  "name": "蹄音かさね / Kasane Teion",
+  "note": "歌枠1配信・通常13配信のチャットから15枚",
+  "channel": "UC-O0yAOb7iu1I_XcF_2Pfhg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🐎"},{"type":"text","value":"🎶"},{"type":"text","value":"🐎"},{"type":"text","value":"🎶"},{"type":"text","value":"🐎"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんぱかね〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぱかね～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぱかねー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんぱかね～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🏇"},{"type":"text","value":"🎶"},{"type":"text","value":"🏇"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" }
+  ]
+}

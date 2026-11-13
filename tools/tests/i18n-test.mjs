@@ -101,6 +101,12 @@ check("a key that does not exist says so", i18n.t("no.such.key") === "no.such.ke
 // A missing *translation* is not a bug in the same way — the Japanese is still
 // a sentence, and a sentence in the wrong language beats `bar.global`.
 const { MESSAGES, SOURCE } = i18n;
+check("Japanese calls the offered cards a start deck",
+  MESSAGES["pool.offered"].ja === "スタートデッキ$1" &&
+  MESSAGES["opt.presetOffer"].ja.includes("スタートデッキ"));
+check("Japanese preset diagnostics use the same start-deck name",
+  MESSAGES["validation.newPresetFormat"].ja.includes("スタートデッキ") &&
+  Object.values(MESSAGES).every((entry) => !/プリセット|はじめの一組/.test(entry.ja)));
 const borrowed = { ...MESSAGES["bar.global"] };
 delete MESSAGES["bar.global"]["zh-TW"];
 i18n.use("zh-TW");

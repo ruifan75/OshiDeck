@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "かみと-KamitoChannel-",
-  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
   "channel": "UCgYCMluaLpERsyNXlPOvBtA",
   "cards": [
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"nf"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCgYCMluaLpERsyNXlPOvBtA/WqdMX7OcOMOf-gOd2JnQBw","alt":"oissu","sharedTooltipText":":_oissu:","src":"https://yt3.ggpht.com/erXahsRybVChJQzkCpb9sngU9RbRHoj0Ck8b1ll7mYPxsXozzb4ofo-eF7C0nDI5oGBwLCjl=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCgYCMluaLpERsyNXlPOvBtA/WqdMX7OcOMOf-gOd2JnQBw","alt":"oissu","sharedTooltipText":":_oissu:","src":"https://yt3.ggpht.com/erXahsRybVChJQzkCpb9sngU9RbRHoj0Ck8b1ll7mYPxsXozzb4ofo-eF7C0nDI5oGBwLCjl=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCgYCMluaLpERsyNXlPOvBtA/WqdMX7OcOMOf-gOd2JnQBw","alt":"oissu","sharedTooltipText":":_oissu:","src":"https://yt3.ggpht.com/erXahsRybVChJQzkCpb9sngU9RbRHoj0Ck8b1ll7mYPxsXozzb4ofo-eF7C0nDI5oGBwLCjl=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ん？"}], "scope": "global" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCgYCMluaLpERsyNXlPOvBtA/WqdMX_2cOMOf-gOd2JnQBw","alt":"nice","sharedTooltipText":":_nice:","src":"https://yt3.ggpht.com/bBZ4QyS5b4kX7NbaP5n7j55kV_ryKwi9h7mBgUuCwVsDUqWmfPE1CE9m299zAxZaRjcC8-b9GTQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCgYCMluaLpERsyNXlPOvBtA/WqdMX_2cOMOf-gOd2JnQBw","alt":"nice","sharedTooltipText":":_nice:","src":"https://yt3.ggpht.com/bBZ4QyS5b4kX7NbaP5n7j55kV_ryKwi9h7mBgUuCwVsDUqWmfPE1CE9m299zAxZaRjcC8-b9GTQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCgYCMluaLpERsyNXlPOvBtA/WqdMX_2cOMOf-gOd2JnQBw","alt":"nice","sharedTooltipText":":_nice:","src":"https://yt3.ggpht.com/bBZ4QyS5b4kX7NbaP5n7j55kV_ryKwi9h7mBgUuCwVsDUqWmfPE1CE9m299zAxZaRjcC8-b9GTQ=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"ないす"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うま"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"nf"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCgYCMluaLpERsyNXlPOvBtA/WqdMX_2cOMOf-gOd2JnQBw","alt":"nice","sharedTooltipText":":_nice:","src":"https://yt3.ggpht.com/bBZ4QyS5b4kX7NbaP5n7j55kV_ryKwi9h7mBgUuCwVsDUqWmfPE1CE9m299zAxZaRjcC8-b9GTQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん"}], "scope": "channel" }
   ]
 }

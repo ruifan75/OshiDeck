@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ちゃんねるサーヤ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UChq9ybV-EPcRMwBvnOKpu4Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつサヤー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんサヤー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつさやー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ギャル！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんさやー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぅ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" }
+  ]
+}

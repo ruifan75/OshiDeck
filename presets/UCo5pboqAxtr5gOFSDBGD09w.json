@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "kaduki mikuruCh.華月みくる",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCo5pboqAxtr5gOFSDBGD09w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌕"},{"type":"text","value":"💫"},{"type":"text","value":"🎶"},{"type":"text","value":"🌕"},{"type":"text","value":"💫"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつきみくる〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんみくる"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつきみくる～"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCo5pboqAxtr5gOFSDBGD09w/qKWEY6yyHILBgwOh_p7gDA","alt":"待機みくる新衣装","sharedTooltipText":":_待機みくる新衣装:","src":"https://yt3.ggpht.com/NimD9esHc4MZWuzxRkv8tcGsGhx7Dgsd3aOhZFwO_PD8Uz5voD-aiojnHEsrT1rtOcO7vQxz1Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCo5pboqAxtr5gOFSDBGD09w/qKWEY6yyHILBgwOh_p7gDA","alt":"待機みくる新衣装","sharedTooltipText":":_待機みくる新衣装:","src":"https://yt3.ggpht.com/NimD9esHc4MZWuzxRkv8tcGsGhx7Dgsd3aOhZFwO_PD8Uz5voD-aiojnHEsrT1rtOcO7vQxz1Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCo5pboqAxtr5gOFSDBGD09w/qKWEY6yyHILBgwOh_p7gDA","alt":"待機みくる新衣装","sharedTooltipText":":_待機みくる新衣装:","src":"https://yt3.ggpht.com/NimD9esHc4MZWuzxRkv8tcGsGhx7Dgsd3aOhZFwO_PD8Uz5voD-aiojnHEsrT1rtOcO7vQxz1Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCo5pboqAxtr5gOFSDBGD09w/DVzgX6nqFc_J-APK1YKgCA","alt":"しゃく絵文字","sharedTooltipText":":_しゃく絵文字:","src":"https://yt3.ggpht.com/etRsgkd_bhc9HpsJu_yOkKRlPmCpdytUi_-Ar15Ea9A_QheG_HUHJX2fOI-qrW2ga56IRad803g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCo5pboqAxtr5gOFSDBGD09w/DVzgX6frFc_J-APK1YKgCA","alt":"たす絵文字","sharedTooltipText":":_たす絵文字:","src":"https://yt3.ggpht.com/jPmEYYsMD9k3nPaPqdSD1E2Lm2CkUZrh-ph-4u8OW4H_IMHI1PMGz77BJHFdrBRZpi5mJAEYngE=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんみくる～"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCo5pboqAxtr5gOFSDBGD09w/_dnmYKbVLqrm8gSDmqCgBA","alt":"草絵文字","sharedTooltipText":":_草絵文字:","src":"https://yt3.ggpht.com/3mQB0lWIFi_m6bj9KWOZ84dpvfzhaW08h2miQo7eCDAINMmU_62degObBsOuMdCVglf1Y7haRw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

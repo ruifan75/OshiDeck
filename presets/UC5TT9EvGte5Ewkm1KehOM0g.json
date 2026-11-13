@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Heru CH.碧衣ヘル",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC5TT9EvGte5Ewkm1KehOM0g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんへるー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🤢"},{"type":"text","value":"🤢"},{"type":"text","value":"🤢"},{"type":"text","value":"🤢"},{"type":"text","value":"🤢"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🤮"},{"type":"text","value":"🤮"},{"type":"text","value":"🤮"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつへるー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なるほど"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

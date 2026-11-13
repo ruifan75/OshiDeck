@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Toshiruz Clipes",
+  "note": "歌枠0配信・通常7配信のチャットから10枚",
+  "channel": "UCeFms_6ZvioZvV_OCniQ-TQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"kkkkkkkkkkkkkkk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"sim"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"boa noite Bruno"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"KAKAKAKA"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"mds"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"!pontos"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oxi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bora"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"AKKAKAKA"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nossa"}], "scope": "channel" }
+  ]
+}

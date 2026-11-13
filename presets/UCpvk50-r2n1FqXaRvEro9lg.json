@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Onyu Ch. 오뉴",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCpvk50-r2n1FqXaRvEro9lg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"오하"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ㅋㅋㅋㅋㅋㅋㅋ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ㄱㅇㅇ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"안녕하세요"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"짠~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"오"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"오바오바~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"수고하셨습니다~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"뿅!"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Necronival 🍭🎀【VTUBER】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCwAX4JrrsHqs05yKQh03keg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hai"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"HI CRONI"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"byeee"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"haloo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":":3"}], "scope": "channel" }
+  ]
+}

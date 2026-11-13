@@ -1,0 +1,13 @@
+{
+  "format": 2,
+  "name": "まんさや",
+  "note": "歌枠0配信・通常13配信のチャットから5枚",
+  "channel": "UCk-m-OXRVEXUolSWtmY56oA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"やっほー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やほやほー！"}], "scope": "channel" }
+  ]
+}

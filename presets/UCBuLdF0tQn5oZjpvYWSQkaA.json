@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Liura Channel",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCBuLdF0tQn5oZjpvYWSQkaA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"わこりうらです！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつりうらでしたー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かっこいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとうございました！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え！"}], "scope": "channel" }
+  ]
+}

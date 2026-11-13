@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "本阿弥あずさ / Azusa Honami",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC5UPG3fV3zzuq-JLPw-XdWQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC5UPG3fV3zzuq-JLPw-XdWQ/k0bMZbmFFuC2_9EPkPuE4AQ","alt":"blue","sharedTooltipText":":_blue:","src":"https://yt3.ggpht.com/YROqmcDVAej_psiyr1lT6FpFUUPKZKJcrogD5WIPkZnqqVSPouGxSeyPP5HyWabu87Lh0Kv_1g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5UPG3fV3zzuq-JLPw-XdWQ/k0bMZbmFFuC2_9EPkPuE4AQ","alt":"blue","sharedTooltipText":":_blue:","src":"https://yt3.ggpht.com/YROqmcDVAej_psiyr1lT6FpFUUPKZKJcrogD5WIPkZnqqVSPouGxSeyPP5HyWabu87Lh0Kv_1g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5UPG3fV3zzuq-JLPw-XdWQ/k0bMZbmFFuC2_9EPkPuE4AQ","alt":"blue","sharedTooltipText":":_blue:","src":"https://yt3.ggpht.com/YROqmcDVAej_psiyr1lT6FpFUUPKZKJcrogD5WIPkZnqqVSPouGxSeyPP5HyWabu87Lh0Kv_1g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんじゅーる"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいじゅーる"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うまい"}], "scope": "channel" }
+  ]
+}

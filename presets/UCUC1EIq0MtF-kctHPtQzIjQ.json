@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Amaris Yuri",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCUC1EIq0MtF-kctHPtQzIjQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"cute"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Yuri..."}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👀"}], "scope": "channel" }
+  ]
+}

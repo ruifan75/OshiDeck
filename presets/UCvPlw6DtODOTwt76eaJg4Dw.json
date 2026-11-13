@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "兎佐美*Usami Channel",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCvPlw6DtODOTwt76eaJg4Dw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんうさ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCvPlw6DtODOTwt76eaJg4Dw/GbTpYKb6Karm8gTjv5-QBA","alt":"kon","sharedTooltipText":":_kon:","src":"https://yt3.ggpht.com/arZ5-OkLz7BX6JPheY659CdIPwFrRriqv5HQi_XdIf5XxbJSQgniRAuFD9UYs7_bLWXhRf4-E_w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCvPlw6DtODOTwt76eaJg4Dw/GbTpYISEKqrm8gTjv5-QBA","alt":"usa","sharedTooltipText":":_usa:","src":"https://yt3.ggpht.com/x9nhUd81KbNpVGNe88m8PpGDXznjgVcEjDe7tW7La-It1wk2BBH7oFCKqtmviYZ7M6S2_SDysDw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつうさー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCvPlw6DtODOTwt76eaJg4Dw/GbTpYP_6Karm8gTjv5-QBA","alt":"otsu","sharedTooltipText":":_otsu:","src":"https://yt3.ggpht.com/88W5igvaNQUliskt2niGAJFas2C_M9dmiRiT40KPlvEAsSL03Bxjphw7d74TJnDh2QdolgKzBw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCvPlw6DtODOTwt76eaJg4Dw/GbTpYISEKqrm8gTjv5-QBA","alt":"usa","sharedTooltipText":":_usa:","src":"https://yt3.ggpht.com/x9nhUd81KbNpVGNe88m8PpGDXznjgVcEjDe7tW7La-It1wk2BBH7oFCKqtmviYZ7M6S2_SDysDw=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

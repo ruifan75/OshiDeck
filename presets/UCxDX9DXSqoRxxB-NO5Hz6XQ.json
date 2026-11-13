@@ -1,0 +1,20 @@
+{
+  "format": 2,
+  "name": "根本凪チャンネル",
+  "note": "歌枠2配信・通常13配信のチャットから12枚",
+  "channel": "UCxDX9DXSqoRxxB-NO5Hz6XQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"💠"},{"type":"text","value":"💫"},{"type":"text","value":"💠"},{"type":"text","value":"💫"},{"type":"text","value":"💠"},{"type":"text","value":"💫"},{"type":"text","value":"💠"},{"type":"text","value":"💫"},{"type":"text","value":"💠"},{"type":"text","value":"💫"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイスオーダー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"退勤！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やったー！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCxDX9DXSqoRxxB-NO5Hz6XQ/grwWY7unN4bBgwPZ5r-QCA","alt":"尊いカワウソ","sharedTooltipText":":_尊いカワウソ:","src":"https://yt3.ggpht.com/CWfF1Ns-NZeSQMI9PP85lViDx2DxCQ5vfUEM5d7hYUZHKOdwT5dC4JwmHyKcNWrcC8ybRNT0sw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxDX9DXSqoRxxB-NO5Hz6XQ/grwWY7unN4bBgwPZ5r-QCA","alt":"尊いカワウソ","sharedTooltipText":":_尊いカワウソ:","src":"https://yt3.ggpht.com/CWfF1Ns-NZeSQMI9PP85lViDx2DxCQ5vfUEM5d7hYUZHKOdwT5dC4JwmHyKcNWrcC8ybRNT0sw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxDX9DXSqoRxxB-NO5Hz6XQ/grwWY7unN4bBgwPZ5r-QCA","alt":"尊いカワウソ","sharedTooltipText":":_尊いカワウソ:","src":"https://yt3.ggpht.com/CWfF1Ns-NZeSQMI9PP85lViDx2DxCQ5vfUEM5d7hYUZHKOdwT5dC4JwmHyKcNWrcC8ybRNT0sw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxDX9DXSqoRxxB-NO5Hz6XQ/grwWY7unN4bBgwPZ5r-QCA","alt":"尊いカワウソ","sharedTooltipText":":_尊いカワウソ:","src":"https://yt3.ggpht.com/CWfF1Ns-NZeSQMI9PP85lViDx2DxCQ5vfUEM5d7hYUZHKOdwT5dC4JwmHyKcNWrcC8ybRNT0sw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxDX9DXSqoRxxB-NO5Hz6XQ/grwWY7unN4bBgwPZ5r-QCA","alt":"尊いカワウソ","sharedTooltipText":":_尊いカワウソ:","src":"https://yt3.ggpht.com/CWfF1Ns-NZeSQMI9PP85lViDx2DxCQ5vfUEM5d7hYUZHKOdwT5dC4JwmHyKcNWrcC8ybRNT0sw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxDX9DXSqoRxxB-NO5Hz6XQ/grwWY7unN4bBgwPZ5r-QCA","alt":"尊いカワウソ","sharedTooltipText":":_尊いカワウソ:","src":"https://yt3.ggpht.com/CWfF1Ns-NZeSQMI9PP85lViDx2DxCQ5vfUEM5d7hYUZHKOdwT5dC4JwmHyKcNWrcC8ybRNT0sw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxDX9DXSqoRxxB-NO5Hz6XQ/grwWY7unN4bBgwPZ5r-QCA","alt":"尊いカワウソ","sharedTooltipText":":_尊いカワウソ:","src":"https://yt3.ggpht.com/CWfF1Ns-NZeSQMI9PP85lViDx2DxCQ5vfUEM5d7hYUZHKOdwT5dC4JwmHyKcNWrcC8ybRNT0sw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxDX9DXSqoRxxB-NO5Hz6XQ/grwWY7unN4bBgwPZ5r-QCA","alt":"尊いカワウソ","sharedTooltipText":":_尊いカワウソ:","src":"https://yt3.ggpht.com/CWfF1Ns-NZeSQMI9PP85lViDx2DxCQ5vfUEM5d7hYUZHKOdwT5dC4JwmHyKcNWrcC8ybRNT0sw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"たいきーん！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとうありがとう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" }
+  ]
+}

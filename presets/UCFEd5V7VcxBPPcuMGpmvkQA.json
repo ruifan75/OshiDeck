@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "TobaRana 鳥羽樂奈",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCFEd5V7VcxBPPcuMGpmvkQA",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFEd5V7VcxBPPcuMGpmvkQA/K4uRYO7JBMeE8wTItaOgCg","alt":"great","sharedTooltipText":":_great:","src":"https://yt3.ggpht.com/4K0bPsKPVHxuhme8qV65gQ_O6dxZ7RneLGIN1yUweLVeFDZdJ3Ge6H4xis_yUd8bF4V63NnEjA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFEd5V7VcxBPPcuMGpmvkQA/NtVRYeKVHO7t8gTp7I2oBQ","alt":"fulad","sharedTooltipText":":_fulad:","src":"https://yt3.ggpht.com/EgBGRyHWrT1TtinGJchFOdBggxMyK7Ehso9jymJ5xMLIKsGGRiNAOaB7QdWFx4C5lagP4Jgx=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFEd5V7VcxBPPcuMGpmvkQA/_A0jZ-nRJ669_9EPh8WpsAk","alt":"verysong","sharedTooltipText":":_verysong:","src":"https://yt3.ggpht.com/4nTroKvMqYjwcGEOus_7ExyGM46rq-cSkh7OjHZN9m7GdMPQQGbhXbQPgEK8mSPzQnYGJNcX=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"晚安"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"樂奈安安"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFEd5V7VcxBPPcuMGpmvkQA/KJODY4GYOs3U8wSstKDYDw","alt":"ainomori","sharedTooltipText":":_ainomori:","src":"https://yt3.ggpht.com/AmhkfbtNCFFFoGjkX4XSomeQ04QeaGX87_pS71XkhR8HJ-J0CWJLp2moQs7djW1FJ8zEFFjntQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFEd5V7VcxBPPcuMGpmvkQA/KJODY4GYOs3U8wSstKDYDw","alt":"ainomori","sharedTooltipText":":_ainomori:","src":"https://yt3.ggpht.com/AmhkfbtNCFFFoGjkX4XSomeQ04QeaGX87_pS71XkhR8HJ-J0CWJLp2moQs7djW1FJ8zEFFjntQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFEd5V7VcxBPPcuMGpmvkQA/KJODY4GYOs3U8wSstKDYDw","alt":"ainomori","sharedTooltipText":":_ainomori:","src":"https://yt3.ggpht.com/AmhkfbtNCFFFoGjkX4XSomeQ04QeaGX87_pS71XkhR8HJ-J0CWJLp2moQs7djW1FJ8zEFFjntQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"安安"}], "scope": "channel" }
+  ]
+}

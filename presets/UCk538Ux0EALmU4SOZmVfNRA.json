@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "クーYouTubeちゃんねる",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCk538Ux0EALmU4SOZmVfNRA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCk538Ux0EALmU4SOZmVfNRA/6ZcyYcaGJtHr8wT1l67IBA","alt":"くさぁ","sharedTooltipText":":_くさぁ:","src":"https://yt3.ggpht.com/0Q1R_OPXr2t3y5coNNW71FrWMFzXCsj1x6GoKDqe52OxrCF6u7C5GqnHokjnK4K5vHZ_qjVj=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCk538Ux0EALmU4SOZmVfNRA/UDYcY8WMB9CJ_9EP97KZuAQ","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/PaSMDzc4l0NtYah-5tQnpEN8FPuWdhfH-Fg8VSQ86Qt57LrthHlgl94Oh68aNdMRcywfQbDJKA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ご安全に！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"さて"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" }
+  ]
+}

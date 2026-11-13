@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "RANKA GAMES",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCxmbiuI6Gyyln9Ec7uZ-8wQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんらんかー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"8888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"w"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"８８８８８８"}], "scope": "channel" }
+  ]
+}

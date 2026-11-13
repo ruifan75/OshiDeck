@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "浅木式",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCRXqXc_ixp62KiSckhocSSw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRXqXc_ixp62KiSckhocSSw/tRquYbyJApyQ8wSX2YCQBw","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/DQniRZCM4EvlGvbw4sfqiUndoWgE8hZ4hCOh45UhiefECw4HTdtwzRFQmztj5b0Ycf0W6JCzGg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCRXqXc_ixp62KiSckhocSSw/tRquYbyJApyQ8wSX2YCQBw","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/DQniRZCM4EvlGvbw4sfqiUndoWgE8hZ4hCOh45UhiefECw4HTdtwzRFQmztj5b0Ycf0W6JCzGg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCRXqXc_ixp62KiSckhocSSw/tRquYbyJApyQ8wSX2YCQBw","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/DQniRZCM4EvlGvbw4sfqiUndoWgE8hZ4hCOh45UhiefECw4HTdtwzRFQmztj5b0Ycf0W6JCzGg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRXqXc_ixp62KiSckhocSSw/CI6vYJ_jKuiX8gT9xqSAAw","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/42Fj3ErogeuMWwGY-XC2zG8Wa0LcnGux-ls-LRxb-eg61tpJUEDfTv8TDuUXtHew6Tu7wQlp2g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCRXqXc_ixp62KiSckhocSSw/CI6vYPHjKuiX8gT9xqSAAw","alt":"わくわく","sharedTooltipText":":_わくわく:","src":"https://yt3.ggpht.com/Hksh9TAF7fM5A5gQNon7HxQBetgNeYQLCDcrEsfLqh9-6eKpBw4wzcHosnkAGj6b1xo-GZKj=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "旅野そら",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC_aqfJwiavLQNMjURn-8mDg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"コンギョ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんのそらー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつのそらー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"それはそう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"な、なんだってー！"}], "scope": "channel" }
+  ]
+}

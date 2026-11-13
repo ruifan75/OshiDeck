@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Stellar Verse Pro",
+  "note": "歌枠0配信・通常7配信のチャットから10枚",
+  "channel": "UCLlOiYZ-zZddt-0gi9w5f-A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WHAT"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🐌"},{"type":"text","value":"🐌"},{"type":"text","value":"🐌"},{"type":"text","value":"🐌"},{"type":"text","value":"🐌"},{"type":"text","value":"🐌"}], "scope": "channel" }
+  ]
+}

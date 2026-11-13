@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "【SUB】96NEKO-CHANNEL",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCyO7wyh07pYJaZk51OV75bA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいちゃー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"がんばれー！"}], "scope": "channel" }
+  ]
+}

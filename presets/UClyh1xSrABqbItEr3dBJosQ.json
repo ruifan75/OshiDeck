@@ -1,0 +1,27 @@
+{
+  "format": 2,
+  "name": "이와 IWA",
+  "note": "歌枠1配信・通常7配信のチャットから19枚",
+  "channel": "UClyh1xSrABqbItEr3dBJosQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"이하"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"이와상 마듀 장례식부터 치룹시다"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"티아라멘츠 크샤트리라가 나온다는 소문이"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"크샤트리라 상륙하면 부관참시"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"이와님 구독하면 나오는 움직이는 이미지 커미션 작가님 여쭤보는거 실례인가요...??"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"명며드셨네 이미 ㅋㅋㅋ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"크샤트리라 어라이즈 하트 까지"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"윤하 우산 가능하신?"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"뭐야 물어본걸로 왜 나가라그래;"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"빗소리 좋다"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"캬아 빗소리에 휘파람 너무 좋아용"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"장례식부터 치룹시다 이와상"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello, do you speak English?"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hheh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"너"},{"type":"text","value":" "},{"type":"text","value":"정말"},{"type":"text","value":" "},{"type":"text","value":"예쁘다"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"나는"},{"type":"text","value":" "},{"type":"text","value":"번역기를"},{"type":"text","value":" "},{"type":"text","value":"사용하고"},{"type":"text","value":" "},{"type":"text","value":"있지만"},{"type":"text","value":" "},{"type":"text","value":"당신의"},{"type":"text","value":" "},{"type":"text","value":"목소리는"},{"type":"text","value":" "},{"type":"text","value":"좋습니다"},{"type":"text","value":". "},{"type":"text","value":"안녕하세요"},{"type":"text","value":" "},{"type":"text","value":"영국에서"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"이 노래 디제이맥스하다 들어봤는데"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"2400!2400!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"이와 너 노래 재능있어"}], "scope": "channel" }
+  ]
+}

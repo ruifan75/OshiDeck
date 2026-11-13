@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Selia Aisnith 【CRIMS:on】",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCZphYueZZE2NVcriExbnkBw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"otsu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"1"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😭"},{"type":"text","value":"😭"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"tie tie"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCZphYueZZE2NVcriExbnkBw/eR3hYpPzKdCG_9EP2bml-As","alt":"SeliaLOL","sharedTooltipText":":_SeliaLOL:","src":"https://yt3.ggpht.com/IlAsJGlTNkN4YASER3f4Uto52KWMTIhYZYN1EnFUaP86W-OdjSZ2azN6-gS2RmdqEJ_kfX70lSU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZphYueZZE2NVcriExbnkBw/eR3hYpPzKdCG_9EP2bml-As","alt":"SeliaLOL","sharedTooltipText":":_SeliaLOL:","src":"https://yt3.ggpht.com/IlAsJGlTNkN4YASER3f4Uto52KWMTIhYZYN1EnFUaP86W-OdjSZ2azN6-gS2RmdqEJ_kfX70lSU=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh noo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"alooo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"astaga"}], "scope": "channel" }
+  ]
+}

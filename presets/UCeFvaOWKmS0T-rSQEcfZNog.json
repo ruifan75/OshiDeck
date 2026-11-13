@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "月待にゃも",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCeFvaOWKmS0T-rSQEcfZNog",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにゃも〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつにゃもー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにゃも～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCeFvaOWKmS0T-rSQEcfZNog/nuoJZPH4J8KS_9EP9Y6GgAE","alt":"ハート","sharedTooltipText":":_ハート:","src":"https://yt3.ggpht.com/8oA_jxEfRu8Ppko_S9f8Xc1PTbsvj-b0QO5IxWiyA9w0_ZVoIukhtjVYV8lQ7rvFbjzEa5sz=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCeFvaOWKmS0T-rSQEcfZNog/nuoJZPH4J8KS_9EP9Y6GgAE","alt":"ハート","sharedTooltipText":":_ハート:","src":"https://yt3.ggpht.com/8oA_jxEfRu8Ppko_S9f8Xc1PTbsvj-b0QO5IxWiyA9w0_ZVoIukhtjVYV8lQ7rvFbjzEa5sz=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCeFvaOWKmS0T-rSQEcfZNog/nuoJZPH4J8KS_9EP9Y6GgAE","alt":"ハート","sharedTooltipText":":_ハート:","src":"https://yt3.ggpht.com/8oA_jxEfRu8Ppko_S9f8Xc1PTbsvj-b0QO5IxWiyA9w0_ZVoIukhtjVYV8lQ7rvFbjzEa5sz=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きもちいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ぎゅー"}], "scope": "channel" }
+  ]
+}

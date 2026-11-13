@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Amoko Ch. 甘乃あもこ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCeTxs8lq2gadk89Y1yGKPGA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんもこ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんもこ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつもこー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍒"},{"type":"text","value":"🍒"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはもこー"}], "scope": "channel" }
+  ]
+}

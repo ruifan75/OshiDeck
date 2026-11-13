@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ぴーこ / Piko",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCDbrtRQLw0P73Bhwe_nnC5Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🐹"},{"type":"text","value":"☁"},{"type":"text","value":"🩵"},{"type":"text","value":"🎶"},{"type":"text","value":"🐹"},{"type":"text","value":"☁"},{"type":"text","value":"🩵"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんぴこ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぴこ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"たいき"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCDbrtRQLw0P73Bhwe_nnC5Q/JcB-ZpjMFMSn_9EPi-iliAQ","alt":"こんの文字","sharedTooltipText":":_こんの文字:","src":"https://yt3.ggpht.com/s8e3GdWrxGO0eJq30nIGgesETVWQSUkuI8C4cOgGhV7TewuZtFnG_No8zRFYvTIDwlwX0Fa-=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDbrtRQLw0P73Bhwe_nnC5Q/2qzLZbLvLti1_9EP096MuAc","alt":"ぴこの文字","sharedTooltipText":":_ぴこの文字:","src":"https://yt3.ggpht.com/STqcfle0-5fC1cw6iZIKX5H1FMKV0ygR7iugbR89UqI96E3XNkOqDajsrTDm-pIdXsxK6K-Wzg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCDbrtRQLw0P73Bhwe_nnC5Q/Y4eWZo7GCZ-8_9EPnuuxmAI","alt":"おつの文字","sharedTooltipText":":_おつの文字:","src":"https://yt3.ggpht.com/osXjQnoTsHe2tKEUJyzzYPvtZND5AdNIQas_fssFNZqqDY0bYzgiZ2Yn0LxDuQL9ba1Sf15y_9Y=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDbrtRQLw0P73Bhwe_nnC5Q/2qzLZbLvLti1_9EP096MuAc","alt":"ぴこの文字","sharedTooltipText":":_ぴこの文字:","src":"https://yt3.ggpht.com/STqcfle0-5fC1cw6iZIKX5H1FMKV0ygR7iugbR89UqI96E3XNkOqDajsrTDm-pIdXsxK6K-Wzg=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "安藤ナツ / Natsu Ando",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCUTrRvqZOTkxsQndPjXP9Sw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつおつ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" }
+  ]
+}

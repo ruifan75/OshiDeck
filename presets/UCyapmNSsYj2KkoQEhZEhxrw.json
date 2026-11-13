@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "Elaine Celestia Ch.『 Re:Memories 』",
-  "note": "過去13配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCyapmNSsYj2KkoQEhZEhxrw",
   "cards": [
-    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"!clap"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"otchii"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCyapmNSsYj2KkoQEhZEhxrw/BzDVaOT3BvHBmsMPmPDjsQU","alt":"haha","sharedTooltipText":":_haha:","src":"https://yt3.ggpht.com/YzyCkvG-QUMUTNBG1UiNE3TL1W1vzwaHnGAqmm73w8L2LM2tcuugMo4WBjqmXLx6yk13DAFqEQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyapmNSsYj2KkoQEhZEhxrw/BzDVaOT3BvHBmsMPmPDjsQU","alt":"haha","sharedTooltipText":":_haha:","src":"https://yt3.ggpht.com/YzyCkvG-QUMUTNBG1UiNE3TL1W1vzwaHnGAqmm73w8L2LM2tcuugMo4WBjqmXLx6yk13DAFqEQ=w48-h48-c-k-nd"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCyapmNSsYj2KkoQEhZEhxrw/1YAoaNLMEq-3_9EPhcPHiAM","alt":"lightstick","sharedTooltipText":":_lightstick:","src":"https://yt3.ggpht.com/bggqGUI71S4z0PNssfvJTBRqx0IrkrWLdh_pOlg5WzJoZDWv_hU9HuUU-ibr-FKsm87PD-B9wA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyapmNSsYj2KkoQEhZEhxrw/1YAoaNLMEq-3_9EPhcPHiAM","alt":"lightstick","sharedTooltipText":":_lightstick:","src":"https://yt3.ggpht.com/bggqGUI71S4z0PNssfvJTBRqx0IrkrWLdh_pOlg5WzJoZDWv_hU9HuUU-ibr-FKsm87PD-B9wA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyapmNSsYj2KkoQEhZEhxrw/1YAoaNLMEq-3_9EPhcPHiAM","alt":"lightstick","sharedTooltipText":":_lightstick:","src":"https://yt3.ggpht.com/bggqGUI71S4z0PNssfvJTBRqx0IrkrWLdh_pOlg5WzJoZDWv_hU9HuUU-ibr-FKsm87PD-B9wA=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"otsuuu"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"GG"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"aku"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"wow"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"aloo"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"wkwkw"}], "scope": "channel" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCyapmNSsYj2KkoQEhZEhxrw/309QZ4faJ-a0_9EPrvzR4AQ","alt":"sad","sharedTooltipText":":_sad:","src":"https://yt3.ggpht.com/V8AY8hY8yvfl1InY8KK3DGfz9JAzBJSO0U2vuxDXGYxdJ8YhT4S_pnbm4VKX1O8-t_HmSbmD=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyapmNSsYj2KkoQEhZEhxrw/309QZ4faJ-a0_9EPrvzR4AQ","alt":"sad","sharedTooltipText":":_sad:","src":"https://yt3.ggpht.com/V8AY8hY8yvfl1InY8KK3DGfz9JAzBJSO0U2vuxDXGYxdJ8YhT4S_pnbm4VKX1O8-t_HmSbmD=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyapmNSsYj2KkoQEhZEhxrw/309QZ4faJ-a0_9EPrvzR4AQ","alt":"sad","sharedTooltipText":":_sad:","src":"https://yt3.ggpht.com/V8AY8hY8yvfl1InY8KK3DGfz9JAzBJSO0U2vuxDXGYxdJ8YhT4S_pnbm4VKX1O8-t_HmSbmD=w48-h48-c-k-nd"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"nooo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"alooo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nt"}], "scope": "channel" }
   ]
 }

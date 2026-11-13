@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "百瀬ヒバナ- FLANICA",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCGLrsPlc2DpavAxmj1QV1tw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎇"},{"type":"text","value":"🎶"},{"type":"text","value":"🎇"},{"type":"text","value":"🎶"},{"type":"text","value":"🎇"},{"type":"text","value":"🎶"},{"type":"text","value":"🎇"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCGLrsPlc2DpavAxmj1QV1tw/_D-6arubE5-Is8IPs9-osQU","alt":"スタンプお","sharedTooltipText":":_スタンプお:","src":"https://yt3.ggpht.com/stracYE2FleI8OEJ90hMFhGU5LnE3L4AutwvZAtlgCPL9OXQpEb8auE7E4rC3QO8Oh3CdmZlyeQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGLrsPlc2DpavAxmj1QV1tw/_D-6aqWcE5-Is8IPs9-osQU","alt":"スタンプさらば","sharedTooltipText":":_スタンプさらば:","src":"https://yt3.ggpht.com/w5v2-nFn50Y6_JW1P7etJK-L3_N7mO1nDU1fUuZyVgrXgHNCBRzNgKmMmKhD5c1LOoj6KgFf90A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGLrsPlc2DpavAxmj1QV1tw/_D-6arqdE5-Is8IPs9-osQU","alt":"スタンプえー","sharedTooltipText":":_スタンプえー:","src":"https://yt3.ggpht.com/7vOl-EnuiPfIeM1GKSuuy2Hac7c9Leweoaf8JGKF0mYT3ACj-xfMNygljfWsYpWqFWLAq8JHLw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCGLrsPlc2DpavAxmj1QV1tw/c7S7ar-oE5yR9fwP166q6AM","alt":"ryou","sharedTooltipText":":_ryou:","src":"https://yt3.ggpht.com/IXKO6KXW8Bd7ifIL3F_d6XcHjf5JcQX9mAhJnMLShyr3k0fUNmQY83LMTzQ8S-NjjQ1UncQKWqs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGLrsPlc2DpavAxmj1QV1tw/c7S7ar-oE5yR9fwP166q6AM","alt":"ryou","sharedTooltipText":":_ryou:","src":"https://yt3.ggpht.com/IXKO6KXW8Bd7ifIL3F_d6XcHjf5JcQX9mAhJnMLShyr3k0fUNmQY83LMTzQ8S-NjjQ1UncQKWqs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGLrsPlc2DpavAxmj1QV1tw/c7S7ar-oE5yR9fwP166q6AM","alt":"ryou","sharedTooltipText":":_ryou:","src":"https://yt3.ggpht.com/IXKO6KXW8Bd7ifIL3F_d6XcHjf5JcQX9mAhJnMLShyr3k0fUNmQY83LMTzQ8S-NjjQ1UncQKWqs=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍄"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おさらばえー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🔥"},{"type":"text","value":"🔥"},{"type":"text","value":"🔥"},{"type":"text","value":"🔥"},{"type":"text","value":"🔥"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

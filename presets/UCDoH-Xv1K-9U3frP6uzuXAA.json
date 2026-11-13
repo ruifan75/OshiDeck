@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Tomoe Umari Ch.",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCDoH-Xv1K-9U3frP6uzuXAA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bless you"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yeah"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi tomoe"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCDoH-Xv1K-9U3frP6uzuXAA/zrY_ZKHZJPeP_9EP_dmaoAM","alt":"tomoferal","sharedTooltipText":":_tomoferal:","src":"https://yt3.ggpht.com/WnH46Qf5LFaonGNK_huX3eH-dojGuVWsnOBfYMPtJjFfiRFTblyMOfWkv5rBKk7o5XJeNsfgUZc=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDoH-Xv1K-9U3frP6uzuXAA/zrY_ZKHZJPeP_9EP_dmaoAM","alt":"tomoferal","sharedTooltipText":":_tomoferal:","src":"https://yt3.ggpht.com/WnH46Qf5LFaonGNK_huX3eH-dojGuVWsnOBfYMPtJjFfiRFTblyMOfWkv5rBKk7o5XJeNsfgUZc=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDoH-Xv1K-9U3frP6uzuXAA/zrY_ZKHZJPeP_9EP_dmaoAM","alt":"tomoferal","sharedTooltipText":":_tomoferal:","src":"https://yt3.ggpht.com/WnH46Qf5LFaonGNK_huX3eH-dojGuVWsnOBfYMPtJjFfiRFTblyMOfWkv5rBKk7o5XJeNsfgUZc=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDoH-Xv1K-9U3frP6uzuXAA/zrY_ZKHZJPeP_9EP_dmaoAM","alt":"tomoferal","sharedTooltipText":":_tomoferal:","src":"https://yt3.ggpht.com/WnH46Qf5LFaonGNK_huX3eH-dojGuVWsnOBfYMPtJjFfiRFTblyMOfWkv5rBKk7o5XJeNsfgUZc=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

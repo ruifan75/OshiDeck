@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "花依よるは / Hanayori Yoruha",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCXWWTCS2f4FcD-V8SXdvrjA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🪼"},{"type":"text","value":"🌿"},{"type":"text","value":"🎶"},{"type":"text","value":"🪼"},{"type":"text","value":"🌿"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんよるはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつよるは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんよるは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつよるは～"}], "scope": "channel" }
+  ]
+}

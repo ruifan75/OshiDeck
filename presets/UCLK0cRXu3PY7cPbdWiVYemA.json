@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "羽流鷲りりり / Ririri Channel【ななしいんく】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCLK0cRXu3PY7cPbdWiVYemA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんりりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCLK0cRXu3PY7cPbdWiVYemA/N1SUaamhLJaC7OsPtcPz0Q4","alt":"こんりり","sharedTooltipText":":_こんりり:","src":"https://yt3.ggpht.com/Iw9NBcil8Ycwhk_XCLLPUk9p4pOKIGBZiBp5iI2ytSzHZaiFPM1pCHlBR4N2bQFznYLxN10Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCLK0cRXu3PY7cPbdWiVYemA/N1SUaamhLJaC7OsPtcPz0Q4","alt":"こんりり","sharedTooltipText":":_こんりり:","src":"https://yt3.ggpht.com/Iw9NBcil8Ycwhk_XCLLPUk9p4pOKIGBZiBp5iI2ytSzHZaiFPM1pCHlBR4N2bQFznYLxN10Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCLK0cRXu3PY7cPbdWiVYemA/N1SUaamhLJaC7OsPtcPz0Q4","alt":"こんりり","sharedTooltipText":":_こんりり:","src":"https://yt3.ggpht.com/Iw9NBcil8Ycwhk_XCLLPUk9p4pOKIGBZiBp5iI2ytSzHZaiFPM1pCHlBR4N2bQFznYLxN10Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCLK0cRXu3PY7cPbdWiVYemA/9KYAaZurGeWYs8IP986oYQ","alt":"おつりり","sharedTooltipText":":_おつりり:","src":"https://yt3.ggpht.com/vkG06hqmNunaGPDwcpRtuhN1Tuh7vUY-POGsqYihRajBrSnJwDIqBYpegxtVDl6YFrGeK2JIASQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCLK0cRXu3PY7cPbdWiVYemA/9KYAaZurGeWYs8IP986oYQ","alt":"おつりり","sharedTooltipText":":_おつりり:","src":"https://yt3.ggpht.com/vkG06hqmNunaGPDwcpRtuhN1Tuh7vUY-POGsqYihRajBrSnJwDIqBYpegxtVDl6YFrGeK2JIASQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCLK0cRXu3PY7cPbdWiVYemA/9KYAaZurGeWYs8IP986oYQ","alt":"おつりり","sharedTooltipText":":_おつりり:","src":"https://yt3.ggpht.com/vkG06hqmNunaGPDwcpRtuhN1Tuh7vUY-POGsqYihRajBrSnJwDIqBYpegxtVDl6YFrGeK2JIASQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCLK0cRXu3PY7cPbdWiVYemA/1jKTaL_zLfed_9EPg8WouQQ","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/L2ufdZ2CCz28MAzEoo_MsPFJp0k8Wbnsz_lHhohpLj-4bM1WFy3PNMMj1R2x1XOy8_9znK5pBQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

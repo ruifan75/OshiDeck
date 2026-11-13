@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": " 宗谷いちか / Ichika Channel【ななしいんく】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC2kyQhzGOB-JPgcQX9OMgEw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ちゃおん！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"りしーゆー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC2kyQhzGOB-JPgcQX9OMgEw/K0lyYsiVJYe_8wSPnJyYAg","alt":"ichika007","sharedTooltipText":":_ichika007:","src":"https://yt3.ggpht.com/IUJ2WgM36X_ttXnl9EbeiBhJGQ93CziSLijDbeU7eZPRPoqIqsfFliGAx9xB3IunCzP4jEkJrQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2kyQhzGOB-JPgcQX9OMgEw/K0lyYsiVJYe_8wSPnJyYAg","alt":"ichika007","sharedTooltipText":":_ichika007:","src":"https://yt3.ggpht.com/IUJ2WgM36X_ttXnl9EbeiBhJGQ93CziSLijDbeU7eZPRPoqIqsfFliGAx9xB3IunCzP4jEkJrQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2kyQhzGOB-JPgcQX9OMgEw/K0lyYsiVJYe_8wSPnJyYAg","alt":"ichika007","sharedTooltipText":":_ichika007:","src":"https://yt3.ggpht.com/IUJ2WgM36X_ttXnl9EbeiBhJGQ93CziSLijDbeU7eZPRPoqIqsfFliGAx9xB3IunCzP4jEkJrQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2kyQhzGOB-JPgcQX9OMgEw/K0lyYsiVJYe_8wSPnJyYAg","alt":"ichika007","sharedTooltipText":":_ichika007:","src":"https://yt3.ggpht.com/IUJ2WgM36X_ttXnl9EbeiBhJGQ93CziSLijDbeU7eZPRPoqIqsfFliGAx9xB3IunCzP4jEkJrQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2kyQhzGOB-JPgcQX9OMgEw/K0lyYsiVJYe_8wSPnJyYAg","alt":"ichika007","sharedTooltipText":":_ichika007:","src":"https://yt3.ggpht.com/IUJ2WgM36X_ttXnl9EbeiBhJGQ93CziSLijDbeU7eZPRPoqIqsfFliGAx9xB3IunCzP4jEkJrQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" }
+  ]
+}

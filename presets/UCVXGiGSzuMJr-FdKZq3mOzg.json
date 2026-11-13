@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "上乗 恋/REN CHANNEL",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCVXGiGSzuMJr-FdKZq3mOzg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいぱちー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんぱちはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ご一緒に！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVXGiGSzuMJr-FdKZq3mOzg/g3hcZqiOGeGu_9EP4LzG2Qk","alt":"文字ぱち","sharedTooltipText":":_文字ぱち:","src":"https://yt3.ggpht.com/me1Ljr7tl597OPPtGvYdX0RutFgguWD37cq9vhP10hzbSamzRHPy8VDcqPdimoHYkkfDnzzB=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVXGiGSzuMJr-FdKZq3mOzg/g3hcZqiOGeGu_9EP4LzG2Qk","alt":"文字ぱち","sharedTooltipText":":_文字ぱち:","src":"https://yt3.ggpht.com/me1Ljr7tl597OPPtGvYdX0RutFgguWD37cq9vhP10hzbSamzRHPy8VDcqPdimoHYkkfDnzzB=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVXGiGSzuMJr-FdKZq3mOzg/g3hcZqiOGeGu_9EP4LzG2Qk","alt":"文字ぱち","sharedTooltipText":":_文字ぱち:","src":"https://yt3.ggpht.com/me1Ljr7tl597OPPtGvYdX0RutFgguWD37cq9vhP10hzbSamzRHPy8VDcqPdimoHYkkfDnzzB=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVXGiGSzuMJr-FdKZq3mOzg/g3hcZqiOGeGu_9EP4LzG2Qk","alt":"文字ぱち","sharedTooltipText":":_文字ぱち:","src":"https://yt3.ggpht.com/me1Ljr7tl597OPPtGvYdX0RutFgguWD37cq9vhP10hzbSamzRHPy8VDcqPdimoHYkkfDnzzB=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVXGiGSzuMJr-FdKZq3mOzg/_i9UZsGtIfi9_9EPoqS2iAY","alt":"上乗恋KP","sharedTooltipText":":_上乗恋KP:","src":"https://yt3.ggpht.com/5legNV7gn3xpkhcyLXoZSKBBIbABq0kMoZTJKLsVLGMoL2EC5mkn_QwaKYJ95pdcF7QTdFL8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVXGiGSzuMJr-FdKZq3mOzg/_i9UZsGtIfi9_9EPoqS2iAY","alt":"上乗恋KP","sharedTooltipText":":_上乗恋KP:","src":"https://yt3.ggpht.com/5legNV7gn3xpkhcyLXoZSKBBIbABq0kMoZTJKLsVLGMoL2EC5mkn_QwaKYJ95pdcF7QTdFL8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVXGiGSzuMJr-FdKZq3mOzg/_i9UZsGtIfi9_9EPoqS2iAY","alt":"上乗恋KP","sharedTooltipText":":_上乗恋KP:","src":"https://yt3.ggpht.com/5legNV7gn3xpkhcyLXoZSKBBIbABq0kMoZTJKLsVLGMoL2EC5mkn_QwaKYJ95pdcF7QTdFL8=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" }
+  ]
+}

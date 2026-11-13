@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Temari ch. / 穂香てまり",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC8_Zs00o8Zi9OHh8tJKfUGg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんてま〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつてまー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌾"},{"type":"text","value":"💕"},{"type":"text","value":"🌾"},{"type":"text","value":"💕"},{"type":"text","value":"🌾"},{"type":"text","value":"💕"},{"type":"text","value":"🌾"},{"type":"text","value":"💕"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんてま～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お名前呼びありがとう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ただいまー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いってきまーす"}], "scope": "channel" }
+  ]
+}

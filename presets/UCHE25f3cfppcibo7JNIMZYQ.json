@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "奏星イト -Ito channel-",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCHE25f3cfppcibo7JNIMZYQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"},{"type":"text","value":"🛸"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🛸"},{"type":"text","value":"🎶"},{"type":"text","value":"🛸"},{"type":"text","value":"🎶"},{"type":"text","value":"🛸"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🛸"},{"type":"text","value":"💙"},{"type":"text","value":"🎶"},{"type":"text","value":"🛸"},{"type":"text","value":"💙"},{"type":"text","value":"🎶"},{"type":"text","value":"🛸"},{"type":"text","value":"💙"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"気持ちいい"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "七八くまの Kumano Ch.",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC_4x4gCnCkJ2o-VINN0AJ6A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"くまのちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👿"},{"type":"text","value":"💛"},{"type":"text","value":"🎶"},{"type":"text","value":"👿"},{"type":"text","value":"💛"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_4x4gCnCkJ2o-VINN0AJ6A/W-ulYonWG4nt8wTdnaPABA","alt":"おつの","sharedTooltipText":":_おつの:","src":"https://yt3.ggpht.com/i7LuGlWFDs35BI7Jzkvt9rXp_k8SD1QugTDQmy8f8Q_LxQMst5l9sP0ormnObpPjHmEmnBrcVg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_4x4gCnCkJ2o-VINN0AJ6A/W-ulYonWG4nt8wTdnaPABA","alt":"おつの","sharedTooltipText":":_おつの:","src":"https://yt3.ggpht.com/i7LuGlWFDs35BI7Jzkvt9rXp_k8SD1QugTDQmy8f8Q_LxQMst5l9sP0ormnObpPjHmEmnBrcVg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_4x4gCnCkJ2o-VINN0AJ6A/W-ulYonWG4nt8wTdnaPABA","alt":"おつの","sharedTooltipText":":_おつの:","src":"https://yt3.ggpht.com/i7LuGlWFDs35BI7Jzkvt9rXp_k8SD1QugTDQmy8f8Q_LxQMst5l9sP0ormnObpPjHmEmnBrcVg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👿"},{"type":"text","value":"✌"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはのー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_4x4gCnCkJ2o-VINN0AJ6A/eIIbZsW0M-fD_9EP8_mw6A8","alt":"dance1","sharedTooltipText":":_dance1:","src":"https://yt3.ggpht.com/aIvmP-aQEPPlCfsYfBB56-V5zGnTuHepwDEbu0R36BJ2o42iqHVEmjxRh2tOxF9BbGfck7FbsBA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_4x4gCnCkJ2o-VINN0AJ6A/eIIbZui0M-fD_9EP8_mw6A8","alt":"dance2","sharedTooltipText":":_dance2:","src":"https://yt3.ggpht.com/5A6G_85VPm5iVPJe4MM1QWyhv8w7GhvhuqyF9A4XmwZ4mW0mhwn4YH5JwuPZnezwf8F7_zIv0gI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_4x4gCnCkJ2o-VINN0AJ6A/eIIbZoO1M-fD_9EP8_mw6A8","alt":"dance3","sharedTooltipText":":_dance3:","src":"https://yt3.ggpht.com/XgbADK-ix1t4G7UQf-VqI5c9rjFLT2Z4G_Y0c7UGed8cLesdggdcYCl3HVpy9kqGMdvYTBIjI_A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつのー"}], "scope": "channel" }
+  ]
+}

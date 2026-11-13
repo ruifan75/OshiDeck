@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Juna Unagi Ch.",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCTFCSCPvqjXEs3zq91aeOVg",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTFCSCPvqjXEs3zq91aeOVg/W_qUY5G2JaaI_9EPpOyAuAg","alt":"JunaCHEER","sharedTooltipText":":_JunaCHEER:","src":"https://yt3.ggpht.com/9dZyHJnrFOrjmOEfV72uAsgOhhVTmXf4TQOFjXnq0SBRDiJEuJyH1Yr0d7dffFYzYXfepWYU4A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCTFCSCPvqjXEs3zq91aeOVg/W_qUY5G2JaaI_9EPpOyAuAg","alt":"JunaCHEER","sharedTooltipText":":_JunaCHEER:","src":"https://yt3.ggpht.com/9dZyHJnrFOrjmOEfV72uAsgOhhVTmXf4TQOFjXnq0SBRDiJEuJyH1Yr0d7dffFYzYXfepWYU4A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCTFCSCPvqjXEs3zq91aeOVg/W_qUY5G2JaaI_9EPpOyAuAg","alt":"JunaCHEER","sharedTooltipText":":_JunaCHEER:","src":"https://yt3.ggpht.com/9dZyHJnrFOrjmOEfV72uAsgOhhVTmXf4TQOFjXnq0SBRDiJEuJyH1Yr0d7dffFYzYXfepWYU4A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTFCSCPvqjXEs3zq91aeOVg/OHvtY__rAeeH_9EP3b240Ag","alt":"JunaWheeze","sharedTooltipText":":_JunaWheeze:","src":"https://yt3.ggpht.com/nntFCUc6WsrfXAkh_-f4ZVBvRUCgsCJdMpnaZoGMxlg8CyUeRu9gmWsbDlUfxYAHp5NWLg6lQg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTFCSCPvqjXEs3zq91aeOVg/-7_7Y8HQF4_57gPbuaf4BQ","alt":"JunaWow","sharedTooltipText":":_JunaWow:","src":"https://yt3.ggpht.com/93JtLT_oRVVkP4FkYzogVy_d1oTuS4QHvo9mZNrdTTRi8XUhUoRAyQGCEZ81toKImecUaOtJ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCTFCSCPvqjXEs3zq91aeOVg/-7_7Y8HQF4_57gPbuaf4BQ","alt":"JunaWow","sharedTooltipText":":_JunaWow:","src":"https://yt3.ggpht.com/93JtLT_oRVVkP4FkYzogVy_d1oTuS4QHvo9mZNrdTTRi8XUhUoRAyQGCEZ81toKImecUaOtJ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCTFCSCPvqjXEs3zq91aeOVg/-7_7Y8HQF4_57gPbuaf4BQ","alt":"JunaWow","sharedTooltipText":":_JunaWow:","src":"https://yt3.ggpht.com/93JtLT_oRVVkP4FkYzogVy_d1oTuS4QHvo9mZNrdTTRi8XUhUoRAyQGCEZ81toKImecUaOtJ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Juna"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Nice"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTFCSCPvqjXEs3zq91aeOVg/OHvtY6jzAeeH_9EP3b240Ag","alt":"JunaPat","sharedTooltipText":":_JunaPat:","src":"https://yt3.ggpht.com/n-gpCHeRFkszIbFqwpNPQUYu19szisFwhf1l0ZiKEBxbQCCweMDTy9M93SmMlED__oTqWALC1As=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

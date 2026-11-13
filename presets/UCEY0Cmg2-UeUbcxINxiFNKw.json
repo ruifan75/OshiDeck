@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "黒宮 ティマ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCEY0Cmg2-UeUbcxINxiFNKw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCEY0Cmg2-UeUbcxINxiFNKw/9sZFYq6QJoSG8wSvmKWYDw","alt":"ooo","sharedTooltipText":":_ooo:","src":"https://yt3.ggpht.com/fHeKHKUYCDMRYvJAZnHx-ZwR7tB3QGuNyP5uaAFbF0yBo5_FPvfKj5v_RRzNIgSWMdS-tgX_BQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCEY0Cmg2-UeUbcxINxiFNKw/2GZAYuPaDISG8wSN7IigBQ","alt":"timanemu","sharedTooltipText":":_timanemu:","src":"https://yt3.ggpht.com/jctGuxzdia5MqKwaYiX2Q4r1v_lRA8pQ46NqPSypeei8UFn2eCPBYPMg6UKcTgLPsXp1yeao=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCEY0Cmg2-UeUbcxINxiFNKw/2GZAYuPaDISG8wSN7IigBQ","alt":"timanemu","sharedTooltipText":":_timanemu:","src":"https://yt3.ggpht.com/jctGuxzdia5MqKwaYiX2Q4r1v_lRA8pQ46NqPSypeei8UFn2eCPBYPMg6UKcTgLPsXp1yeao=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCEY0Cmg2-UeUbcxINxiFNKw/2GZAYuPaDISG8wSN7IigBQ","alt":"timanemu","sharedTooltipText":":_timanemu:","src":"https://yt3.ggpht.com/jctGuxzdia5MqKwaYiX2Q4r1v_lRA8pQ46NqPSypeei8UFn2eCPBYPMg6UKcTgLPsXp1yeao=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" }
+  ]
+}

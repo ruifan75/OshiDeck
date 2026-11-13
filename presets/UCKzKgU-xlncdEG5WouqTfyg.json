@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Meimi Majokko【Glitch Stars】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCKzKgU-xlncdEG5WouqTfyg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCKzKgU-xlncdEG5WouqTfyg/VNT_ZYOlD-yP_9EP2sy9aA","alt":"meiCheer","sharedTooltipText":":_meiCheer:","src":"https://yt3.ggpht.com/9AK7TLlQ41pJGr20KB2HTyPq573snZgn6RZkUIdYY7HhG8Ft4VI2X3Lyc641DrVUzT1InMnuOQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCKzKgU-xlncdEG5WouqTfyg/VNT_ZYOlD-yP_9EP2sy9aA","alt":"meiCheer","sharedTooltipText":":_meiCheer:","src":"https://yt3.ggpht.com/9AK7TLlQ41pJGr20KB2HTyPq573snZgn6RZkUIdYY7HhG8Ft4VI2X3Lyc641DrVUzT1InMnuOQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCKzKgU-xlncdEG5WouqTfyg/VNT_ZYOlD-yP_9EP2sy9aA","alt":"meiCheer","sharedTooltipText":":_meiCheer:","src":"https://yt3.ggpht.com/9AK7TLlQ41pJGr20KB2HTyPq573snZgn6RZkUIdYY7HhG8Ft4VI2X3Lyc641DrVUzT1InMnuOQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCKzKgU-xlncdEG5WouqTfyg/8PkNZtvAGNmM_9EP0rOOkAc","alt":"meiPat","sharedTooltipText":":_meiPat:","src":"https://yt3.ggpht.com/L27acsC4GQeGGm_Qc3odAOV63NSlsnvkj2zeGp3jqxYXoGU2wiE5hwAOFP-S5FskaZBjKIhHRQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCKzKgU-xlncdEG5WouqTfyg/8PkNZtvAGNmM_9EP0rOOkAc","alt":"meiPat","sharedTooltipText":":_meiPat:","src":"https://yt3.ggpht.com/L27acsC4GQeGGm_Qc3odAOV63NSlsnvkj2zeGp3jqxYXoGU2wiE5hwAOFP-S5FskaZBjKIhHRQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCKzKgU-xlncdEG5WouqTfyg/8PkNZtvAGNmM_9EP0rOOkAc","alt":"meiPat","sharedTooltipText":":_meiPat:","src":"https://yt3.ggpht.com/L27acsC4GQeGGm_Qc3odAOV63NSlsnvkj2zeGp3jqxYXoGU2wiE5hwAOFP-S5FskaZBjKIhHRQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Meimimumemo!"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCKzKgU-xlncdEG5WouqTfyg/VNT_ZYSkD-yP_9EP2sy9aA","alt":"meiHeart","sharedTooltipText":":_meiHeart:","src":"https://yt3.ggpht.com/1Z00KcMLmWQrA_OTVSriEIWDjB8JbTR1NTyz3HOS8qHCwg0Gz71NzmuDgzrMLyjt66g1joQB1A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCKzKgU-xlncdEG5WouqTfyg/VNT_ZYSkD-yP_9EP2sy9aA","alt":"meiHeart","sharedTooltipText":":_meiHeart:","src":"https://yt3.ggpht.com/1Z00KcMLmWQrA_OTVSriEIWDjB8JbTR1NTyz3HOS8qHCwg0Gz71NzmuDgzrMLyjt66g1joQB1A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCKzKgU-xlncdEG5WouqTfyg/VNT_ZYSkD-yP_9EP2sy9aA","alt":"meiHeart","sharedTooltipText":":_meiHeart:","src":"https://yt3.ggpht.com/1Z00KcMLmWQrA_OTVSriEIWDjB8JbTR1NTyz3HOS8qHCwg0Gz71NzmuDgzrMLyjt66g1joQB1A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCKzKgU-xlncdEG5WouqTfyg/VNT_ZdWkD-yP_9EP2sy9aA","alt":"meiWow","sharedTooltipText":":_meiWow:","src":"https://yt3.ggpht.com/SqtTx7d1GaPMdgTNhh6mBkWFU3HtuRzXinCcLstSh9UBGOA0-UP2wZyoeIeS5sWgBggwrHy34us=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" }
+  ]
+}

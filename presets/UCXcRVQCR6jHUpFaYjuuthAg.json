@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "TSUMIKO (人生つみこ) -Vsinger-",
+  "note": "歌枠2配信・通常4配信のチャットから10枚",
+  "channel": "UCXcRVQCR6jHUpFaYjuuthAg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🫀"},{"type":"text","value":"🎶"},{"type":"text","value":"🫀"},{"type":"text","value":"🎶"},{"type":"text","value":"🫀"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"w"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" }
+  ]
+}

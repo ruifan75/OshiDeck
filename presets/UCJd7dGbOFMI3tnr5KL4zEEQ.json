@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ぐーたらチャンネル",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCJd7dGbOFMI3tnr5KL4zEEQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"わこぐー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぐー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCJd7dGbOFMI3tnr5KL4zEEQ/CaFjZ5WDL5eI_9EP2diNwAM","alt":"わこぐー","sharedTooltipText":":_わこぐー:","src":"https://yt3.ggpht.com/QUj7hAS_nJk5WSoduNfRKF2NxyFJKFcu4nj1nbfxb3LKY_muHswQw1TgmGP3NtRcoYMiQLX1PTg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJd7dGbOFMI3tnr5KL4zEEQ/CaFjZ5WDL5eI_9EP2diNwAM","alt":"わこぐー","sharedTooltipText":":_わこぐー:","src":"https://yt3.ggpht.com/QUj7hAS_nJk5WSoduNfRKF2NxyFJKFcu4nj1nbfxb3LKY_muHswQw1TgmGP3NtRcoYMiQLX1PTg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJd7dGbOFMI3tnr5KL4zEEQ/CaFjZ5WDL5eI_9EP2diNwAM","alt":"わこぐー","sharedTooltipText":":_わこぐー:","src":"https://yt3.ggpht.com/QUj7hAS_nJk5WSoduNfRKF2NxyFJKFcu4nj1nbfxb3LKY_muHswQw1TgmGP3NtRcoYMiQLX1PTg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCJd7dGbOFMI3tnr5KL4zEEQ/MhJtZ72GHri8_9EP9PGs0AQ","alt":"草文字","sharedTooltipText":":_草文字:","src":"https://yt3.ggpht.com/XBYs3jqFXzkE_1CM8fIze_JGTvNbeSJTwZfEU-6HYeC978--_XVEzZl9OnEkBJ1IIxOOh2PdD5w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" }
+  ]
+}

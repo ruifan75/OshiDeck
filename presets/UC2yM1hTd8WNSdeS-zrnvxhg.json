@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Setsuneko CH",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC2yM1hTd8WNSdeS-zrnvxhg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんねこ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんねこ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"がんばれ〜！！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"w"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/egJ1XufTKYfegwOo57ewAg","alt":"shelterin","sharedTooltipText":":shelterin:","src":"https://yt3.ggpht.com/gjC5x98J4BoVSEPfFJaoLtc4tSBGSEdIlfL2FV4iJG9uGNykDP9oJC_QxAuBTJy6dakPxVeC=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつねこー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" }
+  ]
+}

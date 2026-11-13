@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "レナ・ベースティア rena bestia【HLive】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCF4ghCrozjWPSIbqV8tiTSw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつレナ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんレナ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💋"},{"type":"text","value":"😈"},{"type":"text","value":"🎶"},{"type":"text","value":"💋"},{"type":"text","value":"😈"},{"type":"text","value":"🎶"},{"type":"text","value":"💋"},{"type":"text","value":"😈"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんレナ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💋"},{"type":"text","value":"😈"},{"type":"text","value":"💋"},{"type":"text","value":"😈"},{"type":"text","value":"💋"},{"type":"text","value":"😈"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつレナ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" }
+  ]
+}

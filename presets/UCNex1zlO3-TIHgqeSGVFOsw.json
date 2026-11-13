@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "燈舞りん from まりなす",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCNex1zlO3-TIHgqeSGVFOsw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"８８８８８８８８８８８"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNex1zlO3-TIHgqeSGVFOsw/5JuxZ5rJL_qT_9EPgNHmyA0","alt":"とうま","sharedTooltipText":":_とうま:","src":"https://yt3.ggpht.com/plNyLsMHXhrVTVfWthHYXEwMWug55CLX2MqS5ePgvt3G67YrCUwVb2NOoSES3_CBTT4k8WLLlg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNex1zlO3-TIHgqeSGVFOsw/5JuxZ8HJL_qT_9EPgNHmyA0","alt":"りんです","sharedTooltipText":":_りんです:","src":"https://yt3.ggpht.com/GBmOktK7dfHMjO-I-JqHfgGhteF_DzX1wrLSrhz8MhO0v-_tWZnyTNRPIhG-s-zZse9PXRHO_Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNex1zlO3-TIHgqeSGVFOsw/5JuxZ-fIL_qT_9EPgNHmyA0","alt":"よいこ","sharedTooltipText":":_よいこ:","src":"https://yt3.ggpht.com/_qyXrai1tx3RE6_twuTt7Rjw-DesLe7P5HpjJBJQ-8bwSY3G51FJHA5PGRueHvkrgaDsx99Y=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNex1zlO3-TIHgqeSGVFOsw/5JuxZ-fIL_qT_9EPgNHmyA0","alt":"よいこ","sharedTooltipText":":_よいこ:","src":"https://yt3.ggpht.com/_qyXrai1tx3RE6_twuTt7Rjw-DesLe7P5HpjJBJQ-8bwSY3G51FJHA5PGRueHvkrgaDsx99Y=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはよいこー"}], "scope": "channel" }
+  ]
+}

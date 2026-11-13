@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Ceres Fauna Ch. hololive-EN",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCO_aKKYxn4tvrqPjcTzZ6EQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Konfauna"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💚"},{"type":"text","value":"💙"},{"type":"text","value":"💚"},{"type":"text","value":"💙"},{"type":"text","value":"💚"},{"type":"text","value":"💙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"BAU BAU"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Man I Love Fauna"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💙"},{"type":"text","value":"💚"},{"type":"text","value":"💙"},{"type":"text","value":"💚"},{"type":"text","value":"💙"},{"type":"text","value":"💚"}], "scope": "channel" }
+  ]
+}

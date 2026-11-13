@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Toshiruz",
+  "note": "歌枠0配信・通常6配信のチャットから10枚",
+  "channel": "UCT7sUh1Spye6kbBAMZPCsKA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"kkkkkkkkkkkkkkk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"sim"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"kakakakakaka"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oloko"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"iiiiiiiihhh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"eita"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bah"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"mds"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/8gF1Xp_zK8jk8gSDrI2wCw","alt":"elbowcough","sharedTooltipText":":elbowcough:","src":"https://yt3.ggpht.com/DTR9bZd1HOqpRJyz9TKiLb0cqe5Hb84Yi_79A6LWlN1tY-5kXqLDXRmtYVKE9rcqzEghmw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/8gF1Xp_zK8jk8gSDrI2wCw","alt":"elbowcough","sharedTooltipText":":elbowcough:","src":"https://yt3.ggpht.com/DTR9bZd1HOqpRJyz9TKiLb0cqe5Hb84Yi_79A6LWlN1tY-5kXqLDXRmtYVKE9rcqzEghmw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/8gF1Xp_zK8jk8gSDrI2wCw","alt":"elbowcough","sharedTooltipText":":elbowcough:","src":"https://yt3.ggpht.com/DTR9bZd1HOqpRJyz9TKiLb0cqe5Hb84Yi_79A6LWlN1tY-5kXqLDXRmtYVKE9rcqzEghmw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"caraca"}], "scope": "channel" }
+  ]
+}

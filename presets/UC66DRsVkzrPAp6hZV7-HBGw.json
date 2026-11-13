@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "舞鶴よかと / Maizuru Yokato ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC66DRsVkzrPAp6hZV7-HBGw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おいっさー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"よーお"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"もひとつ"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"よーさの"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おいっさー！こんばんは〜。"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ！"}], "scope": "channel" }
+  ]
+}

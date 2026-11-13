@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "さえきやひろのおへや",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCp-8cPCziyRz2OXJWBOjsCQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はろっこつ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はろっこつ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"すごい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCp-8cPCziyRz2OXJWBOjsCQ/BjvNXJnGGqzZ8gSzy5_YAQ","alt":"ぼーんえらい","sharedTooltipText":":_ぼーんえらい:","src":"https://yt3.ggpht.com/Qea1jYTlpZBzuNL7vy3OWkBzkPp3tZqUQsBLaCPuD6Qi-VGiUYJTSLfYyGmeSeY4S2Rg0dds=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCp-8cPCziyRz2OXJWBOjsCQ/YwMoZOzkCYnWgwODzpuQBA","alt":"ぼーんやひろくん","sharedTooltipText":":_ぼーんやひろくん:","src":"https://yt3.ggpht.com/1pERwp04x0TCdYqQQo0wBTElItg8q1o2mlJ3mJYZKJAlC69Tkddqx6cfOXKcJrIbS4x1zIGtIzI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCp-8cPCziyRz2OXJWBOjsCQ/YwMoZOzkCYnWgwODzpuQBA","alt":"ぼーんやひろくん","sharedTooltipText":":_ぼーんやひろくん:","src":"https://yt3.ggpht.com/1pERwp04x0TCdYqQQo0wBTElItg8q1o2mlJ3mJYZKJAlC69Tkddqx6cfOXKcJrIbS4x1zIGtIzI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCp-8cPCziyRz2OXJWBOjsCQ/YwMoZOzkCYnWgwODzpuQBA","alt":"ぼーんやひろくん","sharedTooltipText":":_ぼーんやひろくん:","src":"https://yt3.ggpht.com/1pERwp04x0TCdYqQQo0wBTElItg8q1o2mlJ3mJYZKJAlC69Tkddqx6cfOXKcJrIbS4x1zIGtIzI=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ほとけちゃんねる",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC6441KFh3-Bp09EVE3F21rg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うんうん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わこいむです！"},{"type":"text","value":"💎"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わこいむです！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おついむでした！"},{"type":"text","value":"💎"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー！"}], "scope": "channel" }
+  ]
+}

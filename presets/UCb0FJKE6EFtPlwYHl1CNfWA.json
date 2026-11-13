@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "くるるてんてー丨くるる甲子園",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCb0FJKE6EFtPlwYHl1CNfWA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おつくるる"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCb0FJKE6EFtPlwYHl1CNfWA/z0eDYY69NqiE_9EP-bWa4AY","alt":"おつくるる","sharedTooltipText":":_おつくるる:","src":"https://yt3.ggpht.com/ENXaJt0g_em5sh8cq7sjILqvdxh17NCo1PdBnRC-ppGSrW5mlajWDigxoyOzpDtkKpQ9MJkyeGE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCb0FJKE6EFtPlwYHl1CNfWA/z0eDYY69NqiE_9EP-bWa4AY","alt":"おつくるる","sharedTooltipText":":_おつくるる:","src":"https://yt3.ggpht.com/ENXaJt0g_em5sh8cq7sjILqvdxh17NCo1PdBnRC-ppGSrW5mlajWDigxoyOzpDtkKpQ9MJkyeGE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCb0FJKE6EFtPlwYHl1CNfWA/z0eDYY69NqiE_9EP-bWa4AY","alt":"おつくるる","sharedTooltipText":":_おつくるる:","src":"https://yt3.ggpht.com/ENXaJt0g_em5sh8cq7sjILqvdxh17NCo1PdBnRC-ppGSrW5mlajWDigxoyOzpDtkKpQ9MJkyeGE=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCb0FJKE6EFtPlwYHl1CNfWA/TLvLZPyFMOiK_9EPmKuDyAY","alt":"かんぱい2","sharedTooltipText":":_かんぱい2:","src":"https://yt3.ggpht.com/equq6s1ZANbJqTu4RoqAqt-D8d8jTzfEVGNqF-NqH4RzreF0RzcqgYGLL-e0ppBK0XV3f-EFDA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCb0FJKE6EFtPlwYHl1CNfWA/TLvLZPyFMOiK_9EPmKuDyAY","alt":"かんぱい2","sharedTooltipText":":_かんぱい2:","src":"https://yt3.ggpht.com/equq6s1ZANbJqTu4RoqAqt-D8d8jTzfEVGNqF-NqH4RzreF0RzcqgYGLL-e0ppBK0XV3f-EFDA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCb0FJKE6EFtPlwYHl1CNfWA/TLvLZPyFMOiK_9EPmKuDyAY","alt":"かんぱい2","sharedTooltipText":":_かんぱい2:","src":"https://yt3.ggpht.com/equq6s1ZANbJqTu4RoqAqt-D8d8jTzfEVGNqF-NqH4RzreF0RzcqgYGLL-e0ppBK0XV3f-EFDA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCb0FJKE6EFtPlwYHl1CNfWA/TLvLZPyFMOiK_9EPmKuDyAY","alt":"かんぱい2","sharedTooltipText":":_かんぱい2:","src":"https://yt3.ggpht.com/equq6s1ZANbJqTu4RoqAqt-D8d8jTzfEVGNqF-NqH4RzreF0RzcqgYGLL-e0ppBK0XV3f-EFDA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"KP"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

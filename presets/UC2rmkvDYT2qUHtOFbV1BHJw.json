@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "パン野実々美",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC2rmkvDYT2qUHtOFbV1BHJw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍞"},{"type":"text","value":"🎤"},{"type":"text","value":"🎶"},{"type":"text","value":"🍞"},{"type":"text","value":"🎤"},{"type":"text","value":"🎶"},{"type":"text","value":"🍞"},{"type":"text","value":"🎤"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"},{"type":"text","value":"🍞"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつ"},{"type":"text","value":"🍞"},{"type":"text","value":"！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" }
+  ]
+}

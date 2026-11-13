@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "双星 きら / Futaboshi kira",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCRbzJbCE7fDV7D_5Wv8_9Qg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"📸"},{"type":"text","value":"📸"},{"type":"text","value":"📸"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wwww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんきらー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつきら！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"パ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつきらです！！"}], "scope": "channel" }
+  ]
+}

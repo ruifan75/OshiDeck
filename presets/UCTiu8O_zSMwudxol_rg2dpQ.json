@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "木下ちぷる / Chipuru Ch",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCTiu8O_zSMwudxol_rg2dpQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんちぷ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🐹"},{"type":"text","value":"🎶"},{"type":"text","value":"🪐"},{"type":"text","value":"🎶"},{"type":"text","value":"🐹"},{"type":"text","value":"🎶"},{"type":"text","value":"🪐"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつちぷ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちぷ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ない部費〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつちぷ～"}], "scope": "channel" }
+  ]
+}

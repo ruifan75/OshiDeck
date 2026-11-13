@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ミミカ・モーフ 【ホラー映画紹介チャンネル MBD案内所】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCE0yFdA-ZiCKVCqhHdVCV0Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ミミカさんおはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCE0yFdA-ZiCKVCqhHdVCV0Q/8_a6aNfJEt6boPwPn9ya0AU","alt":"待機スタンプ","sharedTooltipText":":_待機スタンプ:","src":"https://yt3.ggpht.com/IYW_YtF_SsxHqrSElRyOhAN3Had-dOGFY82CvJNK23rLvp72bjyy1UH8TGn5T6WrRFMEdI6qFdk=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとうございました！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" }
+  ]
+}

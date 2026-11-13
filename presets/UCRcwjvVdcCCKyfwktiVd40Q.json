@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "高細工さとり / Takazaiku Satori",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCRcwjvVdcCCKyfwktiVd40Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎶"},{"type":"text","value":"✨"},{"type":"text","value":"🎶"},{"type":"text","value":"✨"},{"type":"text","value":"🎶"},{"type":"text","value":"✨"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"✨"},{"type":"text","value":"🎶"},{"type":"text","value":"✨"},{"type":"text","value":"🎶"},{"type":"text","value":"✨"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🐹"},{"type":"text","value":"🐹"},{"type":"text","value":"🐹"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはよー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRcwjvVdcCCKyfwktiVd40Q/FUDRYZfNF82E8wTYsY_4CQ","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/Ot6gnDjz42pTBxws-nDP6pv2OfeeEVTDZVlKjczBDrK7IdE8RTfNLcGNVAMPAYHjhvQZ0wbI=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

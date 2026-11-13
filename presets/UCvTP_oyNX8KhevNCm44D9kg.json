@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "心出結",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCvTP_oyNX8KhevNCm44D9kg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"参加希望です"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜参加希望です"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんろで〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"参加希望〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え！？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとうございました！"}], "scope": "channel" }
+  ]
+}

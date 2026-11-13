@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "蜂弥みつね-Mitsune Ch-【はつレジ】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCJPAiylqzS9wJU8w5iRr5Gg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おはちー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつねー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつね～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはち～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはち〜"},{"type":"text","value":"🐝"},{"type":"text","value":"🍀"}], "scope": "channel" }
+  ]
+}

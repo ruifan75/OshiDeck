@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "BriAtCookiebox",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC1uzMZ7x_Hgun5t8J9uFanw",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1uzMZ7x_Hgun5t8J9uFanw/ERkDZ-yeO-WX_9EPrvLD0As","alt":"BriAtDance","sharedTooltipText":":_BriAtDance:","src":"https://yt3.ggpht.com/BfhYQgyxFCpz8nMsBTUGKI10VHmD_wFdGv1h4T_G9ZeTp4Mf9BfNsFx-d6-z1j_Iobo6xJ85=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1uzMZ7x_Hgun5t8J9uFanw/ERkDZ-yeO-WX_9EPrvLD0As","alt":"BriAtDance","sharedTooltipText":":_BriAtDance:","src":"https://yt3.ggpht.com/BfhYQgyxFCpz8nMsBTUGKI10VHmD_wFdGv1h4T_G9ZeTp4Mf9BfNsFx-d6-z1j_Iobo6xJ85=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1uzMZ7x_Hgun5t8J9uFanw/ERkDZ-yeO-WX_9EPrvLD0As","alt":"BriAtDance","sharedTooltipText":":_BriAtDance:","src":"https://yt3.ggpht.com/BfhYQgyxFCpz8nMsBTUGKI10VHmD_wFdGv1h4T_G9ZeTp4Mf9BfNsFx-d6-z1j_Iobo6xJ85=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"below:"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"HOI HOI"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1uzMZ7x_Hgun5t8J9uFanw/ERkDZ_2fO-WX_9EPrvLD0As","alt":"BriAtHoi","sharedTooltipText":":_BriAtHoi:","src":"https://yt3.ggpht.com/ejqTSNxXTOmxdV0O8T5UbrqhNMA53sgyiLCi7Y2sg1Da2tju488UXzG2Q5y7OusG-cUbuGnJAA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1uzMZ7x_Hgun5t8J9uFanw/ERkDZ_2fO-WX_9EPrvLD0As","alt":"BriAtHoi","sharedTooltipText":":_BriAtHoi:","src":"https://yt3.ggpht.com/ejqTSNxXTOmxdV0O8T5UbrqhNMA53sgyiLCi7Y2sg1Da2tju488UXzG2Q5y7OusG-cUbuGnJAA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1uzMZ7x_Hgun5t8J9uFanw/ERkDZ_2fO-WX_9EPrvLD0As","alt":"BriAtHoi","sharedTooltipText":":_BriAtHoi:","src":"https://yt3.ggpht.com/ejqTSNxXTOmxdV0O8T5UbrqhNMA53sgyiLCi7Y2sg1Da2tju488UXzG2Q5y7OusG-cUbuGnJAA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1uzMZ7x_Hgun5t8J9uFanw/ERkDZ9GkO-WX_9EPrvLD0As","alt":"BriAtWheeze","sharedTooltipText":":_BriAtWheeze:","src":"https://yt3.ggpht.com/3Yctkxj3bzPDxyl1u2qung-2V2RYhP0BriMc5vbLQ-VivT9-fn8R8JcMVJVWFrRI1AyDKUzGj5Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1uzMZ7x_Hgun5t8J9uFanw/ERkDZ9GkO-WX_9EPrvLD0As","alt":"BriAtWheeze","sharedTooltipText":":_BriAtWheeze:","src":"https://yt3.ggpht.com/3Yctkxj3bzPDxyl1u2qung-2V2RYhP0BriMc5vbLQ-VivT9-fn8R8JcMVJVWFrRI1AyDKUzGj5Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1uzMZ7x_Hgun5t8J9uFanw/ERkDZ9GkO-WX_9EPrvLD0As","alt":"BriAtWheeze","sharedTooltipText":":_BriAtWheeze:","src":"https://yt3.ggpht.com/3Yctkxj3bzPDxyl1u2qung-2V2RYhP0BriMc5vbLQ-VivT9-fn8R8JcMVJVWFrRI1AyDKUzGj5Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" }
+  ]
+}

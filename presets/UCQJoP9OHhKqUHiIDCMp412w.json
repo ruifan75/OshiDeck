@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "HONOKA Ch. 陽茅ほのか",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCQJoP9OHhKqUHiIDCMp412w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🩵"},{"type":"text","value":"🧸"},{"type":"text","value":"💛"},{"type":"text","value":"🧸"},{"type":"text","value":"🩵"},{"type":"text","value":"🧸"},{"type":"text","value":"💛"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🩵"},{"type":"text","value":"🧸"},{"type":"text","value":"💛"},{"type":"text","value":"🩵"},{"type":"text","value":"🧸"},{"type":"text","value":"💛"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつやち〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんやちー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんやち～"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQJoP9OHhKqUHiIDCMp412w/qe0Rap6VC-Oa7OsP4LSuwAQ","alt":"NCC","sharedTooltipText":":_NCC:","src":"https://yt3.ggpht.com/cBIPeLDKSxwXMDWTnRU9yZLVwMlEUu-gp1LQE2rBCgoVZFMxJpm64B93sywum-70zSKwsyKF=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQJoP9OHhKqUHiIDCMp412w/qe0Rap6VC-Oa7OsP4LSuwAQ","alt":"NCC","sharedTooltipText":":_NCC:","src":"https://yt3.ggpht.com/cBIPeLDKSxwXMDWTnRU9yZLVwMlEUu-gp1LQE2rBCgoVZFMxJpm64B93sywum-70zSKwsyKF=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQJoP9OHhKqUHiIDCMp412w/qe0Rap6VC-Oa7OsP4LSuwAQ","alt":"NCC","sharedTooltipText":":_NCC:","src":"https://yt3.ggpht.com/cBIPeLDKSxwXMDWTnRU9yZLVwMlEUu-gp1LQE2rBCgoVZFMxJpm64B93sywum-70zSKwsyKF=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

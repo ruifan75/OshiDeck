@@ -1,0 +1,14 @@
+{
+  "format": 2,
+  "name": "牙音舞米※サブチャンネル※",
+  "note": "歌枠0配信・通常4配信のチャットから6枚",
+  "channel": "UCPnOp0REt1QY1aA355pfE2g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんまいまい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"❤"},{"type":"text","value":"❤"},{"type":"text","value":"❤"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/hf90Xv-jHeOR8gSxxrToBA","alt":"yougotthis","sharedTooltipText":":yougotthis:","src":"https://yt3.ggpht.com/s3uOe4lUx3iPIt1h901SlMp_sKCTp3oOVj1JV8izBw_vDVLxFqk5dq-3NX-nK_gnUwVEXld3=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんまいまい～"}], "scope": "channel" }
+  ]
+}

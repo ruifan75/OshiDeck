@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ReLoLo",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCiBXVFuA-IPRrmb9r5cTT2w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎀"},{"type":"text","value":"🐾"},{"type":"text","value":"🎶"},{"type":"text","value":"🎀"},{"type":"text","value":"🐾"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんリロ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんりろー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ごきげんよう～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

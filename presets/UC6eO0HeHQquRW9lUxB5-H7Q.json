@@ -1,0 +1,19 @@
+{
+  "format": 2,
+  "name": "真未夢メエ【アイカツアカデミー ! 】",
+  "note": "歌枠2配信・通常13配信のチャットから11枚",
+  "channel": "UC6eO0HeHQquRW9lUxB5-H7Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"えええええええええええ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いえい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ごきげん羊〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"またメエ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"またメエ～"}], "scope": "channel" }
+  ]
+}

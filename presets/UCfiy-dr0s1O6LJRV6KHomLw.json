@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "木緒なち / kionachi",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCfiy-dr0s1O6LJRV6KHomLw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でしたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCfiy-dr0s1O6LJRV6KHomLw/PmDQXq7SL5ON-gO-q6vwAQ","alt":"kon","sharedTooltipText":":_kon:","src":"https://yt3.ggpht.com/DXQZzefLVk_wcGaTwPT8Hxe7w5EXcgwqyNDmlSqhp-m7DlLL2J7NDWLUmZyx-AJ2SBiK7xpLN1k=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCfiy-dr0s1O6LJRV6KHomLw/l0A-Yb2ENYnY8wTwvqngAQ","alt":"kio","sharedTooltipText":":_kio:","src":"https://yt3.ggpht.com/K9ECjstjaArSgRwKS91rTwI3f2WyiHa9ZfpdiE5dcLFRuvrwH3litDpbXSlrAfubDhKVCtSxmQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかれさまでしたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" }
+  ]
+}

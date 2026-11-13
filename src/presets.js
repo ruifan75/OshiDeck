@@ -133,10 +133,11 @@
   // Ready for the worker to add: fresh ids, no history, and the scope resolved
   // against the channel this is being loaded into.
   function cardsFor(preset, channelId) {
+    if (!channelId) return [];
     return (preset.cards || []).map((card) => ({
       id: crypto.randomUUID(),
       tokens: card.tokens,
-      scope: card.scope === "channel" && channelId ? channelId : OD.store.GLOBAL,
+      scope: channelId,
       createdAt: Date.now(),
       by: {}
     }));

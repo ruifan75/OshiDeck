@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "如月れん -Ren kisaragi-",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCGWa1dMU_sDCaRQjdabsVgg",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCGWa1dMU_sDCaRQjdabsVgg/Ba0iYJniLM2_-gO6g73ABg","alt":"こんれん","sharedTooltipText":":_こんれん:","src":"https://yt3.ggpht.com/i4EpqBnggc_z__VGbiOi80d4QbbnlmUUzrojRxwt3CizaPxYhvNQe8bmLL95bM4dMN9gK6t25Wg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGWa1dMU_sDCaRQjdabsVgg/Ba0iYJniLM2_-gO6g73ABg","alt":"こんれん","sharedTooltipText":":_こんれん:","src":"https://yt3.ggpht.com/i4EpqBnggc_z__VGbiOi80d4QbbnlmUUzrojRxwt3CizaPxYhvNQe8bmLL95bM4dMN9gK6t25Wg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGWa1dMU_sDCaRQjdabsVgg/Ba0iYJniLM2_-gO6g73ABg","alt":"こんれん","sharedTooltipText":":_こんれん:","src":"https://yt3.ggpht.com/i4EpqBnggc_z__VGbiOi80d4QbbnlmUUzrojRxwt3CizaPxYhvNQe8bmLL95bM4dMN9gK6t25Wg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCGWa1dMU_sDCaRQjdabsVgg/Ba0iYK7lLM2_-gO6g73ABg","alt":"おつかれん","sharedTooltipText":":_おつかれん:","src":"https://yt3.ggpht.com/Z1L9Easp6DBes5uBzULchIxhDg9Z-GdmTY0JgM3R8lCZ2OzYkmSKLltOGwdE3m0rQ960LwrL=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGWa1dMU_sDCaRQjdabsVgg/Ba0iYK7lLM2_-gO6g73ABg","alt":"おつかれん","sharedTooltipText":":_おつかれん:","src":"https://yt3.ggpht.com/Z1L9Easp6DBes5uBzULchIxhDg9Z-GdmTY0JgM3R8lCZ2OzYkmSKLltOGwdE3m0rQ960LwrL=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGWa1dMU_sDCaRQjdabsVgg/Ba0iYK7lLM2_-gO6g73ABg","alt":"おつかれん","sharedTooltipText":":_おつかれん:","src":"https://yt3.ggpht.com/Z1L9Easp6DBes5uBzULchIxhDg9Z-GdmTY0JgM3R8lCZ2OzYkmSKLltOGwdE3m0rQ960LwrL=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おめでとう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" }
+  ]
+}

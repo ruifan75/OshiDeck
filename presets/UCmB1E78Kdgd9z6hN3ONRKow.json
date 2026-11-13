@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "花ノ木まる ✿ Hananoki Maru",
-  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCmB1E78Kdgd9z6hN3ONRKow",
   "cards": [
+    { "tokens": [{"type":"text","value":"おつまる〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんまるー"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おつまるー"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんまる～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"たゐき"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" }
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCmB1E78Kdgd9z6hN3ONRKow/zVIiZrOJAefD_9EPw-2KiAk","alt":"nicemaru","sharedTooltipText":":_nicemaru:","src":"https://yt3.ggpht.com/t-Jt4aoD-Z4bAIUdvqVfu2rkALehQybbkFowZzOgBXsz7G3_w9zlZAjwiu3S__xfUKov3E2fBEY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いてら"}], "scope": "channel" }
   ]
 }

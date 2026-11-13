@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "マル・ナナモナ / Maru Nanamona",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCOg01LJmZF9UnwFbly73CVw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🧡"},{"type":"text","value":"✨"},{"type":"text","value":"🥖"},{"type":"text","value":"🧡"},{"type":"text","value":"✨"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんもなー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCOg01LJmZF9UnwFbly73CVw/JVJ0aK3NG--X_9EP3LWliAI","alt":"penlight","sharedTooltipText":":_penlight:","src":"https://yt3.ggpht.com/5n7PziD1fcv93LHiQU5k3gxuX1cKflsKmPBjIwLU-R5VEJ_9XOkTklAZZOCK0b2JOX8D3INIqw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCOg01LJmZF9UnwFbly73CVw/JVJ0aK3NG--X_9EP3LWliAI","alt":"penlight","sharedTooltipText":":_penlight:","src":"https://yt3.ggpht.com/5n7PziD1fcv93LHiQU5k3gxuX1cKflsKmPBjIwLU-R5VEJ_9XOkTklAZZOCK0b2JOX8D3INIqw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCOg01LJmZF9UnwFbly73CVw/JVJ0aK3NG--X_9EP3LWliAI","alt":"penlight","sharedTooltipText":":_penlight:","src":"https://yt3.ggpht.com/5n7PziD1fcv93LHiQU5k3gxuX1cKflsKmPBjIwLU-R5VEJ_9XOkTklAZZOCK0b2JOX8D3INIqw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつもな～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつもなー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCOg01LJmZF9UnwFbly73CVw/JerjYtGWFcPigwOeyZaIDg","alt":"hehe","sharedTooltipText":":_hehe:","src":"https://yt3.ggpht.com/Ryr15SBZS4JpiHUMWK5ZmmyawCqO-3Tig32ZV7wmea9lx8--LRzsF27NzvMXTTGRd9mmm2vB=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCOg01LJmZF9UnwFbly73CVw/vpTiYdu1A9qN8wTirI2oAQ","alt":"love","sharedTooltipText":":_love:","src":"https://yt3.ggpht.com/T3SETOfGqxUrWfnJHKixc-ynJwE8G7dGUDYHyr2KEHE-vGQzJNiThwsT94F6Jcu4DEZPrVMD=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" }
+  ]
+}

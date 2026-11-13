@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Non Anon / 亜音ノン 【Prima Project: EverAfter】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCx_A6fns9qKjybu-6k0ur1g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Kononon~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Otsunonon"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCx_A6fns9qKjybu-6k0ur1g/8P2kaY7-AYm_rr4PgorWcA","alt":"nonHeadpat","sharedTooltipText":":_nonHeadpat:","src":"https://yt3.ggpht.com/2w-Rb6sIltwsmYXV2i2RHTPPy8WRma7nQ5ib9Dxz2tPA6NGIk81JEmlKKnuXx5sl7KiVmdzz=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCx_A6fns9qKjybu-6k0ur1g/8P2kaY7-AYm_rr4PgorWcA","alt":"nonHeadpat","sharedTooltipText":":_nonHeadpat:","src":"https://yt3.ggpht.com/2w-Rb6sIltwsmYXV2i2RHTPPy8WRma7nQ5ib9Dxz2tPA6NGIk81JEmlKKnuXx5sl7KiVmdzz=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCx_A6fns9qKjybu-6k0ur1g/8P2kaY7-AYm_rr4PgorWcA","alt":"nonHeadpat","sharedTooltipText":":_nonHeadpat:","src":"https://yt3.ggpht.com/2w-Rb6sIltwsmYXV2i2RHTPPy8WRma7nQ5ib9Dxz2tPA6NGIk81JEmlKKnuXx5sl7KiVmdzz=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Naki Raid!"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCx_A6fns9qKjybu-6k0ur1g/Fu1UY4XZM4eP_9EPqNKHwAc","alt":"nonW0t","sharedTooltipText":":_nonW0t:","src":"https://yt3.ggpht.com/lsF3LxC_FymBywLbZ9LCHmth3_7r-2drJSsORDKOZhXEOhohmcv6gFCxZ0hJkiB5k00MBII-kQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCx_A6fns9qKjybu-6k0ur1g/ygRBapXNIIOlrr4PvbiA2AY","alt":"non678","sharedTooltipText":":_non678:","src":"https://yt3.ggpht.com/yxLFjTfKHX62KN6tLPpKKYLXKf20sgwNIouRfwUznsCgFS6PqX_3Eo4Bwk7sXMjww_4FzHQf=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

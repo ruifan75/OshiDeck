@@ -98,7 +98,10 @@ try {
   const finished = await finishAll(dir);
   check("the full rebuild keeps more than ten and validates both presets", finished.presets === 2 &&
     finished.cards === 24 && finished.maxCards === 12);
-  check("scope sensitivity is measured on the rebuilt corpus", JSON.parse(readFileSync(join(dir, "scope-sensitivity.json"))).sensitivity.length === 9);
+  const published = JSON.parse(readFileSync(join(dir, "presets", `${channel.id}.preset.json`)));
+  check("finishing publishes channel-only cards without a scope threshold",
+    finished.scope.policy === "channel-only" && finished.scope.status === "ready" &&
+    published.cards.every((card) => card.scope === "channel"));
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }

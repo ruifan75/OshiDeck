@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "温々ねむみ / NukunukuNemumi",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCmLB7NCu7cmC7nhrN3fQE0g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCmLB7NCu7cmC7nhrN3fQE0g/gqREZsDOIP3C_9EPsaCIwAg","alt":"サイリウムのねむみ","sharedTooltipText":":_サイリウムのねむみ:","src":"https://yt3.ggpht.com/-wK23atvCU4KUw0av2QsY7GK-XwxAprMY-etQQ5UhT1tAMB8f2ksTeitevgiMXeIYqYx4pFpeg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmLB7NCu7cmC7nhrN3fQE0g/gqREZsDOIP3C_9EPsaCIwAg","alt":"サイリウムのねむみ","sharedTooltipText":":_サイリウムのねむみ:","src":"https://yt3.ggpht.com/-wK23atvCU4KUw0av2QsY7GK-XwxAprMY-etQQ5UhT1tAMB8f2ksTeitevgiMXeIYqYx4pFpeg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmLB7NCu7cmC7nhrN3fQE0g/gqREZsDOIP3C_9EPsaCIwAg","alt":"サイリウムのねむみ","sharedTooltipText":":_サイリウムのねむみ:","src":"https://yt3.ggpht.com/-wK23atvCU4KUw0av2QsY7GK-XwxAprMY-etQQ5UhT1tAMB8f2ksTeitevgiMXeIYqYx4pFpeg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmLB7NCu7cmC7nhrN3fQE0g/gqREZsDOIP3C_9EPsaCIwAg","alt":"サイリウムのねむみ","sharedTooltipText":":_サイリウムのねむみ:","src":"https://yt3.ggpht.com/-wK23atvCU4KUw0av2QsY7GK-XwxAprMY-etQQ5UhT1tAMB8f2ksTeitevgiMXeIYqYx4pFpeg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmLB7NCu7cmC7nhrN3fQE0g/gqREZsDOIP3C_9EPsaCIwAg","alt":"サイリウムのねむみ","sharedTooltipText":":_サイリウムのねむみ:","src":"https://yt3.ggpht.com/-wK23atvCU4KUw0av2QsY7GK-XwxAprMY-etQQ5UhT1tAMB8f2ksTeitevgiMXeIYqYx4pFpeg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こん"},{"type":"youtubeEmoji","emojiId":"UCmLB7NCu7cmC7nhrN3fQE0g/iIBEZu-9N_3C_9EPsaCIwAg","alt":"ひらがなのね","sharedTooltipText":":_ひらがなのね:","src":"https://yt3.ggpht.com/TlhIuTVWUJArvt8jrgtpEvohKxaMaRdz6yiR3xA28QTCTOc7PwSsHa4TlQKJ5gxUu6ZMBQEu_g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmLB7NCu7cmC7nhrN3fQE0g/iIBEZp6-N_3C_9EPsaCIwAg","alt":"ひらがなのむ","sharedTooltipText":":_ひらがなのむ:","src":"https://yt3.ggpht.com/K3YFIcX6AL9Z2ef1maBW8vOXj2s1GKk4Vifr9lW2uBv2fucKirXmbT3pd3t7XGONEgr77QQ_HY8=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ふふー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつ"},{"type":"youtubeEmoji","emojiId":"UCmLB7NCu7cmC7nhrN3fQE0g/iIBEZu-9N_3C_9EPsaCIwAg","alt":"ひらがなのね","sharedTooltipText":":_ひらがなのね:","src":"https://yt3.ggpht.com/TlhIuTVWUJArvt8jrgtpEvohKxaMaRdz6yiR3xA28QTCTOc7PwSsHa4TlQKJ5gxUu6ZMBQEu_g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmLB7NCu7cmC7nhrN3fQE0g/iIBEZp6-N_3C_9EPsaCIwAg","alt":"ひらがなのむ","sharedTooltipText":":_ひらがなのむ:","src":"https://yt3.ggpht.com/K3YFIcX6AL9Z2ef1maBW8vOXj2s1GKk4Vifr9lW2uBv2fucKirXmbT3pd3t7XGONEgr77QQ_HY8=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"えー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんねむ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

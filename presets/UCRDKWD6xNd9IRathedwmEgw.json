@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Serena Starstruck Ch. 【SVP】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCRDKWD6xNd9IRathedwmEgw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRDKWD6xNd9IRathedwmEgw/I2tuZ572DKC8_9EP19PD4Qs","alt":"SeraSignYes","sharedTooltipText":":_SeraSignYes:","src":"https://yt3.ggpht.com/odIQvUovOX-AaQe1pygTZm7huiH20wl30DFl9Tayz8c8bo67iLprfafOtD3YNe9Mod9TV08ZAA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRDKWD6xNd9IRathedwmEgw/B5BtZ9uuAri8_9EP9PGs0AQ","alt":"SeraLightstick","sharedTooltipText":":_SeraLightstick:","src":"https://yt3.ggpht.com/emgivfsDmL-vesOg0dHDiedsDYjlvov3tOmVBebl54J7-Jch9BcwrdtIJwB7OXecoqfDJAdcrY8=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRDKWD6xNd9IRathedwmEgw/I2tuZ5fzDKC8_9EP19PD4Qs","alt":"SeraCrying","sharedTooltipText":":_SeraCrying:","src":"https://yt3.ggpht.com/I14yeiXbZTdbfiSPdrp_sLf5DZGrupahncGbL-xpThncUdp9ZW9kCSeS8tA4f0zUWscvNYWFIg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRDKWD6xNd9IRathedwmEgw/I2tuZ6z0DKC8_9EP19PD4Qs","alt":"SeraWink","sharedTooltipText":":_SeraWink:","src":"https://yt3.ggpht.com/Y8O2PLovyekTntpA5tk0K_YHBNEF2wDnsZZhMyxCsS_11AtLgRGVdbESd2HUlNnOP0Ed7W3Xiw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRDKWD6xNd9IRathedwmEgw/4Zx1Z5esDaC8_9EP19PD4Qs","alt":"SeraEvilEyes","sharedTooltipText":":_SeraEvilEyes:","src":"https://yt3.ggpht.com/9buqZB_szmnOlEkjBy_lTG5ixG5L8THgLCLctINXYTXziV7bQglMF6aEm1swntwfEC06lU4h=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRDKWD6xNd9IRathedwmEgw/I2tuZ9DzDKC8_9EP19PD4Qs","alt":"SeraExciteStar","sharedTooltipText":":_SeraExciteStar:","src":"https://yt3.ggpht.com/YLxcmQrNufuqVp5nC9Rwy6lTnDKDiVA7ao27MknDzAfAYEqvyp8TeKiBmFvw-YbeFFXjzp0x=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

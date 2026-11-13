@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ケリン",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCeAfiVvEuyICYJW-f3GnQjQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"よぉ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"よお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やったぜ。"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

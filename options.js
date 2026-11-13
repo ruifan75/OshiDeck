@@ -1,4 +1,5 @@
-const { i18n, store, tokens } = globalThis.OshiDeck;
+const { i18n, store, tokens, channelMarks } = globalThis.OshiDeck;
+globalThis.OshiDeck.journal.observe("options");
 const t = (...args) => i18n.t(...args);
 
 // One list, in store.js. It had been written out here as well, so every
@@ -130,10 +131,8 @@ async function commit(patch) {
   applyLanguage();
   paint();
 
-  const saved = document.querySelector("#saved");
-  saved.textContent = t("opt.saved");
-  clearTimeout(commit.timer);
-  commit.timer = setTimeout(() => (saved.textContent = ""), 1200);
+  // A settings acknowledgement must not replace an undo still on offer.
+  if (!undo) status(t("opt.saved"), null, null, 1200);
 }
 
 async function load() {
@@ -196,6 +195,7 @@ async function loadDecks() {
   if (!data) return;
 
   decks = data;
+  journal.record(journal.snapshot(data));
   const known = deckIds();
   if (!known.includes(selected)) selected = known[0] ?? null;
   paintDecks();
@@ -205,6 +205,7 @@ const deckIds = () => Object.keys(decks.decks || {});
 
 const cardsOf = (id) => (id ? store.deckOf(decks, id) : []);
 const hueOf = (id) => (id ? decks.channelMeta[id]?.hue ?? store.defaultHue(id) : 320);
+const colorOf = (id) => store.channelColor(id, decks.channelMeta[id]);
 const nameOf = (id) => (id ? decks.channelMeta[id]?.name || id : "");
 
 function paintDecks() {
@@ -229,6 +230,7 @@ function paintDecks() {
     const dot = document.createElement("span");
     dot.className = "deck-dot";
     dot.style.setProperty("--hue", hueOf(id));
+    if (colorOf(id)) dot.style.setProperty("--od-neutral", colorOf(id));
 
     const name = document.createElement("span");
     name.className = "deck-name";
@@ -263,6 +265,7 @@ function paintHeader() {
   const header = document.querySelector("#deckHeader");
   header.replaceChildren();
   if (!selected) return;
+  const channelId = selected;
 
   const title = document.createElement("strong");
   title.textContent = nameOf(selected);
@@ -274,6 +277,12 @@ function paintHeader() {
   swatches.appendChild(label);
 
   const current = hueOf(selected);
+  const currentColor = colorOf(selected);
+  const meta = decks.channelMeta[channelId];
+  journal.record({ kind: "colour", channelId, hue: current, color: currentColor,
+    colourSource: store.neutralFromHex(meta?.color) && currentColor ? "stored-neutral" : meta?.hue != null ? "stored-hue"
+      : currentColor ? "representative-neutral" : Object.hasOwn(store.OSHI_HUES, channelId) ? "representative-hue" : "automatic" });
+  const mark = channelMarks.create(channelId, current, document, currentColor);
 
   for (const hue of HUES) {
     const swatch = document.createElement("button");
@@ -281,14 +290,16 @@ function paintHeader() {
     swatch.className = "swatch";
     swatch.style.setProperty("--hue", hue);
     swatch.setAttribute("aria-label", t("opt.oshiColourHue", hue));
-    if (hue === current) swatch.dataset.on = "true";
-    swatch.addEventListener("click", () => setHue(selected, hue));
+    if (!currentColor && hue === current) swatch.dataset.on = "true";
+    swatch.addEventListener("click", () => {
+      previewHue(hue);
+      saveHue(hue);
+    });
     swatches.appendChild(swatch);
   }
 
-  // Any hue, not only the eight. What is stored is still a hue: the palette
-  // fixes lightness and chroma so every channel reads the same against the
-  // panel, and a colour picked from anywhere is asked only what hue it is.
+  // The slider and swatches choose a hue at the palette's lightness/chroma.
+  // The native picker also accepts black, white and low-chroma tinted greys.
   const slider = document.createElement("input");
   slider.type = "range";
   slider.className = "hue-slider";
@@ -296,28 +307,56 @@ function paintHeader() {
   slider.max = "359";
   slider.value = String(current);
   slider.style.setProperty("--hue", current);
+  if (currentColor) slider.style.setProperty("--od-neutral", currentColor);
   slider.setAttribute("aria-label", t("opt.hueSlider"));
   // The thumb follows the drag; the write waits for the release, or every
   // pixel of it would be an operation through the worker.
   slider.addEventListener("input", (event) =>
-    event.target.style.setProperty("--hue", event.target.value));
+    previewHue(Number(event.target.value), slider));
   slider.addEventListener("change", (event) =>
-    setHue(selected, Number(event.target.value)));
+    saveHue(Number(event.target.value)));
 
   // The native picker carries both of the other ways of asking: a colour code,
   // and the eyedropper in the system colour panel.
   const picker = document.createElement("input");
   picker.type = "color";
   picker.className = "hue-pick";
-  picker.value = store.hexOfHue(current);
+  picker.value = currentColor || store.hexOfHue(current);
   picker.style.setProperty("--hue", current);
   picker.setAttribute("aria-label", t("opt.colourPicker"));
+  picker.addEventListener("input", (event) => {
+    const hue = store.hueFromHex(event.target.value);
+    if (hue != null) previewHue(hue, picker, store.neutralFromHex(event.target.value));
+  });
   picker.addEventListener("change", (event) => {
     const hue = store.hueFromHex(event.target.value);
-    if (hue != null) setHue(selected, hue);
+    if (hue != null) saveHue(hue, store.neutralFromHex(event.target.value));
   });
 
-  swatches.append(slider, picker);
+  const pickerWrap = document.createElement("label");
+  pickerWrap.className = "hue-picker";
+  pickerWrap.append(mark, picker);
+  swatches.append(slider, pickerWrap);
+
+  function saveHue(hue, color = null) {
+    if (selected !== channelId || !swatches.isConnected) return;
+    return setHue(channelId, hue, color);
+  }
+
+  function previewHue(hue, source, color = null) {
+    // Keep the native picker and its focus alive throughout the gesture.
+    // Only change events persist the colour and rebuild the header.
+    if (selected !== channelId || !swatches.isConnected) return;
+    channelMarks.update(mark, hue, color);
+    slider.style.setProperty("--hue", hue);
+    if (color) slider.style.setProperty("--od-neutral", color);
+    else slider.style.removeProperty("--od-neutral");
+    if (source !== slider) slider.value = String(hue);
+    if (source !== picker) picker.value = color || store.hexOfHue(hue);
+    for (const swatch of swatches.querySelectorAll(".swatch")) {
+      swatch.toggleAttribute("data-on", !color && Number(swatch.style.getPropertyValue("--hue")) === hue);
+    }
+  }
 
   // On the deck, not in the backup section. Those two are about the whole
   // store — pool, every deck, settings — and these two are about this one
@@ -368,10 +407,10 @@ function deckAction(icon, label, onClick) {
 // saving a wholesale snapshot read minutes ago silently rolls them back.
 // Every change is a named operation sent to the service worker, which applies
 // them one at a time against freshly-read state. Nothing here writes storage.
-async function mutate(op, args) {
+async function mutate(op, args, { reportFailure = true } = {}) {
   const reply = await store.apply(op, args);
   if (!reply.ok) {
-    status(t("toast.saveFailed"));
+    if (reportFailure) status(t("toast.saveFailed"));
     return reply;
   }
   const data = await store.read();
@@ -380,7 +419,7 @@ async function mutate(op, args) {
   return reply;
 }
 
-const setHue = (id, hue) => mutate("setChannel", { channelId: id, hue });
+const setHue = (id, hue, color) => mutate("setChannel", { channelId: id, hue, color });
 
 // A card, rendered the same in either pane. `where` decides what dragging it
 // means and which actions it offers.
@@ -394,6 +433,10 @@ function buildCard(card, where) {
   // this deck's channel can send, so a card in it that is not universal is
   // this channel's.
   el.style.setProperty("--hue", hueOf(selected));
+  if (colorOf(selected)) {
+    el.style.setProperty("--od-neutral", colorOf(selected));
+    el.dataset.neutral = "true";
+  }
 
   const body = document.createElement("div");
   body.className = "browse-body";
@@ -674,8 +717,7 @@ async function dropOnDeck({ card, from }, { target, side }) {
   }
 
   if (joined) {
-    undo = () => mutate("removeFromDeck", { channelId: into, cardId: card.id })
-      .then((r) => r.ok && status(t("opt.undone")));
+    undo = () => mutate("removeFromDeck", { channelId: into, cardId: card.id }, { reportFailure: false });
     status(t("opt.addedTo", label(card), nameOf(into)), t("action.undo"));
   } else if (settings.sortBy !== "manual") {
     status(t("opt.reordered"));
@@ -688,8 +730,7 @@ async function ejectCard(card, deckId = selected) {
 
   // insertIntoDeck tolerates whatever happened in the meantime: the card may
   // have been re-added from the chat panel, or deleted outright.
-  undo = () => mutate("insertIntoDeck", { channelId: deckId, cardId: card.id, at })
-    .then((r) => r.ok && status(t("opt.undone")));
+  undo = () => mutate("insertIntoDeck", { channelId: deckId, cardId: card.id, at }, { reportFailure: false });
 
   status(t("opt.ejected", label(card)), t("action.undo"));
 }
@@ -704,8 +745,7 @@ async function removeDeck(id) {
   if (selected === id) selected = Object.keys(decks.decks)[0] ?? null;
   paintDecks();
 
-  undo = () => mutate("restoreDeck", { snapshot })
-    .then((r) => r.ok && status(t("opt.undone")));
+  undo = () => mutate("restoreDeck", { snapshot }, { reportFailure: false });
 
   const note = snapshot.exclusive?.length
     ? t("opt.deckDeletedNote", snapshot.exclusive.length)
@@ -731,16 +771,13 @@ async function deleteCardNow(card) {
   const { ok, value: snapshot } = await mutate("deleteCard", { id: card.id });
   if (!ok || !snapshot) return;
 
-  undo = () => mutate("restoreCard", { snapshot })
-    .then((r) => r.ok && status(t("opt.undone")));
+  undo = () => mutate("restoreCard", { snapshot }, { reportFailure: false });
 
   status(t("opt.cardDeleted", label(snapshot.card)), t("action.undo"));
 }
 
-// Asked on the card, not in the status line. That line lives at the very
-// bottom of the page at 12px and 72% opacity, while the card being deleted is
-// wherever the pool happens to be scrolled to — so the warning was written
-// somewhere the eye had no reason to be.
+// Confirm shared-card deletion on the card being acted on. The completed
+// action then offers Undo in the notice anchored to the viewport.
 function askOnCard(el, card, held) {
   if (!el) return deleteCardNow(card); // no card to ask on: nothing to point at
   const names = held.map((id) => nameOf(id)).join("、");
@@ -787,28 +824,95 @@ function label(card) {
   return stamps ? t("opt.stamps", stamps) : t("opt.emptyCard");
 }
 
-function status(message, actionLabel, action) {
-  const saved = document.querySelector("#saved");
-  saved.replaceChildren(document.createTextNode(message));
+let currentStatus = null;
 
-  const run = action || (actionLabel && undo ? () => { const u = undo; undo = null; u?.(); } : null);
-  if (actionLabel && run) {
+function dismissStatus(expected = currentStatus) {
+  if (!expected || expected !== currentStatus) return;
+  clearTimeout(expected.timer);
+  currentStatus = null;
+  undo = null;
+  document.querySelector("#saved").replaceChildren();
+}
+
+function armStatus(state) {
+  if (state !== currentStatus || state.hovered || state.focused || state.running) return;
+  state.startedAt = performance.now();
+  state.timer = setTimeout(() => {
+    if (!state.hovered && !state.focused) dismissStatus(state);
+  }, state.remaining);
+}
+
+function pauseStatus(key, paused) {
+  const state = currentStatus;
+  if (!state) return;
+  const wasPaused = state.hovered || state.focused;
+  state[key] = paused;
+  const isPaused = state.hovered || state.focused;
+  if (!wasPaused && isPaused) {
+    clearTimeout(state.timer);
+    if (state.startedAt != null) state.remaining = Math.max(0, state.remaining - (performance.now() - state.startedAt));
+    state.startedAt = null;
+  } else if (wasPaused && !isPaused) armStatus(state);
+}
+
+function status(message, actionLabel, action, duration = 10000) {
+  const saved = document.querySelector("#saved");
+  const run = action || (actionLabel ? undo : null);
+  const isUndo = !action && !!actionLabel && typeof undo === "function";
+  const hovered = currentStatus?.hovered || saved.matches(":hover");
+  dismissStatus();
+  undo = typeof run === "function" ? run : null;
+  const state = { remaining: duration, startedAt: null, hovered, focused: false, running: false };
+  currentStatus = state;
+  const text = document.createElement("span");
+  text.className = "status-message";
+  text.textContent = message;
+  text.title = message;
+  saved.replaceChildren(text);
+
+  if (actionLabel && typeof run === "function") {
     const button = document.createElement("button");
     button.type = "button";
-    button.className = "link";
+    button.className = "status-action";
     button.textContent = actionLabel;
-    button.addEventListener("click", run);
+    button.addEventListener("click", async () => {
+      if (state !== currentStatus || state.running) return;
+      state.running = true;
+      button.disabled = true;
+      clearTimeout(state.timer);
+      undo = null;
+      try {
+        const reply = await run();
+        if (state === currentStatus && isUndo) status(reply?.ok ? t("opt.undone") : t("toast.saveFailed"));
+      }
+      catch (error) {
+        journal.record({ kind: "error", stage: "apply", reason: "exception", errorType: error?.name });
+        if (state === currentStatus) status(t("toast.saveFailed"));
+      } finally {
+        if (state === currentStatus) dismissStatus(state);
+      }
+    });
     saved.appendChild(button);
   }
 
-  clearTimeout(status.timer);
-  status.timer = setTimeout(() => {
-    saved.replaceChildren();
-    // The snapshot can hold a whole deck's worth of cards; once the button is
-    // gone there is nothing left to undo with it.
-    undo = null;
-  }, 8000);
+  const close = document.createElement("button");
+  close.type = "button";
+  close.className = "status-close";
+  close.textContent = "×";
+  close.setAttribute("aria-label", t("aria.dismissNotice"));
+  close.title = t("aria.dismissNotice");
+  close.addEventListener("click", () => dismissStatus(state));
+  saved.appendChild(close);
+  armStatus(state);
 }
+
+const statusBox = document.querySelector("#saved");
+statusBox.addEventListener("pointerenter", () => pauseStatus("hovered", true));
+statusBox.addEventListener("pointerleave", () => pauseStatus("hovered", false));
+statusBox.addEventListener("focusin", () => pauseStatus("focused", true));
+statusBox.addEventListener("focusout", (event) => {
+  if (!statusBox.contains(event.relatedTarget)) pauseStatus("focused", false);
+});
 
 // These two elements survive every repaint. Wiring them inside paint() added
 // another set of listeners on every storage event, so one drop later fired a
@@ -880,11 +984,16 @@ async function readBackupFile(file) {
   try {
     raw = JSON.parse(await file.text());
   } catch (_) {
+    journal.record({ kind: "file", source: "backup", stage: "read", status: "rejected", reason: "invalid-json" });
     return importStatus(t("opt.notJson"));
   }
 
   const problem = backup.validate(raw);
-  if (problem) return importStatus(t("opt.cannotRead", problem));
+  if (problem) {
+    journal.record({ kind: "file", source: "backup", stage: "validate", status: "rejected", code: problem[0] });
+    return importStatus(t("opt.cannotRead", problem));
+  }
+  journal.record({ kind: "file", source: "backup", stage: "validate", status: "ok", cards: raw.cards.length });
 
   const { cards, decks } = backup.summarise(raw);
   // Replacing throws away everything currently stored, so it never happens on
@@ -984,16 +1093,24 @@ async function importDeck(file) {
   try {
     raw = JSON.parse(await file.text());
   } catch (_) {
+    journal.record({ kind: "file", source: "preset", stage: "read", status: "rejected", reason: "invalid-json" });
     return status(t("opt.notJson"));
   }
 
   const problem = presets.validate(raw);
-  if (problem) return status(t("opt.cannotRead", problem));
+  if (problem) {
+    journal.record({ kind: "file", source: "preset", stage: "validate", status: "rejected", code: problem[0] });
+    return status(t("opt.cannotRead", problem));
+  }
 
   // A file carrying another channel's member emoji cannot be played here, and
   // loading it would silently drop the part that took the longest to build.
   // Better to say so than to half-load it.
-  if (!presets.offeredOn(raw, selected)) return status(t("opt.importNotForHere"));
+  if (!presets.offeredOn(raw, selected)) {
+    journal.record({ kind: "file", source: "preset", channelId: selected, stage: "validate", status: "rejected", reason: "wrong-channel" });
+    return status(t("opt.importNotForHere"));
+  }
+  journal.record({ kind: "file", source: "preset", stage: "validate", status: "ok", cards: raw.cards.length });
 
   const { ok, value } = await mutate("loadPreset", {
     channelId: selected,
@@ -1025,21 +1142,32 @@ document.querySelector("#importFile").addEventListener("change", (event) => {
 /* ---------------- diagnostics ---------------- */
 
 const { journal, presets } = globalThis.OshiDeck;
+let journalRevision = 0;
 
 const journalStatus = (text) => {
   document.querySelector("#journalStatus").textContent = text;
 };
 
 async function showJournalCount() {
+  const revision = journalRevision;
   const entries = await journal.read();
+  if (revision !== journalRevision) return;
   journalStatus(entries.length ? t("opt.journalCount", entries.length) : t("opt.journalEmpty"));
 }
 
-async function saveJournal() {
-  const entries = await journal.read();
-  if (!entries.length) return journalStatus(t("opt.journalNothing"));
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area !== "local" || !Object.hasOwn(changes, journal.KEY)) return;
+  journalRevision += 1;
+  const entries = changes[journal.KEY].newValue;
+  if (Array.isArray(entries)) journalStatus(entries.length ? t("opt.journalCount", entries.length) : t("opt.journalEmpty"));
+});
 
-  const text = journal.format(entries, chrome.runtime.getManifest().version);
+async function saveJournal() {
+  const { entries, states } = await journal.report();
+  const data = await store.read();
+  if (!entries.length && !states.length && !data) return journalStatus(t("opt.journalNothing"));
+
+  const text = journal.format(entries, chrome.runtime.getManifest().version, journal.snapshot(data), states);
   const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
   const url = URL.createObjectURL(blob);
 
@@ -1065,6 +1193,7 @@ async function clearJournal() {
     reply = null; // no worker to ask
   }
 
+  if (reply?.ok) { journalRevision += 1; journal.reset(); }
   journalStatus(reply?.ok ? t("opt.journalCleared") : t("opt.journalClearFailed"));
 }
 

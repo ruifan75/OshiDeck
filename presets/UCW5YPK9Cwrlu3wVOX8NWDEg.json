@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "shiduki senaCh.紫槻セナ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCW5YPK9Cwrlu3wVOX8NWDEg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんセナ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCW5YPK9Cwrlu3wVOX8NWDEg/94HRZ--uAbXA_9EPtceVgQ0","alt":"待機セナ","sharedTooltipText":":_待機セナ:","src":"https://yt3.ggpht.com/NNtc9q4ILbwNLjxacmFjuf-rnyQcnzv9xI8rN3yk-22R41wtZJDbo2YirS7YoPSIX7y8ucFb=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCW5YPK9Cwrlu3wVOX8NWDEg/94HRZ--uAbXA_9EPtceVgQ0","alt":"待機セナ","sharedTooltipText":":_待機セナ:","src":"https://yt3.ggpht.com/NNtc9q4ILbwNLjxacmFjuf-rnyQcnzv9xI8rN3yk-22R41wtZJDbo2YirS7YoPSIX7y8ucFb=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCW5YPK9Cwrlu3wVOX8NWDEg/94HRZ--uAbXA_9EPtceVgQ0","alt":"待機セナ","sharedTooltipText":":_待機セナ:","src":"https://yt3.ggpht.com/NNtc9q4ILbwNLjxacmFjuf-rnyQcnzv9xI8rN3yk-22R41wtZJDbo2YirS7YoPSIX7y8ucFb=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつセナ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCW5YPK9Cwrlu3wVOX8NWDEg/MWf6YcvRLdiJ_9EP7fyc8AE","alt":"こんー文字","sharedTooltipText":":_こんー文字:","src":"https://yt3.ggpht.com/wna9CCFjhEsGyTXa2PxOPmW2R4NtMhSiBCtHt5orttx4kWms-TjrwV_DM8qlKVJabTN_anVxYvA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCW5YPK9Cwrlu3wVOX8NWDEg/MWf6YfrSLdiJ_9EP7fyc8AE","alt":"セナー文字","sharedTooltipText":":_セナー文字:","src":"https://yt3.ggpht.com/exgPbqKr23tPdlpyTBLzSUHFCm8k230JuHgq6szTCcFGVu9sUfL62KrnDFWsV15ax5dh67yyTg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんセナ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なるほど"}], "scope": "channel" }
+  ]
+}

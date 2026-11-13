@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "塚本のべる Novel Tsukamoto",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCGsYwogFsaHmYREWUvXAOCA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCGsYwogFsaHmYREWUvXAOCA/QNEdZ-KGOKCn_9EP_ujI8Ak","alt":"ペンラ","sharedTooltipText":":_ペンラ:","src":"https://yt3.ggpht.com/BeiZ27Ckk4t0XD32cgGaDjSNBnq8wnA9c1jUmLkbyo-vTBwcR3ctTfSXUi4P0d46nhb3oGLrPQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGsYwogFsaHmYREWUvXAOCA/QNEdZ-KGOKCn_9EP_ujI8Ak","alt":"ペンラ","sharedTooltipText":":_ペンラ:","src":"https://yt3.ggpht.com/BeiZ27Ckk4t0XD32cgGaDjSNBnq8wnA9c1jUmLkbyo-vTBwcR3ctTfSXUi4P0d46nhb3oGLrPQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGsYwogFsaHmYREWUvXAOCA/QNEdZ-KGOKCn_9EP_ujI8Ak","alt":"ペンラ","sharedTooltipText":":_ペンラ:","src":"https://yt3.ggpht.com/BeiZ27Ckk4t0XD32cgGaDjSNBnq8wnA9c1jUmLkbyo-vTBwcR3ctTfSXUi4P0d46nhb3oGLrPQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGsYwogFsaHmYREWUvXAOCA/QNEdZ-KGOKCn_9EP_ujI8Ak","alt":"ペンラ","sharedTooltipText":":_ペンラ:","src":"https://yt3.ggpht.com/BeiZ27Ckk4t0XD32cgGaDjSNBnq8wnA9c1jUmLkbyo-vTBwcR3ctTfSXUi4P0d46nhb3oGLrPQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGsYwogFsaHmYREWUvXAOCA/QNEdZ-KGOKCn_9EP_ujI8Ak","alt":"ペンラ","sharedTooltipText":":_ペンラ:","src":"https://yt3.ggpht.com/BeiZ27Ckk4t0XD32cgGaDjSNBnq8wnA9c1jUmLkbyo-vTBwcR3ctTfSXUi4P0d46nhb3oGLrPQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCGsYwogFsaHmYREWUvXAOCA/QNEdZ4WGOKCn_9EP_ujI8Ak","alt":"おつかもと","sharedTooltipText":":_おつかもと:","src":"https://yt3.ggpht.com/RZd7VQKUwWI_8dj5IyB8Q2cnhdY4GNnkiuaLVmNrYgsputmWou3g3eNcKe_CEdwPvBzPR8Q1Jg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかもと〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCGsYwogFsaHmYREWUvXAOCA/8XQmaZPAApWO7OsPoerVmAk","alt":"やったぜ","sharedTooltipText":":_やったぜ:","src":"https://yt3.ggpht.com/mDgOBYcdukucIvH1sEAifsX7_q4i7zBATwb5vO4xrLAnI5qcYiL-q_ws1GCcBuM7qYVoVAzDUQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちはー"}], "scope": "channel" }
+  ]
+}

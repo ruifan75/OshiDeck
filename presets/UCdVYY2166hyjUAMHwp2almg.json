@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "光葉エニ",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCdVYY2166hyjUAMHwp2almg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ハニー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いいよー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス"}], "scope": "channel" }
+  ]
+}

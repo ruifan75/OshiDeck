@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "夏恋ひまわり",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCPkhI1WcLilaKu44B5p0jZg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌻"},{"type":"text","value":"🎵"},{"type":"text","value":"🌻"},{"type":"text","value":"🎵"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんひまー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつひまー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんひま～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつひま～"}], "scope": "channel" }
+  ]
+}

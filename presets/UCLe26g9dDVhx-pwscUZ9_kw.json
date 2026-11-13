@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "紫藤ナナ / nana shidou",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCLe26g9dDVhx-pwscUZ9_kw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんなな"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わかる"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCLe26g9dDVhx-pwscUZ9_kw/tY6NY9SCO7GI_9EPqM2OqAs","alt":"KUSA","sharedTooltipText":":_KUSA:","src":"https://yt3.ggpht.com/sV_3xoHt5xQcVfbixHm8i4y-XioCK6q5e-edBnk5qODiFtmpg1iq3cskv6AXEdOEctalWboMPNY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なるほど"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" }
+  ]
+}

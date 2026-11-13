@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Saeir Alarie 【FIRST STAGE PRODUCTION EN】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UChwB-iMNTouaemKeS6NgOOQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChwB-iMNTouaemKeS6NgOOQ/QFXAavmhFoqt7OsP7dfksAk","alt":"Saeirkira","sharedTooltipText":":_Saeirkira:","src":"https://yt3.ggpht.com/Eo5MU6u7nVAzh_2WTJlq_R2nsi76KzT8nXiBb-SUs0McFTgcmi2UQwUEL95E_qr02TJmW_odaQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChwB-iMNTouaemKeS6NgOOQ/QFXAavmhFoqt7OsP7dfksAk","alt":"Saeirkira","sharedTooltipText":":_Saeirkira:","src":"https://yt3.ggpht.com/Eo5MU6u7nVAzh_2WTJlq_R2nsi76KzT8nXiBb-SUs0McFTgcmi2UQwUEL95E_qr02TJmW_odaQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChwB-iMNTouaemKeS6NgOOQ/QFXAasKhFoqt7OsP7dfksAk","alt":"SaeirStare","sharedTooltipText":":_SaeirStare:","src":"https://yt3.ggpht.com/8FwpPL5Ys1i2oYYQoHqhkLRlIF-dk2BynOf4EQhwilG3TP2T5t6zHIiLGmAzllAPeue92zvWvw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"mhm mhm"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChwB-iMNTouaemKeS6NgOOQ/QFXAaoahFoqt7OsP7dfksAk","alt":"SaeirSeek","sharedTooltipText":":_SaeirSeek:","src":"https://yt3.ggpht.com/H7qAbhhpNlR-DGqQ0-EZo9Avhcf-_qlDVnF3jncUPNcPNpIDlnisF3qBmYE7ukrgcTy5URVc=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes yes yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"awww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" }
+  ]
+}

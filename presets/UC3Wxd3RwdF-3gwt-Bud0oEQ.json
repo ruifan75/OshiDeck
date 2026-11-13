@@ -1,0 +1,25 @@
+{
+  "format": 2,
+  "name": "甘成じゅい / Jyui Amanari",
+  "note": "歌枠1配信・通常13配信のチャットから17枚",
+  "channel": "UC3Wxd3RwdF-3gwt-Bud0oEQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🧚‍♀"},{"type":"text","value":"⛓"},{"type":"text","value":"🎶"},{"type":"text","value":"🧚‍♀"},{"type":"text","value":"⛓"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はろじゅいー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"もっと！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ずっと！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やくそくー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"L・O・V・E！！！！！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🧚"},{"type":"text","value":"⛓"},{"type":"text","value":"🎶"},{"type":"text","value":"🧚"},{"type":"text","value":"⛓"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいいｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はいせーの！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"たいき！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はろじゅい～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"じゅいなら〜"}], "scope": "channel" }
+  ]
+}

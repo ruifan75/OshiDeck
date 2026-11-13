@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "なっちゃんねる ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCv4skZNlBQ_bmQNMmq4aegA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんなつ"},{"type":"text","value":"🍊"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おみくじ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんなつ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCv4skZNlBQ_bmQNMmq4aegA/s6CLZvS-GbGm_9EPyNOx6A0","alt":"なっちゃんねるないすぱないどね","sharedTooltipText":":_なっちゃんねるないすぱないどね:","src":"https://yt3.ggpht.com/QRoZoplu32L70ENpKHogLG3LtegVX5_ofnYYgFv-pEObhHjRI4u5KHFo1NVbRdBsKu1fVy5P=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCv4skZNlBQ_bmQNMmq4aegA/s6CLZvS-GbGm_9EPyNOx6A0","alt":"なっちゃんねるないすぱないどね","sharedTooltipText":":_なっちゃんねるないすぱないどね:","src":"https://yt3.ggpht.com/QRoZoplu32L70ENpKHogLG3LtegVX5_ofnYYgFv-pEObhHjRI4u5KHFo1NVbRdBsKu1fVy5P=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCv4skZNlBQ_bmQNMmq4aegA/s6CLZvS-GbGm_9EPyNOx6A0","alt":"なっちゃんねるないすぱないどね","sharedTooltipText":":_なっちゃんねるないすぱないどね:","src":"https://yt3.ggpht.com/QRoZoplu32L70ENpKHogLG3LtegVX5_ofnYYgFv-pEObhHjRI4u5KHFo1NVbRdBsKu1fVy5P=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCv4skZNlBQ_bmQNMmq4aegA/s6CLZqG5GbGm_9EPyNOx6A0","alt":"なっちゃんねるたいき","sharedTooltipText":":_なっちゃんねるたいき:","src":"https://yt3.ggpht.com/lriPSWTCCK9lsHJZ3CtaXcFMiffNmcA7a97WMK5oCP8vmc7xp9d7bEUb14HMa9s5vsHRksjXWA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCv4skZNlBQ_bmQNMmq4aegA/s6CLZqG5GbGm_9EPyNOx6A0","alt":"なっちゃんねるたいき","sharedTooltipText":":_なっちゃんねるたいき:","src":"https://yt3.ggpht.com/lriPSWTCCK9lsHJZ3CtaXcFMiffNmcA7a97WMK5oCP8vmc7xp9d7bEUb14HMa9s5vsHRksjXWA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCv4skZNlBQ_bmQNMmq4aegA/s6CLZqG5GbGm_9EPyNOx6A0","alt":"なっちゃんねるたいき","sharedTooltipText":":_なっちゃんねるたいき:","src":"https://yt3.ggpht.com/lriPSWTCCK9lsHJZ3CtaXcFMiffNmcA7a97WMK5oCP8vmc7xp9d7bEUb14HMa9s5vsHRksjXWA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCv4skZNlBQ_bmQNMmq4aegA/s6CLZuC2GbGm_9EPyNOx6A0","alt":"なっちゃんねるくさｗ","sharedTooltipText":":_なっちゃんねるくさｗ:","src":"https://yt3.ggpht.com/A9Fpo9uxf0TeHtjQXi0FOT3F7K7IcFpotjjJIDRsIZg1UqUwnamyxIfbwm7GlmalM2QaVIM95Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCv4skZNlBQ_bmQNMmq4aegA/s6CLZuC2GbGm_9EPyNOx6A0","alt":"なっちゃんねるくさｗ","sharedTooltipText":":_なっちゃんねるくさｗ:","src":"https://yt3.ggpht.com/A9Fpo9uxf0TeHtjQXi0FOT3F7K7IcFpotjjJIDRsIZg1UqUwnamyxIfbwm7GlmalM2QaVIM95Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCv4skZNlBQ_bmQNMmq4aegA/s6CLZuC2GbGm_9EPyNOx6A0","alt":"なっちゃんねるくさｗ","sharedTooltipText":":_なっちゃんねるくさｗ:","src":"https://yt3.ggpht.com/A9Fpo9uxf0TeHtjQXi0FOT3F7K7IcFpotjjJIDRsIZg1UqUwnamyxIfbwm7GlmalM2QaVIM95Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつなつ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないどねー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

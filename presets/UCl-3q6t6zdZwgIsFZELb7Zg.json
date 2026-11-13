@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "しらゆりヘブンちゃんねる",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCl-3q6t6zdZwgIsFZELb7Zg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんぽまー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぽまー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCl-3q6t6zdZwgIsFZELb7Zg/w2fIYbncF6Sn8gSX9p9Q","alt":"TENSHI9ぽまぽま","sharedTooltipText":":_TENSHI9ぽまぽま:","src":"https://yt3.ggpht.com/GBI7cIAUvRRcNllkiFCdFmwvjrl77M1axviMHHbijH_DzZV9YQTydjwqxSs4QAwu0DbCJ04D0Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCl-3q6t6zdZwgIsFZELb7Zg/w2fIYbncF6Sn8gSX9p9Q","alt":"TENSHI9ぽまぽま","sharedTooltipText":":_TENSHI9ぽまぽま:","src":"https://yt3.ggpht.com/GBI7cIAUvRRcNllkiFCdFmwvjrl77M1axviMHHbijH_DzZV9YQTydjwqxSs4QAwu0DbCJ04D0Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCl-3q6t6zdZwgIsFZELb7Zg/2H57Y_S7JfiN_9EPtqODiAw","alt":"TENSHI28だじょ","sharedTooltipText":":_TENSHI28だじょ:","src":"https://yt3.ggpht.com/Ykd9jsh8KKSy5Eb3zFDZfJvu1ovfkh4llNoYJqyz3_a8RnvHRW8bcnqu1CYGpk8YU3IAPwMx7A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わっしょい！わっしょい！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCl-3q6t6zdZwgIsFZELb7Zg/X6fIYbeFFKSn8gSX9p9Q","alt":"TENSHI11草だぞ","sharedTooltipText":":_TENSHI11草だぞ:","src":"https://yt3.ggpht.com/XsGtnq6EBOG7eNHYkSMXQ0L2pKR-kMGqkSOwkWw44MocDxk_S6OtyJk-xLTrOOStCtKaTMaw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🐎"},{"type":"text","value":"🐎"},{"type":"text","value":"🐎"},{"type":"text","value":"🐎"},{"type":"text","value":"🐎"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ﾂﾄﾞｯﾀ"}], "scope": "channel" }
+  ]
+}

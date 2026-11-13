@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "神綺杏菜 / KanzakiAnna",
+  "note": "歌枠0配信・通常4配信のチャットから10枚",
+  "channel": "UC_88i5H7Bjei-rjCJSKRTGw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おめでとう！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おめでとうございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイスパ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"初見です！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" }
+  ]
+}

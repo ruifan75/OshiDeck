@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "シラナミチャンネル",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC_Qm55Wp_qmHmOX1SGz8EwQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんなみ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うるさ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつなみ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やめて"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"は？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ガイア！ガイア！"}], "scope": "channel" }
+  ]
+}

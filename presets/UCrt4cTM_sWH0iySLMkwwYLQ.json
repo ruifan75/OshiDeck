@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "蛇宵ティア / Tier Channel【ななしいんく】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCrt4cTM_sWH0iySLMkwwYLQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCrt4cTM_sWH0iySLMkwwYLQ/1rIUZPmnEInWgwPV5IXgCA","alt":"待機蛇","sharedTooltipText":":_待機蛇:","src":"https://yt3.ggpht.com/Cl6T7RPh7Hy6V-8gDKmmfviqv0ap1-lGSbNsmMt3RfD6hU7QTkV5qrnL9kp02v3AP1guxubi=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCrt4cTM_sWH0iySLMkwwYLQ/1rIUZPmnEInWgwPV5IXgCA","alt":"待機蛇","sharedTooltipText":":_待機蛇:","src":"https://yt3.ggpht.com/Cl6T7RPh7Hy6V-8gDKmmfviqv0ap1-lGSbNsmMt3RfD6hU7QTkV5qrnL9kp02v3AP1guxubi=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCrt4cTM_sWH0iySLMkwwYLQ/1rIUZPmnEInWgwPV5IXgCA","alt":"待機蛇","sharedTooltipText":":_待機蛇:","src":"https://yt3.ggpht.com/Cl6T7RPh7Hy6V-8gDKmmfviqv0ap1-lGSbNsmMt3RfD6hU7QTkV5qrnL9kp02v3AP1guxubi=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCrt4cTM_sWH0iySLMkwwYLQ/HVe8ZI-nHszUgwOfzq34DA","alt":"はぴたま","sharedTooltipText":":_はぴたま:","src":"https://yt3.ggpht.com/RKTkjksPn-6N0BebpRlUMHVPeN_mlchoeU_zrNnOv3eeLu2V6SIhg60Yfo5qTFA5bShLmr_uYcg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCrt4cTM_sWH0iySLMkwwYLQ/pFe8ZJ6qA8PigwOm3pTQDQ","alt":"きたよー","sharedTooltipText":":_きたよー:","src":"https://yt3.ggpht.com/luDwH4WZ0aSQ5oGVvAc4QbUTfbnQDEJaUDmjgJ_sVIlKRitJ0cpW7jXPx-cuBXpM-IdQHK4zQA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCrt4cTM_sWH0iySLMkwwYLQ/h1e8ZPLIEczUgwOfzq34DA","alt":"はーと","sharedTooltipText":":_はーと:","src":"https://yt3.ggpht.com/gD4LF5p0-a0Yi7gclhgMQGwPpxmFEdrAXmAqGT-lUc_AOb78dnU1aY8m8Jfq_QNSuSS2w0J_Cg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCrt4cTM_sWH0iySLMkwwYLQ/yEctZJ3eCKGI_9EPxO6d-A4","alt":"ｗｗｗ","sharedTooltipText":":_ｗｗｗ:","src":"https://yt3.ggpht.com/NVHagafoZ78Q4NDL2rRLas6CAMbI37Dtt18nV44jYuHp12r54PMoZ_wYy8be7ozarB1_Ov26UA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" }
+  ]
+}

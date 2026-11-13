@@ -1,0 +1,20 @@
+{
+  "format": 2,
+  "name": "小夜鳴ミオ -Sayonaki Mio-【Actors To Live ! 】",
+  "note": "歌枠2配信・通常13配信のチャットから12枚",
+  "channel": "UC_9jY6w3QoWHHZZZ6CEP94A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎩"},{"type":"text","value":"🗝"},{"type":"text","value":"🎶"},{"type":"text","value":"🎩"},{"type":"text","value":"🗝"},{"type":"text","value":"🎶"},{"type":"text","value":"🎩"},{"type":"text","value":"🗝"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつみおー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_9jY6w3QoWHHZZZ6CEP94A/S29NZ4W4I-a0_9EP66aUwAE","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/u9S46gHF1XlrqTARQpmZ6ePJzCQv7P7fYM35QLO2tTCR7yG5YNclfberimvWwqknIEOuZ3S9=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_9jY6w3QoWHHZZZ6CEP94A/S29NZ4W4I-a0_9EP66aUwAE","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/u9S46gHF1XlrqTARQpmZ6ePJzCQv7P7fYM35QLO2tTCR7yG5YNclfberimvWwqknIEOuZ3S9=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_9jY6w3QoWHHZZZ6CEP94A/S29NZ4W4I-a0_9EP66aUwAE","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/u9S46gHF1XlrqTARQpmZ6ePJzCQv7P7fYM35QLO2tTCR7yG5YNclfberimvWwqknIEOuZ3S9=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_9jY6w3QoWHHZZZ6CEP94A/S29NZ4W4I-a0_9EP66aUwAE","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/u9S46gHF1XlrqTARQpmZ6ePJzCQv7P7fYM35QLO2tTCR7yG5YNclfberimvWwqknIEOuZ3S9=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはみおー"},{"type":"youtubeEmoji","emojiId":"UC_9jY6w3QoWHHZZZ6CEP94A/gtYUZs_9LNWo_9EPgcGwmAs","alt":"おはみお","sharedTooltipText":":_おはみお:","src":"https://yt3.ggpht.com/_yvD2TC0aE6C_kTSKqeRHDSYRsopplFqx9mBKmZS7AARngCPvDDuwHdqT-c94eJtyqyRIpHfqLw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"たすかる"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いってらっしゃい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いいね〜"}], "scope": "channel" }
+  ]
+}

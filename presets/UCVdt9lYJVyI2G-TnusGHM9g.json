@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ぜったい天使くるみ",
+  "note": "歌枠2配信・通常8配信のチャットから10枚",
+  "channel": "UCVdt9lYJVyI2G-TnusGHM9g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVdt9lYJVyI2G-TnusGHM9g/IFs1ZNU654z_0Q_DsogY","alt":"ひとにぎり","sharedTooltipText":":_ひとにぎり:","src":"https://yt3.ggpht.com/_MXl7dfDAdJFFtoblKblT1NBAJNT95JEx1goYcXJi2eEF31P9ODtTLMlkK8HTjilw-R_Bq4gIOE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVdt9lYJVyI2G-TnusGHM9g/I101ZJ3oOdek8gTCtYnIDw","alt":"ひとにぎり文字","sharedTooltipText":":_ひとにぎり文字:","src":"https://yt3.ggpht.com/vYY4mL0fsoD2PndpCIJyVSqnIRjaVS_MKYz8gjg8-iLv4rCydi0-5pXJJfvH7STiLmn3yXEOsZo=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVdt9lYJVyI2G-TnusGHM9g/0j5aZN-1Oc3DgwOBvpXgDw","alt":"わらわら","sharedTooltipText":":_わらわら:","src":"https://yt3.ggpht.com/y9QO07SD8NJ8QfvuLQNA50RNtayUMlJiifDO3uzFnOiJG5UavLC_b0xDT3c3wRhJXrgBQWYh=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わかる"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" }
+  ]
+}

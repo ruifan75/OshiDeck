@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "Luca Kaneshiro【NIJISANJI EN】",
-  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UC7Gb7Uawe20QyFibhLl1lzA",
   "cards": [
-    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"💛"},{"type":"text","value":"💛"},{"type":"text","value":"💛"},{"type":"text","value":"💛"},{"type":"text","value":"💛"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"POG"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7Gb7Uawe20QyFibhLl1lzA/EwmOYqSjD46K6dsP9dOKqAQ","alt":"lucubOMEGALUL","sharedTooltipText":":_lucubOMEGALUL:","src":"https://yt3.ggpht.com/K0qJidxmS_9bCa_h8e3isAf7iO7TwNbOissXRwbqWxchYCcHbpSOfJjgmiD-pmL3-aRoQpJgmfk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7Gb7Uawe20QyFibhLl1lzA/EwmOYqSjD46K6dsP9dOKqAQ","alt":"lucubOMEGALUL","sharedTooltipText":":_lucubOMEGALUL:","src":"https://yt3.ggpht.com/K0qJidxmS_9bCa_h8e3isAf7iO7TwNbOissXRwbqWxchYCcHbpSOfJjgmiD-pmL3-aRoQpJgmfk=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"yes"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"omg"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"awww"}], "scope": "channel" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7Gb7Uawe20QyFibhLl1lzA/DNe0Z5GcE7em_9EPpu6s8Ao","alt":"lucubPien","sharedTooltipText":":_lucubPien:","src":"https://yt3.ggpht.com/9h9EradYRC8fCpoJwwxC9kX-qPH-OB-Hfrbzuiw_TdJVEkOhKvPy9u2ZKKYNrwRX9Zd6uKuBAA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7Gb7Uawe20QyFibhLl1lzA/DNe0Z5GcE7em_9EPpu6s8Ao","alt":"lucubPien","sharedTooltipText":":_lucubPien:","src":"https://yt3.ggpht.com/9h9EradYRC8fCpoJwwxC9kX-qPH-OB-Hfrbzuiw_TdJVEkOhKvPy9u2ZKKYNrwRX9Zd6uKuBAA=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"no"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"oh"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"lol"}], "scope": "global" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7Gb7Uawe20QyFibhLl1lzA/DNe0Z8icE7em_9EPpu6s8Ao","alt":"lucubHeart2","sharedTooltipText":":_lucubHeart2:","src":"https://yt3.ggpht.com/1c9rkGKcNYRRhP9ptaou1iCB3XFVsUQmb68bTwCacBVvWUIjPT4jNundFC-qqf3uaB9fsK6CMg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7Gb7Uawe20QyFibhLl1lzA/DNe0Z8icE7em_9EPpu6s8Ao","alt":"lucubHeart2","sharedTooltipText":":_lucubHeart2:","src":"https://yt3.ggpht.com/1c9rkGKcNYRRhP9ptaou1iCB3XFVsUQmb68bTwCacBVvWUIjPT4jNundFC-qqf3uaB9fsK6CMg=w48-h48-c-k-nd"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7Gb7Uawe20QyFibhLl1lzA/edm0Z8DSObem_9EPpu6s8Ao","alt":"lucubPat","sharedTooltipText":":_lucubPat:","src":"https://yt3.ggpht.com/BQHhMCoNB9N12FzSUwy6DqZcHD289rlwC3NEWaJo-xFuBBZ4snNbsQ4dkCVz1ezDc2mFI6DvEqY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7Gb7Uawe20QyFibhLl1lzA/edm0Z8DSObem_9EPpu6s8Ao","alt":"lucubPat","sharedTooltipText":":_lucubPat:","src":"https://yt3.ggpht.com/BQHhMCoNB9N12FzSUwy6DqZcHD289rlwC3NEWaJo-xFuBBZ4snNbsQ4dkCVz1ezDc2mFI6DvEqY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7Gb7Uawe20QyFibhLl1lzA/DNe0Z_WXE7em_9EPpu6s8Ao","alt":"lucubPog","sharedTooltipText":":_lucubPog:","src":"https://yt3.ggpht.com/Vz3gaGldOdnoTQm3fx1VGz8yWfd1vOeEhwwY4-VMjxH-_qO2VL7yJKe_Ah7A4KFzEI2m1Q-5=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7Gb7Uawe20QyFibhLl1lzA/DNe0Z_WXE7em_9EPpu6s8Ao","alt":"lucubPog","sharedTooltipText":":_lucubPog:","src":"https://yt3.ggpht.com/Vz3gaGldOdnoTQm3fx1VGz8yWfd1vOeEhwwY4-VMjxH-_qO2VL7yJKe_Ah7A4KFzEI2m1Q-5=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7Gb7Uawe20QyFibhLl1lzA/DNe0Z8icE7em_9EPpu6s8Ao","alt":"lucubHeart2","sharedTooltipText":":_lucubHeart2:","src":"https://yt3.ggpht.com/1c9rkGKcNYRRhP9ptaou1iCB3XFVsUQmb68bTwCacBVvWUIjPT4jNundFC-qqf3uaB9fsK6CMg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7Gb7Uawe20QyFibhLl1lzA/DNe0Z8icE7em_9EPpu6s8Ao","alt":"lucubHeart2","sharedTooltipText":":_lucubHeart2:","src":"https://yt3.ggpht.com/1c9rkGKcNYRRhP9ptaou1iCB3XFVsUQmb68bTwCacBVvWUIjPT4jNundFC-qqf3uaB9fsK6CMg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" }
   ]
 }

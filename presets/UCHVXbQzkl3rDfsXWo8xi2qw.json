@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "アンジュ・カトリーナ - Ange Katrina -",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
   "channel": "UCHVXbQzkl3rDfsXWo8xi2qw",
   "cards": [
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおお"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"お誕生日おめでとう！"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"ううん、今来たとこ！"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"アンジュ今日もかわいいね！"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンジュ今日もかわいいね！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" }
   ]
 }

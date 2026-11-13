@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "時羽しう / tokiha shiu",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCOnPtWuGIz0kTNGcb9FR8xQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"またね〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCOnPtWuGIz0kTNGcb9FR8xQ/ivfEaJnmNqDwoPwPqN_bkAY","alt":"笑っちゃう","sharedTooltipText":":_笑っちゃう:","src":"https://yt3.ggpht.com/2g8-6hEV_7yHpuXFyIsudPRHE-pX09Ykp6gCyQHTCs7J982yXtd0wr2CIVRv4PagOH4si6baLg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCOnPtWuGIz0kTNGcb9FR8xQ/ivfEaJnmNqDwoPwPqN_bkAY","alt":"笑っちゃう","sharedTooltipText":":_笑っちゃう:","src":"https://yt3.ggpht.com/2g8-6hEV_7yHpuXFyIsudPRHE-pX09Ykp6gCyQHTCs7J982yXtd0wr2CIVRv4PagOH4si6baLg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wwww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"けっせい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCOnPtWuGIz0kTNGcb9FR8xQ/ivfEaN7mNqDwoPwPqN_bkAY","alt":"えーん","sharedTooltipText":":_えーん:","src":"https://yt3.ggpht.com/Z_QolYXhQWGFtk7k1kk5ucQ-OqkpkOPTZ10oo7OKEFdC5z3db-ibmuOeqwk6d2J5eua0IAQM9g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCOnPtWuGIz0kTNGcb9FR8xQ/ivfEaN7mNqDwoPwPqN_bkAY","alt":"えーん","sharedTooltipText":":_えーん:","src":"https://yt3.ggpht.com/Z_QolYXhQWGFtk7k1kk5ucQ-OqkpkOPTZ10oo7OKEFdC5z3db-ibmuOeqwk6d2J5eua0IAQM9g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCOnPtWuGIz0kTNGcb9FR8xQ/ojtMacCCBOKbrr4P8rHF2AM","alt":"仮Nice","sharedTooltipText":":_仮Nice:","src":"https://yt3.ggpht.com/43Of89z0OSA-RH2nFZ3wPBg_Sb6-NkkFLRnDkUnFXlbzYEwMLlh_EwWPnpqaMvAq2N1_walgfQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCOnPtWuGIz0kTNGcb9FR8xQ/ojtMacCCBOKbrr4P8rHF2AM","alt":"仮Nice","sharedTooltipText":":_仮Nice:","src":"https://yt3.ggpht.com/43Of89z0OSA-RH2nFZ3wPBg_Sb6-NkkFLRnDkUnFXlbzYEwMLlh_EwWPnpqaMvAq2N1_walgfQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "NYANA BANYANA",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC6JfDgBYHkm2msYAPEq8kjw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"1"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC6JfDgBYHkm2msYAPEq8kjw/VXx6avjXDcec7L4Pl77VwQs","alt":"nyanHeart","sharedTooltipText":":_nyanHeart:","src":"https://yt3.ggpht.com/gKRl3SzJfM3qt_Ajnq4pTtCpV1VMldwAq3a1dVz4z1n6BctOlRH3_gBTQ2CmnNtHuxCeNEcq=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6JfDgBYHkm2msYAPEq8kjw/VXx6avjXDcec7L4Pl77VwQs","alt":"nyanHeart","sharedTooltipText":":_nyanHeart:","src":"https://yt3.ggpht.com/gKRl3SzJfM3qt_Ajnq4pTtCpV1VMldwAq3a1dVz4z1n6BctOlRH3_gBTQ2CmnNtHuxCeNEcq=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6JfDgBYHkm2msYAPEq8kjw/VXx6avjXDcec7L4Pl77VwQs","alt":"nyanHeart","sharedTooltipText":":_nyanHeart:","src":"https://yt3.ggpht.com/gKRl3SzJfM3qt_Ajnq4pTtCpV1VMldwAq3a1dVz4z1n6BctOlRH3_gBTQ2CmnNtHuxCeNEcq=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC6JfDgBYHkm2msYAPEq8kjw/_uoOZbOrAfKI_9EPjMq68A0","alt":"nyanLaugh","sharedTooltipText":":_nyanLaugh:","src":"https://yt3.ggpht.com/mmYRPbx0uA9hY5K_ZAybvhgbfMX7Mfpx1DkZy8HpQCQQrF2VLzxJAPz_15RmAL7_ugPdzNwNtA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC6JfDgBYHkm2msYAPEq8kjw/VXx6apXXDcec7L4Pl77VwQs","alt":"nyanHype","sharedTooltipText":":_nyanHype:","src":"https://yt3.ggpht.com/Alk5ilBo3FyIH35ccQzmBvSYPyYBFg9kxoelsNPe_eWftBvi2bDVbZfTdtVG3ZYLD9r5N3d1aw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6JfDgBYHkm2msYAPEq8kjw/VXx6apXXDcec7L4Pl77VwQs","alt":"nyanHype","sharedTooltipText":":_nyanHype:","src":"https://yt3.ggpht.com/Alk5ilBo3FyIH35ccQzmBvSYPyYBFg9kxoelsNPe_eWftBvi2bDVbZfTdtVG3ZYLD9r5N3d1aw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6JfDgBYHkm2msYAPEq8kjw/VXx6apXXDcec7L4Pl77VwQs","alt":"nyanHype","sharedTooltipText":":_nyanHype:","src":"https://yt3.ggpht.com/Alk5ilBo3FyIH35ccQzmBvSYPyYBFg9kxoelsNPe_eWftBvi2bDVbZfTdtVG3ZYLD9r5N3d1aw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"2"}], "scope": "channel" }
+  ]
+}

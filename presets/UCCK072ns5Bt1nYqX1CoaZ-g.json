@@ -1,18 +1,18 @@
 {
   "format": 2,
-  "name": "Mythia Batford",
-  "note": "過去11配信のチャットから、常連が多い順に10枚",
+  "name": "Mythia Batford『 KY:MERA 』",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCCK072ns5Bt1nYqX1CoaZ-g",
   "cards": [
     { "tokens": [{"type":"text","value":"aku"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"1"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"otsuuu"}], "scope": "global" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/oPgfY_DoKfSXkNAPq8-AgAo","alt":"face-turquoise-covering-eyes","sharedTooltipText":":face-turquoise-covering-eyes:","src":"https://yt3.ggpht.com/H2HNPRO8f4SjMmPNh5fl10okSETW7dLTZtuE4jh9D6pSmaUiLfoZJ2oiY-qWU3Owfm1IsXg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/oPgfY_DoKfSXkNAPq8-AgAo","alt":"face-turquoise-covering-eyes","sharedTooltipText":":face-turquoise-covering-eyes:","src":"https://yt3.ggpht.com/H2HNPRO8f4SjMmPNh5fl10okSETW7dLTZtuE4jh9D6pSmaUiLfoZJ2oiY-qWU3Owfm1IsXg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/oPgfY_DoKfSXkNAPq8-AgAo","alt":"face-turquoise-covering-eyes","sharedTooltipText":":face-turquoise-covering-eyes:","src":"https://yt3.ggpht.com/H2HNPRO8f4SjMmPNh5fl10okSETW7dLTZtuE4jh9D6pSmaUiLfoZJ2oiY-qWU3Owfm1IsXg=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"wow"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"gas"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"1"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"wtf"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"lah"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCCK072ns5Bt1nYqX1CoaZ-g/dI3OY7j6NfqI_9EPyci50AU","alt":"AWOKAWAOK","sharedTooltipText":":_AWOKAWAOK:","src":"https://yt3.ggpht.com/_g668sHprpze9V9n58oR9g4XM7TN8YoSSz0MxFZHos2ilMSael_Khp2zKQOlc0yzcNJf0Y7p=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCCK072ns5Bt1nYqX1CoaZ-g/dI3OY7j6NfqI_9EPyci50AU","alt":"AWOKAWAOK","sharedTooltipText":":_AWOKAWAOK:","src":"https://yt3.ggpht.com/_g668sHprpze9V9n58oR9g4XM7TN8YoSSz0MxFZHos2ilMSael_Khp2zKQOlc0yzcNJf0Y7p=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCCK072ns5Bt1nYqX1CoaZ-g/dI3OY7j6NfqI_9EPyci50AU","alt":"AWOKAWAOK","sharedTooltipText":":_AWOKAWAOK:","src":"https://yt3.ggpht.com/_g668sHprpze9V9n58oR9g4XM7TN8YoSSz0MxFZHos2ilMSael_Khp2zKQOlc0yzcNJf0Y7p=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/W8IfY_bwAfiPq7IPvNCA2AU","alt":"face-red-droopy-eyes","sharedTooltipText":":face-red-droopy-eyes:","src":"https://yt3.ggpht.com/oih9s26MOYPWC_uL6tgaeOlXSGBv8MMoDrWzBt-80nEiVSL9nClgnuzUAKqkU9_TWygF6CI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/W8IfY_bwAfiPq7IPvNCA2AU","alt":"face-red-droopy-eyes","sharedTooltipText":":face-red-droopy-eyes:","src":"https://yt3.ggpht.com/oih9s26MOYPWC_uL6tgaeOlXSGBv8MMoDrWzBt-80nEiVSL9nClgnuzUAKqkU9_TWygF6CI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/W8IfY_bwAfiPq7IPvNCA2AU","alt":"face-red-droopy-eyes","sharedTooltipText":":face-red-droopy-eyes:","src":"https://yt3.ggpht.com/oih9s26MOYPWC_uL6tgaeOlXSGBv8MMoDrWzBt-80nEiVSL9nClgnuzUAKqkU9_TWygF6CI=w48-h48-c-k-nd"}], "scope": "channel" }
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Zentreya",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCVLsPBwDtv7n7FZLiOsvhSQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"om"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nt"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi zen"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OOO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Clap"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"clappi"}], "scope": "channel" }
+  ]
+}

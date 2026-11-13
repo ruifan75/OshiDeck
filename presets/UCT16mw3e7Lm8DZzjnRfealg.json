@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "MIONch.蒼羽未音",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCT16mw3e7Lm8DZzjnRfealg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"💙"},{"type":"text","value":"🎤"},{"type":"text","value":"🕊"},{"type":"text","value":"💙"},{"type":"text","value":"🎤"},{"type":"text","value":"🕊"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"みょんじゅーる！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"みょんなら〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"みょんなら～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あい！あい！あい！あい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/egJ1XufTKYfegwOo57ewAg","alt":"shelterin","sharedTooltipText":":shelterin:","src":"https://yt3.ggpht.com/gjC5x98J4BoVSEPfFJaoLtc4tSBGSEdIlfL2FV4iJG9uGNykDP9oJC_QxAuBTJy6dakPxVeC=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/egJ1XufTKYfegwOo57ewAg","alt":"shelterin","sharedTooltipText":":shelterin:","src":"https://yt3.ggpht.com/gjC5x98J4BoVSEPfFJaoLtc4tSBGSEdIlfL2FV4iJG9uGNykDP9oJC_QxAuBTJy6dakPxVeC=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/egJ1XufTKYfegwOo57ewAg","alt":"shelterin","sharedTooltipText":":shelterin:","src":"https://yt3.ggpht.com/gjC5x98J4BoVSEPfFJaoLtc4tSBGSEdIlfL2FV4iJG9uGNykDP9oJC_QxAuBTJy6dakPxVeC=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

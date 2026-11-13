@@ -1,0 +1,10 @@
+{
+  "format": 2,
+  "name": "筱瑀Yui",
+  "note": "歌枠2配信・通常7配信のチャットから2枚",
+  "channel": "UC_fBWkiqlYKSJYpov0fJNsg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"安安"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"筱瑀安安"}], "scope": "channel" }
+  ]
+}

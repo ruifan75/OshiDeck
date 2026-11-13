@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "柊 優花",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCdvq5i3RyRsoTqITD1xSxNw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"ノ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんゆかしー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdvq5i3RyRsoTqITD1xSxNw/F9_tZN7dGaSQ_9EPiqW54Ak","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/PmGzGUPqbbl2Esult2hseBKizs4GdbCPDuSU0YttpbYsAMOeAl--h27_QX9X3O_UYCSyv9pV=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdvq5i3RyRsoTqITD1xSxNw/F9_tZN7dGaSQ_9EPiqW54Ak","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/PmGzGUPqbbl2Esult2hseBKizs4GdbCPDuSU0YttpbYsAMOeAl--h27_QX9X3O_UYCSyv9pV=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdvq5i3RyRsoTqITD1xSxNw/F9_tZN7dGaSQ_9EPiqW54Ak","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/PmGzGUPqbbl2Esult2hseBKizs4GdbCPDuSU0YttpbYsAMOeAl--h27_QX9X3O_UYCSyv9pV=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdvq5i3RyRsoTqITD1xSxNw/F9_tZN7dGaSQ_9EPiqW54Ak","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/PmGzGUPqbbl2Esult2hseBKizs4GdbCPDuSU0YttpbYsAMOeAl--h27_QX9X3O_UYCSyv9pV=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdvq5i3RyRsoTqITD1xSxNw/F9_tZN7dGaSQ_9EPiqW54Ak","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/PmGzGUPqbbl2Esult2hseBKizs4GdbCPDuSU0YttpbYsAMOeAl--h27_QX9X3O_UYCSyv9pV=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつゆかしー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"へ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" }
+  ]
+}

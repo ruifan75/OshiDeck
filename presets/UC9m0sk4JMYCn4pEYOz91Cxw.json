@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Power Guy",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC9m0sk4JMYCn4pEYOz91Cxw",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9m0sk4JMYCn4pEYOz91Cxw/aY7XY6K4K8qu8wSJk6OABg","alt":"powerMegachad","sharedTooltipText":":_powerMegachad:","src":"https://yt3.ggpht.com/Eua2PIZpyCRzebmKwlXCKOAvtDPCDeP2KP2MejhjOc2dWmQ8l3NQGm4ZlZVE1TkZQQr-NK-dP_M=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9m0sk4JMYCn4pEYOz91Cxw/aY7XY6K4K8qu8wSJk6OABg","alt":"powerMegachad","sharedTooltipText":":_powerMegachad:","src":"https://yt3.ggpht.com/Eua2PIZpyCRzebmKwlXCKOAvtDPCDeP2KP2MejhjOc2dWmQ8l3NQGm4ZlZVE1TkZQQr-NK-dP_M=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9m0sk4JMYCn4pEYOz91Cxw/aY7XY6K4K8qu8wSJk6OABg","alt":"powerMegachad","sharedTooltipText":":_powerMegachad:","src":"https://yt3.ggpht.com/Eua2PIZpyCRzebmKwlXCKOAvtDPCDeP2KP2MejhjOc2dWmQ8l3NQGm4ZlZVE1TkZQQr-NK-dP_M=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9m0sk4JMYCn4pEYOz91Cxw/aY7XY6K4K8qu8wSJk6OABg","alt":"powerMegachad","sharedTooltipText":":_powerMegachad:","src":"https://yt3.ggpht.com/Eua2PIZpyCRzebmKwlXCKOAvtDPCDeP2KP2MejhjOc2dWmQ8l3NQGm4ZlZVE1TkZQQr-NK-dP_M=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9m0sk4JMYCn4pEYOz91Cxw/aY7XY6K4K8qu8wSJk6OABg","alt":"powerMegachad","sharedTooltipText":":_powerMegachad:","src":"https://yt3.ggpht.com/Eua2PIZpyCRzebmKwlXCKOAvtDPCDeP2KP2MejhjOc2dWmQ8l3NQGm4ZlZVE1TkZQQr-NK-dP_M=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Yo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"NOOO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"HIII"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WHAT"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LEGS GOOO"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "鴉羽そら",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCA8nozgxzH7O_w5I_1l0JXg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはよー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCA8nozgxzH7O_w5I_1l0JXg/goEGapXMAeOa7OsP9JvQkQM","alt":"chira","sharedTooltipText":":_chira:","src":"https://yt3.ggpht.com/WWgfXFj2lUp0Y2TM3iISCZTfV2eF_jD-Bzx0LeJxyLlKA6hqsSbi1U8_4xgOMWdQ1BtiPn-tTYs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCA8nozgxzH7O_w5I_1l0JXg/goEGapXMAeOa7OsP9JvQkQM","alt":"chira","sharedTooltipText":":_chira:","src":"https://yt3.ggpht.com/WWgfXFj2lUp0Y2TM3iISCZTfV2eF_jD-Bzx0LeJxyLlKA6hqsSbi1U8_4xgOMWdQ1BtiPn-tTYs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCA8nozgxzH7O_w5I_1l0JXg/goEGapXMAeOa7OsP9JvQkQM","alt":"chira","sharedTooltipText":":_chira:","src":"https://yt3.ggpht.com/WWgfXFj2lUp0Y2TM3iISCZTfV2eF_jD-Bzx0LeJxyLlKA6hqsSbi1U8_4xgOMWdQ1BtiPn-tTYs=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCA8nozgxzH7O_w5I_1l0JXg/OyTcasGtAr_Ds8IP-aLwiQU","alt":"Yeah","sharedTooltipText":":_Yeah:","src":"https://yt3.ggpht.com/14reOinwhTTmQNfRTlroOWnptt8nn_Ds0b5SdA2xJ_ft2MG_dwtqXlMlvxC-73Sz7go5-KABsw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCA8nozgxzH7O_w5I_1l0JXg/OyTcasGtAr_Ds8IP-aLwiQU","alt":"Yeah","sharedTooltipText":":_Yeah:","src":"https://yt3.ggpht.com/14reOinwhTTmQNfRTlroOWnptt8nn_Ds0b5SdA2xJ_ft2MG_dwtqXlMlvxC-73Sz7go5-KABsw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCA8nozgxzH7O_w5I_1l0JXg/OyTcasGtAr_Ds8IP-aLwiQU","alt":"Yeah","sharedTooltipText":":_Yeah:","src":"https://yt3.ggpht.com/14reOinwhTTmQNfRTlroOWnptt8nn_Ds0b5SdA2xJ_ft2MG_dwtqXlMlvxC-73Sz7go5-KABsw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" }
+  ]
+}

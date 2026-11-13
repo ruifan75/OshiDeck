@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "おうまゆう",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCw8bMzcXgX4SAQPraOJIVgA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こねこね"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"しーゆー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCw8bMzcXgX4SAQPraOJIVgA/bkuJasyzDt6R7OsPwtb4uAc","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/8yUa-azRgDygPTBOKgiUzxf2fzY4pZ_T3neELa9wW7Ir7lE5zmQnDii3NFxhObz0AuiDsd7KXw=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

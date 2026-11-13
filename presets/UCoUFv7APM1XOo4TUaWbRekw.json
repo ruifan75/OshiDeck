@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Reynard Blanc Ch.『 Re:Memories 』",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCoUFv7APM1XOo4TUaWbRekw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"pachi pachi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🔥"},{"type":"text","value":"🔥"},{"type":"text","value":"🔥"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCoUFv7APM1XOo4TUaWbRekw/YnwZaouMN-mD9fwP3vDnoQE","alt":"reylove","sharedTooltipText":":_reylove:","src":"https://yt3.ggpht.com/3gRokSSmvrepswx5AtcZ1VikCDOGD4d4ykRH7K_UfOYNjuXscNmiI_ItqtEP4velC-M-kAwZCA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCoUFv7APM1XOo4TUaWbRekw/YnwZaouMN-mD9fwP3vDnoQE","alt":"reylove","sharedTooltipText":":_reylove:","src":"https://yt3.ggpht.com/3gRokSSmvrepswx5AtcZ1VikCDOGD4d4ykRH7K_UfOYNjuXscNmiI_ItqtEP4velC-M-kAwZCA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😭"},{"type":"text","value":"😭"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yeyy"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsunad"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCoUFv7APM1XOo4TUaWbRekw/YnwZauqQN-mD9fwP3vDnoQE","alt":"reynangis","sharedTooltipText":":_reynangis:","src":"https://yt3.ggpht.com/m0p0f5okshKccgrz0_mFrNCgZjRwzoq-7-Mqk13w8rFDctxypVzyrLJb2Vk0Hz4WCdhhEEmJcQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCoUFv7APM1XOo4TUaWbRekw/b-Y0apjkD_Tq9fwPgvXxkAE","alt":"lsleft","sharedTooltipText":":_lsleft:","src":"https://yt3.ggpht.com/iDOIlUpiFh3L6s5HOcDmJwYvPO913WLZA3CJNset4KF0Ubd6YWc3R0_8r9DJ0m9zyLLlntdyPQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCoUFv7APM1XOo4TUaWbRekw/b-Y0apLoD_Tq9fwPgvXxkAE","alt":"lsright","sharedTooltipText":":_lsright:","src":"https://yt3.ggpht.com/pHmihpTYMjTA_wIfPOL_POEcTEaerP5VExDTWItaIhRSy-SB6wEcCFozKLg2na74tSiMJNBaRFI=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aamiin"}], "scope": "channel" }
+  ]
+}

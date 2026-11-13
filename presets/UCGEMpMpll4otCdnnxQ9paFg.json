@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "sakuyui ch / さくゆいちゃんねる",
+  "note": "歌枠0配信・通常12配信のチャットから10枚",
+  "channel": "UCGEMpMpll4otCdnnxQ9paFg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"激アツ！！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"社長！？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あっ"}], "scope": "channel" }
+  ]
+}

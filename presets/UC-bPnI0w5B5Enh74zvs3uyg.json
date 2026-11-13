@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "リオネ・クレイジーゼリー / Re:one CrazyJelly",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC-bPnI0w5B5Enh74zvs3uyg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんゼリー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんぜりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-bPnI0w5B5Enh74zvs3uyg/vCd_adRFwKLm3Q_XmszQDg","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/NcuolUy71bTc8bs9X8-LVSbRI9ofy4YWuGWETkjvbYZajtpTzcyZXICcHHgl2PN-NHYTz3eenw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC-bPnI0w5B5Enh74zvs3uyg/vCd_adRFwKLm3Q_XmszQDg","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/NcuolUy71bTc8bs9X8-LVSbRI9ofy4YWuGWETkjvbYZajtpTzcyZXICcHHgl2PN-NHYTz3eenw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC-bPnI0w5B5Enh74zvs3uyg/vCd_adRFwKLm3Q_XmszQDg","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/NcuolUy71bTc8bs9X8-LVSbRI9ofy4YWuGWETkjvbYZajtpTzcyZXICcHHgl2PN-NHYTz3eenw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつゼリー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-bPnI0w5B5Enh74zvs3uyg/8IedaaznJMLc7OsPhrO9kAY","alt":"omedetou","sharedTooltipText":":_omedetou:","src":"https://yt3.ggpht.com/1dcEpLf2a8pMShlJlSZ8EO5Luy9I97wloOOYbsfUxthxDs4OgZSBAeZ0f-JpGGz_ehBk7sqM8Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC-bPnI0w5B5Enh74zvs3uyg/8IedaaznJMLc7OsPhrO9kAY","alt":"omedetou","sharedTooltipText":":_omedetou:","src":"https://yt3.ggpht.com/1dcEpLf2a8pMShlJlSZ8EO5Luy9I97wloOOYbsfUxthxDs4OgZSBAeZ0f-JpGGz_ehBk7sqM8Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC-bPnI0w5B5Enh74zvs3uyg/8IedaaznJMLc7OsPhrO9kAY","alt":"omedetou","sharedTooltipText":":_omedetou:","src":"https://yt3.ggpht.com/1dcEpLf2a8pMShlJlSZ8EO5Luy9I97wloOOYbsfUxthxDs4OgZSBAeZ0f-JpGGz_ehBk7sqM8Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんゼリ〜♪"},{"type":"text","value":"✨"},{"type":"text","value":"　"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" }
+  ]
+}

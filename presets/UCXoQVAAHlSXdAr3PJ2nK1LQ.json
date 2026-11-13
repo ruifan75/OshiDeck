@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Quarbit",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCXoQVAAHlSXdAr3PJ2nK1LQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"damn"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hahahaha"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" }
+  ]
+}

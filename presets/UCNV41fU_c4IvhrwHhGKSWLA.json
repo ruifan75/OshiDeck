@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "パカエル / Pakael",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCNV41fU_c4IvhrwHhGKSWLA",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNV41fU_c4IvhrwHhGKSWLA/xndyaNPtF9mW_9EP-aWN0Qg","alt":"kon","sharedTooltipText":":_kon:","src":"https://yt3.ggpht.com/sSwlhJAqG04Ia6olq8-oENgbQKAgUuFCv2aHdjVFR3fCuo5nk62rAUGGBp2XO_rkcHx1NGACJw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNV41fU_c4IvhrwHhGKSWLA/xndyaK74F9mW_9EP-aWN0Qg","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/9I3iejkUc_SlOHe1h59PjTIowIaBuz5ULJxDTySgpamTqaXKkaToDwm-X61kbtZp1x7dC2GnGeU=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNV41fU_c4IvhrwHhGKSWLA/xndyaPvuF9mW_9EP-aWN0Qg","alt":"fight","sharedTooltipText":":_fight:","src":"https://yt3.ggpht.com/QxMegxavPqqNEHCmUQlAcZpAuJZvElwi2EJpE3AvK7zioxSBp9oJPIHrL5UrlQdVzgz-zjof_Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんパカ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNV41fU_c4IvhrwHhGKSWLA/HCZ1aN-6NtmW_9EPhv2zsQw","alt":"nice","sharedTooltipText":":_nice:","src":"https://yt3.ggpht.com/gWRWjKsBky1E3ufgh0WLEnB8Jn7JIT_tXHz6RpfMghbUoyU9zJZr4Jk5jz2i4LFm31myMg92zg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNV41fU_c4IvhrwHhGKSWLA/xndyaI7uF9mW_9EP-aWN0Qg","alt":"otsu","sharedTooltipText":":_otsu:","src":"https://yt3.ggpht.com/ovtSdOzbQjvTjPY2rnDgy8NeUFVAR99OSNXe9xTAVYvtPxcjKz5TqeZ1t0bPg_9OSDdL5Ud3Zw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNV41fU_c4IvhrwHhGKSWLA/xndyaI7uF9mW_9EP-aWN0Qg","alt":"otsu","sharedTooltipText":":_otsu:","src":"https://yt3.ggpht.com/ovtSdOzbQjvTjPY2rnDgy8NeUFVAR99OSNXe9xTAVYvtPxcjKz5TqeZ1t0bPg_9OSDdL5Ud3Zw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNV41fU_c4IvhrwHhGKSWLA/xndyaKD0F9mW_9EP-aWN0Qg","alt":"nfnf","sharedTooltipText":":_nfnf:","src":"https://yt3.ggpht.com/I-UvoIJSnZWh6fhLd88vXBKkUWNTVkRJ6yeUJ7WB3xwRyyD6qafBeAPyHhE3OFlrcxLz1R5DISI=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" }
+  ]
+}

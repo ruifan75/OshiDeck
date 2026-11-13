@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Kohaku Hyouma",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCQ3s_kQYf3PuqOKu90HrIqw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQ3s_kQYf3PuqOKu90HrIqw/8u96ZpqBLMSn_9EPucme4As","alt":"KohakuCheer","sharedTooltipText":":_KohakuCheer:","src":"https://yt3.ggpht.com/-EudyizT1xiSHwWNbMvHXlDw3owMh4yBTUENXhOJN2FtZhbO5_a6hfBKhCj87Gt6hdjOMaL1cg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQ3s_kQYf3PuqOKu90HrIqw/8u96ZpqBLMSn_9EPucme4As","alt":"KohakuCheer","sharedTooltipText":":_KohakuCheer:","src":"https://yt3.ggpht.com/-EudyizT1xiSHwWNbMvHXlDw3owMh4yBTUENXhOJN2FtZhbO5_a6hfBKhCj87Gt6hdjOMaL1cg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQ3s_kQYf3PuqOKu90HrIqw/8u96ZpqBLMSn_9EPucme4As","alt":"KohakuCheer","sharedTooltipText":":_KohakuCheer:","src":"https://yt3.ggpht.com/-EudyizT1xiSHwWNbMvHXlDw3owMh4yBTUENXhOJN2FtZhbO5_a6hfBKhCj87Gt6hdjOMaL1cg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQ3s_kQYf3PuqOKu90HrIqw/8u96ZrX_K8Sn_9EPucme4As","alt":"KohakuHeart","sharedTooltipText":":_KohakuHeart:","src":"https://yt3.ggpht.com/PwA5uzWGEDAiBTicUoILFztDv-KH_njSDYcGj6mNpwt9OtYfjmNBT9BLuGH0657Xoj78ZJ8X=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQ3s_kQYf3PuqOKu90HrIqw/8u96ZrX_K8Sn_9EPucme4As","alt":"KohakuHeart","sharedTooltipText":":_KohakuHeart:","src":"https://yt3.ggpht.com/PwA5uzWGEDAiBTicUoILFztDv-KH_njSDYcGj6mNpwt9OtYfjmNBT9BLuGH0657Xoj78ZJ8X=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQ3s_kQYf3PuqOKu90HrIqw/8u96ZrX_K8Sn_9EPucme4As","alt":"KohakuHeart","sharedTooltipText":":_KohakuHeart:","src":"https://yt3.ggpht.com/PwA5uzWGEDAiBTicUoILFztDv-KH_njSDYcGj6mNpwt9OtYfjmNBT9BLuGH0657Xoj78ZJ8X=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQ3s_kQYf3PuqOKu90HrIqw/bVfiZ9qKDbXA_9EPhcmv8QI","alt":"KohakuPointLOL","sharedTooltipText":":_KohakuPointLOL:","src":"https://yt3.ggpht.com/uf5F8Z8_abB0gLuZq_zKqJFGoOn33hQuQYAxkZO_UjapO5rZjhnFYB7s79PlWV4yBrZYmEaU=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🐯"},{"type":"text","value":"💙"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQ3s_kQYf3PuqOKu90HrIqw/WTh8ZqyTG8Sn_9EPtaqB4A0","alt":"KohakuLOL","sharedTooltipText":":_KohakuLOL:","src":"https://yt3.ggpht.com/dtLWaaEBdEFVkUl-Q43VT85U91ltIWxQtW_i1qcJqop2YsFlB6B2xl3O-mHLtnpCaq5WaIvHkg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQ3s_kQYf3PuqOKu90HrIqw/8u96ZqOALMSn_9EPucme4As","alt":"KohakuYamcha","sharedTooltipText":":_KohakuYamcha:","src":"https://yt3.ggpht.com/Sh8qG9IaAWvR1thpCuxTuV5_SGjY8X88BaDx3Qj_XQlHuG7okTvy-bxtzsDrXYhfCozVKV4oTQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

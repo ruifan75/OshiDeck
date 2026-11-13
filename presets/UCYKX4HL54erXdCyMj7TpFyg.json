@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Shizukou",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCYKX4HL54erXdCyMj7TpFyg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"bye bye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"AYO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"HUH"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"X"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"CRONCH"}], "scope": "channel" }
+  ]
+}

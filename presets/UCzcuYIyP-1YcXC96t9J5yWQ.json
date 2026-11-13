@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "九里詠太 / Kuri Eita【にじさんじ】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCzcuYIyP-1YcXC96t9J5yWQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"nt"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCzcuYIyP-1YcXC96t9J5yWQ/LzojavOcLfD57OsPnLmq8Qg","alt":"NICE","sharedTooltipText":":_NICE:","src":"https://yt3.ggpht.com/dK9oanciNNpIwvvJT7nVxamGoMf_LLHPPClFQ7Czb4ZFjm7CQl5RrFB-zVN1oWDjJSPOfMpcvg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCzcuYIyP-1YcXC96t9J5yWQ/LzojavOcLfD57OsPnLmq8Qg","alt":"NICE","sharedTooltipText":":_NICE:","src":"https://yt3.ggpht.com/dK9oanciNNpIwvvJT7nVxamGoMf_LLHPPClFQ7Czb4ZFjm7CQl5RrFB-zVN1oWDjJSPOfMpcvg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCzcuYIyP-1YcXC96t9J5yWQ/bV4lauKOBMaa7OsPv4qiuAc","alt":"こんくり","sharedTooltipText":":_こんくり:","src":"https://yt3.ggpht.com/cRuT3OSRWPyyG3Zso5XB7LO6jeDaMvPSWK6IpwvzrTEm6i5vcF9Z4xDnxjcvFyipWZZ9OtrJKg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCzcuYIyP-1YcXC96t9J5yWQ/bV4lauKOBMaa7OsPv4qiuAc","alt":"こんくり","sharedTooltipText":":_こんくり:","src":"https://yt3.ggpht.com/cRuT3OSRWPyyG3Zso5XB7LO6jeDaMvPSWK6IpwvzrTEm6i5vcF9Z4xDnxjcvFyipWZZ9OtrJKg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCzcuYIyP-1YcXC96t9J5yWQ/bV4laryOBMaa7OsPv4qiuAc","alt":"おつくり","sharedTooltipText":":_おつくり:","src":"https://yt3.ggpht.com/buTmnk-aSeQL8sfJ1geJ4UpleldAqUShJ9ae5U2j4YV33QxJ2RqtfwZbd50ICrOZqcpdFxNf=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCzcuYIyP-1YcXC96t9J5yWQ/bV4laryOBMaa7OsPv4qiuAc","alt":"おつくり","sharedTooltipText":":_おつくり:","src":"https://yt3.ggpht.com/buTmnk-aSeQL8sfJ1geJ4UpleldAqUShJ9ae5U2j4YV33QxJ2RqtfwZbd50ICrOZqcpdFxNf=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCzcuYIyP-1YcXC96t9J5yWQ/bV4lap6PBMaa7OsPv4qiuAc","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/FjwVK-oqI7fNGT7_4nupuuix1l9dW_4sf7v_MDj6ODby4xcHqcV4xliHA90v0Knqj-r2-mk-Zw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCzcuYIyP-1YcXC96t9J5yWQ/bV4lap6PBMaa7OsPv4qiuAc","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/FjwVK-oqI7fNGT7_4nupuuix1l9dW_4sf7v_MDj6ODby4xcHqcV4xliHA90v0Knqj-r2-mk-Zw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" }
+  ]
+}

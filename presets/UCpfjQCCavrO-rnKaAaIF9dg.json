@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "プティ ASMR保管庫",
+  "note": "歌枠0配信・通常8配信のチャットから10枚",
+  "channel": "UCpfjQCCavrO-rnKaAaIF9dg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんぷて"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやぷて"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きた"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんぷて～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

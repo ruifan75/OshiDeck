@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "カンザリンch /[kanzarin]",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCUL_-dZeUr4eF8CdtAXV10g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんザリン"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCUL_-dZeUr4eF8CdtAXV10g/xuYdY9C9Boa9gwO5loiQCw","alt":"konn","sharedTooltipText":":_konn:","src":"https://yt3.ggpht.com/MyspSTsv3rSGqNwd3L20qOC8BJI_Eeir_SXJ2HYxxOa2psmgXOw6URa-lZrSMpz2XQKRtjIG3A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCUL_-dZeUr4eF8CdtAXV10g/TucZY8-EJYGG8wS2sJ-YAw","alt":"ザリン","sharedTooltipText":":_ザリン:","src":"https://yt3.ggpht.com/_Of8N_pyqukiqieSQENiXvZKLZmMtGqITTa81FKId-isxaDaWK_t4JfmOWpdQ16-dYBBD7ULoGg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCUL_-dZeUr4eF8CdtAXV10g/TucZY8-EJYGG8wS2sJ-YAw","alt":"ザリン","sharedTooltipText":":_ザリン:","src":"https://yt3.ggpht.com/_Of8N_pyqukiqieSQENiXvZKLZmMtGqITTa81FKId-isxaDaWK_t4JfmOWpdQ16-dYBBD7ULoGg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCUL_-dZeUr4eF8CdtAXV10g/TucZY8-EJYGG8wS2sJ-YAw","alt":"ザリン","sharedTooltipText":":_ザリン:","src":"https://yt3.ggpht.com/_Of8N_pyqukiqieSQENiXvZKLZmMtGqITTa81FKId-isxaDaWK_t4JfmOWpdQ16-dYBBD7ULoGg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつザリン"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCUL_-dZeUr4eF8CdtAXV10g/xuYdY_69Boa9gwO5loiQCw","alt":"otuu","sharedTooltipText":":_otuu:","src":"https://yt3.ggpht.com/66sZmnQf-HfCGxYmull_255VNkVYG_rd638Lc4JQ3wTyHFEsD9owJb6Is1bM2ES50jXweIZImIg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCUL_-dZeUr4eF8CdtAXV10g/TucZY8-EJYGG8wS2sJ-YAw","alt":"ザリン","sharedTooltipText":":_ザリン:","src":"https://yt3.ggpht.com/_Of8N_pyqukiqieSQENiXvZKLZmMtGqITTa81FKId-isxaDaWK_t4JfmOWpdQ16-dYBBD7ULoGg=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

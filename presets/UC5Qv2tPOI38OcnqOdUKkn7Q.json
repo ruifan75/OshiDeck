@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "千凛あゆむ / Senri Ayumu【にじさんじ】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC5Qv2tPOI38OcnqOdUKkn7Q",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC5Qv2tPOI38OcnqOdUKkn7Q/rAs4aojOCMaa7OsPrc_62Ac","alt":"Light","sharedTooltipText":":_Light:","src":"https://yt3.ggpht.com/2Yp-3PkrrnLTCWCIzHiEr24Qri4H6iyT5CussZBPcX0qm6DFPyj_Op2sEe_zKUtE3cmnoWNm97I=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5Qv2tPOI38OcnqOdUKkn7Q/rAs4aojOCMaa7OsPrc_62Ac","alt":"Light","sharedTooltipText":":_Light:","src":"https://yt3.ggpht.com/2Yp-3PkrrnLTCWCIzHiEr24Qri4H6iyT5CussZBPcX0qm6DFPyj_Op2sEe_zKUtE3cmnoWNm97I=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5Qv2tPOI38OcnqOdUKkn7Q/rAs4aojOCMaa7OsPrc_62Ac","alt":"Light","sharedTooltipText":":_Light:","src":"https://yt3.ggpht.com/2Yp-3PkrrnLTCWCIzHiEr24Qri4H6iyT5CussZBPcX0qm6DFPyj_Op2sEe_zKUtE3cmnoWNm97I=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC5Qv2tPOI38OcnqOdUKkn7Q/rAs4arPNCMaa7OsPrc_62Ac","alt":"Kawaii","sharedTooltipText":":_Kawaii:","src":"https://yt3.ggpht.com/MLFaLQC8zykMdS8Kv01xaAi1QIc55WVhXHQKjt1rKmZHR1Y6GsQBIFPh4A6DRmHC_izs6W6EQQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5Qv2tPOI38OcnqOdUKkn7Q/rAs4arPNCMaa7OsPrc_62Ac","alt":"Kawaii","sharedTooltipText":":_Kawaii:","src":"https://yt3.ggpht.com/MLFaLQC8zykMdS8Kv01xaAi1QIc55WVhXHQKjt1rKmZHR1Y6GsQBIFPh4A6DRmHC_izs6W6EQQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5Qv2tPOI38OcnqOdUKkn7Q/rAs4arPNCMaa7OsPrc_62Ac","alt":"Kawaii","sharedTooltipText":":_Kawaii:","src":"https://yt3.ggpht.com/MLFaLQC8zykMdS8Kv01xaAi1QIc55WVhXHQKjt1rKmZHR1Y6GsQBIFPh4A6DRmHC_izs6W6EQQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC5Qv2tPOI38OcnqOdUKkn7Q/rAs4aofNCMaa7OsPrc_62Ac","alt":"Heart","sharedTooltipText":":_Heart:","src":"https://yt3.ggpht.com/DpuPD793weRT0iYh4Yp_dE6ZAH7901zUysKskr1ux0eBUJYHjHmomAOFr1ppHG_jTGXanaYqKg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5Qv2tPOI38OcnqOdUKkn7Q/rAs4aofNCMaa7OsPrc_62Ac","alt":"Heart","sharedTooltipText":":_Heart:","src":"https://yt3.ggpht.com/DpuPD793weRT0iYh4Yp_dE6ZAH7901zUysKskr1ux0eBUJYHjHmomAOFr1ppHG_jTGXanaYqKg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5Qv2tPOI38OcnqOdUKkn7Q/rAs4aofNCMaa7OsPrc_62Ac","alt":"Heart","sharedTooltipText":":_Heart:","src":"https://yt3.ggpht.com/DpuPD793weRT0iYh4Yp_dE6ZAH7901zUysKskr1ux0eBUJYHjHmomAOFr1ppHG_jTGXanaYqKg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" }
+  ]
+}

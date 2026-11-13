@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "バーチャルおばあちゃんねる",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCTMgd9qnUD9qKBX5oTtD6ug",
+  "cards": [
+    { "tokens": [{"type":"text","value":"わーわーわー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きゃー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🐊"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつばばー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" }
+  ]
+}

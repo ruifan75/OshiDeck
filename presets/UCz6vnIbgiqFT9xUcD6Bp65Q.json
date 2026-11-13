@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ChroNoiR",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCz6vnIbgiqFT9xUcD6Bp65Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCz6vnIbgiqFT9xUcD6Bp65Q/dqnTXoiAA5ON-gP2947AAw","alt":"otu","sharedTooltipText":":_otu:","src":"https://yt3.ggpht.com/cDz02p5FV8geqe9awObKxBr0LsS9_RwWOqlWlz_cmQ524Qe_BCUAd1pbdAUWqQvJAcqLhsSDCA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCz6vnIbgiqFT9xUcD6Bp65Q/dqnTXu2AA5ON-gP2947AAw","alt":"nowaru","sharedTooltipText":":_nowaru:","src":"https://yt3.ggpht.com/k5GuMvottJIPIIuzvgug52NhDWApQBLijnWXm-nUaA5Yaqtn6X-TCGzBrz0cg-Ds6gaxqtKTWCQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やったー！"}], "scope": "channel" }
+  ]
+}

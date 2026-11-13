@@ -108,6 +108,17 @@ for (const path of paths) {
   const problemAgain = presets.validate(incoming);
   if (problemAgain) die(`${path} は使えません: ${why(problemAgain)}`);
 
+  // Bundling content never opts a viewer into creating universal cards.
+  // A deck exported with both scopes can contain the same words twice;
+  // once both are channel-only it is one starting card, just as on import.
+  const words = new Set();
+  incoming.cards = incoming.cards.filter((card) => {
+    const key = globalThis.OshiDeck.tokens.cardKey(card.tokens);
+    if (words.has(key)) return false;
+    words.add(key);
+    return true;
+  }).map((card) => ({ ...card, scope: "channel" }));
+
   ready.push(incoming);
 }
 

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "天神 子兎音 Tenjin Kotone",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCAr7rLi_Wn09G-XfTA07d4g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"⛩"},{"type":"text","value":"🎶"},{"type":"text","value":"⛩"},{"type":"text","value":"🎶"},{"type":"text","value":"⛩"},{"type":"text","value":"🎶"},{"type":"text","value":"⛩"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんうぃぃぃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつねー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"},{"type":"youtubeEmoji","emojiId":"UCAr7rLi_Wn09G-XfTA07d4g/qo6wYOzrLNG2gwPW24S4CQ","alt":"ちびこと","sharedTooltipText":":_ちびこと:","src":"https://yt3.ggpht.com/04xJ3HA58R0aGo1kFZXkkDNgDORVY35Z0t2mqF-s9OKi9VuNRcD_nfCMOqwx-j87Tt240YbNWA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぅ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないせんです"}], "scope": "channel" }
+  ]
+}

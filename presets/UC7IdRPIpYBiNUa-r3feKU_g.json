@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Jack Ch. 잭",
+  "note": "歌枠2配信・通常7配信のチャットから10枚",
+  "channel": "UC7IdRPIpYBiNUa-r3feKU_g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"ㅋㅋㅋㅋㅋㅋ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"잭하"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"오"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7IdRPIpYBiNUa-r3feKU_g/7m3HYdacO92Q8wSpspO4Dw","alt":"rhbong","sharedTooltipText":":_rhbong:","src":"https://yt3.ggpht.com/1LmmswUDdJUcPoqlEK6ZBFaZoY0bKQCfE6KryUtBljR6bpGd2FiXPLOl3Nlt20PD6VazqYMj=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7IdRPIpYBiNUa-r3feKU_g/7m3HYdacO92Q8wSpspO4Dw","alt":"rhbong","sharedTooltipText":":_rhbong:","src":"https://yt3.ggpht.com/1LmmswUDdJUcPoqlEK6ZBFaZoY0bKQCfE6KryUtBljR6bpGd2FiXPLOl3Nlt20PD6VazqYMj=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7IdRPIpYBiNUa-r3feKU_g/7m3HYdacO92Q8wSpspO4Dw","alt":"rhbong","sharedTooltipText":":_rhbong:","src":"https://yt3.ggpht.com/1LmmswUDdJUcPoqlEK6ZBFaZoY0bKQCfE6KryUtBljR6bpGd2FiXPLOl3Nlt20PD6VazqYMj=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7IdRPIpYBiNUa-r3feKU_g/7m3HYdacO92Q8wSpspO4Dw","alt":"rhbong","sharedTooltipText":":_rhbong:","src":"https://yt3.ggpht.com/1LmmswUDdJUcPoqlEK6ZBFaZoY0bKQCfE6KryUtBljR6bpGd2FiXPLOl3Nlt20PD6VazqYMj=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"네"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"와아아아"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"짠~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"어머"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"잭바잭바"}], "scope": "channel" }
+  ]
+}

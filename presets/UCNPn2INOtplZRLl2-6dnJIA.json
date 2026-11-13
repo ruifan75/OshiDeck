@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Mina Aoyama Ch",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCNPn2INOtplZRLl2-6dnJIA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"AHA"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"a"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hii"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WHAT"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" }
+  ]
+}

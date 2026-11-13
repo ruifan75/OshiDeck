@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Chroniko :33",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCwYESzW2VQ5VtpuK-_elBzA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCwYESzW2VQ5VtpuK-_elBzA/gECqZvzbGvG6_9EPv-jvyQQ","alt":"ORB","sharedTooltipText":":_ORB:","src":"https://yt3.ggpht.com/zHizz_iWe72Oqrx1iRXCGBggzy0JthWNjK14DADZUVZ71ah5EdZvcB8Jcy2CDYi18d77TXCb=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCwYESzW2VQ5VtpuK-_elBzA/37O-ZoGgFuS3_9EPz9ruwA4","alt":"yippie","sharedTooltipText":":_yippie:","src":"https://yt3.ggpht.com/vmZFa2NMDcuoBAwNnOClwdy5q2utSRLHH8lDO5mw0VfZhQhFbVl2Cua6GGNmJPFPJe47Z-IgYw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"niko"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCwYESzW2VQ5VtpuK-_elBzA/37O-ZuKeFuS3_9EPz9ruwA4","alt":"heart","sharedTooltipText":":_heart:","src":"https://yt3.ggpht.com/1hXOePTqCRN5J6to1hcIvbOTXtoBSPUjDQqQuC3dxMLQNbAjnVatvXaqPaGYdhiahfF6ux5wzg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Tomari Mari channel / 兎鞠まりちゃんねる",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCkPIfBOLoO0hVPG-tI2YeGg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんまりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつまりー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkPIfBOLoO0hVPG-tI2YeGg/7nYparrLG8aa7OsPteSqoQ8","alt":"tomariKusa","sharedTooltipText":":_tomariKusa:","src":"https://yt3.ggpht.com/KUQZ-8fU2hSwzMhTOCPOB9WLrk-t7Iwgw-f7SLtbygdcTyabsRrQMYeGPLScuZ-oGMqWIvH0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぅ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ややまつ"}], "scope": "channel" }
+  ]
+}

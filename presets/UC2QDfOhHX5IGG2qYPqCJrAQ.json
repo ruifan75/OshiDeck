@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Peaky Hikers - ピーキーハイカーズ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC2QDfOhHX5IGG2qYPqCJrAQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"もう晴れてください"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC2QDfOhHX5IGG2qYPqCJrAQ/kGqZZerBEL2k_9EP7d6FyAU","alt":"kon","sharedTooltipText":":_kon:","src":"https://yt3.ggpht.com/NxCZLDpcod4tF_wOpI5NxEKt_xhw1YE097dVM3Nl3NorvrAqj2Y8vdi2emhxIHrr8pyzH6T7=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2QDfOhHX5IGG2qYPqCJrAQ/kGqZZYvCEL2k_9EP7d6FyAU","alt":"piki","sharedTooltipText":":_piki:","src":"https://yt3.ggpht.com/YpdSWEAbe822DfzWR4TM_XKBs2abcXtKEHRdT1kFnHMFukhSrSvZwSdvJL1Pv0ffGXaZHQJq=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2QDfOhHX5IGG2qYPqCJrAQ/kGqZZanCEL2k_9EP7d6FyAU","alt":"hai","sharedTooltipText":":_hai:","src":"https://yt3.ggpht.com/UvTxidMO7fNN1d3wU0XGBSUOukJBeGOsepiJKz_kNoBAnSZp7yPAGbT7NgXyk0EcyaLLSl8yAQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でしたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"},{"type":"text","value":"💢"},{"type":"text","value":"💢"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかれさまでしたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" }
+  ]
+}

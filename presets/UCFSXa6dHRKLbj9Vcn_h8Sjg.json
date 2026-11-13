@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Yowa Ch. 神瀬よわ",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCFSXa6dHRKLbj9Vcn_h8Sjg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFSXa6dHRKLbj9Vcn_h8Sjg/P5CXZPXILY-DvfIP96Gr-AY","alt":"ぺんらいと","sharedTooltipText":":_ぺんらいと:","src":"https://yt3.ggpht.com/EZvqIfpHq9GP6annqbYnkCcWH0i_yC5zYQwUjMXWnaywT6vVj7VWgwH2f7xZdtKDt7MVZk18nA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFSXa6dHRKLbj9Vcn_h8Sjg/P5CXZPXILY-DvfIP96Gr-AY","alt":"ぺんらいと","sharedTooltipText":":_ぺんらいと:","src":"https://yt3.ggpht.com/EZvqIfpHq9GP6annqbYnkCcWH0i_yC5zYQwUjMXWnaywT6vVj7VWgwH2f7xZdtKDt7MVZk18nA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFSXa6dHRKLbj9Vcn_h8Sjg/P5CXZPXILY-DvfIP96Gr-AY","alt":"ぺんらいと","sharedTooltipText":":_ぺんらいと:","src":"https://yt3.ggpht.com/EZvqIfpHq9GP6annqbYnkCcWH0i_yC5zYQwUjMXWnaywT6vVj7VWgwH2f7xZdtKDt7MVZk18nA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFSXa6dHRKLbj9Vcn_h8Sjg/P5CXZPXILY-DvfIP96Gr-AY","alt":"ぺんらいと","sharedTooltipText":":_ぺんらいと:","src":"https://yt3.ggpht.com/EZvqIfpHq9GP6annqbYnkCcWH0i_yC5zYQwUjMXWnaywT6vVj7VWgwH2f7xZdtKDt7MVZk18nA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFSXa6dHRKLbj9Vcn_h8Sjg/P5CXZPXILY-DvfIP96Gr-AY","alt":"ぺんらいと","sharedTooltipText":":_ぺんらいと:","src":"https://yt3.ggpht.com/EZvqIfpHq9GP6annqbYnkCcWH0i_yC5zYQwUjMXWnaywT6vVj7VWgwH2f7xZdtKDt7MVZk18nA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🤝"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🩹"},{"type":"text","value":"🩹"},{"type":"text","value":"🩹"},{"type":"text","value":"🩹"},{"type":"text","value":"🩹"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"たいき"}], "scope": "channel" }
+  ]
+}

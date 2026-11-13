@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Finana Ryugu 【NIJISANJI EN】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCu-J8uIXuLZh16gG-cT1naw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCu-J8uIXuLZh16gG-cT1naw/zZkHYdyGBsXR8gSblIG4Cg","alt":"finanaHype","sharedTooltipText":":_finanaHype:","src":"https://yt3.ggpht.com/eNJtuqku-iVm3uXVPG7hFmPBC56kWjTXxo4jWJaxtQz7HYx3cA84UqGDHeXq62bV5vwE_K5HenU=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCu-J8uIXuLZh16gG-cT1naw/zZkHYbWIBsXR8gSblIG4Cg","alt":"finanaLUL","sharedTooltipText":":_finanaLUL:","src":"https://yt3.ggpht.com/q6J7MXWgD5b-HHQEoScZLQzpBw69_JXuPB29DBwCT28QZusL5XHfZDWCnqaH_PpR2R6ZRsZu8g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCu-J8uIXuLZh16gG-cT1naw/pvFEYq_ZOISG8wTp467IDw","alt":"finanaHeart","sharedTooltipText":":_finanaHeart:","src":"https://yt3.ggpht.com/RKT1tg7_mylYQKIkhoUEBDAHhafnwM1IxZpKBNbn_uURR1-WNwuMJHY4-qWHadruPE-pjfnsFWc=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCu-J8uIXuLZh16gG-cT1naw/pvFEYq_ZOISG8wTp467IDw","alt":"finanaHeart","sharedTooltipText":":_finanaHeart:","src":"https://yt3.ggpht.com/RKT1tg7_mylYQKIkhoUEBDAHhafnwM1IxZpKBNbn_uURR1-WNwuMJHY4-qWHadruPE-pjfnsFWc=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCu-J8uIXuLZh16gG-cT1naw/pvFEYq_ZOISG8wTp467IDw","alt":"finanaHeart","sharedTooltipText":":_finanaHeart:","src":"https://yt3.ggpht.com/RKT1tg7_mylYQKIkhoUEBDAHhafnwM1IxZpKBNbn_uURR1-WNwuMJHY4-qWHadruPE-pjfnsFWc=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCu-J8uIXuLZh16gG-cT1naw/MQYmYbS9IdHr8wSXrIbABQ","alt":"finanaPat","sharedTooltipText":":_finanaPat:","src":"https://yt3.ggpht.com/q4f9kx_TieMXcgA1w05xJqXWPPQBMtR7SxSq5cffgSQfePsP3ZTAniw__7wHsRVzGYo17k2CjQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsufeesh!"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCu-J8uIXuLZh16gG-cT1naw/zZkHYaOHBsXR8gSblIG4Cg","alt":"finanaSweat","sharedTooltipText":":_finanaSweat:","src":"https://yt3.ggpht.com/qi06bZbAjpjUojAfzgnf1v2Ot8Nl83WGZ856F9hNlrWiM2i9qxpPvyu1OpECux1spbZWPiq1=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCu-J8uIXuLZh16gG-cT1naw/zZkHYfWHBsXR8gSblIG4Cg","alt":"finanaPOG","sharedTooltipText":":_finanaPOG:","src":"https://yt3.ggpht.com/inB18KmDWU6yOW4Y2pdtATYP6C_h_Y0s_xxWjlnLRy89TR6fbwuX2ZEDlKNB4x4jWNJp9Egcng=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"}], "scope": "channel" }
+  ]
+}

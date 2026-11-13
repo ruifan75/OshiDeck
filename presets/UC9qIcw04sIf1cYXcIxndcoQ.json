@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Miilkywayz",
+  "note": "歌枠0配信・通常4配信のチャットから10枚",
+  "channel": "UC9qIcw04sIf1cYXcIxndcoQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi milky"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9qIcw04sIf1cYXcIxndcoQ/LjgcY4CmFPuG_9EP1fa-iAc","alt":"Heart","sharedTooltipText":":_Heart:","src":"https://yt3.ggpht.com/PHAlY6vyy1IL8YQHvTRWEMK_XcRM5IhXP1ZZH4SHKNYPkD9-XVmGBfjJkMU8Feqp_0099YhElg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9qIcw04sIf1cYXcIxndcoQ/LjgcY4CmFPuG_9EP1fa-iAc","alt":"Heart","sharedTooltipText":":_Heart:","src":"https://yt3.ggpht.com/PHAlY6vyy1IL8YQHvTRWEMK_XcRM5IhXP1ZZH4SHKNYPkD9-XVmGBfjJkMU8Feqp_0099YhElg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9qIcw04sIf1cYXcIxndcoQ/LjgcY4CmFPuG_9EP1fa-iAc","alt":"Heart","sharedTooltipText":":_Heart:","src":"https://yt3.ggpht.com/PHAlY6vyy1IL8YQHvTRWEMK_XcRM5IhXP1ZZH4SHKNYPkD9-XVmGBfjJkMU8Feqp_0099YhElg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9qIcw04sIf1cYXcIxndcoQ/LjgcY5mnFPuG_9EP1fa-iAc","alt":"Headpat","sharedTooltipText":":_Headpat:","src":"https://yt3.ggpht.com/bapi4Gre7MarufWHkC5JAaPmeyvZ2d-mOHESN9ez2uCLRM-rseThQPh0FuKRT7nwUuT2Ls_DFQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9qIcw04sIf1cYXcIxndcoQ/LjgcY5mnFPuG_9EP1fa-iAc","alt":"Headpat","sharedTooltipText":":_Headpat:","src":"https://yt3.ggpht.com/bapi4Gre7MarufWHkC5JAaPmeyvZ2d-mOHESN9ez2uCLRM-rseThQPh0FuKRT7nwUuT2Ls_DFQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9qIcw04sIf1cYXcIxndcoQ/LjgcY5mnFPuG_9EP1fa-iAc","alt":"Headpat","sharedTooltipText":":_Headpat:","src":"https://yt3.ggpht.com/bapi4Gre7MarufWHkC5JAaPmeyvZ2d-mOHESN9ez2uCLRM-rseThQPh0FuKRT7nwUuT2Ls_DFQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello Milky"}], "scope": "channel" }
+  ]
+}

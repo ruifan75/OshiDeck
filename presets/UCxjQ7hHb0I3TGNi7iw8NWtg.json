@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "🍀ふじかわあや乃🍀",
+  "note": "歌枠1配信・通常6配信のチャットから10枚",
+  "channel": "UCxjQ7hHb0I3TGNi7iw8NWtg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイギフ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないまい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCxjQ7hHb0I3TGNi7iw8NWtg/DOIaaNyMOtyB_9EP2JaKqAY","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/qb1hgFZGTySfxoeoCx4bagEfAIuFsZdfYbIN6NqhiYUiJo0Fgtm_EPeNXb7ZlNW4sB8gzedW=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないぎふ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつの〜すやの〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさい"}], "scope": "channel" }
+  ]
+}

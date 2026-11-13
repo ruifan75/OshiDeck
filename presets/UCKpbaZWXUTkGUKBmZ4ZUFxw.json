@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ばーちゃる東和ちゃんねる",
+  "note": "歌枠0配信・通常6配信のチャットから10枚",
+  "channel": "UCKpbaZWXUTkGUKBmZ4ZUFxw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCKpbaZWXUTkGUKBmZ4ZUFxw/3KodYrTkAoLV8wT6z6qQDQ","alt":"ぽはやあ","sharedTooltipText":":_ぽはやあ:","src":"https://yt3.ggpht.com/42PRT4fR5DI_nRTOBEl8MTd5cTVUsXhMBfJC88A_9LM1IJGvAdqSYKDqkzAHMZghhe_RTYGvMGo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCKpbaZWXUTkGUKBmZ4ZUFxw/3KodYrTkAoLV8wT6z6qQDQ","alt":"ぽはやあ","sharedTooltipText":":_ぽはやあ:","src":"https://yt3.ggpht.com/42PRT4fR5DI_nRTOBEl8MTd5cTVUsXhMBfJC88A_9LM1IJGvAdqSYKDqkzAHMZghhe_RTYGvMGo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCKpbaZWXUTkGUKBmZ4ZUFxw/3KodYrTkAoLV8wT6z6qQDQ","alt":"ぽはやあ","sharedTooltipText":":_ぽはやあ:","src":"https://yt3.ggpht.com/42PRT4fR5DI_nRTOBEl8MTd5cTVUsXhMBfJC88A_9LM1IJGvAdqSYKDqkzAHMZghhe_RTYGvMGo=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ぽはやぁ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" }
+  ]
+}

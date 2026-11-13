@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Kawaki Nana ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCyNeg0jV71t0wbwHvPFYQlg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"otsu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"pisang cantik"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo nana"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"waduh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo kak"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nooo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Otsu na"}], "scope": "channel" }
+  ]
+}

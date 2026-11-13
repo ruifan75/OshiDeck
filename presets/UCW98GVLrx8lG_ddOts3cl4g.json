@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "天羽衣 / Amaui Channel【ななしいんく】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCW98GVLrx8lG_ddOts3cl4g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCW98GVLrx8lG_ddOts3cl4g/FF0FZc6qG8K79waxyZCoDw","alt":"amauiLightstick","sharedTooltipText":":_amauiLightstick:","src":"https://yt3.ggpht.com/3Nr9uJOHNj8cMigOWCICICeEzYWboS2VhFjJDXNqAtKCAHA6TpnxNaPPaMpbbl1WsnDUYceDdw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCW98GVLrx8lG_ddOts3cl4g/FF0FZc6qG8K79waxyZCoDw","alt":"amauiLightstick","sharedTooltipText":":_amauiLightstick:","src":"https://yt3.ggpht.com/3Nr9uJOHNj8cMigOWCICICeEzYWboS2VhFjJDXNqAtKCAHA6TpnxNaPPaMpbbl1WsnDUYceDdw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCW98GVLrx8lG_ddOts3cl4g/FF0FZc6qG8K79waxyZCoDw","alt":"amauiLightstick","sharedTooltipText":":_amauiLightstick:","src":"https://yt3.ggpht.com/3Nr9uJOHNj8cMigOWCICICeEzYWboS2VhFjJDXNqAtKCAHA6TpnxNaPPaMpbbl1WsnDUYceDdw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんハー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほなねー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほなね～"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCW98GVLrx8lG_ddOts3cl4g/EZtxZJnKCr6J_9EPt-qbmAM","alt":"amauiNnn","sharedTooltipText":":_amauiNnn:","src":"https://yt3.ggpht.com/cBZNo27wCDXK_aAQmKnHNO-8N1kd6Vtx_CtbUcoP1YlTLyVHnBY81j32l0M6-dRe_QmO17wlMw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCW98GVLrx8lG_ddOts3cl4g/EZtxZJnKCr6J_9EPt-qbmAM","alt":"amauiNnn","sharedTooltipText":":_amauiNnn:","src":"https://yt3.ggpht.com/cBZNo27wCDXK_aAQmKnHNO-8N1kd6Vtx_CtbUcoP1YlTLyVHnBY81j32l0M6-dRe_QmO17wlMw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCW98GVLrx8lG_ddOts3cl4g/EZtxZJnKCr6J_9EPt-qbmAM","alt":"amauiNnn","sharedTooltipText":":_amauiNnn:","src":"https://yt3.ggpht.com/cBZNo27wCDXK_aAQmKnHNO-8N1kd6Vtx_CtbUcoP1YlTLyVHnBY81j32l0M6-dRe_QmO17wlMw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCW98GVLrx8lG_ddOts3cl4g/EZtxZJnKCr6J_9EPt-qbmAM","alt":"amauiNnn","sharedTooltipText":":_amauiNnn:","src":"https://yt3.ggpht.com/cBZNo27wCDXK_aAQmKnHNO-8N1kd6Vtx_CtbUcoP1YlTLyVHnBY81j32l0M6-dRe_QmO17wlMw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

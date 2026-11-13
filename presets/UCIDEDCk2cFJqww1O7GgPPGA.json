@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "桜 舞兎 / Sakura Mau",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCIDEDCk2cFJqww1O7GgPPGA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんまう！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌸"},{"type":"text","value":"🌸"},{"type":"text","value":"🌸"},{"type":"text","value":"🌸"},{"type":"text","value":"🌸"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"初見です！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつまう〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱ！"}], "scope": "channel" }
+  ]
+}

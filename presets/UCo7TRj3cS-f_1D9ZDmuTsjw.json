@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "町田ちま【にじさんじ】",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCo7TRj3cS-f_1D9ZDmuTsjw",
   "cards": [
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCo7TRj3cS-f_1D9ZDmuTsjw/XuumXr3zAc-7-wOx1ZS4Cg","alt":"ペンライトブルー","sharedTooltipText":":_ペンライトブルー:","src":"https://yt3.ggpht.com/6frG-UARKrKu1JvVvfG9FAp73rJK0irz8eKIhs6QUM1yH6LNK01OFHpxcjYHhJAh1vN6bS1MLEw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCo7TRj3cS-f_1D9ZDmuTsjw/XuumXr3zAc-7-wOx1ZS4Cg","alt":"ペンライトブルー","sharedTooltipText":":_ペンライトブルー:","src":"https://yt3.ggpht.com/6frG-UARKrKu1JvVvfG9FAp73rJK0irz8eKIhs6QUM1yH6LNK01OFHpxcjYHhJAh1vN6bS1MLEw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCo7TRj3cS-f_1D9ZDmuTsjw/XuumXr3zAc-7-wOx1ZS4Cg","alt":"ペンライトブルー","sharedTooltipText":":_ペンライトブルー:","src":"https://yt3.ggpht.com/6frG-UARKrKu1JvVvfG9FAp73rJK0irz8eKIhs6QUM1yH6LNK01OFHpxcjYHhJAh1vN6bS1MLEw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCo7TRj3cS-f_1D9ZDmuTsjw/NQ3FX6z_Hobl-gO3952QBg","alt":"サンバサンバ","sharedTooltipText":":_サンバサンバ:","src":"https://yt3.ggpht.com/2Ps3QiLeRlqLVaQ98W0aWpLA6V8Xw5Tp5hK1XXZSNngar5tw-YKEHqig0G2Uj2gCMHqxdClXoA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCo7TRj3cS-f_1D9ZDmuTsjw/NQ3FX6z_Hobl-gO3952QBg","alt":"サンバサンバ","sharedTooltipText":":_サンバサンバ:","src":"https://yt3.ggpht.com/2Ps3QiLeRlqLVaQ98W0aWpLA6V8Xw5Tp5hK1XXZSNngar5tw-YKEHqig0G2Uj2gCMHqxdClXoA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCo7TRj3cS-f_1D9ZDmuTsjw/NQ3FX6z_Hobl-gO3952QBg","alt":"サンバサンバ","sharedTooltipText":":_サンバサンバ:","src":"https://yt3.ggpht.com/2Ps3QiLeRlqLVaQ98W0aWpLA6V8Xw5Tp5hK1XXZSNngar5tw-YKEHqig0G2Uj2gCMHqxdClXoA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCo7TRj3cS-f_1D9ZDmuTsjw/XuumXq_yAc-7-wOx1ZS4Cg","alt":"ペンライトピンク","sharedTooltipText":":_ペンライトピンク:","src":"https://yt3.ggpht.com/vquQynLwIJ2Vk5oWM6Q8FpnI7D4pSzqN1ZVNLrHvXWygSDT4Ft6pECqjOZxX0Tk2oX4SNqlO=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCo7TRj3cS-f_1D9ZDmuTsjw/XuumXq_yAc-7-wOx1ZS4Cg","alt":"ペンライトピンク","sharedTooltipText":":_ペンライトピンク:","src":"https://yt3.ggpht.com/vquQynLwIJ2Vk5oWM6Q8FpnI7D4pSzqN1ZVNLrHvXWygSDT4Ft6pECqjOZxX0Tk2oX4SNqlO=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCo7TRj3cS-f_1D9ZDmuTsjw/XuumXq_yAc-7-wOx1ZS4Cg","alt":"ペンライトピンク","sharedTooltipText":":_ペンライトピンク:","src":"https://yt3.ggpht.com/vquQynLwIJ2Vk5oWM6Q8FpnI7D4pSzqN1ZVNLrHvXWygSDT4Ft6pECqjOZxX0Tk2oX4SNqlO=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お？"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"おつちま〜"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"こんちま〜"}], "scope": "channel" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCo7TRj3cS-f_1D9ZDmuTsjw/s-FEX4_SBYKQ_AOG8qioCg","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/FWJuwqzIgeNhkeB9tqojrmfASUw-vOKI-gERzyeBPngfpgd03vc6GPJvH_Q8zdgzhmoOzZAYDQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCo7TRj3cS-f_1D9ZDmuTsjw/s-FEX4_SBYKQ_AOG8qioCg","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/FWJuwqzIgeNhkeB9tqojrmfASUw-vOKI-gERzyeBPngfpgd03vc6GPJvH_Q8zdgzhmoOzZAYDQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCo7TRj3cS-f_1D9ZDmuTsjw/s-FEX4_SBYKQ_AOG8qioCg","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/FWJuwqzIgeNhkeB9tqojrmfASUw-vOKI-gERzyeBPngfpgd03vc6GPJvH_Q8zdgzhmoOzZAYDQ=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"待ち田"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" }
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "伏見ガク【にじさんじ所属】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCXU7YYxy_iQd3ulXyO-zC2w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"✌"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"},{"type":"text","value":"✌"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"},{"type":"text","value":"✌"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXU7YYxy_iQd3ulXyO-zC2w/z0oWYOHLMc2_-gP38qKQAw","alt":"おつかれ","sharedTooltipText":":_おつかれ:","src":"https://yt3.ggpht.com/ekPtuNjNkSuf_T8pUWRKkafLw6S6NXO03_B2-00DV_bKrFUwCg7XICCH-4ceJLar3nkq6YLkGQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXU7YYxy_iQd3ulXyO-zC2w/z0oWYOHLMc2_-gP38qKQAw","alt":"おつかれ","sharedTooltipText":":_おつかれ:","src":"https://yt3.ggpht.com/ekPtuNjNkSuf_T8pUWRKkafLw6S6NXO03_B2-00DV_bKrFUwCg7XICCH-4ceJLar3nkq6YLkGQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXU7YYxy_iQd3ulXyO-zC2w/z0oWYOHLMc2_-gP38qKQAw","alt":"おつかれ","sharedTooltipText":":_おつかれ:","src":"https://yt3.ggpht.com/ekPtuNjNkSuf_T8pUWRKkafLw6S6NXO03_B2-00DV_bKrFUwCg7XICCH-4ceJLar3nkq6YLkGQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" }
+  ]
+}

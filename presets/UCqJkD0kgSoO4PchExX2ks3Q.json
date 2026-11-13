@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Rifa Ch. 有北リファ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCqJkD0kgSoO4PchExX2ks3Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんwoof"},{"type":"text","value":"❣"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🐶"},{"type":"text","value":"🎀"},{"type":"text","value":"💜"},{"type":"text","value":"🎶"},{"type":"text","value":"🐶"},{"type":"text","value":"🎀"},{"type":"text","value":"💜"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"woof"},{"type":"text","value":"❣"},{"type":"text","value":"woof"},{"type":"text","value":"❣"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございwoof"},{"type":"text","value":"❣"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつwoof"},{"type":"text","value":"❣"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機woof"},{"type":"text","value":"❣"}], "scope": "channel" }
+  ]
+}

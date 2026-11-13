@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "kano かのちゃんねる-花森かの-",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC3Yu6xnvxBE4n6oZl-nvUrQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"待機。"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかのさまでした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わこかのー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わこかのです〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかの"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱ"}], "scope": "channel" }
+  ]
+}

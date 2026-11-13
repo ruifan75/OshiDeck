@@ -1,0 +1,12 @@
+{
+  "format": 2,
+  "name": "isaa corva",
+  "note": "歌枠1配信・通常3配信のチャットから4枚",
+  "channel": "UCtYEdVH1gntEG3J7yGsMAeg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🫐"},{"type":"text","value":"🦅"},{"type":"text","value":" CROW RAID! "},{"type":"text","value":"🫐"},{"type":"text","value":"🦅"},{"type":"text","value":" CROW RAID! "},{"type":"text","value":"🫐"},{"type":"text","value":"🦅"},{"type":"text","value":" CROW RAID!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🔥"},{"type":"text","value":"🔥"},{"type":"text","value":"🔥"},{"type":"text","value":"🔥"}], "scope": "channel" }
+  ]
+}

@@ -170,8 +170,9 @@ const fresh = presets.cardsFor(plain, OTHER);
 check("every card arrives with an id of its own", new Set(fresh.map((c) => c.id)).size === 2);
 check("and no history on any channel",
   fresh.every((c) => Object.keys(c.by).length === 0));
-check("universal stays universal", fresh[0].scope === store.GLOBAL);
+check("an imported global declaration creates a channel card", fresh[0].scope === OTHER);
 check("and channel-only means the channel it is loaded into", fresh[1].scope === OTHER);
+check("a starting deck cannot make unbound cards without a channel", presets.cardsFor(plain, null).length === 0);
 
 // The bound kind, loaded where it belongs.
 disk = { cards: [], decks: {}, channelMeta: {}, settings: {} };
@@ -235,6 +236,42 @@ check(
   "a usable card is found even behind one that is not",
   disk.cards.length === 3 && disk.decks[OTHER].includes("mine")
 );
+
+// Both copies are usable. The universal one must win in either storage
+// order, keeping its id, contents and per-channel history intact.
+for (const reversed of [false, true]) {
+  const local = { id: "local", tokens: text("cheer"), scope: OTHER, createdAt: 1, by: {} };
+  const global = { id: "global", tokens: text("cheer"), scope: "global", createdAt: 2,
+    by: { [OTHER]: { uses: 7, heat: 3, lastUsedAt: 10 } } };
+  disk = { cards: reversed ? [global, local] : [local, global],
+    decks: { [OTHER]: [] }, channelMeta: {}, settings: {} };
+  result = await store.runOp("loadPreset", { channelId: OTHER,
+    cards: presets.cardsFor({ cards: [{ tokens: text("cheer"), scope: "channel" }] }, OTHER) });
+  check(`an existing universal card wins in either storage order (${reversed})`,
+    disk.decks[OTHER].join() === "global" && disk.cards.length === 2 && result.value.reused === 1);
+  check(`reusing universal preserves its scope and history (${reversed})`,
+    disk.cards.find((c) => c.id === "global").scope === "global" &&
+    disk.cards.find((c) => c.id === "global").by[OTHER].uses === 7 &&
+    disk.cards.find((c) => c.id === "local").scope === OTHER);
+}
+disk = { cards: [{ id: "local", tokens: text("cheer"), scope: OTHER, createdAt: 1, by: {} }],
+  decks: { [OTHER]: [] }, channelMeta: {}, settings: {} };
+result = await store.runOp("loadPreset", { channelId: OTHER,
+  cards: presets.cardsFor({ cards: [{ tokens: text("cheer"), scope: "channel" }] }, OTHER) });
+check("the current channel's copy is reused when no universal one exists",
+  disk.decks[OTHER].join() === "local" && disk.cards.length === 1 && result.value.reused === 1);
+disk = { cards: [{ id: "short", tokens: text("888"), scope: "global", createdAt: 1, by: {} }],
+  decks: { [OTHER]: [] }, channelMeta: {}, settings: {} };
+await store.runOp("loadPreset", { channelId: OTHER,
+  cards: presets.cardsFor({ cards: [{ tokens: text("888888"), scope: "channel" }] }, OTHER) });
+check("a similar reaction does not reuse different contents",
+  disk.cards.length === 2 && !disk.decks[OTHER].includes("short") &&
+  disk.cards.find((c) => c.id !== "short").scope === OTHER);
+disk = { cards: [], decks: {}, channelMeta: {}, settings: {} };
+await store.runOp("loadPreset", { channelId: OTHER,
+  cards: [{ id: "old-page", tokens: text("from an old page"), scope: "global", createdAt: 1, by: {} }] });
+check("the worker also binds an old page's global suggestion to this channel",
+  disk.cards[0].scope === OTHER && disk.decks[OTHER].join() === "old-page");
 
 // A deck that begins with a preset never saves a card, and saving a card is
 // what usually teaches us a channel's name — so the builder listed it by raw
@@ -306,7 +343,7 @@ if (from < 0 || to <= from) {
 const importing = (raw, into) => {
   const seen = { writes: [], said: [] };
   const run = new Function(
-    "t", "presets", "selected", "status", "mutate", "nameOf", "loadDecks",
+    "t", "presets", "selected", "status", "mutate", "nameOf", "loadDecks", "journal",
     `${optionsSrc.slice(from, to)} return importDeck;`
   )(
     (key, ...args) => [key, ...args].join("|"),
@@ -315,7 +352,7 @@ const importing = (raw, into) => {
     (message) => seen.said.push(message),
     async (op, args) => { seen.writes.push({ op, args }); return store.runOp(op, args); },
     () => "さくら",
-    async () => {}
+    async () => {}, { record() {} }
   );
   return run({ text: async () => JSON.stringify(raw) }).then(() => seen);
 };
@@ -358,13 +395,15 @@ check("and says which kind of no it is", got.said.join("").includes("opt.importN
   check("a file is a name, not a path",
     index.presets.every((e) => /^[A-Za-z0-9_-]+\.json$/.test(e.file)));
 
-  let wrong = 0;
+  let wrong = 0, universal = 0;
   for (const entry of index.presets) {
     const preset = JSON.parse(readFileSync(`${dir}${entry.file}`, "utf8"));
     if (presets.validate(preset)) wrong += 1;
     if (preset.channel !== entry.channel) wrong += 1;
+    universal += preset.cards.filter((card) => card.scope !== "channel").length;
   }
   check("every bundled preset passes the reader that will load it", wrong === 0);
+  check("bundled starting decks never introduce universal cards", universal === 0);
 
   // Two entries for one channel would both be offered to the same deck.
   const channels = index.presets.map((e) => e.channel);
@@ -404,13 +443,13 @@ check("and says which kind of no it is", got.said.join("").includes("opt.importN
   };
 
   const build = new Function(
-    "document", "store", "tokens", "t", "hueOf", "selected", "wireDrag", "cardAction",
+    "document", "store", "tokens", "t", "hueOf", "colorOf", "selected", "wireDrag", "cardAction",
     `${optionsSrc.slice(cardFrom, cardTo)} return buildCard;`
   )(
     { createElement: node },
     store, tokens,
     (key) => key,
-    () => 42, CH, () => {}, () => ({})
+    () => 42, () => null, CH, () => {}, () => ({})
   );
 
   const scoped = (scope, tokenList, where = "pool") =>
@@ -620,6 +659,15 @@ check("with the reason it gave", got.said.join("").includes("opt.cannotRead"));
   check("while the good one on its own is written", inPresets() === `${CH}.json,index.json`);
   check("and named in the index",
     JSON.parse(readFileSync(`${lab}/presets/index.json`, "utf8")).presets[0].channel === CH);
+  check("bundling an exported global card makes it channel-only",
+    JSON.parse(readFileSync(`${lab}/presets/${CH}.json`, "utf8")).cards[0].scope === "channel");
+  const pair = file("pair.json", { format: 2, name: "さくら", channel: CH,
+    cards: ["global", "channel"].map((scope) => ({ tokens: text("わこつ"), scope })) });
+  got = run(pair);
+  const paired = JSON.parse(readFileSync(`${lab}/presets/${CH}.json`, "utf8"));
+  check("bundling both original scopes keeps one valid channel card",
+    got.code === 0 && paired.cards.length === 1 && paired.cards[0].scope === "channel" &&
+    presets.validate(paired) === null);
 
   // The second check, the one --channel makes necessary, printed the key and
   // its arguments joined by a comma — the thing i18n was added here to stop.

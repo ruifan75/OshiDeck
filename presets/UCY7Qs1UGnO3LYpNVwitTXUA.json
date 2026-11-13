@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ミューコミVR",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCY7Qs1UGnO3LYpNVwitTXUA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"けんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつけんでしたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やーのやーの"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつけーん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機！"}], "scope": "channel" }
+  ]
+}

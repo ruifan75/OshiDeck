@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Hemmingbelle Ch.",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCLdkcTt5vOfGi_myvK-iO0g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi hemmi!"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCLdkcTt5vOfGi_myvK-iO0g/UR6RaNyzC4So_9EPwf-P2Qk","alt":"HEMMDANCE","sharedTooltipText":":_HEMMDANCE:","src":"https://yt3.ggpht.com/scvUedtiETmqAFuMrd_lUk6ywtOKgsaCI-vzcBspiy0TkKIYp7sMPWIM8l79udKspN9Imrc_cQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yeah"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCLdkcTt5vOfGi_myvK-iO0g/UR6RaOitC4So_9EPwf-P2Qk","alt":"HEMMPAT","sharedTooltipText":":_HEMMPAT:","src":"https://yt3.ggpht.com/ZLkGufHRAYI--f53tSquwuA2z6oA-tJirCtEXgCO22PwPTYkDMiyzMJ8UsOEbQ0nVmZ40CObtQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCLdkcTt5vOfGi_myvK-iO0g/UR6RaOitC4So_9EPwf-P2Qk","alt":"HEMMPAT","sharedTooltipText":":_HEMMPAT:","src":"https://yt3.ggpht.com/ZLkGufHRAYI--f53tSquwuA2z6oA-tJirCtEXgCO22PwPTYkDMiyzMJ8UsOEbQ0nVmZ40CObtQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCLdkcTt5vOfGi_myvK-iO0g/5qCYaOLeCKPA_9EPnbS_sAc","alt":"HEMMIHA","sharedTooltipText":":_HEMMIHA:","src":"https://yt3.ggpht.com/_eh-72Rxysq0kz9zOsDYPOM6O_AVAURb_Xg9EeUW34lJsue23ECFkHeAUxDb-Si-SCN3nnxFxg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCLdkcTt5vOfGi_myvK-iO0g/FKCRaP2jGYSo_9EPwf-P2Qk","alt":"HEMMIBELL","sharedTooltipText":":_HEMMIBELL:","src":"https://yt3.ggpht.com/WEx9gWdjCtwxHUcyt8ChPhxrhP4t-hc_VBMl-z_Q3g251DRoUtCDsSF-8PtxuZNTtUTAkZ5YmNg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCLdkcTt5vOfGi_myvK-iO0g/FKCRaP2jGYSo_9EPwf-P2Qk","alt":"HEMMIBELL","sharedTooltipText":":_HEMMIBELL:","src":"https://yt3.ggpht.com/WEx9gWdjCtwxHUcyt8ChPhxrhP4t-hc_VBMl-z_Q3g251DRoUtCDsSF-8PtxuZNTtUTAkZ5YmNg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCLdkcTt5vOfGi_myvK-iO0g/FKCRaP2jGYSo_9EPwf-P2Qk","alt":"HEMMIBELL","sharedTooltipText":":_HEMMIBELL:","src":"https://yt3.ggpht.com/WEx9gWdjCtwxHUcyt8ChPhxrhP4t-hc_VBMl-z_Q3g251DRoUtCDsSF-8PtxuZNTtUTAkZ5YmNg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WOOOO"}], "scope": "channel" }
+  ]
+}

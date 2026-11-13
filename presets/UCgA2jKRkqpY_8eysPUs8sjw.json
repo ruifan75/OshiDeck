@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Petra Gurin【NIJISANJI EN】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCgA2jKRkqpY_8eysPUs8sjw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCgA2jKRkqpY_8eysPUs8sjw/HDhRYaCkBM_j8wT96o-ABA","alt":"petoCheer","sharedTooltipText":":_petoCheer:","src":"https://yt3.ggpht.com/apptfNlcT8rA86VcRKUWr6pCKjviyxYcczNZzW8dOwHwAzuDm3t4Fki9sTxEq_9F2QVOrZBKMQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCgA2jKRkqpY_8eysPUs8sjw/HDhRYaCkBM_j8wT96o-ABA","alt":"petoCheer","sharedTooltipText":":_petoCheer:","src":"https://yt3.ggpht.com/apptfNlcT8rA86VcRKUWr6pCKjviyxYcczNZzW8dOwHwAzuDm3t4Fki9sTxEq_9F2QVOrZBKMQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCgA2jKRkqpY_8eysPUs8sjw/HDhRYaCkBM_j8wT96o-ABA","alt":"petoCheer","sharedTooltipText":":_petoCheer:","src":"https://yt3.ggpht.com/apptfNlcT8rA86VcRKUWr6pCKjviyxYcczNZzW8dOwHwAzuDm3t4Fki9sTxEq_9F2QVOrZBKMQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🧡"},{"type":"text","value":"🧡"},{"type":"text","value":"🧡"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCgA2jKRkqpY_8eysPUs8sjw/cdpPYYvkJsG38wTb1IXADQ","alt":"petoLove","sharedTooltipText":":_petoLove:","src":"https://yt3.ggpht.com/tQ6mQlZnBrsV1SIvpjGRnCEouMyKiHHfJxmNDjuYKpegKrdjSEjy5m5Nj-7QAqqLf2uHK_07Wg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCgA2jKRkqpY_8eysPUs8sjw/cdpPYYvkJsG38wTb1IXADQ","alt":"petoLove","sharedTooltipText":":_petoLove:","src":"https://yt3.ggpht.com/tQ6mQlZnBrsV1SIvpjGRnCEouMyKiHHfJxmNDjuYKpegKrdjSEjy5m5Nj-7QAqqLf2uHK_07Wg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCgA2jKRkqpY_8eysPUs8sjw/cdpPYYvkJsG38wTb1IXADQ","alt":"petoLove","sharedTooltipText":":_petoLove:","src":"https://yt3.ggpht.com/tQ6mQlZnBrsV1SIvpjGRnCEouMyKiHHfJxmNDjuYKpegKrdjSEjy5m5Nj-7QAqqLf2uHK_07Wg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"cuteee"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yayyyy"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"woah"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ohhh"}], "scope": "channel" }
+  ]
+}

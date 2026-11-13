@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Synthion",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCKAwc0NMXjkPGNkb-khG8Qg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"konshion"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsushion"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCKAwc0NMXjkPGNkb-khG8Qg/6WKfZdGdJ72k_9EPxpqH2AY","alt":"cheer","sharedTooltipText":":_cheer:","src":"https://yt3.ggpht.com/laYU8ffpjfFM2PGRmWGN8MYefnqpTwvikA-hwOc7e5zNHaTfvUcb4fO_hscbpR8SGKz0Vvzy=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCKAwc0NMXjkPGNkb-khG8Qg/6WKfZZucJ72k_9EPxpqH2AY","alt":"love","sharedTooltipText":":_love:","src":"https://yt3.ggpht.com/Lj2KysEJH8VMyFqvu4mL9cIhbAh_gk3arBijGXKgWNTkhsDVRKyZ5Y2XzNri-y9w6z6-c1rqa20=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"awoooooooo"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCKAwc0NMXjkPGNkb-khG8Qg/6WKfZbKgJ72k_9EPxpqH2AY","alt":"cry","sharedTooltipText":":_cry:","src":"https://yt3.ggpht.com/DuCBzfR7JksDU62a8E6Z3sde7uaPUowcHCDNhu6eVyvmusdU4FjyNzXPat8WcTSMK0GQD54D=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCKAwc0NMXjkPGNkb-khG8Qg/6WKfZfScJ72k_9EPxpqH2AY","alt":"pien","sharedTooltipText":":_pien:","src":"https://yt3.ggpht.com/_voPkEDHYTrnZaJHqygEixRFVeCYuNh4A2jgrWPH6WHlVxA__jnaUGbXVOL-MKGTx_HcVB3g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" }
+  ]
+}

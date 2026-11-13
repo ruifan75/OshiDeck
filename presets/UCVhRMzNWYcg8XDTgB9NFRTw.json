@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Henya the Genius",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCVhRMzNWYcg8XDTgB9NFRTw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVhRMzNWYcg8XDTgB9NFRTw/t8Uuadq8Dtql7OsPqLfSOQ","alt":"henyaHeart","sharedTooltipText":":_henyaHeart:","src":"https://yt3.ggpht.com/tkMN6H7P2lsW8eleZhlRZvwUBGBbTJ5CfnSu14nxiG0Bhwq-cb0fHP1PR61LhNy2vTNAtUpjzRo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVhRMzNWYcg8XDTgB9NFRTw/t8Uuadq8Dtql7OsPqLfSOQ","alt":"henyaHeart","sharedTooltipText":":_henyaHeart:","src":"https://yt3.ggpht.com/tkMN6H7P2lsW8eleZhlRZvwUBGBbTJ5CfnSu14nxiG0Bhwq-cb0fHP1PR61LhNy2vTNAtUpjzRo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVhRMzNWYcg8XDTgB9NFRTw/t8Uuadq8Dtql7OsPqLfSOQ","alt":"henyaHeart","sharedTooltipText":":_henyaHeart:","src":"https://yt3.ggpht.com/tkMN6H7P2lsW8eleZhlRZvwUBGBbTJ5CfnSu14nxiG0Bhwq-cb0fHP1PR61LhNy2vTNAtUpjzRo=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"GG"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVhRMzNWYcg8XDTgB9NFRTw/Gp0taejuNtql7OsPy8jPqQo","alt":"henyaCheer","sharedTooltipText":":_henyaCheer:","src":"https://yt3.ggpht.com/VcyJNqbY-bqXpE3SBUb7GCk52GQViDgk23HFsC0FL--IvEQpY2m3lpg6EU_MqhvX0Q12SSJn5h8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVhRMzNWYcg8XDTgB9NFRTw/Gp0taejuNtql7OsPy8jPqQo","alt":"henyaCheer","sharedTooltipText":":_henyaCheer:","src":"https://yt3.ggpht.com/VcyJNqbY-bqXpE3SBUb7GCk52GQViDgk23HFsC0FL--IvEQpY2m3lpg6EU_MqhvX0Q12SSJn5h8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVhRMzNWYcg8XDTgB9NFRTw/Gp0taejuNtql7OsPy8jPqQo","alt":"henyaCheer","sharedTooltipText":":_henyaCheer:","src":"https://yt3.ggpht.com/VcyJNqbY-bqXpE3SBUb7GCk52GQViDgk23HFsC0FL--IvEQpY2m3lpg6EU_MqhvX0Q12SSJn5h8=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ohayo"}], "scope": "channel" }
+  ]
+}

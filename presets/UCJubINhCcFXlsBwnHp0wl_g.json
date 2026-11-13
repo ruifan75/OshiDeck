@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "舞元啓介",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCJubINhCcFXlsBwnHp0wl_g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"8888888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あっ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おしい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"それはそう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはマイル〜"}], "scope": "channel" }
+  ]
+}

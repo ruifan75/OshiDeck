@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ミーニャ・スコット / Minya Scott",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCm4QiJHdsgz9PshJkGMSk5w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつみにゃー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつみにゃ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こみにゃちはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCm4QiJHdsgz9PshJkGMSk5w/kG_VZ7KGLpS3_9EP456sOA","alt":"MinyaTaiki","sharedTooltipText":":_MinyaTaiki:","src":"https://yt3.ggpht.com/iSoVcNLq-gJ-md_qKbh2Y5MUM_lgO6p6SPQLoNgHaZ3wzqcqdaZ-mz0kiiHRh55YO-B1wCYdQw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCm4QiJHdsgz9PshJkGMSk5w/kG_VZ7KGLpS3_9EP456sOA","alt":"MinyaTaiki","sharedTooltipText":":_MinyaTaiki:","src":"https://yt3.ggpht.com/iSoVcNLq-gJ-md_qKbh2Y5MUM_lgO6p6SPQLoNgHaZ3wzqcqdaZ-mz0kiiHRh55YO-B1wCYdQw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCm4QiJHdsgz9PshJkGMSk5w/kG_VZ7KGLpS3_9EP456sOA","alt":"MinyaTaiki","sharedTooltipText":":_MinyaTaiki:","src":"https://yt3.ggpht.com/iSoVcNLq-gJ-md_qKbh2Y5MUM_lgO6p6SPQLoNgHaZ3wzqcqdaZ-mz0kiiHRh55YO-B1wCYdQw=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

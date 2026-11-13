@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "月波 ナト-Nato Tsukinami-",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCBFK95CIJNQmAlsCx22tZDQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"KonNato~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OtsuNato"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんナト"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんなと"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Nice"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCBFK95CIJNQmAlsCx22tZDQ/hGkHZP2bC7WK_9EPwaWc0AI","alt":"Konnato","sharedTooltipText":":_Konnato:","src":"https://yt3.ggpht.com/zClZTs3Y_jRnU4EytZDBbTJ7f6g--a5HHGXcywKS33k1InFbr5DUVhpwlP-gxp8dWkDm_Xb9TQ0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCBFK95CIJNQmAlsCx22tZDQ/hGkHZP2bC7WK_9EPwaWc0AI","alt":"Konnato","sharedTooltipText":":_Konnato:","src":"https://yt3.ggpht.com/zClZTs3Y_jRnU4EytZDBbTJ7f6g--a5HHGXcywKS33k1InFbr5DUVhpwlP-gxp8dWkDm_Xb9TQ0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCBFK95CIJNQmAlsCx22tZDQ/hGkHZP2bC7WK_9EPwaWc0AI","alt":"Konnato","sharedTooltipText":":_Konnato:","src":"https://yt3.ggpht.com/zClZTs3Y_jRnU4EytZDBbTJ7f6g--a5HHGXcywKS33k1InFbr5DUVhpwlP-gxp8dWkDm_Xb9TQ0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCBFK95CIJNQmAlsCx22tZDQ/hGkHZPCcC7WK_9EPwaWc0AI","alt":"Otsunato","sharedTooltipText":":_Otsunato:","src":"https://yt3.ggpht.com/V7dJlKw7fjAM9HieZtQozZKdedttWd8f8alWwGpjp7PRjIT3aFFkpt34NUFmSm6omXxZCVkoTw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCBFK95CIJNQmAlsCx22tZDQ/hGkHZPCcC7WK_9EPwaWc0AI","alt":"Otsunato","sharedTooltipText":":_Otsunato:","src":"https://yt3.ggpht.com/V7dJlKw7fjAM9HieZtQozZKdedttWd8f8alWwGpjp7PRjIT3aFFkpt34NUFmSm6omXxZCVkoTw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCBFK95CIJNQmAlsCx22tZDQ/hGkHZPCcC7WK_9EPwaWc0AI","alt":"Otsunato","sharedTooltipText":":_Otsunato:","src":"https://yt3.ggpht.com/V7dJlKw7fjAM9HieZtQozZKdedttWd8f8alWwGpjp7PRjIT3aFFkpt34NUFmSm6omXxZCVkoTw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Kiyon Ch.",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCycPDRVWCQakmKRKh6Z3Dqw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCycPDRVWCQakmKRKh6Z3Dqw/dGWNaLCuMKPA_9EPkODa2Qs","alt":"kiyonBurn","sharedTooltipText":":_kiyonBurn:","src":"https://yt3.ggpht.com/sFRJR41rA-iOOHmg4atWGe5itSGmB9HtZgECEn8eNECH99vWgcsNbfz7eJIoj92YUWfjypdNMA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCycPDRVWCQakmKRKh6Z3Dqw/dGWNaLCuMKPA_9EPkODa2Qs","alt":"kiyonBurn","sharedTooltipText":":_kiyonBurn:","src":"https://yt3.ggpht.com/sFRJR41rA-iOOHmg4atWGe5itSGmB9HtZgECEn8eNECH99vWgcsNbfz7eJIoj92YUWfjypdNMA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCycPDRVWCQakmKRKh6Z3Dqw/dGWNaLCuMKPA_9EPkODa2Qs","alt":"kiyonBurn","sharedTooltipText":":_kiyonBurn:","src":"https://yt3.ggpht.com/sFRJR41rA-iOOHmg4atWGe5itSGmB9HtZgECEn8eNECH99vWgcsNbfz7eJIoj92YUWfjypdNMA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye bye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oof"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCycPDRVWCQakmKRKh6Z3Dqw/dGWNaPivMKPA_9EPkODa2Qs","alt":"kiyonCry","sharedTooltipText":":_kiyonCry:","src":"https://yt3.ggpht.com/qkn4nRYZDZOPhwpp8YI0KZiLGXQFi6adYLTAHts1LM2ClIHCcZKUMSrG9nwRDBT7JKvYHKazotM=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"welcome back"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"f"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello Kiyon!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wb"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "うるみや",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCSAFgtALLOrJ7P5yJh7YbPw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わこうる！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"クッソ待機！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとうございました！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつみや！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うんうん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なるほど"}], "scope": "channel" }
+  ]
+}

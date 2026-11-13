@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Hikari CH.ネ申乃ひかり",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC_kJ27jGTWYniW-Xy3Ms5Cw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"💰"},{"type":"text","value":"✨"},{"type":"text","value":"👏"},{"type":"text","value":"💰"},{"type":"text","value":"✨"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_kJ27jGTWYniW-Xy3Ms5Cw/wFVwYLLjGdm7_AOboZrIBQ","alt":"syo","sharedTooltipText":":_syo:","src":"https://yt3.ggpht.com/kV16UktTvEO19IzPJtTj1CNrQqGBQhFqKkK2V2DNqWD810w--4BH7gleGlC-zg9UjccQr4kuXC8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_kJ27jGTWYniW-Xy3Ms5Cw/wFVwYPXjGdm7_AOboZrIBQ","alt":"ten","sharedTooltipText":":_ten:","src":"https://yt3.ggpht.com/dkPymxyfj7C7ZefgoWstoCQn9oziAeUYUKolL3NPDoFzdlmQrXfv3SREPkcohyNiqoUXad1sZg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_kJ27jGTWYniW-Xy3Ms5Cw/hVdwYM-2A6Pf_APS5K2wDA","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/QdA5hgwrPHJi7G_yNk3YwU5pPdMoVZmOxh3ny94A3U8_wB1aH941YnIuq1L3sQB_9L61Jq44=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_kJ27jGTWYniW-Xy3Ms5Cw/X_GdabLTCeOts8IPode-MA","alt":"kenzoku","sharedTooltipText":":_kenzoku:","src":"https://yt3.ggpht.com/fXoOMcwNAhEojQmhLeJuTSB212dK3UKdTqUjIDnwLHH3yBs_lieuVjFyb_ygiC8XTwGJC8J5nk8=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_kJ27jGTWYniW-Xy3Ms5Cw/X_GdadLPCeOts8IPode-MA","alt":"kon","sharedTooltipText":":_kon:","src":"https://yt3.ggpht.com/UEgZmjlFhkEVA5qMVHBdpurF-UuYIHj_6YYlXhjw8VkmkgZqVpp4SN4xy5I9SVieUgKNlIeVYw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_kJ27jGTWYniW-Xy3Ms5Cw/X_GdadLPCeOts8IPode-MA","alt":"kon","sharedTooltipText":":_kon:","src":"https://yt3.ggpht.com/UEgZmjlFhkEVA5qMVHBdpurF-UuYIHj_6YYlXhjw8VkmkgZqVpp4SN4xy5I9SVieUgKNlIeVYw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_kJ27jGTWYniW-Xy3Ms5Cw/X_GdadLPCeOts8IPode-MA","alt":"kon","sharedTooltipText":":_kon:","src":"https://yt3.ggpht.com/UEgZmjlFhkEVA5qMVHBdpurF-UuYIHj_6YYlXhjw8VkmkgZqVpp4SN4xy5I9SVieUgKNlIeVYw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんぴかー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"昇天"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

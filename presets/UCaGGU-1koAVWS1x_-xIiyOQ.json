@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "リン・ガーネット Rin Ch.",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCaGGU-1koAVWS1x_-xIiyOQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんりーりりん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつりーりりん！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"もっと！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"❤"},{"type":"text","value":"🎶"},{"type":"text","value":"🐼"},{"type":"text","value":"🎶"},{"type":"text","value":"💛"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaGGU-1koAVWS1x_-xIiyOQ/XxekabWWLryB5t0P4oXjiAk","alt":"rinちゅちゅ","sharedTooltipText":":_rinちゅちゅ:","src":"https://yt3.ggpht.com/xCq_LX5LtV9jpvKRvS-eknSR6h1f2ai1nixL4eWHgPuWFTYN4lynSSyjtNVol3oJbQP5k6wguTE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaGGU-1koAVWS1x_-xIiyOQ/XxekabWWLryB5t0P4oXjiAk","alt":"rinちゅちゅ","sharedTooltipText":":_rinちゅちゅ:","src":"https://yt3.ggpht.com/xCq_LX5LtV9jpvKRvS-eknSR6h1f2ai1nixL4eWHgPuWFTYN4lynSSyjtNVol3oJbQP5k6wguTE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaGGU-1koAVWS1x_-xIiyOQ/XxekabWWLryB5t0P4oXjiAk","alt":"rinちゅちゅ","sharedTooltipText":":_rinちゅちゅ:","src":"https://yt3.ggpht.com/xCq_LX5LtV9jpvKRvS-eknSR6h1f2ai1nixL4eWHgPuWFTYN4lynSSyjtNVol3oJbQP5k6wguTE=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaGGU-1koAVWS1x_-xIiyOQ/ocy-abPPL8GOs8IP8LHkyAs","alt":"rinたいき","sharedTooltipText":":_rinたいき:","src":"https://yt3.ggpht.com/-YpDgIg8NzdnL2mALXJh68P-BqwyncyZ1I3K8X_EzE5jqtqav_xwMe3mK4aqD7jXrEs7vtgLgg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaGGU-1koAVWS1x_-xIiyOQ/ocy-abPPL8GOs8IP8LHkyAs","alt":"rinたいき","sharedTooltipText":":_rinたいき:","src":"https://yt3.ggpht.com/-YpDgIg8NzdnL2mALXJh68P-BqwyncyZ1I3K8X_EzE5jqtqav_xwMe3mK4aqD7jXrEs7vtgLgg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"晚上好"}], "scope": "channel" }
+  ]
+}

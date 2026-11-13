@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "SZNO",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCDB44Q3zV3Eb4umw02fY0JA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌃"},{"type":"text","value":"🌙"},{"type":"text","value":"🎶"},{"type":"text","value":"🌃"},{"type":"text","value":"🌙"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"またねー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはよー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"またね～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おーおーおーおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"行ってきまーす"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはよう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはよ～"}], "scope": "channel" }
+  ]
+}

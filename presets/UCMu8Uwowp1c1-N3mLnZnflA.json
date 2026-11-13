@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Nimue Eversea【FIRST STAGE PRODUCTION EN】",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCMu8Uwowp1c1-N3mLnZnflA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"🩵"},{"type":"text","value":"🩵"},{"type":"text","value":"🩵"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OMG"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"YAYYYY"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"YESSS"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🧹"},{"type":"text","value":"🧹"},{"type":"text","value":"🧹"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCMu8Uwowp1c1-N3mLnZnflA/H-LAatrIL_KS5t0PmqjU-AQ","alt":"NImiUhuhu","sharedTooltipText":":_NImiUhuhu:","src":"https://yt3.ggpht.com/NEak-Oqjw3blaibHTnCxGKj61RIkiRxL8i7YPqRjZ2XoTbGHNuBXEsGJ-Vf44K-0ZOtPZvURBzU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCMu8Uwowp1c1-N3mLnZnflA/H-LAatrIL_KS5t0PmqjU-AQ","alt":"NImiUhuhu","sharedTooltipText":":_NImiUhuhu:","src":"https://yt3.ggpht.com/NEak-Oqjw3blaibHTnCxGKj61RIkiRxL8i7YPqRjZ2XoTbGHNuBXEsGJ-Vf44K-0ZOtPZvURBzU=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" }
+  ]
+}

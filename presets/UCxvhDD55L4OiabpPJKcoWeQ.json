@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "アイリス・ルセン - Iris Lucen ch. -",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCxvhDD55L4OiabpPJKcoWeQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCxvhDD55L4OiabpPJKcoWeQ/ZAAOZMHvN92R_9EPyLm42As","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/1fhN_9lvpwj0PmSUY7k5KqzZwNcg2JX9fspJ7RANVfwr3D2QYnWBclhRfh3xyhc64-LBNtruJA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCxvhDD55L4OiabpPJKcoWeQ/x-HMZK3kOuiK_9EPmKuDyAY","alt":"pyoko","sharedTooltipText":":_pyoko:","src":"https://yt3.ggpht.com/rDK0pNMcSG2VgDO7ldj9WXBxPIylQWdQgA1pyLRhtXWWaCGSW0MAgEy3Ql_0qRY6An7eOEg59dc=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxvhDD55L4OiabpPJKcoWeQ/x-HMZK3kOuiK_9EPmKuDyAY","alt":"pyoko","sharedTooltipText":":_pyoko:","src":"https://yt3.ggpht.com/rDK0pNMcSG2VgDO7ldj9WXBxPIylQWdQgA1pyLRhtXWWaCGSW0MAgEy3Ql_0qRY6An7eOEg59dc=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxvhDD55L4OiabpPJKcoWeQ/x-HMZK3kOuiK_9EPmKuDyAY","alt":"pyoko","sharedTooltipText":":_pyoko:","src":"https://yt3.ggpht.com/rDK0pNMcSG2VgDO7ldj9WXBxPIylQWdQgA1pyLRhtXWWaCGSW0MAgEy3Ql_0qRY6An7eOEg59dc=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

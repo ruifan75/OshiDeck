@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "のらきゃっとチャンネル",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC3iwL9Yz8LcKkJsnLPevOTQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんきゃーっと！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつきゃーっと！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC3iwL9Yz8LcKkJsnLPevOTQ/E_4bZuK6KtWo_9EP9o2t2Ao","alt":"bikkuri","sharedTooltipText":":_bikkuri:","src":"https://yt3.ggpht.com/46y5ENaUHcNSmu4eHCHG5MdXavz7GJ2F8HMKIh-ViAvov-lk07iwL1J68M26EZ8m9jbOgMCZbA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC3iwL9Yz8LcKkJsnLPevOTQ/E_4bZsS6KtWo_9EP9o2t2Ao","alt":"sodesu","sharedTooltipText":":_sodesu:","src":"https://yt3.ggpht.com/nZkiO7oREdvLovwADeVGpdFd8UfeYeRh97WF0yuOa_WCaPyap2gh_dvYqewjqvLy7-M1jFM75Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC3iwL9Yz8LcKkJsnLPevOTQ/E_4bZsm4KtWo_9EP9o2t2Ao","alt":"aaa","sharedTooltipText":":_aaa:","src":"https://yt3.ggpht.com/_TkduJ0OkqJfiHeBY2w6e6ZY6bbGLX6LVQnt0JdOfqeH6MkVR5QirmzU0O29BNCv8rQfABpi=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC3iwL9Yz8LcKkJsnLPevOTQ/E_4bZsm4KtWo_9EP9o2t2Ao","alt":"aaa","sharedTooltipText":":_aaa:","src":"https://yt3.ggpht.com/_TkduJ0OkqJfiHeBY2w6e6ZY6bbGLX6LVQnt0JdOfqeH6MkVR5QirmzU0O29BNCv8rQfABpi=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC3iwL9Yz8LcKkJsnLPevOTQ/E_4bZsm4KtWo_9EP9o2t2Ao","alt":"aaa","sharedTooltipText":":_aaa:","src":"https://yt3.ggpht.com/_TkduJ0OkqJfiHeBY2w6e6ZY6bbGLX6LVQnt0JdOfqeH6MkVR5QirmzU0O29BNCv8rQfABpi=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC3iwL9Yz8LcKkJsnLPevOTQ/E_4bZsS5KtWo_9EP9o2t2Ao","alt":"supnezumi","sharedTooltipText":":_supnezumi:","src":"https://yt3.ggpht.com/Ol-o4pShDLuw-J9Mva0GYUwFqYxtbNJ3-8Qi58NIUVN338fhkKdK37YXaHnCexRNmqCfletc=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC3iwL9Yz8LcKkJsnLPevOTQ/E_4bZvK4KtWo_9EP9o2t2Ao","alt":"aaaa","sharedTooltipText":":_aaaa:","src":"https://yt3.ggpht.com/Ed2AqyaRTLY5CViLyEDG5xUUElcMYJ_1Bwkww4avtCufqjVZxSw3MpdICJ5PiuC5OooFf5x4=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC3iwL9Yz8LcKkJsnLPevOTQ/TuxbYu_pI4P48gTfmKKgDg","alt":"yes","sharedTooltipText":":_yes:","src":"https://yt3.ggpht.com/_WO5-6TWRDruXgwuKSgSpC8KBUaxYgt1asi6dROSCLnJ11bINtRWVDdiaogfbX2vL0a4zW512A=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

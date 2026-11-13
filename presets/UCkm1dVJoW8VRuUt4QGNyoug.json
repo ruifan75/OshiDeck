@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "おののの妹子のゲーム徒然草。",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCkm1dVJoW8VRuUt4QGNyoug",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkm1dVJoW8VRuUt4QGNyoug/eDaIYJG1J8eE8wSo_66wAg","alt":"ぱちぱちガニ","sharedTooltipText":":_ぱちぱちガニ:","src":"https://yt3.ggpht.com/3lLfOdwrv70pIA0wXNdC22YbH4AFqrIS2DFznvTpkfDMvzf2XD7CPAsn4yil6NvqmpWDxOwUAw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkm1dVJoW8VRuUt4QGNyoug/eDaIYJG1J8eE8wSo_66wAg","alt":"ぱちぱちガニ","sharedTooltipText":":_ぱちぱちガニ:","src":"https://yt3.ggpht.com/3lLfOdwrv70pIA0wXNdC22YbH4AFqrIS2DFznvTpkfDMvzf2XD7CPAsn4yil6NvqmpWDxOwUAw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkm1dVJoW8VRuUt4QGNyoug/eDaIYJG1J8eE8wSo_66wAg","alt":"ぱちぱちガニ","sharedTooltipText":":_ぱちぱちガニ:","src":"https://yt3.ggpht.com/3lLfOdwrv70pIA0wXNdC22YbH4AFqrIS2DFznvTpkfDMvzf2XD7CPAsn4yil6NvqmpWDxOwUAw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkm1dVJoW8VRuUt4QGNyoug/GOC_X5zTJobl-gONzZqgCQ","alt":"ないスパ茸","sharedTooltipText":":_ないスパ茸:","src":"https://yt3.ggpht.com/BKPqT2ibnyMJYIw5_wS_rEAbqz_9B-GfY6UFxdhfnLJycLs0oLYU27jmOt4NSJm8zp2-S5nKNA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkm1dVJoW8VRuUt4QGNyoug/-tF7Z73XGJeI_9EPxI3uuAE","alt":"ちーーん","sharedTooltipText":":_ちーーん:","src":"https://yt3.ggpht.com/pef6Gx3BYuaGNEtVbKu_vqG6CWdmnEsgogBzzk4FtvtXXI3Q3X2DY7DwJF_CzZZlihCNxhe_TQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"8888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほほう"}], "scope": "channel" }
+  ]
+}

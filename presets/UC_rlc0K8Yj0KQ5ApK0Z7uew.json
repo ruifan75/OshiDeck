@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Akuma Nihmune Ch",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC_rlc0K8Yj0KQ5ApK0Z7uew",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hiii"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"om"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"clappi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"juh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LETSGO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Jamgie"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ROCKERS"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o"}], "scope": "channel" }
+  ]
+}

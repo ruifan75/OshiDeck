@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Scarle Yonaguni 【NIJISANJI EN】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCFgXWZOUZA2oYHNr6qDmsTQ",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFgXWZOUZA2oYHNr6qDmsTQ/vuQGY5bdNZ-O_9EP9YOx-A4","alt":"Glow","sharedTooltipText":":_Glow:","src":"https://yt3.ggpht.com/U23qoh2864dD5Iuts1FIbsHaTJM0wtQlDxA2ilU0A17fVnRvoiYTAje1etetbBQuhZVPGtKn-KA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFgXWZOUZA2oYHNr6qDmsTQ/vuQGY5bdNZ-O_9EP9YOx-A4","alt":"Glow","sharedTooltipText":":_Glow:","src":"https://yt3.ggpht.com/U23qoh2864dD5Iuts1FIbsHaTJM0wtQlDxA2ilU0A17fVnRvoiYTAje1etetbBQuhZVPGtKn-KA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFgXWZOUZA2oYHNr6qDmsTQ/vuQGY5bdNZ-O_9EP9YOx-A4","alt":"Glow","sharedTooltipText":":_Glow:","src":"https://yt3.ggpht.com/U23qoh2864dD5Iuts1FIbsHaTJM0wtQlDxA2ilU0A17fVnRvoiYTAje1etetbBQuhZVPGtKn-KA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFgXWZOUZA2oYHNr6qDmsTQ/vN9eZbPYKKyQ_9EPq_28mAI","alt":"Heart","sharedTooltipText":":_Heart:","src":"https://yt3.ggpht.com/45z-NBiTO9f-l6GHGe_ExEsxpH8LF3ldk8FiygjOAVQ6129EOnknDhSgdHObKfZcmoqTBn33P18=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFgXWZOUZA2oYHNr6qDmsTQ/vN9eZbPYKKyQ_9EPq_28mAI","alt":"Heart","sharedTooltipText":":_Heart:","src":"https://yt3.ggpht.com/45z-NBiTO9f-l6GHGe_ExEsxpH8LF3ldk8FiygjOAVQ6129EOnknDhSgdHObKfZcmoqTBn33P18=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFgXWZOUZA2oYHNr6qDmsTQ/vN9eZbPYKKyQ_9EPq_28mAI","alt":"Heart","sharedTooltipText":":_Heart:","src":"https://yt3.ggpht.com/45z-NBiTO9f-l6GHGe_ExEsxpH8LF3ldk8FiygjOAVQ6129EOnknDhSgdHObKfZcmoqTBn33P18=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFgXWZOUZA2oYHNr6qDmsTQ/1LPhY6O0MMqu8wTA0rvYBQ","alt":"Laugh","sharedTooltipText":":_Laugh:","src":"https://yt3.ggpht.com/uEz9pofloTojMuCYXjPB_8gQRwE_frVp73bUrnEryEjeBvTpl863n_ZPA0QW_AHUzGZahE6O=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

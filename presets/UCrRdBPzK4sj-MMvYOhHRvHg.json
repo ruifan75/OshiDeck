@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "十河ののは / Togawa Nonoha【にじさんじ】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCrRdBPzK4sj-MMvYOhHRvHg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCrRdBPzK4sj-MMvYOhHRvHg/z_C_aLuTOt6boPwPn6PCkAI","alt":"草ww","sharedTooltipText":":_草ww:","src":"https://yt3.ggpht.com/teZcNdGsuPKnfvbggV3E-Xbm0cCGasCjAQ2r5v3wBswNJtVQmJXxB__9qAv-S-aWzGBp1W2q3Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こん"},{"type":"youtubeEmoji","emojiId":"UCrRdBPzK4sj-MMvYOhHRvHg/z_C_aIuVOt6boPwPn6PCkAI","alt":"ののの","sharedTooltipText":":_ののの:","src":"https://yt3.ggpht.com/Th6wKD6ZxvQg5BIMo6gcy_Qna6QgqQhh4yl_9H_Q7suPhhieUtD8f4N41rEGuhq38-8WQ00E=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCrRdBPzK4sj-MMvYOhHRvHg/z_C_aIuVOt6boPwPn6PCkAI","alt":"ののの","sharedTooltipText":":_ののの:","src":"https://yt3.ggpht.com/Th6wKD6ZxvQg5BIMo6gcy_Qna6QgqQhh4yl_9H_Q7suPhhieUtD8f4N41rEGuhq38-8WQ00E=w48-h48-c-k-nd"},{"type":"text","value":"〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつのの〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" }
+  ]
+}

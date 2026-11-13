@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "バーチャルゴリラ",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UC2hA-6M66dE2Tt_4xM8K9wQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"すき"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あっ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "古守ちゆ /komori chiyu",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCBIR44irWpj1eTx0ZQFofHg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"\\古守/\\古守/\\古守/"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんもりもり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつこもりもり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"頑張れ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" }
+  ]
+}

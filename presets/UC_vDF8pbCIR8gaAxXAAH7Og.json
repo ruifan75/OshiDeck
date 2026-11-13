@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "DubsteP / ダブステップ【IZIGENIA】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC_vDF8pbCIR8gaAxXAAH7Og",
+  "cards": [
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"HAHAHAHAHA"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"kondubby"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_vDF8pbCIR8gaAxXAAH7Og/EmNrao_nJpaIs8IPq5-AgAI","alt":"DubstePLaugh","sharedTooltipText":":_DubstePLaugh:","src":"https://yt3.ggpht.com/LMIcwBiHzfvj8MD_i8MLWfHz7Pui53BI6iqcaV_Ae8Em6yPrioDF1rMqjfKm01pMbhJy7gRF=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_vDF8pbCIR8gaAxXAAH7Og/EmNrao_nJpaIs8IPq5-AgAI","alt":"DubstePLaugh","sharedTooltipText":":_DubstePLaugh:","src":"https://yt3.ggpht.com/LMIcwBiHzfvj8MD_i8MLWfHz7Pui53BI6iqcaV_Ae8Em6yPrioDF1rMqjfKm01pMbhJy7gRF=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsudubby"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_vDF8pbCIR8gaAxXAAH7Og/xo-uavDtCf2_s8IPl-KLQA","alt":"DubstePHeart","sharedTooltipText":":_DubstePHeart:","src":"https://yt3.ggpht.com/5fbHhK0ECvUDAuFZD5hNLfGhylTRzquGbKuOBgsSXrAUifXaRG7LIScbTjmWI10jmeQtRm2GbA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_vDF8pbCIR8gaAxXAAH7Og/xo-uavDtCf2_s8IPl-KLQA","alt":"DubstePHeart","sharedTooltipText":":_DubstePHeart:","src":"https://yt3.ggpht.com/5fbHhK0ECvUDAuFZD5hNLfGhylTRzquGbKuOBgsSXrAUifXaRG7LIScbTjmWI10jmeQtRm2GbA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_vDF8pbCIR8gaAxXAAH7Og/xo-uavDtCf2_s8IPl-KLQA","alt":"DubstePHeart","sharedTooltipText":":_DubstePHeart:","src":"https://yt3.ggpht.com/5fbHhK0ECvUDAuFZD5hNLfGhylTRzquGbKuOBgsSXrAUifXaRG7LIScbTjmWI10jmeQtRm2GbA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ABOBA"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_vDF8pbCIR8gaAxXAAH7Og/xo-uapXtCf2_s8IPl-KLQA","alt":"DubstePCheer","sharedTooltipText":":_DubstePCheer:","src":"https://yt3.ggpht.com/3qQ5WKb5GhK1FT-MLDWcxVCwrKEP0q8iT88jKx09Ipr5dpK8Midzd64V3o7dwDa7XszFUOZJ7Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_vDF8pbCIR8gaAxXAAH7Og/xo-uapXtCf2_s8IPl-KLQA","alt":"DubstePCheer","sharedTooltipText":":_DubstePCheer:","src":"https://yt3.ggpht.com/3qQ5WKb5GhK1FT-MLDWcxVCwrKEP0q8iT88jKx09Ipr5dpK8Midzd64V3o7dwDa7XszFUOZJ7Q=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

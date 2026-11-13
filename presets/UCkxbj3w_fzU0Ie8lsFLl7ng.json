@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "YUMENOS【公式】",
+  "note": "歌枠1配信・通常11配信のチャットから10枚",
+  "channel": "UCkxbj3w_fzU0Ie8lsFLl7ng",
+  "cards": [
+    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"},{"type":"text","value":"w"}], "scope": "channel" }
+  ]
+}

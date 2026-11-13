@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Ashkariel【FIRST STAGE PRODUCTION EN】 ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCyJPVXNqCOm5jHaneVwde_A",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OH"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCyJPVXNqCOm5jHaneVwde_A/eBgRabe4IYb87OsP_oGZWA","alt":"AshHeart","sharedTooltipText":":_AshHeart:","src":"https://yt3.ggpht.com/640hvlarlc_oe7-3MzBtynjjuieqA0lBHfL3ef-UamneaCY_Moz_oDhGuPxuBg-IHKHV-q0NNpQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyJPVXNqCOm5jHaneVwde_A/eBgRabe4IYb87OsP_oGZWA","alt":"AshHeart","sharedTooltipText":":_AshHeart:","src":"https://yt3.ggpht.com/640hvlarlc_oe7-3MzBtynjjuieqA0lBHfL3ef-UamneaCY_Moz_oDhGuPxuBg-IHKHV-q0NNpQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"awww"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCyJPVXNqCOm5jHaneVwde_A/eBgRadO6IYb87OsP_oGZWA","alt":"AshHype","sharedTooltipText":":_AshHype:","src":"https://yt3.ggpht.com/eG6RaKIayQ4byPgmyPExRPquwQ_8nJKTsX4BPYNCBAojPL90DsegUIoUoRfEzqLMT07dJPOEGQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyJPVXNqCOm5jHaneVwde_A/eBgRadO6IYb87OsP_oGZWA","alt":"AshHype","sharedTooltipText":":_AshHype:","src":"https://yt3.ggpht.com/eG6RaKIayQ4byPgmyPExRPquwQ_8nJKTsX4BPYNCBAojPL90DsegUIoUoRfEzqLMT07dJPOEGQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyJPVXNqCOm5jHaneVwde_A/eBgRadO6IYb87OsP_oGZWA","alt":"AshHype","sharedTooltipText":":_AshHype:","src":"https://yt3.ggpht.com/eG6RaKIayQ4byPgmyPExRPquwQ_8nJKTsX4BPYNCBAojPL90DsegUIoUoRfEzqLMT07dJPOEGQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WOAH"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"mhm"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yeah"}], "scope": "channel" }
+  ]
+}

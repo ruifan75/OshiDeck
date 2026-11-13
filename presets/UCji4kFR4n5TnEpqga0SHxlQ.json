@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "おれのななせ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCji4kFR4n5TnEpqga0SHxlQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCji4kFR4n5TnEpqga0SHxlQ/JWoyao2JKMaa7OsPrc_62Ac","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/yIrBjY7739T7AVjyzG9-RbbBSk1Pf9XDR94TKFPSCg0AmkL5quzUIhGThIqQw0AH7g7gsucY-ww=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCji4kFR4n5TnEpqga0SHxlQ/JWoyao2JKMaa7OsPrc_62Ac","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/yIrBjY7739T7AVjyzG9-RbbBSk1Pf9XDR94TKFPSCg0AmkL5quzUIhGThIqQw0AH7g7gsucY-ww=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCji4kFR4n5TnEpqga0SHxlQ/JWoyao2JKMaa7OsPrc_62Ac","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/yIrBjY7739T7AVjyzG9-RbbBSk1Pf9XDR94TKFPSCg0AmkL5quzUIhGThIqQw0AH7g7gsucY-ww=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" }
+  ]
+}

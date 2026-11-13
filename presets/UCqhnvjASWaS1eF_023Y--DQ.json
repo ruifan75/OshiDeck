@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "somunia",
+  "note": "歌枠1配信・通常7配信のチャットから10枚",
+  "channel": "UCqhnvjASWaS1eF_023Y--DQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"🩵"},{"type":"text","value":"🐧"},{"type":"text","value":"🩵"},{"type":"text","value":"🐧"},{"type":"text","value":"🩵"},{"type":"text","value":"🐧"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｿ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"を！"}], "scope": "channel" }
+  ]
+}

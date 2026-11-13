@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Ayapan Ch. あやぱん",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCiSm-bQq8dgIX6ZATVqEppg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"w"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはよ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あっ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ola"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おしい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" }
+  ]
+}

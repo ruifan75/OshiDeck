@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "きょくちょ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCdWFrG9v5GPaiqS7jamjC7Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんさく"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdWFrG9v5GPaiqS7jamjC7Q/HmbKZ7WpArXA_9EPloWuwQ4","alt":"sakuSAKU","sharedTooltipText":":_sakuSAKU:","src":"https://yt3.ggpht.com/K-sN_JyiDvjXvNC0GFZGYhE6_Zeyygo5jQZEqTnJfafzj71C_WAUqFyKgLeTxTCo_PX0Jvh7mWU=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"sakuuu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"konsaku"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdWFrG9v5GPaiqS7jamjC7Q/fEv8Z4rpENyj_9EPw9n-0AM","alt":"sakuSleepsaku2","sharedTooltipText":":_sakuSleepsaku2:","src":"https://yt3.ggpht.com/aYvzjUPch9RM7WxOPz60OsqprrzIU44EGyjA9eysoL2W-33vXphEbLoCTb66Xxr0BXnyUTWGT-g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdWFrG9v5GPaiqS7jamjC7Q/fEv8Z4rpENyj_9EPw9n-0AM","alt":"sakuSleepsaku2","sharedTooltipText":":_sakuSleepsaku2:","src":"https://yt3.ggpht.com/aYvzjUPch9RM7WxOPz60OsqprrzIU44EGyjA9eysoL2W-33vXphEbLoCTb66Xxr0BXnyUTWGT-g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdWFrG9v5GPaiqS7jamjC7Q/fEv8Z4rpENyj_9EPw9n-0AM","alt":"sakuSleepsaku2","sharedTooltipText":":_sakuSleepsaku2:","src":"https://yt3.ggpht.com/aYvzjUPch9RM7WxOPz60OsqprrzIU44EGyjA9eysoL2W-33vXphEbLoCTb66Xxr0BXnyUTWGT-g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdWFrG9v5GPaiqS7jamjC7Q/fEv8Z4rpENyj_9EPw9n-0AM","alt":"sakuSleepsaku2","sharedTooltipText":":_sakuSleepsaku2:","src":"https://yt3.ggpht.com/aYvzjUPch9RM7WxOPz60OsqprrzIU44EGyjA9eysoL2W-33vXphEbLoCTb66Xxr0BXnyUTWGT-g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdWFrG9v5GPaiqS7jamjC7Q/DqSFaaWYMOOts8IPvImUWQ","alt":"sakuKyokyo","sharedTooltipText":":_sakuKyokyo:","src":"https://yt3.ggpht.com/rd_46remDdYHiDX4yzwTcsTzV7E0UCTXhRa6yem_UDaYwl7V2W3voRc2zujTCN-G74c1yMkk=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdWFrG9v5GPaiqS7jamjC7Q/jlvIZ8-DFbXA_9EPt9mjgQo","alt":"sakuSleepsaku","sharedTooltipText":":_sakuSleepsaku:","src":"https://yt3.ggpht.com/axplEAlM42jcYU3tNFvKVqdbVZaWtZ-bHlZodJkbK9tA0MQ9dbRmlQgB0Q6XxTVc4dFFjfzjsrU=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oyasaku"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"konsaku sensei"}], "scope": "channel" }
+  ]
+}

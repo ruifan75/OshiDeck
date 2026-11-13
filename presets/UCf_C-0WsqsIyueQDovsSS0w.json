@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "いれいす【公式】",
-  "note": "過去12配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCf_C-0WsqsIyueQDovsSS0w",
   "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かっこいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いむくんwww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"可愛い"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"わこいれです！"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うんうん"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ありがとうございました！"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おめでとうございます！"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うんうん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは！"}], "scope": "channel" }
   ]
 }

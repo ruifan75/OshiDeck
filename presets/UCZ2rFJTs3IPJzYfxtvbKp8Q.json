@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Saki Ch. 浅葱サキ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCZ2rFJTs3IPJzYfxtvbKp8Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"たのもーたのもー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCZ2rFJTs3IPJzYfxtvbKp8Q/1rE1Y9WiCcGI_9EP-LSfsAE","alt":"ｗｗｗ","sharedTooltipText":":_ｗｗｗ:","src":"https://yt3.ggpht.com/AAr-B7ZhpVKZuZ7tZkKangUib7aC7KLmu_LvbH1SjynSaJ-aq0v2A--KejuY2h1VdhbBcqEN2JM=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつねぎ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCZ2rFJTs3IPJzYfxtvbKp8Q/1rE1Y5GiCcGI_9EP-LSfsAE","alt":"たのも","sharedTooltipText":":_たのも:","src":"https://yt3.ggpht.com/tNpGsZW2nDSyyCrBQ3O5IrD4iGCDt5kgeN_Szu_6_-KDEYGn-Mz2YyV7j-ou1myZozoFtv4fag=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZ2rFJTs3IPJzYfxtvbKp8Q/1rE1Y5GiCcGI_9EP-LSfsAE","alt":"たのも","sharedTooltipText":":_たのも:","src":"https://yt3.ggpht.com/tNpGsZW2nDSyyCrBQ3O5IrD4iGCDt5kgeN_Szu_6_-KDEYGn-Mz2YyV7j-ou1myZozoFtv4fag=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつねぎ〜"},{"type":"youtubeEmoji","emojiId":"UCZ2rFJTs3IPJzYfxtvbKp8Q/0QZEY8D2KvOE_9EP6eeSwAY","alt":"おてて","sharedTooltipText":":_おてて:","src":"https://yt3.ggpht.com/o0pACgNN6EIxByY7hJ0LtuKHQ1o9FGVh2-p7iR3Dnyc1Si9scR9MD3K3xk642-1neq7mENueFQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なるほど"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえりなさい"}], "scope": "channel" }
+  ]
+}

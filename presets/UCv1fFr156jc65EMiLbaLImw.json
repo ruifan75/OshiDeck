@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "剣持刀也",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCv1fFr156jc65EMiLbaLImw",
   "cards": [
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"イェア！"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"最高"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"おめでとうや"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"うわ"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"うまい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ん？"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"うまい"}], "scope": "channel" }
   ]
 }

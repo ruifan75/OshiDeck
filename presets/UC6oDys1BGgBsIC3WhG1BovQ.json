@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Shizuka Rin Official",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC6oDys1BGgBsIC3WhG1BovQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おこんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえりん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いってらっしゃーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつりんでしたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おこん"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC6oDys1BGgBsIC3WhG1BovQ/CKyg6pi8ztwCFc4KhAodxrcBDw","alt":"rinAisatsu06","sharedTooltipText":":_rinAisatsu06:","src":"https://yt3.ggpht.com/rWZV_90khFg46_PBTs43rBw3K-9uFXNjPzZYmzpzOJ1Jy-JsViAbXDxvXLyjy8lhM7yb_yBz=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいばーい"}], "scope": "channel" }
+  ]
+}

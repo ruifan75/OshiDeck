@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "エトソラ / EtoSora",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCZ1OPUz_RXmOcQ96pa_6oJg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"🐑"},{"type":"text","value":"🌙"},{"type":"text","value":"🐑"},{"type":"text","value":"✨"},{"type":"text","value":"🐑"},{"type":"text","value":"🌙"},{"type":"text","value":"🐑"},{"type":"text","value":"✨"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機♪"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかれさまでした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れさまでした～！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れさまでした〜！"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "海月とうみ / Kurage Toumi",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCy951eHJiaOED-G2hsR4CjA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCy951eHJiaOED-G2hsR4CjA/ARZhZsjLNdyr_9EPs5fq0Qw","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/I5b1pBi0l94_ADgisFhUjR0z6vfBAK73QQlFHFUOEldSzEEYdJN21NxVvgcDJiX0reLoE1LtDw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"どもです"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"すごい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほうほう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うんうん"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCy951eHJiaOED-G2hsR4CjA/ARZhZsPONdyr_9EPs5fq0Qw","alt":"otsu","sharedTooltipText":":_otsu:","src":"https://yt3.ggpht.com/S7j07sQb44K6mfa9KXiV7QCWqiCcjNtIcH1qi7rfgnC3RfVmk6BKQE3-UAVsFMT3qB6D4xd9=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCy951eHJiaOED-G2hsR4CjA/7jFkZuzHL7e7_9EPpoOMsAo","alt":"desu","sharedTooltipText":":_desu:","src":"https://yt3.ggpht.com/uMSOWWVNEkWGPHKj0o0ZbLPRWFCFhznsD42x25wPdPVylwVJU3RMqmq5hIAHVbu_ZhJludYzEA=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

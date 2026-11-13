@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "泡喰はわこ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCQjIXLk6lridUCQIBHaLMDw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はわよー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🫧"},{"type":"text","value":"🐥"},{"type":"text","value":"🫧"},{"type":"text","value":"🐥"},{"type":"text","value":"🫧"},{"type":"text","value":"🐥"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はわよ～"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQjIXLk6lridUCQIBHaLMDw/zkQmZr7xEtKA_9EP9qiuyAc","alt":"awahawa","sharedTooltipText":":_awahawa:","src":"https://yt3.ggpht.com/BFpg0ddLX-lbPasDR9m13FlcoQkG4FdqkvC33z-fjPhNR496fcaNQ1vxgWJL9gih8GTVCfMINQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQjIXLk6lridUCQIBHaLMDw/zkQmZr7xEtKA_9EP9qiuyAc","alt":"awahawa","sharedTooltipText":":_awahawa:","src":"https://yt3.ggpht.com/BFpg0ddLX-lbPasDR9m13FlcoQkG4FdqkvC33z-fjPhNR496fcaNQ1vxgWJL9gih8GTVCfMINQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はわよーですー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でしたー"}], "scope": "channel" }
+  ]
+}

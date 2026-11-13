@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "アリノとヨイのプリティフルフェイス Ch.",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCVv9h7LWpxqcAYevNQ1A1-g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんぷりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぷりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ、"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"w"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

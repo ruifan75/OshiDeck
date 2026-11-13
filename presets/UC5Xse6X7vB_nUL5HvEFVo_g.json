@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "道明寺ここあ / COCOA DOMYOJI",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC5Xse6X7vB_nUL5HvEFVo_g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💙"},{"type":"text","value":"🎶"},{"type":"text","value":"💙"},{"type":"text","value":"🎶"},{"type":"text","value":"💙"},{"type":"text","value":"🎶"},{"type":"text","value":"💙"},{"type":"text","value":"🎶"},{"type":"text","value":"💙"},{"type":"text","value":"🎶"},{"type":"text","value":"💙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"初見さんいらっしゃい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんいおりーん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きた！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんここー"}], "scope": "channel" }
+  ]
+}

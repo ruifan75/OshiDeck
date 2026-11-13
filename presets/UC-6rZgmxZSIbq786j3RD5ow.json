@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "レオス・ヴィンセント / Leos.Vincent【にじさんじ】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC-6rZgmxZSIbq786j3RD5ow",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-6rZgmxZSIbq786j3RD5ow/fGkrYeyAJYGT8gST7augCQ","alt":"こーるねこ","sharedTooltipText":":_こーるねこ:","src":"https://yt3.ggpht.com/_QEcC7a4sMeZGf1LQBxx2-3wLqPOC9T2t6lsQ7ieiSRS8TkQbL6Y94BobEIdaJfaR6PmuW1h7g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC-6rZgmxZSIbq786j3RD5ow/fGkrYeyAJYGT8gST7augCQ","alt":"こーるねこ","sharedTooltipText":":_こーるねこ:","src":"https://yt3.ggpht.com/_QEcC7a4sMeZGf1LQBxx2-3wLqPOC9T2t6lsQ7ieiSRS8TkQbL6Y94BobEIdaJfaR6PmuW1h7g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC-6rZgmxZSIbq786j3RD5ow/fGkrYeyAJYGT8gST7augCQ","alt":"こーるねこ","sharedTooltipText":":_こーるねこ:","src":"https://yt3.ggpht.com/_QEcC7a4sMeZGf1LQBxx2-3wLqPOC9T2t6lsQ7ieiSRS8TkQbL6Y94BobEIdaJfaR6PmuW1h7g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC-6rZgmxZSIbq786j3RD5ow/fGkrYeyAJYGT8gST7augCQ","alt":"こーるねこ","sharedTooltipText":":_こーるねこ:","src":"https://yt3.ggpht.com/_QEcC7a4sMeZGf1LQBxx2-3wLqPOC9T2t6lsQ7ieiSRS8TkQbL6Y94BobEIdaJfaR6PmuW1h7g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC-6rZgmxZSIbq786j3RD5ow/fGkrYeyAJYGT8gST7augCQ","alt":"こーるねこ","sharedTooltipText":":_こーるねこ:","src":"https://yt3.ggpht.com/_QEcC7a4sMeZGf1LQBxx2-3wLqPOC9T2t6lsQ7ieiSRS8TkQbL6Y94BobEIdaJfaR6PmuW1h7g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"最高"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "夏芽川アキ / Natsumegawa Aki",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC8f0CKYBVo4enRKF00XIw1Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんあきー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつめがわ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"最高"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍿"},{"type":"text","value":"🍎"},{"type":"text","value":"🎶"},{"type":"text","value":"🍿"},{"type":"text","value":"🍎"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やったー！"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "MaeFae【Aegis-Link】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC9vINYqx4LrpK545qkKFPPg",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9vINYqx4LrpK545qkKFPPg/Hnc9acqfEv_NrcUP4r2KmAM","alt":"maeCheer","sharedTooltipText":":_maeCheer:","src":"https://yt3.ggpht.com/6hmPIb1bD0UEFHV7shK4Xw2nfYXeJbnT1eCfAhKU2IoDn2Dks0LdkDpEBDD1SSjR5_m5KWuivA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9vINYqx4LrpK545qkKFPPg/Hnc9acqfEv_NrcUP4r2KmAM","alt":"maeCheer","sharedTooltipText":":_maeCheer:","src":"https://yt3.ggpht.com/6hmPIb1bD0UEFHV7shK4Xw2nfYXeJbnT1eCfAhKU2IoDn2Dks0LdkDpEBDD1SSjR5_m5KWuivA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9vINYqx4LrpK545qkKFPPg/Hnc9acqfEv_NrcUP4r2KmAM","alt":"maeCheer","sharedTooltipText":":_maeCheer:","src":"https://yt3.ggpht.com/6hmPIb1bD0UEFHV7shK4Xw2nfYXeJbnT1eCfAhKU2IoDn2Dks0LdkDpEBDD1SSjR5_m5KWuivA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ggs"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"YES!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"!breathe"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Oh..."}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Mae"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" }
+  ]
+}

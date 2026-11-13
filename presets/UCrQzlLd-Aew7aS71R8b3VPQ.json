@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "sifar Vtuber",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCrQzlLd-Aew7aS71R8b3VPQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🧢"},{"type":"text","value":"🎶"},{"type":"text","value":"🧢"},{"type":"text","value":"🎶"},{"type":"text","value":"🧢"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんしふぁー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつしふぁー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんしふぁ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いええええええええええええええい！！！！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"},{"type":"youtubeEmoji","emojiId":"UCrQzlLd-Aew7aS71R8b3VPQ/qxHdY4HWHueH_9EP9PujsA4","alt":"ありシファ","sharedTooltipText":":_ありシファ:","src":"https://yt3.ggpht.com/zHu4GSqT4T3NeoSi7Y9u3fZdCm0kz6u1RvRpoMtgw5bGebLPlQJJOD-6pS-ENttzOVrZ5UhD=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

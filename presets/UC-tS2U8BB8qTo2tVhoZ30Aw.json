@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "まさるドット子",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC-tS2U8BB8qTo2tVhoZ30Aw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-tS2U8BB8qTo2tVhoZ30Aw/grGTZ4XNJKC8_9EP5JassQs","alt":"kon","sharedTooltipText":":_kon:","src":"https://yt3.ggpht.com/h6U7Qezk88fwgV93tcCohJM3dWwfmv_i-lxaCEu8zx8jT8nVdT4I664HLIAM7Ihj30RHTRWbHg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC-tS2U8BB8qTo2tVhoZ30Aw/grGTZ4jPJKC8_9EP5JassQs","alt":"deyo","sharedTooltipText":":_deyo:","src":"https://yt3.ggpht.com/vaj-hTntAJzaJQK9bXGcrlOkfOWMY1RG_apoIYj1xSipayD6z4XR_PuYJkzghobTRgDzPWMs=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-tS2U8BB8qTo2tVhoZ30Aw/grGTZ-zNJKC8_9EP5JassQs","alt":"otsu","sharedTooltipText":":_otsu:","src":"https://yt3.ggpht.com/HczA2tshZKLhnOh6gMflLRJdUfd0_DGXo7b9qJ9nPvdm73ZdCYgrLTc8D7rcvOQlKxmrt3MU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC-tS2U8BB8qTo2tVhoZ30Aw/grGTZ4jPJKC8_9EP5JassQs","alt":"deyo","sharedTooltipText":":_deyo:","src":"https://yt3.ggpht.com/vaj-hTntAJzaJQK9bXGcrlOkfOWMY1RG_apoIYj1xSipayD6z4XR_PuYJkzghobTRgDzPWMs=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんでよ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-tS2U8BB8qTo2tVhoZ30Aw/zbKTZ9icEZeI_9EP6taiuAE","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/7DwaHIePLYAW4K1im4EkcAzFDE-2OmEgyX3d81qh3KeW-8zU2EJeBSwcY8rhYgp75xPNQllUd_Y=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつでよ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-tS2U8BB8qTo2tVhoZ30Aw/grGTZ-HPJKC8_9EP5JassQs","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/t35FLyrodVtYNE7MXIiAXchJ0ttKpjtLsFzeD2_pksZHx0LvviUJ6_3L3hmw0-S7lR06vh99=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Kazaki Ch. ‐ 森中花咲 ‐",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCtpB6Bvhs1Um93ziEDACQ8g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCtpB6Bvhs1Um93ziEDACQ8g/h3mqXuHVDZCQ_APw9aXYAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/gGVS4AdtdyLmcsPOjYMbMuoWdSOv18JIYhWqwTKtrAuXkn8nB0to8jLWEQT4DIvRUNUdNDLKHnk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCtpB6Bvhs1Um93ziEDACQ8g/h3mqXuHVDZCQ_APw9aXYAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/gGVS4AdtdyLmcsPOjYMbMuoWdSOv18JIYhWqwTKtrAuXkn8nB0to8jLWEQT4DIvRUNUdNDLKHnk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCtpB6Bvhs1Um93ziEDACQ8g/h3mqXuHVDZCQ_APw9aXYAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/gGVS4AdtdyLmcsPOjYMbMuoWdSOv18JIYhWqwTKtrAuXkn8nB0to8jLWEQT4DIvRUNUdNDLKHnk=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCtpB6Bvhs1Um93ziEDACQ8g/wFd-X-DQDZGS-gPh7JiYAg","alt":"グッドゲーム","sharedTooltipText":":_グッドゲーム:","src":"https://yt3.ggpht.com/u10etzdoywwO_7hYpzR1abLpd1HCEOWsGmXgCDMbMUY7l0_RmWwoENqez1Z7Eb2_lyC-eFJPnw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCtpB6Bvhs1Um93ziEDACQ8g/A02LXN7FA4fMNouJg4AN","alt":"ふれふれ","sharedTooltipText":":_ふれふれ:","src":"https://yt3.ggpht.com/ePd-4B0_LA_fk7buV0WRXnZdQD3gUFBhhuf_WpFNvdOeYbc1PA0KRkjswp11R6DrtStq8Wyp=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCtpB6Bvhs1Um93ziEDACQ8g/A02LXN7FA4fMNouJg4AN","alt":"ふれふれ","sharedTooltipText":":_ふれふれ:","src":"https://yt3.ggpht.com/ePd-4B0_LA_fk7buV0WRXnZdQD3gUFBhhuf_WpFNvdOeYbc1PA0KRkjswp11R6DrtStq8Wyp=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" }
+  ]
+}

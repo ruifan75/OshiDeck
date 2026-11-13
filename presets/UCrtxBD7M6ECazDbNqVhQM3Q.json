@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ながやまめめ / Nagayama Meme",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCrtxBD7M6ECazDbNqVhQM3Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"初見です"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/G8AfY6yWGuKuhL0PlbiA2AE","alt":"hand-pink-waving","sharedTooltipText":":hand-pink-waving:","src":"https://yt3.ggpht.com/KOxdr_z3A5h1Gb7kqnxqOCnbZrBmxI2B_tRQ453BhTWUhYAlpg5ZP8IKEBkcvRoY8grY91Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんめめ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは初見です"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCrtxBD7M6ECazDbNqVhQM3Q/dAVEZYvFFMjZgwPYm5GACg","alt":"こんん","sharedTooltipText":":_こんん:","src":"https://yt3.ggpht.com/wH3z8fW4KLhyE5Xg9urSKBVc5EI0Tsq9Txa_gZYcHcLMeIf2eMZJw97kSYokuE7L8Utk7RbVWjs=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うん、、、"}], "scope": "channel" }
+  ]
+}

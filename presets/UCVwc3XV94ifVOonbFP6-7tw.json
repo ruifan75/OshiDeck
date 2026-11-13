@@ -1,0 +1,12 @@
+{
+  "format": 2,
+  "name": "Shonzo",
+  "note": "歌枠0配信・通常13配信のチャットから4枚",
+  "channel": "UCVwc3XV94ifVOonbFP6-7tw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"thanks "}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" }
+  ]
+}

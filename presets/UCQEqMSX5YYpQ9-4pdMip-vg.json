@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "熊乃ベアトリーチェ / Kumano BearTrice",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCQEqMSX5YYpQ9-4pdMip-vg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"みゅー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんべあー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQEqMSX5YYpQ9-4pdMip-vg/coCmZf2GGv-l_9EP1vue8AQ","alt":"サイリウムふりふり","sharedTooltipText":":_サイリウムふりふり:","src":"https://yt3.ggpht.com/m9kv-cqGUO_nFkmn8er2_23IumRskVt6ohQWv_43W9JJlMIWCpH4lT3gw0T9xgFEoBWkMQjSA98=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQEqMSX5YYpQ9-4pdMip-vg/coCmZf2GGv-l_9EP1vue8AQ","alt":"サイリウムふりふり","sharedTooltipText":":_サイリウムふりふり:","src":"https://yt3.ggpht.com/m9kv-cqGUO_nFkmn8er2_23IumRskVt6ohQWv_43W9JJlMIWCpH4lT3gw0T9xgFEoBWkMQjSA98=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQEqMSX5YYpQ9-4pdMip-vg/coCmZf2GGv-l_9EP1vue8AQ","alt":"サイリウムふりふり","sharedTooltipText":":_サイリウムふりふり:","src":"https://yt3.ggpht.com/m9kv-cqGUO_nFkmn8er2_23IumRskVt6ohQWv_43W9JJlMIWCpH4lT3gw0T9xgFEoBWkMQjSA98=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQEqMSX5YYpQ9-4pdMip-vg/coCmZf2GGv-l_9EP1vue8AQ","alt":"サイリウムふりふり","sharedTooltipText":":_サイリウムふりふり:","src":"https://yt3.ggpht.com/m9kv-cqGUO_nFkmn8er2_23IumRskVt6ohQWv_43W9JJlMIWCpH4lT3gw0T9xgFEoBWkMQjSA98=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQEqMSX5YYpQ9-4pdMip-vg/coCmZf2GGv-l_9EP1vue8AQ","alt":"サイリウムふりふり","sharedTooltipText":":_サイリウムふりふり:","src":"https://yt3.ggpht.com/m9kv-cqGUO_nFkmn8er2_23IumRskVt6ohQWv_43W9JJlMIWCpH4lT3gw0T9xgFEoBWkMQjSA98=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつべあー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"8888888"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQEqMSX5YYpQ9-4pdMip-vg/H6qeZaW3K72k_9EPxpqH2AY","alt":"こんべあ","sharedTooltipText":":_こんべあ:","src":"https://yt3.ggpht.com/ZPIREqmK6VdWSZhXJFa6Bpms-ektbvhQ-2CJw624MPaaijJw2OMoWGNsVPt6_3pH-SPJe-GH1g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Aurora Atria",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCmJT-AhNcDrvZsN0UZKtysQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"poto"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"XD"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"JAJAJA"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCmJT-AhNcDrvZsN0UZKtysQ/IELZZK2NGIKH_9EP0raE-Ak","alt":"AuriLove","sharedTooltipText":":_AuriLove:","src":"https://yt3.ggpht.com/VXVq25xZA4GgrY8dSi1HcseBThMZ8ijVKB6Tbp4rKknIUNTmj6kprL25BUDQ_ucjbjAO1fkL=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hola"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"si"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"buenas"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"F"}], "scope": "channel" }
+  ]
+}

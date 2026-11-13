@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "安心院みさ / ANSHININ MISA",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UC4OAmxLab5tVF094Sgry6hw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"安心！安心！安心！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC4OAmxLab5tVF094Sgry6hw/4cnvZ9KDI4CO_9EPnoeW6Ac","alt":"あんしん","sharedTooltipText":":_あんしん:","src":"https://yt3.ggpht.com/X9bxLp4GBQBuVf99YwN0G4edpZyYsiZlJoiTN1TDxGQxvwp7mNpv42DmXpQcfujGFuAryN9XnQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC4OAmxLab5tVF094Sgry6hw/4cnvZ9KDI4CO_9EPnoeW6Ac","alt":"あんしん","sharedTooltipText":":_あんしん:","src":"https://yt3.ggpht.com/X9bxLp4GBQBuVf99YwN0G4edpZyYsiZlJoiTN1TDxGQxvwp7mNpv42DmXpQcfujGFuAryN9XnQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC4OAmxLab5tVF094Sgry6hw/4cnvZ9KDI4CO_9EPnoeW6Ac","alt":"あんしん","sharedTooltipText":":_あんしん:","src":"https://yt3.ggpht.com/X9bxLp4GBQBuVf99YwN0G4edpZyYsiZlJoiTN1TDxGQxvwp7mNpv42DmXpQcfujGFuAryN9XnQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC4OAmxLab5tVF094Sgry6hw/XH_uZ5KAJ4CO_9EPl7WXwA4","alt":"照れる","sharedTooltipText":":_照れる:","src":"https://yt3.ggpht.com/QCvOk5M0y6OhZQjCvplaxcuV0FWnt54WW-xScVhyVUla_OxHl-dODT8h3vBaxKwu4CWxbw_RMw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC4OAmxLab5tVF094Sgry6hw/XH_uZ5KAJ4CO_9EPl7WXwA4","alt":"照れる","sharedTooltipText":":_照れる:","src":"https://yt3.ggpht.com/QCvOk5M0y6OhZQjCvplaxcuV0FWnt54WW-xScVhyVUla_OxHl-dODT8h3vBaxKwu4CWxbw_RMw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC4OAmxLab5tVF094Sgry6hw/XH_uZ5KAJ4CO_9EPl7WXwA4","alt":"照れる","sharedTooltipText":":_照れる:","src":"https://yt3.ggpht.com/QCvOk5M0y6OhZQjCvplaxcuV0FWnt54WW-xScVhyVUla_OxHl-dODT8h3vBaxKwu4CWxbw_RMw=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

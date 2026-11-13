@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Lovey Ch. 朔魔ラヴィ【スナックにり】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC6GKE9PDS2XvxRQO9nDikAQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC6GKE9PDS2XvxRQO9nDikAQ/6t7zYdKGHZ2S8wS56KzYAw","alt":"purple","sharedTooltipText":":_purple:","src":"https://yt3.ggpht.com/JlHQBtLVkiKCZXbjAZ8_QeDH9Jwey-nrvMNTDUPpyKBobW4Sk2sJlfNbbJb33xD5lHX7QpvB=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6GKE9PDS2XvxRQO9nDikAQ/Iw6CY-y3LoLBgwPZirSABQ","alt":"love","sharedTooltipText":":_love:","src":"https://yt3.ggpht.com/nvPutnk8K809rKELBCX5DsXqhK7lovJhlje6xbO-NcbE8PMUlnISCeepWkQ4a3xocOdnCrIBPQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6GKE9PDS2XvxRQO9nDikAQ/pA4MYfCPOamL8gTD9pmADA","alt":"pink","sharedTooltipText":":_pink:","src":"https://yt3.ggpht.com/IMeE9WLpW1JShudxmYDDacWGZ8evqED7q0YRFP555ET1TfzwJACwJwJfTEd2LFbbf1O4hdHid2s=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC6GKE9PDS2XvxRQO9nDikAQ/TH8NYZ27PNLt8wTgjYGYBQ","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/uxp2hCHF-AJayJo18je741n10ULu4eeEdbAOo8VJ-nwjhi80n2uy31SoCSGNj5obxp1i3ZyuJA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんラヴィ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんラヴィ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Koh Acuk Ch.",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCTVFh6LIPPU6ea7jfUvc_YA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"wkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aloo koh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😭"},{"type":"text","value":"😭"},{"type":"text","value":"😭"},{"type":"text","value":"😭"},{"type":"text","value":"😭"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo koh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"malam koh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"koh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aloo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice rp"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"AYAHHHHH"}], "scope": "channel" }
+  ]
+}

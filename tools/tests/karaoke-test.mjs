@@ -73,11 +73,17 @@ try {
   writeFileSync(join(dir, "candidates", `${channel}.json`), JSON.stringify(many));
   const legacy = { ...many, channel: other };
   delete legacy.selected;
+  legacy.candidates = many.candidates.map((card, i) => i === 0
+    ? { ...card, tokens: [{ type: "text", value: "ALPHA" }], people: 1000000 } : card);
   writeFileSync(join(dir, "candidates", `${other}.json`), JSON.stringify(legacy));
   execFileSync(process.execPath, [join(dir, "tools", "scope.mjs"), "--all", "--dir", join(dir, "candidates"),
     "--out", join(dir, "previews")], { cwd: dir, stdio: "pipe" });
   const scoped = JSON.parse(readFileSync(join(dir, "previews", `${channel}.preset.json`)));
   check("scope keeps every chosen karaoke card", scoped.cards.length === 12);
+  check("mined starting decks stay in their channel even for shared phrases",
+    scoped.cards.every((card) => card.scope === "channel"));
+  check("starting decks keep their own spelling instead of another room's",
+    scoped.cards[0].tokens[0].value === "alpha");
   const oldScoped = JSON.parse(readFileSync(join(dir, "previews", `${other}.preset.json`)));
   check("scope retains the legacy top-ten behavior", oldScoped.cards.length === 10);
   const single = mine([["singing", [["boundary", 1]], 10]]);

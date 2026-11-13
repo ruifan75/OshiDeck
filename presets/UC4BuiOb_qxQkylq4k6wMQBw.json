@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "日向りま / Hinata Lima",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC4BuiOb_qxQkylq4k6wMQBw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはひなー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつひなー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC4BuiOb_qxQkylq4k6wMQBw/0_-4ZvbMGfG6_9EPhsq3yAc","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/ZCsc0UfpOCJ3NPCWQvPrzrr5c3bI23IAGQ7Aquf8no6QeRX8ThKCtyNRhXmSloygIkIVb651V04=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC4BuiOb_qxQkylq4k6wMQBw/0_-4ZvbMGfG6_9EPhsq3yAc","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/ZCsc0UfpOCJ3NPCWQvPrzrr5c3bI23IAGQ7Aquf8no6QeRX8ThKCtyNRhXmSloygIkIVb651V04=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC4BuiOb_qxQkylq4k6wMQBw/tDfxZ63AEoCO_9EPnoeW6Ac","alt":"KUSA","sharedTooltipText":":_KUSA:","src":"https://yt3.ggpht.com/LT45Xa2KgBKKdVRIPVQUoL8LdlbkgA-uOBf5mgUInKJxXEO8_Bxu1vrHUua-QKE1gioWrvPCRoY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんひなー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え"}], "scope": "channel" }
+  ]
+}

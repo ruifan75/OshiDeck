@@ -1,0 +1,9 @@
+{
+  "format": 2,
+  "name": "Chiika Ch. 山根ちいか",
+  "note": "歌枠0配信・通常5配信のチャットから1枚",
+  "channel": "UCfIZ5P7BcgIyLpfOj66DwtA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" }
+  ]
+}

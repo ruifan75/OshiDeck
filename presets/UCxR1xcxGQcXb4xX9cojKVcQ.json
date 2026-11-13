@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Diraccoonr [ KAIBUTSU ]",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCxR1xcxGQcXb4xX9cojKVcQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"привет"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"да"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ахаха"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"хахахахаха"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"а"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"всем привет"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"F"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"нет"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"о"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"пока"}], "scope": "channel" }
+  ]
+}

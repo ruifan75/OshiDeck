@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Mishika Aya ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCD2QR0VZN-jfSavZ7kN-8dQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"malam aya"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ok ay"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aya"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hah?"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCD2QR0VZN-jfSavZ7kN-8dQ/jP71ZJm2G6SQ_9EP7_2O4AU","alt":"AbsenLur","sharedTooltipText":":_AbsenLur:","src":"https://yt3.ggpht.com/77vVQsehA9Ifw1om2dhXJ3m9hsJQZi6JDattCs_PqtInjGRUPSomni3q2M3x-rdFVliuLPynQg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCD2QR0VZN-jfSavZ7kN-8dQ/jP71ZJm2G6SQ_9EP7_2O4AU","alt":"AbsenLur","sharedTooltipText":":_AbsenLur:","src":"https://yt3.ggpht.com/77vVQsehA9Ifw1om2dhXJ3m9hsJQZi6JDattCs_PqtInjGRUPSomni3q2M3x-rdFVliuLPynQg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCD2QR0VZN-jfSavZ7kN-8dQ/jP71ZJm2G6SQ_9EP7_2O4AU","alt":"AbsenLur","sharedTooltipText":":_AbsenLur:","src":"https://yt3.ggpht.com/77vVQsehA9Ifw1om2dhXJ3m9hsJQZi6JDattCs_PqtInjGRUPSomni3q2M3x-rdFVliuLPynQg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCD2QR0VZN-jfSavZ7kN-8dQ/jP71ZJm2G6SQ_9EP7_2O4AU","alt":"AbsenLur","sharedTooltipText":":_AbsenLur:","src":"https://yt3.ggpht.com/77vVQsehA9Ifw1om2dhXJ3m9hsJQZi6JDattCs_PqtInjGRUPSomni3q2M3x-rdFVliuLPynQg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCD2QR0VZN-jfSavZ7kN-8dQ/jP71ZJa0G6SQ_9EP7_2O4AU","alt":"AyaBadut","sharedTooltipText":":_AyaBadut:","src":"https://yt3.ggpht.com/sue6wKgWkwDReO3ue3Yw9iriXIl29pJmdbLtTtYjWd5S8tmaMWw8isxk_ZsWPusGYj7Oi8uIvA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCD2QR0VZN-jfSavZ7kN-8dQ/jP71ZJa0G6SQ_9EP7_2O4AU","alt":"AyaBadut","sharedTooltipText":":_AyaBadut:","src":"https://yt3.ggpht.com/sue6wKgWkwDReO3ue3Yw9iriXIl29pJmdbLtTtYjWd5S8tmaMWw8isxk_ZsWPusGYj7Oi8uIvA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aamiin"}], "scope": "channel" }
+  ]
+}

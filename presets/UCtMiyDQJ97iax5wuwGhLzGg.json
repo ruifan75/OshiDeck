@@ -1,0 +1,14 @@
+{
+  "format": 2,
+  "name": "柚鳥ペケ YUTORI PEKE",
+  "note": "歌枠2配信・通常13配信のチャットから6枚",
+  "channel": "UCtMiyDQJ97iax5wuwGhLzGg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCtMiyDQJ97iax5wuwGhLzGg/VKzhaeXOLqz7s8IPit_SuAQ","alt":"おつペケ","sharedTooltipText":":_おつペケ:","src":"https://yt3.ggpht.com/bDoQNlv9WoC-l5gqCdg7cPqbgQWeqMWj0R5qp--NG0ojmyy5TKhM9aSgqz76hdpZyIft8vW8jEE=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCtMiyDQJ97iax5wuwGhLzGg/VKzhaY3NLqz7s8IPit_SuAQ","alt":"こんペケ","sharedTooltipText":":_こんペケ:","src":"https://yt3.ggpht.com/shEhPoJRKbdh2ykX60f3hKpIltZ0DllrfMYCiQCt8vsXm-u3qc6R85-NnWYVpkQCkm6tN4vxSw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCtMiyDQJ97iax5wuwGhLzGg/VKzhab3MLqz7s8IPit_SuAQ","alt":"ペケ待機","sharedTooltipText":":_ペケ待機:","src":"https://yt3.ggpht.com/sZPufNsGJAt2VJRVk8teBFOfB14-Ih1e6jhu5aHh4_xVgGVYTMSBR42HdryYgpDai2c-QuXs2Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oyasumi"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "宇志海いちご",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCmUjjW5zF1MMOhYUwwwQv9Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"よ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かっこいい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ど！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCmUjjW5zF1MMOhYUwwwQv9Q/yf8EXO31JOSG8gSm8oPgBA","alt":"umiushiYoyoyo","sharedTooltipText":":_umiushiYoyoyo:","src":"https://yt3.ggpht.com/mXHvPiqJ4vyd1-UYtKltmPwSVRfJl_nyPkhOjlouBl2KuLD8eGiLd7kW1_aR_5CSSVNWPoPqtLg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"がんばれー"}], "scope": "channel" }
+  ]
+}

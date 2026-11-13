@@ -1,0 +1,23 @@
+{
+  "format": 2,
+  "name": "ひいなch",
+  "note": "歌枠2配信・通常13配信のチャットから15枚",
+  "channel": "UCFDAKGVq1uBl9QYrTwXqMBQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ごきげんよう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🦋"},{"type":"text","value":"🌟"},{"type":"text","value":"🦋"},{"type":"text","value":"🌟"},{"type":"text","value":"🦋"},{"type":"text","value":"🌟"},{"type":"text","value":"🦋"},{"type":"text","value":"🌟"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつひいなー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがちゅー！！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いえーい！！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草w"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"えー！！いまきたばっかりー！！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

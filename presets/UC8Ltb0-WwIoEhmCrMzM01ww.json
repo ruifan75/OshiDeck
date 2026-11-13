@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "花幽カノン Hanayura Kanon",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC8Ltb0-WwIoEhmCrMzM01ww",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC8Ltb0-WwIoEhmCrMzM01ww/QxPcYuWLC66M_9EPo6W_qA4","alt":"kanonPenlight","sharedTooltipText":":_kanonPenlight:","src":"https://yt3.ggpht.com/1srb-4RMRsUmRMOtOYl0E6m3_iQxRdrw0fsi925u21IgiahsnSl25U3UMMkI5TbqpGjzC-3adQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8Ltb0-WwIoEhmCrMzM01ww/QxPcYt6OC66M_9EPo6W_qA4","alt":"kanonPenlight2","sharedTooltipText":":_kanonPenlight2:","src":"https://yt3.ggpht.com/PFhbNLd5sOMzJbAtanMnE401CdUt1FMse9w_RAb6tITZJhghpxv5VWS_kfstlrj4hYNdCmkMepY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8Ltb0-WwIoEhmCrMzM01ww/QxPcYuWLC66M_9EPo6W_qA4","alt":"kanonPenlight","sharedTooltipText":":_kanonPenlight:","src":"https://yt3.ggpht.com/1srb-4RMRsUmRMOtOYl0E6m3_iQxRdrw0fsi925u21IgiahsnSl25U3UMMkI5TbqpGjzC-3adQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8Ltb0-WwIoEhmCrMzM01ww/QxPcYt6OC66M_9EPo6W_qA4","alt":"kanonPenlight2","sharedTooltipText":":_kanonPenlight2:","src":"https://yt3.ggpht.com/PFhbNLd5sOMzJbAtanMnE401CdUt1FMse9w_RAb6tITZJhghpxv5VWS_kfstlrj4hYNdCmkMepY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8Ltb0-WwIoEhmCrMzM01ww/QxPcYuWLC66M_9EPo6W_qA4","alt":"kanonPenlight","sharedTooltipText":":_kanonPenlight:","src":"https://yt3.ggpht.com/1srb-4RMRsUmRMOtOYl0E6m3_iQxRdrw0fsi925u21IgiahsnSl25U3UMMkI5TbqpGjzC-3adQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8Ltb0-WwIoEhmCrMzM01ww/QxPcYt6OC66M_9EPo6W_qA4","alt":"kanonPenlight2","sharedTooltipText":":_kanonPenlight2:","src":"https://yt3.ggpht.com/PFhbNLd5sOMzJbAtanMnE401CdUt1FMse9w_RAb6tITZJhghpxv5VWS_kfstlrj4hYNdCmkMepY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やったー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きたー！"}], "scope": "channel" }
+  ]
+}

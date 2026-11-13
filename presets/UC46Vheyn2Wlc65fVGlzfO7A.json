@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "羽子田チカ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC46Vheyn2Wlc65fVGlzfO7A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみねるねる"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍕"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お誕生日おめでとうございます！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみねるねる～"}], "scope": "channel" }
+  ]
+}

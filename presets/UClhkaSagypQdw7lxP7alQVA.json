@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ふぁんきぃちゃんねる",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UClhkaSagypQdw7lxP7alQVA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱです"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やったぜ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんナス"}], "scope": "channel" }
+  ]
+}

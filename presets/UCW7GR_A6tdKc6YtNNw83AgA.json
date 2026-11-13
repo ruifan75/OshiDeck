@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "天城てん - Ten Amagi -",
+  "note": "歌枠0配信・通常3配信のチャットから10枚",
+  "channel": "UCW7GR_A6tdKc6YtNNw83AgA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCW7GR_A6tdKc6YtNNw83AgA/9OmkZtLUJoyO_9EP_KeG8A4","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/rfocSIIXUSBGqxUD3zYI8upOqt-MbXduZ6K8T3KvImjJHC42AkDnEXmgV7FviFgeacopKrIO=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCW7GR_A6tdKc6YtNNw83AgA/9OmkZtLUJoyO_9EP_KeG8A4","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/rfocSIIXUSBGqxUD3zYI8upOqt-MbXduZ6K8T3KvImjJHC42AkDnEXmgV7FviFgeacopKrIO=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCW7GR_A6tdKc6YtNNw83AgA/9OmkZtLUJoyO_9EP_KeG8A4","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/rfocSIIXUSBGqxUD3zYI8upOqt-MbXduZ6K8T3KvImjJHC42AkDnEXmgV7FviFgeacopKrIO=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ごきげんよう"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCW7GR_A6tdKc6YtNNw83AgA/9OmkZonbJoyO_9EP_KeG8A4","alt":"kobusi","sharedTooltipText":":_kobusi:","src":"https://yt3.ggpht.com/mbmw_UZhOaaSO_juJkEYEBIs3I8TjHR9qXhhLrUrbkk7hpmB-oKtjMJ2EIxOXHdypIcG2QsMMw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

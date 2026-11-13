@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Lunywoo",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC0jZfhehuTG2C6CzQPnrYPA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hallo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ja"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"AWOOO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"moin"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ok"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LUNY"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi luny"}], "scope": "channel" }
+  ]
+}

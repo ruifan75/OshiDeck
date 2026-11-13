@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "水瀬 凪/MINASE Nagi",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCAplyWK80Y6_YTkb3CCDk1Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🐺"},{"type":"text","value":"🫧"},{"type":"text","value":"🎶"},{"type":"text","value":"🐺"},{"type":"text","value":"🫧"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばぶ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCAplyWK80Y6_YTkb3CCDk1Q/rSrXaoLDMfTS7OsPjIHzoAs","alt":"inusuwari","sharedTooltipText":":_inusuwari:","src":"https://yt3.ggpht.com/W24wy1FIbNDlaogt-u1eHFinvJdJiO5lce_qSX6-d-AW02P5T303zHboNL-GnzlZi5szL4Hv=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCAplyWK80Y6_YTkb3CCDk1Q/rSrXaoLDMfTS7OsPjIHzoAs","alt":"inusuwari","sharedTooltipText":":_inusuwari:","src":"https://yt3.ggpht.com/W24wy1FIbNDlaogt-u1eHFinvJdJiO5lce_qSX6-d-AW02P5T303zHboNL-GnzlZi5szL4Hv=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCAplyWK80Y6_YTkb3CCDk1Q/rSrXaoLDMfTS7OsPjIHzoAs","alt":"inusuwari","sharedTooltipText":":_inusuwari:","src":"https://yt3.ggpht.com/W24wy1FIbNDlaogt-u1eHFinvJdJiO5lce_qSX6-d-AW02P5T303zHboNL-GnzlZi5szL4Hv=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつせなぎ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCAplyWK80Y6_YTkb3CCDk1Q/N5EWao-mI5LA7OsP88ui4AM","alt":"inuhidari","sharedTooltipText":":_inuhidari:","src":"https://yt3.ggpht.com/dxqZh_BBsvdizBw_nchrCWDiTh3pei5l-c72jY_Uu38P93UnkJTV2379a-rO9tZ5FwKJPTvQa6o=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCAplyWK80Y6_YTkb3CCDk1Q/N5EWao-mI5LA7OsP88ui4AM","alt":"inuhidari","sharedTooltipText":":_inuhidari:","src":"https://yt3.ggpht.com/dxqZh_BBsvdizBw_nchrCWDiTh3pei5l-c72jY_Uu38P93UnkJTV2379a-rO9tZ5FwKJPTvQa6o=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCAplyWK80Y6_YTkb3CCDk1Q/N5EWao-mI5LA7OsP88ui4AM","alt":"inuhidari","sharedTooltipText":":_inuhidari:","src":"https://yt3.ggpht.com/dxqZh_BBsvdizBw_nchrCWDiTh3pei5l-c72jY_Uu38P93UnkJTV2379a-rO9tZ5FwKJPTvQa6o=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばぶ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつせなぎ～"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "format": 2,
+  "name": "Laki Station ラキステーション",
+  "note": "歌枠1配信・通常13配信のチャットから13枚",
+  "channel": "UCp77Qho-YHhnklRr-DkjiOw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"もっと！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥒"},{"type":"text","value":"🥒"},{"type":"text","value":"🥒"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アルコール！アルコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぴょこー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"1"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"えーー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きらっきー"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "V4Mirai",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCffASWaVk1PFnpC-gTvuJgw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"888888"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCffASWaVk1PFnpC-gTvuJgw/gzBnZ5ioPJeI_9EPsdHUoQU","alt":"CheerV4","sharedTooltipText":":_CheerV4:","src":"https://yt3.ggpht.com/6mGqFNKfbTiyhocHaLqp5gzBdlxUoyCNFxH36PHwD5W8LByJyQ6LDbIMGh1VGIjITCHwSndeFQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCffASWaVk1PFnpC-gTvuJgw/gzBnZ8WoPJeI_9EPsdHUoQU","alt":"V4Cheer","sharedTooltipText":":_V4Cheer:","src":"https://yt3.ggpht.com/74tHxh3I5hvl8l9r9uhCEXm5OKgOfk8lombuNfk-NDd6Pkl5JeGrHqB5lJyzyQAil7QhDCnJeQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCffASWaVk1PFnpC-gTvuJgw/gzBnZ5ioPJeI_9EPsdHUoQU","alt":"CheerV4","sharedTooltipText":":_CheerV4:","src":"https://yt3.ggpht.com/6mGqFNKfbTiyhocHaLqp5gzBdlxUoyCNFxH36PHwD5W8LByJyQ6LDbIMGh1VGIjITCHwSndeFQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCffASWaVk1PFnpC-gTvuJgw/gzBnZ8WoPJeI_9EPsdHUoQU","alt":"V4Cheer","sharedTooltipText":":_V4Cheer:","src":"https://yt3.ggpht.com/74tHxh3I5hvl8l9r9uhCEXm5OKgOfk8lombuNfk-NDd6Pkl5JeGrHqB5lJyzyQAil7QhDCnJeQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"cute"}], "scope": "channel" }
+  ]
+}

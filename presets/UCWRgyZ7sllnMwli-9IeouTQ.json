@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Crunchyroll-Hime Ch.",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCWRgyZ7sllnMwli-9IeouTQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Hime"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Otsu Hime"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello Hime"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Bye Hime"}], "scope": "channel" }
+  ]
+}

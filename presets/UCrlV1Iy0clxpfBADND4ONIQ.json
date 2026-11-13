@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Kira Omori Live2D",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCrlV1Iy0clxpfBADND4ONIQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"Merry Christmas"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"HAHAHAHA"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OTSU"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OTSUKIRA"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"test"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Kira!"}], "scope": "channel" }
+  ]
+}

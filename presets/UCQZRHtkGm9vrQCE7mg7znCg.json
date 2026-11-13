@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ルチア・ラエティティア / Lucia Laetitia",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCQZRHtkGm9vrQCE7mg7znCg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"✨"},{"type":"text","value":"🖤"},{"type":"text","value":"🎶"},{"type":"text","value":"✨"},{"type":"text","value":"🖤"},{"type":"text","value":"🎶"},{"type":"text","value":"✨"},{"type":"text","value":"🖤"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQZRHtkGm9vrQCE7mg7znCg/ruyjZ5TlCZeI_9EP0N2QqQk","alt":"ペンライト左","sharedTooltipText":":_ペンライト左:","src":"https://yt3.ggpht.com/KWv6xGeihTGaGssv-nUlSzH6GHjXQugwjc3cEAC96zsb866hxwHlqRCptCFrhtTBEN0IGvP7=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQZRHtkGm9vrQCE7mg7znCg/pM60Zc2qLeyP_9EPgqG2oA0","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/9OkslsWRI_b6hxtGFTI4ZQnIufqpxmoC1I_s13tdZhqK429EK3_Jio_JMqhnCvcPwdQBMQvyjmI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQZRHtkGm9vrQCE7mg7znCg/ruyjZ-vkCZeI_9EP0N2QqQk","alt":"ペンライト右","sharedTooltipText":":_ペンライト右:","src":"https://yt3.ggpht.com/HAsiDHbnCBZMFaiUDsefYhxTID8eCtgXGRMvDlpCy24lf_k7zZ4FE1fEc2b8b4aej5B0R3T_=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQZRHtkGm9vrQCE7mg7znCg/ruyjZ5TlCZeI_9EP0N2QqQk","alt":"ペンライト左","sharedTooltipText":":_ペンライト左:","src":"https://yt3.ggpht.com/KWv6xGeihTGaGssv-nUlSzH6GHjXQugwjc3cEAC96zsb866hxwHlqRCptCFrhtTBEN0IGvP7=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQZRHtkGm9vrQCE7mg7znCg/pM60Zc2qLeyP_9EPgqG2oA0","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/9OkslsWRI_b6hxtGFTI4ZQnIufqpxmoC1I_s13tdZhqK429EK3_Jio_JMqhnCvcPwdQBMQvyjmI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQZRHtkGm9vrQCE7mg7znCg/ruyjZ-vkCZeI_9EP0N2QqQk","alt":"ペンライト右","sharedTooltipText":":_ペンライト右:","src":"https://yt3.ggpht.com/HAsiDHbnCBZMFaiUDsefYhxTID8eCtgXGRMvDlpCy24lf_k7zZ4FE1fEc2b8b4aej5B0R3T_=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQZRHtkGm9vrQCE7mg7znCg/kPKjZ_e2Hs6g_9EP5KTY4AE","alt":"ひかり","sharedTooltipText":":_ひかり:","src":"https://yt3.ggpht.com/5Rj25jqM6GtKGtYUfaSrIZFFqK5SeaXkjDdPQ1O6k2BDJxFAaMmQKt27z3VEeTA61WzDbKwXtw=w48-h48-c-k-nd"},{"type":"text","value":"あれ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"光あれ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" }
+  ]
+}

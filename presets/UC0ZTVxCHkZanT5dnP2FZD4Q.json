@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Yura Rikudou / 六道ユラ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC0ZTVxCHkZanT5dnP2FZD4Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC0ZTVxCHkZanT5dnP2FZD4Q/TMyqYbThBdeO8wTH6qXICw","alt":"yuraHype","sharedTooltipText":":_yuraHype:","src":"https://yt3.ggpht.com/au1IjYcEQVAew-0juQyaRWzynw8fe9D9sPLAVZTneEKpJ2Q3VQqTsrjEwSsA8uYzJhjPMYPzqEY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC0ZTVxCHkZanT5dnP2FZD4Q/TMyqYbThBdeO8wTH6qXICw","alt":"yuraHype","sharedTooltipText":":_yuraHype:","src":"https://yt3.ggpht.com/au1IjYcEQVAew-0juQyaRWzynw8fe9D9sPLAVZTneEKpJ2Q3VQqTsrjEwSsA8uYzJhjPMYPzqEY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC0ZTVxCHkZanT5dnP2FZD4Q/TMyqYbThBdeO8wTH6qXICw","alt":"yuraHype","sharedTooltipText":":_yuraHype:","src":"https://yt3.ggpht.com/au1IjYcEQVAew-0juQyaRWzynw8fe9D9sPLAVZTneEKpJ2Q3VQqTsrjEwSsA8uYzJhjPMYPzqEY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"KonYura"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"weeee"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC0ZTVxCHkZanT5dnP2FZD4Q/Is-qYfWEF5yQ8wSz1rKoCw","alt":"yuraHug","sharedTooltipText":":_yuraHug:","src":"https://yt3.ggpht.com/buIXI5PvzbAzfY33rydKEN6_3fzi6wnx4YMcGF516Lz_QXeIZGdyyKrZ377VGYrrv1M7MbM7Ig=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC0ZTVxCHkZanT5dnP2FZD4Q/Is-qYfWEF5yQ8wSz1rKoCw","alt":"yuraHug","sharedTooltipText":":_yuraHug:","src":"https://yt3.ggpht.com/buIXI5PvzbAzfY33rydKEN6_3fzi6wnx4YMcGF516Lz_QXeIZGdyyKrZ377VGYrrv1M7MbM7Ig=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC0ZTVxCHkZanT5dnP2FZD4Q/Is-qYfWEF5yQ8wSz1rKoCw","alt":"yuraHug","sharedTooltipText":":_yuraHug:","src":"https://yt3.ggpht.com/buIXI5PvzbAzfY33rydKEN6_3fzi6wnx4YMcGF516Lz_QXeIZGdyyKrZ377VGYrrv1M7MbM7Ig=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC0ZTVxCHkZanT5dnP2FZD4Q/eYS5YequC5yQ8wS-prvICQ","alt":"yuraKusa","sharedTooltipText":":_yuraKusa:","src":"https://yt3.ggpht.com/Du_CTUsAAhefcMc9r6sY2JvHe-XwE5jQ40qMOFSmm_t1mvCeP4Xh2y9CiN9s--XCmebnG2vk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC0ZTVxCHkZanT5dnP2FZD4Q/eYS5YequC5yQ8wS-prvICQ","alt":"yuraKusa","sharedTooltipText":":_yuraKusa:","src":"https://yt3.ggpht.com/Du_CTUsAAhefcMc9r6sY2JvHe-XwE5jQ40qMOFSmm_t1mvCeP4Xh2y9CiN9s--XCmebnG2vk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC0ZTVxCHkZanT5dnP2FZD4Q/eYS5YequC5yQ8wS-prvICQ","alt":"yuraKusa","sharedTooltipText":":_yuraKusa:","src":"https://yt3.ggpht.com/Du_CTUsAAhefcMc9r6sY2JvHe-XwE5jQ40qMOFSmm_t1mvCeP4Xh2y9CiN9s--XCmebnG2vk=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsuyura"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bless you"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"IKZ"}], "scope": "channel" }
+  ]
+}

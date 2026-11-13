@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "ぷわぷわぽぷら /あおぎり高校",
-  "note": "過去11配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常11配信のチャットから10枚",
   "channel": "UC1sBUU-y9FlHNukwsrR4bmA",
   "cards": [
-    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💚"},{"type":"text","value":"🍬"},{"type":"text","value":"🎶"},{"type":"text","value":"💚"},{"type":"text","value":"🍬"},{"type":"text","value":"🎶"},{"type":"text","value":"💚"},{"type":"text","value":"🍬"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"すごいじゃん！"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"待機"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほうほう"}], "scope": "channel" }
   ]
 }

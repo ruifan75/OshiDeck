@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "Meloco Kyoran【NIJISANJI EN】",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UChKXd7oqD18qiIYBoRIHTlw",
   "cards": [
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UChKXd7oqD18qiIYBoRIHTlw/-SepY7TXI96P_9EPlM-8qAI","alt":"Love","sharedTooltipText":":_Love:","src":"https://yt3.ggpht.com/6cq-uQQdpUZaNh4Q6mFrJ09yuTQZuXSMl5j-YT98M5_lNgOtvkn7XTpe4eTUHrnWgkPk8keo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChKXd7oqD18qiIYBoRIHTlw/-SepY7TXI96P_9EPlM-8qAI","alt":"Love","sharedTooltipText":":_Love:","src":"https://yt3.ggpht.com/6cq-uQQdpUZaNh4Q6mFrJ09yuTQZuXSMl5j-YT98M5_lNgOtvkn7XTpe4eTUHrnWgkPk8keo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChKXd7oqD18qiIYBoRIHTlw/-SepY7TXI96P_9EPlM-8qAI","alt":"Love","sharedTooltipText":":_Love:","src":"https://yt3.ggpht.com/6cq-uQQdpUZaNh4Q6mFrJ09yuTQZuXSMl5j-YT98M5_lNgOtvkn7XTpe4eTUHrnWgkPk8keo=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"こんばんワイフ〜"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChKXd7oqD18qiIYBoRIHTlw/6OqqY7nAGqaI_9EP_oeEwA4","alt":"Penlight1","sharedTooltipText":":_Penlight1:","src":"https://yt3.ggpht.com/EcNfbn4VpxnTJUralk150znE0BfNT14Hw-1gh-9gTUcF4FYiK1cTFXRZqgRVtEMDY5Ikyx1rdw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChKXd7oqD18qiIYBoRIHTlw/6OqqY_PAGqaI_9EP_oeEwA4","alt":"Penlight2","sharedTooltipText":":_Penlight2:","src":"https://yt3.ggpht.com/IVt38ydN760rqD0LwWWPE0RIT3pkYn_s33CcYU9OjKWvCH2AQtJ7Pvr5eiokyqVLmXk95wzdJR0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChKXd7oqD18qiIYBoRIHTlw/6OqqY7nAGqaI_9EP_oeEwA4","alt":"Penlight1","sharedTooltipText":":_Penlight1:","src":"https://yt3.ggpht.com/EcNfbn4VpxnTJUralk150znE0BfNT14Hw-1gh-9gTUcF4FYiK1cTFXRZqgRVtEMDY5Ikyx1rdw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChKXd7oqD18qiIYBoRIHTlw/6OqqY_PAGqaI_9EP_oeEwA4","alt":"Penlight2","sharedTooltipText":":_Penlight2:","src":"https://yt3.ggpht.com/IVt38ydN760rqD0LwWWPE0RIT3pkYn_s33CcYU9OjKWvCH2AQtJ7Pvr5eiokyqVLmXk95wzdJR0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChKXd7oqD18qiIYBoRIHTlw/9D-sad-OB4yX7OsP8eOmmQg","alt":"Mentaiko","sharedTooltipText":":_Mentaiko:","src":"https://yt3.ggpht.com/aUo3bFmS961LPAMYOSi4hCtBRc46l464nIc5FLux6MRN216nfuPWCXSlU73Xrq4ou1o1do7LwA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChKXd7oqD18qiIYBoRIHTlw/9D-sad-OB4yX7OsP8eOmmQg","alt":"Mentaiko","sharedTooltipText":":_Mentaiko:","src":"https://yt3.ggpht.com/aUo3bFmS961LPAMYOSi4hCtBRc46l464nIc5FLux6MRN216nfuPWCXSlU73Xrq4ou1o1do7LwA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChKXd7oqD18qiIYBoRIHTlw/9D-sad-OB4yX7OsP8eOmmQg","alt":"Mentaiko","sharedTooltipText":":_Mentaiko:","src":"https://yt3.ggpht.com/aUo3bFmS961LPAMYOSi4hCtBRc46l464nIc5FLux6MRN216nfuPWCXSlU73Xrq4ou1o1do7LwA=w48-h48-c-k-nd"}], "scope": "channel" }
   ]
 }

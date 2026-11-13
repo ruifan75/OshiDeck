@@ -1,0 +1,13 @@
+{
+  "format": 2,
+  "name": "AI Candii",
+  "note": "歌枠0配信・通常13配信のチャットから5枚",
+  "channel": "UCpMTDhx-pe2QTOJMHCjDCMw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😂"}], "scope": "channel" }
+  ]
+}

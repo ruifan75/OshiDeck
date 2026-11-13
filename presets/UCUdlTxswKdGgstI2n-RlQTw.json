@@ -1,0 +1,9 @@
+{
+  "format": 2,
+  "name": "悟理科楽",
+  "note": "歌枠0配信・通常13配信のチャットから1枚",
+  "channel": "UCUdlTxswKdGgstI2n-RlQTw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"ごきげんよう"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "恋白れん / RenKohaku Ch.",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCNbpZM28AR6GXvrUcZ5v0zg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんうにゃ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNbpZM28AR6GXvrUcZ5v0zg/jOFsacfqFuGQs8IP__TkOA","alt":"おもしろれんちゃん","sharedTooltipText":":_おもしろれんちゃん:","src":"https://yt3.ggpht.com/ZVmM2pgC04g7C_ldmK0EtNpetguJ_bJdyPRCPxSBmv5DD0MFx1fNs1Gsvc34cSCEAiKj4Nypbg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNbpZM28AR6GXvrUcZ5v0zg/jOFsaYPqFuGQs8IP__TkOA","alt":"待機れんちゃん","sharedTooltipText":":_待機れんちゃん:","src":"https://yt3.ggpht.com/eV4jYQTZMFbRRaJVUb6LOlMhdFjqzGIgjO3faji7s02HaMouaMAs6yXvsN7EpibAzaH-Tlax=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNbpZM28AR6GXvrUcZ5v0zg/jOFsaYPqFuGQs8IP__TkOA","alt":"待機れんちゃん","sharedTooltipText":":_待機れんちゃん:","src":"https://yt3.ggpht.com/eV4jYQTZMFbRRaJVUb6LOlMhdFjqzGIgjO3faji7s02HaMouaMAs6yXvsN7EpibAzaH-Tlax=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNbpZM28AR6GXvrUcZ5v0zg/jOFsaYPqFuGQs8IP__TkOA","alt":"待機れんちゃん","sharedTooltipText":":_待機れんちゃん:","src":"https://yt3.ggpht.com/eV4jYQTZMFbRRaJVUb6LOlMhdFjqzGIgjO3faji7s02HaMouaMAs6yXvsN7EpibAzaH-Tlax=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNbpZM28AR6GXvrUcZ5v0zg/jOFsaabsFuGQs8IP__TkOA","alt":"いいねれんちゃん","sharedTooltipText":":_いいねれんちゃん:","src":"https://yt3.ggpht.com/TARsuNcvG-XJgn4nHHrvCOpl1oBZK1Vit5ci6noE351HfH5dZ_YaEt_FclHvYlJx5zU_wUkAsQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNbpZM28AR6GXvrUcZ5v0zg/jOFsaabsFuGQs8IP__TkOA","alt":"いいねれんちゃん","sharedTooltipText":":_いいねれんちゃん:","src":"https://yt3.ggpht.com/TARsuNcvG-XJgn4nHHrvCOpl1oBZK1Vit5ci6noE351HfH5dZ_YaEt_FclHvYlJx5zU_wUkAsQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんうにゃ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

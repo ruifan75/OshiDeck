@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ピースアパート",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCFYEdWawKUvw6zTR5FLBYhQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとうございます！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やったー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お誕生日おめでとうございます！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" }
+  ]
+}

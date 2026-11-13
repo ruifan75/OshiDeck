@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Koharu ch. 小春",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC4oDk-npNekn3-uDH9OCt9g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いただきます！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ごちそうさまでした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｺﾋｯ"},{"type":"text","value":"☕"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌸"},{"type":"text","value":"💎"},{"type":"text","value":"🌸"},{"type":"text","value":"💎"},{"type":"text","value":"🌸"},{"type":"text","value":"💎"},{"type":"text","value":"🌸"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"たーまやー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でしたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" }
+  ]
+}

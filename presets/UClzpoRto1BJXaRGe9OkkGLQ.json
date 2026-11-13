@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ビートまりお / COOL&CREATE",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UClzpoRto1BJXaRGe9OkkGLQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"えーりん！えーりん！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"( ﾟ∀ﾟ)o彡゜えーりん！えーりん！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"("},{"type":"text","value":" ﾟ∀ﾟ"},{"type":"text","value":")o"},{"type":"text","value":"彡"},{"type":"text","value":"°"},{"type":"text","value":"えーりん！えーりん！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"⑨"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"バーカバーカ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつよめー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんよめー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイスパ"}], "scope": "channel" }
+  ]
+}

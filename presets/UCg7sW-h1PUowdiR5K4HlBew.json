@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Lia Ch.【Phase Connect】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCg7sW-h1PUowdiR5K4HlBew",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCg7sW-h1PUowdiR5K4HlBew/NKbkZqP0HfWo_9EPrc-K6AU","alt":"LiaLetsgo","sharedTooltipText":":_LiaLetsgo:","src":"https://yt3.ggpht.com/4sk6d2DloEkpNoxp3CVPzNjwUKBOoH5VuoGWLZMu9UtDV7kyiEL3ogLM-veu6h4eOfYsiQnEfQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCg7sW-h1PUowdiR5K4HlBew/NKbkZqP0HfWo_9EPrc-K6AU","alt":"LiaLetsgo","sharedTooltipText":":_LiaLetsgo:","src":"https://yt3.ggpht.com/4sk6d2DloEkpNoxp3CVPzNjwUKBOoH5VuoGWLZMu9UtDV7kyiEL3ogLM-veu6h4eOfYsiQnEfQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCg7sW-h1PUowdiR5K4HlBew/NKbkZqP0HfWo_9EPrc-K6AU","alt":"LiaLetsgo","sharedTooltipText":":_LiaLetsgo:","src":"https://yt3.ggpht.com/4sk6d2DloEkpNoxp3CVPzNjwUKBOoH5VuoGWLZMu9UtDV7kyiEL3ogLM-veu6h4eOfYsiQnEfQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCg7sW-h1PUowdiR5K4HlBew/6IZIZPbNBKON_9EPrdO-uA4","alt":"LiaLIALOVE","sharedTooltipText":":_LiaLIALOVE:","src":"https://yt3.ggpht.com/6PecYZJhsFd2-UFTtZQiPun7TErF0-cDWS1WaLDPnb1GQrdyDRV9szYQhjwOIUAVL8jkbyNtTw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCg7sW-h1PUowdiR5K4HlBew/6IZIZPbNBKON_9EPrdO-uA4","alt":"LiaLIALOVE","sharedTooltipText":":_LiaLIALOVE:","src":"https://yt3.ggpht.com/6PecYZJhsFd2-UFTtZQiPun7TErF0-cDWS1WaLDPnb1GQrdyDRV9szYQhjwOIUAVL8jkbyNtTw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCg7sW-h1PUowdiR5K4HlBew/6IZIZPbNBKON_9EPrdO-uA4","alt":"LiaLIALOVE","sharedTooltipText":":_LiaLIALOVE:","src":"https://yt3.ggpht.com/6PecYZJhsFd2-UFTtZQiPun7TErF0-cDWS1WaLDPnb1GQrdyDRV9szYQhjwOIUAVL8jkbyNtTw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍅"},{"type":"text","value":"🍅"},{"type":"text","value":"🍅"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCg7sW-h1PUowdiR5K4HlBew/8rK3Yq2_KIHO8wTZ6IjgCg","alt":"LiaPartyin","sharedTooltipText":":_LiaPartyin:","src":"https://yt3.ggpht.com/jt5nfHmQfDuAyR4V2vk1MOEr4bWqXjzTGhOSqhzTKqdli8Tlg5W-YlfhGj7TC9NqK4OfR_rD0Ng=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCg7sW-h1PUowdiR5K4HlBew/8rK3Yq2_KIHO8wTZ6IjgCg","alt":"LiaPartyin","sharedTooltipText":":_LiaPartyin:","src":"https://yt3.ggpht.com/jt5nfHmQfDuAyR4V2vk1MOEr4bWqXjzTGhOSqhzTKqdli8Tlg5W-YlfhGj7TC9NqK4OfR_rD0Ng=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCg7sW-h1PUowdiR5K4HlBew/8rK3Yq2_KIHO8wTZ6IjgCg","alt":"LiaPartyin","sharedTooltipText":":_LiaPartyin:","src":"https://yt3.ggpht.com/jt5nfHmQfDuAyR4V2vk1MOEr4bWqXjzTGhOSqhzTKqdli8Tlg5W-YlfhGj7TC9NqK4OfR_rD0Ng=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsulia"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"konlia"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Sakura Uno / Kemomimi-Refle!",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCVdX1tXsZs-BHdQ-ODP2X4A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVdX1tXsZs-BHdQ-ODP2X4A/2racZ_GPG5eI_9EPzqPZyQM","alt":"ｸﾞｶﾞｰ","sharedTooltipText":":_ｸﾞｶﾞｰ:","src":"https://yt3.ggpht.com/Sy85P6Uolcs-IkBVJCVuF0QPS9JZKNKg2iw1WlEYoSZY3lkeDIMw-bLVTEpaduBGBTGIJzBsUJM=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVdX1tXsZs-BHdQ-ODP2X4A/UTOQZY29Do6I_9EPvqO3sAc","alt":"ｽﾔｧ","sharedTooltipText":":_ｽﾔｧ:","src":"https://yt3.ggpht.com/NP79OmnS4iFEm3lDrCZ1_3HUGnv8lQG-qSOyCJiFtWJnZe9wXWUhrzhbSciGUo8oIyLyGmZ7vQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVdX1tXsZs-BHdQ-ODP2X4A/UTOQZbS_Do6I_9EPvqO3sAc","alt":"ﾆｯｺﾘ","sharedTooltipText":":_ﾆｯｺﾘ:","src":"https://yt3.ggpht.com/L7QWAyoNaBEOB3c6T6bE9HUx8fNci28dg_gP97_A7ku6erR3K-3uunaNZcSOFnj7MraVd2Nq=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVdX1tXsZs-BHdQ-ODP2X4A/UTOQZdW8Do6I_9EPvqO3sAc","alt":"ｴｪｯ","sharedTooltipText":":_ｴｪｯ:","src":"https://yt3.ggpht.com/ohAaBoo_QPDo5rWDRO9bFPbpyZ3GkkF9_Gj3IILHfAazi-G8qfRPkOAwp0CgwifbcZLopbGkug=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"},{"type":"youtubeEmoji","emojiId":"UCVdX1tXsZs-BHdQ-ODP2X4A/UTOQZbS_Do6I_9EPvqO3sAc","alt":"ﾆｯｺﾘ","sharedTooltipText":":_ﾆｯｺﾘ:","src":"https://yt3.ggpht.com/L7QWAyoNaBEOB3c6T6bE9HUx8fNci28dg_gP97_A7ku6erR3K-3uunaNZcSOFnj7MraVd2Nq=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

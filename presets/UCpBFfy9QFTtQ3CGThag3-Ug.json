@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "紅酉いろり -Irodori Irori-",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCpBFfy9QFTtQ3CGThag3-Ug",
+  "cards": [
+    { "tokens": [{"type":"text","value":"🎧"},{"type":"text","value":"⚡"},{"type":"text","value":"🎶"},{"type":"text","value":"🎧"},{"type":"text","value":"⚡"},{"type":"text","value":"🎶"},{"type":"text","value":"🎧"},{"type":"text","value":"⚡"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつろり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"w"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCpBFfy9QFTtQ3CGThag3-Ug/JAJUZ83REceT_9EP1NryQA","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/--PrV4X-EnYCF7CSzD253GQBbwWyLiDeIXnD9RWm2ifb-B4mJ8Vl5J7PFKXBGeFAHj2J8KqX=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpBFfy9QFTtQ3CGThag3-Ug/JAJUZ83REceT_9EP1NryQA","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/--PrV4X-EnYCF7CSzD253GQBbwWyLiDeIXnD9RWm2ifb-B4mJ8Vl5J7PFKXBGeFAHj2J8KqX=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpBFfy9QFTtQ3CGThag3-Ug/JAJUZ83REceT_9EP1NryQA","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/--PrV4X-EnYCF7CSzD253GQBbwWyLiDeIXnD9RWm2ifb-B4mJ8Vl5J7PFKXBGeFAHj2J8KqX=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpBFfy9QFTtQ3CGThag3-Ug/JAJUZ83REceT_9EP1NryQA","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/--PrV4X-EnYCF7CSzD253GQBbwWyLiDeIXnD9RWm2ifb-B4mJ8Vl5J7PFKXBGeFAHj2J8KqX=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはろり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"},{"type":"text","value":"👏🏻"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはろり"},{"type":"youtubeEmoji","emojiId":"UCpBFfy9QFTtQ3CGThag3-Ug/CRYUZt7TCPmJ_9EPsfap4AY","alt":"おはろり","sharedTooltipText":":_おはろり:","src":"https://yt3.ggpht.com/rBmD9SMl5i6kr31HbGgweN1MtLcaV9rKlQ1S0anZmhhBC5cZEjob7H-r6-qcFvIW1XHgtxMQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

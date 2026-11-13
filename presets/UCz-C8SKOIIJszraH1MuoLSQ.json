@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Raeyei",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCz-C8SKOIIJszraH1MuoLSQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"AngelThump"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"byee"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"catJAM"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Wokege"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/G8AfY6yWGuKuhL0PlbiA2AE","alt":"hand-pink-waving","sharedTooltipText":":hand-pink-waving:","src":"https://yt3.ggpht.com/KOxdr_z3A5h1Gb7kqnxqOCnbZrBmxI2B_tRQ453BhTWUhYAlpg5ZP8IKEBkcvRoY8grY91Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"clappi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OOOO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"AAAAA"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "孫守まごも / Magomo Magomori",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCR2Sp9fMxurwtmXQneAMTVg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍡"},{"type":"text","value":"🎶"},{"type":"text","value":"🍡"},{"type":"text","value":"🎶"},{"type":"text","value":"🍡"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いらっしゃーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCR2Sp9fMxurwtmXQneAMTVg/txnzaPOmJuWYs8IPnP6d2Qg","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/OZurdwr0n5n96NDbIBoKOT6A8sbsY4Nggrv138ia6g2WHVz5bUJ1_0Cs3mB2yk_jh2wv0UeuPw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCR2Sp9fMxurwtmXQneAMTVg/txnzaPOmJuWYs8IPnP6d2Qg","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/OZurdwr0n5n96NDbIBoKOT6A8sbsY4Nggrv138ia6g2WHVz5bUJ1_0Cs3mB2yk_jh2wv0UeuPw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCR2Sp9fMxurwtmXQneAMTVg/txnzaPOmJuWYs8IPnP6d2Qg","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/OZurdwr0n5n96NDbIBoKOT6A8sbsY4Nggrv138ia6g2WHVz5bUJ1_0Cs3mB2yk_jh2wv0UeuPw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCR2Sp9fMxurwtmXQneAMTVg/O8kJaYGzHob87OsP8ojLwQc","alt":"仮くさスタンプ","sharedTooltipText":":_仮くさスタンプ:","src":"https://yt3.ggpht.com/tBBi6Hw-g-9zP0gbCUX3aprpwgCVQ24c44pkaNXMRZ_gpHg5mpqeAgD3r_UpKVgKcoGlVf9fpg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" }
+  ]
+}

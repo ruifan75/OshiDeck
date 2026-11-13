@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "BΣretta Crossrain",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCJA_J8CpKRT78Sr1bylS1vA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ごきげんよう"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCJA_J8CpKRT78Sr1bylS1vA/V1ZGX_jKJ8Of-gOhyKfQAw","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/9YaK_Stnp0vIqppKyfjii_qGapitT6GWlMmdEZNGrrhJr4HBY-ELf-mi9tcLNo1MsZ0ueBEZuw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJA_J8CpKRT78Sr1bylS1vA/V1ZGX_jKJ8Of-gOhyKfQAw","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/9YaK_Stnp0vIqppKyfjii_qGapitT6GWlMmdEZNGrrhJr4HBY-ELf-mi9tcLNo1MsZ0ueBEZuw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJA_J8CpKRT78Sr1bylS1vA/V1ZGX_jKJ8Of-gOhyKfQAw","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/9YaK_Stnp0vIqppKyfjii_qGapitT6GWlMmdEZNGrrhJr4HBY-ELf-mi9tcLNo1MsZ0ueBEZuw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJA_J8CpKRT78Sr1bylS1vA/V1ZGX_jKJ8Of-gOhyKfQAw","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/9YaK_Stnp0vIqppKyfjii_qGapitT6GWlMmdEZNGrrhJr4HBY-ELf-mi9tcLNo1MsZ0ueBEZuw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💍"},{"type":"text","value":"🎶"},{"type":"text","value":"💍"},{"type":"text","value":"🎶"},{"type":"text","value":"💍"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかレインでした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" }
+  ]
+}

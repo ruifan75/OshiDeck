@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "霞翠ひびき / Hibiki Ch.【卒業】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC4nXxql27UWzf1QBGwnI75g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"⛓"},{"type":"text","value":"🎧"},{"type":"text","value":"💚"},{"type":"text","value":"⛓"},{"type":"text","value":"🎧"},{"type":"text","value":"💚"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🪩"},{"type":"text","value":"⚡"},{"type":"text","value":"🎶"},{"type":"text","value":"🪩"},{"type":"text","value":"⚡"},{"type":"text","value":"🎶"}], "scope": "channel" }
+  ]
+}

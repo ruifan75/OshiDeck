@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "アルス・アルマル -ars almal- 【にじさんじ】",
-  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
   "channel": "UCdpUojq0KWZCN9bxXnZwz5w",
   "cards": [
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ないす"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdpUojq0KWZCN9bxXnZwz5w/Y7rAXpK-C5KN-gOKlLSYCg","alt":"pien2","sharedTooltipText":":_pien2:","src":"https://yt3.ggpht.com/Awy5nHp6mPoPMB2gq7UwkCKAre_0tu-VFMBKVSblIMXyAHcPFj3dYgzHZk66sVZT3npGFEMR=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"〇"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdpUojq0KWZCN9bxXnZwz5w/F72jXdH8C8-V_APFvZGwBw","alt":"arsai","sharedTooltipText":":_arsai:","src":"https://yt3.ggpht.com/klxP7pvVfOeNieO6yU2ky0mDwh7esuGHPaXrV7ggkTOf7q2vCHC_KJNnv3kPnk6TQr2zSHmd=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdpUojq0KWZCN9bxXnZwz5w/7W5EYvyCJMjm8wSdprfIBQ","alt":"taiki1","sharedTooltipText":":_taiki1:","src":"https://yt3.ggpht.com/MQN9lHaRsHWyRR1XJ4C_b8Mvb9-hcdRZ1QD0T1GEFZYZywqtrKfuXkEPEk1weUY6X7x1nJvw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdpUojq0KWZCN9bxXnZwz5w/7W5EYvyCJMjm8wSdprfIBQ","alt":"taiki1","sharedTooltipText":":_taiki1:","src":"https://yt3.ggpht.com/MQN9lHaRsHWyRR1XJ4C_b8Mvb9-hcdRZ1QD0T1GEFZYZywqtrKfuXkEPEk1weUY6X7x1nJvw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdpUojq0KWZCN9bxXnZwz5w/7W5EYvyCJMjm8wSdprfIBQ","alt":"taiki1","sharedTooltipText":":_taiki1:","src":"https://yt3.ggpht.com/MQN9lHaRsHWyRR1XJ4C_b8Mvb9-hcdRZ1QD0T1GEFZYZywqtrKfuXkEPEk1weUY6X7x1nJvw=w48-h48-c-k-nd"}], "scope": "channel" }
   ]
 }

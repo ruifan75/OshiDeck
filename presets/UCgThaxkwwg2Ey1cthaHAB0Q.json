@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "姫妖精いちか / Fairy Princess Ichika",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCgThaxkwwg2Ey1cthaHAB0Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi ichika"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello ichika"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCgThaxkwwg2Ey1cthaHAB0Q/c0dBY4KHGYu48wTk67LACw","alt":"shushu","sharedTooltipText":":_shushu:","src":"https://yt3.ggpht.com/w7N7633IVe6DmOvwz5Sg48GmicW_5h7u1GxKS7GQ3eehmYtU4TOBYjZi214Lgj0YMrSlmMO0KA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCgThaxkwwg2Ey1cthaHAB0Q/c0dBY4KHGYu48wTk67LACw","alt":"shushu","sharedTooltipText":":_shushu:","src":"https://yt3.ggpht.com/w7N7633IVe6DmOvwz5Sg48GmicW_5h7u1GxKS7GQ3eehmYtU4TOBYjZi214Lgj0YMrSlmMO0KA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCgThaxkwwg2Ey1cthaHAB0Q/c0dBY4KHGYu48wTk67LACw","alt":"shushu","sharedTooltipText":":_shushu:","src":"https://yt3.ggpht.com/w7N7633IVe6DmOvwz5Sg48GmicW_5h7u1GxKS7GQ3eehmYtU4TOBYjZi214Lgj0YMrSlmMO0KA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCgThaxkwwg2Ey1cthaHAB0Q/c0dBY4KHGYu48wTk67LACw","alt":"shushu","sharedTooltipText":":_shushu:","src":"https://yt3.ggpht.com/w7N7633IVe6DmOvwz5Sg48GmicW_5h7u1GxKS7GQ3eehmYtU4TOBYjZi214Lgj0YMrSlmMO0KA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"GG"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCgThaxkwwg2Ey1cthaHAB0Q/c0dBY9-CGYu48wTk67LACw","alt":"ichikasing","sharedTooltipText":":_ichikasing:","src":"https://yt3.ggpht.com/pN-xkBskV4p9RJWYsldkIDNCb-modIG5vbEDJXi-_MOPBWpVTre_uyAjdU6ccRzHttjKdf5naw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCgThaxkwwg2Ey1cthaHAB0Q/c0dBY9-CGYu48wTk67LACw","alt":"ichikasing","sharedTooltipText":":_ichikasing:","src":"https://yt3.ggpht.com/pN-xkBskV4p9RJWYsldkIDNCb-modIG5vbEDJXi-_MOPBWpVTre_uyAjdU6ccRzHttjKdf5naw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCgThaxkwwg2Ey1cthaHAB0Q/c0dBY9-CGYu48wTk67LACw","alt":"ichikasing","sharedTooltipText":":_ichikasing:","src":"https://yt3.ggpht.com/pN-xkBskV4p9RJWYsldkIDNCb-modIG5vbEDJXi-_MOPBWpVTre_uyAjdU6ccRzHttjKdf5naw=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

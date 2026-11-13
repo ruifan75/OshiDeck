@@ -1,0 +1,14 @@
+{
+  "format": 2,
+  "name": "蒼馬きよら / Souma Kiyora",
+  "note": "歌枠2配信・通常13配信のチャットから6枚",
+  "channel": "UCEeaScyD5PrSIkzqOZc1ZZQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎤"},{"type":"text","value":"🦄"},{"type":"text","value":"🩵"},{"type":"text","value":"🎤"},{"type":"text","value":"🦄"},{"type":"text","value":"🩵"},{"type":"text","value":"🎤"},{"type":"text","value":"🦄"},{"type":"text","value":"🩵"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつきよでした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"リクエストについては概要欄を見てね | Regarding requests, please check description area"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんきよー！"}], "scope": "channel" }
+  ]
+}

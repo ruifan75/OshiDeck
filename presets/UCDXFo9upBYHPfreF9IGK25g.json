@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "annytf",
+  "note": "歌枠0配信・通常4配信のチャットから10枚",
+  "channel": "UCDXFo9upBYHPfreF9IGK25g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"KEKW"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"D:"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"AYAYA"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"PauseChamp"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WAYTOODANK"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Clap"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LUL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"monkaW"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "麻倉シノ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCTxoJgb4DzMd7tiM8cvf4PA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTxoJgb4DzMd7tiM8cvf4PA/RTC2ZfH7MuyP_9EPgqG2oA0","alt":"nice","sharedTooltipText":":_nice:","src":"https://yt3.ggpht.com/dCKS9LCGZ7dYe_xsppw4gnGU2Oz2by5di5X_oB1NYSToPlJwuBsymvTxEDooUMN4hVbH8iPB5g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nt"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ntgg"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTxoJgb4DzMd7tiM8cvf4PA/RTC2ZfH7MuyP_9EPgqG2oA0","alt":"nice","sharedTooltipText":":_nice:","src":"https://yt3.ggpht.com/dCKS9LCGZ7dYe_xsppw4gnGU2Oz2by5di5X_oB1NYSToPlJwuBsymvTxEDooUMN4hVbH8iPB5g=w48-h48-c-k-nd"},{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTxoJgb4DzMd7tiM8cvf4PA/Pg-2ZcL2Ce6I_9EPyua0-AQ","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/HV5bVBD5qUfEomtM3IIstCGPALDKUlnWOoaHAuE161b-GNlMGqQfvox5WlRvnzNxqHLu5BOL=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCTxoJgb4DzMd7tiM8cvf4PA/Pg-2ZcL2Ce6I_9EPyua0-AQ","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/HV5bVBD5qUfEomtM3IIstCGPALDKUlnWOoaHAuE161b-GNlMGqQfvox5WlRvnzNxqHLu5BOL=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす"}], "scope": "channel" }
+  ]
+}

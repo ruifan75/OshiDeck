@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Ryoutaa【VERSA】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCRQCV5LXaJKVQ35qaMuI0dw",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRQCV5LXaJKVQ35qaMuI0dw/bY1Faf-kKM2kjMwPsqaruAs","alt":"RyoutaaLitestick1","sharedTooltipText":":_RyoutaaLitestick1:","src":"https://yt3.ggpht.com/Nm4S0sbIQFPV5PJXGrryhTDSE8tz_ppskI2_ZW0CwFat7MCKyo2LnekHB3_p_R1rShw4Zy0gpA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCRQCV5LXaJKVQ35qaMuI0dw/bY1Faf-kKM2kjMwPsqaruAs","alt":"RyoutaaLitestick1","sharedTooltipText":":_RyoutaaLitestick1:","src":"https://yt3.ggpht.com/Nm4S0sbIQFPV5PJXGrryhTDSE8tz_ppskI2_ZW0CwFat7MCKyo2LnekHB3_p_R1rShw4Zy0gpA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCRQCV5LXaJKVQ35qaMuI0dw/bY1Faf-kKM2kjMwPsqaruAs","alt":"RyoutaaLitestick1","sharedTooltipText":":_RyoutaaLitestick1:","src":"https://yt3.ggpht.com/Nm4S0sbIQFPV5PJXGrryhTDSE8tz_ppskI2_ZW0CwFat7MCKyo2LnekHB3_p_R1rShw4Zy0gpA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/8gF1Xp_zK8jk8gSDrI2wCw","alt":"elbowcough","sharedTooltipText":":elbowcough:","src":"https://yt3.ggpht.com/DTR9bZd1HOqpRJyz9TKiLb0cqe5Hb84Yi_79A6LWlN1tY-5kXqLDXRmtYVKE9rcqzEghmw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/8gF1Xp_zK8jk8gSDrI2wCw","alt":"elbowcough","sharedTooltipText":":elbowcough:","src":"https://yt3.ggpht.com/DTR9bZd1HOqpRJyz9TKiLb0cqe5Hb84Yi_79A6LWlN1tY-5kXqLDXRmtYVKE9rcqzEghmw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/8gF1Xp_zK8jk8gSDrI2wCw","alt":"elbowcough","sharedTooltipText":":elbowcough:","src":"https://yt3.ggpht.com/DTR9bZd1HOqpRJyz9TKiLb0cqe5Hb84Yi_79A6LWlN1tY-5kXqLDXRmtYVKE9rcqzEghmw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"pachi pachi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsutaaa"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😭"},{"type":"text","value":"😭"},{"type":"text","value":"😭"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsuuu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"kaget"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"abseng"}], "scope": "channel" }
+  ]
+}

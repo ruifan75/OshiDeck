@@ -1,0 +1,9 @@
+{
+  "format": 2,
+  "name": "Dejavudea",
+  "note": "歌枠0配信・通常3配信のチャットから1枚",
+  "channel": "UC8b1sw-Q6bO2PWB8up-WTDw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" }
+  ]
+}

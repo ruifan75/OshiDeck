@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ぽめろ・ぱんち / Pomelo Punch 【にじさんじ】",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCa1HO5wU6csVDePt9EPYqmA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCa1HO5wU6csVDePt9EPYqmA/8EmEap_XIJaIs8IP3vfp8As","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/5zubi2HMzQXnVxiewgW2QSWCQGHfmjPY5kkP9MZGnpSKkq-Ff09zbsOvtmTh5F9O9ZI5XVhn=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCa1HO5wU6csVDePt9EPYqmA/8EmEap_XIJaIs8IP3vfp8As","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/5zubi2HMzQXnVxiewgW2QSWCQGHfmjPY5kkP9MZGnpSKkq-Ff09zbsOvtmTh5F9O9ZI5XVhn=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCa1HO5wU6csVDePt9EPYqmA/8EmEap_XIJaIs8IP3vfp8As","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/5zubi2HMzQXnVxiewgW2QSWCQGHfmjPY5kkP9MZGnpSKkq-Ff09zbsOvtmTh5F9O9ZI5XVhn=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCa1HO5wU6csVDePt9EPYqmA/uyOIau-fL6-W7OsP3cabgQE","alt":"ぽスタンプ","sharedTooltipText":":_ぽスタンプ:","src":"https://yt3.ggpht.com/DVvj-hRTlJ_YwbAwyryi4utfbAMLBNKY2oji4f2umantPmOvmLd1xhvGr8eWkNJPlCGMl8hM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCa1HO5wU6csVDePt9EPYqmA/uyOIaoWhL6-W7OsP3cabgQE","alt":"ろスタンプ","sharedTooltipText":":_ろスタンプ:","src":"https://yt3.ggpht.com/jkPLE3wL_7ui58ofPbwhQfxTtALz7GuFkPaB8_ED3aApXFk3gO0OlmG03Uhnd4PSvQ0hzoQn=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCa1HO5wU6csVDePt9EPYqmA/uyOIau-fL6-W7OsP3cabgQE","alt":"ぽスタンプ","sharedTooltipText":":_ぽスタンプ:","src":"https://yt3.ggpht.com/DVvj-hRTlJ_YwbAwyryi4utfbAMLBNKY2oji4f2umantPmOvmLd1xhvGr8eWkNJPlCGMl8hM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCa1HO5wU6csVDePt9EPYqmA/uyOIaoWhL6-W7OsP3cabgQE","alt":"ろスタンプ","sharedTooltipText":":_ろスタンプ:","src":"https://yt3.ggpht.com/jkPLE3wL_7ui58ofPbwhQfxTtALz7GuFkPaB8_ED3aApXFk3gO0OlmG03Uhnd4PSvQ0hzoQn=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👊"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー"}], "scope": "channel" }
+  ]
+}

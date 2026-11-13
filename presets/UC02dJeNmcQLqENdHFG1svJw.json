@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "るみなす・すいーと【LUMINOUS Ch】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC02dJeNmcQLqENdHFG1svJw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんるみ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/dv90XtfhAurw8gTgzar4DA","alt":"virtualhug","sharedTooltipText":":virtualhug:","src":"https://yt3.ggpht.com/U1TjOZlqtS58NGqQhE8VWDptPSrmJNkrbVRp_8jI4f84QqIGflq2Ibu7YmuOg5MmVYnpevc=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんるみ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつるみ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👀"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC02dJeNmcQLqENdHFG1svJw/XsNTaeW6LYSb7OsP0pbFmQI","alt":"egao","sharedTooltipText":":_egao:","src":"https://yt3.ggpht.com/qoupg0tU3iUX9UeTnDAD_6MKU8lTutf4vtoRIx6B7oTdJeBg4giSVKzOfoy7MCD0WdjmVgL8=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC02dJeNmcQLqENdHFG1svJw/mykkapfsJOeq7OsPsMP36A0","alt":"kari","sharedTooltipText":":_kari:","src":"https://yt3.ggpht.com/WqnKBX_LMQfAWn1frLc9M9q9ijDSOxsYydglu3zSJclEHsvBWT7hlVctGA0xqyNxduSmT_67kYU=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

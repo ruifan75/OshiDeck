@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "やまだなのだ / Yamada Nanoda",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCRjiAP_0KdYHGdMUBkpLVTw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおW"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRjiAP_0KdYHGdMUBkpLVTw/mIu4Z8yICLem_9EPnZzFqAM","alt":"くさｗ","sharedTooltipText":":_くさｗ:","src":"https://yt3.ggpht.com/JzdCvSEt4xEmerDz-08XC0Vi0ifzXFYPLT-Adigwvfet7UjFApUMPhLVkIv4pFoJKboxHOk3=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" }
+  ]
+}

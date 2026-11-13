@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Layla Alstroemeria【NIJISANJI / にじさんじ】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCyRkQSuhJILuGOuXk10voPg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCyRkQSuhJILuGOuXk10voPg/9OqrX4eHBsqB_APEyb-ABg","alt":"BaksoLightstick","sharedTooltipText":":_BaksoLightstick:","src":"https://yt3.ggpht.com/o1RhhCNc2U2t7wcJ46n9nF3ASzVobv2IyqjlUYjdwhuFDAYSvT2PUbLH-t5DUOugFEq_PTB4d6c=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyRkQSuhJILuGOuXk10voPg/9OqrX4eHBsqB_APEyb-ABg","alt":"BaksoLightstick","sharedTooltipText":":_BaksoLightstick:","src":"https://yt3.ggpht.com/o1RhhCNc2U2t7wcJ46n9nF3ASzVobv2IyqjlUYjdwhuFDAYSvT2PUbLH-t5DUOugFEq_PTB4d6c=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyRkQSuhJILuGOuXk10voPg/9OqrX4eHBsqB_APEyb-ABg","alt":"BaksoLightstick","sharedTooltipText":":_BaksoLightstick:","src":"https://yt3.ggpht.com/o1RhhCNc2U2t7wcJ46n9nF3ASzVobv2IyqjlUYjdwhuFDAYSvT2PUbLH-t5DUOugFEq_PTB4d6c=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCyRkQSuhJILuGOuXk10voPg/y6CBX-3lKMn0-gP7z5zoBg","alt":"BaksoOtsumeria","sharedTooltipText":":_BaksoOtsumeria:","src":"https://yt3.ggpht.com/qy-wRxyP8SGou754V_w1tYXkzkb_dSY2OwyEapiUHqMFjVmn-MBNKXanFILGmAyTv74ahBUYKQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyRkQSuhJILuGOuXk10voPg/y6CBX-3lKMn0-gP7z5zoBg","alt":"BaksoOtsumeria","sharedTooltipText":":_BaksoOtsumeria:","src":"https://yt3.ggpht.com/qy-wRxyP8SGou754V_w1tYXkzkb_dSY2OwyEapiUHqMFjVmn-MBNKXanFILGmAyTv74ahBUYKQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyRkQSuhJILuGOuXk10voPg/y6CBX-3lKMn0-gP7z5zoBg","alt":"BaksoOtsumeria","sharedTooltipText":":_BaksoOtsumeria:","src":"https://yt3.ggpht.com/qy-wRxyP8SGou754V_w1tYXkzkb_dSY2OwyEapiUHqMFjVmn-MBNKXanFILGmAyTv74ahBUYKQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsumeria"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCyRkQSuhJILuGOuXk10voPg/O6CBX9SJO9Pn-gPriqfYAw","alt":"BaksoKab","sharedTooltipText":":_BaksoKab:","src":"https://yt3.ggpht.com/g-sWr3V4wxV7YNYsLCQKaJ51iWvhAm2bsgmu5N4z62gXHdL5k_sa3Nz_HVcDGNro_w3SA_FGGJQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyRkQSuhJILuGOuXk10voPg/O6CBX52KO9Pn-gPriqfYAw","alt":"BaksoOong","sharedTooltipText":":_BaksoOong:","src":"https://yt3.ggpht.com/sOINM5_clWbSkIriOuJm0NJIRSzjp7PhwP_1RNkmgoeu-5EuzOUupRRyjO82g7QcTj8YwpvHyg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyRkQSuhJILuGOuXk10voPg/O6CBX56LO9Pn-gPriqfYAw","alt":"BaksoGaa","sharedTooltipText":":_BaksoGaa:","src":"https://yt3.ggpht.com/jRnLO7Tpwtf49-6K5GVZUJrx7kzkK8USnkp8wZlLjZj7E2V02gJat9611T7wiCdJ57Y-DgnIJyY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCyRkQSuhJILuGOuXk10voPg/N0Q_Y965F7Xb7ATuh5nwDA","alt":"BaksoKiara","sharedTooltipText":":_BaksoKiara:","src":"https://yt3.ggpht.com/bes7H1pJMcUh3TSnab14sJnxi6J_IRoBv1UFd7rQjkWqzQxF9O09G2NhdbEQ2JCogcGwBtEdrO8=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

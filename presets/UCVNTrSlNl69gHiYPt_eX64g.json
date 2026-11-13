@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Stellaa",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCVNTrSlNl69gHiYPt_eX64g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"konstella"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsustella"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nt"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo kak"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lets goooo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"waduh"}], "scope": "channel" }
+  ]
+}

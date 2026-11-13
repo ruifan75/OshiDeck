@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "白音ゆき-Shirane Yuki-",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCcD_EdnJcOjJMohDn435D3w",
   "cards": [
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"❄"},{"type":"text","value":"🎶"},{"type":"text","value":"❄"},{"type":"text","value":"🎶"},{"type":"text","value":"❄"},{"type":"text","value":"🎶"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんゆきー"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"えらーい"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCcD_EdnJcOjJMohDn435D3w/GevfZ4KfH4CO_9EP9bGZ4AQ","alt":"HeyYo","sharedTooltipText":":_HeyYo:","src":"https://yt3.ggpht.com/T2573o2bGN0f4GL5v5o11uE6JQnId4ItdAv-joVVmzgeRoNk1MmqY0splNle2jKvsXX8LpknEi0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCcD_EdnJcOjJMohDn435D3w/GevfZ4KfH4CO_9EP9bGZ4AQ","alt":"HeyYo","sharedTooltipText":":_HeyYo:","src":"https://yt3.ggpht.com/T2573o2bGN0f4GL5v5o11uE6JQnId4ItdAv-joVVmzgeRoNk1MmqY0splNle2jKvsXX8LpknEi0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCcD_EdnJcOjJMohDn435D3w/GevfZ4KfH4CO_9EP9bGZ4AQ","alt":"HeyYo","sharedTooltipText":":_HeyYo:","src":"https://yt3.ggpht.com/T2573o2bGN0f4GL5v5o11uE6JQnId4ItdAv-joVVmzgeRoNk1MmqY0splNle2jKvsXX8LpknEi0=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCcD_EdnJcOjJMohDn435D3w/RP7fZ8eHELXA_9EP8L6JoAs","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/XXiJrcymrYzPp-RNRgxVQiRcn6LUE8XrCf6cXhcHSJQydmlCrrMCSSjoixU3QsIgtUcYeVcL=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCcD_EdnJcOjJMohDn435D3w/RP7fZ8eHELXA_9EP8L6JoAs","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/XXiJrcymrYzPp-RNRgxVQiRcn6LUE8XrCf6cXhcHSJQydmlCrrMCSSjoixU3QsIgtUcYeVcL=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCcD_EdnJcOjJMohDn435D3w/RP7fZ8eHELXA_9EP8L6JoAs","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/XXiJrcymrYzPp-RNRgxVQiRcn6LUE8XrCf6cXhcHSJQydmlCrrMCSSjoixU3QsIgtUcYeVcL=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" }
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCcD_EdnJcOjJMohDn435D3w/GevfZ-efH4CO_9EP9bGZ4AQ","alt":"生きて","sharedTooltipText":":_生きて:","src":"https://yt3.ggpht.com/6UAnu_haKexoT8Qohhxk2l9cmzE91DVY2BNqh5rp-Y8q-rYFrD4pp6Z33bYMHGWeNeJyGpFs=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCcD_EdnJcOjJMohDn435D3w/UafuZ9ypBICO_9EPl7WXwA4","alt":"気付き","sharedTooltipText":":_気付き:","src":"https://yt3.ggpht.com/qAOeCVopxCDj4PIfQDR9X_O1YqNjTWSSeqM2drBM_TP4b9R_zvBSkG1RTKQiB2g3fjVdCoSJBho=w48-h48-c-k-nd"}], "scope": "channel" }
   ]
 }

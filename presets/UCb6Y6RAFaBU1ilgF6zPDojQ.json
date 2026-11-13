@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "LittleMiri CZ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCb6Y6RAFaBU1ilgF6zPDojQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"XD"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😆"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yooooooooooo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lets gooo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hey"}], "scope": "channel" }
+  ]
+}

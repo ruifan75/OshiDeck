@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "しらたま Shiratama Ch.",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCF3Y12X8s0nAJHb4eJfxfqw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは～"}], "scope": "channel" }
+  ]
+}

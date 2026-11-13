@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "Kuzuha Channel",
-  "note": "過去7配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
   "channel": "UCSFCh5NL4qXrAy9u-u2lX3g",
   "cards": [
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCSFCh5NL4qXrAy9u-u2lX3g/fYHiXMKlGsSv8gTsj5_ABg","alt":"KuzuhaTai","sharedTooltipText":":_KuzuhaTai:","src":"https://yt3.ggpht.com/k9Y22d0pOI0vCIvLPYMrrBan5ppChAd5sfsbg3ZcdNArL1rYBW6EJjHNI9K3kdXFttvlb_nDsQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSFCh5NL4qXrAy9u-u2lX3g/MB1nYZXbJaXU8gSx3YPACQ","alt":"KuzuhaSuke","sharedTooltipText":":_KuzuhaSuke:","src":"https://yt3.ggpht.com/ALqW3DgFp8oV0lpMa-q6FebruzKmjuFif21VMoNAnk5xG4UoRGaL0gO3_0bzGdmWaKOV41-pYw=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ないす"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おめでとう！"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"NT"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"CCWIN"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ふぁいてぃーん！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"がんばれー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" }
   ]
 }

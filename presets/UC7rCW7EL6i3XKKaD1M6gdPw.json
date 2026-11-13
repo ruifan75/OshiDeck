@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "杏乃みはる /Ano Miharu",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC7rCW7EL6i3XKKaD1M6gdPw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんあのー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつあのー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはあのー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはよー"}], "scope": "channel" }
+  ]
+}

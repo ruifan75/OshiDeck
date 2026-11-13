@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "柏木もも@登録者数5万人目指し中",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCQudM1LZYLl06QLmqtKQUiQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんももー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんもも～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつももー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"KP"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"出発進行"}], "scope": "channel" }
+  ]
+}

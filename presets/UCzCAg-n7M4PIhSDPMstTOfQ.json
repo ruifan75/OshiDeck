@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "結崎有理",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCzCAg-n7M4PIhSDPMstTOfQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんゆ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCzCAg-n7M4PIhSDPMstTOfQ/na71YsT2IcPp8wTp5b2wAg","alt":"ぺんらいと","sharedTooltipText":":_ぺんらいと:","src":"https://yt3.ggpht.com/IAk47OtJZlCHkthq8u6MCG1_va9LH0HsXC6RKWUmAvQ-YegEE950JPVSql-mE0kwiAYBMKQs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCzCAg-n7M4PIhSDPMstTOfQ/na71YsT2IcPp8wTp5b2wAg","alt":"ぺんらいと","sharedTooltipText":":_ぺんらいと:","src":"https://yt3.ggpht.com/IAk47OtJZlCHkthq8u6MCG1_va9LH0HsXC6RKWUmAvQ-YegEE950JPVSql-mE0kwiAYBMKQs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCzCAg-n7M4PIhSDPMstTOfQ/na71YsT2IcPp8wTp5b2wAg","alt":"ぺんらいと","sharedTooltipText":":_ぺんらいと:","src":"https://yt3.ggpht.com/IAk47OtJZlCHkthq8u6MCG1_va9LH0HsXC6RKWUmAvQ-YegEE950JPVSql-mE0kwiAYBMKQs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCzCAg-n7M4PIhSDPMstTOfQ/na71YsT2IcPp8wTp5b2wAg","alt":"ぺんらいと","sharedTooltipText":":_ぺんらいと:","src":"https://yt3.ggpht.com/IAk47OtJZlCHkthq8u6MCG1_va9LH0HsXC6RKWUmAvQ-YegEE950JPVSql-mE0kwiAYBMKQs=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんゆ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつゆ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお〜！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさい〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつゆ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

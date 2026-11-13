@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Meno Ibuki / 伊吹めの 【Cosmia】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCZfQRuwSLty74QAj55BaKlA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCZfQRuwSLty74QAj55BaKlA/Mqn0ZPvEHKSQ_9EP7_2O4AU","alt":"menoHeart","sharedTooltipText":":_menoHeart:","src":"https://yt3.ggpht.com/M1QR8SjreXT_goD4QhhNs8UWwgAt3Vueh-UHFvpBMZwxUJ1kmsx-0e3TBSeHMPdWJseh2_XuXQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZfQRuwSLty74QAj55BaKlA/Mqn0ZPvEHKSQ_9EP7_2O4AU","alt":"menoHeart","sharedTooltipText":":_menoHeart:","src":"https://yt3.ggpht.com/M1QR8SjreXT_goD4QhhNs8UWwgAt3Vueh-UHFvpBMZwxUJ1kmsx-0e3TBSeHMPdWJseh2_XuXQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZfQRuwSLty74QAj55BaKlA/Mqn0ZPvEHKSQ_9EP7_2O4AU","alt":"menoHeart","sharedTooltipText":":_menoHeart:","src":"https://yt3.ggpht.com/M1QR8SjreXT_goD4QhhNs8UWwgAt3Vueh-UHFvpBMZwxUJ1kmsx-0e3TBSeHMPdWJseh2_XuXQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCZfQRuwSLty74QAj55BaKlA/0J35Yo7gFZ-O_9EP8diN0A8","alt":"menoHeadpat","sharedTooltipText":":_menoHeadpat:","src":"https://yt3.ggpht.com/8NgNW_nhHSTegooxqGNLVk6UGLFq2sG2f2PNPGLSfzzVTNc1YUvizmr66XS3Avamb9_PgOHRtw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZfQRuwSLty74QAj55BaKlA/0J35Yo7gFZ-O_9EP8diN0A8","alt":"menoHeadpat","sharedTooltipText":":_menoHeadpat:","src":"https://yt3.ggpht.com/8NgNW_nhHSTegooxqGNLVk6UGLFq2sG2f2PNPGLSfzzVTNc1YUvizmr66XS3Avamb9_PgOHRtw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZfQRuwSLty74QAj55BaKlA/0J35Yo7gFZ-O_9EP8diN0A8","alt":"menoHeadpat","sharedTooltipText":":_menoHeadpat:","src":"https://yt3.ggpht.com/8NgNW_nhHSTegooxqGNLVk6UGLFq2sG2f2PNPGLSfzzVTNc1YUvizmr66XS3Avamb9_PgOHRtw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsumeno"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bless you"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ippui"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCZfQRuwSLty74QAj55BaKlA/cJz5YsC1J5-O_9EP8diN0A8","alt":"menoSurprise","sharedTooltipText":":_menoSurprise:","src":"https://yt3.ggpht.com/fuNW6Lt5FqAGNXD8q_7c3L9zb0QS8IQrYbmU67NM8ZTh4vLktb4W2045N5t1UEDRfUk8wKLyfA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ohanno"}], "scope": "channel" }
+  ]
+}

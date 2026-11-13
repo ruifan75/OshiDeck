@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "カルロ・ピノ",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCMzxQ58QL4NNbWghGymtHvw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ごきげんようピノ様"},{"type":"text","value":"🐜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😇"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"どうしましたか！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"正確に！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なるほど"}], "scope": "channel" }
+  ]
+}

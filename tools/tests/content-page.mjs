@@ -8,7 +8,7 @@ import { JSDOM, VirtualConsole } from "jsdom";
 export const CHANNEL = "UC" + "a".repeat(22);
 const root = new URL("../../", import.meta.url);
 const overrides = { tokens: "OD_TOKENS", store: "OD_STORE", trending: "OD_TRENDING",
-  layout: "OD_LAYOUT", presets: "OD_PRESETS", i18n: "OD_I18N" };
+  layout: "OD_LAYOUT", presets: "OD_PRESETS", i18n: "OD_I18N", journal: "OD_JOURNAL", "channel-marks": "OD_MARKS" };
 
 export async function contentPage({ source, mode = "hand", cards = [], folded = false,
                                     channel = true, preset = true, start = true } = {}) {
@@ -31,6 +31,7 @@ export async function contentPage({ source, mode = "hand", cards = [], folded = 
   let nextTimer = 0;
   const timers = new Map();
   window.Date.now = () => clock;
+  window.performance.now = () => clock - 1_700_000_000_000;
   window.setTimeout = (fn, ms = 0) => {
     const id = ++nextTimer;
     timers.set(id, { fn, at: clock + ms });
@@ -56,6 +57,7 @@ export async function contentPage({ source, mode = "hand", cards = [], folded = 
   Object.defineProperty(window.HTMLElement.prototype, "clientHeight", { get: () => 100 });
 
   const changed = new Set();
+  const logs = [];
   const stored = { settings: { mode, folded, sortBy: "manual", suggest: true, language: "en" },
     cards: cards.map((value, i) => ({ id: `card-${i}`, tokens: [{ type: "text", value }],
       scope: "global", createdAt: clock, by: {} })),
@@ -77,6 +79,11 @@ export async function contentPage({ source, mode = "hand", cards = [], folded = 
     i18n: { getUILanguage: () => "en" },
     runtime: { get id() { return alive ? "fixture" : undefined; },
       sendMessage: async (message) => {
+        if (message.type === "journal") {
+          if (message.read === true) return { ok: true, value: logs };
+          if (message.entry) logs.push(clone(message.entry));
+          return { ok: true };
+        }
         if (message.type === "presets") return { ok: true, value: preset ? [bundled] : [] };
         if (message.type === "mutate") return window.OshiDeck.store.runOp(message.op, message.args);
         return { ok: true };
@@ -84,7 +91,7 @@ export async function contentPage({ source, mode = "hand", cards = [], folded = 
     storage: { local: { get: async () => clone(stored), set: write },
       onChanged: { addListener: (listener) => changed.add(listener) } }
   };
-  for (const name of ["i18n", "tokens", "layout", "backup", "store", "journal", "presets", "trending"]) {
+  for (const name of ["i18n", "tokens", "layout", "backup", "store", "journal", "presets", "trending", "channel-marks"]) {
     const file = process.env[overrides[name]] || new URL(`src/${name}.js`, root);
     window.eval(`${readFileSync(file, "utf8")}\n//# sourceURL=src/${name}.js`);
   }
@@ -126,7 +133,7 @@ export async function contentPage({ source, mode = "hand", cards = [], folded = 
     return document.querySelector(".od-grab")?.parentElement || null;
   }
   if (start) await advance();
-  return { window, document, advance, comment, point,
+  return { window, document, advance, comment, point, logs,
     get root() { return document.querySelector("#oshideck-root"); },
     async update(patch) { await write(patch); await advance(); },
     async settings(patch) { await write({ settings: { ...stored.settings, ...patch } }); await advance(); },

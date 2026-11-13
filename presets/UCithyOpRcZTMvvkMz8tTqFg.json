@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "FEARSONA",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCithyOpRcZTMvvkMz8tTqFg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi Sona"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bless you"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Bye Sona"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"!toss"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ドーラ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC53UDnhAAYwvNO7j_2Ju1cQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC53UDnhAAYwvNO7j_2Ju1cQ/3uoIYMagB8_J-AOj5aLoCg","alt":"red","sharedTooltipText":":_red:","src":"https://yt3.ggpht.com/UAS5A-1SJy36mrbnKK0ogukq0pX6eu3sZqvAG4x29tizxLARHqo7GmYAapxIe8TQSIimcf25HEA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC53UDnhAAYwvNO7j_2Ju1cQ/3uoIYMagB8_J-AOj5aLoCg","alt":"red","sharedTooltipText":":_red:","src":"https://yt3.ggpht.com/UAS5A-1SJy36mrbnKK0ogukq0pX6eu3sZqvAG4x29tizxLARHqo7GmYAapxIe8TQSIimcf25HEA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC53UDnhAAYwvNO7j_2Ju1cQ/3uoIYMagB8_J-AOj5aLoCg","alt":"red","sharedTooltipText":":_red:","src":"https://yt3.ggpht.com/UAS5A-1SJy36mrbnKK0ogukq0pX6eu3sZqvAG4x29tizxLARHqo7GmYAapxIe8TQSIimcf25HEA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんドーラ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつドーラ！"}], "scope": "channel" }
+  ]
+}

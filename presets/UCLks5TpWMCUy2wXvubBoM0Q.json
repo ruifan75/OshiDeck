@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "眠異ノみみ / Nemuino Mimi",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCLks5TpWMCUy2wXvubBoM0Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつみみー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんみみー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"初見です"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Vilhelm Vanderbos",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC678sJnqTwlsWwNk2RWRK2g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hoot hoot!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"higher"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lower"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC678sJnqTwlsWwNk2RWRK2g/BhhwZu_6JoTl6dsPwKCA8A0","alt":"Laugh","sharedTooltipText":":_Laugh:","src":"https://yt3.ggpht.com/zb5WtDB3Rzq5BDZOtxEPyDThuSdMx5_06TzbBpNO1toxmOZ8t0XK4l9BNKVwEq2hHTXtlNJxkV4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC678sJnqTwlsWwNk2RWRK2g/BhhwZu_6JoTl6dsPwKCA8A0","alt":"Laugh","sharedTooltipText":":_Laugh:","src":"https://yt3.ggpht.com/zb5WtDB3Rzq5BDZOtxEPyDThuSdMx5_06TzbBpNO1toxmOZ8t0XK4l9BNKVwEq2hHTXtlNJxkV4=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Ooooh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Akane!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Nox!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Nai!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"byebyebyebyebyebye"}], "scope": "channel" }
+  ]
+}

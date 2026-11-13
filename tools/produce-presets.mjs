@@ -506,14 +506,16 @@ export async function finishAll(run) {
     if (!["complete", "no-replay"].includes(result.state)) throw new Error("The rebuild still has failed channels");
     return result;
   });
-  // Scope needs all rooms, so it runs once after the complete mining pass.
+  // Keep the recorded mining code intact. Publishing policy is current:
+  // starting decks stay in their own channel and keep that room's wording.
   const snapshot = freezeMiner(run);
   const fingerprint = createHash("sha256").update(JSON.stringify(snapshot.hashes)).digest("hex");
   const compatible = new Set([fingerprint, ...(snapshot.compatibleFingerprints || [])]);
   if (results.some((result) => !compatible.has(result.fingerprint))) throw new Error("Mixed miner versions in this rebuild");
   save(join(run, "code", "tools", "channels.json"), channels);
-  const scoped = await command(process.execPath, [join(run, "code", "tools", "scope.mjs"), "--all",
-    "--dir", join(run, "candidates"), "--out", join(run, "presets")]);
+  const scoped = await command(process.execPath, [join(root, "tools", "scope.mjs"), "--all",
+    "--dir", join(run, "candidates"), "--out", join(run, "presets"),
+    "--channels", join(run, "channels.json")]);
   writeFileSync(join(run, "scope.log"), scoped.output);
   if (scoped.code !== 0) throw new Error("Scope generation failed; see scope.log");
 
@@ -524,29 +526,29 @@ export async function finishAll(run) {
     await import(pathToFileURL(join(run, "code", "src", file)).href);
   }
   const { presets, tokens, trending } = globalThis.OshiDeck;
-  const spellings = new Map();
-  const index = [], rooms = [];
-  let cards = 0, maxCards = 0, maxBytes = 0, totalBytes = 0;
+  const index = [];
+  let cards = 0, maxCards = 0, maxBytes = 0, totalBytes = 0, withReplay = 0;
   for (const result of results.filter((result) => result.state === "complete")) {
     const mine = JSON.parse(readFileSync(join(run, "candidates", `${result.channel}.json`), "utf8"));
-    rooms.push(mine);
+    withReplay++;
     if (!mine.selected.length) continue;
     const file = `${result.channel}.preset.json`;
     const raw = readFileSync(join(run, "presets", file), "utf8");
     const preset = JSON.parse(raw);
     const problem = presets.validate(preset);
     if (problem) throw new Error(`${result.channel}: ${JSON.stringify(problem)}`);
+    const local = new Map(mine.candidates.filter((card) => mine.selected.includes(card.signature))
+      .map((card) => [card.signature, tokens.cardKey(card.tokens)]));
     for (const card of preset.cards) {
+      if (card.scope !== "channel") throw new Error("A mined starting deck cannot create universal cards");
+      if (local.get(trending.signature(card.tokens)) !== tokens.cardKey(card.tokens)) {
+        throw new Error("A starting deck lost its channel's own wording");
+      }
       for (const token of card.tokens.filter((token) => token.type === "youtubeEmoji")) {
         if (!token.src || new URL(token.src).protocol !== "https:") {
           throw new Error(`${result.channel}: member emoji has no HTTPS image`);
         }
       }
-      if (card.scope !== "global") continue;
-      const sig = trending.signature(card.tokens);
-      const wording = JSON.stringify(card.tokens);
-      if (spellings.has(sig) && spellings.get(sig) !== wording) throw new Error("Global spellings disagree");
-      spellings.set(sig, wording);
     }
     if (preset.cards.length !== mine.selected.length) throw new Error("A selected card was lost during scope generation");
     const bytes = Buffer.byteLength(raw);
@@ -556,37 +558,11 @@ export async function finishAll(run) {
     maxBytes = Math.max(maxBytes, bytes);
     index.push({ channel: result.channel, file });
   }
-  // Re-measure sensitivity on the new corpus. These are preview scopes until
-  // the room-share distribution has been reviewed; nothing is shipped here.
-  const sensitivity = [];
-  for (const depth of [10, 20, 30]) {
-    const counts = new Map();
-    const nearby = new Map();
-    for (const room of rooms) {
-      const near = new Set(room.candidates.slice(0, depth).map((card) => trending.signature(card.tokens)));
-      nearby.set(room.channel, near);
-      for (const sig of near) counts.set(sig, (counts.get(sig) || 0) + 1);
-    }
-    for (const share of [0.01, 0.02, 0.05]) {
-      const threshold = Math.max(1, Math.ceil((rooms.length - 1) * share));
-      let global = 0, channel = 0;
-      for (const room of rooms) {
-        const selected = new Set(room.selected);
-        for (const card of room.candidates.filter((card) => selected.has(card.signature))) {
-          const others = (counts.get(card.signature) || 0) - Number(nearby.get(room.channel).has(card.signature));
-          if (!tokens.requiredChannels(card.tokens).length && others >= threshold) global++;
-          else channel++;
-        }
-      }
-      sensitivity.push({ depth, share, threshold, global, channel });
-    }
-  }
-  save(join(run, "scope-sensitivity.json"), { rooms: rooms.length, sensitivity });
   save(join(run, "presets", "index.json"), { format: 2, presets: index });
   const summary = { recipe: RECIPE, completedAt: new Date().toISOString(), channels: active.length,
-    withReplay: rooms.length, noReplay: results.filter((result) => result.state === "no-replay").length,
+    withReplay, noReplay: results.filter((result) => result.state === "no-replay").length,
     presets: index.length, cards, maxCards, maxBytes, totalBytes,
-    scope: { depth: 20, share: 0.02, status: "preview-pending-corpus-review" } };
+    scope: { policy: "channel-only", status: "ready" } };
   save(join(run, "complete.json"), summary);
   console.log(JSON.stringify(summary, null, 2));
   return summary;

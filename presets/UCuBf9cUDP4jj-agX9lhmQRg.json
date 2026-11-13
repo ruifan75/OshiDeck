@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Xeapher",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCuBf9cUDP4jj-agX9lhmQRg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"💜"},{"type":"text","value":"💜"},{"type":"text","value":"💜"},{"type":"text","value":"💜"},{"type":"text","value":"💜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ikzzz"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsuu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo kak xea"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"xeaaa"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo xea"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo kak"}], "scope": "channel" }
+  ]
+}

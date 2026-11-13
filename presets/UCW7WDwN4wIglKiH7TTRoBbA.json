@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "feviknight 페비나이트",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCW7WDwN4wIglKiH7TTRoBbA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"ㅋㅋㅋㅋ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"줴줴이야"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"오"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"와"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"페하"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ohhhh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wtf"}], "scope": "channel" }
+  ]
+}

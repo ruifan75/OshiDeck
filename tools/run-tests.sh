@@ -29,8 +29,8 @@ node tools/check-width.mjs
 echo
 
 echo "css traps"
-node tools/check-css.mjs content.css options.css
-node tools/check-var-timing.mjs content.css options.css
+node tools/check-css.mjs content.css options.css src/channel-marks.css
+node tools/check-var-timing.mjs content.css options.css src/channel-marks.css
 echo
 
 echo "logic"

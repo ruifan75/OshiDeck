@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "二十日ネル",
+  "note": "歌枠0配信・通常7配信のチャットから10枚",
+  "channel": "UChS8E6_q2Ew6QV2M3yEa8xw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんネル"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あら"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんねるー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いいね"}], "scope": "channel" }
+  ]
+}

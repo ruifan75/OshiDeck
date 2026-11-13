@@ -16,6 +16,16 @@ note
 
 # API keys. The example beside it is what gets committed.
 .env
+.env.*
+!.env.example
+
+# Local filesystem metadata and visual references used during development.
+.DS_Store
+/nijipuka.jpg
+/nijipuka2.webp
+
+# Local linked worktrees include machine-specific paths and working data.
+/.claude/worktrees/
 
 # Chat downloaded for mining — megabytes per stream, and re-fetchable
 chat/
@@ -32,6 +42,10 @@ tools/candidates/
 # again from a saved page whenever it is needed.
 channels
 tools/subscriptions.json
+/YT_subscribe*.csv
 
 # Browserless integration-test dependencies
 node_modules/
+
+# Release ZIPs and their file/hash reports, rebuilt from the runtime allowlist.
+/dist/

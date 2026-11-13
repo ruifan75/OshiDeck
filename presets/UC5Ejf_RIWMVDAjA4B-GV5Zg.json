@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Europa Yuu",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC5Ejf_RIWMVDAjA4B-GV5Zg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye bye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"a"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yeah"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ohayuuuu"}], "scope": "channel" }
+  ]
+}

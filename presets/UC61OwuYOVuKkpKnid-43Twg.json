@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "白波らむね / Shiranami Ramune",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UC61OwuYOVuKkpKnid-43Twg",
   "cards": [
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ないす"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"すんねん"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"そう"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC61OwuYOVuKkpKnid-43Twg/IncXY_PyIYGG8wSH-5PAAg","alt":"RamGenki","sharedTooltipText":":_RamGenki:","src":"https://yt3.ggpht.com/VZI7jSnPp1sRpEMMeHxLbICjmXDdovt-GqbhHoKF3T10362owfqHobcYTH-mZIjY5bZD44a7dA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC61OwuYOVuKkpKnid-43Twg/IncXY_PyIYGG8wSH-5PAAg","alt":"RamGenki","sharedTooltipText":":_RamGenki:","src":"https://yt3.ggpht.com/VZI7jSnPp1sRpEMMeHxLbICjmXDdovt-GqbhHoKF3T10362owfqHobcYTH-mZIjY5bZD44a7dA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC61OwuYOVuKkpKnid-43Twg/IncXY_PyIYGG8wSH-5PAAg","alt":"RamGenki","sharedTooltipText":":_RamGenki:","src":"https://yt3.ggpht.com/VZI7jSnPp1sRpEMMeHxLbICjmXDdovt-GqbhHoKF3T10362owfqHobcYTH-mZIjY5bZD44a7dA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC61OwuYOVuKkpKnid-43Twg/IncXY5r0IYGG8wSH-5PAAg","alt":"RamNICE","sharedTooltipText":":_RamNICE:","src":"https://yt3.ggpht.com/db0Sh03WouNCzF0ijjwd98k91tZ59aZeE3fSvRDZxUdlIHNlV0NVFxr82a28nhnKRnr6w8op2w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC61OwuYOVuKkpKnid-43Twg/IncXY5r0IYGG8wSH-5PAAg","alt":"RamNICE","sharedTooltipText":":_RamNICE:","src":"https://yt3.ggpht.com/db0Sh03WouNCzF0ijjwd98k91tZ59aZeE3fSvRDZxUdlIHNlV0NVFxr82a28nhnKRnr6w8op2w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC61OwuYOVuKkpKnid-43Twg/IncXY5r0IYGG8wSH-5PAAg","alt":"RamNICE","sharedTooltipText":":_RamNICE:","src":"https://yt3.ggpht.com/db0Sh03WouNCzF0ijjwd98k91tZ59aZeE3fSvRDZxUdlIHNlV0NVFxr82a28nhnKRnr6w8op2w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"GG"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC61OwuYOVuKkpKnid-43Twg/ffNxY9a0A7uA_9EPqP2F-Ao","alt":"RamTaiki","sharedTooltipText":":_RamTaiki:","src":"https://yt3.ggpht.com/t3a4hU185TkGlJp3EwGC8AT9QG9U2kx0tpRof5UrA9PUo9FtcGl29OlIBxkTWn779R3n6kq6aw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC61OwuYOVuKkpKnid-43Twg/ffNxY9a0A7uA_9EPqP2F-Ao","alt":"RamTaiki","sharedTooltipText":":_RamTaiki:","src":"https://yt3.ggpht.com/t3a4hU185TkGlJp3EwGC8AT9QG9U2kx0tpRof5UrA9PUo9FtcGl29OlIBxkTWn779R3n6kq6aw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC61OwuYOVuKkpKnid-43Twg/ffNxY9a0A7uA_9EPqP2F-Ao","alt":"RamTaiki","sharedTooltipText":":_RamTaiki:","src":"https://yt3.ggpht.com/t3a4hU185TkGlJp3EwGC8AT9QG9U2kx0tpRof5UrA9PUo9FtcGl29OlIBxkTWn779R3n6kq6aw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こん"},{"type":"youtubeEmoji","emojiId":"UC61OwuYOVuKkpKnid-43Twg/JCAoY-aeG_TAwwXC3rqoBw","alt":"Ram1ra","sharedTooltipText":":_Ram1ra:","src":"https://yt3.ggpht.com/5nKJsC1ttqsA3M1Lcs8DB3niYh4lC8mTJmenzZrIlDImEgZMI2g0zj-b_X58HnQdQh-lQyRDiA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC61OwuYOVuKkpKnid-43Twg/JCAoY5-fG_TAwwXC3rqoBw","alt":"Ram1mu","sharedTooltipText":":_Ram1mu:","src":"https://yt3.ggpht.com/X3Q2oW3kjVzroEi8CsUYpOWUS38XWaDyicgWRaDcRxyK9Vlj-ba7Fd6ylWiunnNY8o_gDCGyCxQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい"}], "scope": "channel" }
   ]
 }

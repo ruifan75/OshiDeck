@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "イル_フローラ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC_T1YqknD5yrpVlupc-ZXzg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いる"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_T1YqknD5yrpVlupc-ZXzg/zcNQYMiQCI_Y-QOzhZgQ","alt":"ひよこ","sharedTooltipText":":_ひよこ:","src":"https://yt3.ggpht.com/HrWyQVhhoDf1ICr8a_6FE8E2hiR1n6YcnChbRA4Oe7o7NjVjSXUxyahHZ0uVx93FErHSmtPXTA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいいね"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい"}], "scope": "channel" }
+  ]
+}

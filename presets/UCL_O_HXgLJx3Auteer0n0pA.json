@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "周央 サンゴ / Suo Sango【にじさんじ】",
-  "note": "過去11配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCL_O_HXgLJx3Auteer0n0pA",
   "cards": [
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"おつかれさーんご！"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ありがとうございました！"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ばよばよ〜"}], "scope": "channel" }
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCL_O_HXgLJx3Auteer0n0pA/5U7jX_igGc_J-AOM9KKgAg","alt":"ンゴ三点リーダー","sharedTooltipText":":_ンゴ三点リーダー:","src":"https://yt3.ggpht.com/NdArCcMKc2FutdabUiM3X0jKA2dqNon-zhn0Khf-QBocBoI9yu2qseh8pny4HAJ_m62AdRXTatI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCL_O_HXgLJx3Auteer0n0pA/5U7jX_igGc_J-AOM9KKgAg","alt":"ンゴ三点リーダー","sharedTooltipText":":_ンゴ三点リーダー:","src":"https://yt3.ggpht.com/NdArCcMKc2FutdabUiM3X0jKA2dqNon-zhn0Khf-QBocBoI9yu2qseh8pny4HAJ_m62AdRXTatI=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
   ]
 }

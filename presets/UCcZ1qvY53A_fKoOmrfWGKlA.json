@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "緋撃 燐 / Higeki Rin",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCcZ1qvY53A_fKoOmrfWGKlA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんりん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんりんです"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCcZ1qvY53A_fKoOmrfWGKlA/PyfFYr3YOMPp8wSguJ3IBA","alt":"こんりん","sharedTooltipText":":_こんりん:","src":"https://yt3.ggpht.com/7-SOjngHbdg7so1xsSQhO_zakCX58tmkDUN1l-QowHa4CohuvUiICS7tlWma4sJC8mTiqXpktPw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCcZ1qvY53A_fKoOmrfWGKlA/PyfFYr3YOMPp8wSguJ3IBA","alt":"こんりん","sharedTooltipText":":_こんりん:","src":"https://yt3.ggpht.com/7-SOjngHbdg7so1xsSQhO_zakCX58tmkDUN1l-QowHa4CohuvUiICS7tlWma4sJC8mTiqXpktPw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCcZ1qvY53A_fKoOmrfWGKlA/PyfFYr3YOMPp8wSguJ3IBA","alt":"こんりん","sharedTooltipText":":_こんりん:","src":"https://yt3.ggpht.com/7-SOjngHbdg7so1xsSQhO_zakCX58tmkDUN1l-QowHa4CohuvUiICS7tlWma4sJC8mTiqXpktPw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"よーし"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCcZ1qvY53A_fKoOmrfWGKlA/FmWZaILNA4So_9EP5v_qQA","alt":"よいしょー","sharedTooltipText":":_よいしょー:","src":"https://yt3.ggpht.com/iVhZPd7qOKOjLbVYe2rqEMi5dAMOt7WnCAkpsj8uNRRFizcGxDy6YjwG1guDZCeA4jlTVcPg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCcZ1qvY53A_fKoOmrfWGKlA/FmWZaILNA4So_9EP5v_qQA","alt":"よいしょー","sharedTooltipText":":_よいしょー:","src":"https://yt3.ggpht.com/iVhZPd7qOKOjLbVYe2rqEMi5dAMOt7WnCAkpsj8uNRRFizcGxDy6YjwG1guDZCeA4jlTVcPg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCcZ1qvY53A_fKoOmrfWGKlA/FmWZaILNA4So_9EP5v_qQA","alt":"よいしょー","sharedTooltipText":":_よいしょー:","src":"https://yt3.ggpht.com/iVhZPd7qOKOjLbVYe2rqEMi5dAMOt7WnCAkpsj8uNRRFizcGxDy6YjwG1guDZCeA4jlTVcPg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつりん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイスパです"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

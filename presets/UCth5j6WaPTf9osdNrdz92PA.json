@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Ame Channel -みなかぜアメ-",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCth5j6WaPTf9osdNrdz92PA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんアメ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いいね"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なるほど！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機_( ˙꒳˙ _ )ﾁｮｺﾝ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"イェーイ♪♪"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんアメ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつアメ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつアメ〜"}], "scope": "channel" }
+  ]
+}

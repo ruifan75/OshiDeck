@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Saerin",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC5h78w2RPLcbNgumHHVi3lg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"Yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Otsuhound"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC5h78w2RPLcbNgumHHVi3lg/YZdpZZmbJ8K9_9EP-bWOyAQ","alt":"saeRise","sharedTooltipText":":_saeRise:","src":"https://yt3.ggpht.com/bEtqeRozCh3bd4SlLf6lBbW78N43KsmK2R3p8YSYvMxBfTSeMTmt6tcO3zB-gAA4ZWY71VbI9QY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5h78w2RPLcbNgumHHVi3lg/YZdpZZmbJ8K9_9EP-bWOyAQ","alt":"saeRise","sharedTooltipText":":_saeRise:","src":"https://yt3.ggpht.com/bEtqeRozCh3bd4SlLf6lBbW78N43KsmK2R3p8YSYvMxBfTSeMTmt6tcO3zB-gAA4ZWY71VbI9QY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5h78w2RPLcbNgumHHVi3lg/YZdpZZmbJ8K9_9EP-bWOyAQ","alt":"saeRise","sharedTooltipText":":_saeRise:","src":"https://yt3.ggpht.com/bEtqeRozCh3bd4SlLf6lBbW78N43KsmK2R3p8YSYvMxBfTSeMTmt6tcO3zB-gAA4ZWY71VbI9QY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "生返るるる",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC7yrCBpBQCDCLT69s-vrqZw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7yrCBpBQCDCLT69s-vrqZw/m6cYaPPiGoCO_9EPop3SsAM","alt":"こんかえり","sharedTooltipText":":_こんかえり:","src":"https://yt3.ggpht.com/KgDF3wd6NNEU5fYHLkEd-wpzcW_CEOBjFgMkjlD4k1xknULYLGztPcvYstmn_BcvZ0toxtArww=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7yrCBpBQCDCLT69s-vrqZw/m6cYaOvjGoCO_9EPop3SsAM","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/Cub0lMfkypeCRMC13fzQa3zpGClNcBn0Uhz9Me90qra6q7C7R9Z1fbo-eFWdojdaajRXQLZywns=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7yrCBpBQCDCLT69s-vrqZw/m6cYaOvjGoCO_9EPop3SsAM","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/Cub0lMfkypeCRMC13fzQa3zpGClNcBn0Uhz9Me90qra6q7C7R9Z1fbo-eFWdojdaajRXQLZywns=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7yrCBpBQCDCLT69s-vrqZw/m6cYaOvjGoCO_9EPop3SsAM","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/Cub0lMfkypeCRMC13fzQa3zpGClNcBn0Uhz9Me90qra6q7C7R9Z1fbo-eFWdojdaajRXQLZywns=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7yrCBpBQCDCLT69s-vrqZw/m6cYaLLjGoCO_9EPop3SsAM","alt":"ばいかえり","sharedTooltipText":":_ばいかえり:","src":"https://yt3.ggpht.com/0ngtZksTB0foJQbersl0fk4YuwvCI4kigm08X96FnJNPt3xSRQzGYcPSwT2w3ZAyyljLq5omVw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7yrCBpBQCDCLT69s-vrqZw/m6cYaLLjGoCO_9EPop3SsAM","alt":"ばいかえり","sharedTooltipText":":_ばいかえり:","src":"https://yt3.ggpht.com/0ngtZksTB0foJQbersl0fk4YuwvCI4kigm08X96FnJNPt3xSRQzGYcPSwT2w3ZAyyljLq5omVw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7yrCBpBQCDCLT69s-vrqZw/m6cYaLLjGoCO_9EPop3SsAM","alt":"ばいかえり","sharedTooltipText":":_ばいかえり:","src":"https://yt3.ggpht.com/0ngtZksTB0foJQbersl0fk4YuwvCI4kigm08X96FnJNPt3xSRQzGYcPSwT2w3ZAyyljLq5omVw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" }
+  ]
+}

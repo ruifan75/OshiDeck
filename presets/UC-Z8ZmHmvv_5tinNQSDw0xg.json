@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Rosuuri",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC-Z8ZmHmvv_5tinNQSDw0xg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-Z8ZmHmvv_5tinNQSDw0xg/LO8IaqWfC8ntrr4Px6GmqAM","alt":"rosuLol","sharedTooltipText":":_rosuLol:","src":"https://yt3.ggpht.com/ctCFEwoPnn9UXC7J3wmmRvR6myW_xilVB1syMcRX5MB41jRNH_MuG9eHub9ODq_Zr7wK6h9byQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-Z8ZmHmvv_5tinNQSDw0xg/Z3MGaoSlII3Hrr4PqIj-EA","alt":"rosuPeek","sharedTooltipText":":_rosuPeek:","src":"https://yt3.ggpht.com/ZzLMyrWCX-RbzxzLR7E1XpxHjHtDFuPlMj4gCqsdqtiewxRpmacplmxKUCQUzhvR9AByx3gM=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-Z8ZmHmvv_5tinNQSDw0xg/Z3MGasClII3Hrr4PqIj-EA","alt":"rosuBunstare","sharedTooltipText":":_rosuBunstare:","src":"https://yt3.ggpht.com/QY_NpU_FDhuH1n8YFC-kW9-j1Ch3B03q3JiIBWmZDiqF7TGUALwKVe-RFRcCLBoLS6OFR0bn3XY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-Z8ZmHmvv_5tinNQSDw0xg/Z3MGap2lII3Hrr4PqIj-EA","alt":"rosuHappy","sharedTooltipText":":_rosuHappy:","src":"https://yt3.ggpht.com/bAGCIfI1eVV7JvsZ8jq0dFrBj4pv4JhmB286ZA_-O4tXATazjBj-dxF3L_ul6NtCWbeSWhNSOg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-Z8ZmHmvv_5tinNQSDw0xg/LO8IavmeC8ntrr4Px6GmqAM","alt":"rosuWow","sharedTooltipText":":_rosuWow:","src":"https://yt3.ggpht.com/kLgPuM7wdvOc9umbwVuwdj9j6ORpjKZgJgdIyeWQ64Kt_DHUabMHXF8qYzv-j8i4zBVWcuzU-lg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bless you"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-Z8ZmHmvv_5tinNQSDw0xg/Z3MGaq6kII3Hrr4PqIj-EA","alt":"rosuWave","sharedTooltipText":":_rosuWave:","src":"https://yt3.ggpht.com/Wg20Y0vaQwyGqd9ripe2ugu9p96ZArPZ2X6r9xdXyqqNuB0yxfOh1S4_bEjhL1JnAi8cu4Rw7w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" }
+  ]
+}

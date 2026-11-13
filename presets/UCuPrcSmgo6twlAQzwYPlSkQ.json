@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "竹花ノート",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCuPrcSmgo6twlAQzwYPlSkQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつのーとです！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんのーとです"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつのーと"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんのーと"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCuPrcSmgo6twlAQzwYPlSkQ/elh4YPauNKzr8gTs0qWABg","alt":"kon","sharedTooltipText":":_kon:","src":"https://yt3.ggpht.com/6X4lMJY4aion89YBlSkf03XQh7w5mb3ZGe6idd7jSWj-SUrFRp_gfZpZzC2dPT2ZiVII-_CaQEw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCuPrcSmgo6twlAQzwYPlSkQ/elh4YNOvNKzr8gTs0qWABg","alt":"note","sharedTooltipText":":_note:","src":"https://yt3.ggpht.com/rdow2rt9RxMly4f8Eo-h0XN1rN_PeKp1pn-75ZBGquiGQQU4kE_g7UYjSUsYbkg9DUwur364iA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCuPrcSmgo6twlAQzwYPlSkQ/elh4YImwNKzr8gTs0qWABg","alt":"otsu","sharedTooltipText":":_otsu:","src":"https://yt3.ggpht.com/ROa5vTZJimP-EXApYAojiDyjW4tdxFgj8WByFixQqT0P0Qz9SibnR9HwxFTCIOg1ZNwdeXGN9g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCuPrcSmgo6twlAQzwYPlSkQ/elh4YNOvNKzr8gTs0qWABg","alt":"note","sharedTooltipText":":_note:","src":"https://yt3.ggpht.com/rdow2rt9RxMly4f8Eo-h0XN1rN_PeKp1pn-75ZBGquiGQQU4kE_g7UYjSUsYbkg9DUwur364iA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" }
+  ]
+}

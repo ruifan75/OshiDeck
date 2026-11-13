@@ -1,0 +1,19 @@
+{
+  "format": 2,
+  "name": "御莉姫 -ORIHIME- / 心世紀 from 少女革命計画",
+  "note": "歌枠2配信・通常13配信のチャットから11枚",
+  "channel": "UCPzB4ROWho13wC9ngTCz1hA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"❤"},{"type":"text","value":"❤"},{"type":"text","value":"❤"},{"type":"text","value":"❤"},{"type":"text","value":"❤"},{"type":"text","value":"❤"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCPzB4ROWho13wC9ngTCz1hA/GCFvaPv3OMPcvfIPhoX4UA","alt":"ひめひめ","sharedTooltipText":":_ひめひめ:","src":"https://yt3.ggpht.com/GAe0aP327sEdZFQBUfUiYoNXOzB5ycTsMjZJ7RY2EqrH4SweknjM9U2nqJVDqUM-y81juC559Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPzB4ROWho13wC9ngTCz1hA/GCFvaPv3OMPcvfIPhoX4UA","alt":"ひめひめ","sharedTooltipText":":_ひめひめ:","src":"https://yt3.ggpht.com/GAe0aP327sEdZFQBUfUiYoNXOzB5ycTsMjZJ7RY2EqrH4SweknjM9U2nqJVDqUM-y81juC559Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCPzB4ROWho13wC9ngTCz1hA/sB1yaNX6Ae-X_9EP3LWliAI","alt":"おりひめのお","sharedTooltipText":":_おりひめのお:","src":"https://yt3.ggpht.com/LtXj5sAWqa8lWi6_Hex-UkhDrRfJd58GChh_lehyCl_akGsxNi5SlAb6vd6YGc2JEtecHPv_8g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPzB4ROWho13wC9ngTCz1hA/sB1yaPv6Ae-X_9EP3LWliAI","alt":"おりひめのり","sharedTooltipText":":_おりひめのり:","src":"https://yt3.ggpht.com/iggFOwYjUVuYgyPfvqG5ZNjLUeTg-p4odmj8UltRaOPS3M6fGW57u8Zy7C1ZLttfuH-JddL7rQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPzB4ROWho13wC9ngTCz1hA/sB1yaKX7Ae-X_9EP3LWliAI","alt":"おりひめのひめ","sharedTooltipText":":_おりひめのひめ:","src":"https://yt3.ggpht.com/mGgLavtHyRaoTvgTnhlyypJDDYzXkUlhhdhvVVuSyrtZjfvHcm5HhbC3s-BMXqSLx0Ug4EV-Akw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPzB4ROWho13wC9ngTCz1hA/3QJ3atffMJaIs8IPqoeAwA8","alt":"てんさい","sharedTooltipText":":_てんさい:","src":"https://yt3.ggpht.com/aZFCPhjnJM5x7tU0mcbeb8DGSZ8ahUtUUdQSUd9xbLThfScIFJoNTqX4U5XcLGtx2TRSJjLysg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ごきげんよう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" }
+  ]
+}

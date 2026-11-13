@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Lisa Chikafuji",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCdureux7B_V-xhM7tYImASQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdureux7B_V-xhM7tYImASQ/b3kXYtvEC8eJ_9EP1bKwgA4","alt":"lisaCheer","sharedTooltipText":":_lisaCheer:","src":"https://yt3.ggpht.com/3hnkOV6DYeY2HK6IuGXl02wjpTJ_m9vnG7Yk0X7eq6hZNtPOU8v4FOD5TFp9bQkImbugywWVIA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdureux7B_V-xhM7tYImASQ/b3kXYtvEC8eJ_9EP1bKwgA4","alt":"lisaCheer","sharedTooltipText":":_lisaCheer:","src":"https://yt3.ggpht.com/3hnkOV6DYeY2HK6IuGXl02wjpTJ_m9vnG7Yk0X7eq6hZNtPOU8v4FOD5TFp9bQkImbugywWVIA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdureux7B_V-xhM7tYImASQ/b3kXYtvEC8eJ_9EP1bKwgA4","alt":"lisaCheer","sharedTooltipText":":_lisaCheer:","src":"https://yt3.ggpht.com/3hnkOV6DYeY2HK6IuGXl02wjpTJ_m9vnG7Yk0X7eq6hZNtPOU8v4FOD5TFp9bQkImbugywWVIA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdureux7B_V-xhM7tYImASQ/b3kXYp7GC8eJ_9EP1bKwgA4","alt":"lisaLove","sharedTooltipText":":_lisaLove:","src":"https://yt3.ggpht.com/5UuQ3aeNkmaTLUdY3M5wpdqX_Augc4UGfZBRWRvKRcETke2MppN8SNHNoyXELaTOzVt4spOGOQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdureux7B_V-xhM7tYImASQ/b3kXYp7GC8eJ_9EP1bKwgA4","alt":"lisaLove","sharedTooltipText":":_lisaLove:","src":"https://yt3.ggpht.com/5UuQ3aeNkmaTLUdY3M5wpdqX_Augc4UGfZBRWRvKRcETke2MppN8SNHNoyXELaTOzVt4spOGOQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdureux7B_V-xhM7tYImASQ/b3kXYp7GC8eJ_9EP1bKwgA4","alt":"lisaLove","sharedTooltipText":":_lisaLove:","src":"https://yt3.ggpht.com/5UuQ3aeNkmaTLUdY3M5wpdqX_Augc4UGfZBRWRvKRcETke2MppN8SNHNoyXELaTOzVt4spOGOQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdureux7B_V-xhM7tYImASQ/g7O6YazqAZyQ8wSWsoPIBQ","alt":"lisaPat","sharedTooltipText":":_lisaPat:","src":"https://yt3.ggpht.com/J5ffN_2nuP_KHjlfOBtftQtKma3RUzJwjjI-oWmEMOHr-k-9zDYYKBdd0RCJYeo-vaKRwxT3Jj8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdureux7B_V-xhM7tYImASQ/g7O6YazqAZyQ8wSWsoPIBQ","alt":"lisaPat","sharedTooltipText":":_lisaPat:","src":"https://yt3.ggpht.com/J5ffN_2nuP_KHjlfOBtftQtKma3RUzJwjjI-oWmEMOHr-k-9zDYYKBdd0RCJYeo-vaKRwxT3Jj8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdureux7B_V-xhM7tYImASQ/g7O6YazqAZyQ8wSWsoPIBQ","alt":"lisaPat","sharedTooltipText":":_lisaPat:","src":"https://yt3.ggpht.com/J5ffN_2nuP_KHjlfOBtftQtKma3RUzJwjjI-oWmEMOHr-k-9zDYYKBdd0RCJYeo-vaKRwxT3Jj8=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdureux7B_V-xhM7tYImASQ/xnhnZp-bEre7_9EP0YOZgAo","alt":"chaiStare","sharedTooltipText":":_chaiStare:","src":"https://yt3.ggpht.com/6uF4Kt4mgFbbsW0fVnyIPPIed-J3zd4LbCN8U_4zAvoV7ztQcDvBakzvwTm4zsP_GO01y9G47g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsusheepy!"}], "scope": "channel" }
+  ]
+}

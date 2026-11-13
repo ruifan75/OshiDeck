@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "白亜マウルの古生物学チャンネル",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCxSJP2WWP_CKuayijH2lWfw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"へ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"たいき"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとうございました～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCxSJP2WWP_CKuayijH2lWfw/CZLaZpSYJr-V_9EP4e7UoQk","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/RIBhj1aFJFPO-ORc-YUjlc9_pzc3lr81JoqqNxLRRGwgOG4NyeI36DyZARxZQItQSfnnJDs1P3Y=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxSJP2WWP_CKuayijH2lWfw/CZLaZpSYJr-V_9EP4e7UoQk","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/RIBhj1aFJFPO-ORc-YUjlc9_pzc3lr81JoqqNxLRRGwgOG4NyeI36DyZARxZQItQSfnnJDs1P3Y=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxSJP2WWP_CKuayijH2lWfw/CZLaZpSYJr-V_9EP4e7UoQk","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/RIBhj1aFJFPO-ORc-YUjlc9_pzc3lr81JoqqNxLRRGwgOG4NyeI36DyZARxZQItQSfnnJDs1P3Y=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCxSJP2WWP_CKuayijH2lWfw/CZLaZueXJr-V_9EP4e7UoQk","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/B-8hmQDgweIQyZmIbE8EUSy0ldYJuXAfaSZOseyUii8Pyqc2hcYlKregAv-eGLvQyq4ASdcIBA=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

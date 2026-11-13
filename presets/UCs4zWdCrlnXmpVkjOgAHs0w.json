@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ミディ / 作曲家Vtuber",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCs4zWdCrlnXmpVkjOgAHs0w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCs4zWdCrlnXmpVkjOgAHs0w/Ji5jZ7HEGpeI_9EP2diNwAM","alt":"ohamidy","sharedTooltipText":":_ohamidy:","src":"https://yt3.ggpht.com/EtbrzqWE5TcYbwed6G8Ssoc3GpHXS8-hLtKq22GP2aT2nIp-QvvD13BQQyDbGD58s-TlqwPXPA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCs4zWdCrlnXmpVkjOgAHs0w/Ji5jZ9LEGpeI_9EP2diNwAM","alt":"oyasumidy","sharedTooltipText":":_oyasumidy:","src":"https://yt3.ggpht.com/AI7jxBMmiZG0BIdvNJrDS02jPcSnoju4pd8ZwimJuN2VEKIr__LKYxcIcFqc8JgMXuvd6Uf0Ag=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかれさまでしたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCs4zWdCrlnXmpVkjOgAHs0w/Sy9jZ_3kKaC8_9EPz7C7yA0","alt":"midy2","sharedTooltipText":":_midy2:","src":"https://yt3.ggpht.com/E-uIaIqsGap0s4pLOAPPLyUUrkI7B68mo-tyayfBjXdgKveCBQwZgD5kRASBnNIf-_6eF_Bedw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCs4zWdCrlnXmpVkjOgAHs0w/Sy9jZ_3kKaC8_9EPz7C7yA0","alt":"midy2","sharedTooltipText":":_midy2:","src":"https://yt3.ggpht.com/E-uIaIqsGap0s4pLOAPPLyUUrkI7B68mo-tyayfBjXdgKveCBQwZgD5kRASBnNIf-_6eF_Bedw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCs4zWdCrlnXmpVkjOgAHs0w/Sy9jZ_3kKaC8_9EPz7C7yA0","alt":"midy2","sharedTooltipText":":_midy2:","src":"https://yt3.ggpht.com/E-uIaIqsGap0s4pLOAPPLyUUrkI7B68mo-tyayfBjXdgKveCBQwZgD5kRASBnNIf-_6eF_Bedw=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

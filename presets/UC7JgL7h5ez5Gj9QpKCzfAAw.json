@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "トリリオンステージ【公式チャンネル】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC7JgL7h5ez5Gj9QpKCzfAAw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつステー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつすてー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あーあ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" }
+  ]
+}

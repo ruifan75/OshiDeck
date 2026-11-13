@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "月皇ちな / Tsukigami China",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCQ9ojibvAX4UXCMeDzuc68g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQ9ojibvAX4UXCMeDzuc68g/iNbEZuTaDPSn_9EP9vibAQ","alt":"chi7Heart","sharedTooltipText":":_chi7Heart:","src":"https://yt3.ggpht.com/3DOTX7pWJEhoa8tEvtXgkgTA6BarCagJhWLeDRSdyWwC8MadAKuVx0iR1FgRKcSwiQjc3lej=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQ9ojibvAX4UXCMeDzuc68g/iNbEZuTaDPSn_9EP9vibAQ","alt":"chi7Heart","sharedTooltipText":":_chi7Heart:","src":"https://yt3.ggpht.com/3DOTX7pWJEhoa8tEvtXgkgTA6BarCagJhWLeDRSdyWwC8MadAKuVx0iR1FgRKcSwiQjc3lej=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQ9ojibvAX4UXCMeDzuc68g/iNbEZuTaDPSn_9EP9vibAQ","alt":"chi7Heart","sharedTooltipText":":_chi7Heart:","src":"https://yt3.ggpht.com/3DOTX7pWJEhoa8tEvtXgkgTA6BarCagJhWLeDRSdyWwC8MadAKuVx0iR1FgRKcSwiQjc3lej=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちな〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQ9ojibvAX4UXCMeDzuc68g/C5QcaaSIKe-Vs8IPpI-a2AI","alt":"chi7Taiki","sharedTooltipText":":_chi7Taiki:","src":"https://yt3.ggpht.com/EnlPji3goPCpTuSfaeM56AAB0Xe85yNkw4eodr1iKx2gxgzInIBeSJm84TmbVuZnNTRLFU1jVA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQ9ojibvAX4UXCMeDzuc68g/C5QcaaSIKe-Vs8IPpI-a2AI","alt":"chi7Taiki","sharedTooltipText":":_chi7Taiki:","src":"https://yt3.ggpht.com/EnlPji3goPCpTuSfaeM56AAB0Xe85yNkw4eodr1iKx2gxgzInIBeSJm84TmbVuZnNTRLFU1jVA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQ9ojibvAX4UXCMeDzuc68g/C5QcaaSIKe-Vs8IPpI-a2AI","alt":"chi7Taiki","sharedTooltipText":":_chi7Taiki:","src":"https://yt3.ggpht.com/EnlPji3goPCpTuSfaeM56AAB0Xe85yNkw4eodr1iKx2gxgzInIBeSJm84TmbVuZnNTRLFU1jVA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQ9ojibvAX4UXCMeDzuc68g/iNbEZpTZDPSn_9EP9vibAQ","alt":"chi7Www","sharedTooltipText":":_chi7Www:","src":"https://yt3.ggpht.com/K89fVtKvvAypX6S1p9R-4fLABY0VWtS97AaefXWE6Sgx-SFja6cZD20A8DHZtDPXvi_YKn5-yA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQ9ojibvAX4UXCMeDzuc68g/iNbEZpTZDPSn_9EP9vibAQ","alt":"chi7Www","sharedTooltipText":":_chi7Www:","src":"https://yt3.ggpht.com/K89fVtKvvAypX6S1p9R-4fLABY0VWtS97AaefXWE6Sgx-SFja6cZD20A8DHZtDPXvi_YKn5-yA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちな～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" }
+  ]
+}

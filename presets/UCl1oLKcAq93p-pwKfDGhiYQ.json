@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "えま★おうがすと / Emma★August【にじさんじ】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCl1oLKcAq93p-pwKfDGhiYQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCl1oLKcAq93p-pwKfDGhiYQ/s38Mae7nJc6Us8IPuvjA2Q0","alt":"草です","sharedTooltipText":":_草です:","src":"https://yt3.ggpht.com/B6-XpNpzCh8jPMcTXIxTBB3PgksRPcbWRtmDS2yx0I5ERnlXCk5s2ho9-JG96XEAxB_EGKbEIg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCl1oLKcAq93p-pwKfDGhiYQ/J24MacmUAs6Us8IP9YidqAw","alt":"新こーん","sharedTooltipText":":_新こーん:","src":"https://yt3.ggpht.com/pndyx0a1n5x79QVAJkkgVc4Kg5q8dHMa_jIzFeUkg4dQiUTrI5oTQp29d7N0N7YELy7OGvil=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCl1oLKcAq93p-pwKfDGhiYQ/u2QMaeOLKo2A7OsP58O0gQg","alt":"新ばち","sharedTooltipText":":_新ばち:","src":"https://yt3.ggpht.com/iZcwVxGJX5JzGS7nC16qzQyioGC4ltyOTY4JhzQR9jJk5G25PmXiYxjB0gkxd6alzIDLJKBGBTo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCl1oLKcAq93p-pwKfDGhiYQ/J24MacmUAs6Us8IP9YidqAw","alt":"新こーん","sharedTooltipText":":_新こーん:","src":"https://yt3.ggpht.com/pndyx0a1n5x79QVAJkkgVc4Kg5q8dHMa_jIzFeUkg4dQiUTrI5oTQp29d7N0N7YELy7OGvil=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCl1oLKcAq93p-pwKfDGhiYQ/8F8MaZTrOM6Us8IP9YidqAw","alt":"新しい星","sharedTooltipText":":_新しい星:","src":"https://yt3.ggpht.com/MEOcARP7_2zmCkQR9Q8fNzzOfecSR1xLvHlQ1GqCy169fu20uWN_vDiplIXLmkYMX7ZIEBUJ6bs=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

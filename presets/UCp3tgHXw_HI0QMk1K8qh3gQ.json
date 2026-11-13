@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "Choco subCh. 癒月ちょこ",
-  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
   "channel": "UCp3tgHXw_HI0QMk1K8qh3gQ",
   "cards": [
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"ちょこん"},{"type":"text","value":"🍫"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"待機"},{"type":"text","value":"🍫"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"lol"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"おつかれいと"},{"type":"text","value":"🍫"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"それ"}], "scope": "channel" }
   ]
 }

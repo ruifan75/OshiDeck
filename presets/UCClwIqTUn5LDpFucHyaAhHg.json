@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "イ・ロハ / LeeRoha【にじさんじ】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCClwIqTUn5LDpFucHyaAhHg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCClwIqTUn5LDpFucHyaAhHg/1LZdYrevIYr08gTBg5GACg","alt":"あいさつ","sharedTooltipText":":_あいさつ:","src":"https://yt3.ggpht.com/k8p3j-8A8FEEvdvUtWUCZbhKmOlSUc-ZxDSxUgrHEQmjpAKNfge6XuysHQG3z51X5JBa4d8mcw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCClwIqTUn5LDpFucHyaAhHg/1LZdYrevIYr08gTBg5GACg","alt":"あいさつ","sharedTooltipText":":_あいさつ:","src":"https://yt3.ggpht.com/k8p3j-8A8FEEvdvUtWUCZbhKmOlSUc-ZxDSxUgrHEQmjpAKNfge6XuysHQG3z51X5JBa4d8mcw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCClwIqTUn5LDpFucHyaAhHg/1LZdYrevIYr08gTBg5GACg","alt":"あいさつ","sharedTooltipText":":_あいさつ:","src":"https://yt3.ggpht.com/k8p3j-8A8FEEvdvUtWUCZbhKmOlSUc-ZxDSxUgrHEQmjpAKNfge6XuysHQG3z51X5JBa4d8mcw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍒"},{"type":"text","value":"🍒"},{"type":"text","value":"🍒"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCClwIqTUn5LDpFucHyaAhHg/O5nBZ9DIN6a9_9EPv7_kgA0","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/gSeSMAMByKVNhQRkLV3V1mDZ5BuyqRGCPSm9aFsHroo2c5VFjGAP4Bmqt8vvCYzwvdlb0EgU7A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おしい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"がんばれー！"}], "scope": "channel" }
+  ]
+}

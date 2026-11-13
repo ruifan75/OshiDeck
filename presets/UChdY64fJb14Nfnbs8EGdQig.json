@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "叢雲カゲツ / Murakumo Kagetsu【にじさんじ】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UChdY64fJb14Nfnbs8EGdQig",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChdY64fJb14Nfnbs8EGdQig/d2ihZLe7Oq2T_9EP7bO08As","alt":"自こん","sharedTooltipText":":_自こん:","src":"https://yt3.ggpht.com/mJ754_x4k4aBEwDiHaRmMGBhcPrKgWezpRvn8yAj90oYIvUB5OPMHCpTfp1b1cE75Iz-qqhHwg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChdY64fJb14Nfnbs8EGdQig/d2ihZNa7Oq2T_9EP7bO08As","alt":"わたくも","sharedTooltipText":":_わたくも:","src":"https://yt3.ggpht.com/W7DmupLky47X61c3TRtAL4lDrvg1CMXLOjruu1bGhoV74zRApqeTNF5ox67eq_w9bO3nB1R1=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChdY64fJb14Nfnbs8EGdQig/d2ihZIS6Oq2T_9EP7bO08As","alt":"玖ナイス","sharedTooltipText":":_玖ナイス:","src":"https://yt3.ggpht.com/cFUxfzSvFdDmoT5noSbxp80rUT_LW-bEtFCvEEIGx9IAoVvZQCIdSgzsjVvIvRTEyI366zSTHg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChdY64fJb14Nfnbs8EGdQig/d2ihZIS6Oq2T_9EP7bO08As","alt":"玖ナイス","sharedTooltipText":":_玖ナイス:","src":"https://yt3.ggpht.com/cFUxfzSvFdDmoT5noSbxp80rUT_LW-bEtFCvEEIGx9IAoVvZQCIdSgzsjVvIvRTEyI366zSTHg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChdY64fJb14Nfnbs8EGdQig/ehKFacn4AYP7gQPd_8roCg","alt":"あっつ","sharedTooltipText":":_あっつ:","src":"https://yt3.ggpht.com/ih-X9vvQNhdIbAm8wqwaT5QaPMWenis0O1hSpTbnRhL4ubbwtsA0wVkxStdZo_XJdjF3SgHuMA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChdY64fJb14Nfnbs8EGdQig/ehKFacn4AYP7gQPd_8roCg","alt":"あっつ","sharedTooltipText":":_あっつ:","src":"https://yt3.ggpht.com/ih-X9vvQNhdIbAm8wqwaT5QaPMWenis0O1hSpTbnRhL4ubbwtsA0wVkxStdZo_XJdjF3SgHuMA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"がんばれー！"}], "scope": "channel" }
+  ]
+}

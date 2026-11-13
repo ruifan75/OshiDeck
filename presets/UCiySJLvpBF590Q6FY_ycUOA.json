@@ -1,0 +1,10 @@
+{
+  "format": 2,
+  "name": "うきょちゃんねる / うきょち",
+  "note": "歌枠2配信・通常0配信のチャットから2枚",
+  "channel": "UCiySJLvpBF590Q6FY_ycUOA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"わきょち"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888"}], "scope": "channel" }
+  ]
+}

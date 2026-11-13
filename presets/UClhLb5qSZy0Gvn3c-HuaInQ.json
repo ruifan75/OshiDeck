@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "斜落せつな / Sharaku Setsuna",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UClhLb5qSZy0Gvn3c-HuaInQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぱーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UClhLb5qSZy0Gvn3c-HuaInQ/sGntZIukIKSQ_9EP8oKmkAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/bBwMfZ-EogcVAlIgHN_UgcxRA1Oj_WrCJ7PqWHpr2qnkPxrKOtIm9Y1krvHoL-9UKEHYox2fqIM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UClhLb5qSZy0Gvn3c-HuaInQ/sGntZIukIKSQ_9EP8oKmkAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/bBwMfZ-EogcVAlIgHN_UgcxRA1Oj_WrCJ7PqWHpr2qnkPxrKOtIm9Y1krvHoL-9UKEHYox2fqIM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UClhLb5qSZy0Gvn3c-HuaInQ/sGntZIukIKSQ_9EP8oKmkAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/bBwMfZ-EogcVAlIgHN_UgcxRA1Oj_WrCJ7PqWHpr2qnkPxrKOtIm9Y1krvHoL-9UKEHYox2fqIM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UClhLb5qSZy0Gvn3c-HuaInQ/sGntZIukIKSQ_9EP8oKmkAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/bBwMfZ-EogcVAlIgHN_UgcxRA1Oj_WrCJ7PqWHpr2qnkPxrKOtIm9Y1krvHoL-9UKEHYox2fqIM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UClhLb5qSZy0Gvn3c-HuaInQ/sGntZIukIKSQ_9EP8oKmkAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/bBwMfZ-EogcVAlIgHN_UgcxRA1Oj_WrCJ7PqWHpr2qnkPxrKOtIm9Y1krvHoL-9UKEHYox2fqIM=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはにょーん"},{"type":"text","value":"🖱"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UClhLb5qSZy0Gvn3c-HuaInQ/LHXsZKbgBPiG_9EPzLKsyAg","alt":"せつ文字","sharedTooltipText":":_せつ文字:","src":"https://yt3.ggpht.com/dbi8LmiqaZrG-O_DzGcu964OY1TbaOFZ9cNQo1QVh7U854Kx1yv2hdr-hDflAOUZN0aKIviaGg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UClhLb5qSZy0Gvn3c-HuaInQ/LHXsZMXgBPiG_9EPzLKsyAg","alt":"ーな文字","sharedTooltipText":":_ーな文字:","src":"https://yt3.ggpht.com/UoGNnZbSLFpPWz-ds23Re2qMsJD8_qVbsK3UG92Ji6tuI39SybZM5qjdiKvPjAqnuYX7RYp3SHo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UClhLb5qSZy0Gvn3c-HuaInQ/LHXsZOTgBPiG_9EPzLKsyAg","alt":"がんばれ","sharedTooltipText":":_がんばれ:","src":"https://yt3.ggpht.com/rESKnJMV2I_krNv7FB8gwvLLRU6XnvtutL9pZWZJ_hvf_2k5McklqUZhtR_P1xfr1yCY-b7w=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

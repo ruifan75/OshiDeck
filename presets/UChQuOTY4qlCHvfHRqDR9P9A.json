@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "묭 Myong",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UChQuOTY4qlCHvfHRqDR9P9A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"묭하"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ㅋㅋㅋㅋㅋㅋ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ㄱㅇㅇ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"네"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"오"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"안녕하세요"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"헉"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"아"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ㅎㅎ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ㅠㅠ"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "format": 2,
+  "name": "NutsuruSama ",
+  "note": "歌枠0配信・通常13配信のチャットから5枚",
+  "channel": "UCJcfB-86rWM0NF2li1CqNNw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"5555555"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/G8AfY6yWGuKuhL0PlbiA2AE","alt":"hand-pink-waving","sharedTooltipText":":hand-pink-waving:","src":"https://yt3.ggpht.com/KOxdr_z3A5h1Gb7kqnxqOCnbZrBmxI2B_tRQ453BhTWUhYAlpg5ZP8IKEBkcvRoY8grY91Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"สวัสดีครับ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ดีครับ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ไม่น้าาา"}], "scope": "channel" }
+  ]
+}

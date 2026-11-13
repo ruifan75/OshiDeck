@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "静馬レイ -Sizma Rei-",
+  "note": "歌枠0配信・通常3配信のチャットから10枚",
+  "channel": "UC6jIRnaSirTNF6D0vZMUbHA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"給水所だ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"美味しそう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"へぇー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"給水所！"}], "scope": "channel" }
+  ]
+}

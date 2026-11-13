@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Obake PAM Ch.",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCZIFph1bYyGxmFkkNNLAKdA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/LsMfY8P6G-yckNAPjoWA8AI","alt":"face-blue-wide-eyes","sharedTooltipText":":face-blue-wide-eyes:","src":"https://yt3.ggpht.com/2Ht4KImoWDlCddiDQVuzSJwpEb59nZJ576ckfaMh57oqz2pUkkgVTXV8osqUOgFHZdUISJM=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/DfgfY9LaNdmMq7IPuI2AaA","alt":"face-purple-wide-eyes","sharedTooltipText":":face-purple-wide-eyes:","src":"https://yt3.ggpht.com/5RDrtjmzRQKuVYE_FKPUHiGh7TNtX5eSNe6XzcSytMsHirXYKunxpyAsVacTFMg0jmUGhQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCZIFph1bYyGxmFkkNNLAKdA/_uZQZfKJLMjZgwPRkZjwCA","alt":"pamPamPATs","sharedTooltipText":":_pamPamPATs:","src":"https://yt3.ggpht.com/MSZfz6O-oBDLyvqWCNAQguk8VQSS5UN609eez7OlLgOQ1JN_hLUsycff9iChIo836vT1p41HFA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/ygF1XpGUMMjk8gSDrI2wCx","alt":"face-orange-biting-nails","sharedTooltipText":":face-orange-biting-nails:","src":"https://yt3.ggpht.com/HmsXEgqUogkQOnL5LP_FdPit9Z909RJxby-uYcPxBLNhaPyqPTcGwvGaGPk2hzB_cC0hs_pV=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oof"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/b8IfY7zOK9iVkNAP_I2A-AY","alt":"face-purple-crying","sharedTooltipText":":face-purple-crying:","src":"https://yt3.ggpht.com/g6_km98AfdHbN43gvEuNdZ2I07MmzVpArLwEvNBwwPqpZYzszqhRzU_DXALl11TchX5_xFE=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

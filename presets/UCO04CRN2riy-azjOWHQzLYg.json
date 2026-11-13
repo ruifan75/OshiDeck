@@ -1,0 +1,22 @@
+{
+  "format": 2,
+  "name": "歌凪れい / Utanagi Rei",
+  "note": "歌枠2配信・通常5配信のチャットから14枚",
+  "channel": "UCO04CRN2riy-azjOWHQzLYg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🪼"},{"type":"text","value":"🎊"},{"type":"text","value":"🎶"},{"type":"text","value":"🪼"},{"type":"text","value":"🎊"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんなぎ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつなぎ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なんと！？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんなぎ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"もっと！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

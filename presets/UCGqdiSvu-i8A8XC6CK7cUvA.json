@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "魔王チロルニア、大山チロル",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCGqdiSvu-i8A8XC6CK7cUvA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちろー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCGqdiSvu-i8A8XC6CK7cUvA/THFhaoGRH56i7OsP54THgAo","alt":"こんちろ","sharedTooltipText":":_こんちろ:","src":"https://yt3.ggpht.com/wHqUb7cEhW4mHhYeqsWPkCAyJQAqD53u-Kk5aRvFfG0GTljzzxLOAN-qaOCbst-npLDc_UjY6Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCGqdiSvu-i8A8XC6CK7cUvA/FSzwYMnXO6rm8gSG5Ln4Ag","alt":"お疲れ様","sharedTooltipText":":_お疲れ様:","src":"https://yt3.ggpht.com/zyHDqJVfgqQcVlCbmaG8fL_kNRBxxhD7iBJyuQhgLLxftB72-2V-aN36M3rnvgH4AJxQ4da8Y-w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGqdiSvu-i8A8XC6CK7cUvA/FSzwYMnXO6rm8gSG5Ln4Ag","alt":"お疲れ様","sharedTooltipText":":_お疲れ様:","src":"https://yt3.ggpht.com/zyHDqJVfgqQcVlCbmaG8fL_kNRBxxhD7iBJyuQhgLLxftB72-2V-aN36M3rnvgH4AJxQ4da8Y-w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGqdiSvu-i8A8XC6CK7cUvA/FSzwYMnXO6rm8gSG5Ln4Ag","alt":"お疲れ様","sharedTooltipText":":_お疲れ様:","src":"https://yt3.ggpht.com/zyHDqJVfgqQcVlCbmaG8fL_kNRBxxhD7iBJyuQhgLLxftB72-2V-aN36M3rnvgH4AJxQ4da8Y-w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" }
+  ]
+}

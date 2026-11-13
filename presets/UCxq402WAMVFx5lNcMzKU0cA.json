@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Riki Poppet Ch. ChromaSHIFT",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCxq402WAMVFx5lNcMzKU0cA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🔥"},{"type":"text","value":"🔥"},{"type":"text","value":"🔥"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💜"},{"type":"text","value":"💜"},{"type":"text","value":"💜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCxq402WAMVFx5lNcMzKU0cA/TLAcZ9D7EqeB_9EP_L6ziQE","alt":"RikiDoom","sharedTooltipText":":_RikiDoom:","src":"https://yt3.ggpht.com/OK1xIOgmLDQAy1VviKrhN_4aa8469p3EplpD5XnndEvviHqlM7b3f2Q6Oph2scOAP0gXzlw4WP8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxq402WAMVFx5lNcMzKU0cA/TLAcZ9D7EqeB_9EP_L6ziQE","alt":"RikiDoom","sharedTooltipText":":_RikiDoom:","src":"https://yt3.ggpht.com/OK1xIOgmLDQAy1VviKrhN_4aa8469p3EplpD5XnndEvviHqlM7b3f2Q6Oph2scOAP0gXzlw4WP8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxq402WAMVFx5lNcMzKU0cA/TLAcZ9D7EqeB_9EP_L6ziQE","alt":"RikiDoom","sharedTooltipText":":_RikiDoom:","src":"https://yt3.ggpht.com/OK1xIOgmLDQAy1VviKrhN_4aa8469p3EplpD5XnndEvviHqlM7b3f2Q6Oph2scOAP0gXzlw4WP8=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"A"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Riki!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Yes"}], "scope": "channel" }
+  ]
+}

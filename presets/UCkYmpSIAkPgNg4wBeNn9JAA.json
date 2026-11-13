@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Mosa",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCkYmpSIAkPgNg4wBeNn9JAA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"L mosa"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsumosuu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aloo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😭"},{"type":"text","value":"😭"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"woww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"haloo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsuu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"loh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo mosaaa"}], "scope": "channel" }
+  ]
+}

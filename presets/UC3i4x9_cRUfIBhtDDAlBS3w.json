@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "しほ / shiho",
+  "note": "歌枠2配信・通常3配信のチャットから10枚",
+  "channel": "UC3i4x9_cRUfIBhtDDAlBS3w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💜"},{"type":"text","value":"🎶"},{"type":"text","value":"💜"},{"type":"text","value":"🎶"},{"type":"text","value":"💜"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やったー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" }
+  ]
+}

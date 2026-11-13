@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Miya",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCfKWQaZo28SJR-7ikfzAbEg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🚀"},{"type":"text","value":" "},{"type":"text","value":"⭐"},{"type":"text","value":"🚀"},{"type":"text","value":" "},{"type":"text","value":"⭐"},{"type":"text","value":"🚀"},{"type":"text","value":" "},{"type":"text","value":"⭐"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"EXTENDT"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"⭐"},{"type":"text","value":"🚀"},{"type":"text","value":"⭐"},{"type":"text","value":"🚀"},{"type":"text","value":"⭐"},{"type":"text","value":"🚀"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsuMIYA"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nt"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hahaha"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🤣"}], "scope": "channel" }
+  ]
+}

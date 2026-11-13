@@ -1,18 +1,21 @@
 {
   "format": 2,
   "name": "Marumochi Tsukimi / 丸餅つきみ",
-  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠1配信・通常13配信のチャットから13枚",
   "channel": "UCTEZGNJDqv-isWSPRsEhnRA",
   "cards": [
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"はろもっちー"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"おつきみー"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"待機"},{"type":"text","value":"🍡"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"おつきみー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTEZGNJDqv-isWSPRsEhnRA/xc5pYZ6KI9DRgwOnsoZQ","alt":"kanpai","sharedTooltipText":":_kanpai:","src":"https://yt3.ggpht.com/w5kjB-AworVygB8JVaPZemn8O--35fNNFAcGnb-IoKMexzbuTOGLLnVdJb8X5utfLnx86R03=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ついえら"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はろもっち～"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTEZGNJDqv-isWSPRsEhnRA/xc5pYayLI9DRgwOnsoZQ","alt":"erai","sharedTooltipText":":_erai:","src":"https://yt3.ggpht.com/di7f1r7h4NE6azBQkRVhIUtdW7I2pWnF3DyDj6FR2_gYIxIkfyyXV0FjsFZGLvbmJ2isyE34HA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あーーーー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつきみ～"}], "scope": "channel" }
   ]
 }

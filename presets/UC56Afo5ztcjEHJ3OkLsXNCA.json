@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Momo Ch. 猫街もも",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC56Afo5ztcjEHJ3OkLsXNCA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ただいまー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ぱわー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いってきます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎵"},{"type":"text","value":"🎶"},{"type":"text","value":"🎵"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC56Afo5ztcjEHJ3OkLsXNCA/IYSLaYG7EsCi5t0Pze6GoAY","alt":"cry","sharedTooltipText":":_cry:","src":"https://yt3.ggpht.com/vDsae10wRc2DuinKcYBIuVtzcbwxYVFnsEtYQn24jMdQhqhRZShCoyTAybKWU2gljXKtwASfSQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC56Afo5ztcjEHJ3OkLsXNCA/IYSLaYG7EsCi5t0Pze6GoAY","alt":"cry","sharedTooltipText":":_cry:","src":"https://yt3.ggpht.com/vDsae10wRc2DuinKcYBIuVtzcbwxYVFnsEtYQn24jMdQhqhRZShCoyTAybKWU2gljXKtwASfSQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC56Afo5ztcjEHJ3OkLsXNCA/IYSLaYG7EsCi5t0Pze6GoAY","alt":"cry","sharedTooltipText":":_cry:","src":"https://yt3.ggpht.com/vDsae10wRc2DuinKcYBIuVtzcbwxYVFnsEtYQn24jMdQhqhRZShCoyTAybKWU2gljXKtwASfSQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "織田信姫",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCGcD5iUDG8xiywZeeDxye-A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おついくさー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはいくさー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"は？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" }
+  ]
+}

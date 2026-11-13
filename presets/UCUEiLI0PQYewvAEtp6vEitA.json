@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "BY THE BEAT",
+  "note": "歌枠0配信・通常4配信のチャットから10枚",
+  "channel": "UCUEiLI0PQYewvAEtp6vEitA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ohhh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"❤"},{"type":"text","value":"💛"},{"type":"text","value":"💚"},{"type":"text","value":"💙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"woah"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💚"},{"type":"text","value":"❤"},{"type":"text","value":"💙"},{"type":"text","value":"💛"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"YESSS"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"awww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsuuu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yayyy"}], "scope": "channel" }
+  ]
+}

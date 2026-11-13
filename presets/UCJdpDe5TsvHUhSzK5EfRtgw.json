@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Auri Lunami Ch. ☄️🐉",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCJdpDe5TsvHUhSzK5EfRtgw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCJdpDe5TsvHUhSzK5EfRtgw/kOZmaMK6J9-96dsPmuSTgQs","alt":"lightstick","sharedTooltipText":":_lightstick:","src":"https://yt3.ggpht.com/XVlWjfG6q_pQgU9sg_83axL7Slshan0HEwft1PBIRsinqhcptULpY2KB3yX3vbahv8zTIuYw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Auri"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"No"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Bless you"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Auri"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yeah"}], "scope": "channel" }
+  ]
+}

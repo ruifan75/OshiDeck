@@ -1,0 +1,17 @@
+{
+  "format": 2,
+  "name": "Foxplushy",
+  "note": "歌枠0配信・通常13配信のチャットから9枚",
+  "channel": "UC37t08C9wUIUYyaAcWih4EA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"Hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/egJ1XufTKYfegwOo57ewAg","alt":"shelterin","sharedTooltipText":":shelterin:","src":"https://yt3.ggpht.com/gjC5x98J4BoVSEPfFJaoLtc4tSBGSEdIlfL2FV4iJG9uGNykDP9oJC_QxAuBTJy6dakPxVeC=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/vQF1XpyaG_XG8gTs77bACQ","alt":"chillwcat","sharedTooltipText":":chillwcat:","src":"https://yt3.ggpht.com/y03dFcPc1B7CO20zgQYzhcRPka5Bhs6iSg57MaxJdhaLidFvvXBLf_i4_SHG7zJ_2VpBMNs=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello there"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi foxy"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hey"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hai"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi fox"}], "scope": "channel" }
+  ]
+}

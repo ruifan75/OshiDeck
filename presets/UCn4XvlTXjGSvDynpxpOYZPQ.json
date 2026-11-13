@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "暁月クララ / Akatsuki Clara【パレプロ】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCn4XvlTXjGSvDynpxpOYZPQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCn4XvlTXjGSvDynpxpOYZPQ/RWbbX4qvAs_J-APK1YKgCA","alt":"ぴょこくらら","sharedTooltipText":":_ぴょこくらら:","src":"https://yt3.ggpht.com/LidvXUfojwul8t_sDHw4UJOKM-pY0EKj7BXRNQ9Iw-lh52b-9pfecJ7SzAMB19Xi67y69cPmxg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつくらら～"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCn4XvlTXjGSvDynpxpOYZPQ/RWbbX-OtAs_J-APK1YKgCA","alt":"たいやき","sharedTooltipText":":_たいやき:","src":"https://yt3.ggpht.com/v8UUMFFu7FGVRCg25tQkGTU4Ym4GJPY3kft4Tm-KDTLgro7qQeR-u98XMHs9nFnXDA9wd_RP=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつくらら〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いえーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ぴょこくららー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCn4XvlTXjGSvDynpxpOYZPQ/lJizYNiiGMGT8wShiZOQCA","alt":"くさだよ","sharedTooltipText":":_くさだよ:","src":"https://yt3.ggpht.com/xImPPRL9-ZTeiTaiCFbbPVwwgJPSByNbGVKGtVtmucP00Ye2eexvhY4pQrPnnmF2De2YYorfTA=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

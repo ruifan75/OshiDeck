@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "緋赤エリオhiseki_erio channel",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCQ7KYc1-IMQ8_Uz7XTE5DWw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こん幻士"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつ幻士！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ああああああああああああああああああ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"晚上好"}], "scope": "channel" }
+  ]
+}

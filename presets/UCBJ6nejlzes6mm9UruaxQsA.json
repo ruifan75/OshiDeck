@@ -1,0 +1,24 @@
+{
+  "format": 2,
+  "name": "涼海ネモ / Nemo Channel【ななしいんく】",
+  "note": "歌枠1配信・通常8配信のチャットから16枚",
+  "channel": "UCBJ6nejlzes6mm9UruaxQsA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌚"},{"type":"text","value":"💙"},{"type":"text","value":"💿"},{"type":"text","value":"💙"},{"type":"text","value":"🌚"},{"type":"text","value":"💙"},{"type":"text","value":"💿"},{"type":"text","value":"💙"},{"type":"text","value":"🌚"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"もっと！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おすずみ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おすずみー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやネモ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやネモー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なるほど"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" }
+  ]
+}

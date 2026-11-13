@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Wisp X",
+  "note": "歌枠0配信・通常7配信のチャットから10枚",
+  "channel": "UCB62WcN2LgIVVFi7jNOLVAQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oooh"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCB62WcN2LgIVVFi7jNOLVAQ/eUhqZJTQCcKA_9EPg82hcA","alt":"wispxLove","sharedTooltipText":":_wispxLove:","src":"https://yt3.ggpht.com/Fk06CZiV1cEaA_lJ0u1XdeJiq9a09NkT6QtRj9x8p8pwLICTrvVPqkMwxeyxaF_ruBG7dp46BQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCB62WcN2LgIVVFi7jNOLVAQ/eUhqZJTQCcKA_9EPg82hcA","alt":"wispxLove","sharedTooltipText":":_wispxLove:","src":"https://yt3.ggpht.com/Fk06CZiV1cEaA_lJ0u1XdeJiq9a09NkT6QtRj9x8p8pwLICTrvVPqkMwxeyxaF_ruBG7dp46BQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCB62WcN2LgIVVFi7jNOLVAQ/eUhqZJTQCcKA_9EPg82hcA","alt":"wispxLove","sharedTooltipText":":_wispxLove:","src":"https://yt3.ggpht.com/Fk06CZiV1cEaA_lJ0u1XdeJiq9a09NkT6QtRj9x8p8pwLICTrvVPqkMwxeyxaF_ruBG7dp46BQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yoooo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🔥"},{"type":"text","value":"🔥"},{"type":"text","value":"🔥"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hype!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aa"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Nice"}], "scope": "channel" }
+  ]
+}

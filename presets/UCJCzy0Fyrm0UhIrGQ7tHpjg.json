@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Enomiya Milk Ch. 愛宮みるく",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCJCzy0Fyrm0UhIrGQ7tHpjg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"きゅっぴりーん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぴりーん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"みるきーうぇいと"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きゅ…きゅ…"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほうほう"}], "scope": "channel" }
+  ]
+}

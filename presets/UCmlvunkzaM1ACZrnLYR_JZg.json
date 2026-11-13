@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Aries Shepard",
+  "note": "歌枠0配信・通常8配信のチャットから10枚",
+  "channel": "UCmlvunkzaM1ACZrnLYR_JZg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":":O"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oooh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oof"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"F"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "sakura isumiCh.朔桜 衣澄",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCIClNlvEUvEqLe_rs_i8h_w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💘"},{"type":"text","value":"🦇"},{"type":"text","value":"🎶"},{"type":"text","value":"💘"},{"type":"text","value":"🦇"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"しゃるむちゅー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIClNlvEUvEqLe_rs_i8h_w/9TdIZqSDE_3C_9EPmK-HyAU","alt":"ぺんら1","sharedTooltipText":":_ぺんら1:","src":"https://yt3.ggpht.com/Ojpo1vTAlUGyZ21GT490Dy_-KF0Ww2RDs6I8BYKAoSA4_odVOq7giyDSLbfzeYrBDXB2RDv8_w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIClNlvEUvEqLe_rs_i8h_w/wtJEZsrwH4PA_9EPp9206A0","alt":"きらきら","sharedTooltipText":":_きらきら:","src":"https://yt3.ggpht.com/yiHyV9t6XSL5EbNe3RvwgRR4Hm4nzT7qUXaIjeRTN-TzEXGwfdvdy4vl1H3cCqHYSiVFRHKSnw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIClNlvEUvEqLe_rs_i8h_w/9TdIZu-DE_3C_9EPmK-HyAU","alt":"ぺんら2","sharedTooltipText":":_ぺんら2:","src":"https://yt3.ggpht.com/55o0RuNXakkG-sBwpze4EIgYVSRwfCaJbBsKtkqa8TzV33XToMlIrnou_gYnulbi72ZKfdGG=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIClNlvEUvEqLe_rs_i8h_w/9TdIZqSDE_3C_9EPmK-HyAU","alt":"ぺんら1","sharedTooltipText":":_ぺんら1:","src":"https://yt3.ggpht.com/Ojpo1vTAlUGyZ21GT490Dy_-KF0Ww2RDs6I8BYKAoSA4_odVOq7giyDSLbfzeYrBDXB2RDv8_w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIClNlvEUvEqLe_rs_i8h_w/88tRZs7XCe6N_9EP4am9wAs","alt":"えへへ","sharedTooltipText":":_えへへ:","src":"https://yt3.ggpht.com/SR7aURaUlXpAeNW9KABNsqTW-hAssGPOwZKZ_dSIrRjEmHsqxjGvy8XRI3WVhohWvrxvwtfQZA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIClNlvEUvEqLe_rs_i8h_w/9TdIZu-DE_3C_9EPmK-HyAU","alt":"ぺんら2","sharedTooltipText":":_ぺんら2:","src":"https://yt3.ggpht.com/55o0RuNXakkG-sBwpze4EIgYVSRwfCaJbBsKtkqa8TzV33XToMlIrnou_gYnulbi72ZKfdGG=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あらぽしぇん～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかれさま"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Konbanwa Sakura chan"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あらぽ"}], "scope": "channel" }
+  ]
+}

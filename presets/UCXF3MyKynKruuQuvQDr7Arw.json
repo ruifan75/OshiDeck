@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Limina Alteri Ch. Glitch Stars",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCXF3MyKynKruuQuvQDr7Arw",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXF3MyKynKruuQuvQDr7Arw/UNtQaILmKu-X_9EP5-vWiAM","alt":"otaku","sharedTooltipText":":_otaku:","src":"https://yt3.ggpht.com/W6kJoeRM5Ph8HPOp8Y0JPjlELHHv2-s3RN-YW3f2YT5o3QBJTCR2KmVfc9WYBHQEZuVKo5T6LA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXF3MyKynKruuQuvQDr7Arw/UNtQaILmKu-X_9EP5-vWiAM","alt":"otaku","sharedTooltipText":":_otaku:","src":"https://yt3.ggpht.com/W6kJoeRM5Ph8HPOp8Y0JPjlELHHv2-s3RN-YW3f2YT5o3QBJTCR2KmVfc9WYBHQEZuVKo5T6LA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXF3MyKynKruuQuvQDr7Arw/UNtQaILmKu-X_9EP5-vWiAM","alt":"otaku","sharedTooltipText":":_otaku:","src":"https://yt3.ggpht.com/W6kJoeRM5Ph8HPOp8Y0JPjlELHHv2-s3RN-YW3f2YT5o3QBJTCR2KmVfc9WYBHQEZuVKo5T6LA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXF3MyKynKruuQuvQDr7Arw/ahGAaI2yM9iU_9EPjMT0uAs","alt":"wheeze","sharedTooltipText":":_wheeze:","src":"https://yt3.ggpht.com/SF_IJkHTOXlx3gHiCpVgResHrplxqHDIcPSHcA9-mQPXb4SDM0zh6BTHuOkmBtH2mFTgYzgdPZ8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXF3MyKynKruuQuvQDr7Arw/ahGAaI2yM9iU_9EPjMT0uAs","alt":"wheeze","sharedTooltipText":":_wheeze:","src":"https://yt3.ggpht.com/SF_IJkHTOXlx3gHiCpVgResHrplxqHDIcPSHcA9-mQPXb4SDM0zh6BTHuOkmBtH2mFTgYzgdPZ8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXF3MyKynKruuQuvQDr7Arw/ahGAaI2yM9iU_9EPjMT0uAs","alt":"wheeze","sharedTooltipText":":_wheeze:","src":"https://yt3.ggpht.com/SF_IJkHTOXlx3gHiCpVgResHrplxqHDIcPSHcA9-mQPXb4SDM0zh6BTHuOkmBtH2mFTgYzgdPZ8=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsumina"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"himina"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"GG"}], "scope": "channel" }
+  ]
+}

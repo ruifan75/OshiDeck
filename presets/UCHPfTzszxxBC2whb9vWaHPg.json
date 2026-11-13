@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Ixy Ch. いくしー",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCHPfTzszxxBC2whb9vWaHPg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様です"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかれさまでした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"w"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは！お疲れ様です！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"すごい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いくしー先生こんにちは！作業お疲れ様です"}], "scope": "channel" }
+  ]
+}

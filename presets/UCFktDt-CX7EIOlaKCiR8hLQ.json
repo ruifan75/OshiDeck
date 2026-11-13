@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Goro Gaomi Ch. 白虎VTuber",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCFktDt-CX7EIOlaKCiR8hLQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"🤘"},{"type":"text","value":"🤘"},{"type":"text","value":"🤘"},{"type":"text","value":"🤘"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFktDt-CX7EIOlaKCiR8hLQ/Z-N0Z6bwEpeI_9EPsdHUoQU","alt":"gaoHeart","sharedTooltipText":":_gaoHeart:","src":"https://yt3.ggpht.com/53n_wxdh3t3Cmv4U20PXWdfk_JFKsyHxRo7EkhquzmyfimovQ4HtxP0XyK0KuucpzaXGp5e7AQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFktDt-CX7EIOlaKCiR8hLQ/Z-N0Z6bwEpeI_9EPsdHUoQU","alt":"gaoHeart","sharedTooltipText":":_gaoHeart:","src":"https://yt3.ggpht.com/53n_wxdh3t3Cmv4U20PXWdfk_JFKsyHxRo7EkhquzmyfimovQ4HtxP0XyK0KuucpzaXGp5e7AQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFktDt-CX7EIOlaKCiR8hLQ/Z-N0Z6bwEpeI_9EPsdHUoQU","alt":"gaoHeart","sharedTooltipText":":_gaoHeart:","src":"https://yt3.ggpht.com/53n_wxdh3t3Cmv4U20PXWdfk_JFKsyHxRo7EkhquzmyfimovQ4HtxP0XyK0KuucpzaXGp5e7AQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi hi"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCFktDt-CX7EIOlaKCiR8hLQ/Z-N0Z97fEpeI_9EPsdHUoQU","alt":"gaoCheer","sharedTooltipText":":_gaoCheer:","src":"https://yt3.ggpht.com/AJLvvaDpCv-4zjsJS1zR5GoVaE3s_02qzU3oQ8Rcxij6iIhSdg-aJkk8YjCTNZJC2-4Ez2bB=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFktDt-CX7EIOlaKCiR8hLQ/Z-N0Z97fEpeI_9EPsdHUoQU","alt":"gaoCheer","sharedTooltipText":":_gaoCheer:","src":"https://yt3.ggpht.com/AJLvvaDpCv-4zjsJS1zR5GoVaE3s_02qzU3oQ8Rcxij6iIhSdg-aJkk8YjCTNZJC2-4Ez2bB=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCFktDt-CX7EIOlaKCiR8hLQ/Z-N0Z97fEpeI_9EPsdHUoQU","alt":"gaoCheer","sharedTooltipText":":_gaoCheer:","src":"https://yt3.ggpht.com/AJLvvaDpCv-4zjsJS1zR5GoVaE3s_02qzU3oQ8Rcxij6iIhSdg-aJkk8YjCTNZJC2-4Ez2bB=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hahahaha"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"MILG"}], "scope": "channel" }
+  ]
+}

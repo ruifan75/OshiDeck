@@ -170,7 +170,7 @@ function lift({ doc = page(), ranking = new Map(), channel = { id: HERE, name: "
     () => seen.toasts.push("shutdown"),
     () => { seen.renders += 1; },
     (id, how) => seen.flashed.push(`${id}:${how}`),
-    { record: () => {} },
+    { record: () => {}, cardId: () => "c1" },
     () => {},
     null,
     () => input,             // the input is there and has not moved
@@ -449,8 +449,8 @@ check("and with no channel there is no pool at all",
       === "おかえり|はのは〜");
   check("an offered card set to this channel wears its colour",
     offered.find((c) => tokens.toPlainText(c.tokens) === "はのは〜")?.bound === true);
-  check("while a universal one does not",
-    offered.find((c) => tokens.toPlainText(c.tokens) === "おかえり")?.bound === false);
+  check("an unowned start-deck card is bound even when its file said global",
+    offered.find((c) => tokens.toPlainText(c.tokens) === "おかえり")?.bound === true);
   check("an offered card carries what it was offered from",
     !!offered.find((c) => tokens.toPlainText(c.tokens) === "おかえり")?.offered);
 
@@ -463,6 +463,15 @@ check("and with no channel there is no pool at all",
   check("so pressing it is not loading a preset", !both?.offered);
   check("and it is in the pool as well", 
     api.buildPool(shelved(HERE), HERE).some((c) => c.id === "ours"));
+
+  for (const reversed of [false, true]) {
+    const local = { id: "local-copy", tokens: fresh.tokens, scope: HERE, by: {} };
+    const universal = { id: "global-copy", tokens: fresh.tokens, scope: "global", by: {} };
+    const shelf = { cards: reversed ? [universal, local] : [local, universal], decks: { [HERE]: [] } };
+    const own = api.buildOffered(shelf, HERE).find((c) => tokens.cardKey(c.tokens) === tokens.cardKey(fresh.tokens));
+    check(`the start-deck preview prefers the universal copy (${reversed})`,
+      own?.id === "global-copy" && own.bound === false && !own.offered);
+  }
 
   // The viewer's own route to the same mistake, and the one they could see:
   // the input cleared, the bar said the card already existed on this channel,

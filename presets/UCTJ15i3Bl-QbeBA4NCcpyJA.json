@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "花雲くゆりOfficial",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCTJ15i3Bl-QbeBA4NCcpyJA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💐"},{"type":"text","value":"🎶"},{"type":"text","value":"💐"},{"type":"text","value":"🎶"},{"type":"text","value":"💐"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"},{"type":"text","value":"💐"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつくゆ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんくゆー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんくゆ～"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Kotori Hikari",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC6wK3Ss43qm5U2i0TtOIPVA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"jajaja"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"XD"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hola"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"si"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hola koto"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nooo"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC6wK3Ss43qm5U2i0TtOIPVA/l3PzZtr1M4Gp_9EP__meKQ","alt":"kotoyatta","sharedTooltipText":":_kotoyatta:","src":"https://yt3.ggpht.com/L798zY4pBxNk2HtsGuNCn0ImR8b24lhnbPrZwDfZGlYOqp39ADc1ZCgDAzm9tDdY8-4FTnncjQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6wK3Ss43qm5U2i0TtOIPVA/l3PzZtr1M4Gp_9EP__meKQ","alt":"kotoyatta","sharedTooltipText":":_kotoyatta:","src":"https://yt3.ggpht.com/L798zY4pBxNk2HtsGuNCn0ImR8b24lhnbPrZwDfZGlYOqp39ADc1ZCgDAzm9tDdY8-4FTnncjQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6wK3Ss43qm5U2i0TtOIPVA/l3PzZtr1M4Gp_9EP__meKQ","alt":"kotoyatta","sharedTooltipText":":_kotoyatta:","src":"https://yt3.ggpht.com/L798zY4pBxNk2HtsGuNCn0ImR8b24lhnbPrZwDfZGlYOqp39ADc1ZCgDAzm9tDdY8-4FTnncjQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6wK3Ss43qm5U2i0TtOIPVA/l3PzZtr1M4Gp_9EP__meKQ","alt":"kotoyatta","sharedTooltipText":":_kotoyatta:","src":"https://yt3.ggpht.com/L798zY4pBxNk2HtsGuNCn0ImR8b24lhnbPrZwDfZGlYOqp39ADc1ZCgDAzm9tDdY8-4FTnncjQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"buenas"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hola Kotori"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

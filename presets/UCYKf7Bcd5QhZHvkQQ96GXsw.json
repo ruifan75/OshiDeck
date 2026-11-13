@@ -1,0 +1,12 @@
+{
+  "format": 2,
+  "name": "かしわねこ / kashi_neko",
+  "note": "歌枠0配信・通常13配信のチャットから4枚",
+  "channel": "UCYKf7Bcd5QhZHvkQQ96GXsw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCYKf7Bcd5QhZHvkQQ96GXsw/XgmWZYr4Da2j_9EPudCH6Aw","alt":"KashiNekoにゃお","sharedTooltipText":":_KashiNekoにゃお:","src":"https://yt3.ggpht.com/EQBnV0he_VTlAuuDlVuSwWOwqF06IGtqcG0IqO7c6ai4je24kbe3xzoXWzFJ4XoOdc4AgkoKaQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCYKf7Bcd5QhZHvkQQ96GXsw/XgmWZYr4Da2j_9EPudCH6Aw","alt":"KashiNekoにゃお","sharedTooltipText":":_KashiNekoにゃお:","src":"https://yt3.ggpht.com/EQBnV0he_VTlAuuDlVuSwWOwqF06IGtqcG0IqO7c6ai4je24kbe3xzoXWzFJ4XoOdc4AgkoKaQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCYKf7Bcd5QhZHvkQQ96GXsw/XgmWZYr4Da2j_9EPudCH6Aw","alt":"KashiNekoにゃお","sharedTooltipText":":_KashiNekoにゃお:","src":"https://yt3.ggpht.com/EQBnV0he_VTlAuuDlVuSwWOwqF06IGtqcG0IqO7c6ai4je24kbe3xzoXWzFJ4XoOdc4AgkoKaQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわー！"}], "scope": "channel" }
+  ]
+}

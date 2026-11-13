@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "鈴鳴すばる🐶⚠️まりなす",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC1CXNJGwnUUVawDeCwwOmFg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわんこー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いえーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1CXNJGwnUUVawDeCwwOmFg/wBGOZ5WbHaC8_9EP9Ynt0Q8","alt":"おすわり","sharedTooltipText":":_おすわり:","src":"https://yt3.ggpht.com/9g6SKCgxpCKgoGAJllQvGJ1UqSm1LdUlaWKmbos9n02y3nhexjpbVhpoK75xUapX86hnpq_EyA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1CXNJGwnUUVawDeCwwOmFg/wBGOZ5WbHaC8_9EP9Ynt0Q8","alt":"おすわり","sharedTooltipText":":_おすわり:","src":"https://yt3.ggpht.com/9g6SKCgxpCKgoGAJllQvGJ1UqSm1LdUlaWKmbos9n02y3nhexjpbVhpoK75xUapX86hnpq_EyA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1CXNJGwnUUVawDeCwwOmFg/wBGOZ5WbHaC8_9EP9Ynt0Q8","alt":"おすわり","sharedTooltipText":":_おすわり:","src":"https://yt3.ggpht.com/9g6SKCgxpCKgoGAJllQvGJ1UqSm1LdUlaWKmbos9n02y3nhexjpbVhpoK75xUapX86hnpq_EyA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1CXNJGwnUUVawDeCwwOmFg/wBGOZ9WXHaC8_9EP9Ynt0Q8","alt":"最高サイリウム","sharedTooltipText":":_最高サイリウム:","src":"https://yt3.ggpht.com/xI0G1-lO54pGrFRFX_4L2XJPzk7It77pYhdiERMvKE3UFm9Xb_sJiS3QPv0xeWRH4PsJxaAYalQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1CXNJGwnUUVawDeCwwOmFg/wBGOZ9WXHaC8_9EP9Ynt0Q8","alt":"最高サイリウム","sharedTooltipText":":_最高サイリウム:","src":"https://yt3.ggpht.com/xI0G1-lO54pGrFRFX_4L2XJPzk7It77pYhdiERMvKE3UFm9Xb_sJiS3QPv0xeWRH4PsJxaAYalQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1CXNJGwnUUVawDeCwwOmFg/wBGOZ9WXHaC8_9EP9Ynt0Q8","alt":"最高サイリウム","sharedTooltipText":":_最高サイリウム:","src":"https://yt3.ggpht.com/xI0G1-lO54pGrFRFX_4L2XJPzk7It77pYhdiERMvKE3UFm9Xb_sJiS3QPv0xeWRH4PsJxaAYalQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"めしだめしだー！"}], "scope": "channel" }
+  ]
+}

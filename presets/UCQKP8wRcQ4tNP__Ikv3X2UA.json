@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "-朔夜トバリ-Virtual BAR-lumen lunae-",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCQKP8wRcQ4tNP__Ikv3X2UA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"🎶"},{"type":"text","value":"🥂"},{"type":"text","value":"💜"},{"type":"text","value":"🎶"},{"type":"text","value":"🥂"},{"type":"text","value":"💜"},{"type":"text","value":"🎶"},{"type":"text","value":"🥂"},{"type":"text","value":"💜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはばり〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"4"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはばりです"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"3"}], "scope": "channel" }
+  ]
+}

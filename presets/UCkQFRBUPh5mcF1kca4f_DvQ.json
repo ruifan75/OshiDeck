@@ -1,0 +1,12 @@
+{
+  "format": 2,
+  "name": "허니츄러스 HoneyChurros",
+  "note": "歌枠2配信・通常0配信のチャットから4枚",
+  "channel": "UCkQFRBUPh5mcF1kca4f_DvQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"ㅋㅋㅋㅋㅋㅋ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"오"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"캬ㅑㅑㅑㅑ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"캬"}], "scope": "channel" }
+  ]
+}

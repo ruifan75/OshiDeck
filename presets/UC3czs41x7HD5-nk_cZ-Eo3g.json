@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Mana Re.",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC3czs41x7HD5-nk_cZ-Eo3g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ик"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"привет"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"F"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ахаха"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"о"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"да"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ура"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"пока"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" }
+  ]
+}

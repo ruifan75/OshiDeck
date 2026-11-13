@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "芽々守あん / Mememori An",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UChV9GjZYgve_VtdcxTB1NcA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👁‍🗨"},{"type":"text","value":"❤"},{"type":"text","value":"🎶"},{"type":"text","value":"👁‍🗨"},{"type":"text","value":"❤"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChV9GjZYgve_VtdcxTB1NcA/meDVZ9_pDJS3_9EP456sOA","alt":"ooo","sharedTooltipText":":_ooo:","src":"https://yt3.ggpht.com/GlKJx54-Pv8JmaiBMQKMhlzdgPhq28Tw8tc98Xyg1l7jjxLabfH9yZgcAoti8qNeqKju1DXX=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChV9GjZYgve_VtdcxTB1NcA/meDVZ7fqDJS3_9EP456sOA","alt":"rrr","sharedTooltipText":":_rrr:","src":"https://yt3.ggpht.com/AI36Dy6dBubW_3lnmt2qgAQwoECgGbpyAeH3ExLaI8nZ3NkQu-wE8d-Cy4TrFgaHM6cnJnEd=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChV9GjZYgve_VtdcxTB1NcA/meDVZ_3qDJS3_9EP456sOA","alt":"zzz","sharedTooltipText":":_zzz:","src":"https://yt3.ggpht.com/xdF9L7a1SBUt4cJl_vpAkg27JsGobr_K1W7oHo8OD1D-nnzm5e29LYUUBnK9qraXQaoSiVFlbQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChV9GjZYgve_VtdcxTB1NcA/wcbWZ5WuLbXA_9EPxMf9gAw","alt":"ひれ伏し","sharedTooltipText":":_ひれ伏し:","src":"https://yt3.ggpht.com/eNoIxR8dhFAKu3R5OOtEHrw6YazCw0wSmgimttAqdt3mMOHB6kpOaFO10wJrrb_q7VU8X0mI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChV9GjZYgve_VtdcxTB1NcA/wcbWZ9auLbXA_9EPxMf9gAw","alt":"なさい","sharedTooltipText":":_なさい:","src":"https://yt3.ggpht.com/4fcJfDhv3325qrAi1Sa2YLmwR1qD2tfHlVCV3WnbT6oz1_6grWA5THwgA-LrF2LOCXi1iklU=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"orz"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChV9GjZYgve_VtdcxTB1NcA/NcfWZ5aMN4CO_9EPrOG02QU","alt":"ｗｗｗ","sharedTooltipText":":_ｗｗｗ:","src":"https://yt3.ggpht.com/Y8EBflLEoewTbvLo2HYN292VxZOnTSjeEVqng7S6PYWF0y-CycM2VTxctdWteVrsOEI-WsKxkQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" }
+  ]
+}

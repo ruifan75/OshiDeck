@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "SHAO AN【IZIGENIA】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCTNH2qG40u2KMe4MvMgaXVA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hawooo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmaooo"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTNH2qG40u2KMe4MvMgaXVA/A6mpasyWHfqC7L4PjL2v4Q0","alt":"shaoanNowoy","sharedTooltipText":":_shaoanNowoy:","src":"https://yt3.ggpht.com/NoVMOgiGZqAT-Q5BbTkEMRnWejeHn_HlsIcOCemm1o_0yUUeG3xRzxd2QlTnCQZCKZhHfiVeRg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTNH2qG40u2KMe4MvMgaXVA/KRRoarDNEMec7L4PkYXykQQ","alt":"shaoanAga","sharedTooltipText":":_shaoanAga:","src":"https://yt3.ggpht.com/qZB40o97lEIavTjQKATJgLd8PHlEk2BtKNa22Vt8wRWIqPfvMUI2TipYj__IpoIxNv6Ew57S6w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ni shaowdy"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTNH2qG40u2KMe4MvMgaXVA/c-BBasDuJ_-i7L4P-76l8As","alt":"shaoanCooked","sharedTooltipText":":_shaoanCooked:","src":"https://yt3.ggpht.com/j2D6m5FVSZrpkAUoNGlIonzt7y-SoceCF4iKunyQhbLBqVNT6PbcOlsdKCawn8b4h5jS_NB1=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTNH2qG40u2KMe4MvMgaXVA/vVAtauLTDP-T7L4P09SVwQE","alt":"shaoanWave","sharedTooltipText":":_shaoanWave:","src":"https://yt3.ggpht.com/8iV0ZWkasCYLJATvuTCLfSa3kZTPaYg7qFv_Ds0oLFn-qXz42Q6oQQGmYpeOQYh1uaBu3B-G=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCTNH2qG40u2KMe4MvMgaXVA/vVAtauLTDP-T7L4P09SVwQE","alt":"shaoanWave","sharedTooltipText":":_shaoanWave:","src":"https://yt3.ggpht.com/8iV0ZWkasCYLJATvuTCLfSa3kZTPaYg7qFv_Ds0oLFn-qXz42Q6oQQGmYpeOQYh1uaBu3B-G=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCTNH2qG40u2KMe4MvMgaXVA/vVAtauLTDP-T7L4P09SVwQE","alt":"shaoanWave","sharedTooltipText":":_shaoanWave:","src":"https://yt3.ggpht.com/8iV0ZWkasCYLJATvuTCLfSa3kZTPaYg7qFv_Ds0oLFn-qXz42Q6oQQGmYpeOQYh1uaBu3B-G=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTNH2qG40u2KMe4MvMgaXVA/YdiKatzHD8ec7L4PveOHyQg","alt":"shaoanMmm","sharedTooltipText":":_shaoanMmm:","src":"https://yt3.ggpht.com/eNlxyELZkcxPyh2nt2nL63LOJGWXoy49UPffJM16X4h_Dsm9IfKCfK7DgHyS66Dm4lpdEhy6=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oohh"},{"type":"youtubeEmoji","emojiId":"UCTNH2qG40u2KMe4MvMgaXVA/vVAtavjUDP-T7L4P09SVwQE","alt":"shaoanPog","sharedTooltipText":":_shaoanPog:","src":"https://yt3.ggpht.com/Vq2LTg_bGqB1Otz2L6YvGG8cDMU5c9sbPsndz5-HqOQFdmwc8E-i2-r8_HzcwT-bdGtcWrUr8g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oohhh"}], "scope": "channel" }
+  ]
+}

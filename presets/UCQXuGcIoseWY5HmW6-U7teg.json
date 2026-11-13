@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "HONKTHEHORN",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCQXuGcIoseWY5HmW6-U7teg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQXuGcIoseWY5HmW6-U7teg/r_WIapwPr5bs6w_dxpuBAQ","alt":"キラキラ","sharedTooltipText":":_キラキラ:","src":"https://yt3.ggpht.com/j64KXtgflMCj5X9DcOc4JHySYrlmhhhnUvr_xyHYJQZB4Wzvwf01pckuYYGOpvgGkREFm90Fhw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQXuGcIoseWY5HmW6-U7teg/r_WIapwPr5bs6w_dxpuBAQ","alt":"キラキラ","sharedTooltipText":":_キラキラ:","src":"https://yt3.ggpht.com/j64KXtgflMCj5X9DcOc4JHySYrlmhhhnUvr_xyHYJQZB4Wzvwf01pckuYYGOpvgGkREFm90Fhw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQXuGcIoseWY5HmW6-U7teg/r_WIapwPr5bs6w_dxpuBAQ","alt":"キラキラ","sharedTooltipText":":_キラキラ:","src":"https://yt3.ggpht.com/j64KXtgflMCj5X9DcOc4JHySYrlmhhhnUvr_xyHYJQZB4Wzvwf01pckuYYGOpvgGkREFm90Fhw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQXuGcIoseWY5HmW6-U7teg/r_WIaooHr5bs6w_dxpuBAQ","alt":"グッド","sharedTooltipText":":_グッド:","src":"https://yt3.ggpht.com/I9PtzY2bT4LMTgGuvXR4rAr_YusqP1NqEc7am-dxxos78JeAbVqcr46zP3uqIzjMxqsUicKg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQXuGcIoseWY5HmW6-U7teg/r_WIapwPr5bs6w_dxpuBAQ","alt":"キラキラ","sharedTooltipText":":_キラキラ:","src":"https://yt3.ggpht.com/j64KXtgflMCj5X9DcOc4JHySYrlmhhhnUvr_xyHYJQZB4Wzvwf01pckuYYGOpvgGkREFm90Fhw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"よいしょー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQXuGcIoseWY5HmW6-U7teg/r_WIaooHr5bs6w_dxpuBAQ","alt":"グッド","sharedTooltipText":":_グッド:","src":"https://yt3.ggpht.com/I9PtzY2bT4LMTgGuvXR4rAr_YusqP1NqEc7am-dxxos78JeAbVqcr46zP3uqIzjMxqsUicKg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQXuGcIoseWY5HmW6-U7teg/r_WIaooHr5bs6w_dxpuBAQ","alt":"グッド","sharedTooltipText":":_グッド:","src":"https://yt3.ggpht.com/I9PtzY2bT4LMTgGuvXR4rAr_YusqP1NqEc7am-dxxos78JeAbVqcr46zP3uqIzjMxqsUicKg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQXuGcIoseWY5HmW6-U7teg/r_WIaooHr5bs6w_dxpuBAQ","alt":"グッド","sharedTooltipText":":_グッド:","src":"https://yt3.ggpht.com/I9PtzY2bT4LMTgGuvXR4rAr_YusqP1NqEc7am-dxxos78JeAbVqcr46zP3uqIzjMxqsUicKg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいばいほーみー"}], "scope": "channel" }
+  ]
+}

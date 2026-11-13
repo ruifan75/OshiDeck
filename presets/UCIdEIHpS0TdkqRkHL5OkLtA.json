@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "さなちゃんねる",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCIdEIHpS0TdkqRkHL5OkLtA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"うおおおおおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかれさな～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きたわね"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"は？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" }
+  ]
+}

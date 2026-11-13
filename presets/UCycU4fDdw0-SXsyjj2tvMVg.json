@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "綿貫ねぐせ / Watanuki Neguse",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCycU4fDdw0-SXsyjj2tvMVg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ぽんちゃー"},{"type":"text","value":"🍵"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぱーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍵"},{"type":"text","value":"💥"},{"type":"text","value":"🍵"},{"type":"text","value":"💥"},{"type":"text","value":"🍵"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCycU4fDdw0-SXsyjj2tvMVg/wB5zZ-36MpeI_9EPsdHUoQU","alt":"pon","sharedTooltipText":":_pon:","src":"https://yt3.ggpht.com/wyYB9YaLc0cY50cxFvjprAb7HPeCT_vWVm10fAbaHnUlGMH2HErFZgGE96UYyn1YhC-4ZMLFsd4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCycU4fDdw0-SXsyjj2tvMVg/q-9zZ4rSHpeI_9EPsdHUoQU","alt":"cha","sharedTooltipText":":_cha:","src":"https://yt3.ggpht.com/kFkzNAYf3z5PlDidikzmyQ0y6LZ-fsxGgFe6sF3ykuAzWxWDmHv3xjKM2FlOhQSBk5bA3zVbls0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCycU4fDdw0-SXsyjj2tvMVg/5xhzZ4PiLKC8_9EP19PD4Qs","alt":"otupai","sharedTooltipText":":_otupai:","src":"https://yt3.ggpht.com/vQat9TnEGi03uyM76Vz9uUu9p46tXHENFQ01eNGeGpCh8yhVjylSx9WGjJzE0nNY9bMpghHv8A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCycU4fDdw0-SXsyjj2tvMVg/5xhzZ4PiLKC8_9EP19PD4Qs","alt":"otupai","sharedTooltipText":":_otupai:","src":"https://yt3.ggpht.com/vQat9TnEGi03uyM76Vz9uUu9p46tXHENFQ01eNGeGpCh8yhVjylSx9WGjJzE0nNY9bMpghHv8A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCycU4fDdw0-SXsyjj2tvMVg/5xhzZ4PiLKC8_9EP19PD4Qs","alt":"otupai","sharedTooltipText":":_otupai:","src":"https://yt3.ggpht.com/vQat9TnEGi03uyM76Vz9uUu9p46tXHENFQ01eNGeGpCh8yhVjylSx9WGjJzE0nNY9bMpghHv8A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" }
+  ]
+}

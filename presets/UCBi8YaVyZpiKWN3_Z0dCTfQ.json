@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "赤羽葉子ちゃんねる",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCBi8YaVyZpiKWN3_Z0dCTfQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつばね〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばね〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつばね～"}], "scope": "channel" }
+  ]
+}

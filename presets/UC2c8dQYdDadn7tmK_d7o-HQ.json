@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "米プリンセスチャンネル",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC2c8dQYdDadn7tmK_d7o-HQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いえーーーい！！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいばーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いぇーい"}], "scope": "channel" }
+  ]
+}

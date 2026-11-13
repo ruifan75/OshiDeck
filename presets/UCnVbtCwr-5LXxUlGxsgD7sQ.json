@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Midnight Grand Orchestra",
+  "note": "歌枠0配信・通常3配信のチャットから10枚",
+  "channel": "UCnVbtCwr-5LXxUlGxsgD7sQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"☄"},{"type":"text","value":"☄"},{"type":"text","value":"☄"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"SOS"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"☄"},{"type":"text","value":"🍜"},{"type":"text","value":"☄"},{"type":"text","value":"🍜"},{"type":"text","value":"☄"},{"type":"text","value":"🍜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かっこいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"星待ち"},{"type":"text","value":"☄"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"最高"}], "scope": "channel" }
+  ]
+}

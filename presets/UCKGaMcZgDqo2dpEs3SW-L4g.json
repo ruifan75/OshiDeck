@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "鼠屋栗太 Kurita Ch.",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCKGaMcZgDqo2dpEs3SW-L4g",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"晚安"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"安安"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"4"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"阿鼠安安"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"辛苦了"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"我才"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"77777"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Kabhaal",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCRDdfcwxMannHdKfyw0hHWQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hahaha"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yo yo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oooohh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"True"}], "scope": "channel" }
+  ]
+}

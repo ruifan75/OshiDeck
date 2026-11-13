@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "銀棘ぐみ / Gintoge Gumi",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCXUtikLthPFa5DDmgT3naGA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぱーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんとげー"},{"type":"text","value":"⛓"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXUtikLthPFa5DDmgT3naGA/TJi2Z4T0IIy__9EP2cTfoAk","alt":"こんとげ","sharedTooltipText":":_こんとげ:","src":"https://yt3.ggpht.com/ylNgODESKREs6d3MIXer78QyU8estgpskOCX-sRwlrT7ogvRdqN4om2JTzEjTcNpMPjCKdNHfw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXUtikLthPFa5DDmgT3naGA/TJi2Z4T0IIy__9EP2cTfoAk","alt":"こんとげ","sharedTooltipText":":_こんとげ:","src":"https://yt3.ggpht.com/ylNgODESKREs6d3MIXer78QyU8estgpskOCX-sRwlrT7ogvRdqN4om2JTzEjTcNpMPjCKdNHfw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXUtikLthPFa5DDmgT3naGA/TJi2Z4T0IIy__9EP2cTfoAk","alt":"こんとげ","sharedTooltipText":":_こんとげ:","src":"https://yt3.ggpht.com/ylNgODESKREs6d3MIXer78QyU8estgpskOCX-sRwlrT7ogvRdqN4om2JTzEjTcNpMPjCKdNHfw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんとげー"}], "scope": "channel" }
+  ]
+}

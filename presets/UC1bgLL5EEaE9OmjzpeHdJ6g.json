@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Erispheria",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC1bgLL5EEaE9OmjzpeHdJ6g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"XD"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"jajaja"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"GG"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"F"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"si"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"salud"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hola"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hola eris"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/vQF1XpyaG_XG8gTs77bACQ","alt":"chillwcat","sharedTooltipText":":chillwcat:","src":"https://yt3.ggpht.com/y03dFcPc1B7CO20zgQYzhcRPka5Bhs6iSg57MaxJdhaLidFvvXBLf_i4_SHG7zJ_2VpBMNs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/vQF1XpyaG_XG8gTs77bACQ","alt":"chillwcat","sharedTooltipText":":chillwcat:","src":"https://yt3.ggpht.com/y03dFcPc1B7CO20zgQYzhcRPka5Bhs6iSg57MaxJdhaLidFvvXBLf_i4_SHG7zJ_2VpBMNs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/vQF1XpyaG_XG8gTs77bACQ","alt":"chillwcat","sharedTooltipText":":chillwcat:","src":"https://yt3.ggpht.com/y03dFcPc1B7CO20zgQYzhcRPka5Bhs6iSg57MaxJdhaLidFvvXBLf_i4_SHG7zJ_2VpBMNs=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

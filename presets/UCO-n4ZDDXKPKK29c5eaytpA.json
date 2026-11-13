@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "三星ナナミ / Nanami Mituboshi Ch.",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCO-n4ZDDXKPKK29c5eaytpA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんななー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつななー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" }
+  ]
+}

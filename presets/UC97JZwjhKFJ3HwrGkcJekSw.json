@@ -1,0 +1,9 @@
+{
+  "format": 2,
+  "name": "OniGiri",
+  "note": "歌枠0配信・通常3配信のチャットから1枚",
+  "channel": "UC97JZwjhKFJ3HwrGkcJekSw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" }
+  ]
+}

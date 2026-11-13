@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "カナメとハルキー",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCG_CzdeNlcDnBCK8AbgiuVw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"お！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かなはろー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うんうん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"カナハロー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かんぱーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"聞きたい！"}], "scope": "channel" }
+  ]
+}

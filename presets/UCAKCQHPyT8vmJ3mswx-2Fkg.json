@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ぱすはに【公式】",
+  "note": "歌枠0配信・通常8配信のチャットから10枚",
+  "channel": "UCAKCQHPyT8vmJ3mswx-2Fkg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつはにー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんはにー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なるほど"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい！"}], "scope": "channel" }
+  ]
+}

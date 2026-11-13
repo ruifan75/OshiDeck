@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "青桐エイト",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC4Xuz67FNRr69ILv2b7ZRBA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC4Xuz67FNRr69ILv2b7ZRBA/8NX8ZKaCOoWO_9EPwfu04Ag","alt":"それいけエイト","sharedTooltipText":":_それいけエイト:","src":"https://yt3.ggpht.com/fTDAogp1NwjVd69reXS1yaiIKT5DqIXGs576_5Hfbn5mphKJ-m1GxjbDqyivxEArnQsSD_s4ZA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC4Xuz67FNRr69ILv2b7ZRBA/8NX8ZKaCOoWO_9EPwfu04Ag","alt":"それいけエイト","sharedTooltipText":":_それいけエイト:","src":"https://yt3.ggpht.com/fTDAogp1NwjVd69reXS1yaiIKT5DqIXGs576_5Hfbn5mphKJ-m1GxjbDqyivxEArnQsSD_s4ZA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🔍"},{"type":"text","value":"🔍"},{"type":"text","value":"🔍"},{"type":"text","value":"🔍"},{"type":"text","value":"🔍"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC4Xuz67FNRr69ILv2b7ZRBA/8NX8ZOCCOoWO_9EPwfu04Ag","alt":"待機エイト","sharedTooltipText":":_待機エイト:","src":"https://yt3.ggpht.com/n4FrjE_zRgIwltDWhRlJ58RXVGGBU_D-mJx6BK60kmC0rq3D0o18XV84YL5nEJWzbtxbVB_e7A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC4Xuz67FNRr69ILv2b7ZRBA/8NX8ZOCCOoWO_9EPwfu04Ag","alt":"待機エイト","sharedTooltipText":":_待機エイト:","src":"https://yt3.ggpht.com/n4FrjE_zRgIwltDWhRlJ58RXVGGBU_D-mJx6BK60kmC0rq3D0o18XV84YL5nEJWzbtxbVB_e7A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🔎"},{"type":"text","value":"🔎"},{"type":"text","value":"🔎"},{"type":"text","value":"🔎"},{"type":"text","value":"🔎"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC4Xuz67FNRr69ILv2b7ZRBA/slv9ZNrfJaSQ_9EPyruKiAU","alt":"GGエイト","sharedTooltipText":":_GGエイト:","src":"https://yt3.ggpht.com/CYxnZz88zYrHbrO5EduJZX4oBv0lvc2vh6RYOF-xhbCcR4BWcmngnZga9DOD6hsvU39XJJFDoAk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC4Xuz67FNRr69ILv2b7ZRBA/slv9ZNrfJaSQ_9EPyruKiAU","alt":"GGエイト","sharedTooltipText":":_GGエイト:","src":"https://yt3.ggpht.com/CYxnZz88zYrHbrO5EduJZX4oBv0lvc2vh6RYOF-xhbCcR4BWcmngnZga9DOD6hsvU39XJJFDoAk=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは！"}], "scope": "channel" }
+  ]
+}

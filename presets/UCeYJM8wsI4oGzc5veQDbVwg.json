@@ -1,0 +1,13 @@
+{
+  "format": 2,
+  "name": "Lunaria",
+  "note": "歌枠2配信・通常13配信のチャットから5枚",
+  "channel": "UCeYJM8wsI4oGzc5veQDbVwg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"xd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hola"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi baby"}], "scope": "channel" }
+  ]
+}

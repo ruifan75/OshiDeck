@@ -1,0 +1,19 @@
+{
+  "format": 2,
+  "name": "Hikone Ch.火之神ひこね",
+  "note": "歌枠1配信・通常13配信のチャットから11枚",
+  "channel": "UCp-UfRz1EEPlX6xwfPKd2lQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんサヌー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつサヌー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いえええええええええい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"},{"type":"text","value":"👈"},{"type":"text","value":"🌞"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"8888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"にゃにゃにゃにゃー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "メダロット公式チャンネル",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCXoEt2GeYzlERNe9CkRsE2Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ロボトルファイトー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍝"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"すごーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイスロボトル"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにチアー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"バニバニー"}], "scope": "channel" }
+  ]
+}

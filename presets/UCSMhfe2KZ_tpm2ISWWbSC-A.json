@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Rina Lunette Ch.【SVP】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCSMhfe2KZ_tpm2ISWWbSC-A",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCSMhfe2KZ_tpm2ISWWbSC-A/Ymx0Z9ryJZeI_9EPsdHUoQU","alt":"RinaCheer","sharedTooltipText":":_RinaCheer:","src":"https://yt3.ggpht.com/13pOnfvAQtTDijKvswnwrViQIHf1qyQYgHlx0Y1Yu8fXJc47vKXdRN07TJTgub059FmdMs0750c=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSMhfe2KZ_tpm2ISWWbSC-A/Ymx0Z9ryJZeI_9EPsdHUoQU","alt":"RinaCheer","sharedTooltipText":":_RinaCheer:","src":"https://yt3.ggpht.com/13pOnfvAQtTDijKvswnwrViQIHf1qyQYgHlx0Y1Yu8fXJc47vKXdRN07TJTgub059FmdMs0750c=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSMhfe2KZ_tpm2ISWWbSC-A/Ymx0Z9ryJZeI_9EPsdHUoQU","alt":"RinaCheer","sharedTooltipText":":_RinaCheer:","src":"https://yt3.ggpht.com/13pOnfvAQtTDijKvswnwrViQIHf1qyQYgHlx0Y1Yu8fXJc47vKXdRN07TJTgub059FmdMs0750c=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCSMhfe2KZ_tpm2ISWWbSC-A/MC52Z4TOOpeI_9EPsdHUoQU","alt":"HOOT","sharedTooltipText":":_HOOT:","src":"https://yt3.ggpht.com/Vqu-czFxHf2jQlG3DtPYSDzLoy841R0bTFdVAtmNpHHlDiOxzqZmHuubWCUwS7hq9oKPE7To2gg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSMhfe2KZ_tpm2ISWWbSC-A/MC52Z4TOOpeI_9EPsdHUoQU","alt":"HOOT","sharedTooltipText":":_HOOT:","src":"https://yt3.ggpht.com/Vqu-czFxHf2jQlG3DtPYSDzLoy841R0bTFdVAtmNpHHlDiOxzqZmHuubWCUwS7hq9oKPE7To2gg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCSMhfe2KZ_tpm2ISWWbSC-A/Ymx0Z_PzJZeI_9EPsdHUoQU","alt":"RinaHeart","sharedTooltipText":":_RinaHeart:","src":"https://yt3.ggpht.com/zRfINBq12ttXHpjZ1KQwNTb1NIvVYzoE0Sh5T5-TNSShzACmygVbO4otv5Xg1967CwRa5s9QVd4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSMhfe2KZ_tpm2ISWWbSC-A/Ymx0Z_PzJZeI_9EPsdHUoQU","alt":"RinaHeart","sharedTooltipText":":_RinaHeart:","src":"https://yt3.ggpht.com/zRfINBq12ttXHpjZ1KQwNTb1NIvVYzoE0Sh5T5-TNSShzACmygVbO4otv5Xg1967CwRa5s9QVd4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSMhfe2KZ_tpm2ISWWbSC-A/Ymx0Z_PzJZeI_9EPsdHUoQU","alt":"RinaHeart","sharedTooltipText":":_RinaHeart:","src":"https://yt3.ggpht.com/zRfINBq12ttXHpjZ1KQwNTb1NIvVYzoE0Sh5T5-TNSShzACmygVbO4otv5Xg1967CwRa5s9QVd4=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"8888888"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCSMhfe2KZ_tpm2ISWWbSC-A/MC52Z9vIOpeI_9EPsdHUoQU","alt":"RinaLOL","sharedTooltipText":":_RinaLOL:","src":"https://yt3.ggpht.com/LWeR1eQpiRF1kKncNTi8XXa0OapZKWWzzHCreAqMCrOPrfxSFZqR1SVecqMsMzvnHRmElFZ3Uw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hoo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCSMhfe2KZ_tpm2ISWWbSC-A/Ymx0Z4n1JZeI_9EPsdHUoQU","alt":"RinaCozy","sharedTooltipText":":_RinaCozy:","src":"https://yt3.ggpht.com/t7H3Rk9ePRX6p-z_C_CslhdWGY8pHf43zbECp1add47eenl2FVcG182QYgCz2xvxYroiRUSp_g=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

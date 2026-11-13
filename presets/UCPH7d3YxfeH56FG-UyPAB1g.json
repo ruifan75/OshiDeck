@@ -1,0 +1,12 @@
+{
+  "format": 2,
+  "name": "あっくん大魔王",
+  "note": "歌枠1配信・通常13配信のチャットから4枚",
+  "channel": "UCPH7d3YxfeH56FG-UyPAB1g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"888888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"すき"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ごきげんよう!"}], "scope": "channel" }
+  ]
+}

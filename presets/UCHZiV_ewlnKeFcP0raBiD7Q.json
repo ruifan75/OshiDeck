@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "恋世代おとめ Otome Ch.",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCHZiV_ewlnKeFcP0raBiD7Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"ごきげんよう〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎵"},{"type":"text","value":"🎶"},{"type":"text","value":"🎴"},{"type":"text","value":"🩷"},{"type":"text","value":"🎵"},{"type":"text","value":"🎶"},{"type":"text","value":"🎴"},{"type":"text","value":"🩷"},{"type":"text","value":"🎵"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ごきげんよう～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCHZiV_ewlnKeFcP0raBiD7Q/6WeZavcG48auvg-fs9KADQ","alt":"ちみっ","sharedTooltipText":":_ちみっ:","src":"https://yt3.ggpht.com/id-fHx3RW5vP3GZwdCA8UAYREOEdlUquCwnnXeWuLd3WxLo4IbmGenqbbO8HQBB4ni0-k4zffg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCHZiV_ewlnKeFcP0raBiD7Q/6WeZavcG48auvg-fs9KADQ","alt":"ちみっ","sharedTooltipText":":_ちみっ:","src":"https://yt3.ggpht.com/id-fHx3RW5vP3GZwdCA8UAYREOEdlUquCwnnXeWuLd3WxLo4IbmGenqbbO8HQBB4ni0-k4zffg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCHZiV_ewlnKeFcP0raBiD7Q/6WeZavcG48auvg-fs9KADQ","alt":"ちみっ","sharedTooltipText":":_ちみっ:","src":"https://yt3.ggpht.com/id-fHx3RW5vP3GZwdCA8UAYREOEdlUquCwnnXeWuLd3WxLo4IbmGenqbbO8HQBB4ni0-k4zffg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり〜"}], "scope": "channel" }
+  ]
+}

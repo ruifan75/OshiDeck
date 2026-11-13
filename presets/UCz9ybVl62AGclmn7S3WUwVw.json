@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "FruFru VTubers",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCz9ybVl62AGclmn7S3WUwVw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"❤"},{"type":"text","value":"❤"},{"type":"text","value":"❤"},{"type":"text","value":"❤"},{"type":"text","value":"❤"},{"type":"text","value":"❤"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"привет"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"всем привет"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"♥"},{"type":"text","value":"♥"},{"type":"text","value":"♥"},{"type":"text","value":"♥"},{"type":"text","value":"♥"},{"type":"text","value":"♥"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"о"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"да"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ахаха"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"привет Ноля"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"привет всем"}], "scope": "channel" }
+  ]
+}

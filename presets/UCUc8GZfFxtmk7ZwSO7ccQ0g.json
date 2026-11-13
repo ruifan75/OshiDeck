@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "ニュイ・ソシエール //[Nui Sociere]",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCUc8GZfFxtmk7ZwSO7ccQ0g",
   "cards": [
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCUc8GZfFxtmk7ZwSO7ccQ0g/LvdxX5G8KM-n-gPC7aaADQ","alt":"konn","sharedTooltipText":":_konn:","src":"https://yt3.ggpht.com/juvURmBltf1cBG_c4tjZ71cyOgVTnuTOADpMNbVynO__jhlFD0L-iOCfoMVDlCS7RFnFJTPPKQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCUc8GZfFxtmk7ZwSO7ccQ0g/LvdxX_O8KM-n-gPC7aaADQ","alt":"nui","sharedTooltipText":":_nui:","src":"https://yt3.ggpht.com/W8DB_7qF8CsDycaZ4WCGCz748ULcppLgmlz5BY55PCkVV5D_RBptH7_thmdScAFrIOiSq2zfbA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCUc8GZfFxtmk7ZwSO7ccQ0g/LvdxX8e8KM-n-gPC7aaADQ","alt":"otu","sharedTooltipText":":_otu:","src":"https://yt3.ggpht.com/PWjX-3Pt30UyHmYBNoOXv9PoTFBKKU3An1iAQy_3_o4zZQuhqpE7-_XyCaCxIlG_c3NoNV8v=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCUc8GZfFxtmk7ZwSO7ccQ0g/LvdxX_O8KM-n-gPC7aaADQ","alt":"nui","sharedTooltipText":":_nui:","src":"https://yt3.ggpht.com/W8DB_7qF8CsDycaZ4WCGCz748ULcppLgmlz5BY55PCkVV5D_RBptH7_thmdScAFrIOiSq2zfbA=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCUc8GZfFxtmk7ZwSO7ccQ0g/LvdxX5G8KM-n-gPC7aaADQ","alt":"konn","sharedTooltipText":":_konn:","src":"https://yt3.ggpht.com/juvURmBltf1cBG_c4tjZ71cyOgVTnuTOADpMNbVynO__jhlFD0L-iOCfoMVDlCS7RFnFJTPPKQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCUc8GZfFxtmk7ZwSO7ccQ0g/LvdxX_O8KM-n-gPC7aaADQ","alt":"nui","sharedTooltipText":":_nui:","src":"https://yt3.ggpht.com/W8DB_7qF8CsDycaZ4WCGCz748ULcppLgmlz5BY55PCkVV5D_RBptH7_thmdScAFrIOiSq2zfbA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCUc8GZfFxtmk7ZwSO7ccQ0g/bA1lY434EcqK_9EPmPSF-Ac","alt":"mousugu","sharedTooltipText":":_mousugu:","src":"https://yt3.ggpht.com/lIPzMlNeJoiBdboOlQsNEvtQdY0BBzvlZiLGConblauHZiYQ4VJVG_8gkuGIjPnLjxdpe_Iw=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"あっ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" }
   ]
 }

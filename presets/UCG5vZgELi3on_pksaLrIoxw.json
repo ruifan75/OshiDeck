@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Mari Mari Ch. [Phase Connect]",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCG5vZgELi3on_pksaLrIoxw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"omg hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCG5vZgELi3on_pksaLrIoxw/ihIjaNGAINyB_9EP98HxwAY","alt":"cheer","sharedTooltipText":":_cheer:","src":"https://yt3.ggpht.com/eZ8GCN0IuAAp9vjTYOjYTcFCsJ_MC6dJhW3qeRDIhinEEDqzyL-Q7cwFOTLWvLSrtahTdaHQMg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCG5vZgELi3on_pksaLrIoxw/ihIjaNGAINyB_9EP98HxwAY","alt":"cheer","sharedTooltipText":":_cheer:","src":"https://yt3.ggpht.com/eZ8GCN0IuAAp9vjTYOjYTcFCsJ_MC6dJhW3qeRDIhinEEDqzyL-Q7cwFOTLWvLSrtahTdaHQMg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCG5vZgELi3on_pksaLrIoxw/ihIjaNGAINyB_9EP98HxwAY","alt":"cheer","sharedTooltipText":":_cheer:","src":"https://yt3.ggpht.com/eZ8GCN0IuAAp9vjTYOjYTcFCsJ_MC6dJhW3qeRDIhinEEDqzyL-Q7cwFOTLWvLSrtahTdaHQMg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"true"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WHAT"}], "scope": "channel" }
+  ]
+}

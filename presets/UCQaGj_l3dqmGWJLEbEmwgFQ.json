@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Planya Channel",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCQaGj_l3dqmGWJLEbEmwgFQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🏴‍☠"},{"type":"text","value":"🏴‍☠"},{"type":"text","value":"🏴‍☠"},{"type":"text","value":"🏴‍☠"},{"type":"text","value":"🏴‍☠"},{"type":"text","value":"🏴‍☠"},{"type":"text","value":"🏴‍☠"},{"type":"text","value":"🏴‍☠"},{"type":"text","value":"🏴‍☠"},{"type":"text","value":"🏴‍☠"},{"type":"text","value":"🏴‍☠"},{"type":"text","value":"🏴‍☠"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🔥"},{"type":"text","value":"🔥"},{"type":"text","value":"🔥"},{"type":"text","value":"🔥"},{"type":"text","value":"🔥"},{"type":"text","value":"🔥"},{"type":"text","value":"🔥"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"},{"type":"text","value":"🌟"},{"type":"text","value":"⭐"},{"type":"text","value":"🌟"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"норм"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"@#^"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ахахаха"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"♿"},{"type":"text","value":"♿"},{"type":"text","value":"♿"},{"type":"text","value":"♿"},{"type":"text","value":"♿"},{"type":"text","value":"♿"},{"type":"text","value":"♿"}], "scope": "channel" }
+  ]
+}

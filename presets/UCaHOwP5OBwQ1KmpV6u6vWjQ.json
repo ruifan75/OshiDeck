@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Pikon Ch. 網野ぴこん",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCaHOwP5OBwQ1KmpV6u6vWjQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんぴこー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんぴこ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぴこ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaHOwP5OBwQ1KmpV6u6vWjQ/O_uiZKfBO62T_9EP7bO08As","alt":"love","sharedTooltipText":":_love:","src":"https://yt3.ggpht.com/Mp2buSNPyeX_zwsjdbOuyHOKQwH3D8X1gh6owinmqIBjSi_Ftp5qVZW5dPA98lc_AvqZED8hCQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaHOwP5OBwQ1KmpV6u6vWjQ/O_uiZKfBO62T_9EP7bO08As","alt":"love","sharedTooltipText":":_love:","src":"https://yt3.ggpht.com/Mp2buSNPyeX_zwsjdbOuyHOKQwH3D8X1gh6owinmqIBjSi_Ftp5qVZW5dPA98lc_AvqZED8hCQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaHOwP5OBwQ1KmpV6u6vWjQ/O_uiZKfBO62T_9EP7bO08As","alt":"love","sharedTooltipText":":_love:","src":"https://yt3.ggpht.com/Mp2buSNPyeX_zwsjdbOuyHOKQwH3D8X1gh6owinmqIBjSi_Ftp5qVZW5dPA98lc_AvqZED8hCQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぴこ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaHOwP5OBwQ1KmpV6u6vWjQ/fUS5ZLq_KIyP_9EPy4-b2As","alt":"kon","sharedTooltipText":":_kon:","src":"https://yt3.ggpht.com/Io09XBEcE6ldAN1Mi6urMEc_pqZMAKCvschhQkeoccgtLcbykV0oVGQF4ynrm0UlFz_5J68jvA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaHOwP5OBwQ1KmpV6u6vWjQ/fUS5ZLq_KIyP_9EPy4-b2As","alt":"kon","sharedTooltipText":":_kon:","src":"https://yt3.ggpht.com/Io09XBEcE6ldAN1Mi6urMEc_pqZMAKCvschhQkeoccgtLcbykV0oVGQF4ynrm0UlFz_5J68jvA=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

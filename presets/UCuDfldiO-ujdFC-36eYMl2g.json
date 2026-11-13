@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ここ・じぇす汰 / Coco･Jester【ななしいんく】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCuDfldiO-ujdFC-36eYMl2g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🦊"},{"type":"text","value":"🃏"},{"type":"text","value":"🎶"},{"type":"text","value":"🦊"},{"type":"text","value":"🃏"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCuDfldiO-ujdFC-36eYMl2g/HWs6auyDPOeq7OsP0qKoqAc","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/grTj4u2HgB7sb1i-atlGaHXJL-folKshbBAck6PZG2B-d0lW4C358n8bhBm0GK4SVachWosG=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCuDfldiO-ujdFC-36eYMl2g/HWs6auyDPOeq7OsP0qKoqAc","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/grTj4u2HgB7sb1i-atlGaHXJL-folKshbBAck6PZG2B-d0lW4C358n8bhBm0GK4SVachWosG=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCuDfldiO-ujdFC-36eYMl2g/HWs6auyDPOeq7OsP0qKoqAc","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/grTj4u2HgB7sb1i-atlGaHXJL-folKshbBAck6PZG2B-d0lW4C358n8bhBm0GK4SVachWosG=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCuDfldiO-ujdFC-36eYMl2g/Hho5aszoNcaa7OsPjbCMiAE","alt":"こんスタンプ","sharedTooltipText":":_こんスタンプ:","src":"https://yt3.ggpht.com/kjlxTD6Ckax77q9u00z98wXSZpg-x231FDTcAIHRvFvevQx33Os1IraNyRlijfdbj2MMe1Dik04=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCuDfldiO-ujdFC-36eYMl2g/Hho5aoTpNcaa7OsPjbCMiAE","alt":"ここスタンプ","sharedTooltipText":":_ここスタンプ:","src":"https://yt3.ggpht.com/HAQ1e5HkIXtgVtp0gRYai1x9OZ6vZKGF79qI3iT9LP9X0p0vo_DDZ8BJF-s5pb211sUlr6YdXqI=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCuDfldiO-ujdFC-36eYMl2g/Hho5aq_pNcaa7OsPjbCMiAE","alt":"おつスタンプ","sharedTooltipText":":_おつスタンプ:","src":"https://yt3.ggpht.com/AMsfFTlF_hhLXxHyeZfPB5NzLhudXCpwyggkrVX-W58TTHHJy3v98_AeWHmGpd1mJGvvDnvbRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCuDfldiO-ujdFC-36eYMl2g/Hho5atDpNcaa7OsPjbCMiAE","alt":"汰スタンプ","sharedTooltipText":":_汰スタンプ:","src":"https://yt3.ggpht.com/C3Qhp-1fccocJelV2C3_Tn0DhDZgBTuFBOoLYq8XR_06qH-L8py1EvO0Woy30ua3fTCfJmT1yg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わこつ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCuDfldiO-ujdFC-36eYMl2g/HWs6aoiDPOeq7OsP0qKoqAc","alt":"草スタンプ","sharedTooltipText":":_草スタンプ:","src":"https://yt3.ggpht.com/kP7mZoVySwJWFF7MxOYLgp8hUPRZB72qbtw2TxVPW6H79knuKXYCJFQI3g2UmPFgNzVPaY9mig=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" }
+  ]
+}

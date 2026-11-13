@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "모야Moya",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCDOI0xKWV-Hb9PPY76mrJpg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"모하"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ㅋㅋㅋㅋㅋ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"오"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"모바"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"안녕하세요"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"와"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"헐"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ㅠㅠ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"귀여워"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"네"}], "scope": "channel" }
+  ]
+}

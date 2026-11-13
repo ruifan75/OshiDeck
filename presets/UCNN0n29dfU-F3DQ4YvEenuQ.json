@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "CHIYURU ch.三日月ちゆる",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCNN0n29dfU-F3DQ4YvEenuQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"🐈‍⬛"},{"type":"text","value":"❤"},{"type":"text","value":"🎶"},{"type":"text","value":"🐈‍⬛"},{"type":"text","value":"❤"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNN0n29dfU-F3DQ4YvEenuQ/gbd0Y5dr-I3_0Q_aqoUI","alt":"パチパチ","sharedTooltipText":":_パチパチ:","src":"https://yt3.ggpht.com/ZZZaU9eDj-BvHh825Px0h79AHzON-Ty9m6wYPgUIxVxzH9I3NFMZuiil9LbB6TSbCH5e2K8VFl4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNN0n29dfU-F3DQ4YvEenuQ/gbd0Y5dr-I3_0Q_aqoUI","alt":"パチパチ","sharedTooltipText":":_パチパチ:","src":"https://yt3.ggpht.com/ZZZaU9eDj-BvHh825Px0h79AHzON-Ty9m6wYPgUIxVxzH9I3NFMZuiil9LbB6TSbCH5e2K8VFl4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNN0n29dfU-F3DQ4YvEenuQ/gbd0Y5dr-I3_0Q_aqoUI","alt":"パチパチ","sharedTooltipText":":_パチパチ:","src":"https://yt3.ggpht.com/ZZZaU9eDj-BvHh825Px0h79AHzON-Ty9m6wYPgUIxVxzH9I3NFMZuiil9LbB6TSbCH5e2K8VFl4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNN0n29dfU-F3DQ4YvEenuQ/gbd0Y5dr-I3_0Q_aqoUI","alt":"パチパチ","sharedTooltipText":":_パチパチ:","src":"https://yt3.ggpht.com/ZZZaU9eDj-BvHh825Px0h79AHzON-Ty9m6wYPgUIxVxzH9I3NFMZuiil9LbB6TSbCH5e2K8VFl4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNN0n29dfU-F3DQ4YvEenuQ/gbd0Y5dr-I3_0Q_aqoUI","alt":"パチパチ","sharedTooltipText":":_パチパチ:","src":"https://yt3.ggpht.com/ZZZaU9eDj-BvHh825Px0h79AHzON-Ty9m6wYPgUIxVxzH9I3NFMZuiil9LbB6TSbCH5e2K8VFl4=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おち舞！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつちゅっちゅる〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんちゅっちゅる〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちゅっちゅるー"}], "scope": "channel" }
+  ]
+}

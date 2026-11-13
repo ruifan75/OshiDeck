@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "黒月夜桜 / Yozakura Kurotsuki",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCabr_YRuRIixVeQy8BMsMPg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎵"},{"type":"text","value":"🌙"},{"type":"text","value":"🎶"},{"type":"text","value":"🌸"},{"type":"text","value":"🎵"},{"type":"text","value":"🌙"},{"type":"text","value":"🎶"},{"type":"text","value":"🌸"},{"type":"text","value":"🎵"},{"type":"text","value":"🌙"},{"type":"text","value":"🎶"},{"type":"text","value":"🌸"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCabr_YRuRIixVeQy8BMsMPg/JWurY6yBHt6P_9EPlM-8qAI","alt":"こんにちは","sharedTooltipText":":_こんにちは:","src":"https://yt3.ggpht.com/IR1IHuyHhMn-EKy0cAVw7-mmPb5C9J8rscO4PGCUpQBrGrPEOSMfvgHb8duYMi1NB9goapiINC8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCabr_YRuRIixVeQy8BMsMPg/JWurY-uBHt6P_9EPlM-8qAI","alt":"よざくら","sharedTooltipText":":_よざくら:","src":"https://yt3.ggpht.com/qZmKbFpCU34ebDdTanbCBU2Br_QA2FyRGUmkJyKxtQTPBQLfO4rlym8R9giHVN_V_der2ukIXQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCabr_YRuRIixVeQy8BMsMPg/ywHuYdGhKuGS8gSN57_gDg","alt":"くさはえた","sharedTooltipText":":_くさはえた:","src":"https://yt3.ggpht.com/2cYnXpn8GHTYilIZ9O3ptmfqsxwhxxRgHoz1LD1lckLmPnf82gnfeCaYptX2QEeAGW6zxWbGBV0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCabr_YRuRIixVeQy8BMsMPg/JWurY8yBHt6P_9EPlM-8qAI","alt":"おつかれ","sharedTooltipText":":_おつかれ:","src":"https://yt3.ggpht.com/18r1qr3QPKzne9Nu90LNBmxQhUyWsNDo_3RX86nveU5gpM8tZ0qXxwBEYi0nAzwlgfcNmedbiAU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCabr_YRuRIixVeQy8BMsMPg/JWurY-uBHt6P_9EPlM-8qAI","alt":"よざくら","sharedTooltipText":":_よざくら:","src":"https://yt3.ggpht.com/qZmKbFpCU34ebDdTanbCBU2Br_QA2FyRGUmkJyKxtQTPBQLfO4rlym8R9giHVN_V_der2ukIXQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCabr_YRuRIixVeQy8BMsMPg/JWurY4WBHt6P_9EPlM-8qAI","alt":"おはよう","sharedTooltipText":":_おはよう:","src":"https://yt3.ggpht.com/adr4FLZ0VMGY2QhrKGvC0n_VVjcUiDWsqixiP2XwSAl6KPoa7RgEvFKaje_ohD6oTZ7ev6Szng=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCabr_YRuRIixVeQy8BMsMPg/JWurY-uBHt6P_9EPlM-8qAI","alt":"よざくら","sharedTooltipText":":_よざくら:","src":"https://yt3.ggpht.com/qZmKbFpCU34ebDdTanbCBU2Br_QA2FyRGUmkJyKxtQTPBQLfO4rlym8R9giHVN_V_der2ukIXQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

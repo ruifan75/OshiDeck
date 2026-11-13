@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Rin Penrose Ch. and Snebby",
+  "note": "歌枠1配信・通常5配信のチャットから10枚",
+  "channel": "UCpZIbzoEC_3rZglErpQkbDg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCpZIbzoEC_3rZglErpQkbDg/RV3EY9ztGdLm1gKNoaqgBw","alt":"RinLetterS","sharedTooltipText":":_RinLetterS:","src":"https://yt3.ggpht.com/iyn9Vn7WQ2SbtGD4XBPEnogd8gYvVvB_CcKkQ2FgoHWYAIVBYhmhequW48AbMvsR6xZcUqOGnA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpZIbzoEC_3rZglErpQkbDg/cmHEY_ehMZCR1gLiqKWADA","alt":"RinLetterH","sharedTooltipText":":_RinLetterH:","src":"https://yt3.ggpht.com/Tt5hSUgoBkb6j7P_0WDEXO5V4lhITBbRvIfCC-fErdLWqII7yQG22oOz4sxNy2vf1Xa7M2EEMw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpZIbzoEC_3rZglErpQkbDg/o2bEY5TQGcHv1gKW_ZmoDg","alt":"RinLetterA","sharedTooltipText":":_RinLetterA:","src":"https://yt3.ggpht.com/FywF5JW_isvQE9sYUXNYbnvtIPyVl1oIm_aKlvOO1n7xgF3TR2QozgnuY4aVWf3zF9aUNVklUg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpZIbzoEC_3rZglErpQkbDg/B2rEY5vHDtKwx_AP_uya4A0","alt":"RinLetterR","sharedTooltipText":":_RinLetterR:","src":"https://yt3.ggpht.com/mfM4AVZvEJ0Uh66KbHCFX60HG9tOuNplMWUk0inCh4u_0MnlYLd0Yk-Zw7sbqLy3bLwlHirsJRs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpZIbzoEC_3rZglErpQkbDg/DG7EY67PNZCR1gLiqKWADA","alt":"RinLetterK","sharedTooltipText":":_RinLetterK:","src":"https://yt3.ggpht.com/sFsqC1xBvHU1mIModFkpiqKMxHnqyOOHzZR3I9THwBa4arSCtKVRzQsgR26bdop04VFd5_NRMg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"pikmin"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Rin"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"A"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" }
+  ]
+}

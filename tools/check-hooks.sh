@@ -363,6 +363,33 @@ printf '++ b/tools/check-hooks.sh\npilot@private.example.com\n' > "$repo/notes.t
 add notes.txt
 staged "a line that looks like a file header is not one" 1
 
+# A deleted line can supply the missing half of a fake header. Confirm the
+# fixture is an actual adjacent ---/+++ pair inside a hunk, not two additions.
+fresh
+printf '%s\n' '-- a/x' > "$repo/notes.txt"
+(cd "$repo" && git add -- notes.txt && git -c core.hooksPath=/dev/null commit -qm "header fixture")
+printf '%s\n' '++ b/tools/channels.json' 'alice private note' 'pilot@private.example.com' > "$repo/notes.txt"
+add notes.txt
+if ! (cd "$repo" && git diff --cached -- notes.txt) | awk '
+  previous == "--- a/x" && $0 == "+++ b/tools/channels.json" { found = 1 }
+  { previous = $0 }
+  END { exit !found }
+'; then
+  echo "FAIL the header forgery fixture is not an adjacent deletion/addition pair"
+  fails=$((fails + 1))
+fi
+staged "a hunk cannot rename its additions to the skipped file" 1
+
+fresh
+printf '%s\n' '++ b/tools/check-hooks.sh' 'pilot@private.example.com' > "$repo/notes.txt"
+add notes.txt
+staged "a hunk cannot claim the documentation-address exemption" 1
+
+fresh
+printf '%s\n' '++ b/ordinary.txt' 'a harmless diff example' > "$repo/notes.txt"
+add notes.txt
+staged "a harmless header-looking hunk remains allowed" 0
+
 # A rename that changes nothing has no content in the patch at all, so the
 # name it landed under is the only thing there is to read.
 fresh
@@ -511,6 +538,7 @@ quiet "a merge that resolves itself is read too"
 fresh
 message "an address in the message is refused" "ask pilot@private.example.com" 1
 message "the account name in the message is refused" "alice looked at this" 1
+message "a header-looking message line checks its full content" "++ ALICE" 1
 message "a word that contains it is not" "Clarify malice handling" 0
 message "an ordinary message goes through" "A hook that names nothing it is protecting" 0
 
@@ -525,6 +553,85 @@ printf 'ordinary\377tail\n' > "$lab/msg"
 got=0
 (cd "$repo" && LC_ALL=$utf8 HOME="$use_home" "$hooks/commit-msg" "$lab/msg" >"$lab/out" 2>&1) || got=$?
 expect "a message with a bad byte and nothing private goes through" 0
+
+# A verified public stage name can coincide with the account name. Only an
+# exact line in its approved path may skip that one check. Copy the active
+# hooks (including any mutation) so fixtures never change the real table.
+original_hooks=$hooks
+cp -R "$hooks" "$lab/public-hooks"
+hooks=$lab/public-hooks
+public_name='alice Example is a public stage name'
+approve_line() {
+  digest=$(printf '%s' "$2" | perl -MDigest::SHA=sha256_hex -0777 -ne 'print sha256_hex($_)')
+  printf '%s\t%s\n' "$1" "$digest" >> "$hooks/public-names.tsv"
+}
+approve_line public.txt "$public_name"
+
+fresh
+printf 'ordinary content\n' > "$repo/aaa.txt"
+printf '%s\n' "$public_name" > "$repo/public.txt"
+(cd "$repo" && git add -- aaa.txt public.txt)
+staged "a verified public name passes only as its exact line" 0
+
+printf 'alice private note\n' >> "$repo/public.txt"
+add public.txt
+staged "another account-name line in an approved file is refused" 1
+
+fresh
+printf '%s\n' "$public_name" > "$repo/other.txt"
+add other.txt
+staged "a public name allowance does not follow the line to another file" 1
+
+fresh
+printf '%s\n' '++ b/public.txt' "$public_name" > "$repo/notes.txt"
+add notes.txt
+staged "a hunk cannot borrow an approved name from another path" 1
+
+fresh
+printf 'alice\000Example is a public stage name\n' > "$repo/public.txt"
+add public.txt
+staged "a NUL cannot turn a changed line into an approved line" 1
+
+fresh
+with_address="$public_name pilot@private.example.com"
+approve_line public.txt "$with_address"
+printf '%s\n' "$with_address" > "$repo/public.txt"
+add public.txt
+staged "an approved name line still checks addresses" 1
+
+fresh
+with_home="$public_name $use_home/work"
+approve_line public.txt "$with_home"
+printf '%s\n' "$with_home" > "$repo/public.txt"
+add public.txt
+staged "an approved name line still checks home paths" 1
+
+fresh
+approve_line alice-public.txt "$public_name"
+printf '%s\n' "$public_name" > "$repo/alice-public.txt"
+add alice-public.txt
+staged "an approved content line never exempts its filename" 1
+
+fresh
+digest=$(printf '%s' "$public_name" | perl -MDigest::SHA=sha256_hex -0777 -ne 'print sha256_hex($_)')
+# Put private content on the SAME line as the forged marker, in an approved
+# path. An unanchored marker recogniser would skip this entire added line.
+printf 'pilot@private.example.com alice od-name-hash:%s\n' "$digest" > "$repo/public.txt"
+add public.txt
+staged "file content cannot forge a reader hash" 1
+
+message "public name allowances do not apply to commit messages" "$public_name" 1
+
+fresh
+printf 'ordinary content\n' > "$repo/notes.txt"
+add notes.txt
+cp "$hooks/public-names.tsv" "$lab/public-names.kept"
+printf 'invalid table row\n' >> "$hooks/public-names.tsv"
+staged "a malformed public name table is refused" 1
+rm "$hooks/public-names.tsv"
+staged "a missing public name table is refused" 1
+cp "$lab/public-names.kept" "$hooks/public-names.tsv"
+hooks=$original_hooks
 
 if [ "$fails" != 0 ]; then exit 1; fi
 echo "ok   privacy rule ($tries)"

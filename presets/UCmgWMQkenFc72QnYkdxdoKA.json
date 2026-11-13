@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "ピーナッツくん!オシャレになりたい!",
-  "note": "過去11配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
   "channel": "UCmgWMQkenFc72QnYkdxdoKA",
   "cards": [
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うんうん"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おはナッツ〜"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"いけいけ"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"こわい"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きた"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おしい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うんうん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはナッツ〜"}], "scope": "channel" }
   ]
 }

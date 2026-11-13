@@ -1,0 +1,14 @@
+{
+  "format": 2,
+  "name": "糜咔Mica",
+  "note": "歌枠0配信・通常7配信のチャットから6枚",
+  "channel": "UCPxMx-ftudQXzoYwxKjBmjQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"安安"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"糜咔安安"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"笑鼠"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"好可愛"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/dv90XtfhAurw8gTgzar4DA","alt":"virtualhug","sharedTooltipText":":virtualhug:","src":"https://yt3.ggpht.com/U1TjOZlqtS58NGqQhE8VWDptPSrmJNkrbVRp_8jI4f84QqIGflq2Ibu7YmuOg5MmVYnpevc=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

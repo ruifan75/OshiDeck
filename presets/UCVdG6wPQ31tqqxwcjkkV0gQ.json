@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "めぐちゃんねる",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCVdG6wPQ31tqqxwcjkkV0gQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVdG6wPQ31tqqxwcjkkV0gQ/jzGgZ7DgLJeI_9EPzqPZyQM","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/lLlrURK8dIPKm7kr5NoQcod8itSkrzPE2jWNOY9oss-jFX6F7gXoSHuYpVUg4xALu87ImNKnJQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVdG6wPQ31tqqxwcjkkV0gQ/jzGgZ7DgLJeI_9EPzqPZyQM","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/lLlrURK8dIPKm7kr5NoQcod8itSkrzPE2jWNOY9oss-jFX6F7gXoSHuYpVUg4xALu87ImNKnJQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVdG6wPQ31tqqxwcjkkV0gQ/jzGgZ7DgLJeI_9EPzqPZyQM","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/lLlrURK8dIPKm7kr5NoQcod8itSkrzPE2jWNOY9oss-jFX6F7gXoSHuYpVUg4xALu87ImNKnJQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVdG6wPQ31tqqxwcjkkV0gQ/jzGgZ-nbLJeI_9EPzqPZyQM","alt":"ぱちぱち","sharedTooltipText":":_ぱちぱち:","src":"https://yt3.ggpht.com/ST77cYlVdQK5mKf6vi6xwmymgPo-iE7CVAdq7srfAO90jb9rY9l0LJQmIO3y7uHYUALaVEQNUQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVdG6wPQ31tqqxwcjkkV0gQ/jzGgZ-nbLJeI_9EPzqPZyQM","alt":"ぱちぱち","sharedTooltipText":":_ぱちぱち:","src":"https://yt3.ggpht.com/ST77cYlVdQK5mKf6vi6xwmymgPo-iE7CVAdq7srfAO90jb9rY9l0LJQmIO3y7uHYUALaVEQNUQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVdG6wPQ31tqqxwcjkkV0gQ/jzGgZ-nbLJeI_9EPzqPZyQM","alt":"ぱちぱち","sharedTooltipText":":_ぱちぱち:","src":"https://yt3.ggpht.com/ST77cYlVdQK5mKf6vi6xwmymgPo-iE7CVAdq7srfAO90jb9rY9l0LJQmIO3y7uHYUALaVEQNUQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVdG6wPQ31tqqxwcjkkV0gQ/jzGgZ9baLJeI_9EPzqPZyQM","alt":"待機中","sharedTooltipText":":_待機中:","src":"https://yt3.ggpht.com/qRZFkWueoX2z8H0okcR4_vqLzWToKv_gkGohUorMvWrjKLnvkE9MHbeKZ1ijccA0LVqRtWUhNLg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVdG6wPQ31tqqxwcjkkV0gQ/jzGgZ9baLJeI_9EPzqPZyQM","alt":"待機中","sharedTooltipText":":_待機中:","src":"https://yt3.ggpht.com/qRZFkWueoX2z8H0okcR4_vqLzWToKv_gkGohUorMvWrjKLnvkE9MHbeKZ1ijccA0LVqRtWUhNLg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんめぐ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす！"}], "scope": "channel" }
+  ]
+}

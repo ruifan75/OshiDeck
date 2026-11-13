@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Meruru Ch. ♡ SnailMeru",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCIJ6TGsTcBlYGUj-zbL60EQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎸"},{"type":"text","value":"🎸"},{"type":"text","value":"🎸"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIJ6TGsTcBlYGUj-zbL60EQ/ZHE_ar-bLv6h7L4P5dXYyQI","alt":"meruLove","sharedTooltipText":":_meruLove:","src":"https://yt3.ggpht.com/iifF_FtiM5IbjbEhBSalDrMIREYAl2mtBe-vogH2yR4OMnQrIxVEVvJ3MGyjakKgJMavf8c0ag=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIJ6TGsTcBlYGUj-zbL60EQ/ZHE_ar-bLv6h7L4P5dXYyQI","alt":"meruLove","sharedTooltipText":":_meruLove:","src":"https://yt3.ggpht.com/iifF_FtiM5IbjbEhBSalDrMIREYAl2mtBe-vogH2yR4OMnQrIxVEVvJ3MGyjakKgJMavf8c0ag=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIJ6TGsTcBlYGUj-zbL60EQ/ZHE_ar-bLv6h7L4P5dXYyQI","alt":"meruLove","sharedTooltipText":":_meruLove:","src":"https://yt3.ggpht.com/iifF_FtiM5IbjbEhBSalDrMIREYAl2mtBe-vogH2yR4OMnQrIxVEVvJ3MGyjakKgJMavf8c0ag=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIJ6TGsTcBlYGUj-zbL60EQ/RRZAavuXEoOlrr4PvbiA2AY","alt":"meruPat","sharedTooltipText":":_meruPat:","src":"https://yt3.ggpht.com/2MNStoSRbH0o0YKE7hWq849oUzuF0qldOcUzwEZyroKWeas8yuCQMmQAljhI62zdODD3gMh3_w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"MERU"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIJ6TGsTcBlYGUj-zbL60EQ/ZHE_aqaeLv6h7L4P5dXYyQI","alt":"meruCry","sharedTooltipText":":_meruCry:","src":"https://yt3.ggpht.com/80e7eqjIR5ZCuXvb0nknBd7U7BeqdjTzwsqRaxAHr_bbH2V3FOUdQfI_jFj8-PEPd2vAzql7AHQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIJ6TGsTcBlYGUj-zbL60EQ/RRZAatCcEoOlrr4PvbiA2AY","alt":"meruPeek","sharedTooltipText":":_meruPeek:","src":"https://yt3.ggpht.com/Sce27ASCW6Uo-DaF3Y4l1poAG1BlqfVsa2SFhx0Nr93Amx1bXPgjgIG0SLAVySKM9_Kj3SMwIQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

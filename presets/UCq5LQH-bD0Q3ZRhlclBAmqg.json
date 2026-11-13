@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "魔哩煞",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCq5LQH-bD0Q3ZRhlclBAmqg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"安安"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/G8AfY6yWGuKuhL0PlbiA2AE","alt":"hand-pink-waving","sharedTooltipText":":hand-pink-waving:","src":"https://yt3.ggpht.com/KOxdr_z3A5h1Gb7kqnxqOCnbZrBmxI2B_tRQ453BhTWUhYAlpg5ZP8IKEBkcvRoY8grY91Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"嗨"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"早安"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"加油"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"晚安"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"對"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"哈哈"}], "scope": "channel" }
+  ]
+}

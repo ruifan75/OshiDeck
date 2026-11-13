@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "房総なの -Fusafusa Nano- 【ユニプロ】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCZoPxlGeDKOmsOt-DnQe5tg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🦝"},{"type":"text","value":"📣"},{"type":"text","value":"💛"},{"type":"text","value":"🎶"},{"type":"text","value":"🦝"},{"type":"text","value":"📣"},{"type":"text","value":"💛"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんなの〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんなの～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはなのー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCZoPxlGeDKOmsOt-DnQe5tg/B4c7arrVBLbH5t0P2ZzAMA","alt":"nanoOdoroki","sharedTooltipText":":_nanoOdoroki:","src":"https://yt3.ggpht.com/2tbZYWCJZFrilfhGTKPrZSTEIaIwyiIfvywzUjklRZIIwUiseufah0kdzi71mZAwhwLMdx5z0g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZoPxlGeDKOmsOt-DnQe5tg/B4c7arrVBLbH5t0P2ZzAMA","alt":"nanoOdoroki","sharedTooltipText":":_nanoOdoroki:","src":"https://yt3.ggpht.com/2tbZYWCJZFrilfhGTKPrZSTEIaIwyiIfvywzUjklRZIIwUiseufah0kdzi71mZAwhwLMdx5z0g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZoPxlGeDKOmsOt-DnQe5tg/B4c7arrVBLbH5t0P2ZzAMA","alt":"nanoOdoroki","sharedTooltipText":":_nanoOdoroki:","src":"https://yt3.ggpht.com/2tbZYWCJZFrilfhGTKPrZSTEIaIwyiIfvywzUjklRZIIwUiseufah0kdzi71mZAwhwLMdx5z0g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCZoPxlGeDKOmsOt-DnQe5tg/B4c7aq3UBLbH5t0P2ZzAMA","alt":"nanoOnpu","sharedTooltipText":":_nanoOnpu:","src":"https://yt3.ggpht.com/o9sZKWVs1-m1JBRdTV2fK_SXIBxCo4Bg1qH9FRr4OHciMvC0oNvtmzoENlZL2gR5jWj_MOzi=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZoPxlGeDKOmsOt-DnQe5tg/B4c7aq3UBLbH5t0P2ZzAMA","alt":"nanoOnpu","sharedTooltipText":":_nanoOnpu:","src":"https://yt3.ggpht.com/o9sZKWVs1-m1JBRdTV2fK_SXIBxCo4Bg1qH9FRr4OHciMvC0oNvtmzoENlZL2gR5jWj_MOzi=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZoPxlGeDKOmsOt-DnQe5tg/B4c7aq3UBLbH5t0P2ZzAMA","alt":"nanoOnpu","sharedTooltipText":":_nanoOnpu:","src":"https://yt3.ggpht.com/o9sZKWVs1-m1JBRdTV2fK_SXIBxCo4Bg1qH9FRr4OHciMvC0oNvtmzoENlZL2gR5jWj_MOzi=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

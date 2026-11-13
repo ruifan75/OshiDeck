@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "DipperDog",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC29M0uAc9KHk0zvKvEF5J9g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"No"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC29M0uAc9KHk0zvKvEF5J9g/ypFladabC-Kbrr4PypviiAw","alt":"wheeze","sharedTooltipText":":_wheeze:","src":"https://yt3.ggpht.com/bUgXh_BYsLpi1wOmYkZR4ftvmBoBzRfkMKzEkNq-zq_rxSpa8uAUhqKk15fXSS--frffsWl4CQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Yep"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC29M0uAc9KHk0zvKvEF5J9g/rqRiY-GsFfiN_9EP1-OzkAI","alt":"rave","sharedTooltipText":":_rave:","src":"https://yt3.ggpht.com/TKPXbHBRfUovN3g2QWBnuEIRri2UvcAMpRxqpx4NdLQTAJhAyPompPOEei5pZrpwve9cxcAMyg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC29M0uAc9KHk0zvKvEF5J9g/rqRiY-GsFfiN_9EP1-OzkAI","alt":"rave","sharedTooltipText":":_rave:","src":"https://yt3.ggpht.com/TKPXbHBRfUovN3g2QWBnuEIRri2UvcAMpRxqpx4NdLQTAJhAyPompPOEei5pZrpwve9cxcAMyg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC29M0uAc9KHk0zvKvEF5J9g/rqRiY-GsFfiN_9EP1-OzkAI","alt":"rave","sharedTooltipText":":_rave:","src":"https://yt3.ggpht.com/TKPXbHBRfUovN3g2QWBnuEIRri2UvcAMpRxqpx4NdLQTAJhAyPompPOEei5pZrpwve9cxcAMyg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "夢魔ぺろり-Perori Ch-",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC-VCv4n4N_ogpQoc7fEoqEg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やっぺろ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぺろり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-VCv4n4N_ogpQoc7fEoqEg/K0zFXebnG5P0-QOa-L-wBA","alt":"おつぺろ","sharedTooltipText":":_おつぺろ:","src":"https://yt3.ggpht.com/CkB-ul1VvAPoYibSVqfxnBCTOZk8Iy1Mh1SMYgWzkw-2WN_oipWgTOe1-Q8eC2HbPQlA1EuP76g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC-VCv4n4N_ogpQoc7fEoqEg/K0zFXebnG5P0-QOa-L-wBA","alt":"おつぺろ","sharedTooltipText":":_おつぺろ:","src":"https://yt3.ggpht.com/CkB-ul1VvAPoYibSVqfxnBCTOZk8Iy1Mh1SMYgWzkw-2WN_oipWgTOe1-Q8eC2HbPQlA1EuP76g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-VCv4n4N_ogpQoc7fEoqEg/LkzFXc-NBZP0-QOa-L-wBA","alt":"やっぺろ","sharedTooltipText":":_やっぺろ:","src":"https://yt3.ggpht.com/wGQ0Uk4MMhVB9BQC9eCj9qLQSRBHbYwQ41xUsAL9z2pKtqF769A7uC0OV39iMuUqHkX_zDXQyLg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗｗ"}], "scope": "channel" }
+  ]
+}

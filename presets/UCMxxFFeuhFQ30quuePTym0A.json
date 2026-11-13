@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Hai Halo Epel!",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCMxxFFeuhFQ30quuePTym0A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Aamiin"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsukarepel"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Otsu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"malam epel"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsu epel"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"malam kak epel"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"malam"}], "scope": "channel" }
+  ]
+}

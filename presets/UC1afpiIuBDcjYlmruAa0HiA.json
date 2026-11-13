@@ -1,0 +1,10 @@
+{
+  "format": 2,
+  "name": "시라유키 히나 SHIRAYUKI HINA",
+  "note": "歌枠1配信・通常1配信のチャットから2枚",
+  "channel": "UC1afpiIuBDcjYlmruAa0HiA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"캬ㅑㅑ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"캬"}], "scope": "channel" }
+  ]
+}

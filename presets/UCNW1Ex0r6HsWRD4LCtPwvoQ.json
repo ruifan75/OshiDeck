@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "三枝明那 / Saegusa Akina",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCNW1Ex0r6HsWRD4LCtPwvoQ",
   "cards": [
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"がんばれー"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"わかる"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNW1Ex0r6HsWRD4LCtPwvoQ/FSuvXYqOGMOS-gPl7bCQBA","alt":"3193Penragyaku","sharedTooltipText":":_3193Penragyaku:","src":"https://yt3.ggpht.com/i3yq1aJVXbQpEfMVW_h5cP9M5pYwVl73_TiiyI77gHWKYFr4pK4KFGcOemjXkd9b1mzgCXC7psw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNW1Ex0r6HsWRD4LCtPwvoQ/zCWvXfyfCM6E-wO_goywDQ","alt":"3193Penra","sharedTooltipText":":_3193Penra:","src":"https://yt3.ggpht.com/2F93LruZP6GgRCuqpc_HDL1Y3aUpOZbllVcJaEXdXsoY-PbPOmm-LmTrPmaSU9ihVGQpt2RJhQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNW1Ex0r6HsWRD4LCtPwvoQ/FSuvXYqOGMOS-gPl7bCQBA","alt":"3193Penragyaku","sharedTooltipText":":_3193Penragyaku:","src":"https://yt3.ggpht.com/i3yq1aJVXbQpEfMVW_h5cP9M5pYwVl73_TiiyI77gHWKYFr4pK4KFGcOemjXkd9b1mzgCXC7psw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNW1Ex0r6HsWRD4LCtPwvoQ/zCWvXfyfCM6E-wO_goywDQ","alt":"3193Penra","sharedTooltipText":":_3193Penra:","src":"https://yt3.ggpht.com/2F93LruZP6GgRCuqpc_HDL1Y3aUpOZbllVcJaEXdXsoY-PbPOmm-LmTrPmaSU9ihVGQpt2RJhQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"最高"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"がんばれ！"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNW1Ex0r6HsWRD4LCtPwvoQ/7P4NXevEFILNNpS3pLgK","alt":"3193Detawane","sharedTooltipText":":_3193Detawane:","src":"https://yt3.ggpht.com/vrgC2m73KvegmPT-zAMaXRSB2K8dP1AMaDMn9KfMZ949mYfIEnabs08v67_YtEML7ouhierhbg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNW1Ex0r6HsWRD4LCtPwvoQ/7P4NXevEFILNNpS3pLgK","alt":"3193Detawane","sharedTooltipText":":_3193Detawane:","src":"https://yt3.ggpht.com/vrgC2m73KvegmPT-zAMaXRSB2K8dP1AMaDMn9KfMZ949mYfIEnabs08v67_YtEML7ouhierhbg=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ナイス"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ありがとう"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" }
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Nia Suzune / 鈴音にあ 【REQUIEM】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCw1KNjVqfrJSfcFd6zlcSzA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oooh"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCw1KNjVqfrJSfcFd6zlcSzA/dfHzaYHeJOiC7L4PqeHj2QQ","alt":"niaLove","sharedTooltipText":":_niaLove:","src":"https://yt3.ggpht.com/zOmKHPpKXwRHJ-KaW8GNnZHGbsSClZ-MGjC-7QAJeG-5VC_FZgDjPR9-hTJS_h6OjBryvI6MHDw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCw1KNjVqfrJSfcFd6zlcSzA/dfHzaYHeJOiC7L4PqeHj2QQ","alt":"niaLove","sharedTooltipText":":_niaLove:","src":"https://yt3.ggpht.com/zOmKHPpKXwRHJ-KaW8GNnZHGbsSClZ-MGjC-7QAJeG-5VC_FZgDjPR9-hTJS_h6OjBryvI6MHDw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCw1KNjVqfrJSfcFd6zlcSzA/dfHzaYHeJOiC7L4PqeHj2QQ","alt":"niaLove","sharedTooltipText":":_niaLove:","src":"https://yt3.ggpht.com/zOmKHPpKXwRHJ-KaW8GNnZHGbsSClZ-MGjC-7QAJeG-5VC_FZgDjPR9-hTJS_h6OjBryvI6MHDw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCw1KNjVqfrJSfcFd6zlcSzA/dfHzaY_iJOiC7L4PqeHj2QQ","alt":"niaLurk","sharedTooltipText":":_niaLurk:","src":"https://yt3.ggpht.com/eEAueIQAxaH98lnw6aOaOlQh93oaHOnNy-ATONrXbOO7ixMiZTj2pey3iyTYDlVN8b700Mvjo1Y=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCw1KNjVqfrJSfcFd6zlcSzA/dfHzaa_iJOiC7L4PqeHj2QQ","alt":"niaSalute","sharedTooltipText":":_niaSalute:","src":"https://yt3.ggpht.com/lg_OYu60O-D5LLHUE0fpXdzCqVlwYWPOwq2W3NPrAhjJ_DVY5X-Y8NHsUV4jIzsIqOKlc7tDp5c=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Nia!"}], "scope": "channel" }
+  ]
+}

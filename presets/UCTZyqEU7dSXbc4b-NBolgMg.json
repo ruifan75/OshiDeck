@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "氷夏至 -HINAGESHI- / 罪十罰 from 少女革命計画",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCTZyqEU7dSXbc4b-NBolgMg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTZyqEU7dSXbc4b-NBolgMg/cgV3avKSHpaIs8IPqoeAwA8","alt":"ひなげしくさ","sharedTooltipText":":_ひなげしくさ:","src":"https://yt3.ggpht.com/DP0jFFoEbS-3NFKCRax83Yl5eE_XGSZuy3ziooeA5PxRSfz30DOG4MWznBrzMo-fPy2C-lewyYY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCTZyqEU7dSXbc4b-NBolgMg/cgV3avKSHpaIs8IPqoeAwA8","alt":"ひなげしくさ","sharedTooltipText":":_ひなげしくさ:","src":"https://yt3.ggpht.com/DP0jFFoEbS-3NFKCRax83Yl5eE_XGSZuy3ziooeA5PxRSfz30DOG4MWznBrzMo-fPy2C-lewyYY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCTZyqEU7dSXbc4b-NBolgMg/cgV3avKSHpaIs8IPqoeAwA8","alt":"ひなげしくさ","sharedTooltipText":":_ひなげしくさ:","src":"https://yt3.ggpht.com/DP0jFFoEbS-3NFKCRax83Yl5eE_XGSZuy3ziooeA5PxRSfz30DOG4MWznBrzMo-fPy2C-lewyYY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTZyqEU7dSXbc4b-NBolgMg/eB1vaNnkE9iU_9EPm8aJqQY","alt":"げしげし","sharedTooltipText":":_げしげし:","src":"https://yt3.ggpht.com/uMXe3cEXXBA6w_CP4QW1jrpFJArXpvmDg0ZFYNB_dOqJEjzLotucaXmTz2OiDDVcsgVxSt8QWg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCTZyqEU7dSXbc4b-NBolgMg/eB1vaNnkE9iU_9EPm8aJqQY","alt":"げしげし","sharedTooltipText":":_げしげし:","src":"https://yt3.ggpht.com/uMXe3cEXXBA6w_CP4QW1jrpFJArXpvmDg0ZFYNB_dOqJEjzLotucaXmTz2OiDDVcsgVxSt8QWg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCTZyqEU7dSXbc4b-NBolgMg/cgV3aqmSHpaIs8IPqoeAwA8","alt":"どろん","sharedTooltipText":":_どろん:","src":"https://yt3.ggpht.com/uWYJS3PihUnz8gM_bj6v4GDZFYawR77rpjpZXgxR8Avmm6rNEFrZn_9SCfq1xTCnIjM6OJFMjFI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCTZyqEU7dSXbc4b-NBolgMg/cgV3aqmSHpaIs8IPqoeAwA8","alt":"どろん","sharedTooltipText":":_どろん:","src":"https://yt3.ggpht.com/uWYJS3PihUnz8gM_bj6v4GDZFYawR77rpjpZXgxR8Avmm6rNEFrZn_9SCfq1xTCnIjM6OJFMjFI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCTZyqEU7dSXbc4b-NBolgMg/cgV3aqmSHpaIs8IPqoeAwA8","alt":"どろん","sharedTooltipText":":_どろん:","src":"https://yt3.ggpht.com/uWYJS3PihUnz8gM_bj6v4GDZFYawR77rpjpZXgxR8Avmm6rNEFrZn_9SCfq1xTCnIjM6OJFMjFI=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" }
+  ]
+}

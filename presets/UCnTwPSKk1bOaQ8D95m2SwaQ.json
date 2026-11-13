@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "犬塚いちご Ichigo Inuzuka ch.",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCnTwPSKk1bOaQ8D95m2SwaQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCnTwPSKk1bOaQ8D95m2SwaQ/4tFVX7G3J8Of-gP0laCYCA","alt":"kenzokuNaiken","sharedTooltipText":":_kenzokuNaiken:","src":"https://yt3.ggpht.com/4UpGX3gRXf8HKjds3Pqvz2Yr3YoPr6SWxCmwLmYcb1bmED1uq5yWnAfHr_i0eaBpGFNvJ3JN=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCnTwPSKk1bOaQ8D95m2SwaQ/4tFVX7G3J8Of-gP0laCYCA","alt":"kenzokuNaiken","sharedTooltipText":":_kenzokuNaiken:","src":"https://yt3.ggpht.com/4UpGX3gRXf8HKjds3Pqvz2Yr3YoPr6SWxCmwLmYcb1bmED1uq5yWnAfHr_i0eaBpGFNvJ3JN=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわんだふる〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCnTwPSKk1bOaQ8D95m2SwaQ/W9FoX9EBya78A_LSh6gB","alt":"kenzokuCheers","sharedTooltipText":":_kenzokuCheers:","src":"https://yt3.ggpht.com/FKEk_QRrGJQA5V6Bbcu313Njo_v4q25J3zlYUxsWdBxV45irP8k062yjC0Afgk7rC2dO6xlZ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCnTwPSKk1bOaQ8D95m2SwaQ/W9FoX9EBya78A_LSh6gB","alt":"kenzokuCheers","sharedTooltipText":":_kenzokuCheers:","src":"https://yt3.ggpht.com/FKEk_QRrGJQA5V6Bbcu313Njo_v4q25J3zlYUxsWdBxV45irP8k062yjC0Afgk7rC2dO6xlZ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCnTwPSKk1bOaQ8D95m2SwaQ/aTrKX9eSNszH-QPjtojgAw","alt":"kenzokuOyasai","sharedTooltipText":":_kenzokuOyasai:","src":"https://yt3.ggpht.com/Ttz6vyXsjbfyOSxigVgeurmZL1ih1OmkfLS0Nx-VoiONTdNHm9niFmaGhpWdz2_iA5iGfcLeF08=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCnTwPSKk1bOaQ8D95m2SwaQ/aTrKX9eSNszH-QPjtojgAw","alt":"kenzokuOyasai","sharedTooltipText":":_kenzokuOyasai:","src":"https://yt3.ggpht.com/Ttz6vyXsjbfyOSxigVgeurmZL1ih1OmkfLS0Nx-VoiONTdNHm9niFmaGhpWdz2_iA5iGfcLeF08=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCnTwPSKk1bOaQ8D95m2SwaQ/aTrKX9eSNszH-QPjtojgAw","alt":"kenzokuOyasai","sharedTooltipText":":_kenzokuOyasai:","src":"https://yt3.ggpht.com/Ttz6vyXsjbfyOSxigVgeurmZL1ih1OmkfLS0Nx-VoiONTdNHm9niFmaGhpWdz2_iA5iGfcLeF08=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCnTwPSKk1bOaQ8D95m2SwaQ/w0peX_z0J8-n-gOWhYmACg","alt":"kenzokuLol","sharedTooltipText":":_kenzokuLol:","src":"https://yt3.ggpht.com/1t1H0YBmOn_6qYhvVbHEFb6lRZm2dh7p3LJ1IgrCSFW1pIryQAwTeT6PKg8rNrtE_IFpNywV73k=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" }
+  ]
+}

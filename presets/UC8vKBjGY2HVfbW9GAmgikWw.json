@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "甘結もか / Amayui Moka",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC8vKBjGY2HVfbW9GAmgikWw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC8vKBjGY2HVfbW9GAmgikWw/sPMyZ62iI6eB_9EPioiP-AI","alt":"yaho","sharedTooltipText":":_yaho:","src":"https://yt3.ggpht.com/IR4ic6zRIPrpqkoS5jt27aSLCmtXGM_yUhEn0Be_kK2u5hHkbwD_bcLYfLKVpv7xYBN60fnGYo4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8vKBjGY2HVfbW9GAmgikWw/sPMyZ62iI6eB_9EPioiP-AI","alt":"yaho","sharedTooltipText":":_yaho:","src":"https://yt3.ggpht.com/IR4ic6zRIPrpqkoS5jt27aSLCmtXGM_yUhEn0Be_kK2u5hHkbwD_bcLYfLKVpv7xYBN60fnGYo4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8vKBjGY2HVfbW9GAmgikWw/sPMyZ62iI6eB_9EPioiP-AI","alt":"yaho","sharedTooltipText":":_yaho:","src":"https://yt3.ggpht.com/IR4ic6zRIPrpqkoS5jt27aSLCmtXGM_yUhEn0Be_kK2u5hHkbwD_bcLYfLKVpv7xYBN60fnGYo4=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"どうもどうも"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC8vKBjGY2HVfbW9GAmgikWw/sPMyZ7OjI6eB_9EPioiP-AI","alt":"otukare","sharedTooltipText":":_otukare:","src":"https://yt3.ggpht.com/z_q7WjZJkodEbcWFQzD0OnEYRnNggkucz6wsEDy5UkZygWR8s__40Kk_OfxOLoNJi8sOoFLU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8vKBjGY2HVfbW9GAmgikWw/sPMyZ7OjI6eB_9EPioiP-AI","alt":"otukare","sharedTooltipText":":_otukare:","src":"https://yt3.ggpht.com/z_q7WjZJkodEbcWFQzD0OnEYRnNggkucz6wsEDy5UkZygWR8s__40Kk_OfxOLoNJi8sOoFLU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8vKBjGY2HVfbW9GAmgikWw/sPMyZ7OjI6eB_9EPioiP-AI","alt":"otukare","sharedTooltipText":":_otukare:","src":"https://yt3.ggpht.com/z_q7WjZJkodEbcWFQzD0OnEYRnNggkucz6wsEDy5UkZygWR8s__40Kk_OfxOLoNJi8sOoFLU=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" }
+  ]
+}

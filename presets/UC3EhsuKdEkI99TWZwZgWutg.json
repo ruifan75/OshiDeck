@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "杏戸ゆげ / Uge Channel【ななしいんく】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC3EhsuKdEkI99TWZwZgWutg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC3EhsuKdEkI99TWZwZgWutg/K-97YcjVE6XQ8gTGxrrwDw","alt":"ugeConyu","sharedTooltipText":":_ugeConyu:","src":"https://yt3.ggpht.com/XKTYoqWdvgHi32rtEzAM__OgkoONkKXR3AsDxaX7UGS864Kog1yrdHB2APKnG4yLrPKE2ZKkhU0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC3EhsuKdEkI99TWZwZgWutg/K-97YcjVE6XQ8gTGxrrwDw","alt":"ugeConyu","sharedTooltipText":":_ugeConyu:","src":"https://yt3.ggpht.com/XKTYoqWdvgHi32rtEzAM__OgkoONkKXR3AsDxaX7UGS864Kog1yrdHB2APKnG4yLrPKE2ZKkhU0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC3EhsuKdEkI99TWZwZgWutg/K-97YcjVE6XQ8gTGxrrwDw","alt":"ugeConyu","sharedTooltipText":":_ugeConyu:","src":"https://yt3.ggpht.com/XKTYoqWdvgHi32rtEzAM__OgkoONkKXR3AsDxaX7UGS864Kog1yrdHB2APKnG4yLrPKE2ZKkhU0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC3EhsuKdEkI99TWZwZgWutg/K-97YYzWE6XQ8gTGxrrwDw","alt":"ugeWww","sharedTooltipText":":_ugeWww:","src":"https://yt3.ggpht.com/xRkf4A6SzhsqXZyopsr_pgeeSRZyr2t1U4WSXI7KqzipKXXbRuFseiy3JTUeaj691rhmeapTRy8=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC3EhsuKdEkI99TWZwZgWutg/K-97YYLVE6XQ8gTGxrrwDw","alt":"ugeBye","sharedTooltipText":":_ugeBye:","src":"https://yt3.ggpht.com/VapzdQcCycH519-VYJt84MT6IKbErOXHfrGaTiGlW7UMl5fBo7nZUe4z57yOemH1rCe1Xr0IDSk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC3EhsuKdEkI99TWZwZgWutg/K-97YYLVE6XQ8gTGxrrwDw","alt":"ugeBye","sharedTooltipText":":_ugeBye:","src":"https://yt3.ggpht.com/VapzdQcCycH519-VYJt84MT6IKbErOXHfrGaTiGlW7UMl5fBo7nZUe4z57yOemH1rCe1Xr0IDSk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC3EhsuKdEkI99TWZwZgWutg/K-97YYLVE6XQ8gTGxrrwDw","alt":"ugeBye","sharedTooltipText":":_ugeBye:","src":"https://yt3.ggpht.com/VapzdQcCycH519-VYJt84MT6IKbErOXHfrGaTiGlW7UMl5fBo7nZUe4z57yOemH1rCe1Xr0IDSk=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こにゅげ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" }
+  ]
+}

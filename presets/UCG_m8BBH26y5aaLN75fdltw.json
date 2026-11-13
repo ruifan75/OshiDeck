@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "雨莉まひる / Amari Mahiru - UltraLMTM",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCG_m8BBH26y5aaLN75fdltw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCG_m8BBH26y5aaLN75fdltw/abnYavekEf-79fwP_tHfgA4","alt":"wooo","sharedTooltipText":":_wooo:","src":"https://yt3.ggpht.com/eYn5nB0ZIcVIK6T_czmpBoox4tO-ETeIV2iBndlzq8YWL-RO35rwJPexZYeI5LPPRVExznJjcA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCG_m8BBH26y5aaLN75fdltw/abnYavekEf-79fwP_tHfgA4","alt":"wooo","sharedTooltipText":":_wooo:","src":"https://yt3.ggpht.com/eYn5nB0ZIcVIK6T_czmpBoox4tO-ETeIV2iBndlzq8YWL-RO35rwJPexZYeI5LPPRVExznJjcA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCG_m8BBH26y5aaLN75fdltw/abnYavekEf-79fwP_tHfgA4","alt":"wooo","sharedTooltipText":":_wooo:","src":"https://yt3.ggpht.com/eYn5nB0ZIcVIK6T_czmpBoox4tO-ETeIV2iBndlzq8YWL-RO35rwJPexZYeI5LPPRVExznJjcA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ええて"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"く、くる"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつじゃか〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCG_m8BBH26y5aaLN75fdltw/abnYat-lEf-79fwP_tHfgA4","alt":"bikkuri","sharedTooltipText":":_bikkuri:","src":"https://yt3.ggpht.com/hfwVAQGiGSGS83Qqj5x4evUNHQsIgRn2sOceOxwB54d0TlBcNfdeXx8dKkxBdN4TbGraDWH2iw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCG_m8BBH26y5aaLN75fdltw/abnYat-lEf-79fwP_tHfgA4","alt":"bikkuri","sharedTooltipText":":_bikkuri:","src":"https://yt3.ggpht.com/hfwVAQGiGSGS83Qqj5x4evUNHQsIgRn2sOceOxwB54d0TlBcNfdeXx8dKkxBdN4TbGraDWH2iw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCG_m8BBH26y5aaLN75fdltw/abnYat-lEf-79fwP_tHfgA4","alt":"bikkuri","sharedTooltipText":":_bikkuri:","src":"https://yt3.ggpht.com/hfwVAQGiGSGS83Qqj5x4evUNHQsIgRn2sOceOxwB54d0TlBcNfdeXx8dKkxBdN4TbGraDWH2iw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCG_m8BBH26y5aaLN75fdltw/abnYaommEf-79fwP_tHfgA4","alt":"hatena","sharedTooltipText":":_hatena:","src":"https://yt3.ggpht.com/ILvNfgotLQe87ZWj7nh2atMsi6sV4ak6WhFpGLO72wdEXBUamFifyvUY4qkTa83vrKDyyoz7kg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCG_m8BBH26y5aaLN75fdltw/abnYaommEf-79fwP_tHfgA4","alt":"hatena","sharedTooltipText":":_hatena:","src":"https://yt3.ggpht.com/ILvNfgotLQe87ZWj7nh2atMsi6sV4ak6WhFpGLO72wdEXBUamFifyvUY4qkTa83vrKDyyoz7kg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCG_m8BBH26y5aaLN75fdltw/abnYaommEf-79fwP_tHfgA4","alt":"hatena","sharedTooltipText":":_hatena:","src":"https://yt3.ggpht.com/ILvNfgotLQe87ZWj7nh2atMsi6sV4ak6WhFpGLO72wdEXBUamFifyvUY4qkTa83vrKDyyoz7kg=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

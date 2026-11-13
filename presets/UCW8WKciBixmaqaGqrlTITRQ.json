@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "柚原いづみ / Izumi Channel 【ななしいんく】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCW8WKciBixmaqaGqrlTITRQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCW8WKciBixmaqaGqrlTITRQ/ugXMXq6_IoK0_AOC5aiACQ","alt":"otukapi","sharedTooltipText":":_otukapi:","src":"https://yt3.ggpht.com/j55KjwvT4SwPcBlj5zx0eVKP_nUgIXJpohoStO6c124o3_to8hn-ts_WWjOYXGOZPYa4pZO0lA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCW8WKciBixmaqaGqrlTITRQ/ugXMXq6_IoK0_AOC5aiACQ","alt":"otukapi","sharedTooltipText":":_otukapi:","src":"https://yt3.ggpht.com/j55KjwvT4SwPcBlj5zx0eVKP_nUgIXJpohoStO6c124o3_to8hn-ts_WWjOYXGOZPYa4pZO0lA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかぴー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCW8WKciBixmaqaGqrlTITRQ/CgbMXqnrMYK0_AOC5aiACQ","alt":"konkapi","sharedTooltipText":":_konkapi:","src":"https://yt3.ggpht.com/td_A0LzZX1DrABu2QH5E-awLqcdeA5MKDZWhJkUCjmjhqKIAbzxVb4MiUEOMDXklYmrR-mzp=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCW8WKciBixmaqaGqrlTITRQ/CgbMXqnrMYK0_AOC5aiACQ","alt":"konkapi","sharedTooltipText":":_konkapi:","src":"https://yt3.ggpht.com/td_A0LzZX1DrABu2QH5E-awLqcdeA5MKDZWhJkUCjmjhqKIAbzxVb4MiUEOMDXklYmrR-mzp=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんかぴー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"♨"},{"type":"text","value":"🐾"},{"type":"text","value":"🎶"},{"type":"text","value":"♨"},{"type":"text","value":"🐾"},{"type":"text","value":"🎶"},{"type":"text","value":"♨"},{"type":"text","value":"🐾"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCW8WKciBixmaqaGqrlTITRQ/1ZnSX-fpLc_J-AOq0YDQBQ","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/7AbFokjGnEBedkcWEwJCM9GZHeQH3rEFuqJJltUphgMOsIczSt8SBGFaTVpxeYJ7h-tzHgrJZA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはよー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" }
+  ]
+}

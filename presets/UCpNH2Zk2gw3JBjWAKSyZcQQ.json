@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "エリー・コニファー / Eli Conifer【にじさんじ】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCpNH2Zk2gw3JBjWAKSyZcQQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCpNH2Zk2gw3JBjWAKSyZcQQ/Ug5uXvLSMofh-gOmuYy4CQ","alt":"elixirWow","sharedTooltipText":":_elixirWow:","src":"https://yt3.ggpht.com/erD4js1miqkAY6u-gfJn9in7MGo1FtRng9DX6J0AbDSAbeKcIr_6QCvDxzD8fcvJMzd3yE-v=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpNH2Zk2gw3JBjWAKSyZcQQ/Ug5uXvLSMofh-gOmuYy4CQ","alt":"elixirWow","sharedTooltipText":":_elixirWow:","src":"https://yt3.ggpht.com/erD4js1miqkAY6u-gfJn9in7MGo1FtRng9DX6J0AbDSAbeKcIr_6QCvDxzD8fcvJMzd3yE-v=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpNH2Zk2gw3JBjWAKSyZcQQ/Ug5uXvLSMofh-gOmuYy4CQ","alt":"elixirWow","sharedTooltipText":":_elixirWow:","src":"https://yt3.ggpht.com/erD4js1miqkAY6u-gfJn9in7MGo1FtRng9DX6J0AbDSAbeKcIr_6QCvDxzD8fcvJMzd3yE-v=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💐"},{"type":"text","value":"💐"},{"type":"text","value":"💐"},{"type":"text","value":"💐"},{"type":"text","value":"💐"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あら"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "LUCASの存在。",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCvcQcNTD7FbXbnvrzcXixcA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんりゅか〜！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCvcQcNTD7FbXbnvrzcXixcA/xF9NYuX6B8308gSK7ZDADA","alt":"ぎえー","sharedTooltipText":":_ぎえー:","src":"https://yt3.ggpht.com/qUy__qg6_XQH9ny25VV0yHgvtcfA-8dlayEc74zmOVdBxAE4_8ZM7BQ8CPHkaMSH4ZVP7OOz1A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCvcQcNTD7FbXbnvrzcXixcA/xF9NYuX6B8308gSK7ZDADA","alt":"ぎえー","sharedTooltipText":":_ぎえー:","src":"https://yt3.ggpht.com/qUy__qg6_XQH9ny25VV0yHgvtcfA-8dlayEc74zmOVdBxAE4_8ZM7BQ8CPHkaMSH4ZVP7OOz1A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCvcQcNTD7FbXbnvrzcXixcA/xF9NYuX6B8308gSK7ZDADA","alt":"ぎえー","sharedTooltipText":":_ぎえー:","src":"https://yt3.ggpht.com/qUy__qg6_XQH9ny25VV0yHgvtcfA-8dlayEc74zmOVdBxAE4_8ZM7BQ8CPHkaMSH4ZVP7OOz1A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" }
+  ]
+}

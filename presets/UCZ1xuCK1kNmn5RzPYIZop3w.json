@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "リゼ・ヘルエスタ -Lize Helesta-",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCZ1xuCK1kNmn5RzPYIZop3w",
   "cards": [
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCZ1xuCK1kNmn5RzPYIZop3w/o8kuXrD6Aobe-QOvuaSgCw","alt":"ヘルエスタセイバー","sharedTooltipText":":_ヘルエスタセイバー:","src":"https://yt3.ggpht.com/tgTj6wszGJzfwoG9wXQvyse43cBQ0oJXK0cIam2JuPrcx_1bMN5ang_8pmN5S-Zc0RpNaTcBek8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZ1xuCK1kNmn5RzPYIZop3w/o8kuXrD6Aobe-QOvuaSgCw","alt":"ヘルエスタセイバー","sharedTooltipText":":_ヘルエスタセイバー:","src":"https://yt3.ggpht.com/tgTj6wszGJzfwoG9wXQvyse43cBQ0oJXK0cIam2JuPrcx_1bMN5ang_8pmN5S-Zc0RpNaTcBek8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZ1xuCK1kNmn5RzPYIZop3w/o8kuXrD6Aobe-QOvuaSgCw","alt":"ヘルエスタセイバー","sharedTooltipText":":_ヘルエスタセイバー:","src":"https://yt3.ggpht.com/tgTj6wszGJzfwoG9wXQvyse43cBQ0oJXK0cIam2JuPrcx_1bMN5ang_8pmN5S-Zc0RpNaTcBek8=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおお"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"どうなの！？"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ん？"}], "scope": "global" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCZ1xuCK1kNmn5RzPYIZop3w/0yoNYZG_LNLt8wTgjYGYBQ","alt":"おつエスタ","sharedTooltipText":":_おつエスタ:","src":"https://yt3.ggpht.com/Pm81F7SPjEskAJaR4la9qQVcoBrx5pOQHPOlLWetq8X7TEHbhIsF0Zk-RTeuBqPBDkTHieb55cs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZ1xuCK1kNmn5RzPYIZop3w/gFhwZIHNA9uJ_9EPhIGBmAU","alt":"エスタ","sharedTooltipText":":_エスタ:","src":"https://yt3.ggpht.com/HirFiX6ggYIl-UpxbxC5iQ3Zy-4x4jT_5g_sdfbe3-MXwIqoUY6_Bzzrdr8FvAfwQoOkTXUV=w48-h48-c-k-nd"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCZ1xuCK1kNmn5RzPYIZop3w/kmkLYfnTJcXR8gTkvJmoDQ","alt":"ヘル絵文字","sharedTooltipText":":_ヘル絵文字:","src":"https://yt3.ggpht.com/SyXp-t0KsyGkkXsTobDXgqAMFFSEljtcsK9rLMa3cZoTq6OPPVJvPzPC3rq3thaGy-2lS9Iarto=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZ1xuCK1kNmn5RzPYIZop3w/gFhwZIHNA9uJ_9EPhIGBmAU","alt":"エスタ","sharedTooltipText":":_エスタ:","src":"https://yt3.ggpht.com/HirFiX6ggYIl-UpxbxC5iQ3Zy-4x4jT_5g_sdfbe3-MXwIqoUY6_Bzzrdr8FvAfwQoOkTXUV=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZ1xuCK1kNmn5RzPYIZop3w/kmkLYePUJcXR8gTkvJmoDQ","alt":"スタート","sharedTooltipText":":_スタート:","src":"https://yt3.ggpht.com/lMPtubQ24t3yH0RjvWyDtVCy9pLm7ZkabXcM0Pzi2cg-2t_8gRkXjz2hKJoPKKV8V7ViYzVj=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"リゼ様？"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" }
   ]
 }

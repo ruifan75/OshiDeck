@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "toma like tomato",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCdyPindb5CUHQNJfrJ__ebA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"1"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"2"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aloo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"TOMA TIME"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello toma"}], "scope": "channel" }
+  ]
+}

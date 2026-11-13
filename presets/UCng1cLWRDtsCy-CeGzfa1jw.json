@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "私が咲くところ。(木村千咲)",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCng1cLWRDtsCy-CeGzfa1jw",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCng1cLWRDtsCy-CeGzfa1jw/83cjYfDsL4nY8wTLjrngBg","alt":"ではなっ","sharedTooltipText":":_ではなっ:","src":"https://yt3.ggpht.com/34Aq5y8asO7T2bwnxuEH7LYtG_1An2N6MdjOl3YnSTJwLiCHbRdGwhFvLVj41p-ovhqrq40z=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCng1cLWRDtsCy-CeGzfa1jw/83cjYfDsL4nY8wTLjrngBg","alt":"ではなっ","sharedTooltipText":":_ではなっ:","src":"https://yt3.ggpht.com/34Aq5y8asO7T2bwnxuEH7LYtG_1An2N6MdjOl3YnSTJwLiCHbRdGwhFvLVj41p-ovhqrq40z=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCng1cLWRDtsCy-CeGzfa1jw/83cjYfDsL4nY8wTLjrngBg","alt":"ではなっ","sharedTooltipText":":_ではなっ:","src":"https://yt3.ggpht.com/34Aq5y8asO7T2bwnxuEH7LYtG_1An2N6MdjOl3YnSTJwLiCHbRdGwhFvLVj41p-ovhqrq40z=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やっほりん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCng1cLWRDtsCy-CeGzfa1jw/83cjYaHsL4nY8wTLjrngBg","alt":"やっほりん","sharedTooltipText":":_やっほりん:","src":"https://yt3.ggpht.com/5pDNnxkkUmajqBhxLbOV9NdZ2a77k1eKC-KA4c9yw_uZPWxHsGFUhOyizTQG4_9lBt0cjF4ACfo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCng1cLWRDtsCy-CeGzfa1jw/83cjYaHsL4nY8wTLjrngBg","alt":"やっほりん","sharedTooltipText":":_やっほりん:","src":"https://yt3.ggpht.com/5pDNnxkkUmajqBhxLbOV9NdZ2a77k1eKC-KA4c9yw_uZPWxHsGFUhOyizTQG4_9lBt0cjF4ACfo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCng1cLWRDtsCy-CeGzfa1jw/83cjYaHsL4nY8wTLjrngBg","alt":"やっほりん","sharedTooltipText":":_やっほりん:","src":"https://yt3.ggpht.com/5pDNnxkkUmajqBhxLbOV9NdZ2a77k1eKC-KA4c9yw_uZPWxHsGFUhOyizTQG4_9lBt0cjF4ACfo=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やほりん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" }
+  ]
+}

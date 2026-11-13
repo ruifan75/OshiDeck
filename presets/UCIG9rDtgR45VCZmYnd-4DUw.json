@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "ラトナ・プティ -Ratna Petit -にじさんじ所属",
-  "note": "過去13配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCIG9rDtgR45VCZmYnd-4DUw",
   "cards": [
-    { "tokens": [{"type":"text","value":"おはにょ"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"こんぷて〜"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"ないす"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ないふぁい"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"おつぷてー"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"こんぷて"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIG9rDtgR45VCZmYnd-4DUw/GPrjXtWFIMGh-gOorbHgBQ","alt":"サイリウムおれんじ","sharedTooltipText":":_サイリウムおれんじ:","src":"https://yt3.ggpht.com/t7LFmOIqnw63X4b-aieenpWrePYUExyZnyQjMah63nbRf8uPKk-_ab1tT8pDgbCiOAvcdxPM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIG9rDtgR45VCZmYnd-4DUw/GPrjXtWFIMGh-gOorbHgBQ","alt":"サイリウムおれんじ","sharedTooltipText":":_サイリウムおれんじ:","src":"https://yt3.ggpht.com/t7LFmOIqnw63X4b-aieenpWrePYUExyZnyQjMah63nbRf8uPKk-_ab1tT8pDgbCiOAvcdxPM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIG9rDtgR45VCZmYnd-4DUw/GPrjXtWFIMGh-gOorbHgBQ","alt":"サイリウムおれんじ","sharedTooltipText":":_サイリウムおれんじ:","src":"https://yt3.ggpht.com/t7LFmOIqnw63X4b-aieenpWrePYUExyZnyQjMah63nbRf8uPKk-_ab1tT8pDgbCiOAvcdxPM=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぷて〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはにょ"}], "scope": "channel" }
   ]
 }

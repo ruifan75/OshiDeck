@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "御子神琴音 / Mikogami Kotone【にじさんじ】",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCwjlRIySBvZ-kLV5bfjya4A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"🥢"},{"type":"text","value":"🥢"},{"type":"text","value":"🥢"},{"type":"text","value":"🥢"},{"type":"text","value":"🥢"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCwjlRIySBvZ-kLV5bfjya4A/EpUnaoPaMeeq7OsPrd270Q8","alt":"ハート","sharedTooltipText":":_ハート:","src":"https://yt3.ggpht.com/m9ssgSWaMKU20hcvpw3vAJTINfqpprDS9f2vBcsXQS7NQ_pYh3bM30-mKzRYC1-OghjbOCPV8g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCwjlRIySBvZ-kLV5bfjya4A/EpUnaoPaMeeq7OsPrd270Q8","alt":"ハート","sharedTooltipText":":_ハート:","src":"https://yt3.ggpht.com/m9ssgSWaMKU20hcvpw3vAJTINfqpprDS9f2vBcsXQS7NQ_pYh3bM30-mKzRYC1-OghjbOCPV8g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCwjlRIySBvZ-kLV5bfjya4A/EpUnaoPaMeeq7OsPrd270Q8","alt":"ハート","sharedTooltipText":":_ハート:","src":"https://yt3.ggpht.com/m9ssgSWaMKU20hcvpw3vAJTINfqpprDS9f2vBcsXQS7NQ_pYh3bM30-mKzRYC1-OghjbOCPV8g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCwjlRIySBvZ-kLV5bfjya4A/EpUnauDZMeeq7OsPrd270Q8","alt":"あいさつ","sharedTooltipText":":_あいさつ:","src":"https://yt3.ggpht.com/txQp5u1jJk5WHmIvRFsBtVj8lSOT_2sX4KFdbJHaxW5lMufgcs0gsSpngHy2GQEpwc-SQOPwuw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCwjlRIySBvZ-kLV5bfjya4A/EpUnauDZMeeq7OsPrd270Q8","alt":"あいさつ","sharedTooltipText":":_あいさつ:","src":"https://yt3.ggpht.com/txQp5u1jJk5WHmIvRFsBtVj8lSOT_2sX4KFdbJHaxW5lMufgcs0gsSpngHy2GQEpwc-SQOPwuw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCwjlRIySBvZ-kLV5bfjya4A/EpUnauDZMeeq7OsPrd270Q8","alt":"あいさつ","sharedTooltipText":":_あいさつ:","src":"https://yt3.ggpht.com/txQp5u1jJk5WHmIvRFsBtVj8lSOT_2sX4KFdbJHaxW5lMufgcs0gsSpngHy2GQEpwc-SQOPwuw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おめでとう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" }
+  ]
+}

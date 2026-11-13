@@ -1,0 +1,17 @@
+{
+  "format": 2,
+  "name": "晴海みか【Mika Channel】",
+  "note": "歌枠1配信・通常13配信のチャットから9枚",
+  "channel": "UC4lCGN8XFyThIK_E2dlwIow",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いいねいいね"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"どうぞ"},{"type":"text","value":"♂"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"がんばれ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつみか"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"「やらないか..."},{"type":"text","value":"♂"},{"type":"text","value":"」"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんみか"}], "scope": "channel" }
+  ]
+}

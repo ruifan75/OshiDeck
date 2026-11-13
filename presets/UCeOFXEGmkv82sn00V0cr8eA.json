@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Lir.E Official",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCeOFXEGmkv82sn00V0cr8eA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいばーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うぉーおーおー！おーおーおーおー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🦈"},{"type":"text","value":"💙"},{"type":"text","value":"🎶"},{"type":"text","value":"🦈"},{"type":"text","value":"💙"},{"type":"text","value":"🎶"},{"type":"text","value":"🦈"},{"type":"text","value":"💙"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/W8IfY_bwAfiPq7IPvNCA2AU","alt":"face-red-droopy-eyes","sharedTooltipText":":face-red-droopy-eyes:","src":"https://yt3.ggpht.com/oih9s26MOYPWC_uL6tgaeOlXSGBv8MMoDrWzBt-80nEiVSL9nClgnuzUAKqkU9_TWygF6CI=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "先斗寧 / Ponto Nei 【にじさんじ】",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCe22Bcwd_GCpTjLxn83zl7A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でしたー！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCe22Bcwd_GCpTjLxn83zl7A/YggBY5SPEbCI_9EP-pWAUA","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/9s8t5m3S3akPkJSC4y_RshO7J0Pfi7nUMvrgHcH-QqoUKJWGBADGuro5tXTeQGwbUi2_UOHmtA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" }
+  ]
+}

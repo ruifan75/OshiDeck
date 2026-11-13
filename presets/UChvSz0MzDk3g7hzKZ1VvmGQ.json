@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Yukibunns",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UChvSz0MzDk3g7hzKZ1VvmGQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"Hiii"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"what"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"true"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Awww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye bye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAOO"}], "scope": "channel" }
+  ]
+}

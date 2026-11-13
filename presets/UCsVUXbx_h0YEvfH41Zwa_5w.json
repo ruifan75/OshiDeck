@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "雪丸玖/玖号室",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCsVUXbx_h0YEvfH41Zwa_5w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわこんばんわー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おしい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" }
+  ]
+}

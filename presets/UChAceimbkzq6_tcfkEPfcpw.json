@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "AYAKA",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UChAceimbkzq6_tcfkEPfcpw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"XD"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"jajaja"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hola"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChAceimbkzq6_tcfkEPfcpw/BwN9ZrKXIcSn_9EPtaqB4A0","alt":"AyakaChisme","sharedTooltipText":":_AyakaChisme:","src":"https://yt3.ggpht.com/cBJY986ApBLLp9xrlhu_3BTxXEwZOZtgOxHd1Gw6UkVAgrVJDpeCDSZftoQ4ZxJ-5m9fu559=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChAceimbkzq6_tcfkEPfcpw/zCleZsicL7md_9EPj-2P-Aw","alt":"AyakaHeya","sharedTooltipText":":_AyakaHeya:","src":"https://yt3.ggpht.com/Qc3xjJPbPPMjEVHkUfc1og1RKXHxexuLjSoAxA4uLOptUV6A8eb66ZsQ_abBq4I8PH3eSxIr=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChAceimbkzq6_tcfkEPfcpw/zCleZsicL7md_9EPj-2P-Aw","alt":"AyakaHeya","sharedTooltipText":":_AyakaHeya:","src":"https://yt3.ggpht.com/Qc3xjJPbPPMjEVHkUfc1og1RKXHxexuLjSoAxA4uLOptUV6A8eb66ZsQ_abBq4I8PH3eSxIr=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChAceimbkzq6_tcfkEPfcpw/zCleZsicL7md_9EPj-2P-Aw","alt":"AyakaHeya","sharedTooltipText":":_AyakaHeya:","src":"https://yt3.ggpht.com/Qc3xjJPbPPMjEVHkUfc1og1RKXHxexuLjSoAxA4uLOptUV6A8eb66ZsQ_abBq4I8PH3eSxIr=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"si"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"a"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChAceimbkzq6_tcfkEPfcpw/zCleZvmdL7md_9EPj-2P-Aw","alt":"AyakaParty","sharedTooltipText":":_AyakaParty:","src":"https://yt3.ggpht.com/qUPkauEB74Yv_TtvdAqx9aYDKTXPHVl-F1oQ_LtrL6P0zcXy7CRLGcWe1-aPmelAVU7AZlmo9Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChAceimbkzq6_tcfkEPfcpw/zCleZvmdL7md_9EPj-2P-Aw","alt":"AyakaParty","sharedTooltipText":":_AyakaParty:","src":"https://yt3.ggpht.com/qUPkauEB74Yv_TtvdAqx9aYDKTXPHVl-F1oQ_LtrL6P0zcXy7CRLGcWe1-aPmelAVU7AZlmo9Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChAceimbkzq6_tcfkEPfcpw/zCleZvmdL7md_9EPj-2P-Aw","alt":"AyakaParty","sharedTooltipText":":_AyakaParty:","src":"https://yt3.ggpht.com/qUPkauEB74Yv_TtvdAqx9aYDKTXPHVl-F1oQ_LtrL6P0zcXy7CRLGcWe1-aPmelAVU7AZlmo9Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChAceimbkzq6_tcfkEPfcpw/zCleZoKfL7md_9EPj-2P-Aw","alt":"AyakaHeart","sharedTooltipText":":_AyakaHeart:","src":"https://yt3.ggpht.com/P_vDcmolYIsBjQOnsLg-_HunR9R1e71AipWwk9m_ZCAcV17TazFVgZ92qi5uMs5OqyAq1dm2OAI=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

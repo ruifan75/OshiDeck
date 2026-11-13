@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Lucy Pyre",
+  "note": "歌枠1配信・通常8配信のチャットから10枚",
+  "channel": "UC5VWF53rrEiuYvO5e5Ecn9Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"x"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"BASED"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"D:"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"KEKW"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"F"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ayo"}], "scope": "channel" }
+  ]
+}

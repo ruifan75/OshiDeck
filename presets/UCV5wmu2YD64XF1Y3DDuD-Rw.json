@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "鬼ノ鈴 燐 - Oninosuzu Rin -",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCV5wmu2YD64XF1Y3DDuD-Rw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"konsuzu~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんすずー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OtsuSuzu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye bye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"congrats!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"tskr"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつすずー"}], "scope": "channel" }
+  ]
+}

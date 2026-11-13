@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "バーチャルねこ",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCKDHdDpoE9lurDuyAGAuNnw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんにちはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"さようならー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かんぱーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍻"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"さよならー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"さようなら～。"}], "scope": "channel" }
+  ]
+}

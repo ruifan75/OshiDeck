@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "浅木ゆめみ【シチュボ毎日投稿】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCaOoqUGW62lIqaTMC7sHBBw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやおや"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaOoqUGW62lIqaTMC7sHBBw/VTAmY4J20In_0Q-i44z4Bw","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/SddByJXz4S90jVMNgVmRpCgye0jiX3s2SdofCTjCCJec37HC5ND6-vU2VLWtJEj5nN0th_QrBg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaOoqUGW62lIqaTMC7sHBBw/0Gx2Y7CDEaOJ_9EPvNaL-Ac","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/sJN90gdzByqp933DLMzFmgZEl446czVYBDFLwmJJhXqGdte_cHhXqJ8LDfK8pylrmQUWJADqQg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaOoqUGW62lIqaTMC7sHBBw/0Gx2Y86DEaOJ_9EPvNaL-Ac","alt":"ittera","sharedTooltipText":":_ittera:","src":"https://yt3.ggpht.com/Bveo8eSCTx7f50oG0TJUeByobAbM7Hy4fSrKjKQFk1I70Xxp7MdZv0aHIYRyLrORV1gZerkc=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaOoqUGW62lIqaTMC7sHBBw/V5slY_G9Hcz08gTWr7ygAQ","alt":"oka","sharedTooltipText":":_oka:","src":"https://yt3.ggpht.com/yokw69bldZTP6_tNEaTIzuXDjlagDE0OKUcu6YfLQJrGFV53LdOlk_IXAXlM9sCpUC8LV4Ui=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" }
+  ]
+}

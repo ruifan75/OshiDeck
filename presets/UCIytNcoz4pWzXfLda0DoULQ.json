@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "エクス・アルビオ -Ex Albio-",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
   "channel": "UCIytNcoz4pWzXfLda0DoULQ",
   "cards": [
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIytNcoz4pWzXfLda0DoULQ/auOlXcvTI4ep_APOo5fwBw","alt":"konn","sharedTooltipText":":_konn:","src":"https://yt3.ggpht.com/M2bfgLqOmlReTUmjUzsxcqusFdxVQHaXJws4gbQiyo8ercv5tfhu9ug9RcNTtjyQIomguPrUVCs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIytNcoz4pWzXfLda0DoULQ/uA6kXYCmDM2o-QOApKHIBA","alt":"ebi","sharedTooltipText":":_ebi:","src":"https://yt3.ggpht.com/osoj-Xfj_TQLolfYRHtwG2QARl9A0NXUymc9gMriB-5NOXUNqP0Rzwb_6IQ0HwIl8cHKtGuXyw=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIytNcoz4pWzXfLda0DoULQ/Z-OlXbD3L4ep_APOo5fwBw","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/k3C3Qd_NxH5kSRjVNVw8XJBZLqgytNWw6AJmoqbG1tJlFE8K6sJArlon6TGTpgWEa6n8vTeu=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIytNcoz4pWzXfLda0DoULQ/fD2IX5rSDMn0-gP8kqbwDQ","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/BRKAzUw9flKSQRUyjZDRe928JMJ4kJJ2sO7fTBN-Z-sqMUhaPx-HLiQMcwdidxOMk7B1DO3f=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIytNcoz4pWzXfLda0DoULQ/fD2IX5rSDMn0-gP8kqbwDQ","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/BRKAzUw9flKSQRUyjZDRe928JMJ4kJJ2sO7fTBN-Z-sqMUhaPx-HLiQMcwdidxOMk7B1DO3f=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"え"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIytNcoz4pWzXfLda0DoULQ/fD2IX9vTDMn0-gP8kqbwDQ","alt":"エビオ泣","sharedTooltipText":":_エビオ泣:","src":"https://yt3.ggpht.com/e0dMxpbV0Pqz6WyLxWw62rLCxxjWndfFeh3XFdZFqKqpZlH4xIBago0ENgaqajl2jBJ3Et_bRw=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIytNcoz4pWzXfLda0DoULQ/IAqnXarOAc2o-QP-nIboDQ","alt":"otu","sharedTooltipText":":_otu:","src":"https://yt3.ggpht.com/TeEFGRRhg4FLg-sKhL3PNJSxwHN82F_kYnqc0dfASywD2OJMLZ8pXnbLicLpWcEvUmX975cvyA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIytNcoz4pWzXfLda0DoULQ/uA6kXYCmDM2o-QOApKHIBA","alt":"ebi","sharedTooltipText":":_ebi:","src":"https://yt3.ggpht.com/osoj-Xfj_TQLolfYRHtwG2QARl9A0NXUymc9gMriB-5NOXUNqP0Rzwb_6IQ0HwIl8cHKtGuXyw=w48-h48-c-k-nd"}], "scope": "channel" }
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIytNcoz4pWzXfLda0DoULQ/iEDOasajBoqt7OsP36HlkQY","alt":"ナイストライ","sharedTooltipText":":_ナイストライ:","src":"https://yt3.ggpht.com/AZbr3MjFGINmoZ1Qsnshst3ax10IRsXUfhtuHwd1n5brXE-yA3lVs4E3cXe3X8PIRBxlhAC-Vg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIytNcoz4pWzXfLda0DoULQ/iEDOasajBoqt7OsP36HlkQY","alt":"ナイストライ","sharedTooltipText":":_ナイストライ:","src":"https://yt3.ggpht.com/AZbr3MjFGINmoZ1Qsnshst3ax10IRsXUfhtuHwd1n5brXE-yA3lVs4E3cXe3X8PIRBxlhAC-Vg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIytNcoz4pWzXfLda0DoULQ/iEDOapWlBoqt7OsP36HlkQY","alt":"どーぱみん","sharedTooltipText":":_どーぱみん:","src":"https://yt3.ggpht.com/UVQXYKSBwc4Ks5xVMeXdcRIimbV95uLTWG4jqDnjaBny_asAMNnS5XtZSawUCZg-xQJPaq1o=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIytNcoz4pWzXfLda0DoULQ/iEDOapWlBoqt7OsP36HlkQY","alt":"どーぱみん","sharedTooltipText":":_どーぱみん:","src":"https://yt3.ggpht.com/UVQXYKSBwc4Ks5xVMeXdcRIimbV95uLTWG4jqDnjaBny_asAMNnS5XtZSawUCZg-xQJPaq1o=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIytNcoz4pWzXfLda0DoULQ/iEDOapWlBoqt7OsP36HlkQY","alt":"どーぱみん","sharedTooltipText":":_どーぱみん:","src":"https://yt3.ggpht.com/UVQXYKSBwc4Ks5xVMeXdcRIimbV95uLTWG4jqDnjaBny_asAMNnS5XtZSawUCZg-xQJPaq1o=w48-h48-c-k-nd"}], "scope": "channel" }
   ]
 }

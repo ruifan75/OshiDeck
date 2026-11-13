@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "- Abyss DIVA -",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCKeA3GiW32eSZNdKK_ouw-A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCKeA3GiW32eSZNdKK_ouw-A/ZEaXYt_bIcu58wSPnIz4Ag","alt":"笑う草","sharedTooltipText":":_笑う草:","src":"https://yt3.ggpht.com/5IfbXmyVrfq2B7cbas4sbmAqjAGmA2XmGLbjtHbLD9pnKxXD2us8rLY-0steGqJY7EAI2x-l=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんるき"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつるき！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんるき～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"るきもに♪"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

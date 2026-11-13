@@ -1,0 +1,17 @@
+{
+  "format": 2,
+  "name": "おだのぶVtuber",
+  "note": "歌枠0配信・通常13配信のチャットから9枚",
+  "channel": "UCnqDxEcVsvt7WpDy0px1HgA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんいくさ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんいく"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんいくさ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは。"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"首"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おついくさ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あら"}], "scope": "channel" }
+  ]
+}

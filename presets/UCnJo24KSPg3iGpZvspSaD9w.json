@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "rachie",
+  "note": "歌枠0配信・通常9配信のチャットから10枚",
+  "channel": "UCnJo24KSPg3iGpZvspSaD9w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"awooga"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"what"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Overidea公式/オーバーライディア",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCupCAZz1l52vV8m-dvaoBVQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"哈哈哈哈哈哈哈"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"老婆"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"\\京华/\\京华/\\京华/\\京华/\\京华/\\京华/"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"tskr"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"好听"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"好耶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"生日快乐"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/dv90XtfhAurw8gTgzar4DA","alt":"virtualhug","sharedTooltipText":":virtualhug:","src":"https://yt3.ggpht.com/U1TjOZlqtS58NGqQhE8VWDptPSrmJNkrbVRp_8jI4f84QqIGflq2Ibu7YmuOg5MmVYnpevc=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/dv90XtfhAurw8gTgzar4DA","alt":"virtualhug","sharedTooltipText":":virtualhug:","src":"https://yt3.ggpht.com/U1TjOZlqtS58NGqQhE8VWDptPSrmJNkrbVRp_8jI4f84QqIGflq2Ibu7YmuOg5MmVYnpevc=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/dv90XtfhAurw8gTgzar4DA","alt":"virtualhug","sharedTooltipText":":virtualhug:","src":"https://yt3.ggpht.com/U1TjOZlqtS58NGqQhE8VWDptPSrmJNkrbVRp_8jI4f84QqIGflq2Ibu7YmuOg5MmVYnpevc=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥵"},{"type":"text","value":"🥵"},{"type":"text","value":"🥵"},{"type":"text","value":"🥵"},{"type":"text","value":"🥵"},{"type":"text","value":"🥵"}], "scope": "channel" }
+  ]
+}

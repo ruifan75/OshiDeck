@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "Fure",
-  "note": "過去13配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
   "channel": "UCCh8poxQxFU5q5WeXq3uv-g",
   "cards": [
-    { "tokens": [{"type":"text","value":"no"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"GG"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"aku"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"yey"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"wtf"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"ENZO"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"lucu"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"apipi"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"f"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yey"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"miso"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aku"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo kak"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aman"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo kak fure"}], "scope": "channel" }
   ]
 }

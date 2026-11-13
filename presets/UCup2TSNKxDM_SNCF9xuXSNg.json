@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "由持もにちゃんねる",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCup2TSNKxDM_SNCF9xuXSNg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おつもに"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんもに"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつもに～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんもに～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"姉がね"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いまのなに"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" }
+  ]
+}

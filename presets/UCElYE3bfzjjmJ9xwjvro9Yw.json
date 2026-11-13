@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "日裏クロ / Hiura Kuro",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCElYE3bfzjjmJ9xwjvro9Yw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCElYE3bfzjjmJ9xwjvro9Yw/HoGlZoj0Hf28_9EPi_LBmAU","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/dP7MNwTQ5mea7jRuGjbv0WtlX6_qgErDB1qUcUiCZUwWGeb1ePKkq2y0Unu5FkNKVSWCoTaycrY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCElYE3bfzjjmJ9xwjvro9Yw/HoGlZoj0Hf28_9EPi_LBmAU","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/dP7MNwTQ5mea7jRuGjbv0WtlX6_qgErDB1qUcUiCZUwWGeb1ePKkq2y0Unu5FkNKVSWCoTaycrY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCElYE3bfzjjmJ9xwjvro9Yw/HoGlZsb0Hf28_9EPi_LBmAU","alt":"おつかれ","sharedTooltipText":":_おつかれ:","src":"https://yt3.ggpht.com/Lpdix__f4MNjenQvhJsGD4L-gRh9IKs0X2JqAXWkJ5gNetruYw9hHEVpm1SryHYSSjgFTIG08A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCElYE3bfzjjmJ9xwjvro9Yw/HoGlZsb0Hf28_9EPi_LBmAU","alt":"おつかれ","sharedTooltipText":":_おつかれ:","src":"https://yt3.ggpht.com/Lpdix__f4MNjenQvhJsGD4L-gRh9IKs0X2JqAXWkJ5gNetruYw9hHEVpm1SryHYSSjgFTIG08A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" }
+  ]
+}

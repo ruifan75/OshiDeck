@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "LVH / 智念せいら ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCkeECSuB4aRbUyQrgR2SJOQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんせいら〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつせいら〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkeECSuB4aRbUyQrgR2SJOQ/LAYOZ4q2HK69_9EPuJ6m4Ak","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/vmmohftgKclohjU8VHxmTb5M6CBJBLfQaNMFyZ4nE59SeE0N-qg5TnzU4WXfdav-8XloBOEmDQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんせいら～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Varis Hemlock 【FIRST STAGE PRODUCTION EN】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCB4G5YgdI4rfTU0IU3dkjDw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCB4G5YgdI4rfTU0IU3dkjDw/2lHAauiQLfKS5t0PmqjU-AQ","alt":"VarisLaugh","sharedTooltipText":":_VarisLaugh:","src":"https://yt3.ggpht.com/YAHhnjJBCXM2FNCgW6XObpgGmNfJ0IIlsYcrkA9IIA6CYcf-yfI2dSAelKKJk0Kbcz_PYsMKIA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCB4G5YgdI4rfTU0IU3dkjDw/2lHAauiQLfKS5t0PmqjU-AQ","alt":"VarisLaugh","sharedTooltipText":":_VarisLaugh:","src":"https://yt3.ggpht.com/YAHhnjJBCXM2FNCgW6XObpgGmNfJ0IIlsYcrkA9IIA6CYcf-yfI2dSAelKKJk0Kbcz_PYsMKIA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCB4G5YgdI4rfTU0IU3dkjDw/40PBapyFLoqt7OsP7dfksAk","alt":"VarisDead","sharedTooltipText":":_VarisDead:","src":"https://yt3.ggpht.com/9E9mmWLlEnIOT6vzt_O_ZjFP6S5T4wwWwciKfNNpFw_kDUe5Ks_euOmILdmCh3pDV8kuxfEHuIA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCB4G5YgdI4rfTU0IU3dkjDw/40PBapyFLoqt7OsP7dfksAk","alt":"VarisDead","sharedTooltipText":":_VarisDead:","src":"https://yt3.ggpht.com/9E9mmWLlEnIOT6vzt_O_ZjFP6S5T4wwWwciKfNNpFw_kDUe5Ks_euOmILdmCh3pDV8kuxfEHuIA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCB4G5YgdI4rfTU0IU3dkjDw/40PBapyFLoqt7OsP7dfksAk","alt":"VarisDead","sharedTooltipText":":_VarisDead:","src":"https://yt3.ggpht.com/9E9mmWLlEnIOT6vzt_O_ZjFP6S5T4wwWwciKfNNpFw_kDUe5Ks_euOmILdmCh3pDV8kuxfEHuIA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCB4G5YgdI4rfTU0IU3dkjDw/40PBarqELoqt7OsP7dfksAk","alt":"VarisHype","sharedTooltipText":":_VarisHype:","src":"https://yt3.ggpht.com/QBV8F0mK-bNsQibLfAxrwpsJ9inNY-1rc3fWcWiUEb9w6e8EOr40jt-78zbSnxLkSHYDk1-0gg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCB4G5YgdI4rfTU0IU3dkjDw/40PBarqELoqt7OsP7dfksAk","alt":"VarisHype","sharedTooltipText":":_VarisHype:","src":"https://yt3.ggpht.com/QBV8F0mK-bNsQibLfAxrwpsJ9inNY-1rc3fWcWiUEb9w6e8EOr40jt-78zbSnxLkSHYDk1-0gg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCB4G5YgdI4rfTU0IU3dkjDw/40PBarqELoqt7OsP7dfksAk","alt":"VarisHype","sharedTooltipText":":_VarisHype:","src":"https://yt3.ggpht.com/QBV8F0mK-bNsQibLfAxrwpsJ9inNY-1rc3fWcWiUEb9w6e8EOr40jt-78zbSnxLkSHYDk1-0gg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"awww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💜"},{"type":"text","value":"💜"},{"type":"text","value":"💜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"NOOOO"}], "scope": "channel" }
+  ]
+}

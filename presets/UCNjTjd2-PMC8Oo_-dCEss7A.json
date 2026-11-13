@@ -1,0 +1,9 @@
+{
+  "format": 2,
+  "name": "おめがシスターズ [Ω Sisters]",
+  "note": "歌枠2配信・通常2配信のチャットから1枚",
+  "channel": "UCNjTjd2-PMC8Oo_-dCEss7A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" }
+  ]
+}

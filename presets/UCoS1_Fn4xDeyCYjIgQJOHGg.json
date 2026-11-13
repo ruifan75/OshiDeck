@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "あまねの部屋",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCoS1_Fn4xDeyCYjIgQJOHGg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんあまー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつあまー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつあま～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんあま～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" }
+  ]
+}

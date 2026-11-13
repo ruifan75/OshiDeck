@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Perry Winkleton Ch. 【SVP】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCWdLywu_nBU705wIJqqXx9g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCWdLywu_nBU705wIJqqXx9g/CJ9xZ6aFK6C8_9EP19PD4Qs","alt":"PerryRave","sharedTooltipText":":_PerryRave:","src":"https://yt3.ggpht.com/edF8fCUmMpd-wJOum5QwXZeMnfGOnkQ-BY1R1Kv6RVqD2sU9S2RBlF2XX3GfOiOhAihTXm3zhw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCWdLywu_nBU705wIJqqXx9g/CJ9xZ6aFK6C8_9EP19PD4Qs","alt":"PerryRave","sharedTooltipText":":_PerryRave:","src":"https://yt3.ggpht.com/edF8fCUmMpd-wJOum5QwXZeMnfGOnkQ-BY1R1Kv6RVqD2sU9S2RBlF2XX3GfOiOhAihTXm3zhw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCWdLywu_nBU705wIJqqXx9g/CJ9xZ6aFK6C8_9EP19PD4Qs","alt":"PerryRave","sharedTooltipText":":_PerryRave:","src":"https://yt3.ggpht.com/edF8fCUmMpd-wJOum5QwXZeMnfGOnkQ-BY1R1Kv6RVqD2sU9S2RBlF2XX3GfOiOhAihTXm3zhw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCWdLywu_nBU705wIJqqXx9g/CJ9xZ72GK6C8_9EP19PD4Qs","alt":"PerryLove","sharedTooltipText":":_PerryLove:","src":"https://yt3.ggpht.com/tZbr2ph3lxTD6eUJ65RZHgqoSTw2kqqf0g_bW2sKAWwm936uaOnS3WlynHLRa6uc604QWjdQrw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCWdLywu_nBU705wIJqqXx9g/CJ9xZ72GK6C8_9EP19PD4Qs","alt":"PerryLove","sharedTooltipText":":_PerryLove:","src":"https://yt3.ggpht.com/tZbr2ph3lxTD6eUJ65RZHgqoSTw2kqqf0g_bW2sKAWwm936uaOnS3WlynHLRa6uc604QWjdQrw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCWdLywu_nBU705wIJqqXx9g/CJ9xZ72GK6C8_9EP19PD4Qs","alt":"PerryLove","sharedTooltipText":":_PerryLove:","src":"https://yt3.ggpht.com/tZbr2ph3lxTD6eUJ65RZHgqoSTw2kqqf0g_bW2sKAWwm936uaOnS3WlynHLRa6uc604QWjdQrw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCWdLywu_nBU705wIJqqXx9g/CJ9xZ_qFK6C8_9EP19PD4Qs","alt":"PerryWut","sharedTooltipText":":_PerryWut:","src":"https://yt3.ggpht.com/E2AQJbaHx9LDRxdgHatRKr4hCJxwaE8DULLxIx6wKXwS2Pf3RETDg7fO0WEgrOrqVH9kz4UdRw4=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💜"},{"type":"text","value":"💜"},{"type":"text","value":"💜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🕯"},{"type":"text","value":"🕯"},{"type":"text","value":"🕯"},{"type":"text","value":"🕯"}], "scope": "channel" }
+  ]
+}

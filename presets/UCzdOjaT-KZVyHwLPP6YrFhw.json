@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "楓原アサヒ - Asahi Kaedehara -",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCzdOjaT-KZVyHwLPP6YrFhw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍁"},{"type":"text","value":"☀"},{"type":"text","value":"🎶"},{"type":"text","value":" "},{"type":"text","value":"🍁"},{"type":"text","value":"☀"},{"type":"text","value":"🎶"},{"type":"text","value":"🍁"},{"type":"text","value":"☀"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍁"},{"type":"text","value":"🦜"},{"type":"text","value":"🎶"},{"type":"text","value":"🍁"},{"type":"text","value":"🦜"},{"type":"text","value":"🎶"},{"type":"text","value":" "},{"type":"text","value":"🍁"},{"type":"text","value":"🦜"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍁"},{"type":"text","value":"💚"},{"type":"text","value":"🎶"},{"type":"text","value":"🍁"},{"type":"text","value":"💚"},{"type":"text","value":"🎶"},{"type":"text","value":"🍁"},{"type":"text","value":"💚"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCzdOjaT-KZVyHwLPP6YrFhw/fKiAaNSYNu-X_9EP94e04Ac","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/5IGx0gUN7QGSOCTie76exxAqKUQ-ouip77dvMwpgVXjn5Y0xF7j_A1foVZ6xtYWoS5B_q8idZA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCzdOjaT-KZVyHwLPP6YrFhw/fKiAaJeYNu-X_9EP94e04Ac","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/KHVyhMuMI1FUjWNRZVn300qdVvRYfiR5zhySiVeESsCyzvwSqULLvcYhhgW2kleJO9UGYAwpdg=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

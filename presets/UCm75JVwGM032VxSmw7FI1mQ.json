@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Asakura Yui Channel",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCm75JVwGM032VxSmw7FI1mQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCm75JVwGM032VxSmw7FI1mQ/krDCX-CGKYbl-gONzZqgCQ","alt":"knbr1","sharedTooltipText":":_knbr1:","src":"https://yt3.ggpht.com/oHfWM2uJgmmUh4kQLQjEFFZuIN_kVpGI2vTEI9yYQa07yC7yT3YJwZ6KG6SxS4fuoMVr0-Q9=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCm75JVwGM032VxSmw7FI1mQ/krDCX6uHKYbl-gONzZqgCQ","alt":"knbr2","sharedTooltipText":":_knbr2:","src":"https://yt3.ggpht.com/s0bJI_Utu8hsCB_Yr5cihjYTJ6v6gua0YEBjU4_9iiEVIu_m-dX0FaGy5x2ow31kd06MgaKa=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCm75JVwGM032VxSmw7FI1mQ/krDCX9qHKYbl-gONzZqgCQ","alt":"knbr3","sharedTooltipText":":_knbr3:","src":"https://yt3.ggpht.com/O1oWlmNKKUxLgm6p05fi-iiR5Ogxh_StJYl3ppmayotBwccq3fx3imiWGMmoEv1_q4AZXZ4Os78=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCm75JVwGM032VxSmw7FI1mQ/krDCX-CGKYbl-gONzZqgCQ","alt":"knbr1","sharedTooltipText":":_knbr1:","src":"https://yt3.ggpht.com/oHfWM2uJgmmUh4kQLQjEFFZuIN_kVpGI2vTEI9yYQa07yC7yT3YJwZ6KG6SxS4fuoMVr0-Q9=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCm75JVwGM032VxSmw7FI1mQ/krDCX6uHKYbl-gONzZqgCQ","alt":"knbr2","sharedTooltipText":":_knbr2:","src":"https://yt3.ggpht.com/s0bJI_Utu8hsCB_Yr5cihjYTJ6v6gua0YEBjU4_9iiEVIu_m-dX0FaGy5x2ow31kd06MgaKa=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCm75JVwGM032VxSmw7FI1mQ/krDCX9qHKYbl-gONzZqgCQ","alt":"knbr3","sharedTooltipText":":_knbr3:","src":"https://yt3.ggpht.com/O1oWlmNKKUxLgm6p05fi-iiR5Ogxh_StJYl3ppmayotBwccq3fx3imiWGMmoEv1_q4AZXZ4Os78=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"},{"type":"youtubeEmoji","emojiId":"UCm75JVwGM032VxSmw7FI1mQ/VsgeXo2rOobe-QO0sarQBA","alt":"yatta","sharedTooltipText":":_yatta:","src":"https://yt3.ggpht.com/09rHQ7qhcJbaQ_fIjVHzRk2zEC-sN3sBemD-5b4nsgiNXSe__S_F9RkFThb-6Led_UedWi9koBs=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でしたー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～☆"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ああああああああ"}], "scope": "channel" }
+  ]
+}

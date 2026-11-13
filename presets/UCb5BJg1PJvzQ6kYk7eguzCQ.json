@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "MegalodonVT",
+  "note": "歌枠0配信・通常5配信のチャットから10枚",
+  "channel": "UCb5BJg1PJvzQ6kYk7eguzCQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"huh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi mega"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"1"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WHAT"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"2"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" }
+  ]
+}

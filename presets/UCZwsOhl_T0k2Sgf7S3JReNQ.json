@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "音琴かなみ Kanami ch. ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCZwsOhl_T0k2Sgf7S3JReNQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎀"},{"type":"text","value":"🎼"},{"type":"text","value":"♬"},{"type":"text","value":"🩷"},{"type":"text","value":"🎀"},{"type":"text","value":"🎼"},{"type":"text","value":"♬"},{"type":"text","value":"🩷"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"すぶたいき！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにゃー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎀"},{"type":"text","value":"🎼"},{"type":"text","value":"🐈"},{"type":"text","value":"🩷"},{"type":"text","value":"🎀"},{"type":"text","value":"🎼"},{"type":"text","value":"🐈"},{"type":"text","value":"🩷"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCZwsOhl_T0k2Sgf7S3JReNQ/l_GXZe62Ib2k_9EP7d6FyAU","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/7r9UmG2ClMiRdoTy1pG8ExoUZJO3uChvdN27l9wF00jhPzR-Z1n2CvocxM2wNZiGQ7Y6dw1SgsY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえ領事館"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCZwsOhl_T0k2Sgf7S3JReNQ/7Y27ZZXEA8ib_9EP782diAI","alt":"iiyo","sharedTooltipText":":_iiyo:","src":"https://yt3.ggpht.com/dnL28dSK0RP9Ak5TDmAS-kLYyQZewGeK4eadgUdNUf-iVKBL9eqxC7DlABBRqMO_ksSlZhXRHK4=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCZwsOhl_T0k2Sgf7S3JReNQ/l_GXZZCxIb2k_9EP7d6FyAU","alt":"tenten","sharedTooltipText":":_tenten:","src":"https://yt3.ggpht.com/8lPD-RfymXd2_y-_y1FhszQuYPA8a1k0mhvypjphfUeht1ucth0aRUqeMnz2JrRT-jLU4vI2rg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZwsOhl_T0k2Sgf7S3JReNQ/l_GXZZCxIb2k_9EP7d6FyAU","alt":"tenten","sharedTooltipText":":_tenten:","src":"https://yt3.ggpht.com/8lPD-RfymXd2_y-_y1FhszQuYPA8a1k0mhvypjphfUeht1ucth0aRUqeMnz2JrRT-jLU4vI2rg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZwsOhl_T0k2Sgf7S3JReNQ/l_GXZZCxIb2k_9EP7d6FyAU","alt":"tenten","sharedTooltipText":":_tenten:","src":"https://yt3.ggpht.com/8lPD-RfymXd2_y-_y1FhszQuYPA8a1k0mhvypjphfUeht1ucth0aRUqeMnz2JrRT-jLU4vI2rg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCZwsOhl_T0k2Sgf7S3JReNQ/l_GXZZCxIb2k_9EP7d6FyAU","alt":"tenten","sharedTooltipText":":_tenten:","src":"https://yt3.ggpht.com/8lPD-RfymXd2_y-_y1FhszQuYPA8a1k0mhvypjphfUeht1ucth0aRUqeMnz2JrRT-jLU4vI2rg=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

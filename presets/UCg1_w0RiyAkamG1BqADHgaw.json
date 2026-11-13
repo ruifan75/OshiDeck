@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "和央パリン【アイカツアカデミー ! 】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCg1_w0RiyAkamG1BqADHgaw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんパリ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつパリ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつパリ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんパリ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"✌"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "凛々咲 / Ririsya",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC1ucgoC_sGww_Euu5iMqpQw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💜"},{"type":"text","value":"🖤"},{"type":"text","value":"💜"},{"type":"text","value":"🖤"},{"type":"text","value":"💜"},{"type":"text","value":"🖤"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1ucgoC_sGww_Euu5iMqpQw/fPXNX-KlF8i7_APcgbKoAw","alt":"Snek","sharedTooltipText":":_Snek:","src":"https://yt3.ggpht.com/CNv3XsOxQcDwdV0iGJJknJrZfiQ2pDD-T-Ha8Ls3g8LpLNemxEr2Zlp0Hl29NrQU2jI_pBsrWN0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1ucgoC_sGww_Euu5iMqpQw/fPXNX-KlF8i7_APcgbKoAw","alt":"Snek","sharedTooltipText":":_Snek:","src":"https://yt3.ggpht.com/CNv3XsOxQcDwdV0iGJJknJrZfiQ2pDD-T-Ha8Ls3g8LpLNemxEr2Zlp0Hl29NrQU2jI_pBsrWN0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1ucgoC_sGww_Euu5iMqpQw/fPXNX-KlF8i7_APcgbKoAw","alt":"Snek","sharedTooltipText":":_Snek:","src":"https://yt3.ggpht.com/CNv3XsOxQcDwdV0iGJJknJrZfiQ2pDD-T-Ha8Ls3g8LpLNemxEr2Zlp0Hl29NrQU2jI_pBsrWN0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんりりしゃ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1ucgoC_sGww_Euu5iMqpQw/UfCoaKyNHpzO_9EP9J6m4Qc","alt":"YOOO","sharedTooltipText":":_YOOO:","src":"https://yt3.ggpht.com/UeUMmWwURSeuskaTCaCZ_RI6PhvoDmaJSWyD0zX-j0mBlkMaSg5oxNwl-4h5128CXKvd96Evj1s=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんりりしゃ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"konririsya"}], "scope": "channel" }
+  ]
+}

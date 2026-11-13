@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "コインランドリースカッド",
+  "note": "歌枠0配信・通常4配信のチャットから10枚",
+  "channel": "UCW5kRrAI7lxkXZPiZm1HfTw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"侵略完了〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"可愛い"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おぉ"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Yuki & Yuna (Duo Leveling) | Twin Vtubers",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC9AyD8AoWSKovWQWYsNzL4g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"Hello!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WOOOOOOOOOOOO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Yay!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Ooooh!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"!raid"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9AyD8AoWSKovWQWYsNzL4g/0Mb3YvD1EZ-O_9EP8diN0A8","alt":"duoHype","sharedTooltipText":":_duoHype:","src":"https://yt3.ggpht.com/gjsyPaXwF3E0lSXnoSWm7sRZTNggXBSaND4BgZKuAKAzKKjM48R4ipK6T-L4H0IORgqguibyxg=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

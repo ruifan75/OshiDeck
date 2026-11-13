@@ -19,6 +19,39 @@ const root = new URL("..", import.meta.url).pathname;
 // label, which file to edit, the text to replace, what to put there, and the
 // named case that has to go red.
 const MUTATIONS = [
+  ["hunk contents mistaken for file metadata", "private.sh",
+   '    /^@@ / { in_header = 0; dashed = 0; next }',
+   '    /^@@ / { in_header = 1; dashed = 0; next }',
+   "a hunk cannot rename its additions to the skipped file"],
+
+  ["the next file never getting its header state back", "private.sh",
+   'in_header = 1; line_hash = ""; next }', 'line_hash = ""; next }',
+   "a verified public name passes only as its exact line"],
+
+  ["file contents accepted as reader hash metadata", "private.sh",
+   '/^od-name-hash:[0-9a-f]+$/', '/od-name-hash:[0-9a-f]+$/',
+   "file content cannot forge a reader hash"],
+
+  ["verified public names refused again", "private.sh",
+   "allow_name = public_names[path SUBSEP line_hash]", "allow_name = 0",
+   "a verified public name passes only as its exact line"],
+
+  ["a public name allowance exempting its whole file", "private.sh",
+   "allow_name = public_names[path SUBSEP line_hash]", 'allow_name = (path == "public.txt")',
+   "another account-name line in an approved file is refused"],
+
+  ["a public name allowance following a line to another path", "private.sh",
+   "allow_name = public_names[path SUBSEP line_hash]", 'allow_name = public_names["public.txt" SUBSEP line_hash]',
+   "a public name allowance does not follow the line to another file"],
+
+  ["a name allowance skipping the other privacy checks", "private.sh",
+   "      hits = 0", "      hits = 0\n      if (allow_name) return 0",
+   "an approved name line still checks addresses"],
+
+  ["a public name hash computed after NUL normalization", "private.sh",
+   "my $content = substr($raw_line, 1);", "my $content = substr($line, 1);",
+   "a NUL cannot turn a changed line into an approved line"],
+
   ["privacy scan skips renames", "pre-commit",
    "--diff-filter=ACMRTC", "--diff-filter=ACMTC",
    "a rename carries its contents and is read too"],
@@ -51,7 +84,7 @@ const MUTATIONS = [
    "a lookalike of a permitted address is not one"],
 
   ["the fixture file exempt from everything", "pre-commit",
-   "found=$(scan tools/check-hooks.sh < \"$patch\")",
+   'found=$(scan tools/check-hooks.sh "$(dirname "$0")/public-names.tsv" < "$patch")',
    "found=$(scan < \"$patch\")\n[ \"$(git diff --cached --name-only)\" != tools/check-hooks.sh ] || found=",
    "but it is not exempt from anything else"],
 
@@ -71,7 +104,7 @@ const MUTATIONS = [
 
   ["a line that looks like a header believed to be one", "private.sh",
    "      if (!dashed) { check(substr($0, 2), where()); next }", "      if (0) { }",
-   "a line that looks like a file header is not one"],
+   "a header-looking message line checks its full content"],
 
   ["a rename that changes nothing never read", "private.sh",
    `    /^rename to / || /^copy to / { opened(substr($0, index($0, " to ") + 4)); dashed = 0; next }`,
@@ -87,11 +120,11 @@ const MUTATIONS = [
    "an accented account name is caught in another case"],
 
   ["invalid bytes handed straight to the text scanner", "private.sh",
-   "    my $text = decode(\"UTF-8\", scalar(<STDIN>) // \"\");", "    print scalar(<STDIN>) // \"\"; exit;",
+   '    my $text = decode("UTF-8", $raw);', '    print $raw; exit;',
    "a binary file with nothing private in it goes through"],
 
   ["a reader that stops short taken for a clean read", "private.sh",
-   "{ read_text || printf '\\n%s\\n' \"$UNREAD\"; } |", "read_text |",
+   "{ read_text hashed || printf '\\n%s\\n' \"$UNREAD\"; } |", "read_text hashed |",
    "a scan that stops halfway is not a pass"],
 
   ["a message reader that stops short taken for a clean read", "private.sh",

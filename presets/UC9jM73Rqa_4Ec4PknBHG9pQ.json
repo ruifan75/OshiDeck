@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "十神 仁 - Jin Togami -",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC9jM73Rqa_4Ec4PknBHG9pQ",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9jM73Rqa_4Ec4PknBHG9pQ/RycPZ5bdIaeB_9EPuoL2yQ8","alt":"待機中","sharedTooltipText":":_待機中:","src":"https://yt3.ggpht.com/uttgIo8aZbYDT9qMdCDXiKF_9trV0sEywcHosU1LNeWjKOl1EP0c8s8BvzVgBm4xf7kGJ2Seqg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なるほど"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いいね"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おぉ~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れさまでした！"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "P丸様。",
+  "note": "歌枠1配信・通常8配信のチャットから10枚",
+  "channel": "UCLqCmbd6bgcLaBVz3aA-68A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"可愛い"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おめでとう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うんうん"}], "scope": "channel" }
+  ]
+}

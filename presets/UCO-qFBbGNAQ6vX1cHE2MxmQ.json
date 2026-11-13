@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "凛堂たいむ【アイカツアカデミー ! 】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCO-qFBbGNAQ6vX1cHE2MxmQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ぐったーいむ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんたむ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんたむ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ぐった～いむ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" }
+  ]
+}

@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "魔界ノりりむ",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UC9EjSJ8pvxtvPdxLOElv73w",
   "cards": [
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うまい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"がんばれー"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おしい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/zgapZrCHJ_28_9EPzM6B8AQ","alt":"ふぁいと","sharedTooltipText":":_ふぁいと:","src":"https://yt3.ggpht.com/KyByhR3jRCaZaSW_mN4MKIVy-utvoOXcLO-Whlxt8XhGFD2soaMrmuEDYs-sA1TmaYuOcMFd=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/zgapZrCHJ_28_9EPzM6B8AQ","alt":"ふぁいと","sharedTooltipText":":_ふぁいと:","src":"https://yt3.ggpht.com/KyByhR3jRCaZaSW_mN4MKIVy-utvoOXcLO-Whlxt8XhGFD2soaMrmuEDYs-sA1TmaYuOcMFd=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/zgapZrCHJ_28_9EPzM6B8AQ","alt":"ふぁいと","sharedTooltipText":":_ふぁいと:","src":"https://yt3.ggpht.com/KyByhR3jRCaZaSW_mN4MKIVy-utvoOXcLO-Whlxt8XhGFD2soaMrmuEDYs-sA1TmaYuOcMFd=w48-h48-c-k-nd"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/StE2Z4GuLaCn_9EPrJGyuAc","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/o6VLie1ksxfKWHjHH1LjekJBtPfw8jcMZPMKBRYDOhXU8iYAWPxThAQUlzNrqIEZ2fYhoC08_HQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/StE2Z4GuLaCn_9EPrJGyuAc","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/o6VLie1ksxfKWHjHH1LjekJBtPfw8jcMZPMKBRYDOhXU8iYAWPxThAQUlzNrqIEZ2fYhoC08_HQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/StE2Z4GuLaCn_9EPrJGyuAc","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/o6VLie1ksxfKWHjHH1LjekJBtPfw8jcMZPMKBRYDOhXU8iYAWPxThAQUlzNrqIEZ2fYhoC08_HQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/StE2Z4GuLaCn_9EPrJGyuAc","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/o6VLie1ksxfKWHjHH1LjekJBtPfw8jcMZPMKBRYDOhXU8iYAWPxThAQUlzNrqIEZ2fYhoC08_HQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/StE2Z4GuLaCn_9EPrJGyuAc","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/o6VLie1ksxfKWHjHH1LjekJBtPfw8jcMZPMKBRYDOhXU8iYAWPxThAQUlzNrqIEZ2fYhoC08_HQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/StE2Z_CrLaCn_9EPrJGyuAc","alt":"おつぽえ","sharedTooltipText":":_おつぽえ:","src":"https://yt3.ggpht.com/fqbzeBJh3lZlH27ufwf7yQnTyvqugM3qNzFgB-a0TaObD_gFFRgW3ES5H3oxOnFD-Nq5Nb1bjbk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/StE2Z_CrLaCn_9EPrJGyuAc","alt":"おつぽえ","sharedTooltipText":":_おつぽえ:","src":"https://yt3.ggpht.com/fqbzeBJh3lZlH27ufwf7yQnTyvqugM3qNzFgB-a0TaObD_gFFRgW3ES5H3oxOnFD-Nq5Nb1bjbk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/StE2Z_CrLaCn_9EPrJGyuAc","alt":"おつぽえ","sharedTooltipText":":_おつぽえ:","src":"https://yt3.ggpht.com/fqbzeBJh3lZlH27ufwf7yQnTyvqugM3qNzFgB-a0TaObD_gFFRgW3ES5H3oxOnFD-Nq5Nb1bjbk=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/zgapZs2KJ_28_9EPzM6B8AQ","alt":"NCっ","sharedTooltipText":":_NCっ:","src":"https://yt3.ggpht.com/MRJRYBq-UqFVO7LsRThDloMoAnMxlz8LOzKqnv6jUwFID0pzHS08IqiYg7IQo1_JoUq6zFXs2g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/zgapZs2KJ_28_9EPzM6B8AQ","alt":"NCっ","sharedTooltipText":":_NCっ:","src":"https://yt3.ggpht.com/MRJRYBq-UqFVO7LsRThDloMoAnMxlz8LOzKqnv6jUwFID0pzHS08IqiYg7IQo1_JoUq6zFXs2g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/zgapZs2KJ_28_9EPzM6B8AQ","alt":"NCっ","sharedTooltipText":":_NCっ:","src":"https://yt3.ggpht.com/MRJRYBq-UqFVO7LsRThDloMoAnMxlz8LOzKqnv6jUwFID0pzHS08IqiYg7IQo1_JoUq6zFXs2g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/zgapZrCHJ_28_9EPzM6B8AQ","alt":"ふぁいと","sharedTooltipText":":_ふぁいと:","src":"https://yt3.ggpht.com/KyByhR3jRCaZaSW_mN4MKIVy-utvoOXcLO-Whlxt8XhGFD2soaMrmuEDYs-sA1TmaYuOcMFd=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/zgapZrCHJ_28_9EPzM6B8AQ","alt":"ふぁいと","sharedTooltipText":":_ふぁいと:","src":"https://yt3.ggpht.com/KyByhR3jRCaZaSW_mN4MKIVy-utvoOXcLO-Whlxt8XhGFD2soaMrmuEDYs-sA1TmaYuOcMFd=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9EjSJ8pvxtvPdxLOElv73w/zgapZrCHJ_28_9EPzM6B8AQ","alt":"ふぁいと","sharedTooltipText":":_ふぁいと:","src":"https://yt3.ggpht.com/KyByhR3jRCaZaSW_mN4MKIVy-utvoOXcLO-Whlxt8XhGFD2soaMrmuEDYs-sA1TmaYuOcMFd=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはぽえ〜"}], "scope": "channel" }
   ]
 }

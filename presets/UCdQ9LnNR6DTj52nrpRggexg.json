@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Serenade Ch. セレナーデ・オックスブラッド",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCdQ9LnNR6DTj52nrpRggexg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🐃"},{"type":"text","value":"🥀"},{"type":"text","value":"🎶"},{"type":"text","value":"🐃"},{"type":"text","value":"🥀"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdQ9LnNR6DTj52nrpRggexg/_VQ4aOOcIY6O_9EP5rypsA0","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/UCNwuAhgEg9bZerEspQaotyA4tXWhoh5yxrzc4qTlE6bJXRyiZPM2ZvIvLq4D5M2I3kOnxDlXQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdQ9LnNR6DTj52nrpRggexg/IIcoaImCGbqi_9EPsfzHmAk","alt":"じろり","sharedTooltipText":":_じろり:","src":"https://yt3.ggpht.com/Q7AQQ0ibT5xy-v4FYPtNnVXzCJfVDEOTXFwh-RrX1gZcoP_v8RsjlN0fL6wza5Zg_wyx4i2H=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdQ9LnNR6DTj52nrpRggexg/IIcoaN6KGbqi_9EPsfzHmAk","alt":"ﾊｲｯ","sharedTooltipText":":_ﾊｲｯ:","src":"https://yt3.ggpht.com/i5H__kWKf7onBTEUN1Rkyq5_nrnNkSu32nODQhIQmGE0WN1RjXWClXMIkV1FmZOjaIJPB3I0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdQ9LnNR6DTj52nrpRggexg/IIcoaOX7GLqi_9EPsfzHmAk","alt":"キラキラ","sharedTooltipText":":_キラキラ:","src":"https://yt3.ggpht.com/rdF4TkTPemGi85zHpIJ_Vyo4p_BgVQE5wdu1VMYA7N50P59hhSwh-S0eU3cY8KVzMevIIAW9=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdQ9LnNR6DTj52nrpRggexg/IIcoaPSjGbqi_9EPsfzHmAk","alt":"こんっ","sharedTooltipText":":_こんっ:","src":"https://yt3.ggpht.com/8vY4U-z6XH9d7yBfzDzrVYxQqjkD4j0lm4STrjMSe0WiRyJpGLgK1h5h7VLhmeIi1AleN3QQMw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdQ9LnNR6DTj52nrpRggexg/IIcoaKClGbqi_9EPsfzHmAk","alt":"うしっ","sharedTooltipText":":_うしっ:","src":"https://yt3.ggpht.com/wAyHrkk_SWT86xEbmdBWUpv-dkKzQS0t76hdVgg6sgK00FyYlRG-LXA9e86-TWVpHMynLcGpag=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" }
+  ]
+}

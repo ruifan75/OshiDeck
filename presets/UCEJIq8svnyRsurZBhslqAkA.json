@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "阿萨Aza",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCEJIq8svnyRsurZBhslqAkA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"\\Aza/\\Aza/\\Aza/\\Aza/"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"拜拜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"晚上好"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"好好好"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCEJIq8svnyRsurZBhslqAkA/CBG4aMj-Gd6boPwP8tynwAs","alt":"阿萨AzaHappy","sharedTooltipText":":_阿萨AzaHappy:","src":"https://yt3.ggpht.com/DEK5Nya50B1BKkBbrOZ9_JrwLbGygwSfZkgtGemyGndogIZOTg9jVeXk2VcD6ffqp59NWepS2sk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCEJIq8svnyRsurZBhslqAkA/CBG4aMj-Gd6boPwP8tynwAs","alt":"阿萨AzaHappy","sharedTooltipText":":_阿萨AzaHappy:","src":"https://yt3.ggpht.com/DEK5Nya50B1BKkBbrOZ9_JrwLbGygwSfZkgtGemyGndogIZOTg9jVeXk2VcD6ffqp59NWepS2sk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCEJIq8svnyRsurZBhslqAkA/CBG4aMj-Gd6boPwP8tynwAs","alt":"阿萨AzaHappy","sharedTooltipText":":_阿萨AzaHappy:","src":"https://yt3.ggpht.com/DEK5Nya50B1BKkBbrOZ9_JrwLbGygwSfZkgtGemyGndogIZOTg9jVeXk2VcD6ffqp59NWepS2sk=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"好听"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"byebye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは！"}], "scope": "channel" }
+  ]
+}

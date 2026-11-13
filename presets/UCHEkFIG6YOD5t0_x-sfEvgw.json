@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "あまみすい　すいすいチャンネル",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCHEkFIG6YOD5t0_x-sfEvgw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんすい〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつすい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCHEkFIG6YOD5t0_x-sfEvgw/UcMoaoi_GPD57OsPzuytoA0","alt":"こんすい","sharedTooltipText":":_こんすい:","src":"https://yt3.ggpht.com/ItWYMb_7miw18L5NE-V87Fj8LHTdndjrBtjXiEY_5re1AlaGuvaGkZfSXgZ3N8hjAEaHUMs1=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCHEkFIG6YOD5t0_x-sfEvgw/UcMoaoi_GPD57OsPzuytoA0","alt":"こんすい","sharedTooltipText":":_こんすい:","src":"https://yt3.ggpht.com/ItWYMb_7miw18L5NE-V87Fj8LHTdndjrBtjXiEY_5re1AlaGuvaGkZfSXgZ3N8hjAEaHUMs1=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんすい～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCHEkFIG6YOD5t0_x-sfEvgw/UcMoarG_GPD57OsPzuytoA0","alt":"おつすい","sharedTooltipText":":_おつすい:","src":"https://yt3.ggpht.com/eXu3D9s2IZN8qAljAnL9qo5OpFaLd0Q-ZUzBAZBOceetx_tTADDX_hry-KJt1oBHrpQTFKfOOQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCHEkFIG6YOD5t0_x-sfEvgw/UcMoarG_GPD57OsPzuytoA0","alt":"おつすい","sharedTooltipText":":_おつすい:","src":"https://yt3.ggpht.com/eXu3D9s2IZN8qAljAnL9qo5OpFaLd0Q-ZUzBAZBOceetx_tTADDX_hry-KJt1oBHrpQTFKfOOQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCHEkFIG6YOD5t0_x-sfEvgw/UcMoatS_GPD57OsPzuytoA0","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/WqEE34aXCt6XOdMiodXNODbILaJQMvh1ApyvKGClwRGoVKPa7dXTyvWoW5EK7zHIEgIihW0gdg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCHEkFIG6YOD5t0_x-sfEvgw/UcMoatS_GPD57OsPzuytoA0","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/WqEE34aXCt6XOdMiodXNODbILaJQMvh1ApyvKGClwRGoVKPa7dXTyvWoW5EK7zHIEgIihW0gdg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつすい～"}], "scope": "channel" }
+  ]
+}

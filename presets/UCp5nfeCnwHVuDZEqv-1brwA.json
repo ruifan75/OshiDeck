@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Thor Runefall Ch.【MYTHOS】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCp5nfeCnwHVuDZEqv-1brwA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"Hi Thor!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"*:3"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Bye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Bless you, Thor!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OH"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Cute"}], "scope": "channel" }
+  ]
+}

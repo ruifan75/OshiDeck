@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "鬼多見アユム【パレプロ】",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCnrJK-sb3gSn3kRLkmpmzaw",
   "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"おつきたみーん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💜"},{"type":"text","value":"🎶"},{"type":"text","value":"💜"},{"type":"text","value":"🎶"},{"type":"text","value":"💜"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCnrJK-sb3gSn3kRLkmpmzaw/QQb9Z8uFA5S3_9EPpZS2iAM","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/os2LNkLOqDfsq3CdFRGxQMmZYrCEJ0xe5rWk7IINDuPrmalZXVfbla0RUq_REsGT6jCNT4Og=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCnrJK-sb3gSn3kRLkmpmzaw/QQb9Z8uFA5S3_9EPpZS2iAM","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/os2LNkLOqDfsq3CdFRGxQMmZYrCEJ0xe5rWk7IINDuPrmalZXVfbla0RUq_REsGT6jCNT4Og=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCnrJK-sb3gSn3kRLkmpmzaw/QQb9Z8uFA5S3_9EPpZS2iAM","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/os2LNkLOqDfsq3CdFRGxQMmZYrCEJ0xe5rWk7IINDuPrmalZXVfbla0RUq_REsGT6jCNT4Og=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCnrJK-sb3gSn3kRLkmpmzaw/QQb9Z8uFA5S3_9EPpZS2iAM","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/os2LNkLOqDfsq3CdFRGxQMmZYrCEJ0xe5rWk7IINDuPrmalZXVfbla0RUq_REsGT6jCNT4Og=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCnrJK-sb3gSn3kRLkmpmzaw/QQb9Z8uFA5S3_9EPpZS2iAM","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/os2LNkLOqDfsq3CdFRGxQMmZYrCEJ0xe5rWk7IINDuPrmalZXVfbla0RUq_REsGT6jCNT4Og=w48-h48-c-k-nd"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんきたみーん"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"たい"},{"type":"youtubeEmoji","emojiId":"UCnrJK-sb3gSn3kRLkmpmzaw/QQb9Z6z-ApS3_9EPpZS2iAM","alt":"きた民","sharedTooltipText":":_きた民:","src":"https://yt3.ggpht.com/9FddHXqOXgBJVvmDgGPvgoVDLB_ll7ghLO4DBphc7b567FXGJfFyahBSAXjCobIEyejAEIp2=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"なるほど"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"こんばんきたみーん"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"こんばんきたみーん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"たい"},{"type":"youtubeEmoji","emojiId":"UCnrJK-sb3gSn3kRLkmpmzaw/QQb9Z6z-ApS3_9EPpZS2iAM","alt":"きた民","sharedTooltipText":":_きた民:","src":"https://yt3.ggpht.com/9FddHXqOXgBJVvmDgGPvgoVDLB_ll7ghLO4DBphc7b567FXGJfFyahBSAXjCobIEyejAEIp2=w48-h48-c-k-nd"}], "scope": "channel" }
   ]
 }

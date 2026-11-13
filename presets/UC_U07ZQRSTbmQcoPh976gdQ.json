@@ -1,0 +1,9 @@
+{
+  "format": 2,
+  "name": "Freyja Valdis",
+  "note": "歌枠0配信・通常13配信のチャットから1枚",
+  "channel": "UC_U07ZQRSTbmQcoPh976gdQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"Hi, Freyja"}], "scope": "channel" }
+  ]
+}

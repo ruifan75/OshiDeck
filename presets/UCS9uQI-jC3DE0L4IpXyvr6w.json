@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Coco Ch. 桐生ココ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCS9uQI-jC3DE0L4IpXyvr6w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"❤"},{"type":"text","value":"❤"},{"type":"text","value":"❤"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんドラゴン"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"FAQ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😭"},{"type":"text","value":"😭"},{"type":"text","value":"😭"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"YAGOO"}], "scope": "channel" }
+  ]
+}

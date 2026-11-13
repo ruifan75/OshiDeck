@@ -1,0 +1,17 @@
+{
+  "format": 2,
+  "name": "涙夜リノ / Nadaya Rino",
+  "note": "歌枠2配信・通常13配信のチャットから9枚",
+  "channel": "UCXAKcg8yuuewsq56tPgwkzg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつリノちー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXAKcg8yuuewsq56tPgwkzg/Zr-VacnTDuOts8IP-MTOkAU","alt":"おつのリノ","sharedTooltipText":":_おつのリノ:","src":"https://yt3.ggpht.com/KPmO1MaLKJP-5z4r2w0aVAwRtM3PqvzcTGcwvkzTnRQvyl83BI62FPzyNkyI4hCdvGxtLqwqRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXAKcg8yuuewsq56tPgwkzg/4NSTaaT6AtmEs8IPtufiuQE","alt":"文字リノち","sharedTooltipText":":_文字リノち:","src":"https://yt3.ggpht.com/6frXHg-A00ndYkHfKO92Mm26crpD1mmdOl8Y-bvFJFEoUSN_Q2MjAuepLXol5mrmrQOUGrnIplM=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXAKcg8yuuewsq56tPgwkzg/4NSTaa34AtmEs8IPtufiuQE","alt":"待機なリノ","sharedTooltipText":":_待機なリノ:","src":"https://yt3.ggpht.com/qQ1jBc5YjfVKlllzHRK-2XF6O_KhJIi3kOITHCfNmDG4-9pNb_1j0YcXIYZkUD3Vd0hbjO6gfdE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXAKcg8yuuewsq56tPgwkzg/4NSTaa34AtmEs8IPtufiuQE","alt":"待機なリノ","sharedTooltipText":":_待機なリノ:","src":"https://yt3.ggpht.com/qQ1jBc5YjfVKlllzHRK-2XF6O_KhJIi3kOITHCfNmDG4-9pNb_1j0YcXIYZkUD3Vd0hbjO6gfdE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXAKcg8yuuewsq56tPgwkzg/4NSTaa34AtmEs8IPtufiuQE","alt":"待機なリノ","sharedTooltipText":":_待機なリノ:","src":"https://yt3.ggpht.com/qQ1jBc5YjfVKlllzHRK-2XF6O_KhJIi3kOITHCfNmDG4-9pNb_1j0YcXIYZkUD3Vd0hbjO6gfdE=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおお！！"}], "scope": "channel" }
+  ]
+}

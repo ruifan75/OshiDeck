@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "空爽",
+  "note": "歌枠0配信・通常4配信のチャットから10枚",
+  "channel": "UCJxwvbBoawRJtVgPgvMg-Qg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとうございました！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🦋"},{"type":"text","value":"🫧"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"またねー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほうほう"}], "scope": "channel" }
+  ]
+}

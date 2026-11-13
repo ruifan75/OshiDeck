@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "天雅深ルイ / Rui Amagami",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCRDkw1IZn8pzAFyO99MZrCQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye bye"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRDkw1IZn8pzAFyO99MZrCQ/naBKY8XdAou48wSA1YW4Cw","alt":"えへへ顔","sharedTooltipText":":_えへへ顔:","src":"https://yt3.ggpht.com/9bmO4Q4sm48EYvIturt9UqhrsbO3TgTMvJoP2L3zzEMJp4yTwnXIfQDcY2Uo_fKm2y8aGT4O=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCRDkw1IZn8pzAFyO99MZrCQ/naBKY8XdAou48wSA1YW4Cw","alt":"えへへ顔","sharedTooltipText":":_えへへ顔:","src":"https://yt3.ggpht.com/9bmO4Q4sm48EYvIturt9UqhrsbO3TgTMvJoP2L3zzEMJp4yTwnXIfQDcY2Uo_fKm2y8aGT4O=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCRDkw1IZn8pzAFyO99MZrCQ/naBKY8XdAou48wSA1YW4Cw","alt":"えへへ顔","sharedTooltipText":":_えへへ顔:","src":"https://yt3.ggpht.com/9bmO4Q4sm48EYvIturt9UqhrsbO3TgTMvJoP2L3zzEMJp4yTwnXIfQDcY2Uo_fKm2y8aGT4O=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRDkw1IZn8pzAFyO99MZrCQ/xNVKY_zeC4u48wSA1YW4Cw","alt":"草スタンプ","sharedTooltipText":":_草スタンプ:","src":"https://yt3.ggpht.com/WoxHss0jRsL27Re39QOjAco6TFimHiFKCdr9JhfL8T5f-0Wd-BMaJ2zz-mwnjflST8e-QceicA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRDkw1IZn8pzAFyO99MZrCQ/HT40Y_KaL9mk8gStjZiIDA","alt":"眠い顔","sharedTooltipText":":_眠い顔:","src":"https://yt3.ggpht.com/rfziUUSdMGISgdN5nMMaqUGygQUpPIGFF8rzOtwOs22ow1LOIGG4FmYJ1BYhGMHqdqAs88jjwSI=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/G8AfY6yWGuKuhL0PlbiA2AE","alt":"hand-pink-waving","sharedTooltipText":":hand-pink-waving:","src":"https://yt3.ggpht.com/KOxdr_z3A5h1Gb7kqnxqOCnbZrBmxI2B_tRQ453BhTWUhYAlpg5ZP8IKEBkcvRoY8grY91Q=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

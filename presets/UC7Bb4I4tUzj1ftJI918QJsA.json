@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Seldea Ch. 셀데아",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC7Bb4I4tUzj1ftJI918QJsA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"셀하"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"헉"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"와"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"배마배마"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"뭣"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"넹"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"뱀하"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"뱀바"}], "scope": "channel" }
+  ]
+}

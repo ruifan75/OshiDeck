@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Reinanda Rea",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC5bTzks2uWlrJUqZLrew0uQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsuu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"NT"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"malam mbak rea"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo kak"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo rea"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"pagi"}], "scope": "channel" }
+  ]
+}

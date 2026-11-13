@@ -1,12 +1,12 @@
-// The journal has to stay small and stay readable: a stream open for an hour
-// must not push the interesting entry off the end, and a report must not carry
-// anything the viewer wrote.
+// The timeline keeps its newest entries within a fixed cap. Repeated adjacent
+// observations merge, and a report must not carry anything the viewer wrote.
 globalThis.OshiDeck = {};
 globalThis.chrome = { runtime: { id: "x" }, storage: { local: {
   get: async () => ({}),
   set: async () => {}
 } } };
-await import(new URL("../../src/journal.js", import.meta.url).href);
+await import(new URL("../../src/i18n.js", import.meta.url).href);
+await import(process.env.OD_JOURNAL ? `file://${process.env.OD_JOURNAL}` : new URL("../../src/journal.js", import.meta.url).href);
 const { journal } = globalThis.OshiDeck;
 
 let fail = 0;
@@ -37,7 +37,7 @@ check("returning to an earlier channel records it again", log.length === 3);
 
 log = [];
 for (let i = 0; i < journal.LIMIT + 120; i++) {
-  log = journal.append(log, entry({ at: i, video: "v".repeat(10) + i }));
+  log = journal.append(log, entry({ at: i, video: String(i).padStart(11, "v") }));
 }
 check("the log is capped", log.length === journal.LIMIT);
 check("and it is the OLDEST that is dropped", log[log.length - 1].at === journal.LIMIT + 119);
@@ -49,9 +49,24 @@ const text = journal.format(
   "9.9.9"
 );
 check("the file names the version", text.includes("9.9.9"));
+const unavailable = journal.snapshot(null);
+check("an unavailable store is not described as an empty deck", unavailable.status === "failed" && unavailable.reason === "storage-read" && !("cards" in unavailable));
+check("old stored diagnostic contents are filtered at export",
+  !journal.format([entry({ name: "private wording", message: "private wording", tokens: ["private wording"] })], "test").includes("private wording"));
 check("undefined fields are left out", !text.includes("undefined"));
 check("a repeat of one is not shown", !journal.line(entry()).includes("×"));
 check("a real repeat is shown", journal.line(entry({ repeat: 12 })).includes("×12"));
+
+for (const language of ["ja", "zh-TW", "en"]) {
+  globalThis.OshiDeck.i18n.use(language);
+  const disclosure = globalThis.OshiDeck.i18n.t("ui.journalPrivacy");
+  check(`${language}: the export explains identifiers and membership before sharing`,
+    journal.format([], "test").includes(disclosure) &&
+    ({ ja: ["チャンネルID", "動画ID", "メンバー", "共有前"],
+      "zh-TW": ["頻道 ID", "影片 ID", "會員", "分享前"],
+      en: ["channel", "video IDs", "membership", "before sharing"] })[language]
+      .every((word) => disclosure.includes(word)));
+}
 
 /* --- signature is what makes dedupe work --------------------------------- */
 

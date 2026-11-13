@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "雑葉学美 - Zouba Channel",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCElr8slMrY-Cr764_QIJHPA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"8888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすて"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないあれ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないめん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"初見さんいらっしゃい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"惜しい"}], "scope": "channel" }
+  ]
+}

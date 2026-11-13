@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ミラ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCM1XeucEZHYmxCXlYNTELoQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nt"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんみらー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCM1XeucEZHYmxCXlYNTELoQ/jmdeaczeBryB5t0P0-mmwAo","alt":"hato","sharedTooltipText":":_hato:","src":"https://yt3.ggpht.com/HeIqrqWpGmrGOAHiSgrLtrWWIgCrmQV9pRd-pMY7wJyZQzCSWm_zl7TvKGP1YILs1AlH0HI7uQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCM1XeucEZHYmxCXlYNTELoQ/jmdeaczeBryB5t0P0-mmwAo","alt":"hato","sharedTooltipText":":_hato:","src":"https://yt3.ggpht.com/HeIqrqWpGmrGOAHiSgrLtrWWIgCrmQV9pRd-pMY7wJyZQzCSWm_zl7TvKGP1YILs1AlH0HI7uQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCM1XeucEZHYmxCXlYNTELoQ/jmdeacnfBryB5t0P0-mmwAo","alt":"dino","sharedTooltipText":":_dino:","src":"https://yt3.ggpht.com/m_6h-_dIweTZhFaB26xtb44yx42ZhyTgx_sXue3uqEH9QQGOAqxalN8b4F0ZlR0aMVC2x-iB=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCM1XeucEZHYmxCXlYNTELoQ/jmdeacnfBryB5t0P0-mmwAo","alt":"dino","sharedTooltipText":":_dino:","src":"https://yt3.ggpht.com/m_6h-_dIweTZhFaB26xtb44yx42ZhyTgx_sXue3uqEH9QQGOAqxalN8b4F0ZlR0aMVC2x-iB=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" }
+  ]
+}

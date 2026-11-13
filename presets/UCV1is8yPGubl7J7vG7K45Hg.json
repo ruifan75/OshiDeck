@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "明鏡止水ふわり",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCV1is8yPGubl7J7vG7K45Hg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんふわり〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎐"},{"type":"text","value":"☁"},{"type":"text","value":"🎶"},{"type":"text","value":"🎐"},{"type":"text","value":"☁"},{"type":"text","value":"🎶"},{"type":"text","value":"🎐"},{"type":"text","value":"☁"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんふわり～"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCV1is8yPGubl7J7vG7K45Hg/wR8aZ_WOGq69_9EP8prk6Qw","alt":"かわいい","sharedTooltipText":":_かわいい:","src":"https://yt3.ggpht.com/Dsr7_nBzl1hkHUEHleXt8ZDzwON5OVr8eFacbIdCCswm5B7t7TPHfqxstI-yyo0AqwCabzC5Ig=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCV1is8yPGubl7J7vG7K45Hg/wR8aZ_WOGq69_9EP8prk6Qw","alt":"かわいい","sharedTooltipText":":_かわいい:","src":"https://yt3.ggpht.com/Dsr7_nBzl1hkHUEHleXt8ZDzwON5OVr8eFacbIdCCswm5B7t7TPHfqxstI-yyo0AqwCabzC5Ig=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCV1is8yPGubl7J7vG7K45Hg/wR8aZ_WOGq69_9EP8prk6Qw","alt":"かわいい","sharedTooltipText":":_かわいい:","src":"https://yt3.ggpht.com/Dsr7_nBzl1hkHUEHleXt8ZDzwON5OVr8eFacbIdCCswm5B7t7TPHfqxstI-yyo0AqwCabzC5Ig=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないたま！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつふわり〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつふわり～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" }
+  ]
+}

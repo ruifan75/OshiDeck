@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "季咲あんこ / Anko Channel【ななしいんく】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UChXm-xAYPfygrbyLo2yCASQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あんこちゃーーーん！！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんあー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとう！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"またねー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いええええええい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" }
+  ]
+}

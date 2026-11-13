@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Vain Ch.",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCiDSFTxFuXIzZkpzobjen4Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"Hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"1"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"W YACCHI"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCiDSFTxFuXIzZkpzobjen4Q/r11GaJaQJe-X_9EP0LfroQI","alt":"InVainHeart","sharedTooltipText":":_InVainHeart:","src":"https://yt3.ggpht.com/OpTpo8rhTeANy6EdtmoJYxjlUBBmtyGOp7UWx1ljaQbiMfm7EM1OIBjVO5gPaCw3cvE5qmeE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCiDSFTxFuXIzZkpzobjen4Q/r11GaJaQJe-X_9EP0LfroQI","alt":"InVainHeart","sharedTooltipText":":_InVainHeart:","src":"https://yt3.ggpht.com/OpTpo8rhTeANy6EdtmoJYxjlUBBmtyGOp7UWx1ljaQbiMfm7EM1OIBjVO5gPaCw3cvE5qmeE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCiDSFTxFuXIzZkpzobjen4Q/r11GaJaQJe-X_9EP0LfroQI","alt":"InVainHeart","sharedTooltipText":":_InVainHeart:","src":"https://yt3.ggpht.com/OpTpo8rhTeANy6EdtmoJYxjlUBBmtyGOp7UWx1ljaQbiMfm7EM1OIBjVO5gPaCw3cvE5qmeE=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"No"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💜"},{"type":"text","value":"💜"},{"type":"text","value":"💜"}], "scope": "channel" }
+  ]
+}

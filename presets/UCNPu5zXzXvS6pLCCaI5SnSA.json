@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "黒咲りん / Kurosaki Rin Channel",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCNPu5zXzXvS6pLCCaI5SnSA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんにゃっおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつにゃっおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNPu5zXzXvS6pLCCaI5SnSA/RGNYX9WfHsmu_AOLpKBw","alt":"kurorinKusa","sharedTooltipText":":_kurorinKusa:","src":"https://yt3.ggpht.com/rqqznIZSYjGtiaql7pLgDjFTG6i5Km3foaAd_4scs5oOM7C-iPJwSfyRK8WjSLem1WzKqgVprhc=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

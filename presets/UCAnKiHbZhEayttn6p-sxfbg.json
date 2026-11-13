@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Kevin Vangardo【MAHA5】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCAnKiHbZhEayttn6p-sxfbg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"💜"},{"type":"text","value":"💜"},{"type":"text","value":"💜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"akuu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😭"},{"type":"text","value":"😭"},{"type":"text","value":"😭"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aamiin"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aloo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nooo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"kangen"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gass"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Heavenly Father",
+  "note": "歌枠0配信・通常4配信のチャットから10枚",
+  "channel": "UCrx5cwSB4bl3fI34Boxvq2A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"damn"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yeah"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Yoooo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"MMMMM"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"om"}], "scope": "channel" }
+  ]
+}

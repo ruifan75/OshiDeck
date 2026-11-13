@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "緋十夜 縁/Hitoyo Enishi【Actors To Live!】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UChjF8eypSzjUnHJ4ziqgBxg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🧭"},{"type":"text","value":"🌙"},{"type":"text","value":"🎶"},{"type":"text","value":"🧭"},{"type":"text","value":"🌙"},{"type":"text","value":"🎶"},{"type":"text","value":"🧭"},{"type":"text","value":"🌙"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おばんです"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お！！！！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつえに"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なるほど"}], "scope": "channel" }
+  ]
+}

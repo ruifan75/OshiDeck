@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "犬丸 ぽちゃ / Inumaru Pocha",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCIFQuGbLFsSduuFpALAj1sw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんぬし"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぬしー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/hf90Xv-jHeOR8gSxxrToBA","alt":"yougotthis","sharedTooltipText":":yougotthis:","src":"https://yt3.ggpht.com/s3uOe4lUx3iPIt1h901SlMp_sKCTp3oOVj1JV8izBw_vDVLxFqk5dq-3NX-nK_gnUwVEXld3=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさーい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/penguin-blue-waving-tear","alt":"penguin-blue-waving-tear","sharedTooltipText":":penguin-blue-waving-tear:","src":"https://yt3.ggpht.com/p2u7dcfZau4_bMOMtN7Ma8mjHX_43jOjDwITf4U9adT44I-y-PT7ddwPKkfbW6Wx02BTpNoC=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみ"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "千本桐サオリ -Saori.ch- 【PinkPunkPro】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCmGQLXEbwBGtjaqyMO40Xbg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんきりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつきりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつきり～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おーー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんきり～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" }
+  ]
+}

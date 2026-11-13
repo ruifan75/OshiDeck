@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Rowa Arctos Ch. V&U",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCm6JMVKxg8PvJjl3F7J0tdQ",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCm6JMVKxg8PvJjl3F7J0tdQ/RbgwZrRV1aj_0Q-Rza6oCA","alt":"rowaWota","sharedTooltipText":":_rowaWota:","src":"https://yt3.ggpht.com/cDql_NBSdu1ZWhd0SCGlXaU8Wzb5eof0KchBAss-Tj9kemVAHrJ5vJp2muczbtqjjph5WTnplV4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCm6JMVKxg8PvJjl3F7J0tdQ/RbgwZrRV1aj_0Q-Rza6oCA","alt":"rowaWota","sharedTooltipText":":_rowaWota:","src":"https://yt3.ggpht.com/cDql_NBSdu1ZWhd0SCGlXaU8Wzb5eof0KchBAss-Tj9kemVAHrJ5vJp2muczbtqjjph5WTnplV4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCm6JMVKxg8PvJjl3F7J0tdQ/RbgwZrRV1aj_0Q-Rza6oCA","alt":"rowaWota","sharedTooltipText":":_rowaWota:","src":"https://yt3.ggpht.com/cDql_NBSdu1ZWhd0SCGlXaU8Wzb5eof0KchBAss-Tj9kemVAHrJ5vJp2muczbtqjjph5WTnplV4=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCm6JMVKxg8PvJjl3F7J0tdQ/q3w5ZsbfI-O9_9EP6aWumAc","alt":"rowaWave","sharedTooltipText":":_rowaWave:","src":"https://yt3.ggpht.com/87nacUbAK188rj8J2Umn2rGMr_wXvc-mfqsvU6W61_WA1SFlOsEpFd8z3gH3-TWWIlScIb27lQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCm6JMVKxg8PvJjl3F7J0tdQ/q3w5ZpLrI-O9_9EP6aWumAc","alt":"rowaSmile","sharedTooltipText":":_rowaSmile:","src":"https://yt3.ggpht.com/nBIAfkYbOkffn19NkEYhwzjVcOjOM4sm1-xRbt2H8pJXp_06jdoLy2wPK-fyby9ZQ54Ohz-7Jg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCm6JMVKxg8PvJjl3F7J0tdQ/RbgwZuVS1aj_0Q-Rza6oCA","alt":"rowaMoyai","sharedTooltipText":":_rowaMoyai:","src":"https://yt3.ggpht.com/Qop6m53hTJ4Hzw2RorCT7rCZ3irIWNRU_HjasBzL995X3R2CsiLUUODMlWCFs6lUXtwmdBsE=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"awebo"}], "scope": "channel" }
+  ]
+}

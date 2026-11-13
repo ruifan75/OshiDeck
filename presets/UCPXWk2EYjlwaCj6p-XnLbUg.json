@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ロロ・オリフィス / Lolo Orifice",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCPXWk2EYjlwaCj6p-XnLbUg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"うおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいばい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCPXWk2EYjlwaCj6p-XnLbUg/WbBgar-wGK-W7OsP88XrwQc","alt":"tokimiti","sharedTooltipText":":_tokimiti:","src":"https://yt3.ggpht.com/zLXlGkDMt-YVaU-a7GNPKkFrTBGobnmgEREwAXqFjX_BfeP1gRFYuxt9brNQleVRzO8Tsas7=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPXWk2EYjlwaCj6p-XnLbUg/WbBgar-wGK-W7OsP88XrwQc","alt":"tokimiti","sharedTooltipText":":_tokimiti:","src":"https://yt3.ggpht.com/zLXlGkDMt-YVaU-a7GNPKkFrTBGobnmgEREwAXqFjX_BfeP1gRFYuxt9brNQleVRzO8Tsas7=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPXWk2EYjlwaCj6p-XnLbUg/WbBgar-wGK-W7OsP88XrwQc","alt":"tokimiti","sharedTooltipText":":_tokimiti:","src":"https://yt3.ggpht.com/zLXlGkDMt-YVaU-a7GNPKkFrTBGobnmgEREwAXqFjX_BfeP1gRFYuxt9brNQleVRzO8Tsas7=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCPXWk2EYjlwaCj6p-XnLbUg/C7hgat_TPN6R7OsPtbaWkQ0","alt":"tsugoi","sharedTooltipText":":_tsugoi:","src":"https://yt3.ggpht.com/vC59zcMT16MLWyCoL9kJUfK5RJG9--27yy5JiB8ap_-SL6aZa6JRV1uv_RMzVlv2nzhIYuo3pA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPXWk2EYjlwaCj6p-XnLbUg/C7hgat_TPN6R7OsPtbaWkQ0","alt":"tsugoi","sharedTooltipText":":_tsugoi:","src":"https://yt3.ggpht.com/vC59zcMT16MLWyCoL9kJUfK5RJG9--27yy5JiB8ap_-SL6aZa6JRV1uv_RMzVlv2nzhIYuo3pA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPXWk2EYjlwaCj6p-XnLbUg/C7hgat_TPN6R7OsPtbaWkQ0","alt":"tsugoi","sharedTooltipText":":_tsugoi:","src":"https://yt3.ggpht.com/vC59zcMT16MLWyCoL9kJUfK5RJG9--27yy5JiB8ap_-SL6aZa6JRV1uv_RMzVlv2nzhIYuo3pA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー"}], "scope": "channel" }
+  ]
+}

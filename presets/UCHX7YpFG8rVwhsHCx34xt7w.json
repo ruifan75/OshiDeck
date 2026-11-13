@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "雪城眞尋/Yukishiro Mahiro【にじさんじ所属】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCHX7YpFG8rVwhsHCx34xt7w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCHX7YpFG8rVwhsHCx34xt7w/c4JCXr6XEIym-wPti7u4DQ","alt":"ペンラ青","sharedTooltipText":":_ペンラ青:","src":"https://yt3.ggpht.com/_NjL0yc8MkKQo4bTSVchtgCO7wSIzGNJpuV-Sz8yhbuyk3It1favsfLWMsX4IoGC8gu30wc9OA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCHX7YpFG8rVwhsHCx34xt7w/c4JCXr6XEIym-wPti7u4DQ","alt":"ペンラ青","sharedTooltipText":":_ペンラ青:","src":"https://yt3.ggpht.com/_NjL0yc8MkKQo4bTSVchtgCO7wSIzGNJpuV-Sz8yhbuyk3It1favsfLWMsX4IoGC8gu30wc9OA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCHX7YpFG8rVwhsHCx34xt7w/c4JCXr6XEIym-wPti7u4DQ","alt":"ペンラ青","sharedTooltipText":":_ペンラ青:","src":"https://yt3.ggpht.com/_NjL0yc8MkKQo4bTSVchtgCO7wSIzGNJpuV-Sz8yhbuyk3It1favsfLWMsX4IoGC8gu30wc9OA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんまひー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんまひ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつまひまひ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"まひ…まひ…"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" }
+  ]
+}

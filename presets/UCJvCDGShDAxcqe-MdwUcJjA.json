@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "粛正罰丸",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCJvCDGShDAxcqe-MdwUcJjA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCJvCDGShDAxcqe-MdwUcJjA/-PNwY8DFLruA_9EPqP2F-Ao","alt":"キャァーーー","sharedTooltipText":":_キャァーーー:","src":"https://yt3.ggpht.com/_R_-vVAlFnByyDMmL0iwFRM22i00uF2F0cFHmBY5WVvFHdddyZBuS-jAaqcIUIvJrrg1qM2nTcI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJvCDGShDAxcqe-MdwUcJjA/-PNwY8DFLruA_9EPqP2F-Ao","alt":"キャァーーー","sharedTooltipText":":_キャァーーー:","src":"https://yt3.ggpht.com/_R_-vVAlFnByyDMmL0iwFRM22i00uF2F0cFHmBY5WVvFHdddyZBuS-jAaqcIUIvJrrg1qM2nTcI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJvCDGShDAxcqe-MdwUcJjA/-PNwY8DFLruA_9EPqP2F-Ao","alt":"キャァーーー","sharedTooltipText":":_キャァーーー:","src":"https://yt3.ggpht.com/_R_-vVAlFnByyDMmL0iwFRM22i00uF2F0cFHmBY5WVvFHdddyZBuS-jAaqcIUIvJrrg1qM2nTcI=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおお！！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？！"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "柚木つばめ",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCsfggcx_LSxN1FzOYU0xH0A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCsfggcx_LSxN1FzOYU0xH0A/BUdtYvCKJIbBgwP826hY","alt":"ぱちぱち","sharedTooltipText":":_ぱちぱち:","src":"https://yt3.ggpht.com/PDpZ-i3NRS4f4FHyik0tS1uEjFyhMs994uR_F4rnObp_h-3gCTcDRFmCByvpyQYPgj_dLMfpcKw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCsfggcx_LSxN1FzOYU0xH0A/BUdtYvCKJIbBgwP826hY","alt":"ぱちぱち","sharedTooltipText":":_ぱちぱち:","src":"https://yt3.ggpht.com/PDpZ-i3NRS4f4FHyik0tS1uEjFyhMs994uR_F4rnObp_h-3gCTcDRFmCByvpyQYPgj_dLMfpcKw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCsfggcx_LSxN1FzOYU0xH0A/BUdtYvCKJIbBgwP826hY","alt":"ぱちぱち","sharedTooltipText":":_ぱちぱち:","src":"https://yt3.ggpht.com/PDpZ-i3NRS4f4FHyik0tS1uEjFyhMs994uR_F4rnObp_h-3gCTcDRFmCByvpyQYPgj_dLMfpcKw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばん"},{"type":"youtubeEmoji","emojiId":"UCsfggcx_LSxN1FzOYU0xH0A/BUdtYqiKJIbBgwP826hY","alt":"ちゅんぴー","sharedTooltipText":":_ちゅんぴー:","src":"https://yt3.ggpht.com/Ml1ntyExmKYFcmYICny-OKugCIOvAAFYA8CvTCYlL-2mfBIoDRRRVC2ejny0zuDowfvw5-3Y_w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかれ"},{"type":"youtubeEmoji","emojiId":"UCsfggcx_LSxN1FzOYU0xH0A/BUdtYqiKJIbBgwP826hY","alt":"ちゅんぴー","sharedTooltipText":":_ちゅんぴー:","src":"https://yt3.ggpht.com/Ml1ntyExmKYFcmYICny-OKugCIOvAAFYA8CvTCYlL-2mfBIoDRRRVC2ejny0zuDowfvw5-3Y_w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCsfggcx_LSxN1FzOYU0xH0A/WYd2Ysa6BIe_8wSIp4PgBA","alt":"ヒザ大丈夫","sharedTooltipText":":_ヒザ大丈夫:","src":"https://yt3.ggpht.com/ebrRyEJu4Z3BjHFAoc12senrXvI-2HHt9py6Sp9W8KnajvGqgnMLWvgGDa_esSjlu7Zg1MW9=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCsfggcx_LSxN1FzOYU0xH0A/BUdtYtGLJIbBgwP826hY","alt":"ｗｗｗ","sharedTooltipText":":_ｗｗｗ:","src":"https://yt3.ggpht.com/8xlqOciqdIM_7tfQcWueJKX_oUehTB00f6jKHmLCBmGJ9IdemcwoQR31HvAstC1-rfxsLfPIaQM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCsfggcx_LSxN1FzOYU0xH0A/BUdtYtGLJIbBgwP826hY","alt":"ｗｗｗ","sharedTooltipText":":_ｗｗｗ:","src":"https://yt3.ggpht.com/8xlqOciqdIM_7tfQcWueJKX_oUehTB00f6jKHmLCBmGJ9IdemcwoQR31HvAstC1-rfxsLfPIaQM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCsfggcx_LSxN1FzOYU0xH0A/BUdtYtGLJIbBgwP826hY","alt":"ｗｗｗ","sharedTooltipText":":_ｗｗｗ:","src":"https://yt3.ggpht.com/8xlqOciqdIM_7tfQcWueJKX_oUehTB00f6jKHmLCBmGJ9IdemcwoQR31HvAstC1-rfxsLfPIaQM=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

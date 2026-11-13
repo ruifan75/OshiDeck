@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "黒尾ちな / Kuroo Tina",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCSy8MN4Y2FRRwhKYEyMTsJQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCSy8MN4Y2FRRwhKYEyMTsJQ/tiGMapifOZ6i7OsPsMK2mQc","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/gEzb59JayucB91lmruPFNdUPzO-W7_Nuat71LtvcM3Pf0tiLyCwswQWwQYmYXTbQZVJKzgewiA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSy8MN4Y2FRRwhKYEyMTsJQ/tiGMapifOZ6i7OsPsMK2mQc","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/gEzb59JayucB91lmruPFNdUPzO-W7_Nuat71LtvcM3Pf0tiLyCwswQWwQYmYXTbQZVJKzgewiA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSy8MN4Y2FRRwhKYEyMTsJQ/tiGMapifOZ6i7OsPsMK2mQc","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/gEzb59JayucB91lmruPFNdUPzO-W7_Nuat71LtvcM3Pf0tiLyCwswQWwQYmYXTbQZVJKzgewiA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCSy8MN4Y2FRRwhKYEyMTsJQ/a250aoOONN6R7OsPwJO06Qg","alt":"おつちな","sharedTooltipText":":_おつちな:","src":"https://yt3.ggpht.com/DTI_Q1_prCnWCYd7vFL-E748XVtakDKfCRhzyqQN6Woi6edA30dOjsnjVMy5GFPAJU0hCOdPuw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSy8MN4Y2FRRwhKYEyMTsJQ/a250aoOONN6R7OsPwJO06Qg","alt":"おつちな","sharedTooltipText":":_おつちな:","src":"https://yt3.ggpht.com/DTI_Q1_prCnWCYd7vFL-E748XVtakDKfCRhzyqQN6Woi6edA30dOjsnjVMy5GFPAJU0hCOdPuw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSy8MN4Y2FRRwhKYEyMTsJQ/a250aoOONN6R7OsPwJO06Qg","alt":"おつちな","sharedTooltipText":":_おつちな:","src":"https://yt3.ggpht.com/DTI_Q1_prCnWCYd7vFL-E748XVtakDKfCRhzyqQN6Woi6edA30dOjsnjVMy5GFPAJU0hCOdPuw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"く、くる"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちなー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ﾊｲﾝ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ちな♡"}], "scope": "channel" }
+  ]
+}

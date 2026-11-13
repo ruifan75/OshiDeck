@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "がんばるぅ子 RUUKO CHANNEL",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC9waZzsHhV-IsUuN7PReyfQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんたこー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9waZzsHhV-IsUuN7PReyfQ/rMkhYYXoMYnY8wThj6iYAw","alt":"ruukoOtutopasu","sharedTooltipText":":_ruukoOtutopasu:","src":"https://yt3.ggpht.com/b83qlSyXHItuO6nOZHlbs7rCWAoIhpj8x28Ka0vkhdUnzWxyxDNMNP91L6VYLXBD_X6HjP1oUw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9waZzsHhV-IsUuN7PReyfQ/rMkhYYXoMYnY8wThj6iYAw","alt":"ruukoOtutopasu","sharedTooltipText":":_ruukoOtutopasu:","src":"https://yt3.ggpht.com/b83qlSyXHItuO6nOZHlbs7rCWAoIhpj8x28Ka0vkhdUnzWxyxDNMNP91L6VYLXBD_X6HjP1oUw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9waZzsHhV-IsUuN7PReyfQ/rMkhYYXoMYnY8wThj6iYAw","alt":"ruukoOtutopasu","sharedTooltipText":":_ruukoOtutopasu:","src":"https://yt3.ggpht.com/b83qlSyXHItuO6nOZHlbs7rCWAoIhpj8x28Ka0vkhdUnzWxyxDNMNP91L6VYLXBD_X6HjP1oUw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつとぱーす"},{"type":"youtubeEmoji","emojiId":"UC9waZzsHhV-IsUuN7PReyfQ/rMkhYYXoMYnY8wThj6iYAw","alt":"ruukoOtutopasu","sharedTooltipText":":_ruukoOtutopasu:","src":"https://yt3.ggpht.com/b83qlSyXHItuO6nOZHlbs7rCWAoIhpj8x28Ka0vkhdUnzWxyxDNMNP91L6VYLXBD_X6HjP1oUw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9waZzsHhV-IsUuN7PReyfQ/Kh_8YIWHJMbl8gSksb7ACA","alt":"ruukoMadako","sharedTooltipText":":_ruukoMadako:","src":"https://yt3.ggpht.com/P7j_iv5JZRn9DcI3qmeZUiBMYscGeP1IBkxnIpUXjfjiD21bUfxw2z8thbT501cUr7XWcWLtcw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはしゅが〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつとぱーす"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"すごい"}], "scope": "channel" }
+  ]
+}

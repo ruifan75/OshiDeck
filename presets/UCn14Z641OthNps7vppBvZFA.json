@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "千草はな / Chigusa Hana",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCn14Z641OthNps7vppBvZFA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌼"},{"type":"text","value":"🎶"},{"type":"text","value":"🌼"},{"type":"text","value":"🎶"},{"type":"text","value":"🌼"},{"type":"text","value":"🎶"},{"type":"text","value":"🌼"},{"type":"text","value":"🎶"},{"type":"text","value":"🌼"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちぐさ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おちぐさー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おちぐさ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちぐさ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待"},{"type":"youtubeEmoji","emojiId":"UCn14Z641OthNps7vppBvZFA/LbaAY_bHAcvOgwPGt7_oDA","alt":"ChigusaKitsune","sharedTooltipText":":_ChigusaKitsune:","src":"https://yt3.ggpht.com/g_rFR-btU4DajIiMXHPMd8DE6ZiAwG_Bxu_otI4_WTPwZwC_shIgLf8AzoHxHkkSRlWIwOwSOw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちぐさ～！"},{"type":"youtubeEmoji","emojiId":"UCn14Z641OthNps7vppBvZFA/a-ggXJizK4b5igTO4KfwDQ","alt":"ChigusaKonchigusa","sharedTooltipText":":_ChigusaKonchigusa:","src":"https://yt3.ggpht.com/SlfPCMIiUM51mecikh9prKX-v96u3exOmldX4J2iZQUi4mffJiTvjr6e9zSgByGIAo7a1DWLfQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCn14Z641OthNps7vppBvZFA/a-ggXJizK4b5igTO4KfwDQ","alt":"ChigusaKonchigusa","sharedTooltipText":":_ChigusaKonchigusa:","src":"https://yt3.ggpht.com/SlfPCMIiUM51mecikh9prKX-v96u3exOmldX4J2iZQUi4mffJiTvjr6e9zSgByGIAo7a1DWLfQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCn14Z641OthNps7vppBvZFA/a-ggXJizK4b5igTO4KfwDQ","alt":"ChigusaKonchigusa","sharedTooltipText":":_ChigusaKonchigusa:","src":"https://yt3.ggpht.com/SlfPCMIiUM51mecikh9prKX-v96u3exOmldX4J2iZQUi4mffJiTvjr6e9zSgByGIAo7a1DWLfQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCn14Z641OthNps7vppBvZFA/a-ggXJizK4b5igTO4KfwDQ","alt":"ChigusaKonchigusa","sharedTooltipText":":_ChigusaKonchigusa:","src":"https://yt3.ggpht.com/SlfPCMIiUM51mecikh9prKX-v96u3exOmldX4J2iZQUi4mffJiTvjr6e9zSgByGIAo7a1DWLfQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

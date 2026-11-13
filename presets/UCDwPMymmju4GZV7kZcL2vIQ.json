@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "梟雄しろや KyoyuShiroya / のりプロ所属",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCDwPMymmju4GZV7kZcL2vIQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCDwPMymmju4GZV7kZcL2vIQ/OGzaZYunIdmM_9EPzLiAgAI","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/o9NRQn7P2-KADsoxNWWLVnq-l0uralSSnz1_XCGMoQcjlxsg58XFA-fc_o_O9sUR0nzQ-eDe=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かっこいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCDwPMymmju4GZV7kZcL2vIQ/zBnbZf6cBNmM_9EPzLiAgAI","alt":"kaien","sharedTooltipText":":_kaien:","src":"https://yt3.ggpht.com/UnvJIZpLzPRfQ3JAo0K-v7WF1b3Gr7802K1tQkQi9KMdhSRJVSllMVX1MsJeR9UpF8AMitRCX00=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDwPMymmju4GZV7kZcL2vIQ/zBnbZaKdBNmM_9EPzLiAgAI","alt":"machi","sharedTooltipText":":_machi:","src":"https://yt3.ggpht.com/y_Z8_l41SKBxtyREr48ZYHyhYGLZFddbU3LMp07nCx5M6N91JBEAm061Qp4XL76VOa3aPuH1Wg=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

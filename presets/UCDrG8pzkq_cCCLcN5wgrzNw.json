@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "魔光リサ - Lisa Makoh -",
-  "note": "過去13配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCDrG8pzkq_cCCLcN5wgrzNw",
   "cards": [
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"😈"},{"type":"text","value":"🖤"},{"type":"text","value":"🎶"},{"type":"text","value":"😈"},{"type":"text","value":"🖤"},{"type":"text","value":"🎶"},{"type":"text","value":"😈"},{"type":"text","value":"🖤"},{"type":"text","value":"🎶"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつ"},{"type":"youtubeEmoji","emojiId":"UCDrG8pzkq_cCCLcN5wgrzNw/jP-hYsbXN8Pp8wSEw7OQCQ","alt":"makkori","sharedTooltipText":":_makkori:","src":"https://yt3.ggpht.com/4zKcLOSOBUXWVpD9fMHq4I9Ey0Fvd1w3YYohZnwZ2gXCL6ZqblZI4il4RmWWl1wJlbvYbbZ5=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
   ]
 }

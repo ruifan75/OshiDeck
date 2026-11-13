@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "レヨン【にじさんじ】",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCsxs_R8xnsQN4t-F_3qQ8PQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"最高"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCsxs_R8xnsQN4t-F_3qQ8PQ/n88var_oCOeq7OsPrsfk6Ak","alt":"NCC","sharedTooltipText":":_NCC:","src":"https://yt3.ggpht.com/UaRHcc7cSZxjT7-0cJmxMAl64fdwSQ9YKVS_6jbFM8xJFLRc9UaZynz6QtcRo79d_Z_GQhFgAlw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCsxs_R8xnsQN4t-F_3qQ8PQ/n88var_oCOeq7OsPrsfk6Ak","alt":"NCC","sharedTooltipText":":_NCC:","src":"https://yt3.ggpht.com/UaRHcc7cSZxjT7-0cJmxMAl64fdwSQ9YKVS_6jbFM8xJFLRc9UaZynz6QtcRo79d_Z_GQhFgAlw=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

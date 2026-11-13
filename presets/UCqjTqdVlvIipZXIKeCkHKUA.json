@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "オリバー・エバンス / Oliver Evans 【にじさんじ】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCqjTqdVlvIipZXIKeCkHKUA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"き"},{"type":"text","value":"🍵"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCqjTqdVlvIipZXIKeCkHKUA/vu_VZefqObaU_9EP2tqysA4","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/MmOSy2nkWuA47aziS-BvcglDQw4tbI31bMC8BKnOtRsFXlkERkJHMeyCTzdURs13XJyR0tcK-KQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCqjTqdVlvIipZXIKeCkHKUA/XkbQYfqwCt2Q8wSpspO4Dw","alt":"sam","sharedTooltipText":":_sam:","src":"https://yt3.ggpht.com/1MZJ1OjHicVUyJbyszrpAxFXhQNBPni5PVPJ5I3NugW1ktGzj25tuir9Po8qAcFJ1zUuhOWxNQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わかる"}], "scope": "channel" }
+  ]
+}

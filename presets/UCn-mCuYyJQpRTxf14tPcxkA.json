@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "きらり☆ももんが",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCn-mCuYyJQpRTxf14tPcxkA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCn-mCuYyJQpRTxf14tPcxkA/RLN7aPftC9iU_9EPz6DU6As","alt":"ないすぱ","sharedTooltipText":":_ないすぱ:","src":"https://yt3.ggpht.com/2OQZPJ5mAmSyVwpzoNGZmFeGhNbBmk-fvGphocZqc8T29tPhw5H_mIqnqSAoMlYu-46N6KA_1Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCn-mCuYyJQpRTxf14tPcxkA/RLN7aPftC9iU_9EPz6DU6As","alt":"ないすぱ","sharedTooltipText":":_ないすぱ:","src":"https://yt3.ggpht.com/2OQZPJ5mAmSyVwpzoNGZmFeGhNbBmk-fvGphocZqc8T29tPhw5H_mIqnqSAoMlYu-46N6KA_1Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCn-mCuYyJQpRTxf14tPcxkA/RKicaO22A8mE_9EPqJGnqA4","alt":"サイリウム1","sharedTooltipText":":_サイリウム1:","src":"https://yt3.ggpht.com/wuiRx5K9QZHAcURPGfy6qjkIVT-XgvBIWtwpH28fdG_hO4A0fQUfwz6YW5SVgeXx0U34-cjm9KU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCn-mCuYyJQpRTxf14tPcxkA/RLN7aPTyC9iU_9EPz6DU6As","alt":"サイリウム2","sharedTooltipText":":_サイリウム2:","src":"https://yt3.ggpht.com/b4cMv4eX3WvEhAwaDWBso-zDdAeCjDmJXKC9kZoNBIXaEspkYEyTnMMA47tzCDFP6FsUCD149w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCn-mCuYyJQpRTxf14tPcxkA/RKicaO22A8mE_9EPqJGnqA4","alt":"サイリウム1","sharedTooltipText":":_サイリウム1:","src":"https://yt3.ggpht.com/wuiRx5K9QZHAcURPGfy6qjkIVT-XgvBIWtwpH28fdG_hO4A0fQUfwz6YW5SVgeXx0U34-cjm9KU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCn-mCuYyJQpRTxf14tPcxkA/RLN7aPTyC9iU_9EPz6DU6As","alt":"サイリウム2","sharedTooltipText":":_サイリウム2:","src":"https://yt3.ggpht.com/b4cMv4eX3WvEhAwaDWBso-zDdAeCjDmJXKC9kZoNBIXaEspkYEyTnMMA47tzCDFP6FsUCD149w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おしいいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCn-mCuYyJQpRTxf14tPcxkA/RLN7aO_sC9iU_9EPz6DU6As","alt":"こんちゃ","sharedTooltipText":":_こんちゃ:","src":"https://yt3.ggpht.com/1FGuAk-dzJFDLv3sDmCHjqYq7DTKkv_n0w-cfOtZJgfWMlTR_oxWKY2EM6SFQGmXXcYgFfTt=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCn-mCuYyJQpRTxf14tPcxkA/RLN7aO_sC9iU_9EPz6DU6As","alt":"こんちゃ","sharedTooltipText":":_こんちゃ:","src":"https://yt3.ggpht.com/1FGuAk-dzJFDLv3sDmCHjqYq7DTKkv_n0w-cfOtZJgfWMlTR_oxWKY2EM6SFQGmXXcYgFfTt=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"がんばれー！"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "format": 2,
+  "name": "スーパー・アブソリュート・デス子",
+  "note": "歌枠2配信・通常13配信のチャットから11枚",
+  "channel": "UCqPx4VmOpL2NVvaZJOngSnA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💀"},{"type":"text","value":"💟"},{"type":"text","value":"🔦"},{"type":"text","value":"💀"},{"type":"text","value":"💟"},{"type":"text","value":"🔦"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"S・A・D！S・A・D！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはデス！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機デス"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"開門！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様デス！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"デス！"}], "scope": "channel" }
+  ]
+}

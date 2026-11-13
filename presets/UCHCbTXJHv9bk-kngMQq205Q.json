@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "猫榴こなみ / Nekuro konami Ch.",
+  "note": "歌枠0配信・通常9配信のチャットから10枚",
+  "channel": "UCHCbTXJHv9bk-kngMQq205Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんこなー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おっちゅーる"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんこな～"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/egJ1XufTKYfegwOo57ewAg","alt":"shelterin","sharedTooltipText":":shelterin:","src":"https://yt3.ggpht.com/gjC5x98J4BoVSEPfFJaoLtc4tSBGSEdIlfL2FV4iJG9uGNykDP9oJC_QxAuBTJy6dakPxVeC=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/egJ1XufTKYfegwOo57ewAg","alt":"shelterin","sharedTooltipText":":shelterin:","src":"https://yt3.ggpht.com/gjC5x98J4BoVSEPfFJaoLtc4tSBGSEdIlfL2FV4iJG9uGNykDP9oJC_QxAuBTJy6dakPxVeC=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/egJ1XufTKYfegwOo57ewAg","alt":"shelterin","sharedTooltipText":":shelterin:","src":"https://yt3.ggpht.com/gjC5x98J4BoVSEPfFJaoLtc4tSBGSEdIlfL2FV4iJG9uGNykDP9oJC_QxAuBTJy6dakPxVeC=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCHCbTXJHv9bk-kngMQq205Q/haMbYsveAY2G_9EP6KWayA4","alt":"文字こ","sharedTooltipText":":_文字こ:","src":"https://yt3.ggpht.com/4BX9BxUVrQIQ1iWM1MBu0-Kiezmnfs9Gx6NAKhFKJct3H8t5NjYt0HxQyz3cexHjsC-8P1zMkQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCHCbTXJHv9bk-kngMQq205Q/haMbYu3fAY2G_9EP6KWayA4","alt":"文字ん","sharedTooltipText":":_文字ん:","src":"https://yt3.ggpht.com/i22VsUe0_F5GLNLb2PRhs1sze9CBIp_pydu7F0YszmZWw7_ED-afTVSMQifbVQ5XmESx_lMkZQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCHCbTXJHv9bk-kngMQq205Q/haMbYsveAY2G_9EP6KWayA4","alt":"文字こ","sharedTooltipText":":_文字こ:","src":"https://yt3.ggpht.com/4BX9BxUVrQIQ1iWM1MBu0-Kiezmnfs9Gx6NAKhFKJct3H8t5NjYt0HxQyz3cexHjsC-8P1zMkQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCHCbTXJHv9bk-kngMQq205Q/haMbYvneAY2G_9EP6KWayA4","alt":"文字な","sharedTooltipText":":_文字な:","src":"https://yt3.ggpht.com/PqN2eiWvGM40_bL-cQRA0SyYn00XEbelyLZD_W1bGod8l13r6G_Tn-F_j27tcgJZAJwfbH87zg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" }
+  ]
+}

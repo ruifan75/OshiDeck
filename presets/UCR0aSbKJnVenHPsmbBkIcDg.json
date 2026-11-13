@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "浮々ゆにこ / UKI-UKI UNICO",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCR0aSbKJnVenHPsmbBkIcDg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うきうき"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うきうきしてきた"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うきうき～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" }
+  ]
+}

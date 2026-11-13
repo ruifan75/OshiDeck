@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "尾幌こま / Koma Oboro",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC_bxkbJzxRKssMf52wVbssw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんこま〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"w"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんこま～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" }
+  ]
+}

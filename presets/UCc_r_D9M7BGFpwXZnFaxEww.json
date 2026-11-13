@@ -1,0 +1,21 @@
+{
+  "format": 2,
+  "name": "成海ミャオ / Myao Channel【ミクスト】",
+  "note": "歌枠2配信・通常13配信のチャットから13枚",
+  "channel": "UCc_r_D9M7BGFpwXZnFaxEww",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💛"},{"type":"text","value":"🎶"},{"type":"text","value":"💛"},{"type":"text","value":"🎶"},{"type":"text","value":"💛"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCc_r_D9M7BGFpwXZnFaxEww/eS4zaMu6Mu-O_9EPp9WQoAw","alt":"pennraito","sharedTooltipText":":_pennraito:","src":"https://yt3.ggpht.com/4Sy8a2op4fq5xrNNMfRA7GpWqhBawtUyh82xiUhQcu6zdt1SAfAO8l7JUThR5vKN0X5_xJ2Eh-0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCc_r_D9M7BGFpwXZnFaxEww/eS4zaMu6Mu-O_9EPp9WQoAw","alt":"pennraito","sharedTooltipText":":_pennraito:","src":"https://yt3.ggpht.com/4Sy8a2op4fq5xrNNMfRA7GpWqhBawtUyh82xiUhQcu6zdt1SAfAO8l7JUThR5vKN0X5_xJ2Eh-0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCc_r_D9M7BGFpwXZnFaxEww/eS4zaMu6Mu-O_9EPp9WQoAw","alt":"pennraito","sharedTooltipText":":_pennraito:","src":"https://yt3.ggpht.com/4Sy8a2op4fq5xrNNMfRA7GpWqhBawtUyh82xiUhQcu6zdt1SAfAO8l7JUThR5vKN0X5_xJ2Eh-0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"みゃーっす！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ミャオ最強！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCc_r_D9M7BGFpwXZnFaxEww/qSKvZ-3sIL6H_9EP5unpyAE","alt":"naku","sharedTooltipText":":_naku:","src":"https://yt3.ggpht.com/XjsH5uc0fm3SArNG-GxWKJufLbYXI_p4wverlJrxuBeOYo8BFD98-0i8G7BuHQFGS-XQziAS=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCc_r_D9M7BGFpwXZnFaxEww/qSKvZ-3sIL6H_9EP5unpyAE","alt":"naku","sharedTooltipText":":_naku:","src":"https://yt3.ggpht.com/XjsH5uc0fm3SArNG-GxWKJufLbYXI_p4wverlJrxuBeOYo8BFD98-0i8G7BuHQFGS-XQziAS=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCc_r_D9M7BGFpwXZnFaxEww/qSKvZ-3sIL6H_9EP5unpyAE","alt":"naku","sharedTooltipText":":_naku:","src":"https://yt3.ggpht.com/XjsH5uc0fm3SArNG-GxWKJufLbYXI_p4wverlJrxuBeOYo8BFD98-0i8G7BuHQFGS-XQziAS=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "channel" }
+  ]
+}

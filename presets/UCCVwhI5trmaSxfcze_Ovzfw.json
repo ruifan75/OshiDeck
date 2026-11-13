@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "夢月ロア🌖Yuzuki Roa",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCCVwhI5trmaSxfcze_Ovzfw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わかる"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あっ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いいね"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCCVwhI5trmaSxfcze_Ovzfw/JijuXanrGYbe-QOvo5rIDw","alt":"ロア文字1","sharedTooltipText":":_ロア文字1:","src":"https://yt3.ggpht.com/NJPRiah55D_2P0yqnYGcP5GbIn4qc28A9Hol7La-XfH26Dz2y6tgQNgelPys0oCM5VAEb04S=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Lunon ch. 月奏あず",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCqQb-TTl7VIMPYctVE9GWnA",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCqQb-TTl7VIMPYctVE9GWnA/JgACaurGD8ntrr4PlLqbuAE","alt":"こんー","sharedTooltipText":":_こんー:","src":"https://yt3.ggpht.com/3PgcKmz6TVpRKPcZSRVWNLllrv7qz5NJKzw4VT2Jf3sDD9f3-hFNXk-XHnQfvRJoHKT4Z_4rVA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCqQb-TTl7VIMPYctVE9GWnA/QiYyaoWsOP2lrr4PsIWD6Ao","alt":"おつー","sharedTooltipText":":_おつー:","src":"https://yt3.ggpht.com/jEo_SOFROEEL3mUcCwwMcebWe5X1ZcTQHHVFgU8PD88E9BgyMVuDwJIOd5-pfmXGQGiTxC73=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCqQb-TTl7VIMPYctVE9GWnA/QiYyaoWsOP2lrr4PsIWD6Ao","alt":"おつー","sharedTooltipText":":_おつー:","src":"https://yt3.ggpht.com/jEo_SOFROEEL3mUcCwwMcebWe5X1ZcTQHHVFgU8PD88E9BgyMVuDwJIOd5-pfmXGQGiTxC73=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCqQb-TTl7VIMPYctVE9GWnA/QiYyaoWsOP2lrr4PsIWD6Ao","alt":"おつー","sharedTooltipText":":_おつー:","src":"https://yt3.ggpht.com/jEo_SOFROEEL3mUcCwwMcebWe5X1ZcTQHHVFgU8PD88E9BgyMVuDwJIOd5-pfmXGQGiTxC73=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なるほど"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" }
+  ]
+}

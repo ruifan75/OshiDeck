@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "日向まる / Maru Hinata",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UChfW-zJZsd2_UXPkCy68W0Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChfW-zJZsd2_UXPkCy68W0Q/8XRsap-ZBt6R7OsP6MqogAs","alt":"hai","sharedTooltipText":":_hai:","src":"https://yt3.ggpht.com/g6Re1-q1LbkcS6F_igzYUaNotVateu2nMx9hZ_6d82B78uWjE2NnDxHJOXn32auboWGqzaantg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChfW-zJZsd2_UXPkCy68W0Q/8XRsap-ZBt6R7OsP6MqogAs","alt":"hai","sharedTooltipText":":_hai:","src":"https://yt3.ggpht.com/g6Re1-q1LbkcS6F_igzYUaNotVateu2nMx9hZ_6d82B78uWjE2NnDxHJOXn32auboWGqzaantg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChfW-zJZsd2_UXPkCy68W0Q/8XRsap-ZBt6R7OsP6MqogAs","alt":"hai","sharedTooltipText":":_hai:","src":"https://yt3.ggpht.com/g6Re1-q1LbkcS6F_igzYUaNotVateu2nMx9hZ_6d82B78uWjE2NnDxHJOXn32auboWGqzaantg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChfW-zJZsd2_UXPkCy68W0Q/gdGQauyMCZ6i7OsP1sGl0QY","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/tdUnKH3dW_0eP9EoPCmmoGWx1WSGUaqOICRWn-ALC_aggCMI0z7ght8gd_NGoz-T_2-CKlb8aw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChfW-zJZsd2_UXPkCy68W0Q/gdGQauyMCZ6i7OsP1sGl0QY","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/tdUnKH3dW_0eP9EoPCmmoGWx1WSGUaqOICRWn-ALC_aggCMI0z7ght8gd_NGoz-T_2-CKlb8aw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChfW-zJZsd2_UXPkCy68W0Q/gdGQauyMCZ6i7OsP1sGl0QY","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/tdUnKH3dW_0eP9EoPCmmoGWx1WSGUaqOICRWn-ALC_aggCMI0z7ght8gd_NGoz-T_2-CKlb8aw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはよー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" }
+  ]
+}

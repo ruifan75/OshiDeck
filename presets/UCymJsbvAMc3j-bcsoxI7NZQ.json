@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Rin Ch. 菫崎リン",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCymJsbvAMc3j-bcsoxI7NZQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"すみリン"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💜"},{"type":"text","value":"💜"},{"type":"text","value":"💜"},{"type":"text","value":"💜"},{"type":"text","value":"💜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎵"},{"type":"text","value":"🎶"},{"type":"text","value":"🎵"},{"type":"text","value":"🎶"},{"type":"text","value":"🎵"},{"type":"text","value":"🎶"},{"type":"text","value":"🎵"},{"type":"text","value":"🎶"},{"type":"text","value":"🎵"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"初見です"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおお！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCymJsbvAMc3j-bcsoxI7NZQ/Jl3mYoKkGMPigwOeyZaIDg","alt":"こんすみ","sharedTooltipText":":_こんすみ:","src":"https://yt3.ggpht.com/NsLC4-HiwGweR1gC8WkWNVTdnMXCp9Vt7OaPkiXqkPiLz4jkavjfwJvJYSJtxc1F9j7tPvFSz6Y=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCymJsbvAMc3j-bcsoxI7NZQ/Jl3mYqKkGMPigwOeyZaIDg","alt":"すみリン","sharedTooltipText":":_すみリン:","src":"https://yt3.ggpht.com/_wgGUpIfqBGvUc8J3RKQic6FwRYU7g_u31q9w-rykfes9Q3qNaMVML7zMS_x30K1LTIGTlE6=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

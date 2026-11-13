@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ゆーけむProject!/Yu_kemu",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCj0cM28jO3CK5yqFeYNe_Yw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんけむー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんけむ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんけむです"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"＃ANNIから逃げるな"}], "scope": "channel" }
+  ]
+}

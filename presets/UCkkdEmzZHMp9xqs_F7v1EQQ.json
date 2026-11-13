@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "楠木さらら",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCkkdEmzZHMp9xqs_F7v1EQQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkkdEmzZHMp9xqs_F7v1EQQ/WufIYouiN8Pp8wSnp6aABQ","alt":"おちゅ","sharedTooltipText":":_おちゅ:","src":"https://yt3.ggpht.com/GLwZ8R5bIfkl7iQ9M4X4yXnQL2-g6Vu_70y_lj0yYP-HBe7qK2oYkcMG3CFtAQ3ppPrES3EYPg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkkdEmzZHMp9xqs_F7v1EQQ/WufIYouiN8Pp8wSnp6aABQ","alt":"おちゅ","sharedTooltipText":":_おちゅ:","src":"https://yt3.ggpht.com/GLwZ8R5bIfkl7iQ9M4X4yXnQL2-g6Vu_70y_lj0yYP-HBe7qK2oYkcMG3CFtAQ3ppPrES3EYPg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkkdEmzZHMp9xqs_F7v1EQQ/WufIYouiN8Pp8wSnp6aABQ","alt":"おちゅ","sharedTooltipText":":_おちゅ:","src":"https://yt3.ggpht.com/GLwZ8R5bIfkl7iQ9M4X4yXnQL2-g6Vu_70y_lj0yYP-HBe7qK2oYkcMG3CFtAQ3ppPrES3EYPg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー"}], "scope": "channel" }
+  ]
+}

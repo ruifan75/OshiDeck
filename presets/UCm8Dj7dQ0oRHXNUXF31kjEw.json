@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Silvervale",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCm8Dj7dQ0oRHXNUXF31kjEw",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Silver"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCm8Dj7dQ0oRHXNUXF31kjEw/ZQJFaNy0EI6O_9EPzeHw2Qg","alt":"SilverLove","sharedTooltipText":":_SilverLove:","src":"https://yt3.ggpht.com/BfV9j9xepotdU3CnpuL5cvc9jVKlttmKsYymUthoAVpZB7RTf6ftRkYMT_P-wsT2wyJO8R5E=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCm8Dj7dQ0oRHXNUXF31kjEw/ZQJFaNy0EI6O_9EPzeHw2Qg","alt":"SilverLove","sharedTooltipText":":_SilverLove:","src":"https://yt3.ggpht.com/BfV9j9xepotdU3CnpuL5cvc9jVKlttmKsYymUthoAVpZB7RTf6ftRkYMT_P-wsT2wyJO8R5E=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCm8Dj7dQ0oRHXNUXF31kjEw/ZQJFaNy0EI6O_9EPzeHw2Qg","alt":"SilverLove","sharedTooltipText":":_SilverLove:","src":"https://yt3.ggpht.com/BfV9j9xepotdU3CnpuL5cvc9jVKlttmKsYymUthoAVpZB7RTf6ftRkYMT_P-wsT2wyJO8R5E=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"good morning"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/G8AfY6yWGuKuhL0PlbiA2AE","alt":"hand-pink-waving","sharedTooltipText":":hand-pink-waving:","src":"https://yt3.ggpht.com/KOxdr_z3A5h1Gb7kqnxqOCnbZrBmxI2B_tRQ453BhTWUhYAlpg5ZP8IKEBkcvRoY8grY91Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/G8AfY6yWGuKuhL0PlbiA2AE","alt":"hand-pink-waving","sharedTooltipText":":hand-pink-waving:","src":"https://yt3.ggpht.com/KOxdr_z3A5h1Gb7kqnxqOCnbZrBmxI2B_tRQ453BhTWUhYAlpg5ZP8IKEBkcvRoY8grY91Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/G8AfY6yWGuKuhL0PlbiA2AE","alt":"hand-pink-waving","sharedTooltipText":":hand-pink-waving:","src":"https://yt3.ggpht.com/KOxdr_z3A5h1Gb7kqnxqOCnbZrBmxI2B_tRQ453BhTWUhYAlpg5ZP8IKEBkcvRoY8grY91Q=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

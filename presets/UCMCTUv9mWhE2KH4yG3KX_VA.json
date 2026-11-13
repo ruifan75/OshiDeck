@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "プラムCh / 海日月ぷらむ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCMCTUv9mWhE2KH4yG3KX_VA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんぷらー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCMCTUv9mWhE2KH4yG3KX_VA/5da9YOKNB-iL8gTk5rPoAQ","alt":"おつプラ","sharedTooltipText":":_おつプラ:","src":"https://yt3.ggpht.com/jh0XyQRFo4YLplQICARSdBQ6QaR9922TO5w2YLRb9pfpiLuHGyBfS6wzVfXqsekjKCr7QEu_zQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCMCTUv9mWhE2KH4yG3KX_VA/5da9YOKNB-iL8gTk5rPoAQ","alt":"おつプラ","sharedTooltipText":":_おつプラ:","src":"https://yt3.ggpht.com/jh0XyQRFo4YLplQICARSdBQ6QaR9922TO5w2YLRb9pfpiLuHGyBfS6wzVfXqsekjKCr7QEu_zQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCMCTUv9mWhE2KH4yG3KX_VA/5da9YOKNB-iL8gTk5rPoAQ","alt":"おつプラ","sharedTooltipText":":_おつプラ:","src":"https://yt3.ggpht.com/jh0XyQRFo4YLplQICARSdBQ6QaR9922TO5w2YLRb9pfpiLuHGyBfS6wzVfXqsekjKCr7QEu_zQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCMCTUv9mWhE2KH4yG3KX_VA/HJBCYcjkIM_j8wTh4ZbYBQ","alt":"正座待機","sharedTooltipText":":_正座待機:","src":"https://yt3.ggpht.com/zKRwbhTPUxQvW2Jazqw4xCvVZq_6_Zl73P6MIas42BegW8pzcIepUIn53N2YKxGg8-FdTkd_YQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCMCTUv9mWhE2KH4yG3KX_VA/5da9YI2PB-iL8gTk5rPoAQ","alt":"草生える","sharedTooltipText":":_草生える:","src":"https://yt3.ggpht.com/KW_40H0OAK45sUyTvmSUS_JURRZ5M3v5yvPZAxmbp3KEiGLHQrrnDGQQT4tPdMlfeipH3sb7=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あっ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" }
+  ]
+}

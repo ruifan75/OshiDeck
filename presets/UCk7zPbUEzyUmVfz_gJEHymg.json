@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Ryu Ch. 류",
+  "note": "歌枠2配信・通常10配信のチャットから10枚",
+  "channel": "UCk7zPbUEzyUmVfz_gJEHymg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"ㅋㅋㅋㅋㅋㅋㅋㅋ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"류하"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"안녕하세요"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"갱~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"류바"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"와ㅏㅏㅏ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"짠~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"오"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"수고하셨습니다"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"어머"}], "scope": "channel" }
+  ]
+}

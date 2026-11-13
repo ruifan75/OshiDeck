@@ -1,0 +1,12 @@
+{
+  "format": 2,
+  "name": "Lord Aethelstan",
+  "note": "歌枠0配信・通常5配信のチャットから4枚",
+  "channel": "UCLI_XmsVZzOrOB1LaoV0BEQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LUL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LETSGO"}], "scope": "channel" }
+  ]
+}

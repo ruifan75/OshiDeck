@@ -1,0 +1,10 @@
+{
+  "format": 2,
+  "name": "神々 てと / miwa teto",
+  "note": "歌枠0配信・通常13配信のチャットから2枚",
+  "channel": "UCXUb2wcPPg7mPMaanF7Q_zw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんてと〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" }
+  ]
+}

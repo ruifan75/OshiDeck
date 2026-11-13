@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Capo Miyo",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCfdF96prvBt7_N28veNdVkA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCfdF96prvBt7_N28veNdVkA/TSvwYf6vFpiG-gb4s5ow","alt":"capoPizzaL","sharedTooltipText":":_capoPizzaL:","src":"https://yt3.ggpht.com/j2EchYkl8_Q-XO7a4X-nZ5FRKmnRLmkCnzxIXM_8feiqm1lAL3hUo4epnPtHiaV4Jxpbum0GnQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCfdF96prvBt7_N28veNdVkA/xZcuYrL1EIGJ6dsP--aXkAQ","alt":"capoCapoburn","sharedTooltipText":":_capoCapoburn:","src":"https://yt3.ggpht.com/wo3lCfd8Bt08diJ1-KYJR6CqNzOC7gwY57rfj2d1wEqTa2e3UFXwc_6q3D5G9f2kwEWgCjX17w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCfdF96prvBt7_N28veNdVkA/l0H5YeyPGsXzgAeQiqqIAQ","alt":"capoPizzaR","sharedTooltipText":":_capoPizzaR:","src":"https://yt3.ggpht.com/fMpJ_yXlkqqpdtL6dOftDHMoi125EDpPjX-aVPspu019eqSW90JnEC6mGjCWYliH6ZmgfmDmOzg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCfdF96prvBt7_N28veNdVkA/xZcuYrL1EIGJ6dsP--aXkAQ","alt":"capoCapoburn","sharedTooltipText":":_capoCapoburn:","src":"https://yt3.ggpht.com/wo3lCfd8Bt08diJ1-KYJR6CqNzOC7gwY57rfj2d1wEqTa2e3UFXwc_6q3D5G9f2kwEWgCjX17w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCfdF96prvBt7_N28veNdVkA/xZcuYrL1EIGJ6dsP--aXkAQ","alt":"capoCapoburn","sharedTooltipText":":_capoCapoburn:","src":"https://yt3.ggpht.com/wo3lCfd8Bt08diJ1-KYJR6CqNzOC7gwY57rfj2d1wEqTa2e3UFXwc_6q3D5G9f2kwEWgCjX17w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCfdF96prvBt7_N28veNdVkA/xZcuYrL1EIGJ6dsP--aXkAQ","alt":"capoCapoburn","sharedTooltipText":":_capoCapoburn:","src":"https://yt3.ggpht.com/wo3lCfd8Bt08diJ1-KYJR6CqNzOC7gwY57rfj2d1wEqTa2e3UFXwc_6q3D5G9f2kwEWgCjX17w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCfdF96prvBt7_N28veNdVkA/Dv8HYsTGC4io1wKKlK-QCg","alt":"capoLmao","sharedTooltipText":":_capoLmao:","src":"https://yt3.ggpht.com/t6rfVdInOpbfwxtxXtNIOHwMh1QxmS1rsNwZ87AC-NsdyVnfzn1_UF4OXpWr1oukBwZlnnjh=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Capo!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh no"}], "scope": "channel" }
+  ]
+}

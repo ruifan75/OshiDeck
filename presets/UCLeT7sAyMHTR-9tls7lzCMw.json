@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "鍵宮シエル ASMR Channel",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCLeT7sAyMHTR-9tls7lzCMw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんシエー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんシエ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

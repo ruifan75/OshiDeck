@@ -1,0 +1,33 @@
+{
+  "format": 2,
+  "name": "Solan Fernwick【FIRST STAGE PRODUCTION EN】",
+  "note": "歌枠1配信・通常13配信のチャットから25枚",
+  "channel": "UCUtoueXsWIIwpb0joVtl6JA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"YESSS"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"TSKR"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/vQF1XpyaG_XG8gTs77bACQ","alt":"chillwcat","sharedTooltipText":":chillwcat:","src":"https://yt3.ggpht.com/y03dFcPc1B7CO20zgQYzhcRPka5Bhs6iSg57MaxJdhaLidFvvXBLf_i4_SHG7zJ_2VpBMNs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/vQF1XpyaG_XG8gTs77bACQ","alt":"chillwcat","sharedTooltipText":":chillwcat:","src":"https://yt3.ggpht.com/y03dFcPc1B7CO20zgQYzhcRPka5Bhs6iSg57MaxJdhaLidFvvXBLf_i4_SHG7zJ_2VpBMNs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/vQF1XpyaG_XG8gTs77bACQ","alt":"chillwcat","sharedTooltipText":":chillwcat:","src":"https://yt3.ggpht.com/y03dFcPc1B7CO20zgQYzhcRPka5Bhs6iSg57MaxJdhaLidFvvXBLf_i4_SHG7zJ_2VpBMNs=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"READY"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OTSULANNN"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OH"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"SOLAN FERNWICK"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"A D D I C T E D"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"READY "},{"type":"text","value":"💚"},{"type":"text","value":"🫚"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OTSULAN "},{"type":"text","value":"💚"},{"type":"text","value":"💚"},{"type":"text","value":"💚"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"💚"},{"type":"text","value":"🥖"},{"type":"text","value":"💚"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💚"},{"type":"text","value":"🥖"},{"type":"text","value":"💚"},{"type":"text","value":"🥖"},{"type":"text","value":"💚"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"NYA NYA NYA"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WOWAKA"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WOOOOO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WOAH"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OMG"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"YAYYY"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🫚"},{"type":"text","value":"🍵"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"NOOOO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"AKAAA"}], "scope": "channel" }
+  ]
+}

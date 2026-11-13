@@ -1,0 +1,19 @@
+{
+  "format": 2,
+  "name": "もふやまそらら Sorara Ch.",
+  "note": "歌枠2配信・通常13配信のチャットから11枚",
+  "channel": "UCDC7peoZ2tlm406-0l8iLYw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"もふもふ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💎"},{"type":"text","value":"🐾"},{"type":"text","value":"🫧"},{"type":"text","value":"🎶"},{"type":"text","value":"💎"},{"type":"text","value":"🐾"},{"type":"text","value":"🫧"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつもふ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"もふもふ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつもふ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いいよ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "偉雷アマエ / Erai Amae",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC6b4Ta_J0wbylnPu1auaQiA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🧡"},{"type":"text","value":"⚡"},{"type":"text","value":"🎶"},{"type":"text","value":"🧡"},{"type":"text","value":"⚡"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/egJ1XufTKYfegwOo57ewAg","alt":"shelterin","sharedTooltipText":":shelterin:","src":"https://yt3.ggpht.com/gjC5x98J4BoVSEPfFJaoLtc4tSBGSEdIlfL2FV4iJG9uGNykDP9oJC_QxAuBTJy6dakPxVeC=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/egJ1XufTKYfegwOo57ewAg","alt":"shelterin","sharedTooltipText":":shelterin:","src":"https://yt3.ggpht.com/gjC5x98J4BoVSEPfFJaoLtc4tSBGSEdIlfL2FV4iJG9uGNykDP9oJC_QxAuBTJy6dakPxVeC=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/egJ1XufTKYfegwOo57ewAg","alt":"shelterin","sharedTooltipText":":shelterin:","src":"https://yt3.ggpht.com/gjC5x98J4BoVSEPfFJaoLtc4tSBGSEdIlfL2FV4iJG9uGNykDP9oJC_QxAuBTJy6dakPxVeC=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC6b4Ta_J0wbylnPu1auaQiA/A1c0acnwC86Us8IP5Yyy-QE","alt":"kon","sharedTooltipText":":_kon:","src":"https://yt3.ggpht.com/3N4n36Fliul5-EBLtyHPMdNE__OoeyX89qCKh9DEp-34e3EryKR4JXhnxrRZsQ3QYNR_D_ZgaA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6b4Ta_J0wbylnPu1auaQiA/ifIVaY_9IuWYs8IPgr6buAk","alt":"amae","sharedTooltipText":":_amae:","src":"https://yt3.ggpht.com/cEMHsT8LYHtYY97SaUxIXGs0J81P46Wa9wYEY1tf5ZMn1DhCQxlezR55VTTHJ06-Mvr7sh0mdA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC6b4Ta_J0wbylnPu1auaQiA/ic3zaMO4DeWYs8IPnP6d2Qg","alt":"mate","sharedTooltipText":":_mate:","src":"https://yt3.ggpht.com/jMmAkIguGtfVb2eR6mhwNfcSOO2fXd20ZqmuL9uay1Xgs9KXQMEEEcqf2HX6SkaY6ZA0TmtOWw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6b4Ta_J0wbylnPu1auaQiA/ic3zaMO4DeWYs8IPnP6d2Qg","alt":"mate","sharedTooltipText":":_mate:","src":"https://yt3.ggpht.com/jMmAkIguGtfVb2eR6mhwNfcSOO2fXd20ZqmuL9uay1Xgs9KXQMEEEcqf2HX6SkaY6ZA0TmtOWw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6b4Ta_J0wbylnPu1auaQiA/ic3zaMO4DeWYs8IPnP6d2Qg","alt":"mate","sharedTooltipText":":_mate:","src":"https://yt3.ggpht.com/jMmAkIguGtfVb2eR6mhwNfcSOO2fXd20ZqmuL9uay1Xgs9KXQMEEEcqf2HX6SkaY6ZA0TmtOWw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんアマエー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC6b4Ta_J0wbylnPu1auaQiA/ic3zaKW5DeWYs8IPnP6d2Qg","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/rTVmx9vgx-rN6atcUI2VhJ0520G2NX48fLTfPaoOQt7Fa44nedV0uAl3VeiDK1EDFcUg989DNQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつアマエー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

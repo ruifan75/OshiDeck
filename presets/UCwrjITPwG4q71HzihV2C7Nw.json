@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "フミ/にじさんじ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCwrjITPwG4q71HzihV2C7Nw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCwrjITPwG4q71HzihV2C7Nw/ksqBX7aQI8n0-gP7z5zoBg","alt":"ビームサーベル","sharedTooltipText":":_ビームサーベル:","src":"https://yt3.ggpht.com/bQ9iJdGpkC6cxp4cjriOf7Y6I8Hw_1Cnt3zvBH8wM9UdoIsJA2IqWyJNJ4Nbromqx-_YMOTWjQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCwrjITPwG4q71HzihV2C7Nw/ksqBX7aQI8n0-gP7z5zoBg","alt":"ビームサーベル","sharedTooltipText":":_ビームサーベル:","src":"https://yt3.ggpht.com/bQ9iJdGpkC6cxp4cjriOf7Y6I8Hw_1Cnt3zvBH8wM9UdoIsJA2IqWyJNJ4Nbromqx-_YMOTWjQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCwrjITPwG4q71HzihV2C7Nw/ksqBX7aQI8n0-gP7z5zoBg","alt":"ビームサーベル","sharedTooltipText":":_ビームサーベル:","src":"https://yt3.ggpht.com/bQ9iJdGpkC6cxp4cjriOf7Y6I8Hw_1Cnt3zvBH8wM9UdoIsJA2IqWyJNJ4Nbromqx-_YMOTWjQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCwrjITPwG4q71HzihV2C7Nw/ksqBX7aQI8n0-gP7z5zoBg","alt":"ビームサーベル","sharedTooltipText":":_ビームサーベル:","src":"https://yt3.ggpht.com/bQ9iJdGpkC6cxp4cjriOf7Y6I8Hw_1Cnt3zvBH8wM9UdoIsJA2IqWyJNJ4Nbromqx-_YMOTWjQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCwrjITPwG4q71HzihV2C7Nw/ksqBX7aQI8n0-gP7z5zoBg","alt":"ビームサーベル","sharedTooltipText":":_ビームサーベル:","src":"https://yt3.ggpht.com/bQ9iJdGpkC6cxp4cjriOf7Y6I8Hw_1Cnt3zvBH8wM9UdoIsJA2IqWyJNJ4Nbromqx-_YMOTWjQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつこやーん"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCwrjITPwG4q71HzihV2C7Nw/ByOwZNvzAa2T_9EP6IKPiAw","alt":"こやーん1","sharedTooltipText":":_こやーん1:","src":"https://yt3.ggpht.com/LiVU5tu0MWVo5vMCn2Ic4NtHOKZ-wH4z5MZN_NNjzCUQyaL3ZKxusCwCnlsCXJ4S4RZCqXWF=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCwrjITPwG4q71HzihV2C7Nw/ByOwZID0Aa2T_9EP6IKPiAw","alt":"こやーん2","sharedTooltipText":":_こやーん2:","src":"https://yt3.ggpht.com/BMCnvfCWPcpqJnPEh9kNq_2GKJBBpH4m91qqmg03LqR6_jX9HqugS9-zWdADFWdKb1xuwfQ5=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイスー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"暫し待つ"}], "scope": "channel" }
+  ]
+}

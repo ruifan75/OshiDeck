@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Ikumi",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCykXKu-j0Sm68h-kBxRMwpg",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCykXKu-j0Sm68h-kBxRMwpg/lfurZ6KyFK63_9EPsaXK8Qc","alt":"IkumiWave","sharedTooltipText":":_IkumiWave:","src":"https://yt3.ggpht.com/P88cZpqcmWvIHO3I0Bh7W2DeefwlM_rSVDBmfowzpUXP_loYhiPXnREAL0p9JfujiUXan8Sr3A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCykXKu-j0Sm68h-kBxRMwpg/lfurZ--jFK63_9EPsaXK8Qc","alt":"IkumiHug","sharedTooltipText":":_IkumiHug:","src":"https://yt3.ggpht.com/KlgyeA53tRacqZpp8XH9Lr-XSrkImOL1EAOijw_AoEht282Qwlujgie-nvp6wEcovwU4tu7V-A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCykXKu-j0Sm68h-kBxRMwpg/lfurZ6qbFK63_9EPsaXK8Qc","alt":"IkumiWHOA","sharedTooltipText":":_IkumiWHOA:","src":"https://yt3.ggpht.com/UBCdbVbvbsVcnvMkn2Y6JC--aoNp2sM8WwzmPrbWZdM7JGz3Ee1Gu05_LyiLFvZB0kNOqoDcdg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCykXKu-j0Sm68h-kBxRMwpg/GHYWZNv9KbCB_9EPlJajgA4","alt":"IkumiGuumi","sharedTooltipText":":_IkumiGuumi:","src":"https://yt3.ggpht.com/WnyeM7U5uUGKScqDULIzOBB5RCnq2yRdpq-pSryUSrIosxro6moxT8-h1AodWYvvNCXBTLm2fVQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCykXKu-j0Sm68h-kBxRMwpg/lfurZ4eMFK63_9EPsaXK8Qc","alt":"IkumiGuumiBall","sharedTooltipText":":_IkumiGuumiBall:","src":"https://yt3.ggpht.com/mKht6kj_jCDtdrkjl3ZDCKV07rBl375Tq7M4Zej-7Zld4Qq8wbeOkYoazyN2uBDNvcCRjIWxYEE=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCykXKu-j0Sm68h-kBxRMwpg/vFitZ9y-L663_9EPovng8Qw","alt":"IkumiGoodnight","sharedTooltipText":":_IkumiGoodnight:","src":"https://yt3.ggpht.com/Ypi0KYvKLqTXSLg0JkeieRw10iGi-_el5UWHqkC41qFFVBcErvg2rgfflrk_bmQnXm_ux0PbrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" }
+  ]
+}

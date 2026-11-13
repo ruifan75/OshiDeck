@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "夏梅ウルタ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCghSSXNbZRmPAv3UaS8g21A",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCghSSXNbZRmPAv3UaS8g21A/ol6VY--GFKaI_9EPpOyAuAg","alt":"good","sharedTooltipText":":_good:","src":"https://yt3.ggpht.com/snAKTHEP4CfeExAHAtqF_yKcCXXXtzEAETp2ZQsNoo-PzWMbVadm5uHO6wsbPd1UkueTNFcJOv8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCghSSXNbZRmPAv3UaS8g21A/ol6VY42HFKaI_9EPpOyAuAg","alt":"morning","sharedTooltipText":":_morning:","src":"https://yt3.ggpht.com/FDy5qnWyTm45_XAlr4zg8PHDrI9LGLQoorjox-zGBdK_ykuQ3_Zcimc98PyDY-V_toACSaxnHQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCghSSXNbZRmPAv3UaS8g21A/YvzRZZvgHeKp_9EPvdqyuAQ","alt":"mark","sharedTooltipText":":_mark:","src":"https://yt3.ggpht.com/7D2FsnTwvjIxG5UhM8V759EqhunWNq99G9EfNW6qMltQQ-k9L2kW7ucFwGgCfP8iyiqMJl1O3HU=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いてらー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ぐっも！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCghSSXNbZRmPAv3UaS8g21A/twXSZdLdN9mM_9EPjaC52As","alt":"yuetu","sharedTooltipText":":_yuetu:","src":"https://yt3.ggpht.com/Z-muQ2gLde8Boov3zfNfNPUHlAPuJJl2TUtlNPIbWY74XSs_V7fn6Y1chkPazM_WZytOOc8vpg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCghSSXNbZRmPAv3UaS8g21A/twXSZdLdN9mM_9EPjaC52As","alt":"yuetu","sharedTooltipText":":_yuetu:","src":"https://yt3.ggpht.com/Z-muQ2gLde8Boov3zfNfNPUHlAPuJJl2TUtlNPIbWY74XSs_V7fn6Y1chkPazM_WZytOOc8vpg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCghSSXNbZRmPAv3UaS8g21A/twXSZdLdN9mM_9EPjaC52As","alt":"yuetu","sharedTooltipText":":_yuetu:","src":"https://yt3.ggpht.com/Z-muQ2gLde8Boov3zfNfNPUHlAPuJJl2TUtlNPIbWY74XSs_V7fn6Y1chkPazM_WZytOOc8vpg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCghSSXNbZRmPAv3UaS8g21A/twXSZdLdN9mM_9EPjaC52As","alt":"yuetu","sharedTooltipText":":_yuetu:","src":"https://yt3.ggpht.com/Z-muQ2gLde8Boov3zfNfNPUHlAPuJJl2TUtlNPIbWY74XSs_V7fn6Y1chkPazM_WZytOOc8vpg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" }
+  ]
+}

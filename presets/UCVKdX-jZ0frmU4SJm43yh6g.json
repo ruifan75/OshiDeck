@@ -1,0 +1,20 @@
+{
+  "format": 2,
+  "name": "水瀬 しあ 🏖️しあちゃんねる",
+  "note": "歌枠1配信・通常13配信のチャットから12枚",
+  "channel": "UCVKdX-jZ0frmU4SJm43yh6g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんしぁーす"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつしぁーす！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVKdX-jZ0frmU4SJm43yh6g/ory2XuC6FoK0_AOvjaSIBA","alt":"くさぁ","sharedTooltipText":":_くさぁ:","src":"https://yt3.ggpht.com/iJjUKKXqBOkY1Liqket-nhWYyHcEV9cVCK684ZYdc6_NL4MFcDdjXn3GiGwAdps-HAlt8mF0cA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ヨシ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"まっちょ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"しっあしっあ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"すき"}], "scope": "channel" }
+  ]
+}

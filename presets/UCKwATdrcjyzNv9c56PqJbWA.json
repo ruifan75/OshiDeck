@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "勇凪エレナ / Elena Yunagi",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCKwATdrcjyzNv9c56PqJbWA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんれなー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつれなー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ぽ…"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"kp"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お、"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぅー"}], "scope": "channel" }
+  ]
+}

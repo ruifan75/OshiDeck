@@ -32,11 +32,25 @@ UNREAD='od-scan: the patch was not read to the end'
 # a NUL becomes a space, so neither hides the rest of its added line from awk.
 # The optional argument marks plain text as added lines, after decoding it.
 read_text() {
-  perl -MEncode=decode,encode -0777 -e '
-    my $text = decode("UTF-8", scalar(<STDIN>) // "");
+  perl -MEncode=decode,encode -MDigest::SHA=sha256_hex -0777 -e '
+    my $raw = scalar(<STDIN>) // "";
+    my $text = decode("UTF-8", $raw);
     $text =~ s/\0/ /g;
-    $text =~ s/^/+/mg if @ARGV;
-    print encode("UTF-8", $text);
+    my $mode = shift // "";
+    $text =~ s/^/+/mg if $mode eq "added";
+    my $bytes = encode("UTF-8", $text);
+    if ($mode eq "hashed") {
+      my @raw_lines = split /(?<=\n)/, $raw;
+      for my $line (split /(?<=\n)/, $bytes) {
+        my $raw_line = shift @raw_lines;
+        if ($line =~ /^\+/) {
+          my $content = substr($raw_line, 1);
+          $content =~ s/\n\z//;
+          print "od-name-hash:", sha256_hex($content), "\n";
+        }
+        print $line;
+      }
+    } else { print $bytes; }
   ' "$@"
 }
 
@@ -85,19 +99,38 @@ account=$(basename "$HOME" | tr '[:upper:]' '[:lower:]')
 # Added lines only. What a commit removes is already in the history, and
 # refusing to let it go would be exactly backwards.
 #
-# $1, when given, is a path whose documentation addresses are allowed.
+# $1 allows documentation addresses in one fixture. $2, for staged content
+# only, names a path + exact-line SHA-256 table of verified public names.
+# Hash markers come from the reader, outside added lines; file contents cannot
+# forge one. An allowance affects only the name test, never paths or addresses.
 scan() {
   # A reader's exit status would disappear inside the pipe. Its failure is a
   # record the scanner can hear, even when the reader stopped mid-line.
-  { read_text || printf '\n%s\n' "$UNREAD"; } |
+  { read_text hashed || printf '\n%s\n' "$UNREAD"; } |
   OD_ADDRESS="$ADDRESS" OD_ALLOWED="$ALLOWED" OD_RESERVED="$RESERVED" \
   OD_ACCOUNT="$account" OD_HOME="$HOME" OD_EXEMPT="${1:-}" OD_SKIP="$SKIP" \
-  OD_UNREAD="$UNREAD" awk '
+  OD_UNREAD="$UNREAD" OD_PUBLIC_NAMES="${2:-}" awk '
     BEGIN {
+      # text_patch has a synthetic header; real diffs reset this per file.
+      in_header = 1
       addr = ENVIRON["OD_ADDRESS"]; allowed = ENVIRON["OD_ALLOWED"]
       reserved = ENVIRON["OD_RESERVED"]; account = ENVIRON["OD_ACCOUNT"]
       home = ENVIRON["OD_HOME"]; exempt = ENVIRON["OD_EXEMPT"]
       skip = ENVIRON["OD_SKIP"]; unread = ENVIRON["OD_UNREAD"]
+      names_file = ENVIRON["OD_PUBLIC_NAMES"]
+      if (names_file != "") {
+        while ((read = (getline row < names_file)) > 0) {
+          if (row == "" || row ~ /^#/) continue
+          count = split(row, part, "\t")
+          if (count != 2 || part[1] !~ /^[A-Za-z0-9_.\/-]+$/ || part[1] ~ /^\// ||
+              part[1] ~ /(^|\/)\.\.(\/|$)/ || part[2] !~ /^[0-9a-f]+$/ || length(part[2]) != 64) {
+            note("（例外一覧）", "形式を読み取れない行"); continue
+          }
+          public_names[part[1] SUBSEP part[2]] = 1
+        }
+        if (read < 0) note("（例外一覧）", "最後まで読めなかった内容")
+        close(names_file)
+      }
     }
     function note(where, what,   key) {
       key = where "\t" what
@@ -117,10 +150,10 @@ scan() {
       return 0
     }
     # Returns how many kinds of private thing are in this text, noting each.
-    function check(s, where,   hits, rest, one) {
+    function check(s, where, allow_name,   hits, rest, one) {
       hits = 0
       if (home != "" && index(s, home)) { note(where, "ホームディレクトリのパス"); hits++ }
-      if (says_name(s))                 { note(where, "名前らしき語"); hits++ }
+      if (says_name(s) && !allow_name)   { note(where, "名前らしき語"); hits++ }
       rest = s
       # Patterns can be escaped again inside strings. Remove every backslash,
       # however many layers were written. This guards accidental disclosure;
@@ -150,22 +183,27 @@ scan() {
     # was not, and that is not the same thing as clean.
     $0 == unread { note("（パッチ全体）", "最後まで読めなかった内容"); next }
 
+    /^od-name-hash:[0-9a-f]+$/ {
+      line_hash = substr($0, length("od-name-hash:") + 1); next
+    }
+
     # A new file in the patch. Everything resets, including whether the last
     # line was the `---` half of a header.
-    /^diff --git / { path = ""; hidden = 0; dashed = 0; next }
+    /^diff --git / { path = ""; hidden = 0; dashed = 0; in_header = 1; line_hash = ""; next }
+    /^@@ / { in_header = 0; dashed = 0; next }
 
     # A rename or a copy that changed nothing has no content at all, so the
     # name it landed under is the only thing to read — and a name is a place
     # something private sits just as well as a line is.
     /^rename to / || /^copy to / { opened(substr($0, index($0, " to ") + 4)); dashed = 0; next }
 
-    /^--- / { dashed = 1; next }
+    in_header && /^--- / { dashed = 1; next }
 
-    /^\+\+\+ / {
-      # Only after the `---` half. An added line reading `++ something` is
-      # shown as `+++ something`, and taken for a header it moved every line
-      # after it under any name the commit cares to give — including the one
-      # name whose documentation addresses are allowed.
+    in_header && /^\+\+\+ / {
+      # Only a pair in the metadata region is a header. Inside a hunk,
+      # deleting "-- a/x" and adding "++ b/path" looks like the same pair,
+      # but cannot change which file is being scanned. Plain messages have
+      # no hunk marker, so their header-looking additions need this guard too.
       if (!dashed) { check(substr($0, 2), where()); next }
       dashed = 0
       opened(($0 == "+++ /dev/null") ? "" : substr($0, 7))
@@ -176,7 +214,10 @@ scan() {
     # The skip is a name, so an unnamed file is not it. Compared the short
     # way, a patch with no path yet — which is what a message read as a patch
     # is — matched the empty skip and went unread.
-    substr($0, 1, 1) == "+" && !(skip != "" && path == skip) { check(substr($0, 2), where()) }
+    substr($0, 1, 1) == "+" && !(skip != "" && path == skip) {
+      allow_name = public_names[path SUBSEP line_hash]
+      check(substr($0, 2), where(), allow_name)
+    }
 
     END { for (i = 1; i <= n; i++) print order[i] }
   '

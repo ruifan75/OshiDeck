@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ないこちゃんねる",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCbEqb8JTlcYh0yOX6veIyPg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おはないです！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わこないです！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うんうん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつないでした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" }
+  ]
+}

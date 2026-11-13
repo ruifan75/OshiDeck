@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "夜凪るな / yonagi luna",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCF-SWAO8VnzhfA7STT1Fzyw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"🌙"},{"type":"text","value":"🫧"},{"type":"text","value":"💜"},{"type":"text","value":"🫧"},{"type":"text","value":"🌙"},{"type":"text","value":"🫧"},{"type":"text","value":"🤍"},{"type":"text","value":"🫧"},{"type":"text","value":"🌙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCF-SWAO8VnzhfA7STT1Fzyw/DTziZ5TpD5S3_9EP892pwQs","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/Gs9LxVsq6QOJM_sgarN9WceT_drNmjjTIqiQP_gZD1mXFRtFDQ2laUWAEslybA3NcTKEpUHMYXk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCF-SWAO8VnzhfA7STT1Fzyw/DTziZ5TpD5S3_9EP892pwQs","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/Gs9LxVsq6QOJM_sgarN9WceT_drNmjjTIqiQP_gZD1mXFRtFDQ2laUWAEslybA3NcTKEpUHMYXk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCF-SWAO8VnzhfA7STT1Fzyw/DTziZ5TpD5S3_9EP892pwQs","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/Gs9LxVsq6QOJM_sgarN9WceT_drNmjjTIqiQP_gZD1mXFRtFDQ2laUWAEslybA3NcTKEpUHMYXk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCF-SWAO8VnzhfA7STT1Fzyw/DTziZ5TpD5S3_9EP892pwQs","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/Gs9LxVsq6QOJM_sgarN9WceT_drNmjjTIqiQP_gZD1mXFRtFDQ2laUWAEslybA3NcTKEpUHMYXk=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCF-SWAO8VnzhfA7STT1Fzyw/DTziZ4fkD5S3_9EP892pwQs","alt":"よなるな","sharedTooltipText":":_よなるな:","src":"https://yt3.ggpht.com/INv-S3dbieYQ0r1mKxMzr49qDDmi5Q0sosO3C4l1PurbKiuaOHXGXRPODmzu9-u4eleSKa_9=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCF-SWAO8VnzhfA7STT1Fzyw/DTziZ4fkD5S3_9EP892pwQs","alt":"よなるな","sharedTooltipText":":_よなるな:","src":"https://yt3.ggpht.com/INv-S3dbieYQ0r1mKxMzr49qDDmi5Q0sosO3C4l1PurbKiuaOHXGXRPODmzu9-u4eleSKa_9=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCF-SWAO8VnzhfA7STT1Fzyw/DTziZ4fkD5S3_9EP892pwQs","alt":"よなるな","sharedTooltipText":":_よなるな:","src":"https://yt3.ggpht.com/INv-S3dbieYQ0r1mKxMzr49qDDmi5Q0sosO3C4l1PurbKiuaOHXGXRPODmzu9-u4eleSKa_9=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつるな〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"よなるな"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Eru Erudite 【Aegis-Link】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCaDMGSRik6oXYe4ZuI73Odw",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaDMGSRik6oXYe4ZuI73Odw/EcJzaobEE56i7OsPnaPHqQM","alt":"eruDead","sharedTooltipText":":_eruDead:","src":"https://yt3.ggpht.com/IleQogUCcigyMPI0a3H61UagCSRCA1Tl_aUf4S0w_yY3P4waGVvc7e8U4gKQ8-9xYqaQXl1VanY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaDMGSRik6oXYe4ZuI73Odw/EcJzavfBE56i7OsPnaPHqQM","alt":"eruPeek","sharedTooltipText":":_eruPeek:","src":"https://yt3.ggpht.com/nOKMkBiGGUG8h1NXF-PLFX4y93tuN92gF-C9VvquPCMgt0x5Ihg1zRhn_DKtNp_In-8HNkgg_w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaDMGSRik6oXYe4ZuI73Odw/fIFxasLaGdKRrcUPos3AqAQ","alt":"eruFire","sharedTooltipText":":_eruFire:","src":"https://yt3.ggpht.com/s5MkRnw_96A7ivqerzFn-q8r8zKPhrYooOMgKO6Rrdgn_Rjb51EUwYf_Vra2v1DWGpljVhjAwQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaDMGSRik6oXYe4ZuI73Odw/fIFxasLaGdKRrcUPos3AqAQ","alt":"eruFire","sharedTooltipText":":_eruFire:","src":"https://yt3.ggpht.com/s5MkRnw_96A7ivqerzFn-q8r8zKPhrYooOMgKO6Rrdgn_Rjb51EUwYf_Vra2v1DWGpljVhjAwQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaDMGSRik6oXYe4ZuI73Odw/fIFxasLaGdKRrcUPos3AqAQ","alt":"eruFire","sharedTooltipText":":_eruFire:","src":"https://yt3.ggpht.com/s5MkRnw_96A7ivqerzFn-q8r8zKPhrYooOMgKO6Rrdgn_Rjb51EUwYf_Vra2v1DWGpljVhjAwQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaDMGSRik6oXYe4ZuI73Odw/EcJzarLDE56i7OsPnaPHqQM","alt":"eruLaughAtYou","sharedTooltipText":":_eruLaughAtYou:","src":"https://yt3.ggpht.com/SswoqV7U88qCZhAOny0EgB2I_MNt7fJAxsqJSz9HlJz5ei9VnWTCzSDqslXU278l1boplC6waA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaDMGSRik6oXYe4ZuI73Odw/EcJzarLDE56i7OsPnaPHqQM","alt":"eruLaughAtYou","sharedTooltipText":":_eruLaughAtYou:","src":"https://yt3.ggpht.com/SswoqV7U88qCZhAOny0EgB2I_MNt7fJAxsqJSz9HlJz5ei9VnWTCzSDqslXU278l1boplC6waA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaDMGSRik6oXYe4ZuI73Odw/EcJzarLDE56i7OsPnaPHqQM","alt":"eruLaughAtYou","sharedTooltipText":":_eruLaughAtYou:","src":"https://yt3.ggpht.com/SswoqV7U88qCZhAOny0EgB2I_MNt7fJAxsqJSz9HlJz5ei9VnWTCzSDqslXU278l1boplC6waA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaDMGSRik6oXYe4ZuI73Odw/fIFxaqfdGdKRrcUPos3AqAQ","alt":"eruYay","sharedTooltipText":":_eruYay:","src":"https://yt3.ggpht.com/ku6Hi9e7huj9rAO2AkDOU5qUi4UpaBLPDY7u6WUFqOIV2xWBmo84c92qXX5q5uE41DA6nUMvJA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" }
+  ]
+}

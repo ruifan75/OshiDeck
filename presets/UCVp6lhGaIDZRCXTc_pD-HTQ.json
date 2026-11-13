@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "さきねる / SAKINERU",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCVp6lhGaIDZRCXTc_pD-HTQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんねるー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはねる"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつねる"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはねる～"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVp6lhGaIDZRCXTc_pD-HTQ/CNGMYoDbCo708gS5hYbIBw","alt":"くさくさ","sharedTooltipText":":_くさくさ:","src":"https://yt3.ggpht.com/cH0do8PqiEy1S8lJ2deklSo9HZ3ddhsmzo-8CAj641OsJhRWd3vk6Z2P5jzbbLh-3Ff3FTSas_M=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVp6lhGaIDZRCXTc_pD-HTQ/CNGMYoDbCo708gS5hYbIBw","alt":"くさくさ","sharedTooltipText":":_くさくさ:","src":"https://yt3.ggpht.com/cH0do8PqiEy1S8lJ2deklSo9HZ3ddhsmzo-8CAj641OsJhRWd3vk6Z2P5jzbbLh-3Ff3FTSas_M=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" }
+  ]
+}

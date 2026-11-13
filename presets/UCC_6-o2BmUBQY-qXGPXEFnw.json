@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ありさのげーむべや",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCC_6-o2BmUBQY-qXGPXEFnw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんば"},{"type":"youtubeEmoji","emojiId":"UCC_6-o2BmUBQY-qXGPXEFnw/9q6bZeONCa2j_9EPw5iAkAc","alt":"Arisaばりさ","sharedTooltipText":":_Arisaばりさ:","src":"https://yt3.ggpht.com/KYWjlo3wfqypd4Sr89wKjSlhvd_N-8a3d_K64mTUSYN6YgPiZNRObUw5LZwqg14jVr-MUJgl=w48-h48-c-k-nd"},{"type":"text","value":"ー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ㅋㅋㅋㅋ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばりさ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" }
+  ]
+}

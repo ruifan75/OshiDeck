@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "牡丹餅 かず / Botamochi Kazu",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCfHSSdj-1uucpAx7-VJ0V3Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかずー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎵"},{"type":"text","value":"🎵"},{"type":"text","value":"🎵"},{"type":"text","value":"🎵"},{"type":"text","value":"🎵"},{"type":"text","value":"🎵"},{"type":"text","value":"🎶"},{"type":"text","value":"🎵"},{"type":"text","value":"🎶"},{"type":"text","value":"🎵"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎶"},{"type":"text","value":"🟣"},{"type":"text","value":"🎶"},{"type":"text","value":"🟣"},{"type":"text","value":"🎶"},{"type":"text","value":"🟣"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れさまっしたー！！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかずーこんしどー"}], "scope": "channel" }
+  ]
+}

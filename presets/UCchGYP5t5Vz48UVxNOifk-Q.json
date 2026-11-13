@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Miu Akumiya",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCchGYP5t5Vz48UVxNOifk-Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCchGYP5t5Vz48UVxNOifk-Q/GOOxZejKCOyP_9EPzq2RwAQ","alt":"MiuLight1","sharedTooltipText":":_MiuLight1:","src":"https://yt3.ggpht.com/oYxeFDFPjTrGUryrYlxKmm8wa08Ez4FJY8FDxdt13dabli2myI-HBiHut9-g8QfkL_SBuTl8BQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCchGYP5t5Vz48UVxNOifk-Q/IrC-Z9HlJ_qT_9EPydCJoQ0","alt":"MiuHappi","sharedTooltipText":":_MiuHappi:","src":"https://yt3.ggpht.com/W_-myirmB3ACjxVuec5ijSO-zAmjlGe2bp-U08ccQvvMZbX3yIPyj_JAd3sQicJpv2Dnh7sp=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCchGYP5t5Vz48UVxNOifk-Q/f8JDaMHdOo6O_9EPzeHw2Qg","alt":"MiuLight2","sharedTooltipText":":_MiuLight2:","src":"https://yt3.ggpht.com/3FUsPARgJ7BR5tqgN-zx9mYThNpRb07cdov3de_c_RhzdXy-P6wzJUCsOBsKXcfq1eTBUZNTqA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCchGYP5t5Vz48UVxNOifk-Q/2fIzaPCqEKK1_9EPmM-XmAc","alt":"MiuHeadpat","sharedTooltipText":":_MiuHeadpat:","src":"https://yt3.ggpht.com/mOIMi1XERLWK-0F9Muyk9C0bTyzenp8a6vI83YWb998I7UkCgI54aGSAd-trXAv_i-qX069oOw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCchGYP5t5Vz48UVxNOifk-Q/w2axZbqPK--B_9EP45aqkAU","alt":"MiuLaugh","sharedTooltipText":":_MiuLaugh:","src":"https://yt3.ggpht.com/JlOMXZC8y1sPmMr0jUfc6wll95FoGkdb1vn6EUuFVzTu7fazFIRoMrt9EWAzDGyeRisY7sLVYGg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCchGYP5t5Vz48UVxNOifk-Q/nt-xZY2SMeyP_9EPzq2RwAQ","alt":"MiuGreat","sharedTooltipText":":_MiuGreat:","src":"https://yt3.ggpht.com/vgwWEi2jj_8tixRJ0gxQ_l0cmYgAPrs9Cya_GnTobVbg97gV3LGd2YFFij0OEkUwaM8yxtHh8Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCchGYP5t5Vz48UVxNOifk-Q/w2axZb-RK--B_9EP45aqkAU","alt":"MiuShocked","sharedTooltipText":":_MiuShocked:","src":"https://yt3.ggpht.com/u4Yor02r7Zb6VuwTi9JWaS6l0WXzuZB_3a0ONFrIZEU1F8MFxPoPDigZSI4bKjcOo0BZ89mylQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCchGYP5t5Vz48UVxNOifk-Q/GOOxZf3ICOyP_9EPzq2RwAQ","alt":"MiuHeart1","sharedTooltipText":":_MiuHeart1:","src":"https://yt3.ggpht.com/47IYbpe6Lua5dEJDRJYB_ol6dAxpZBACIQ-wZGn79AUXCQQ6iRTLQxJc2oOCrC3uS3kP2SgYsd4=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"1"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCchGYP5t5Vz48UVxNOifk-Q/IrC-Z9HlJ_qT_9EPydCJoQ0","alt":"MiuHappi","sharedTooltipText":":_MiuHappi:","src":"https://yt3.ggpht.com/W_-myirmB3ACjxVuec5ijSO-zAmjlGe2bp-U08ccQvvMZbX3yIPyj_JAd3sQicJpv2Dnh7sp=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCchGYP5t5Vz48UVxNOifk-Q/zS4SZqqLO9Wo_9EPlZi0oAE","alt":"MiuCrycry","sharedTooltipText":":_MiuCrycry:","src":"https://yt3.ggpht.com/BkN30UPgeu3wMAKdrcbPLsW9Zok4TNacmFO7JIe2P7JNZ3RDiaXwgFUoai7rz1cjVNZJgJpKWt4=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

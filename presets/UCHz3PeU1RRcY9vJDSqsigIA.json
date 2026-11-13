@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Liliana Vampaia Ch. 吸血鬼 リリアナ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCHz3PeU1RRcY9vJDSqsigIA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"HAHAHAHA"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCHz3PeU1RRcY9vJDSqsigIA/FzBDX8juIoKQ_AOCw4DwDw","alt":"lightstick","sharedTooltipText":":_lightstick:","src":"https://yt3.ggpht.com/koMlDyxVIVLY4wLZQ44eaps04Z7MPoPhYCo1_IsjR6gKvW0-jen2trUEefBMptPUz5BEEbTceA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCHz3PeU1RRcY9vJDSqsigIA/FzBDX8juIoKQ_AOCw4DwDw","alt":"lightstick","sharedTooltipText":":_lightstick:","src":"https://yt3.ggpht.com/koMlDyxVIVLY4wLZQ44eaps04Z7MPoPhYCo1_IsjR6gKvW0-jen2trUEefBMptPUz5BEEbTceA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCHz3PeU1RRcY9vJDSqsigIA/FzBDX8juIoKQ_AOCw4DwDw","alt":"lightstick","sharedTooltipText":":_lightstick:","src":"https://yt3.ggpht.com/koMlDyxVIVLY4wLZQ44eaps04Z7MPoPhYCo1_IsjR6gKvW0-jen2trUEefBMptPUz5BEEbTceA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OtsuLili"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCHz3PeU1RRcY9vJDSqsigIA/f1c9X783jbL7A-L5k8gE","alt":"lovely","sharedTooltipText":":_lovely:","src":"https://yt3.ggpht.com/fljnDEnDRZXc6vo9GfODTYUpBhM_xIqMY-OjY7yFYKOoityGjd9C2E1VElT4fbb8yLCd4OS9zA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCHz3PeU1RRcY9vJDSqsigIA/f1c9X783jbL7A-L5k8gE","alt":"lovely","sharedTooltipText":":_lovely:","src":"https://yt3.ggpht.com/fljnDEnDRZXc6vo9GfODTYUpBhM_xIqMY-OjY7yFYKOoityGjd9C2E1VElT4fbb8yLCd4OS9zA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCHz3PeU1RRcY9vJDSqsigIA/f1c9X783jbL7A-L5k8gE","alt":"lovely","sharedTooltipText":":_lovely:","src":"https://yt3.ggpht.com/fljnDEnDRZXc6vo9GfODTYUpBhM_xIqMY-OjY7yFYKOoityGjd9C2E1VElT4fbb8yLCd4OS9zA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"W"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi lili"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ayooo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ohhhhh"}], "scope": "channel" }
+  ]
+}

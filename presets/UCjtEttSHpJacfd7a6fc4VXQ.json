@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "バーチャルゴリラGAMES",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCjtEttSHpJacfd7a6fc4VXQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんごりです"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんごり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはごりです"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつごりです"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないふぁい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nt"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつごり"}], "scope": "channel" }
+  ]
+}

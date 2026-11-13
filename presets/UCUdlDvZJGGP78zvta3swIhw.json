@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "魔王トゥルシー / Tulsi-Nightmare Madness IV",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCUdlDvZJGGP78zvta3swIhw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍙"},{"type":"text","value":"🍜"},{"type":"text","value":"🎶"},{"type":"text","value":"🍙"},{"type":"text","value":"🍜"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんつな"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCUdlDvZJGGP78zvta3swIhw/FOfuZrfNIoGp_9EP-Pm7kAc","alt":"くさはえる","sharedTooltipText":":_くさはえる:","src":"https://yt3.ggpht.com/oiWXHgO43Zz7A0inSxrRiFzn_qd9tQdB4Xpa4gU9inuSbvqebwtQbYluIl3aW3IwF_nF7fmk=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCUdlDvZJGGP78zvta3swIhw/_MLpZq3jKL-V_9EP8arsoAo","alt":"SSR","sharedTooltipText":":_SSR:","src":"https://yt3.ggpht.com/ibO2OAo5DfncDsZedjwXjXzQwn3W27AcIq4sbwPwAKaDqTTeLsurMQumU-O1YVKZvBcQ-3Yl=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCUdlDvZJGGP78zvta3swIhw/_MLpZq3jKL-V_9EP8arsoAo","alt":"SSR","sharedTooltipText":":_SSR:","src":"https://yt3.ggpht.com/ibO2OAo5DfncDsZedjwXjXzQwn3W27AcIq4sbwPwAKaDqTTeLsurMQumU-O1YVKZvBcQ-3Yl=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCUdlDvZJGGP78zvta3swIhw/_MLpZq3jKL-V_9EP8arsoAo","alt":"SSR","sharedTooltipText":":_SSR:","src":"https://yt3.ggpht.com/ibO2OAo5DfncDsZedjwXjXzQwn3W27AcIq4sbwPwAKaDqTTeLsurMQumU-O1YVKZvBcQ-3Yl=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいならー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつなまよ"}], "scope": "channel" }
+  ]
+}

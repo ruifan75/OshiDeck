@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Lala ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCP5zSITvbymag1L4eK2nrZA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"halo kak"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hai kak"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hai"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo kak lala"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi kak"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"kak"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo lala"}], "scope": "channel" }
+  ]
+}

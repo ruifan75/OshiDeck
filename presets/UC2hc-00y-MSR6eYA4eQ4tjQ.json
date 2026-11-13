@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "龍ヶ崎リン / Rene Ryugasaki【ななしいんく】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC2hc-00y-MSR6eYA4eQ4tjQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC2hc-00y-MSR6eYA4eQ4tjQ/HBZLZpbLEv3C_9EPmK-HyAU","alt":"わこつ","sharedTooltipText":":_わこつ:","src":"https://yt3.ggpht.com/qrfdYkkbCKJ6xg49-cxRY7YcD8sxsOW2iBG6ELucPaAfv9wbPts6r1lnTXoeQRXEV-wVU3nv=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC2hc-00y-MSR6eYA4eQ4tjQ/HBZLZqHMEv3C_9EPmK-HyAU","alt":"いいなぁ","sharedTooltipText":":_いいなぁ:","src":"https://yt3.ggpht.com/o6p5ePQv9W7xVNNw-T_yUwIufI70LHrFTn8jQsZSQNAMpcbDBS9tO19SknbdponFD7ycRdEGng=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC2hc-00y-MSR6eYA4eQ4tjQ/HBZLZufKEv3C_9EPmK-HyAU","alt":"たいきりん","sharedTooltipText":":_たいきりん:","src":"https://yt3.ggpht.com/fkaiZFEGJJrKGhdusXPH1K-ppJoJq9-kGMXXsIqNEx4M7k3Fg1l6GtWgcdHDI0oQpwLlgKAfeA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" }
+  ]
+}

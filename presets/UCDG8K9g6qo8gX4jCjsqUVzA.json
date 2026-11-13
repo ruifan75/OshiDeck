@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "MonsterZ MATE",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCDG8K9g6qo8gX4jCjsqUVzA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCDG8K9g6qo8gX4jCjsqUVzA/axdzXu3-LIOC_AOQqLr4Ag","alt":"メイト","sharedTooltipText":":_メイト:","src":"https://yt3.ggpht.com/Lcsg7kw2Jh1UNk2M55oALTaFC-q-7Ls0W-46MoUJbI-ZZ2ZKDqxSIkk81Ewl4CUA9NC8Zck7pMg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あっ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え！？"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCDG8K9g6qo8gX4jCjsqUVzA/tXGqXt_zAZCQ_APw9aXYAg","alt":"おつかれ","sharedTooltipText":":_おつかれ:","src":"https://yt3.ggpht.com/dN4QYsSt8ys_lSm_9BFZlfEbKOtuL4iFiqSUBJJN7iIlykKCsNd3H8pFet58b_GzDHoZJkc-jQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なるほど"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おめでとう"}], "scope": "channel" }
+  ]
+}

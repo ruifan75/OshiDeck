@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "彩 まよい【ミリタリーVTuber】",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCsAzaxwiKWolOWLH1bIU3wA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"KP"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"入学"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"メリークリスマス！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCsAzaxwiKWolOWLH1bIU3wA/T4doZv-fNr-i_9EP5JiPyAY","alt":"Contact","sharedTooltipText":":_Contact:","src":"https://yt3.ggpht.com/g_hqfiDtpKGYa_xBcjTkIiPRAl1rDXN2H369DJY3BgUZfmLmm0pfpMScgiDR7yPxR_3MHfrCLs0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCsAzaxwiKWolOWLH1bIU3wA/T4doZv-fNr-i_9EP5JiPyAY","alt":"Contact","sharedTooltipText":":_Contact:","src":"https://yt3.ggpht.com/g_hqfiDtpKGYa_xBcjTkIiPRAl1rDXN2H369DJY3BgUZfmLmm0pfpMScgiDR7yPxR_3MHfrCLs0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCsAzaxwiKWolOWLH1bIU3wA/T4doZv-fNr-i_9EP5JiPyAY","alt":"Contact","sharedTooltipText":":_Contact:","src":"https://yt3.ggpht.com/g_hqfiDtpKGYa_xBcjTkIiPRAl1rDXN2H369DJY3BgUZfmLmm0pfpMScgiDR7yPxR_3MHfrCLs0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCsAzaxwiKWolOWLH1bIU3wA/T4doZuaiNr-i_9EP5JiPyAY","alt":"ダブリュ草","sharedTooltipText":":_ダブリュ草:","src":"https://yt3.ggpht.com/bJoq281PZE-r0W9MTSYAfsnczo0a0AmgZpkL3j_0-8qMAnRDxVXSm82hg5pIqnN6mi0DpF3yug=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

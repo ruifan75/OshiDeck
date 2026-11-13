@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Sadewa Sagara【PANDAVVA】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCTyzuXqhHQN2BMnFJKPWphA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😭"},{"type":"text","value":"😭"},{"type":"text","value":"😭"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsugaraa"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"vv"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"vv gifter"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aamiin"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lahhh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"pagii"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hahaha"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"tskr"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "format": 2,
+  "name": "伊波ライ / Inami Rai【にじさんじ】",
+  "note": "歌枠2配信・通常13配信のチャットから11枚",
+  "channel": "UCz89MGFBrAqwJ5xMr5weSuA",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCz89MGFBrAqwJ5xMr5weSuA/9AMxZbaoEoKG8wSN8aOgDg","alt":"lightL","sharedTooltipText":":_lightL:","src":"https://yt3.ggpht.com/ugyGYi_VYgxu5qxZ2biU1x5qN0KF3QOl4Q2ixNzVZeKHoJfgBjQSIsG1Ss-q7TjlfHSZ7AkIhbg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCz89MGFBrAqwJ5xMr5weSuA/9AMxZdOmEoKG8wSN8aOgDg","alt":"lightR","sharedTooltipText":":_lightR:","src":"https://yt3.ggpht.com/PqtTCEcRNi92DjgurGBy8Dx6iZ2kw0fKdqCbzNhVvZBcOb6KWo9LZCwlGqipklQvl_g2Kh7UdQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCz89MGFBrAqwJ5xMr5weSuA/9AMxZbaoEoKG8wSN8aOgDg","alt":"lightL","sharedTooltipText":":_lightL:","src":"https://yt3.ggpht.com/ugyGYi_VYgxu5qxZ2biU1x5qN0KF3QOl4Q2ixNzVZeKHoJfgBjQSIsG1Ss-q7TjlfHSZ7AkIhbg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCz89MGFBrAqwJ5xMr5weSuA/9AMxZdOmEoKG8wSN8aOgDg","alt":"lightR","sharedTooltipText":":_lightR:","src":"https://yt3.ggpht.com/PqtTCEcRNi92DjgurGBy8Dx6iZ2kw0fKdqCbzNhVvZBcOb6KWo9LZCwlGqipklQvl_g2Kh7UdQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCz89MGFBrAqwJ5xMr5weSuA/9AMxZbaoEoKG8wSN8aOgDg","alt":"lightL","sharedTooltipText":":_lightL:","src":"https://yt3.ggpht.com/ugyGYi_VYgxu5qxZ2biU1x5qN0KF3QOl4Q2ixNzVZeKHoJfgBjQSIsG1Ss-q7TjlfHSZ7AkIhbg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCz89MGFBrAqwJ5xMr5weSuA/9AMxZdOmEoKG8wSN8aOgDg","alt":"lightR","sharedTooltipText":":_lightR:","src":"https://yt3.ggpht.com/PqtTCEcRNi92DjgurGBy8Dx6iZ2kw0fKdqCbzNhVvZBcOb6KWo9LZCwlGqipklQvl_g2Kh7UdQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCz89MGFBrAqwJ5xMr5weSuA/nng2ZYHaL4WO_9EP85-c2AM","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/ICKvUiEfqZF5Rn3bOp4UJTXBKItVWbzVnzTW_L8fuRByrD2EG2NgLvDv50yPwCbLSGJ2lAmaL2c=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCz89MGFBrAqwJ5xMr5weSuA/nng2ZYHaL4WO_9EP85-c2AM","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/ICKvUiEfqZF5Rn3bOp4UJTXBKItVWbzVnzTW_L8fuRByrD2EG2NgLvDv50yPwCbLSGJ2lAmaL2c=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCz89MGFBrAqwJ5xMr5weSuA/nng2ZYHaL4WO_9EP85-c2AM","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/ICKvUiEfqZF5Rn3bOp4UJTXBKItVWbzVnzTW_L8fuRByrD2EG2NgLvDv50yPwCbLSGJ2lAmaL2c=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"最高"}], "scope": "channel" }
+  ]
+}

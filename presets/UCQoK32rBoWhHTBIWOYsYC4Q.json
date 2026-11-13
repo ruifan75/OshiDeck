@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "鬼頭みさき / Kito Misaki",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCQoK32rBoWhHTBIWOYsYC4Q",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCQoK32rBoWhHTBIWOYsYC4Q/xmrtZN-KKKSQ_9EP8oKmkAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/3NYJc-3BVHOUZNKlO6kskypBmyVio6g6ohUcL3Uc5U_11BwQg-K3U9-GQKlPLeVS3uyzBNyxwQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQoK32rBoWhHTBIWOYsYC4Q/xmrtZN-KKKSQ_9EP8oKmkAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/3NYJc-3BVHOUZNKlO6kskypBmyVio6g6ohUcL3Uc5U_11BwQg-K3U9-GQKlPLeVS3uyzBNyxwQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQoK32rBoWhHTBIWOYsYC4Q/xmrtZN-KKKSQ_9EP8oKmkAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/3NYJc-3BVHOUZNKlO6kskypBmyVio6g6ohUcL3Uc5U_11BwQg-K3U9-GQKlPLeVS3uyzBNyxwQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCQoK32rBoWhHTBIWOYsYC4Q/xmrtZN-KKKSQ_9EP8oKmkAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/3NYJc-3BVHOUZNKlO6kskypBmyVio6g6ohUcL3Uc5U_11BwQg-K3U9-GQKlPLeVS3uyzBNyxwQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わこつー"},{"type":"text","value":"👹"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぱーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わこつー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" }
+  ]
+}

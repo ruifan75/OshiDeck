@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ALTERLY",
+  "note": "歌枠0配信・通常6配信のチャットから10枚",
+  "channel": "UCQ8F2dEhbkZu8RdKASyzBSQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"a"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WKWKWKWK"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsuuuu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"HAHAHAHAHAHAH"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ikz"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"sheesh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"woooo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👀"}], "scope": "channel" }
+  ]
+}

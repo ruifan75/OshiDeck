@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "Punkalopi",
-  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCZhgX5W2iLfUm2NfyD7BSvw",
   "cards": [
-    { "tokens": [{"type":"text","value":"hi"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"lol"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"yes"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"hello"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"LOPI"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"hi lopi"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"bye"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"□"},{"type":"text","value":"□"},{"type":"text","value":"□"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"no"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"latealopi"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"latealopi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" }
   ]
 }

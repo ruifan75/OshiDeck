@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "남시우 NAM SIWOO",
+  "note": "歌枠0配信・通常11配信のチャットから10枚",
+  "channel": "UCIvTMmQjViIGMK1VjsVxCZg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"남하~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"오"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"오츠시우~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"오시오시"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"와"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"헉"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"네"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"안녕하세요"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"헐"}], "scope": "channel" }
+  ]
+}

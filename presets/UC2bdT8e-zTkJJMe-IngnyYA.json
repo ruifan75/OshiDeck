@@ -1,0 +1,19 @@
+{
+  "format": 2,
+  "name": "Kokoro Ch. 吉花こころ",
+  "note": "歌枠1配信・通常13配信のチャットから11枚",
+  "channel": "UC2bdT8e-zTkJJMe-IngnyYA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC2bdT8e-zTkJJMe-IngnyYA/n413YuXVLIbBgwOx_pnwBQ","alt":"草はやすときに","sharedTooltipText":":_草はやすときに:","src":"https://yt3.ggpht.com/ae9OHoTt1ZrKXMBJTltvH4xPnec2PrjpofSdB14GHeH3Z5fJ7TzNJLzKSTqTT2hjg8xF93q-vA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2bdT8e-zTkJJMe-IngnyYA/n413YuXVLIbBgwOx_pnwBQ","alt":"草はやすときに","sharedTooltipText":":_草はやすときに:","src":"https://yt3.ggpht.com/ae9OHoTt1ZrKXMBJTltvH4xPnec2PrjpofSdB14GHeH3Z5fJ7TzNJLzKSTqTT2hjg8xF93q-vA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2bdT8e-zTkJJMe-IngnyYA/n413YuXVLIbBgwOx_pnwBQ","alt":"草はやすときに","sharedTooltipText":":_草はやすときに:","src":"https://yt3.ggpht.com/ae9OHoTt1ZrKXMBJTltvH4xPnec2PrjpofSdB14GHeH3Z5fJ7TzNJLzKSTqTT2hjg8xF93q-vA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌸"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎶"},{"type":"text","value":"🎤"},{"type":"text","value":"🐺"},{"type":"text","value":"💙"},{"type":"text","value":"🌸"},{"type":"text","value":"🎶"},{"type":"text","value":"🎤"},{"type":"text","value":"🐈‍⬛"},{"type":"text","value":"👑"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC2bdT8e-zTkJJMe-IngnyYA/UhrxZ8FblLf_0Q-vqaTZBg","alt":"耳かき","sharedTooltipText":":_耳かき:","src":"https://yt3.ggpht.com/ENFXbNbo2BhS0hGz7HqN5x4POevyjaOA8FG2svrjAdiv8aRTgdqO4OTCm2oC0wMtk1V1qydz0A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2bdT8e-zTkJJMe-IngnyYA/UhrxZ8FblLf_0Q-vqaTZBg","alt":"耳かき","sharedTooltipText":":_耳かき:","src":"https://yt3.ggpht.com/ENFXbNbo2BhS0hGz7HqN5x4POevyjaOA8FG2svrjAdiv8aRTgdqO4OTCm2oC0wMtk1V1qydz0A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2bdT8e-zTkJJMe-IngnyYA/UhrxZ8FblLf_0Q-vqaTZBg","alt":"耳かき","sharedTooltipText":":_耳かき:","src":"https://yt3.ggpht.com/ENFXbNbo2BhS0hGz7HqN5x4POevyjaOA8FG2svrjAdiv8aRTgdqO4OTCm2oC0wMtk1V1qydz0A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うりゃおい！うりゃおい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ふっふー！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC2bdT8e-zTkJJMe-IngnyYA/1OuSav6DIa-W7OsP2q3IoQM","alt":"こころめい鳥","sharedTooltipText":":_こころめい鳥:","src":"https://yt3.ggpht.com/FVps193ixusWRIEIlvWknhLbdMD9wEzkXB93z7EhxM-KRSMzK7E_f_vDbPktD8zpAm_MLtKN=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2bdT8e-zTkJJMe-IngnyYA/1OuSav6DIa-W7OsP2q3IoQM","alt":"こころめい鳥","sharedTooltipText":":_こころめい鳥:","src":"https://yt3.ggpht.com/FVps193ixusWRIEIlvWknhLbdMD9wEzkXB93z7EhxM-KRSMzK7E_f_vDbPktD8zpAm_MLtKN=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うまぴょい！うまぴょい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC2bdT8e-zTkJJMe-IngnyYA/n413YoHWLIbBgwOx_pnwBQ","alt":"猫が現れた時に","sharedTooltipText":":_猫が現れた時に:","src":"https://yt3.ggpht.com/YIhFEHaRzieTiddjoiFZuR5XjsJdjmBBQZYRD7ebN_3v9mk7CAiDg2Ar-wNTxKHatD03YETDcQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

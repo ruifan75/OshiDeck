@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Unαceeゆなせ:",
+  "note": "歌枠0配信・通常6配信のチャットから10枚",
+  "channel": "UCAV0LixnS-1Hk_bh5Vl6Isw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"GG"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はゆ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぅ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス！"}], "scope": "channel" }
+  ]
+}

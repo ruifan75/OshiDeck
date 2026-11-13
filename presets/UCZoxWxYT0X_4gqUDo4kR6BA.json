@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Rijii【CRIMS:on】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCZoxWxYT0X_4gqUDo4kR6BA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"😭"},{"type":"text","value":"😭"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice rp"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"tiee tiee"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"aduhh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsuuu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"apipii"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"geloo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"olololo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"waduh"}], "scope": "channel" }
+  ]
+}

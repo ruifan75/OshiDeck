@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "闇依ろいろ / Roiro Yamiyori",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC39D2lMvqRys9KBFueRWGtA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC39D2lMvqRys9KBFueRWGtA/xaVuZuOPDre7_9EP6dqRmAY","alt":"おつろいのおつ","sharedTooltipText":":_おつろいのおつ:","src":"https://yt3.ggpht.com/FcOUwF3mXACMEckTnqg6ouP2RVKzUCP_oWvj-Ve8pO0EsuTwZCn6TTeG_mYLNt0b8WnC2Qfs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC39D2lMvqRys9KBFueRWGtA/xaVuZuCODre7_9EP6dqRmAY","alt":"ろいろのろ","sharedTooltipText":":_ろいろのろ:","src":"https://yt3.ggpht.com/k21bWrYbIMdObF7KaNP4d5EZfeQ94Nc-6fyniuibgRR-9LtUb6lFMFA6Ye0V1tpWn4s6FrjI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC39D2lMvqRys9KBFueRWGtA/xaVuZpaPDre7_9EP6dqRmAY","alt":"ろいろのい","sharedTooltipText":":_ろいろのい:","src":"https://yt3.ggpht.com/locvO3ojz8GARhd6oqyjrE81GBsmgbVAI0-SXz5hNshrJE3w_ss_PjU_hrtHVm_WYpW53ulUnw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こばにち"},{"type":"youtubeEmoji","emojiId":"UC39D2lMvqRys9KBFueRWGtA/xaVuZryPDre7_9EP6dqRmAY","alt":"こばにちわんの返事","sharedTooltipText":":_こばにちわんの返事:","src":"https://yt3.ggpht.com/o-9Z14JrITk7EuZtzQ3Qh_FK7cnEjzCvPuLUQmEMr0NObEgnPV1MErz98K3IEBq56ijR6d6kzQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC39D2lMvqRys9KBFueRWGtA/4GmoZtpm1qH_0Q_96b3AAg","alt":"無邪気に笑うろいろ","sharedTooltipText":":_無邪気に笑うろいろ:","src":"https://yt3.ggpht.com/oMRnMTtckTVSo5mzVSWZV_lYv69X1gcActr8mFzMLlJjTSSt8uDACLWFyp8cObj6byWX6yQV_Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC39D2lMvqRys9KBFueRWGtA/xaVuZryPDre7_9EP6dqRmAY","alt":"こばにちわんの返事","sharedTooltipText":":_こばにちわんの返事:","src":"https://yt3.ggpht.com/o-9Z14JrITk7EuZtzQ3Qh_FK7cnEjzCvPuLUQmEMr0NObEgnPV1MErz98K3IEBq56ijR6d6kzQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC39D2lMvqRys9KBFueRWGtA/4GmoZpFm1qH_0Q_96b3AAg","alt":"骨サイリウムろいろ","sharedTooltipText":":_骨サイリウムろいろ:","src":"https://yt3.ggpht.com/sQA2CaAKnDpZdE8XBRarz3yCOtAJcj2tIaPqAeIWqGcnZzRHAnla13KgakWK9_YYsrOBYUvR_HE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC39D2lMvqRys9KBFueRWGtA/4GmoZpFm1qH_0Q_96b3AAg","alt":"骨サイリウムろいろ","sharedTooltipText":":_骨サイリウムろいろ:","src":"https://yt3.ggpht.com/sQA2CaAKnDpZdE8XBRarz3yCOtAJcj2tIaPqAeIWqGcnZzRHAnla13KgakWK9_YYsrOBYUvR_HE=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

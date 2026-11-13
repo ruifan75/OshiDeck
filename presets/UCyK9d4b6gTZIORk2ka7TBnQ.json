@@ -1,0 +1,16 @@
+{
+  "format": 2,
+  "name": "Fuyumi Toba Ch. 鳥羽ふゆみ",
+  "note": "歌枠0配信・通常13配信のチャットから8枚",
+  "channel": "UCyK9d4b6gTZIORk2ka7TBnQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o/"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bruh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gratz"}], "scope": "channel" }
+  ]
+}

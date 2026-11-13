@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Tekitou THE Vtuber 【AKA Virtual】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCbiK7qUXAv3DtfLTXiPcvzw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"🍩"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"UwU"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🤣"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"me"}], "scope": "channel" }
+  ]
+}

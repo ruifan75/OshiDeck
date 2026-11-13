@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "夢咲 刻夜-Tokiya Yumesaki",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCJXIj8u4wVpN5kxieMTzW7A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちはー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCJXIj8u4wVpN5kxieMTzW7A/q3qKZsGEFJOe_9EPtNu5oA4","alt":"おもろ","sharedTooltipText":":_おもろ:","src":"https://yt3.ggpht.com/6zCJtfKRA-OePSf9PgB86KUaRlp-OyNv4Z6LvpjwPX0QpODJZl9lMwtlNw6vnATZq23eMpDXcyk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJXIj8u4wVpN5kxieMTzW7A/q3qKZsGEFJOe_9EPtNu5oA4","alt":"おもろ","sharedTooltipText":":_おもろ:","src":"https://yt3.ggpht.com/6zCJtfKRA-OePSf9PgB86KUaRlp-OyNv4Z6LvpjwPX0QpODJZl9lMwtlNw6vnATZq23eMpDXcyk=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCJXIj8u4wVpN5kxieMTzW7A/q3qKZoODFJOe_9EPtNu5oA4","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/SCSq9IiV2BZevXAbMYy2ZXYdSWyOfHQGAS9s26R4LCreGCjWCUH_91NGluHnfn-ha7-slQ6K=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJXIj8u4wVpN5kxieMTzW7A/q3qKZoODFJOe_9EPtNu5oA4","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/SCSq9IiV2BZevXAbMYy2ZXYdSWyOfHQGAS9s26R4LCreGCjWCUH_91NGluHnfn-ha7-slQ6K=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCJXIj8u4wVpN5kxieMTzW7A/yHuKZqTSPJ-8_9EP15WN6A4","alt":"がんばぇ","sharedTooltipText":":_がんばぇ:","src":"https://yt3.ggpht.com/R0QyLMMvS4FgLIyI2fyeGgifKDo9DA18gQpya5PsiLE6gez3N_pmNG2dmBHoJIAUFWNE3O_H0WI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJXIj8u4wVpN5kxieMTzW7A/yHuKZqTSPJ-8_9EP15WN6A4","alt":"がんばぇ","sharedTooltipText":":_がんばぇ:","src":"https://yt3.ggpht.com/R0QyLMMvS4FgLIyI2fyeGgifKDo9DA18gQpya5PsiLE6gez3N_pmNG2dmBHoJIAUFWNE3O_H0WI=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でしたー"}], "scope": "channel" }
+  ]
+}

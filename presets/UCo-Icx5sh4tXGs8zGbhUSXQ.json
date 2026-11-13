@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "SODA KIT",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCo-Icx5sh4tXGs8zGbhUSXQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんしゅわ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🤍"},{"type":"text","value":"🫧"},{"type":"text","value":"🤍"},{"type":"text","value":"🫧"},{"type":"text","value":"🤍"},{"type":"text","value":"🫧"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつしゅわ〜"},{"type":"text","value":"🫧"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつしゅわ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🫧"},{"type":"text","value":"🤍"},{"type":"text","value":"🫧"},{"type":"text","value":"🤍"},{"type":"text","value":"🫧"},{"type":"text","value":"🤍"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんしゅわ〜"},{"type":"text","value":"🫧"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/egJ1XufTKYfegwOo57ewAg","alt":"shelterin","sharedTooltipText":":shelterin:","src":"https://yt3.ggpht.com/gjC5x98J4BoVSEPfFJaoLtc4tSBGSEdIlfL2FV4iJG9uGNykDP9oJC_QxAuBTJy6dakPxVeC=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

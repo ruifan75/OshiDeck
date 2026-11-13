@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "星川サラ / Sara Hoshikawa",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UC9V3Y3_uzU5e-usObb6IE1w",
   "cards": [
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うんうん"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"それはそう"}], "scope": "channel" }
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9V3Y3_uzU5e-usObb6IE1w/-UiTXo6nKc-7-wPl1r3wAQ","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/S1HKHcYmBwXbezPOxq14JvuRAGH1ILUkGexgv44qfwFhrQxSCCWNVjiQg4sHmhJ7OcTAwV3PVw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9V3Y3_uzU5e-usObb6IE1w/-UiTXo6nKc-7-wPl1r3wAQ","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/S1HKHcYmBwXbezPOxq14JvuRAGH1ILUkGexgv44qfwFhrQxSCCWNVjiQg4sHmhJ7OcTAwV3PVw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9V3Y3_uzU5e-usObb6IE1w/-UiTXo6nKc-7-wPl1r3wAQ","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/S1HKHcYmBwXbezPOxq14JvuRAGH1ILUkGexgv44qfwFhrQxSCCWNVjiQg4sHmhJ7OcTAwV3PVw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9V3Y3_uzU5e-usObb6IE1w/-UiTXo6nKc-7-wPl1r3wAQ","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/S1HKHcYmBwXbezPOxq14JvuRAGH1ILUkGexgv44qfwFhrQxSCCWNVjiQg4sHmhJ7OcTAwV3PVw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9V3Y3_uzU5e-usObb6IE1w/-UiTXo6nKc-7-wPl1r3wAQ","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/S1HKHcYmBwXbezPOxq14JvuRAGH1ILUkGexgv44qfwFhrQxSCCWNVjiQg4sHmhJ7OcTAwV3PVw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC9V3Y3_uzU5e-usObb6IE1w/lw6zZsbxE9ah_9EPiZTGqQE","alt":"ｗｗｗ","sharedTooltipText":":_ｗｗｗ:","src":"https://yt3.ggpht.com/z9zZRbfZp2IXpYzlyXlXTKX5IF6MeblUOoVBoboV_nDtPevgFlLgT6MsB-20vIftyWUD3zW6Dg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9V3Y3_uzU5e-usObb6IE1w/lw6zZsbxE9ah_9EPiZTGqQE","alt":"ｗｗｗ","sharedTooltipText":":_ｗｗｗ:","src":"https://yt3.ggpht.com/z9zZRbfZp2IXpYzlyXlXTKX5IF6MeblUOoVBoboV_nDtPevgFlLgT6MsB-20vIftyWUD3zW6Dg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC9V3Y3_uzU5e-usObb6IE1w/lw6zZsbxE9ah_9EPiZTGqQE","alt":"ｗｗｗ","sharedTooltipText":":_ｗｗｗ:","src":"https://yt3.ggpht.com/z9zZRbfZp2IXpYzlyXlXTKX5IF6MeblUOoVBoboV_nDtPevgFlLgT6MsB-20vIftyWUD3zW6Dg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" }
   ]
 }

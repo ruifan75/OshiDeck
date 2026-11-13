@@ -1,0 +1,26 @@
+{
+  "format": 2,
+  "name": "Tefu ch.花宮てふ",
+  "note": "歌枠1配信・通常13配信のチャットから18枚",
+  "channel": "UCutAaW976ttCjVTa46xrVfA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おつてふ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いいんですよー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんてふ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはよう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お願いします"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いいね"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ファイトー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🦋"},{"type":"text","value":"🦋"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いいんですかいいんですか"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"だってさ"}], "scope": "channel" }
+  ]
+}

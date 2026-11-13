@@ -1,0 +1,11 @@
+{
+  "format": 2,
+  "name": "風輝 みちる / Fuuki Michiru",
+  "note": "歌枠0配信・通常13配信のチャットから3枚",
+  "channel": "UCCnqJdQXdBYHf-gVV1yLf5w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCCnqJdQXdBYHf-gVV1yLf5w/eGnvaNjqMZTa7OsPwpLcmQo","alt":"こんちる","sharedTooltipText":":_こんちる:","src":"https://yt3.ggpht.com/mAueVJNVsPrwPNDb1L2kSympuRZL4yOtWIr7eGWPNaYWTilXYiHAzwr_A9S8TBFx53An5wcNrw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCCnqJdQXdBYHf-gVV1yLf5w/eGnvaNjqMZTa7OsPwpLcmQo","alt":"こんちる","sharedTooltipText":":_こんちる:","src":"https://yt3.ggpht.com/mAueVJNVsPrwPNDb1L2kSympuRZL4yOtWIr7eGWPNaYWTilXYiHAzwr_A9S8TBFx53An5wcNrw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCCnqJdQXdBYHf-gVV1yLf5w/eGnvaNjqMZTa7OsPwpLcmQo","alt":"こんちる","sharedTooltipText":":_こんちる:","src":"https://yt3.ggpht.com/mAueVJNVsPrwPNDb1L2kSympuRZL4yOtWIr7eGWPNaYWTilXYiHAzwr_A9S8TBFx53An5wcNrw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え、え、え"}], "scope": "channel" }
+  ]
+}

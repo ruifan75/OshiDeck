@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ニコラ･クラエス / Nicola Claes",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UC6Y1T_UZoNiosOZYjT_G5_A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"もっと！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💫"},{"type":"text","value":"🎵"},{"type":"text","value":"💫"},{"type":"text","value":"🎶"},{"type":"text","value":"💫"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"},{"type":"youtubeEmoji","emojiId":"UC6Y1T_UZoNiosOZYjT_G5_A/aWgnZ5r8Da69_9EPkbnImAU","alt":"HELLO","sharedTooltipText":":_HELLO:","src":"https://yt3.ggpht.com/tDDAnTL9qdkkkLYRCgqobi_711o5PlLg-QfPTfAYlXc0itmrbWW3AbtKGTD39peOKJQiOicl=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "format": 2,
+  "name": "MiCosmiC baby /ミコズミック ベイビー",
+  "note": "歌枠1配信・通常0配信のチャットから2枚",
+  "channel": "UCxn-IeA9DCFxUthBk6rYdQQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WE ARE"}], "scope": "channel" }
+  ]
+}

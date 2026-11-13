@@ -13,6 +13,7 @@
 import { readFileSync } from "node:fs";
 import { page, documentFor } from "./page.mjs";
 import { contentPage, CHANNEL as CHAT_CHANNEL } from "./content-page.mjs";
+await import(new URL("../../src/channel-marks.js", import.meta.url));
 
 const source = process.env.OD_SOURCE
   ? new URL(`file://${process.env.OD_SOURCE}`)
@@ -44,7 +45,7 @@ function scene({ mounted = true, connected = true, hidden = false, usable = true
      const getChatInput = () => state.usable ? {} : null;
      const scheduleRender = () => { state.renders += 1; };
      const closeSaveMenu = () => {};
-     const journal = { record: (entry) => state.notes.push(entry.what) };
+     const journal = { record: (entry) => { if (entry.what) state.notes.push(entry.what); } };
      ${body}
      return { syncVisibility, frozen: () => frozen };`
   )(state);
@@ -460,8 +461,9 @@ check("and the panel works the count out with it",
     textContent: "",
     dataset: {},
     attrs: {},
-    style: { setProperty() {} },
+    style: { setProperty() {}, removeProperty() {} },
     setAttribute(name, value) { this.attrs[name] = value; },
+    toggleAttribute(name, on) { if (on) this.attrs[name] = ""; else delete this.attrs[name]; },
     addEventListener(type, handler) { this.handlers = [...this.handlers || [], handler]; },
     click() { for (const handler of this.handlers || []) handler(); },
     append(...nodes) { this.kids.push(...nodes); },
@@ -475,7 +477,8 @@ check("and the panel works the count out with it",
   const said = lift("deckIdentity", "  // Written down rather than kept here");
   const identity = (channel, empty, folded = false) => new Function(
     "channel", "empty", "folded", "document", "t", "svgIcon", "setFolded", "scopeFilter",
-    `${lift("barLine", "  function noticeRow(")}
+    `const barContext = { color: null };
+     ${lift("barLine", "  function noticeRow(")}
      ${said}
      return deckIdentity(channel, 200, empty ? 0 : 4, empty, folded);`
   )(channel, empty, folded, { createElement: element },

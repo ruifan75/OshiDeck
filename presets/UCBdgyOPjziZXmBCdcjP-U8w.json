@@ -1,0 +1,9 @@
+{
+  "format": 2,
+  "name": "Sena Redo [ VPlayers ]",
+  "note": "歌枠2配信・通常13配信のチャットから1枚",
+  "channel": "UCBdgyOPjziZXmBCdcjP-U8w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hmmm hmmm"}], "scope": "channel" }
+  ]
+}

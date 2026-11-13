@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "花酒せい / Hanasaka Sei - UltraLMTM",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCJBex5fRn2HBM8imvAKlLdg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはせい〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCJBex5fRn2HBM8imvAKlLdg/LAraaqCdL5yR9fwP4PXFgQc","alt":"nikkori","sharedTooltipText":":_nikkori:","src":"https://yt3.ggpht.com/d0_vJJoeX-4q15l--jwRq7jBhUT7oZYpDZRYCtuYIhYqri62y9OuG1rqwbZQ5CsRVag1peP8zg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJBex5fRn2HBM8imvAKlLdg/LAraaqCdL5yR9fwP4PXFgQc","alt":"nikkori","sharedTooltipText":":_nikkori:","src":"https://yt3.ggpht.com/d0_vJJoeX-4q15l--jwRq7jBhUT7oZYpDZRYCtuYIhYqri62y9OuG1rqwbZQ5CsRVag1peP8zg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJBex5fRn2HBM8imvAKlLdg/LAraaqCdL5yR9fwP4PXFgQc","alt":"nikkori","sharedTooltipText":":_nikkori:","src":"https://yt3.ggpht.com/d0_vJJoeX-4q15l--jwRq7jBhUT7oZYpDZRYCtuYIhYqri62y9OuG1rqwbZQ5CsRVag1peP8zg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCJBex5fRn2HBM8imvAKlLdg/LAraavGcL5yR9fwP4PXFgQc","alt":"naki","sharedTooltipText":":_naki:","src":"https://yt3.ggpht.com/s7ypIPOYlNi7xXE0xxQs1kUHwgptEmi7F3TcUahUduc9GrgUQ0xVzuVSjQMIH7RmnFCWLiEnlw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJBex5fRn2HBM8imvAKlLdg/LAraavGcL5yR9fwP4PXFgQc","alt":"naki","sharedTooltipText":":_naki:","src":"https://yt3.ggpht.com/s7ypIPOYlNi7xXE0xxQs1kUHwgptEmi7F3TcUahUduc9GrgUQ0xVzuVSjQMIH7RmnFCWLiEnlw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJBex5fRn2HBM8imvAKlLdg/LAraavGcL5yR9fwP4PXFgQc","alt":"naki","sharedTooltipText":":_naki:","src":"https://yt3.ggpht.com/s7ypIPOYlNi7xXE0xxQs1kUHwgptEmi7F3TcUahUduc9GrgUQ0xVzuVSjQMIH7RmnFCWLiEnlw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" }
+  ]
+}

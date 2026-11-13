@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "早乙女 ベリー / Saotome Berry【にじさんじ】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC0xry7czPasj1wPxR8L0MZg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC0xry7czPasj1wPxR8L0MZg/k-HnZ9HhO4CO_9EPh5TmgQc","alt":"ペンラ","sharedTooltipText":":_ペンラ:","src":"https://yt3.ggpht.com/gbxL12hI8qdHABBbTh4wJQu-6h6L0kYrZWqZpiGnSbMtTPPqfFMCF6vG7BqeAnlQaPWtIkpB4g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC0xry7czPasj1wPxR8L0MZg/k-HnZ9HhO4CO_9EPh5TmgQc","alt":"ペンラ","sharedTooltipText":":_ペンラ:","src":"https://yt3.ggpht.com/gbxL12hI8qdHABBbTh4wJQu-6h6L0kYrZWqZpiGnSbMtTPPqfFMCF6vG7BqeAnlQaPWtIkpB4g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC0xry7czPasj1wPxR8L0MZg/k-HnZ9HhO4CO_9EPh5TmgQc","alt":"ペンラ","sharedTooltipText":":_ペンラ:","src":"https://yt3.ggpht.com/gbxL12hI8qdHABBbTh4wJQu-6h6L0kYrZWqZpiGnSbMtTPPqfFMCF6vG7BqeAnlQaPWtIkpB4g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC0xry7czPasj1wPxR8L0MZg/k-HnZ9HhO4CO_9EPh5TmgQc","alt":"ペンラ","sharedTooltipText":":_ペンラ:","src":"https://yt3.ggpht.com/gbxL12hI8qdHABBbTh4wJQu-6h6L0kYrZWqZpiGnSbMtTPPqfFMCF6vG7BqeAnlQaPWtIkpB4g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC0xry7czPasj1wPxR8L0MZg/k-HnZ9HhO4CO_9EPh5TmgQc","alt":"ペンラ","sharedTooltipText":":_ペンラ:","src":"https://yt3.ggpht.com/gbxL12hI8qdHABBbTh4wJQu-6h6L0kYrZWqZpiGnSbMtTPPqfFMCF6vG7BqeAnlQaPWtIkpB4g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんべり〜！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつべり〜！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはべり〜！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないふぁい！"}], "scope": "channel" }
+  ]
+}

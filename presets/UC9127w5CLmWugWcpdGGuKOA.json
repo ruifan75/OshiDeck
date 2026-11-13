@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ネロクロスファイアOfficial",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC9127w5CLmWugWcpdGGuKOA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつネロー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんネロー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんねろー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつネロ～"}], "scope": "channel" }
+  ]
+}

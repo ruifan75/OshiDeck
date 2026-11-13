@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "佐伯イッテツ / Saiki Ittetsu【にじさんじ】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCy8P3o5XlMpJGQY4WugzdNA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCy8P3o5XlMpJGQY4WugzdNA/UKXtZa7RBMej_9EPjq-usAE","alt":"なみだ","sharedTooltipText":":_なみだ:","src":"https://yt3.ggpht.com/SHTwJWwXKsqHPTdd-YVP8kAVmP3Ihb5j7HAGl-iHvB_LGoONSf45l7VX-2DTH5eMNb6FGaIN=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCy8P3o5XlMpJGQY4WugzdNA/UKXtZc3MBMej_9EPjq-usAE","alt":"土偶ちゃんピース","sharedTooltipText":":_土偶ちゃんピース:","src":"https://yt3.ggpht.com/twcUUO0pQtaD-k4YzOhTpADbkvW1TtqqHNQrWZYx0NPENSMpA1MwpQ-6HAZk0n3BDr38vlO4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCy8P3o5XlMpJGQY4WugzdNA/UKXtZc3MBMej_9EPjq-usAE","alt":"土偶ちゃんピース","sharedTooltipText":":_土偶ちゃんピース:","src":"https://yt3.ggpht.com/twcUUO0pQtaD-k4YzOhTpADbkvW1TtqqHNQrWZYx0NPENSMpA1MwpQ-6HAZk0n3BDr38vlO4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCy8P3o5XlMpJGQY4WugzdNA/UKXtZc3MBMej_9EPjq-usAE","alt":"土偶ちゃんピース","sharedTooltipText":":_土偶ちゃんピース:","src":"https://yt3.ggpht.com/twcUUO0pQtaD-k4YzOhTpADbkvW1TtqqHNQrWZYx0NPENSMpA1MwpQ-6HAZk0n3BDr38vlO4=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おめでとう！"}], "scope": "channel" }
+  ]
+}

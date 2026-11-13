@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "白雪レイドーReid Channelー",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCIu-aUArYq_H84dBpCAokMA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIu-aUArYq_H84dBpCAokMA/pvPLXZKNJMbf-QPS-a_ICA","alt":"reidNasu","sharedTooltipText":":_reidNasu:","src":"https://yt3.ggpht.com/-AhRyqHJRTLeCNZQQlwghPZ_jHOncLVJnaH4VF52K_cnSdwlohlItJjFluyX2AAb4PR3B8ovAgQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIu-aUArYq_H84dBpCAokMA/pvPLXZKNJMbf-QPS-a_ICA","alt":"reidNasu","sharedTooltipText":":_reidNasu:","src":"https://yt3.ggpht.com/-AhRyqHJRTLeCNZQQlwghPZ_jHOncLVJnaH4VF52K_cnSdwlohlItJjFluyX2AAb4PR3B8ovAgQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIu-aUArYq_H84dBpCAokMA/6e3LXf33F8bf-QPS-a_ICA","alt":"reidKusa","sharedTooltipText":":_reidKusa:","src":"https://yt3.ggpht.com/GM6u-AMpOtADVuFXL8YBJqro2OuGRWzajLOYHFnqBjOhMg8n2tDzc4TNPZ92DicZrhgTmkiJ6A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIu-aUArYq_H84dBpCAokMA/6e3LXf33F8bf-QPS-a_ICA","alt":"reidKusa","sharedTooltipText":":_reidKusa:","src":"https://yt3.ggpht.com/GM6u-AMpOtADVuFXL8YBJqro2OuGRWzajLOYHFnqBjOhMg8n2tDzc4TNPZ92DicZrhgTmkiJ6A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIu-aUArYq_H84dBpCAokMA/6e3LXf33F8bf-QPS-a_ICA","alt":"reidKusa","sharedTooltipText":":_reidKusa:","src":"https://yt3.ggpht.com/GM6u-AMpOtADVuFXL8YBJqro2OuGRWzajLOYHFnqBjOhMg8n2tDzc4TNPZ92DicZrhgTmkiJ6A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIu-aUArYq_H84dBpCAokMA/21XUXIf9OInG8gTU7rKQDQ","alt":"reidOoo","sharedTooltipText":":_reidOoo:","src":"https://yt3.ggpht.com/ux-eQQZyaX-3exAQwQiroFKq8-G_1eCkqzr8KgsYsFhM-b6BN_vkiZB2Q5P-OzSv4eQRw7ooPk8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIu-aUArYq_H84dBpCAokMA/BFbUXJqqMazZ8gTljI7wBQ","alt":"reidHahaha","sharedTooltipText":":_reidHahaha:","src":"https://yt3.ggpht.com/0lKCKxFK2f_B4RF_bR3elPmMJO7hvIF7N0QRE7U58oevR5kXi-pPh5cHJFgb2172VenKPtxC=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIu-aUArYq_H84dBpCAokMA/-1LUXLWVJaWC8gTS3IKgAg","alt":"reidReidonore","sharedTooltipText":":_reidReidonore:","src":"https://yt3.ggpht.com/buKnkX1iHPqSrjAxQRu_S_vUXvc7Tt2r8_etyuibmilHhsZ-v5ulLMAFYf6ypcTF9icraYW7=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIu-aUArYq_H84dBpCAokMA/TfTLXYyxApP0-QOn8JHoAw","alt":"reidNyoro","sharedTooltipText":":_reidNyoro:","src":"https://yt3.ggpht.com/x6jRr-43qGTwVe22ITQrNjtCjS9cCse9ImecIAhGic2ghrFjcsccJI8uiwNpCyg3OciDne52k0U=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ええ"}], "scope": "channel" }
+  ]
+}

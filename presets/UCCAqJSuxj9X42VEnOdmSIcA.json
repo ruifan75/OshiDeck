@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "魔宝ルリス / Mahou Lelys",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCCAqJSuxj9X42VEnOdmSIcA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんルリ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCCAqJSuxj9X42VEnOdmSIcA/xT8cZMjIOonWgwPdlK9Q","alt":"konruri","sharedTooltipText":":_konruri:","src":"https://yt3.ggpht.com/CAQAVeUQAUAoqxn7Z3mRE56zZHanTXNB8fKlR80rlzMnHMejLZRxkafr6J0fgaZZihMAKh6XHQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCCAqJSuxj9X42VEnOdmSIcA/xT8cZMjIOonWgwPdlK9Q","alt":"konruri","sharedTooltipText":":_konruri:","src":"https://yt3.ggpht.com/CAQAVeUQAUAoqxn7Z3mRE56zZHanTXNB8fKlR80rlzMnHMejLZRxkafr6J0fgaZZihMAKh6XHQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCCAqJSuxj9X42VEnOdmSIcA/xT8cZMjIOonWgwPdlK9Q","alt":"konruri","sharedTooltipText":":_konruri:","src":"https://yt3.ggpht.com/CAQAVeUQAUAoqxn7Z3mRE56zZHanTXNB8fKlR80rlzMnHMejLZRxkafr6J0fgaZZihMAKh6XHQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCCAqJSuxj9X42VEnOdmSIcA/bAl8ZJyPNLGJ_9EP95SPiA8","alt":"heart","sharedTooltipText":":_heart:","src":"https://yt3.ggpht.com/S2GJbU6iZA5O_PKf_1cOj1N8YxK5fEathKRQk7ecBoofPibDFVT19OjJrDh7uLk4T5LnQAfUqg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCCAqJSuxj9X42VEnOdmSIcA/bAl8ZJyPNLGJ_9EP95SPiA8","alt":"heart","sharedTooltipText":":_heart:","src":"https://yt3.ggpht.com/S2GJbU6iZA5O_PKf_1cOj1N8YxK5fEathKRQk7ecBoofPibDFVT19OjJrDh7uLk4T5LnQAfUqg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCCAqJSuxj9X42VEnOdmSIcA/bAl8ZJyPNLGJ_9EP95SPiA8","alt":"heart","sharedTooltipText":":_heart:","src":"https://yt3.ggpht.com/S2GJbU6iZA5O_PKf_1cOj1N8YxK5fEathKRQk7ecBoofPibDFVT19OjJrDh7uLk4T5LnQAfUqg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんるり〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"❤"},{"type":"text","value":"❤"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCCAqJSuxj9X42VEnOdmSIcA/xT8cZNfJOonWgwPdlK9Q","alt":"suki","sharedTooltipText":":_suki:","src":"https://yt3.ggpht.com/-HBpcz7Ou1Pu6Fn4RiBQiRkhWXiWRgSIg2Ax1n11ETLZl5joCMLe1wF7Oji6irGcAu1sJ4STxg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"konruri~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🩷"},{"type":"text","value":"🩷"}], "scope": "channel" }
+  ]
+}

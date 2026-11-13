@@ -1,0 +1,15 @@
+{
+  "format": 2,
+  "name": "錦山夢鷹",
+  "note": "歌枠2配信・通常13配信のチャットから7枚",
+  "channel": "UCil-nSDmDTgV9n4jjb95znw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちぇり"},{"type":"text","value":"🍒"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちぇりです"},{"type":"text","value":"🍒"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつちぇりです"},{"type":"text","value":"🍒"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" }
+  ]
+}

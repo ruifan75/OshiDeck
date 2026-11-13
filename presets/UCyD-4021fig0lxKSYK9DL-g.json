@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Ciel Ch. 鍵宮シエル",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCyD-4021fig0lxKSYK9DL-g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🔔"},{"type":"text","value":"🐈‍⬛"},{"type":"text","value":"🔔"},{"type":"text","value":"🐈‍⬛"},{"type":"text","value":"🔔"},{"type":"text","value":"🐈‍⬛"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんシエー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぱーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"てんさーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いわせなーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんシエ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCyD-4021fig0lxKSYK9DL-g/TSDMZ_qIO7XA_9EPnsXTiQo","alt":"こんシエ","sharedTooltipText":":_こんシエ:","src":"https://yt3.ggpht.com/HLQBrmxNMbk0Su8yGAThCjLU6P_xJXs3RLSmYPv6eekpz97heJg9YMifUWHI30qIyVynL1XF=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyD-4021fig0lxKSYK9DL-g/gSDMZ9CMLaa9_9EPjrPjCA","alt":"シエル","sharedTooltipText":":_シエル:","src":"https://yt3.ggpht.com/Dtq98kTnibSem8lTCX-d8gtBi1BMrGYK_FDdViK6Vl4-04TRFJzEAMZrd2RyhZ_0sIn7GNtP7A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" }
+  ]
+}

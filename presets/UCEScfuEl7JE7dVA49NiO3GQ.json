@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "瑠川ねぎ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCEScfuEl7JE7dVA49NiO3GQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんねぎ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCEScfuEl7JE7dVA49NiO3GQ/pHlDZpTZKoPA_9EPxpmf8AY","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/MDwtx3zqnbRUOiQqPaEiWjhZ-G5okq-9dQncm-zwfJXTezBXFzBxDHZyvxQGcf8esuWfB-cBj2I=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCEScfuEl7JE7dVA49NiO3GQ/pHlDZpTZKoPA_9EPxpmf8AY","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/MDwtx3zqnbRUOiQqPaEiWjhZ-G5okq-9dQncm-zwfJXTezBXFzBxDHZyvxQGcf8esuWfB-cBj2I=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こん"},{"type":"youtubeEmoji","emojiId":"UCEScfuEl7JE7dVA49NiO3GQ/NKFHZvehG_3C_9EPmK-HyAU","alt":"nene","sharedTooltipText":":_nene:","src":"https://yt3.ggpht.com/tIfyQas5Xlm2pFP1L2hjt5NbpWuPtAM5gvoWmmxE_19gElZuqN1w7DaebPSHRM3uQD7ZPsOf=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCEScfuEl7JE7dVA49NiO3GQ/NKFHZpOiG_3C_9EPmK-HyAU","alt":"gigi","sharedTooltipText":":_gigi:","src":"https://yt3.ggpht.com/2fDiYadDCydPptISxTdtkoythypXk46Mp20Z8BATR1ErF0F2k32MMhns5NKqZj_ifw9QyBESJQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

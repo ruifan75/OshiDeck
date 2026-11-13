@@ -1,0 +1,21 @@
+{
+  "format": 2,
+  "name": "堰代ミコ / Mico Channel【ななしいんく】",
+  "note": "歌枠2配信・通常13配信のチャットから13枚",
+  "channel": "UCDh2bWI5EDu7PavqwICkVpA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかいまー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんミコミコ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCDh2bWI5EDu7PavqwICkVpA/YO0hYta2N8uI_9EPr8y2wA8","alt":"Micoサイリウム","sharedTooltipText":":_Micoサイリウム:","src":"https://yt3.ggpht.com/3VWfVj4zzL7ZLL4XXmv5WCvlyxCBtK_jBYZ8zs3wfD89HUm9lCTuUko0VCXxGDqAC-9UUYVBHA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDh2bWI5EDu7PavqwICkVpA/YO0hYta2N8uI_9EPr8y2wA8","alt":"Micoサイリウム","sharedTooltipText":":_Micoサイリウム:","src":"https://yt3.ggpht.com/3VWfVj4zzL7ZLL4XXmv5WCvlyxCBtK_jBYZ8zs3wfD89HUm9lCTuUko0VCXxGDqAC-9UUYVBHA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDh2bWI5EDu7PavqwICkVpA/YO0hYta2N8uI_9EPr8y2wA8","alt":"Micoサイリウム","sharedTooltipText":":_Micoサイリウム:","src":"https://yt3.ggpht.com/3VWfVj4zzL7ZLL4XXmv5WCvlyxCBtK_jBYZ8zs3wfD89HUm9lCTuUko0VCXxGDqAC-9UUYVBHA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCDh2bWI5EDu7PavqwICkVpA/wEewXrHwKKem_AOZ7rPYBQ","alt":"MicoAruzi","sharedTooltipText":":_MicoAruzi:","src":"https://yt3.ggpht.com/xFkveo6evN2VfolcwiWw1JpB9TUgRufOOPOuiPedKeRjNEiEH7AwVaaxYR7LCC6XlYjId74zr5Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDh2bWI5EDu7PavqwICkVpA/wEewXrHwKKem_AOZ7rPYBQ","alt":"MicoAruzi","sharedTooltipText":":_MicoAruzi:","src":"https://yt3.ggpht.com/xFkveo6evN2VfolcwiWw1JpB9TUgRufOOPOuiPedKeRjNEiEH7AwVaaxYR7LCC6XlYjId74zr5Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDh2bWI5EDu7PavqwICkVpA/wEewXrHwKKem_AOZ7rPYBQ","alt":"MicoAruzi","sharedTooltipText":":_MicoAruzi:","src":"https://yt3.ggpht.com/xFkveo6evN2VfolcwiWw1JpB9TUgRufOOPOuiPedKeRjNEiEH7AwVaaxYR7LCC6XlYjId74zr5Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCDh2bWI5EDu7PavqwICkVpA/mo2zZsXeHeS6_9EPvviBqAM","alt":"Micoサイリウム2","sharedTooltipText":":_Micoサイリウム2:","src":"https://yt3.ggpht.com/4_HcXqnQtmwLfX3Z4OlHZtFeqjlsEV7nzb62wK5XpdlsZcRspItgHBJMMyL-cnKys39fq7Tx=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDh2bWI5EDu7PavqwICkVpA/mo2zZsXeHeS6_9EPvviBqAM","alt":"Micoサイリウム2","sharedTooltipText":":_Micoサイリウム2:","src":"https://yt3.ggpht.com/4_HcXqnQtmwLfX3Z4OlHZtFeqjlsEV7nzb62wK5XpdlsZcRspItgHBJMMyL-cnKys39fq7Tx=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDh2bWI5EDu7PavqwICkVpA/mo2zZsXeHeS6_9EPvviBqAM","alt":"Micoサイリウム2","sharedTooltipText":":_Micoサイリウム2:","src":"https://yt3.ggpht.com/4_HcXqnQtmwLfX3Z4OlHZtFeqjlsEV7nzb62wK5XpdlsZcRspItgHBJMMyL-cnKys39fq7Tx=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかいま～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCDh2bWI5EDu7PavqwICkVpA/p6X5X_6YMM_J-AP5lJboCQ","alt":"MicoSuberimico","sharedTooltipText":":_MicoSuberimico:","src":"https://yt3.ggpht.com/XBtPoo49G3ztZOPoO82lcWpD1IwHdKxDEGGY_gKiqoX5kZWNw17m6ArfGI_zrFWySKAnLWNPMA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDh2bWI5EDu7PavqwICkVpA/p6X5X_6YMM_J-AP5lJboCQ","alt":"MicoSuberimico","sharedTooltipText":":_MicoSuberimico:","src":"https://yt3.ggpht.com/XBtPoo49G3ztZOPoO82lcWpD1IwHdKxDEGGY_gKiqoX5kZWNw17m6ArfGI_zrFWySKAnLWNPMA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDh2bWI5EDu7PavqwICkVpA/p6X5X_6YMM_J-AP5lJboCQ","alt":"MicoSuberimico","sharedTooltipText":":_MicoSuberimico:","src":"https://yt3.ggpht.com/XBtPoo49G3ztZOPoO82lcWpD1IwHdKxDEGGY_gKiqoX5kZWNw17m6ArfGI_zrFWySKAnLWNPMA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なっちゃうー！"}], "scope": "channel" }
+  ]
+}

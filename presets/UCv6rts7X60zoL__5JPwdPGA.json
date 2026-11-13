@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "那加みわお / オカマバー",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCv6rts7X60zoL__5JPwdPGA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様です"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かんぱーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかれさまでしたー"}], "scope": "channel" }
+  ]
+}

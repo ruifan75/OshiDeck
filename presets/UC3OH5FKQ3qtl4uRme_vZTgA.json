@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "UNIT B (Pre-Debut) - mekPark",
-  "note": "過去13配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UC3OH5FKQ3qtl4uRme_vZTgA",
   "cards": [
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/hcMfY5_zAbbxvwKLooCoCA","alt":"face-fuchsia-tongue-out","sharedTooltipText":":face-fuchsia-tongue-out:","src":"https://yt3.ggpht.com/EURfJZi_heNulV3mfHzXBk8PIs9XmZ9lOOYi5za6wFMCGrps4i2BJX9j-H2gK6LIhW6h7sY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/hcMfY5_zAbbxvwKLooCoCA","alt":"face-fuchsia-tongue-out","sharedTooltipText":":face-fuchsia-tongue-out:","src":"https://yt3.ggpht.com/EURfJZi_heNulV3mfHzXBk8PIs9XmZ9lOOYi5za6wFMCGrps4i2BJX9j-H2gK6LIhW6h7sY=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/hcMfY5_zAbbxvwKLooCoCA","alt":"face-fuchsia-tongue-out","sharedTooltipText":":face-fuchsia-tongue-out:","src":"https://yt3.ggpht.com/EURfJZi_heNulV3mfHzXBk8PIs9XmZ9lOOYi5za6wFMCGrps4i2BJX9j-H2gK6LIhW6h7sY=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ばいばーい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC3OH5FKQ3qtl4uRme_vZTgA/XYJsauTEJt6R7OsP6MqogAs","alt":"待機ミラ","sharedTooltipText":":_待機ミラ:","src":"https://yt3.ggpht.com/qn3K9-IUvkZNamDR5o4XJ_ebUqpAMsu1svdtV4ZBYS5Cig8moP4Rvm3MpihdQdUERW0RX5qMOg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC3OH5FKQ3qtl4uRme_vZTgA/XYJsauTEJt6R7OsP6MqogAs","alt":"待機ミラ","sharedTooltipText":":_待機ミラ:","src":"https://yt3.ggpht.com/qn3K9-IUvkZNamDR5o4XJ_ebUqpAMsu1svdtV4ZBYS5Cig8moP4Rvm3MpihdQdUERW0RX5qMOg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC3OH5FKQ3qtl4uRme_vZTgA/XYJsauTEJt6R7OsP6MqogAs","alt":"待機ミラ","sharedTooltipText":":_待機ミラ:","src":"https://yt3.ggpht.com/qn3K9-IUvkZNamDR5o4XJ_ebUqpAMsu1svdtV4ZBYS5Cig8moP4Rvm3MpihdQdUERW0RX5qMOg=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC3OH5FKQ3qtl4uRme_vZTgA/QINsau7fL5aIs8IPrbqZiQI","alt":"まつ毛","sharedTooltipText":":_まつ毛:","src":"https://yt3.ggpht.com/qbnoCSs_hq6FwXpZouwGve2gw78dVUG8C2mnJvLqXCmSh5L8jY4vkaBhc_Icy4DC6SDj6Ysy=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC3OH5FKQ3qtl4uRme_vZTgA/QINsau7fL5aIs8IPrbqZiQI","alt":"まつ毛","sharedTooltipText":":_まつ毛:","src":"https://yt3.ggpht.com/qbnoCSs_hq6FwXpZouwGve2gw78dVUG8C2mnJvLqXCmSh5L8jY4vkaBhc_Icy4DC6SDj6Ysy=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC3OH5FKQ3qtl4uRme_vZTgA/QINsau7fL5aIs8IPrbqZiQI","alt":"まつ毛","sharedTooltipText":":_まつ毛:","src":"https://yt3.ggpht.com/qbnoCSs_hq6FwXpZouwGve2gw78dVUG8C2mnJvLqXCmSh5L8jY4vkaBhc_Icy4DC6SDj6Ysy=w48-h48-c-k-nd"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいばーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" }
   ]
 }

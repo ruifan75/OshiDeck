@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "彩雲のの",
-  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCVKWgVm8BSlMkGZIDGaoElw",
   "cards": [
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"☁"},{"type":"text","value":"🌈"},{"type":"text","value":"🎶"},{"type":"text","value":"☁"},{"type":"text","value":"🌈"},{"type":"text","value":"🎶"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんののー"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"あい！あい！あい！あい！"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おつののー"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"おつのの～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あい！あい！あい！あい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつのの〜"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんのの～"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"おつのの～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "山神 カルタ / Karuta Yamagami",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCllKI7VjyANuS1RXatizfLQ",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCllKI7VjyANuS1RXatizfLQ/nIrGXtD7A4K0_AOC5aiACQ","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/s7YNNwFNRhmFRmVTqf41SprAEC5IEupTnytT5aK7GKIKDNHhqgBpUwGjGeQboRt9aWgDu6o9GQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCllKI7VjyANuS1RXatizfLQ/nIrGXtD7A4K0_AOC5aiACQ","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/s7YNNwFNRhmFRmVTqf41SprAEC5IEupTnytT5aK7GKIKDNHhqgBpUwGjGeQboRt9aWgDu6o9GQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCllKI7VjyANuS1RXatizfLQ/nIrGXtD7A4K0_AOC5aiACQ","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/s7YNNwFNRhmFRmVTqf41SprAEC5IEupTnytT5aK7GKIKDNHhqgBpUwGjGeQboRt9aWgDu6o9GQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCllKI7VjyANuS1RXatizfLQ/YWq7ZafPEe6I_9EP9NmkkAk","alt":"おつかるた","sharedTooltipText":":_おつかるた:","src":"https://yt3.ggpht.com/mEL7kIsOMK21KuIO-MYd6EohWAC6r7-CJ_HyxPiH0NU3Ntks9A9mEK5drAqJA8hDAKQ3acduZA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCllKI7VjyANuS1RXatizfLQ/YWq7ZafPEe6I_9EP9NmkkAk","alt":"おつかるた","sharedTooltipText":":_おつかるた:","src":"https://yt3.ggpht.com/mEL7kIsOMK21KuIO-MYd6EohWAC6r7-CJ_HyxPiH0NU3Ntks9A9mEK5drAqJA8hDAKQ3acduZA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCllKI7VjyANuS1RXatizfLQ/YWq7ZafPEe6I_9EP9NmkkAk","alt":"おつかるた","sharedTooltipText":":_おつかるた:","src":"https://yt3.ggpht.com/mEL7kIsOMK21KuIO-MYd6EohWAC6r7-CJ_HyxPiH0NU3Ntks9A9mEK5drAqJA8hDAKQ3acduZA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCllKI7VjyANuS1RXatizfLQ/YWq7ZZLOEe6I_9EP9NmkkAk","alt":"こんかるた","sharedTooltipText":":_こんかるた:","src":"https://yt3.ggpht.com/N5bvGCrXATX5-Px37IPyKGtLBqv2YZrmSVC3ypBFMAjDb9KgZsueVbfsKIc65wa7eLEAETewtTk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCllKI7VjyANuS1RXatizfLQ/YWq7ZZLOEe6I_9EP9NmkkAk","alt":"こんかるた","sharedTooltipText":":_こんかるた:","src":"https://yt3.ggpht.com/N5bvGCrXATX5-Px37IPyKGtLBqv2YZrmSVC3ypBFMAjDb9KgZsueVbfsKIc65wa7eLEAETewtTk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCllKI7VjyANuS1RXatizfLQ/YWq7ZZLOEe6I_9EP9NmkkAk","alt":"こんかるた","sharedTooltipText":":_こんかるた:","src":"https://yt3.ggpht.com/N5bvGCrXATX5-Px37IPyKGtLBqv2YZrmSVC3ypBFMAjDb9KgZsueVbfsKIc65wa7eLEAETewtTk=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつ！！！！！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

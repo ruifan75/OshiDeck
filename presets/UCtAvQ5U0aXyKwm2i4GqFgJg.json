@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "春崎エアル",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCtAvQ5U0aXyKwm2i4GqFgJg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCtAvQ5U0aXyKwm2i4GqFgJg/rXQpZLKfJInWgwODzpuQBA","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/o_ioG8rehdzpCe_5D2WP07e7VgzkVcrhTgvAgQxnOtQb135e1R_zGh5pg7ltCE3DoHy245GOpg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCtAvQ5U0aXyKwm2i4GqFgJg/rXQpZLKfJInWgwODzpuQBA","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/o_ioG8rehdzpCe_5D2WP07e7VgzkVcrhTgvAgQxnOtQb135e1R_zGh5pg7ltCE3DoHy245GOpg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCtAvQ5U0aXyKwm2i4GqFgJg/rXQpZLKfJInWgwODzpuQBA","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/o_ioG8rehdzpCe_5D2WP07e7VgzkVcrhTgvAgQxnOtQb135e1R_zGh5pg7ltCE3DoHy245GOpg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCtAvQ5U0aXyKwm2i4GqFgJg/rXQpZJ6gJInWgwODzpuQBA","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/FNgFgUD8c507LSNB_-YTKuVIJ8mSFMsNxHHgVDeomqwXrPkOjHKTESZmCKomiO0muzO15-S7=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" }
+  ]
+}

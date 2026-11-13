@@ -1,0 +1,9 @@
+{
+  "format": 2,
+  "name": "ArgamaWitch",
+  "note": "歌枠0配信・通常7配信のチャットから1枚",
+  "channel": "UCRHgyuhghUjuZnKo6dTU4hg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" }
+  ]
+}

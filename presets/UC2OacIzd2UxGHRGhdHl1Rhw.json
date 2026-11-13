@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "早瀬 走 / Hayase Sou【にじさんじ所属】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC2OacIzd2UxGHRGhdHl1Rhw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC2OacIzd2UxGHRGhdHl1Rhw/6CByXqSFF8j7-gPdwJ7gDw","alt":"サイリュウム","sharedTooltipText":":_サイリュウム:","src":"https://yt3.ggpht.com/rEatf6osQ1xDojTtDwXeH9zoZCJZUwsv8taqvjVdOs-40bx-TdI_tJw3R7dwfgYNjOhH2ypg3Hg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2OacIzd2UxGHRGhdHl1Rhw/6CByXqSFF8j7-gPdwJ7gDw","alt":"サイリュウム","sharedTooltipText":":_サイリュウム:","src":"https://yt3.ggpht.com/rEatf6osQ1xDojTtDwXeH9zoZCJZUwsv8taqvjVdOs-40bx-TdI_tJw3R7dwfgYNjOhH2ypg3Hg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2OacIzd2UxGHRGhdHl1Rhw/6CByXqSFF8j7-gPdwJ7gDw","alt":"サイリュウム","sharedTooltipText":":_サイリュウム:","src":"https://yt3.ggpht.com/rEatf6osQ1xDojTtDwXeH9zoZCJZUwsv8taqvjVdOs-40bx-TdI_tJw3R7dwfgYNjOhH2ypg3Hg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC2OacIzd2UxGHRGhdHl1Rhw/JwaPXu38OYuo-gPktJnYBA","alt":"サイリュウム赤","sharedTooltipText":":_サイリュウム赤:","src":"https://yt3.ggpht.com/4kwobAuFEZLxNsgN4xtc6mChzhpGAaoWhkIBsIHfBmdIM1ok2KpFJBne4GTol_-5l8j0-6TACdg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2OacIzd2UxGHRGhdHl1Rhw/JwaPXu38OYuo-gPktJnYBA","alt":"サイリュウム赤","sharedTooltipText":":_サイリュウム赤:","src":"https://yt3.ggpht.com/4kwobAuFEZLxNsgN4xtc6mChzhpGAaoWhkIBsIHfBmdIM1ok2KpFJBne4GTol_-5l8j0-6TACdg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2OacIzd2UxGHRGhdHl1Rhw/JwaPXu38OYuo-gPktJnYBA","alt":"サイリュウム赤","sharedTooltipText":":_サイリュウム赤:","src":"https://yt3.ggpht.com/4kwobAuFEZLxNsgN4xtc6mChzhpGAaoWhkIBsIHfBmdIM1ok2KpFJBne4GTol_-5l8j0-6TACdg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2OacIzd2UxGHRGhdHl1Rhw/JwaPXu38OYuo-gPktJnYBA","alt":"サイリュウム赤","sharedTooltipText":":_サイリュウム赤:","src":"https://yt3.ggpht.com/4kwobAuFEZLxNsgN4xtc6mChzhpGAaoWhkIBsIHfBmdIM1ok2KpFJBne4GTol_-5l8j0-6TACdg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2OacIzd2UxGHRGhdHl1Rhw/JwaPXu38OYuo-gPktJnYBA","alt":"サイリュウム赤","sharedTooltipText":":_サイリュウム赤:","src":"https://yt3.ggpht.com/4kwobAuFEZLxNsgN4xtc6mChzhpGAaoWhkIBsIHfBmdIM1ok2KpFJBne4GTol_-5l8j0-6TACdg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" }
+  ]
+}

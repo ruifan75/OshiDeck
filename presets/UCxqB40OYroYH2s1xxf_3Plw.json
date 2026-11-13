@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "18号 -Juhachigo-",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCxqB40OYroYH2s1xxf_3Plw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんはー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機ー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんはちはー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCxqB40OYroYH2s1xxf_3Plw/jXURY_uxA4bBgwPa-JHYBA","alt":"supa","sharedTooltipText":":_supa:","src":"https://yt3.ggpht.com/LIJ08VdC3tiyNUUu0SdG1N2_l8A826c76MzqxVGoIdSwC-mt8mj-zDf1wM39DFzc3Bbw9hDS=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCxqB40OYroYH2s1xxf_3Plw/4aSLYYn5JZyQ8wT8gZG4Dg","alt":"KUSA","sharedTooltipText":":_KUSA:","src":"https://yt3.ggpht.com/C9uuDXAjCbtq_icJUtMY_3jrxp6xZgBWxAcc3Bk2h9Edjefnpa8QmWsfheDlNa5ECMMfm3isEg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCxqB40OYroYH2s1xxf_3Plw/jrtVY6OuKoeP_9EPqNKHwAc","alt":"eight","sharedTooltipText":":_eight:","src":"https://yt3.ggpht.com/uVKTyVPel7g9WLKrTJjoBobL1CLvcGyGmX04JpidSfI03lPl2Dd5CDXpJTZavnm_YxF-CzvItQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxqB40OYroYH2s1xxf_3Plw/jrtVY6OuKoeP_9EPqNKHwAc","alt":"eight","sharedTooltipText":":_eight:","src":"https://yt3.ggpht.com/uVKTyVPel7g9WLKrTJjoBobL1CLvcGyGmX04JpidSfI03lPl2Dd5CDXpJTZavnm_YxF-CzvItQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxqB40OYroYH2s1xxf_3Plw/jrtVY6OuKoeP_9EPqNKHwAc","alt":"eight","sharedTooltipText":":_eight:","src":"https://yt3.ggpht.com/uVKTyVPel7g9WLKrTJjoBobL1CLvcGyGmX04JpidSfI03lPl2Dd5CDXpJTZavnm_YxF-CzvItQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxqB40OYroYH2s1xxf_3Plw/jrtVY6OuKoeP_9EPqNKHwAc","alt":"eight","sharedTooltipText":":_eight:","src":"https://yt3.ggpht.com/uVKTyVPel7g9WLKrTJjoBobL1CLvcGyGmX04JpidSfI03lPl2Dd5CDXpJTZavnm_YxF-CzvItQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんはちわー！"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "凪白みと",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC5wRGdgN_GufQwuZiQwu87g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんみと"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様です"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わこみと"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんみとです！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" }
+  ]
+}

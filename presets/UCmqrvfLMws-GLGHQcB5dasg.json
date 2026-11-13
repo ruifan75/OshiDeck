@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "花奏 かのん / Kanade Kanon ch【ななしいんく】",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCmqrvfLMws-GLGHQcB5dasg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCmqrvfLMws-GLGHQcB5dasg/HqK_XvarFKem_AOC1bjYDA","alt":"おんぷ","sharedTooltipText":":_おんぷ:","src":"https://yt3.ggpht.com/itwue8BKuuyDZXHIoQrFUXLB3BW7Xp8F6GPLuJGjyz_t30Eqi7nQ5mptP3P3UHJ1fJ-RwFwFpg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmqrvfLMws-GLGHQcB5dasg/HqK_XvarFKem_AOC1bjYDA","alt":"おんぷ","sharedTooltipText":":_おんぷ:","src":"https://yt3.ggpht.com/itwue8BKuuyDZXHIoQrFUXLB3BW7Xp8F6GPLuJGjyz_t30Eqi7nQ5mptP3P3UHJ1fJ-RwFwFpg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmqrvfLMws-GLGHQcB5dasg/HqK_XvarFKem_AOC1bjYDA","alt":"おんぷ","sharedTooltipText":":_おんぷ:","src":"https://yt3.ggpht.com/itwue8BKuuyDZXHIoQrFUXLB3BW7Xp8F6GPLuJGjyz_t30Eqi7nQ5mptP3P3UHJ1fJ-RwFwFpg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCmqrvfLMws-GLGHQcB5dasg/HqK_XqGhFKem_AOC1bjYDA","alt":"草です","sharedTooltipText":":_草です:","src":"https://yt3.ggpht.com/h8jEoqhiodPjQazqSWcvl4P2Pgz7CXcj81dKRD1OYuGnNdmv-uXWax2u6C48skLsFMjwvd9F1B0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いいね"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぶーん！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"よるぶーん！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" }
+  ]
+}

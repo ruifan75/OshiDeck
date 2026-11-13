@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "光りりあ【Riria Hikari Ch】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCkpxBlaxpnoMtObVL36gXAA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"88888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんりりあー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"よしよし"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイスパ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつりりあ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkpxBlaxpnoMtObVL36gXAA/-3nsYrSrIYSG_9EP7osZ","alt":"こんの文字","sharedTooltipText":":_こんの文字:","src":"https://yt3.ggpht.com/FiVkZDGTY-n-QUU3SrUECtl_2FR-IyjJeraUKlOFbtILmUZZ1vaCzZruH40na8TQ1Xn6Z1g9=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkpxBlaxpnoMtObVL36gXAA/MjLKYpb3JaGJ_9EPz52yyAw","alt":"りの文字","sharedTooltipText":":_りの文字:","src":"https://yt3.ggpht.com/W89Q8z_OC4Czj1u3MQqW3pgwYTcliurCmyoV5ChPfBf5DyufsbvQLdjCbgmDF9kgeQY5R3lO=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkpxBlaxpnoMtObVL36gXAA/MjLKYpb3JaGJ_9EPz52yyAw","alt":"りの文字","sharedTooltipText":":_りの文字:","src":"https://yt3.ggpht.com/W89Q8z_OC4Czj1u3MQqW3pgwYTcliurCmyoV5ChPfBf5DyufsbvQLdjCbgmDF9kgeQY5R3lO=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkpxBlaxpnoMtObVL36gXAA/MjLKYrL3JaGJ_9EPz52yyAw","alt":"あの文字","sharedTooltipText":":_あの文字:","src":"https://yt3.ggpht.com/b-UUuOEFEEwcuFmcNcbMoQHiKykqTbVuSFmH4shJT1pn-llHvMQzXk7j--pd5rKnS3GjTbXndg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはりりあ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" }
+  ]
+}

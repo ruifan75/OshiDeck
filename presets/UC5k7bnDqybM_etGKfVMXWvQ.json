@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "やーちゃん /Ya-chan",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC5k7bnDqybM_etGKfVMXWvQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はいさーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC5k7bnDqybM_etGKfVMXWvQ/cpmSZpTCGJOe_9EPo-aNuAY","alt":"ｗｗｗ","sharedTooltipText":":_ｗｗｗ:","src":"https://yt3.ggpht.com/-d5U0j8lUjbNV7ONkbmu9UbuZCiIadntLi5E6TQoLOoeePRqB_5W4z1Ap-snjEpNK0w-ZRc=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC5k7bnDqybM_etGKfVMXWvQ/cpmSZvu8GJOe_9EPo-aNuAY","alt":"NICE","sharedTooltipText":":_NICE:","src":"https://yt3.ggpht.com/7jApzBm1E8puOuRR56dJVd-Uo-YXepH1LnHC6Lkq95gwEYfsv-sCUE6YEsHKTIuAfzRSkwdq=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5k7bnDqybM_etGKfVMXWvQ/cpmSZvu8GJOe_9EPo-aNuAY","alt":"NICE","sharedTooltipText":":_NICE:","src":"https://yt3.ggpht.com/7jApzBm1E8puOuRR56dJVd-Uo-YXepH1LnHC6Lkq95gwEYfsv-sCUE6YEsHKTIuAfzRSkwdq=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5k7bnDqybM_etGKfVMXWvQ/cpmSZvu8GJOe_9EPo-aNuAY","alt":"NICE","sharedTooltipText":":_NICE:","src":"https://yt3.ggpht.com/7jApzBm1E8puOuRR56dJVd-Uo-YXepH1LnHC6Lkq95gwEYfsv-sCUE6YEsHKTIuAfzRSkwdq=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC5k7bnDqybM_etGKfVMXWvQ/cpmSZsq-GJOe_9EPo-aNuAY","alt":"ジーー","sharedTooltipText":":_ジーー:","src":"https://yt3.ggpht.com/uhJTpIzZhc6NVcZGwmn3k38oiBNERodbB1cbrrDeHqpP5HULnQn08eaKljIExEuoEWg7eorNtQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC5k7bnDqybM_etGKfVMXWvQ/cpmSZvS_GJOe_9EPo-aNuAY","alt":"はいさーい","sharedTooltipText":":_はいさーい:","src":"https://yt3.ggpht.com/1KnaGRJHEbJlCsVN1IPe8BGQh5Gy7pLo7Icn3Xtss8dxWwIDsUFaeR0PgvK5Zxn1oLXJdYuf4Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5k7bnDqybM_etGKfVMXWvQ/cpmSZvS_GJOe_9EPo-aNuAY","alt":"はいさーい","sharedTooltipText":":_はいさーい:","src":"https://yt3.ggpht.com/1KnaGRJHEbJlCsVN1IPe8BGQh5Gy7pLo7Icn3Xtss8dxWwIDsUFaeR0PgvK5Zxn1oLXJdYuf4Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

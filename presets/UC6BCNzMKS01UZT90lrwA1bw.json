@@ -1,0 +1,22 @@
+{
+  "format": 2,
+  "name": "星乃りむ / Rimu Channel【ミクスト】",
+  "note": "歌枠2配信・通常13配信のチャットから14枚",
+  "channel": "UC6BCNzMKS01UZT90lrwA1bw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🩷"},{"type":"text","value":"🎶"},{"type":"text","value":"🩷"},{"type":"text","value":"🎶"},{"type":"text","value":"🩷"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💗"},{"type":"text","value":"🌟"},{"type":"text","value":"🐰"},{"type":"text","value":"💗"},{"type":"text","value":"🌟"},{"type":"text","value":"🐰"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌸"},{"type":"text","value":"💓"},{"type":"text","value":"☁"},{"type":"text","value":"🌸"},{"type":"text","value":"💓"},{"type":"text","value":"☁"},{"type":"text","value":"🌸"},{"type":"text","value":"💓"},{"type":"text","value":"☁"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんりむー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC6BCNzMKS01UZT90lrwA1bw/SczMafelBKz7s8IPw5rsmA0","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/rwJAyUViks3uTxHNkUUI5Ymym40aRMAckcYasDUM3rwAozD3_MXvXYoeTTeWtZZGAbW-UIvpDw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6BCNzMKS01UZT90lrwA1bw/SczMafelBKz7s8IPw5rsmA0","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/rwJAyUViks3uTxHNkUUI5Ymym40aRMAckcYasDUM3rwAozD3_MXvXYoeTTeWtZZGAbW-UIvpDw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6BCNzMKS01UZT90lrwA1bw/SczMafelBKz7s8IPw5rsmA0","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/rwJAyUViks3uTxHNkUUI5Ymym40aRMAckcYasDUM3rwAozD3_MXvXYoeTTeWtZZGAbW-UIvpDw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつむー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんりむ〜"},{"type":"youtubeEmoji","emojiId":"UC6BCNzMKS01UZT90lrwA1bw/i8UTZ-PiOaCn_9EP4OeIgQs","alt":"konrimu","sharedTooltipText":":_konrimu:","src":"https://yt3.ggpht.com/JiY1pOwWGgIKdY49uMFA91xG9F-xD4EDLiRvFE7wftiIYQpUJEbabKri2yCYBp4-uOn2-S2w=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

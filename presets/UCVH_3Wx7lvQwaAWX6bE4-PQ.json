@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ザスター",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCVH_3Wx7lvQwaAWX6bE4-PQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いえい！いえい！いえい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌠"},{"type":"text","value":"🎤"},{"type":"text","value":"🌠"},{"type":"text","value":"🎤"},{"type":"text","value":"🌠"},{"type":"text","value":"🎤"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"だいすきー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ノ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"また明日！"}], "scope": "channel" }
+  ]
+}

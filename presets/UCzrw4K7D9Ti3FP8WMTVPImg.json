@@ -1,0 +1,12 @@
+{
+  "format": 2,
+  "name": "ウェザーロイド Airi（ポン子）",
+  "note": "歌枠2配信・通常1配信のチャットから4枚",
+  "channel": "UCzrw4K7D9Ti3FP8WMTVPImg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ぽんぽんしてきた"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"自然な導入"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"サンキューポン子"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "やしろあい",
+  "note": "歌枠1配信・通常9配信のチャットから10枚",
+  "channel": "UC3G9ynwAEyiZU-87j6PkQLQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんしろ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"8888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC3G9ynwAEyiZU-87j6PkQLQ/Xw1eaKvgN--X_9EPkYe90QE","alt":"light","sharedTooltipText":":_light:","src":"https://yt3.ggpht.com/B_bFIZNvGmZj-hLEBxtCOfW-QKpZjhjl2-YBvOn4PDeQBlsboc1EJPeGtV-doLJmgU9FHigFVA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC3G9ynwAEyiZU-87j6PkQLQ/Xw1eaKvgN--X_9EPkYe90QE","alt":"light","sharedTooltipText":":_light:","src":"https://yt3.ggpht.com/B_bFIZNvGmZj-hLEBxtCOfW-QKpZjhjl2-YBvOn4PDeQBlsboc1EJPeGtV-doLJmgU9FHigFVA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC3G9ynwAEyiZU-87j6PkQLQ/Xw1eaKvgN--X_9EPkYe90QE","alt":"light","sharedTooltipText":":_light:","src":"https://yt3.ggpht.com/B_bFIZNvGmZj-hLEBxtCOfW-QKpZjhjl2-YBvOn4PDeQBlsboc1EJPeGtV-doLJmgU9FHigFVA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつしろ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは初見です"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"w"}], "scope": "channel" }
+  ]
+}

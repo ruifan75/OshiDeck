@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "微睡いちの",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCvCks1oVZfBuG1VXicOr5aw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おはよー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCvCks1oVZfBuG1VXicOr5aw/v-e8ZrvbJPSn_9EPlPzA-Q0","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/Q4B0OEEgR0kgZE6mTznrfXS2l-wl5UekpUH-8CbmcYkSmUwbap07SGVn0BcimHejLeduPP4BaA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCvCks1oVZfBuG1VXicOr5aw/MjlQZpenNvi9_9EPooOcqA4","alt":"ichinoGG","sharedTooltipText":":_ichinoGG:","src":"https://yt3.ggpht.com/nEfQb8wfG6AvoTlOHoNlCC0M_PnCPQqewSp0tC_pQ5vv3FV0hMpL_baZbq_IuPkzc2cfJowj=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCvCks1oVZfBuG1VXicOr5aw/AcliZsjXM6y4_9EPma-biAM","alt":"ichinoa02","sharedTooltipText":":_ichinoa02:","src":"https://yt3.ggpht.com/CawKge4TYCQktiQ43VhlPssTOoXT1l4ZJjOv8quE2HfAzolvqaB-GmBjtrRiJjhdXRVMRPB5=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCvCks1oVZfBuG1VXicOr5aw/srZQZuKJJv3C_9EPl-absAw","alt":"ahoge","sharedTooltipText":":_ahoge:","src":"https://yt3.ggpht.com/1CUeR9dLof-2mxiqDHcM-XT2wuP_wg9cWPwMKKDmGNViZ4JALstgjgnFEzCPKJImLYB9ZxPB=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCvCks1oVZfBuG1VXicOr5aw/MjlQZtSsNvi9_9EPooOcqA4","alt":"nyan","sharedTooltipText":":_nyan:","src":"https://yt3.ggpht.com/Ws4KFkCMdsJauyI7zmWOkAapW6c8m231KHKh8b6uUG6QoypkbGIilLLKEgKPmiTEWKla06my=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

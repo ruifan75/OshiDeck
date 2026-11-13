@@ -169,6 +169,7 @@
     let host = null;
     let notifyTimer = null;
     let dirty = false;
+    let lastBurst = {};
 
     const findHost = () =>
       document.querySelector("yt-live-chat-item-list-renderer #items") ||
@@ -267,6 +268,7 @@
     function forget() {
       recent = [];
       saidAt = [];
+      lastBurst = {};
       dirty = false;
     }
 
@@ -331,16 +333,21 @@
       const share = burstShare();
 
       let best = null;
+      const stats = { messages: said, candidates: counts.size, min: floor, share,
+        belowMin: 0, belowShare: 0, ineligible: 0, qualified: 0, maxCount: 0 };
       for (const seen of counts.values()) {
-        if (seen.count < floor) continue;
-        if (seen.count < said * share) continue;
-        if (accept && !accept(seen)) continue;
+        stats.maxCount = Math.max(stats.maxCount, seen.count);
+        if (seen.count < floor) { stats.belowMin += 1; continue; }
+        if (seen.count < said * share) { stats.belowShare += 1; continue; }
+        if (accept && !accept(seen)) { stats.ineligible += 1; continue; }
+        stats.qualified += 1;
         if (!best || seen.count > best.count) best = seen;
       }
+      lastBurst = stats;
       return best;
     }
 
-    return { start, stop, forget, ranking, burst, get attached() { return !!host; } };
+    return { start, stop, forget, ranking, burst, diagnostics: () => ({ ...lastBurst }), get attached() { return !!host; } };
   }
 
   OD.trending = {

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "グラニット / Granite",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC1_HUmjQShLtT_MuZjry3hQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1_HUmjQShLtT_MuZjry3hQ/tQacaoaSJ96u7OsP3-DEoA0","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/WgjcEfy3I7B07m84uL-OGklnkEA-KJ_zs3_Y9WoyK7i1FBlimHzTM7_Y80O8mHjbmBUe0YBmJA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1_HUmjQShLtT_MuZjry3hQ/tQacaoaSJ96u7OsP3-DEoA0","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/WgjcEfy3I7B07m84uL-OGklnkEA-KJ_zs3_Y9WoyK7i1FBlimHzTM7_Y80O8mHjbmBUe0YBmJA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1_HUmjQShLtT_MuZjry3hQ/LN7taNmGE6ONs8IP_6nG0Ao","alt":"saiko","sharedTooltipText":":_saiko:","src":"https://yt3.ggpht.com/btKGr1602yGCobZgoBFF-pRnL4bAoRJKVsdV89YvlojPsQvioYk_TkE6g-B7xbmHYWlaKERstAM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1_HUmjQShLtT_MuZjry3hQ/LN7taNmGE6ONs8IP_6nG0Ao","alt":"saiko","sharedTooltipText":":_saiko:","src":"https://yt3.ggpht.com/btKGr1602yGCobZgoBFF-pRnL4bAoRJKVsdV89YvlojPsQvioYk_TkE6g-B7xbmHYWlaKERstAM=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1_HUmjQShLtT_MuZjry3hQ/LN7taP2HE6ONs8IP_6nG0Ao","alt":"naki","sharedTooltipText":":_naki:","src":"https://yt3.ggpht.com/X2VT4KI_efcFVXP3MStJdOyW1nc-Tx5puzqFqPMO-S_yeY1AS9tX4Zj_b12D-atgJ7bxv9uPsg=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

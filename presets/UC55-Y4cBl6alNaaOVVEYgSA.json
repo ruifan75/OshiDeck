@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Kani Kanizawa Ch.",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC55-Y4cBl6alNaaOVVEYgSA",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC55-Y4cBl6alNaaOVVEYgSA/K9DUati1MPTS7OsP3ePE2Q0","alt":"penlight","sharedTooltipText":":_penlight:","src":"https://yt3.ggpht.com/09T77JQ93Nd0rgadAK1gUBRPeRYujdvAtuHD-dDfmowbQ_9tsukb_PwFqndAtrlFOs5VtfBh0nA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC55-Y4cBl6alNaaOVVEYgSA/K9DUati1MPTS7OsP3ePE2Q0","alt":"penlight","sharedTooltipText":":_penlight:","src":"https://yt3.ggpht.com/09T77JQ93Nd0rgadAK1gUBRPeRYujdvAtuHD-dDfmowbQ_9tsukb_PwFqndAtrlFOs5VtfBh0nA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC55-Y4cBl6alNaaOVVEYgSA/K9DUati1MPTS7OsP3ePE2Q0","alt":"penlight","sharedTooltipText":":_penlight:","src":"https://yt3.ggpht.com/09T77JQ93Nd0rgadAK1gUBRPeRYujdvAtuHD-dDfmowbQ_9tsukb_PwFqndAtrlFOs5VtfBh0nA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC55-Y4cBl6alNaaOVVEYgSA/RheMatH_Ka-W7OsPyLHPuQM","alt":"kanicheers","sharedTooltipText":":_kanicheers:","src":"https://yt3.ggpht.com/P2V0GkzSOtMUxTbzIRPWfS_e4ipeOT9Ecak0gVPpebWrYizDTgzUIk-sKWWewA-GmAqIxHqI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC55-Y4cBl6alNaaOVVEYgSA/RheMatH_Ka-W7OsPyLHPuQM","alt":"kanicheers","sharedTooltipText":":_kanicheers:","src":"https://yt3.ggpht.com/P2V0GkzSOtMUxTbzIRPWfS_e4ipeOT9Ecak0gVPpebWrYizDTgzUIk-sKWWewA-GmAqIxHqI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC55-Y4cBl6alNaaOVVEYgSA/RheMatH_Ka-W7OsPyLHPuQM","alt":"kanicheers","sharedTooltipText":":_kanicheers:","src":"https://yt3.ggpht.com/P2V0GkzSOtMUxTbzIRPWfS_e4ipeOT9Ecak0gVPpebWrYizDTgzUIk-sKWWewA-GmAqIxHqI=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC55-Y4cBl6alNaaOVVEYgSA/RheMaoSAKq-W7OsPyLHPuQM","alt":"kanipop","sharedTooltipText":":_kanipop:","src":"https://yt3.ggpht.com/s8Uudq7Ovytt_lDxfsGB1El6PKuK2QbafcpYjMgEmdSbqSj6q6obvuQHeBnLWabJlx3h4dEP=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🦀"},{"type":"text","value":"🦀"},{"type":"text","value":"🦀"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC55-Y4cBl6alNaaOVVEYgSA/RheMauv-Ka-W7OsPyLHPuQM","alt":"kanidumb","sharedTooltipText":":_kanidumb:","src":"https://yt3.ggpht.com/Qg7ExAsnye8pF5ds6lFwsOqk1qbXMPPlezlfZNljrlGCvr4zPOF0gMz-AP-VtzxC2DTQ_3xFGQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC55-Y4cBl6alNaaOVVEYgSA/RheMauv-Ka-W7OsPyLHPuQM","alt":"kanidumb","sharedTooltipText":":_kanidumb:","src":"https://yt3.ggpht.com/Qg7ExAsnye8pF5ds6lFwsOqk1qbXMPPlezlfZNljrlGCvr4zPOF0gMz-AP-VtzxC2DTQ_3xFGQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC55-Y4cBl6alNaaOVVEYgSA/RheMauv-Ka-W7OsPyLHPuQM","alt":"kanidumb","sharedTooltipText":":_kanidumb:","src":"https://yt3.ggpht.com/Qg7ExAsnye8pF5ds6lFwsOqk1qbXMPPlezlfZNljrlGCvr4zPOF0gMz-AP-VtzxC2DTQ_3xFGQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"TRUE"}], "scope": "channel" }
+  ]
+}

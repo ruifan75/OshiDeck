@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Tororo Ch. 猫麦とろろ",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UC6sdN8CPm7v3UeV2mlqXmVw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんとろろー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あけおめー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつとろろ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんとろろ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ㅋㅋㅋ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"kontororo"}], "scope": "channel" }
+  ]
+}

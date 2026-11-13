@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "叶 秘蜜 (Himitsu Kano)",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCxX7trAb1ZadPY6oGpny7SA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍯"},{"type":"text","value":"🎶"},{"type":"text","value":"🍯"},{"type":"text","value":"🎶"},{"type":"text","value":"🍯"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばぶ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんまま〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつばぶー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

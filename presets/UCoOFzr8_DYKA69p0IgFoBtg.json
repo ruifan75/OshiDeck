@@ -1,0 +1,13 @@
+{
+  "format": 2,
+  "name": "Mimyoi Myosotis CH.【RELEUM】",
+  "note": "歌枠0配信・通常13配信のチャットから5枚",
+  "channel": "UCoOFzr8_DYKA69p0IgFoBtg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hiii"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Mimi"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCoOFzr8_DYKA69p0IgFoBtg/Ypl8aIy9MIPw6dsPxK2_oQw","alt":"MimLove","sharedTooltipText":":_MimLove:","src":"https://yt3.ggpht.com/lgMKjmpNBx5cY7-KTlU8XUy_xJROc10-GDfWXCrT8ef-bYNhfYEmpfn2QBUkRM1CCpkCuLsCO28=w48-h48-c-k-nd"},{"type":"text","value":" "}], "scope": "channel" }
+  ]
+}

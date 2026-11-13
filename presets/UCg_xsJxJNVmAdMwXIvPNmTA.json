@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "甜瓜あん -Tenka An-",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCg_xsJxJNVmAdMwXIvPNmTA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"弾幕これです"},{"type":"text","value":"🧚"},{"type":"text","value":"🎙"},{"type":"text","value":".•*¨"},{"type":"text","value":"🍈"},{"type":"text","value":"*•.*"},{"type":"text","value":"🎙"},{"type":"text","value":".•*¨"},{"type":"text","value":"🍈"},{"type":"text","value":"*•.*"},{"type":"text","value":"🧚"},{"type":"text","value":"🎙"},{"type":"text","value":".•*¨"},{"type":"text","value":"🍈"},{"type":"text","value":"*•.*"},{"type":"text","value":"🧚"},{"type":"text","value":"🎙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"でわねでわね〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCg_xsJxJNVmAdMwXIvPNmTA/UKm8Z-aNJIy__9EP9qyjCA","alt":"あいさつ","sharedTooltipText":":_あいさつ:","src":"https://yt3.ggpht.com/ppPbPO2la7sjfqc8DhrQRvfYjm8QOo5KybMFYt6xgpQUz1-E2XAAvTjc5_WfCxGv_-Pc1Vxo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCg_xsJxJNVmAdMwXIvPNmTA/UKm8Z-aNJIy__9EP9qyjCA","alt":"あいさつ","sharedTooltipText":":_あいさつ:","src":"https://yt3.ggpht.com/ppPbPO2la7sjfqc8DhrQRvfYjm8QOo5KybMFYt6xgpQUz1-E2XAAvTjc5_WfCxGv_-Pc1Vxo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCg_xsJxJNVmAdMwXIvPNmTA/UKm8Z-aNJIy__9EP9qyjCA","alt":"あいさつ","sharedTooltipText":":_あいさつ:","src":"https://yt3.ggpht.com/ppPbPO2la7sjfqc8DhrQRvfYjm8QOo5KybMFYt6xgpQUz1-E2XAAvTjc5_WfCxGv_-Pc1Vxo=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCg_xsJxJNVmAdMwXIvPNmTA/UYOoZ6nzD76H_9EP1euYqQY","alt":"まにあえ","sharedTooltipText":":_まにあえ:","src":"https://yt3.ggpht.com/d77S8u3TFAEQ_g2Caz7U6-o5cSaCvMHTLSSeEK2a8VpfCjhINvnhkXb1QlGJdYFblBY4Xc8TwA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"でわねでわね～"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCg_xsJxJNVmAdMwXIvPNmTA/UYOoZ__1D76H_9EP1euYqQY","alt":"記憶頼りトマト","sharedTooltipText":":_記憶頼りトマト:","src":"https://yt3.ggpht.com/mRDkza6LjE5m0a3cBf32dy0OPAvFlMIXz9u9mNuZ1yRLE9j1Wa_7T8dNZN8hN_A0wJJtcIunmQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

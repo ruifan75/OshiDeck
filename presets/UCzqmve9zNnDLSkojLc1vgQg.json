@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "YasyfiKun",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCzqmve9zNnDLSkojLc1vgQg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo bang"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hai"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yahh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"assalamualaikum"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCzqmve9zNnDLSkojLc1vgQg/U5tdZunBHOGu_9EPk5zhgAI","alt":"api","sharedTooltipText":":_api:","src":"https://yt3.ggpht.com/0n3YQysnip-hEsrhYxjSDURMg1JK5DG2iHjsZu81oqflfp_ecol71lub25m1fv2eXo8LODOcjA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCzqmve9zNnDLSkojLc1vgQg/U5tdZunBHOGu_9EPk5zhgAI","alt":"api","sharedTooltipText":":_api:","src":"https://yt3.ggpht.com/0n3YQysnip-hEsrhYxjSDURMg1JK5DG2iHjsZu81oqflfp_ecol71lub25m1fv2eXo8LODOcjA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wah"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"iya"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"GG"}], "scope": "channel" }
+  ]
+}

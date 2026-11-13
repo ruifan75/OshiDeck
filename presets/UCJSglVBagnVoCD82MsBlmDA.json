@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "山奈しずく-Yamana Shizuku-【ユニプロ】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCJSglVBagnVoCD82MsBlmDA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかれなってー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないぎふ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんなってー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なんて？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" }
+  ]
+}

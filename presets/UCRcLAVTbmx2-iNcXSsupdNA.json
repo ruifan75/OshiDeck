@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "来栖 夏芽-kurusu natsume-【にじさんじ】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCRcLAVTbmx2-iNcXSsupdNA",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRcLAVTbmx2-iNcXSsupdNA/4obsXpm4B5ON-gP1x6OgAg","alt":"サイリウムa","sharedTooltipText":":_サイリウムa:","src":"https://yt3.ggpht.com/69Z4nWT4v2b-q-kRy7Ul4imtLDtbTMiF9r1PRMt-LqKYlGgwkHiADYXZ5Qf4CQ2eO0oJkoTxeA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCRcLAVTbmx2-iNcXSsupdNA/W5RAXoaqAYym-wOzsbcY","alt":"ひつじのめい","sharedTooltipText":":_ひつじのめい:","src":"https://yt3.ggpht.com/-nhE3jX5guokyUf7JQ2J8Ebr66GOUr_Y7vEh-xKCGYfG4m6WQXTmHFdF8Q55pRNNzTfMTiKKxQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCRcLAVTbmx2-iNcXSsupdNA/4obsXvy2B5ON-gP1x6OgAg","alt":"サイリウムb","sharedTooltipText":":_サイリウムb:","src":"https://yt3.ggpht.com/ajrEkri5MYRlc3VWBM4K3mBWYxO-kjigCWAq9v6SqCQ6FVF8T7JvdqSBJndMJQ7qmbsgxHsC=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こーんばーんはー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"来栖が来るっす！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRcLAVTbmx2-iNcXSsupdNA/W5RAXtSZAYym-wOzsbcY","alt":"なつめ","sharedTooltipText":":_なつめ:","src":"https://yt3.ggpht.com/izHd2gEZj6Rs4-TzUbLXCslt-HtzbykJmH7_A63ulKCAY04ZQRfJPBp1QSMAso48Jd2MWcdYcE0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCRcLAVTbmx2-iNcXSsupdNA/W5RAXumdAYym-wOzsbcY","alt":"おつなつ","sharedTooltipText":":_おつなつ:","src":"https://yt3.ggpht.com/KN6lmj-QDG3lH-0Am4UCGJ_v8XCV6Sie1UglhvOgbeiuuRcJTfpN3cTV1633EW7TX_SFu5wTow=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCRcLAVTbmx2-iNcXSsupdNA/pgM5YJT4Fo7Z-QPSzL24BA","alt":"せんきゅ","sharedTooltipText":":_せんきゅ:","src":"https://yt3.ggpht.com/wAreBwCyoIWjf9oQB8Sjm31xWstW-j8NIknvVn1Y02GVOD97tYZFp8Upl461zd24i3rjhR0Uhwo=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"来栖を待つっす！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCRcLAVTbmx2-iNcXSsupdNA/W5RAXoOvAYym-wOzsbcY","alt":"感嘆符","sharedTooltipText":":_感嘆符:","src":"https://yt3.ggpht.com/dA4qtJBDzqaK0-HnXC1ik2g_ejZYhRf6HZp0YMTikLpc0E9BPImTV2uPgCH0gbNR_EEgcq9wQg=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "魔法少女ちあちあちゃんねる",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCk7UMlCJ6dlluad9GLKhHzg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"よろしくね〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わーわーわー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんらもー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんちあ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あーあ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとな〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいばーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" }
+  ]
+}

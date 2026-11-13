@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "作楽つきひちゃんねる",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCq6EBsKaFIUpac6fPkGu2PQ",
   "cards": [
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"こんぷしゅ〜"}], "scope": "channel" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCq6EBsKaFIUpac6fPkGu2PQ/SUKyZvLdFOS6_9EP6aG_8As","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/_GmCHADAtAmoK6c6v1XXinR9h6gROIVImA_kbq-10H_YchLIeZ0jP-BXdOdMGuX9KcxGwwcY=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"おつぷしゅー"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"待機"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCq6EBsKaFIUpac6fPkGu2PQ/SUKyZvDcFOS6_9EP6aG_8As","alt":"otupusyu","sharedTooltipText":":_otupusyu:","src":"https://yt3.ggpht.com/4Sw4CT1NtpjJ0yLxfCqs9fKthvIhnyyLEJFKJepDh6yx_6Fs7EItZ0rQvqyy5sbPM7bTvWX2iw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCq6EBsKaFIUpac6fPkGu2PQ/SUKyZvDcFOS6_9EP6aG_8As","alt":"otupusyu","sharedTooltipText":":_otupusyu:","src":"https://yt3.ggpht.com/4Sw4CT1NtpjJ0yLxfCqs9fKthvIhnyyLEJFKJepDh6yx_6Fs7EItZ0rQvqyy5sbPM7bTvWX2iw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCq6EBsKaFIUpac6fPkGu2PQ/SUKyZvDcFOS6_9EP6aG_8As","alt":"otupusyu","sharedTooltipText":":_otupusyu:","src":"https://yt3.ggpht.com/4Sw4CT1NtpjJ0yLxfCqs9fKthvIhnyyLEJFKJepDh6yx_6Fs7EItZ0rQvqyy5sbPM7bTvWX2iw=w48-h48-c-k-nd"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎶"},{"type":"text","value":"💫"},{"type":"text","value":"💙"},{"type":"text","value":"🎶"},{"type":"text","value":"💫"},{"type":"text","value":"💙"},{"type":"text","value":"🎶"},{"type":"text","value":"💫"},{"type":"text","value":"💙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"だっほー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいばいほー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"どんぱふ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんぷしゅー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"どんぱふー"}], "scope": "channel" }
   ]
 }

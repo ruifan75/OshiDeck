@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ARIA軍武動漫雜談",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCOlwkBhjMe1PNm9055AQ88Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"報到"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"0"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"晚安"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"1"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"安安"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCOlwkBhjMe1PNm9055AQ88Q/Nn1OabrPKbyB5t0Px7HwkQg","alt":"ARIA0point","sharedTooltipText":":_ARIA0point:","src":"https://yt3.ggpht.com/cz-oADCVa2xjMopXwYntiItF8M0fNcWwYq0f5BQPcijNbc6y2UpCDRshtVcul4UPSuAjbeT-hQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"主播是0"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"可以"}], "scope": "channel" }
+  ]
+}

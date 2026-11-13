@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "春猿火 -Harusaruhi-",
+  "note": "歌枠1配信・通常0配信のチャットから10枚",
+  "channel": "UCE7gtjLeZKNXLp5YURzYYeg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はるはる"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとうございました！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かっこいい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🦋"},{"type":"text","value":"🦋"},{"type":"text","value":"🦋"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" }
+  ]
+}

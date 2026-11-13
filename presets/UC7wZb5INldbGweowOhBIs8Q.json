@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "石狩あかり/あおぎり高校",
-  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UC7wZb5INldbGweowOhBIs8Q",
   "cards": [
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7wZb5INldbGweowOhBIs8Q/TNwbX8yJO470-gOV_o3gCw","alt":"akariぺんら","sharedTooltipText":":_akariぺんら:","src":"https://yt3.ggpht.com/f2PpWkNcyhEm2gIWg8_OkP0L428gGimMFUrIKGXcrCG7_nQ8GtznacxIp--88IaoLgHpdbUM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7wZb5INldbGweowOhBIs8Q/TNwbX8yJO470-gOV_o3gCw","alt":"akariぺんら","sharedTooltipText":":_akariぺんら:","src":"https://yt3.ggpht.com/f2PpWkNcyhEm2gIWg8_OkP0L428gGimMFUrIKGXcrCG7_nQ8GtznacxIp--88IaoLgHpdbUM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7wZb5INldbGweowOhBIs8Q/TNwbX8yJO470-gOV_o3gCw","alt":"akariぺんら","sharedTooltipText":":_akariぺんら:","src":"https://yt3.ggpht.com/f2PpWkNcyhEm2gIWg8_OkP0L428gGimMFUrIKGXcrCG7_nQ8GtznacxIp--88IaoLgHpdbUM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7wZb5INldbGweowOhBIs8Q/TNwbX8yJO470-gOV_o3gCw","alt":"akariぺんら","sharedTooltipText":":_akariぺんら:","src":"https://yt3.ggpht.com/f2PpWkNcyhEm2gIWg8_OkP0L428gGimMFUrIKGXcrCG7_nQ8GtznacxIp--88IaoLgHpdbUM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7wZb5INldbGweowOhBIs8Q/TNwbX8yJO470-gOV_o3gCw","alt":"akariぺんら","sharedTooltipText":":_akariぺんら:","src":"https://yt3.ggpht.com/f2PpWkNcyhEm2gIWg8_OkP0L428gGimMFUrIKGXcrCG7_nQ8GtznacxIp--88IaoLgHpdbUM=w48-h48-c-k-nd"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"たららん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7wZb5INldbGweowOhBIs8Q/TNwbX5qGO470-gOV_o3gCw","alt":"akariたいき","sharedTooltipText":":_akariたいき:","src":"https://yt3.ggpht.com/5brBDwe35qitW1NrgPGI2CvezIRnDv21d3vRxXDBaToxnWrKxyNdWh9l-il4GDH82IvCWDy2cg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7wZb5INldbGweowOhBIs8Q/TNwbX5qGO470-gOV_o3gCw","alt":"akariたいき","sharedTooltipText":":_akariたいき:","src":"https://yt3.ggpht.com/5brBDwe35qitW1NrgPGI2CvezIRnDv21d3vRxXDBaToxnWrKxyNdWh9l-il4GDH82IvCWDy2cg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC7wZb5INldbGweowOhBIs8Q/TNwbX5qGO470-gOV_o3gCw","alt":"akariたいき","sharedTooltipText":":_akariたいき:","src":"https://yt3.ggpht.com/5brBDwe35qitW1NrgPGI2CvezIRnDv21d3vRxXDBaToxnWrKxyNdWh9l-il4GDH82IvCWDy2cg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7wZb5INldbGweowOhBIs8Q/TNwbX9-IO470-gOV_o3gCw","alt":"akariないす","sharedTooltipText":":_akariないす:","src":"https://yt3.ggpht.com/SCec5ef48cnBS_I_qSq4qSkZAZJBpoxdFT2a-acFgfTIXj9MhAnaYSbnrVQBUJG8w_AMdFKz9g=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "global" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7wZb5INldbGweowOhBIs8Q/TNwbX5yKO470-gOV_o3gCw","alt":"akariくさｗ","sharedTooltipText":":_akariくさｗ:","src":"https://yt3.ggpht.com/tKCMnfop19cDRaqvGzCfInAf-t96oYKug8fuaTkMgk2SOlWF_eMgpKYIuu2zBApfWAAoCIOSZA=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"ないす"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"お疲れ様でしたー"}], "scope": "channel" }
   ]
 }

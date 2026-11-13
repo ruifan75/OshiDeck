@@ -1,0 +1,19 @@
+{
+  "format": 2,
+  "name": "月魅暁りりか / Ririka Tsukimia",
+  "note": "歌枠2配信・通常13配信のチャットから11枚",
+  "channel": "UCNH-swU7qbGTQftgUh1Veyg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌙"},{"type":"text","value":"🔭"},{"type":"text","value":"🎶"},{"type":"text","value":"🌙"},{"type":"text","value":"🔭"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNH-swU7qbGTQftgUh1Veyg/6v7NZar_N6aI_9EPhYWB-AU","alt":"ちゃす","sharedTooltipText":":_ちゃす:","src":"https://yt3.ggpht.com/xySJbaZQr7v82P6gpbKJWbWsJ7X2bITekzLi-4WR5SVqj5YHhkbdgmUcOfk6Oq27MKv4mgq1xg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNH-swU7qbGTQftgUh1Veyg/6v7NZar_N6aI_9EPhYWB-AU","alt":"ちゃす","sharedTooltipText":":_ちゃす:","src":"https://yt3.ggpht.com/xySJbaZQr7v82P6gpbKJWbWsJ7X2bITekzLi-4WR5SVqj5YHhkbdgmUcOfk6Oq27MKv4mgq1xg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNH-swU7qbGTQftgUh1Veyg/6v7NZar_N6aI_9EPhYWB-AU","alt":"ちゃす","sharedTooltipText":":_ちゃす:","src":"https://yt3.ggpht.com/xySJbaZQr7v82P6gpbKJWbWsJ7X2bITekzLi-4WR5SVqj5YHhkbdgmUcOfk6Oq27MKv4mgq1xg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNH-swU7qbGTQftgUh1Veyg/6v7NZeH_N6aI_9EPhYWB-AU","alt":"ばいち","sharedTooltipText":":_ばいち:","src":"https://yt3.ggpht.com/H4mrkV6GqNaCY6ItZEdLB_t2B1Aaa9ANAPTJqWDKUwg-ywRHpoK0S7C2WX88rHg9AMOx130_nA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNH-swU7qbGTQftgUh1Veyg/6v7NZeH_N6aI_9EPhYWB-AU","alt":"ばいち","sharedTooltipText":":_ばいち:","src":"https://yt3.ggpht.com/H4mrkV6GqNaCY6ItZEdLB_t2B1Aaa9ANAPTJqWDKUwg-ywRHpoK0S7C2WX88rHg9AMOx130_nA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNH-swU7qbGTQftgUh1Veyg/6v7NZeH_N6aI_9EPhYWB-AU","alt":"ばいち","sharedTooltipText":":_ばいち:","src":"https://yt3.ggpht.com/H4mrkV6GqNaCY6ItZEdLB_t2B1Aaa9ANAPTJqWDKUwg-ywRHpoK0S7C2WX88rHg9AMOx130_nA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないぎふ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"えー"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "format": 2,
+  "name": "Nayami",
+  "note": "歌枠0配信・通常13配信のチャットから6枚",
+  "channel": "UCMh-Au5vSbEtMZNOYvc1-jQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"Hallo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Moin"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hey"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hiiiii Naya "},{"type":"text","value":"❤"},{"type":"text","value":"❤"},{"type":"text","value":"❤"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi naya"}], "scope": "channel" }
+  ]
+}

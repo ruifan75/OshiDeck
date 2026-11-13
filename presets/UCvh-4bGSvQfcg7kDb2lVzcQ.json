@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "楠木すぐり-Suguri Ch-【PinkPunkPro】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCvh-4bGSvQfcg7kDb2lVzcQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつすぐー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんすぐー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんすぐ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" }
+  ]
+}

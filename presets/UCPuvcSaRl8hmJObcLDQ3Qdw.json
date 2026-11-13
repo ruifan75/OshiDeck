@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "SUGAROCK",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCPuvcSaRl8hmJObcLDQ3Qdw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍫"},{"type":"text","value":"🎶"},{"type":"text","value":"🍫"},{"type":"text","value":"🎶"},{"type":"text","value":"🍫"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつろっく"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはろっく！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おめでとう！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"BIG LOVE!!!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ばいばいばいばいばい"}], "scope": "channel" }
+  ]
+}

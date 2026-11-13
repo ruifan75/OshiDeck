@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "メルシュ -Malstrøm- / mals ch.",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC6SbFlqvhVWRbfKpHgTNLpQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💠"},{"type":"text","value":"✨"},{"type":"text","value":"🐳"},{"type":"text","value":"💠"},{"type":"text","value":"✨"},{"type":"text","value":"🐳"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんメルシュー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC6SbFlqvhVWRbfKpHgTNLpQ/rFSpYJyuOtG2gwOC4Kj4Dg","alt":"こんにちは","sharedTooltipText":":_こんにちは:","src":"https://yt3.ggpht.com/NGnGEobQcbfwuUG8vfnoxo0I9BEdcle7YYux0Czf9uRTJMPSqhMbZbSxVK6Tr_rXeLsVGHQLqvQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6SbFlqvhVWRbfKpHgTNLpQ/rFSpYJWvOtG2gwOC4Kj4Dg","alt":"メルシュ","sharedTooltipText":":_メルシュ:","src":"https://yt3.ggpht.com/19enj37BdftzZg1bwz0XSaoLZ7ZkVnA2aTi8PyPHF10Rfuo8IMfgxGLtIHDHxR3fylrJmUuM2g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💠"},{"type":"text","value":"🌀"},{"type":"text","value":"🐳"},{"type":"text","value":"💠"},{"type":"text","value":"🌀"},{"type":"text","value":"🐳"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんめるしゅー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC6SbFlqvhVWRbfKpHgTNLpQ/rFSpYJyuOtG2gwOC4Kj4Dg","alt":"こんにちは","sharedTooltipText":":_こんにちは:","src":"https://yt3.ggpht.com/NGnGEobQcbfwuUG8vfnoxo0I9BEdcle7YYux0Czf9uRTJMPSqhMbZbSxVK6Tr_rXeLsVGHQLqvQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6SbFlqvhVWRbfKpHgTNLpQ/rFSpYJWvOtG2gwOC4Kj4Dg","alt":"メルシュ","sharedTooltipText":":_メルシュ:","src":"https://yt3.ggpht.com/19enj37BdftzZg1bwz0XSaoLZ7ZkVnA2aTi8PyPHF10Rfuo8IMfgxGLtIHDHxR3fylrJmUuM2g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6SbFlqvhVWRbfKpHgTNLpQ/e28FYZasA8vV8gSI05OYBA","alt":"かんぱい","sharedTooltipText":":_かんぱい:","src":"https://yt3.ggpht.com/K0bD0xpyzlvcXCfNGUo43bd5KFtElxcLJP68tpzkv3a4AJa7rLm9ma6znBxQGiA-TNUwokMs2Yw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC6SbFlqvhVWRbfKpHgTNLpQ/rFSpYNuuOtG2gwOC4Kj4Dg","alt":"おつかれさま","sharedTooltipText":":_おつかれさま:","src":"https://yt3.ggpht.com/GGlgevG5YRmz6MpH6cR97QBDERo-pcDKkacjuptbshY8aAJi3Axq5I8ckDqIBYOclt1LF4qi=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6SbFlqvhVWRbfKpHgTNLpQ/rFSpYJWvOtG2gwOC4Kj4Dg","alt":"メルシュ","sharedTooltipText":":_メルシュ:","src":"https://yt3.ggpht.com/19enj37BdftzZg1bwz0XSaoLZ7ZkVnA2aTi8PyPHF10Rfuo8IMfgxGLtIHDHxR3fylrJmUuM2g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC6SbFlqvhVWRbfKpHgTNLpQ/e28FYZasA8vV8gSI05OYBA","alt":"かんぱい","sharedTooltipText":":_かんぱい:","src":"https://yt3.ggpht.com/K0bD0xpyzlvcXCfNGUo43bd5KFtElxcLJP68tpzkv3a4AJa7rLm9ma6znBxQGiA-TNUwokMs2Yw=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

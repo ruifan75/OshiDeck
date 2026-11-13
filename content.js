@@ -3,6 +3,8 @@
   const OD = globalThis.OshiDeck;
   const { i18n, journal, layout, presets, store, tokens, trending } = OD;
   const t = (...args) => i18n.t(...args);
+  journal.observe(location.pathname.startsWith("/live_chat")
+    ? new URLSearchParams(location.search).get("is_popout") === "1" ? "popout" : "chat" : "watch");
 
   const MAX_ROWS_CAP = 2;
   const PANEL_PADDING = 24;    // matches #oshideck-root horizontal padding in content.css
@@ -131,6 +133,7 @@
     frozen = false;
     painted = null;
     journal.record({ kind: "note", what: "stepped-aside", reason: "input-not-rendered" });
+    journal.record({ kind: "panel", reason: "input-not-rendered", input: false });
   }
 
   const getScroller = () =>
@@ -468,7 +471,7 @@
     // three the moment you had saved seven of them yourself — a list with
     // holes punched in it wherever you happened to agree with it. The two
     // halves are two questions, and a card can answer both: 「手持ち」 is
-    // where it came from, 「プリセット」 is who else says it.
+    // where it came from, 「スタートデッキ」 is who else says it.
     //
     // Usable here, not merely held. A card of the same wording tied to
     // another channel cannot be played on this one, so counting it as owned
@@ -509,7 +512,7 @@
         // Any of them will do: none can be in the deck, or the words would
         // have been in it.
         const family = owned.get(key);
-        if (family) { offered.push({ ...family[0] }); continue; }
+        if (family) { offered.push({ ...store.presetMatch(family, channelId) }); continue; }
 
         // The id has to be the same on every render or the panel's signature
         // changes for nothing and it redraws forever; cardsFor hands out a
@@ -637,13 +640,15 @@
   // they were, because there was no way to ask whether this viewer could send
   // them; now there is, so this channel's are offered to a member and nobody
   // else's are offered to anyone.
-  const worthOffering = (mine, channelId, member) => (seen) =>
-    !mine.has(seen.key) &&
-    tokens.hasSubstance(seen.tokens) &&
-    // A card that fails when pressed is worse than no card. Being a member is
-    // what changed here: this channel's emoji used to be refused outright,
-    // because there was no way to ask.
-    !whyNotSendable(seen.tokens, channelId, member);
+  let drawBlocks = {};
+  const worthOffering = (mine, channelId, member) => (seen) => {
+    if (mine.has(seen.key)) { drawBlocks.owned += 1; return false; }
+    if (!tokens.hasSubstance(seen.tokens)) { drawBlocks.noSubstance += 1; return false; }
+    const why = whyNotSendable(seen.tokens, channelId, member);
+    if (why === "membership") { drawBlocks.membershipBlocked += 1; return false; }
+    if (why === "elsewhere") { drawBlocks.elsewhereBlocked += 1; return false; }
+    return true;
+  };
 
   function drawFromChat(deck, { channelId, member } = {}) {
     // Off wherever the rest of the panel is off. A drawn card is a card to
@@ -669,6 +674,7 @@
         whyNotSendable(drawn.card.tokens, channelId, member))) drawn = null;
     if (drawn) return drawn.card;
 
+    drawBlocks = { owned: 0, noSubstance: 0, membershipBlocked: 0, elsewhereBlocked: 0 };
     const seen = watcher.burst(worthOffering(mine, channelId, member));
     if (!seen) return null;
 
@@ -845,6 +851,8 @@
       ? whyNotSendable(card.tokens || [], here, member)
       : (card.locked ? (card.lapsed ? "membership" : "elsewhere") : "");
     if (why) {
+      journal.record({ kind: "play", status: "refused", reason: why, channelId: here,
+        card: journal.cardId(card.id), drawn: !!card.drawn });
       // The bar still says why — but on its own it was the only signal, and
       // it is nowhere near where the press happened.
       if (card.id) flashCard(card.id, "refused");
@@ -855,15 +863,23 @@
     // A click appends to the editor at once, but the send waits a beat for
     // YouTube to enable its button. A second click in that gap appended to the
     // same editor, and the first timer then sent both cards as one comment.
-    if (sending) return;
+    if (sending) {
+      journal.record({ kind: "play", status: "refused", reason: "busy", channelId: here });
+      return;
+    }
 
     const input = getChatInput();
-    if (!input) return showToast(t("toast.noInput"));
+    if (!input) {
+      journal.record({ kind: "play", status: "refused", reason: "no-input", channelId: here });
+      return showToast(t("toast.noInput"));
+    }
 
     const willSend = send || settingsCache.autoSend;
     sending = willSend;
 
     tokens.writeToInput(input, card.tokens || []);
+    journal.record({ kind: "play", status: "filled", channelId: here,
+      card: journal.cardId(card.id), drawn: !!card.drawn, autoSend: !!settingsCache.autoSend });
 
     // What leaves is the editor, not the card. ⇧＋click stages a reaction
     // without sending it, so an unusable one can already be sitting there and
@@ -871,6 +887,7 @@
     // comment was not.
     if (willSend && whyNotSendable(tokens.collectTokens(input), here, member)) {
       sending = false;
+      journal.record({ kind: "play", status: "refused", reason: "leftover", channelId: here });
       return showToast(t("toast.leftover"));
     }
     if (willSend) submitChat(() => { sending = false; });
@@ -886,11 +903,13 @@
       const button = getSendButton();
       if (button && !button.disabled && button.getAttribute("aria-disabled") !== "true") {
         button.click();
+        journal.record({ kind: "play", stage: "send", status: "clicked", channelId: getChannel()?.id });
         return done?.();
       }
       if (performance.now() - started < 800) return setTimeout(attempt, 50);
       log("Send button never became available.");
       journal.record({ kind: "error", what: "no-send-button" });
+      journal.record({ kind: "play", stage: "send", status: "timeout", channelId: getChannel()?.id });
       done?.();
     };
     setTimeout(attempt, 80);
@@ -986,7 +1005,12 @@
       const note = document.createElement("span");
       note.className = "od-target-detail";
       note.textContent = detail;
-      button.append(title, note);
+      const mark = scope === "channel" ? channelMark(barContext?.channel?.id, hue) : document.createElement("span");
+      if (scope === "global") {
+        mark.className = "od-dot od-dot-common";
+        mark.setAttribute("aria-hidden", "true");
+      }
+      button.append(mark, title, note);
       button.addEventListener("click", (event) => {
         event.preventDefault();
         event.stopPropagation();
@@ -1710,6 +1734,7 @@
       s.draw, s.hold, s.pace, s.language,
       inputIsPinned ? "pinned" : "",
       channel?.id || "", channel?.name || "", hue ?? "",
+      data.channelMeta?.[channel?.id]?.color ?? "",
       rootEl?.clientWidth || 0,
       poolOpen ? `pool:${poolTab}` : "deck", expanded ? "more" : "",
       scopeFilter.channel ? "channel" : "", scopeFilter.global ? "global" : "",
@@ -2040,10 +2065,7 @@
     if (channel?.id) {
       const channelName = channel.name || t("channel.this");
       const button = filter("channel", t("filter.channel", channelName));
-      const dot = document.createElement("span");
-      dot.className = "od-dot";
-      dot.setAttribute("aria-hidden", "true");
-      dot.style.setProperty("--od-scope-hue", hue);
+      const dot = channelMark(channel.id, hue);
       const name = document.createElement("span");
       name.className = "od-channel";
       name.textContent = channelName;
@@ -2074,6 +2096,14 @@
     fold.appendChild(svgIcon("chevron"));
     group.append(common, fold);
     return group;
+  }
+
+  // A channel's badge can be playful without changing its saved colour or
+  // the scope stripes. Match ids, including Nono's old channel, never names.
+  function channelMark(channelId, hue) {
+    const mark = globalThis.OshiDeck.channelMarks.create(channelId, hue, document, barContext?.color);
+    mark.className += " od-dot";
+    return mark;
   }
 
   function filteredDeck(deck) {
@@ -2301,6 +2331,7 @@
     const input = getChatInput();
     if (!input) {
       closeSaveMenu();
+      journal.record({ kind: "panel", reason: "input-not-rendered", input: false });
       // The chat input is there but collapsed: YouTube is showing Super Chat
       // over it. Staying put would draw the deck on top of that panel.
       if (rootEl && !rootEl.hidden) {
@@ -2324,7 +2355,10 @@
     rootEl.hidden = false;
 
     const data = await store.read();
-    if (!data) return shutdown();
+    if (!data) {
+      journal.record({ kind: "error", what: "storage-read", stage: "read" });
+      return shutdown();
+    }
     // Check after the await too: ＋ can be pressed while storage is being
     // read. Neither an in-flight redraw nor a queued timer may remove the
     // chosen source before the choice is made.
@@ -2333,6 +2367,8 @@
       closeSaveMenu();
     }
     settingsCache = data.settings;
+    journal.record(journal.snapshot(data, { framed: window.top !== window,
+      video: currentVideo(), width: rootEl.clientWidth, dpr: window.devicePixelRatio }));
     i18n.use(settingsCache.language);
     watcher.start(); // no-op once attached; retries while chat is still loading
 
@@ -2352,6 +2388,21 @@
     const hue = channel?.id
       ? data.channelMeta[channel.id]?.hue ?? store.defaultHue(channel.id)
       : null;
+    const color = channel?.id ? store.channelColor(channel.id, data.channelMeta[channel.id]) : null;
+    if (channel?.id) {
+      const meta = data.channelMeta[channel.id];
+      journal.record({ kind: "colour", channelId: channel.id, hue, color,
+        colourSource: store.neutralFromHex(meta?.color) && color ? "stored-neutral" : meta?.hue != null ? "stored-hue"
+          : color ? "representative-neutral" : Object.hasOwn(store.OSHI_HUES, channel.id) ? "representative-hue" : "automatic" });
+    }
+    if (color) {
+      rootEl.style.setProperty("--od-neutral", color);
+      rootEl.style.setProperty("--od-scope-chroma", "0");
+    } else {
+      rootEl.style.removeProperty("--od-neutral");
+      rootEl.style.removeProperty("--od-scope-chroma");
+    }
+    rootEl.toggleAttribute("data-neutral", !!color);
     const deck = buildDeck(data, channel?.id);
     if (filterChannel !== channel?.id) {
       filterChannel = channel?.id;
@@ -2390,6 +2441,16 @@
     // Only alongside your own deck. The pool is a place to choose from, not
     // somewhere to be handed things.
     const dealt = poolOpen ? null : offerFromChat(deck, channel);
+    const stats = !poolOpen && channel && data.settings.suggest && !dealt
+      ? { ...watcher.diagnostics(), ...drawBlocks } : {};
+    const member = membership();
+    journal.record({ kind: "draw", channelId: channel?.id, video, attached: watcher.attached,
+      membership: member === null ? "unknown" : member ? "yes" : "no",
+      reason: !channel ? "no-channel" : poolOpen ? "pool" : !data.settings.suggest ? "disabled"
+        : dealt ? "holding" : stats.ineligible ? "ineligible" : stats.belowShare ? "below-share"
+          : stats.belowMin ? "below-min" : "no-burst", ...stats,
+      card: dealt ? journal.cardId(dealt.id) : undefined,
+      hits: dealt?.hits, holdMs: store.tuning(data.settings, "hold"), paceMs: store.tuning(data.settings, "pace") });
     // A loan has no saved scope yet. Show it in the default view, rather
     // than claiming it belongs to either category while one is selected.
     const allScopes = scopeFilter.channel === scopeFilter.global;
@@ -2435,8 +2496,15 @@
       // you went to on purpose, and the way back out of it is its own button.
       const folded = !empty && !poolOpen && data.settings.folded;
       rootEl.toggleAttribute("data-folded", folded);
+      journal.record({ kind: "panel", channelId: channel?.id, video, mode: data.settings.mode,
+        reason: !channel ? "no-channel" : poolOpen ? "pool" : empty ? "empty" : folded ? "folded"
+          : !shown.length && !drawn ? "filter-empty" : "ready",
+        input: true, inputHasContent, inputIsPinned, width: rootEl.clientWidth,
+        shown: shown.length, mine: mine.length, offered: offered.length, waiting, empty, folded,
+        pool: poolOpen, poolTab, drawn: !!drawn,
+        filter: allScopes ? "all" : scopeFilter.channel ? "channel" : "global" });
 
-      barContext = { channel, hue, count: shown.length,
+      barContext = { channel, hue, color, count: shown.length,
                      mine: mine.length, offered: offered.length, waiting, empty, folded };
       barEl = buildBar(barContext);
       rootEl.appendChild(barEl);
@@ -2512,6 +2580,7 @@
 
   function shutdown() {
     if (stopped) return;
+    journal.record({ kind: "error", what: "stopped" });
     stopped = true;
     closeSaveMenu();
 

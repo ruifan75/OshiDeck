@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "シェリン・バーガンディ -Shellin Burgundy- 【にじさんじ】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCHBhnG2G-qN0JrrWmMO2FTA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"な、なんだってー！？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"な"},{"type":"text","value":"…"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"すごく待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"どんまい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ファイト！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あー"}], "scope": "channel" }
+  ]
+}

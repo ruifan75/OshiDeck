@@ -1,0 +1,21 @@
+{
+  "format": 2,
+  "name": "翠森アトリ Atori Ch.",
+  "note": "歌枠2配信・通常13配信のチャットから13枚",
+  "channel": "UCIQsiulMw70eRex4cXRAx2A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIQsiulMw70eRex4cXRAx2A/CvziZpWhLvWo_9EP_sCW0Ak","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/hsNHkJ3kh5E4mOFgYUJLwovwXXVHIKXNwGe2FFv-WS2Pfw_2evqHMbJs5UwGw_Pp9fTm6GfeWKE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIQsiulMw70eRex4cXRAx2A/CvziZpWhLvWo_9EP_sCW0Ak","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/hsNHkJ3kh5E4mOFgYUJLwovwXXVHIKXNwGe2FFv-WS2Pfw_2evqHMbJs5UwGw_Pp9fTm6GfeWKE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIQsiulMw70eRex4cXRAx2A/CvziZpWhLvWo_9EP_sCW0Ak","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/hsNHkJ3kh5E4mOFgYUJLwovwXXVHIKXNwGe2FFv-WS2Pfw_2evqHMbJs5UwGw_Pp9fTm6GfeWKE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIQsiulMw70eRex4cXRAx2A/CvziZpWhLvWo_9EP_sCW0Ak","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/hsNHkJ3kh5E4mOFgYUJLwovwXXVHIKXNwGe2FFv-WS2Pfw_2evqHMbJs5UwGw_Pp9fTm6GfeWKE=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"山田です"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌲"},{"type":"text","value":"🎶"},{"type":"text","value":"🕰"},{"type":"text","value":"🎶"},{"type":"text","value":"🌲"},{"type":"text","value":"🎶"},{"type":"text","value":"🕰"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIQsiulMw70eRex4cXRAx2A/CvziZrWgLvWo_9EP_sCW0Ak","alt":"おっっ","sharedTooltipText":":_おっっ:","src":"https://yt3.ggpht.com/BJc9vhcLvN-SGPdhAoQEK5EsQhIzxkBBg_1byGJx6DMwJldoJsd1XR19zT_tHI_bf341Kd_RqrY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"へーじょー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIQsiulMw70eRex4cXRAx2A/ihZVaYCdMtr27OsP0e_OkQk","alt":"草ｗｗ","sharedTooltipText":":_草ｗｗ:","src":"https://yt3.ggpht.com/YNAHKTBvZDSsSC4Xmc3Yv4lECpwzcI7hc-6yHRaoGcBNQrdPpjPgycb4MJHTVgI6rJCY_dFDLPg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"✊"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ﾔｰ"}], "scope": "channel" }
+  ]
+}

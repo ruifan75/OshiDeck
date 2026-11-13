@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "夜見れな/yorumi rena【にじさんじ所属】",
-  "note": "過去13配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
   "channel": "UCL34fAoFim9oHLbVzMKFavQ",
   "cards": [
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"こん"},{"type":"youtubeEmoji","emojiId":"UCL34fAoFim9oHLbVzMKFavQ/CdCTXqWmOcL2-QPG2aDIDg","alt":"れーな","sharedTooltipText":":_れーな:","src":"https://yt3.ggpht.com/IrdF5HDt-u0RJchnQaWfDK3jDjnSgqWABKw6v2-HD03gf2aOaELV7GPUmRJp09Wmgy75svTFQw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんれーなー"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"おつか"},{"type":"youtubeEmoji","emojiId":"UCL34fAoFim9oHLbVzMKFavQ/CdCTXqWmOcL2-QPG2aDIDg","alt":"れーな","sharedTooltipText":":_れーな:","src":"https://yt3.ggpht.com/IrdF5HDt-u0RJchnQaWfDK3jDjnSgqWABKw6v2-HD03gf2aOaELV7GPUmRJp09Wmgy75svTFQw=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかれーなー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こん"},{"type":"youtubeEmoji","emojiId":"UCL34fAoFim9oHLbVzMKFavQ/CdCTXqWmOcL2-QPG2aDIDg","alt":"れーな","sharedTooltipText":":_れーな:","src":"https://yt3.ggpht.com/IrdF5HDt-u0RJchnQaWfDK3jDjnSgqWABKw6v2-HD03gf2aOaELV7GPUmRJp09Wmgy75svTFQw=w48-h48-c-k-nd"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCL34fAoFim9oHLbVzMKFavQ/gF1GXZiUDcqQ-wPouKD4Cw","alt":"ないす","sharedTooltipText":":_ないす:","src":"https://yt3.ggpht.com/0yjhSY_Bvnbu1gwmqZpksw4QNGD9hBXfJFyxlEA_rLddwP3o0hALBqu3x45MaLdgdRhNgNUC=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCL34fAoFim9oHLbVzMKFavQ/vDVnXZWECZW7_AP_5qHwCA","alt":"よるみさんん","sharedTooltipText":":_よるみさんん:","src":"https://yt3.ggpht.com/kBZ5z2PE4p4KpkgBDDyNeppafaurYpRyJYQbqytbL9HR8z6pLec4xdZ3Vnm5Gpb9Dx5VVJbNg4Y=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCL34fAoFim9oHLbVzMKFavQ/UzepXaWKOM2o-QOx5ZfwCw","alt":"贈り物","sharedTooltipText":":_贈り物:","src":"https://yt3.ggpht.com/ck1lfuET-JkmRmu7jHwBPYgUbHX85pgcNbPWAbBW5vO5hW5jL8qRTkY3-eM8VseQtYaxMxYccQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCL34fAoFim9oHLbVzMKFavQ/23hsXbr4L4mP-QORu7OoBA","alt":"いわい","sharedTooltipText":":_いわい:","src":"https://yt3.ggpht.com/P-9Arivc9oDXzuVx6od1-8NQNLse8WHr6ER2-aXrby8LEvgrwHvUs39b0anM7rhgHCMVIaiihWE=w48-h48-c-k-nd"}], "scope": "channel" }
   ]
 }

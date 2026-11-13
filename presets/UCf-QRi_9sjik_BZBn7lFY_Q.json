@@ -1,0 +1,20 @@
+{
+  "format": 2,
+  "name": "紙束ねるこ / Neruko Kamitaba",
+  "note": "歌枠2配信・通常13配信のチャットから12枚",
+  "channel": "UCf-QRi_9sjik_BZBn7lFY_Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"ねる！ねる！ねる！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"てん！てん！てん！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ちょう！ちょう！ちょう！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ようねる！ようねる！ようねる！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"よう"},{"type":"youtubeEmoji","emojiId":"UCf-QRi_9sjik_BZBn7lFY_Q/LVbsaKGVEc_f7OsPoczM8QU","alt":"neruko","sharedTooltipText":":_neruko:","src":"https://yt3.ggpht.com/T6ACeDUTqpKdxttmXv8HdWUdhfYyOzEfTFuOYWl4_ULWLkrntN69w5O7sr8IoX3-3G9cNWtpNg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"またねる〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"また"},{"type":"youtubeEmoji","emojiId":"UCf-QRi_9sjik_BZBn7lFY_Q/LVbsaKGVEc_f7OsPoczM8QU","alt":"neruko","sharedTooltipText":":_neruko:","src":"https://yt3.ggpht.com/T6ACeDUTqpKdxttmXv8HdWUdhfYyOzEfTFuOYWl4_ULWLkrntN69w5O7sr8IoX3-3G9cNWtpNg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCf-QRi_9sjik_BZBn7lFY_Q/LVbsaKGVEc_f7OsPoczM8QU","alt":"neruko","sharedTooltipText":":_neruko:","src":"https://yt3.ggpht.com/T6ACeDUTqpKdxttmXv8HdWUdhfYyOzEfTFuOYWl4_ULWLkrntN69w5O7sr8IoX3-3G9cNWtpNg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCf-QRi_9sjik_BZBn7lFY_Q/LVbsaKGVEc_f7OsPoczM8QU","alt":"neruko","sharedTooltipText":":_neruko:","src":"https://yt3.ggpht.com/T6ACeDUTqpKdxttmXv8HdWUdhfYyOzEfTFuOYWl4_ULWLkrntN69w5O7sr8IoX3-3G9cNWtpNg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCf-QRi_9sjik_BZBn7lFY_Q/LVbsaKGVEc_f7OsPoczM8QU","alt":"neruko","sharedTooltipText":":_neruko:","src":"https://yt3.ggpht.com/T6ACeDUTqpKdxttmXv8HdWUdhfYyOzEfTFuOYWl4_ULWLkrntN69w5O7sr8IoX3-3G9cNWtpNg=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

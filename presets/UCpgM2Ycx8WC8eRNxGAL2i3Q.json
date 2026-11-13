@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "kototo!",
-  "note": "過去14配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCpgM2Ycx8WC8eRNxGAL2i3Q",
   "cards": [
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCpgM2Ycx8WC8eRNxGAL2i3Q/1ND9abmmMKmn5t0P7qa32Qo","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/jIXe7SWWe26BnMDlW-p5TNi6hWx0MC9oI6R0c-ETV2iGtHHWVV-xGNVYsbnXrnEHImgBnXot=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpgM2Ycx8WC8eRNxGAL2i3Q/1ND9abmmMKmn5t0P7qa32Qo","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/jIXe7SWWe26BnMDlW-p5TNi6hWx0MC9oI6R0c-ETV2iGtHHWVV-xGNVYsbnXrnEHImgBnXot=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpgM2Ycx8WC8eRNxGAL2i3Q/1ND9abmmMKmn5t0P7qa32Qo","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/jIXe7SWWe26BnMDlW-p5TNi6hWx0MC9oI6R0c-ETV2iGtHHWVV-xGNVYsbnXrnEHImgBnXot=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"⁉"},{"type":"text","value":"🎵"},{"type":"text","value":"🧪"},{"type":"text","value":"👁‍🗨"},{"type":"text","value":"⁉"},{"type":"text","value":"🎵"},{"type":"text","value":"🧪"},{"type":"text","value":"👁‍🗨"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCpgM2Ycx8WC8eRNxGAL2i3Q/1ND9abmmMKmn5t0P7qa32Qo","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/jIXe7SWWe26BnMDlW-p5TNi6hWx0MC9oI6R0c-ETV2iGtHHWVV-xGNVYsbnXrnEHImgBnXot=w48-h48-c-k-nd"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こん"},{"type":"youtubeEmoji","emojiId":"UCpgM2Ycx8WC8eRNxGAL2i3Q/1ND9afynMKmn5t0P7qa32Qo","alt":"koto","sharedTooltipText":":_koto:","src":"https://yt3.ggpht.com/TNYKvaznQgVbWzl5Af2yzPtpZab3QJD4C5eRsfAJpsTDtnDVcERWiYA58WDzM11nMthAFfFkeg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpgM2Ycx8WC8eRNxGAL2i3Q/TQ3_aZ7GGrqE7OsPybH80AQ","alt":"bikkuri","sharedTooltipText":":_bikkuri:","src":"https://yt3.ggpht.com/Qj4JaorcRr4wHT8N7DygAyKs_tdXTLXgYCEWw0y88FXlhWCyO-Np8aKuqJL02X3E7ZPsSG7FIzg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpgM2Ycx8WC8eRNxGAL2i3Q/TQ3_acXGGrqE7OsPybH80AQ","alt":"hatena","sharedTooltipText":":_hatena:","src":"https://yt3.ggpht.com/qx5eJUl6C13Ysv4OoM7T-dywhaWu24Q-aekHkqUYQjw4WuWN7GzvH6zJA5230fWM1rV20AGab14=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"あっ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おつ"},{"type":"youtubeEmoji","emojiId":"UCpgM2Ycx8WC8eRNxGAL2i3Q/1ND9aaGoMKmn5t0P7qa32Qo","alt":"toi","sharedTooltipText":":_toi:","src":"https://yt3.ggpht.com/8s2WZ6AudiOZRfxbIyd19bejIdH-NlaSa1C4yXiBekgIM-BjLl1YekO9_wDH7bk759MobZ52TQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpgM2Ycx8WC8eRNxGAL2i3Q/TQ3_aZ7GGrqE7OsPybH80AQ","alt":"bikkuri","sharedTooltipText":":_bikkuri:","src":"https://yt3.ggpht.com/Qj4JaorcRr4wHT8N7DygAyKs_tdXTLXgYCEWw0y88FXlhWCyO-Np8aKuqJL02X3E7ZPsSG7FIzg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpgM2Ycx8WC8eRNxGAL2i3Q/TQ3_acXGGrqE7OsPybH80AQ","alt":"hatena","sharedTooltipText":":_hatena:","src":"https://yt3.ggpht.com/qx5eJUl6C13Ysv4OoM7T-dywhaWu24Q-aekHkqUYQjw4WuWN7GzvH6zJA5230fWM1rV20AGab14=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"こんコト〜"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんコト〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCpgM2Ycx8WC8eRNxGAL2i3Q/TQ3_aZ7GGrqE7OsPybH80AQ","alt":"bikkuri","sharedTooltipText":":_bikkuri:","src":"https://yt3.ggpht.com/Qj4JaorcRr4wHT8N7DygAyKs_tdXTLXgYCEWw0y88FXlhWCyO-Np8aKuqJL02X3E7ZPsSG7FIzg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCpgM2Ycx8WC8eRNxGAL2i3Q/TQ3_acXGGrqE7OsPybH80AQ","alt":"hatena","sharedTooltipText":":_hatena:","src":"https://yt3.ggpht.com/qx5eJUl6C13Ysv4OoM7T-dywhaWu24Q-aekHkqUYQjw4WuWN7GzvH6zJA5230fWM1rV20AGab14=w48-h48-c-k-nd"}], "scope": "channel" }
   ]
 }

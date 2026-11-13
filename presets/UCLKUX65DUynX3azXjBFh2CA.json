@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Aozora Furia Ch. 青空フリア",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCLKUX65DUynX3azXjBFh2CA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"noot noot"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCLKUX65DUynX3azXjBFh2CA/2M68ZaTEG6aI_9EP-u2j0AM","alt":"furiNoot","sharedTooltipText":":_furiNoot:","src":"https://yt3.ggpht.com/DouPNIsw6BpOQtfLL8W7yUi1P-9wrMoYQni90c4dKqdX4Cuew7O_CJAomzL8RyQeH-bNleQaFWg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi furi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"AHAHAHAHAHAHHA"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Otsu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/egJ1XufTKYfegwOo57ewAg","alt":"shelterin","sharedTooltipText":":shelterin:","src":"https://yt3.ggpht.com/gjC5x98J4BoVSEPfFJaoLtc4tSBGSEdIlfL2FV4iJG9uGNykDP9oJC_QxAuBTJy6dakPxVeC=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCLKUX65DUynX3azXjBFh2CA/OXCqZbmoFPCf_9EPiM2oyAs","alt":"furiPat","sharedTooltipText":":_furiPat:","src":"https://yt3.ggpht.com/i5qcYQkAhcQJLWYcE7EDDdLcE1K5PR2aZcwcpgfscY_c36ynZgza5xIcEJ5g2-ZnDODWDLNjEA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ohhh"}], "scope": "channel" }
+  ]
+}

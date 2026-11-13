@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ヤマト イオリ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCyb-cllCkMREr9de-hoiDrg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはいおー"},{"type":"text","value":"🍄"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おしい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"なるほど"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCyb-cllCkMREr9de-hoiDrg/49gXav3rFpLA7OsPicDiuQg","alt":"がんばれ","sharedTooltipText":":_がんばれ:","src":"https://yt3.ggpht.com/K5B-a_5zCD3L5xw9rhEpTQjNODhOeNeDdEVDxJ1yIzGgzr9nlS6LbRwH8qz9IAZAOkZnpmAH4g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyb-cllCkMREr9de-hoiDrg/49gXav3rFpLA7OsPicDiuQg","alt":"がんばれ","sharedTooltipText":":_がんばれ:","src":"https://yt3.ggpht.com/K5B-a_5zCD3L5xw9rhEpTQjNODhOeNeDdEVDxJ1yIzGgzr9nlS6LbRwH8qz9IAZAOkZnpmAH4g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyb-cllCkMREr9de-hoiDrg/49gXav3rFpLA7OsPicDiuQg","alt":"がんばれ","sharedTooltipText":":_がんばれ:","src":"https://yt3.ggpht.com/K5B-a_5zCD3L5xw9rhEpTQjNODhOeNeDdEVDxJ1yIzGgzr9nlS6LbRwH8qz9IAZAOkZnpmAH4g=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Kattarina Qutie Ch. ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCMmy_EmxnYQ8aar8fNZrumw",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCMmy_EmxnYQ8aar8fNZrumw/1oQbZqnFEubxi9oPiKi4yAM","alt":"KattaKattaHeart","sharedTooltipText":":_KattaKattaHeart:","src":"https://yt3.ggpht.com/3ShAD95xzRMuT1wz1-ks9OjVsR0KQf98v8IS1EaeI-qVf7_TSWn_5yPc-R4Akq3JEfsLE9TPew=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCMmy_EmxnYQ8aar8fNZrumw/1oQbZqnFEubxi9oPiKi4yAM","alt":"KattaKattaHeart","sharedTooltipText":":_KattaKattaHeart:","src":"https://yt3.ggpht.com/3ShAD95xzRMuT1wz1-ks9OjVsR0KQf98v8IS1EaeI-qVf7_TSWn_5yPc-R4Akq3JEfsLE9TPew=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCMmy_EmxnYQ8aar8fNZrumw/1oQbZqnFEubxi9oPiKi4yAM","alt":"KattaKattaHeart","sharedTooltipText":":_KattaKattaHeart:","src":"https://yt3.ggpht.com/3ShAD95xzRMuT1wz1-ks9OjVsR0KQf98v8IS1EaeI-qVf7_TSWn_5yPc-R4Akq3JEfsLE9TPew=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCMmy_EmxnYQ8aar8fNZrumw/crxbZPPYFNywx_AP5_C5qA4","alt":"KattaKattaLaugh","sharedTooltipText":":_KattaKattaLaugh:","src":"https://yt3.ggpht.com/Wpnx7yDtCd9H3ciTVdVUBKKqebHHDEdEllc1Oerz4IRPNS2tQLVbXqI2i7HzER-NG67sio2BeQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCMmy_EmxnYQ8aar8fNZrumw/crxbZMjYFNywx_AP5_C5qA4","alt":"KattaKattaWave","sharedTooltipText":":_KattaKattaWave:","src":"https://yt3.ggpht.com/XOH5rLD7LfNgzreVkxtmKIcCoij1UaMHrm1J2x3BqaQlgvh-3q3as_JPv7zk_l-xp8engxPvGA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCMmy_EmxnYQ8aar8fNZrumw/crxbZOTcFNywx_AP5_C5qA4","alt":"KattaKattaHype","sharedTooltipText":":_KattaKattaHype:","src":"https://yt3.ggpht.com/8R9cOeBE4Qil0RpCBVcfvoQwatSRgyObMM3DcpvWjGaiosCCZb2whhSUCMdcolUlWauaHJAV-fs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCMmy_EmxnYQ8aar8fNZrumw/crxbZOTcFNywx_AP5_C5qA4","alt":"KattaKattaHype","sharedTooltipText":":_KattaKattaHype:","src":"https://yt3.ggpht.com/8R9cOeBE4Qil0RpCBVcfvoQwatSRgyObMM3DcpvWjGaiosCCZb2whhSUCMdcolUlWauaHJAV-fs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCMmy_EmxnYQ8aar8fNZrumw/crxbZOTcFNywx_AP5_C5qA4","alt":"KattaKattaHype","sharedTooltipText":":_KattaKattaHype:","src":"https://yt3.ggpht.com/8R9cOeBE4Qil0RpCBVcfvoQwatSRgyObMM3DcpvWjGaiosCCZb2whhSUCMdcolUlWauaHJAV-fs=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCMmy_EmxnYQ8aar8fNZrumw/UDY-ZqreJoy16dsPkPGMSA","alt":"KattaKattaSeth","sharedTooltipText":":_KattaKattaSeth:","src":"https://yt3.ggpht.com/SXtaVVssteoYifjPjChZgLKL9iBs9dNtU3f5xAqX2n1TdPdzd9sCpTThp8sBlubd-tmNw-zW=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👀"}], "scope": "channel" }
+  ]
+}

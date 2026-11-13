@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "百々目鬼あくる / CLOVERFILMS",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCa9FvwOh7_72Px94HRnR8xw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんあくるー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつあくる"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCa9FvwOh7_72Px94HRnR8xw/o3aRZa6zBL2k_9EPkNS16Ac","alt":"応援スタンプ","sharedTooltipText":":_応援スタンプ:","src":"https://yt3.ggpht.com/bfErbV1OnCe4IuNIcjc7weChkq6wMRhHt0B8RrwJGZAV9NfwzWLt9d4qQPklJKvxut-RJz-6A8A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCa9FvwOh7_72Px94HRnR8xw/o3aRZa6zBL2k_9EPkNS16Ac","alt":"応援スタンプ","sharedTooltipText":":_応援スタンプ:","src":"https://yt3.ggpht.com/bfErbV1OnCe4IuNIcjc7weChkq6wMRhHt0B8RrwJGZAV9NfwzWLt9d4qQPklJKvxut-RJz-6A8A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCa9FvwOh7_72Px94HRnR8xw/o3aRZa6zBL2k_9EPkNS16Ac","alt":"応援スタンプ","sharedTooltipText":":_応援スタンプ:","src":"https://yt3.ggpht.com/bfErbV1OnCe4IuNIcjc7weChkq6wMRhHt0B8RrwJGZAV9NfwzWLt9d4qQPklJKvxut-RJz-6A8A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCa9FvwOh7_72Px94HRnR8xw/o3aRZa6zBL2k_9EPkNS16Ac","alt":"応援スタンプ","sharedTooltipText":":_応援スタンプ:","src":"https://yt3.ggpht.com/bfErbV1OnCe4IuNIcjc7weChkq6wMRhHt0B8RrwJGZAV9NfwzWLt9d4qQPklJKvxut-RJz-6A8A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こん"},{"type":"youtubeEmoji","emojiId":"UCa9FvwOh7_72Px94HRnR8xw/rwUeY7zQB8z08gSVuZz4Cg","alt":"あくるのあ","sharedTooltipText":":_あくるのあ:","src":"https://yt3.ggpht.com/5poBGND4ZWStDkyojiDm2ugxmrDP-cU_I7qifXqMULYplCxqa0DRo1R2WCE705VRGZlPXEI1Gg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCa9FvwOh7_72Px94HRnR8xw/rwUeY6XRB8z08gSVuZz4Cg","alt":"あくるのく","sharedTooltipText":":_あくるのく:","src":"https://yt3.ggpht.com/gnoTU_hLpeJh4bgJ_Yc2tKrzVNj1taKtjBHgIvNAPCAxIeL-kNdKoJ0IHdwOU7hNRxRgGEjfR6o=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCa9FvwOh7_72Px94HRnR8xw/rwUeY93RB8z08gSVuZz4Cg","alt":"あくるのる","sharedTooltipText":":_あくるのる:","src":"https://yt3.ggpht.com/w1DqMjNlBnmXYS2fNOHKEzb5YiGU4BCDTgx6_QZcx6rpc8B83qba6vEXCTuNNrVOkTkqznTluQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" }
+  ]
+}

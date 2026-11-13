@@ -1,0 +1,17 @@
+{
+  "format": 2,
+  "name": "Moscowmule Station",
+  "note": "歌枠0配信・通常5配信のチャットから9枚",
+  "channel": "UCX7WYPXASkYUm2GyomLllIg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様です！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかれさまでしたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れさまでした"}], "scope": "channel" }
+  ]
+}

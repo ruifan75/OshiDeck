@@ -1,0 +1,19 @@
+{
+  "format": 2,
+  "name": "鬼ノめる / Meru Onino",
+  "note": "歌枠2配信・通常13配信のチャットから11枚",
+  "channel": "UC2BJwSA_iewqrMHX9rrO59g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"❌"},{"type":"text","value":"⛓"},{"type":"text","value":"🎶"},{"type":"text","value":"❌"},{"type":"text","value":"⛓"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんめる～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんめる〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつめる～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつめる〜"}], "scope": "channel" }
+  ]
+}

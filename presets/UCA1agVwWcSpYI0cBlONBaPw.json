@@ -1,0 +1,14 @@
+{
+  "format": 2,
+  "name": "しののめ",
+  "note": "歌枠0配信・通常13配信のチャットから6枚",
+  "channel": "UCA1agVwWcSpYI0cBlONBaPw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"笑"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわー！"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "花京院ちえり / Kakyoin Chieri",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCP9ZgeIJ3Ri9En69R0kJc9Q",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCP9ZgeIJ3Ri9En69R0kJc9Q/xW-2Y4GjON6P_9EP26ilsAs","alt":"hurihuri","sharedTooltipText":":_hurihuri:","src":"https://yt3.ggpht.com/R57B6xYWoizcHGRKnUZp54i_f4mr4rc7mGWrdoGmzVyFvwt6_UwtE33j8Bx1O_f4UZPEp6BZ1Bs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCP9ZgeIJ3Ri9En69R0kJc9Q/xW-2Y4GjON6P_9EP26ilsAs","alt":"hurihuri","sharedTooltipText":":_hurihuri:","src":"https://yt3.ggpht.com/R57B6xYWoizcHGRKnUZp54i_f4mr4rc7mGWrdoGmzVyFvwt6_UwtE33j8Bx1O_f4UZPEp6BZ1Bs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCP9ZgeIJ3Ri9En69R0kJc9Q/xW-2Y4GjON6P_9EP26ilsAs","alt":"hurihuri","sharedTooltipText":":_hurihuri:","src":"https://yt3.ggpht.com/R57B6xYWoizcHGRKnUZp54i_f4mr4rc7mGWrdoGmzVyFvwt6_UwtE33j8Bx1O_f4UZPEp6BZ1Bs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCP9ZgeIJ3Ri9En69R0kJc9Q/xW-2Y4GjON6P_9EP26ilsAs","alt":"hurihuri","sharedTooltipText":":_hurihuri:","src":"https://yt3.ggpht.com/R57B6xYWoizcHGRKnUZp54i_f4mr4rc7mGWrdoGmzVyFvwt6_UwtE33j8Bx1O_f4UZPEp6BZ1Bs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCP9ZgeIJ3Ri9En69R0kJc9Q/xW-2Y4GjON6P_9EP26ilsAs","alt":"hurihuri","sharedTooltipText":":_hurihuri:","src":"https://yt3.ggpht.com/R57B6xYWoizcHGRKnUZp54i_f4mr4rc7mGWrdoGmzVyFvwt6_UwtE33j8Bx1O_f4UZPEp6BZ1Bs=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちぇりー"},{"type":"text","value":"🍒"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかりーんでした"},{"type":"text","value":"🍒"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"今日もちえりちゃんはかわいいなぁ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" }
+  ]
+}

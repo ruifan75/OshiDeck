@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Mako Sameshima / 鮫島メイコ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCqVwRGYcVavZ49rGmPB1DKA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCqVwRGYcVavZ49rGmPB1DKA/n67sZLmEDqSQ_9EP8oKmkAg","alt":"makoCheer","sharedTooltipText":":_makoCheer:","src":"https://yt3.ggpht.com/DyMHNsEgwAFAIrIZ5m3R5xvYF0ILOdm9pq0cy2i4ZGkfaIY1G-amVPzHa8BZARt9EZhrvaJr=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCqVwRGYcVavZ49rGmPB1DKA/n67sZLmEDqSQ_9EP8oKmkAg","alt":"makoCheer","sharedTooltipText":":_makoCheer:","src":"https://yt3.ggpht.com/DyMHNsEgwAFAIrIZ5m3R5xvYF0ILOdm9pq0cy2i4ZGkfaIY1G-amVPzHa8BZARt9EZhrvaJr=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCqVwRGYcVavZ49rGmPB1DKA/n67sZLmEDqSQ_9EP8oKmkAg","alt":"makoCheer","sharedTooltipText":":_makoCheer:","src":"https://yt3.ggpht.com/DyMHNsEgwAFAIrIZ5m3R5xvYF0ILOdm9pq0cy2i4ZGkfaIY1G-amVPzHa8BZARt9EZhrvaJr=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCqVwRGYcVavZ49rGmPB1DKA/n67sZMCDDqSQ_9EP8oKmkAg","alt":"makoHeart","sharedTooltipText":":_makoHeart:","src":"https://yt3.ggpht.com/VnedfWke9nup2BFUNcxrrNR6Su4IUIv-GDErO05r-2L8iusK--nIq4IV-w_Y3XCGDnx119xq-w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCqVwRGYcVavZ49rGmPB1DKA/n67sZMCDDqSQ_9EP8oKmkAg","alt":"makoHeart","sharedTooltipText":":_makoHeart:","src":"https://yt3.ggpht.com/VnedfWke9nup2BFUNcxrrNR6Su4IUIv-GDErO05r-2L8iusK--nIq4IV-w_Y3XCGDnx119xq-w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCqVwRGYcVavZ49rGmPB1DKA/n67sZMCDDqSQ_9EP8oKmkAg","alt":"makoHeart","sharedTooltipText":":_makoHeart:","src":"https://yt3.ggpht.com/VnedfWke9nup2BFUNcxrrNR6Su4IUIv-GDErO05r-2L8iusK--nIq4IV-w_Y3XCGDnx119xq-w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"byeeeeeeeee"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCqVwRGYcVavZ49rGmPB1DKA/m2_yZKvoEfiG_9EPo_G7gAs","alt":"makoPain","sharedTooltipText":":_makoPain:","src":"https://yt3.ggpht.com/34L0cygh7MZ246t47boJZgaIjmsO-rXea7tgM_0DcV4yW1HpckOd0SQwbssc8ItiHZ8pTttz=w48-h48-c-k-nd"},{"type":"text","value":" "}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "狸白めるも / Mamishiro Merumo",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCuopa0aa9XTQziWB1MiQlWA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんるもー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"もっと！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"GG"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつるも"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんるも～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" }
+  ]
+}

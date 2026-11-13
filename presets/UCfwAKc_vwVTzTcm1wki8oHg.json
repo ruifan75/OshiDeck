@@ -1,0 +1,11 @@
+{
+  "format": 2,
+  "name": "みはみなちゃんねる -Miharu & Minami- 【AsobiLive】",
+  "note": "歌枠2配信・通常13配信のチャットから3枚",
+  "channel": "UCfwAKc_vwVTzTcm1wki8oHg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"そうですか"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"グアテマラで"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hola"}], "scope": "channel" }
+  ]
+}

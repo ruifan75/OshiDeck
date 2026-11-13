@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "赤髪のとものゲーム実況チャンネル!!",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCEIMvzf3R9d3_2A3IAajvHg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCEIMvzf3R9d3_2A3IAajvHg/pGuwZYuVBe-B_9EP1eOMmAU","alt":"akatomoKusa","sharedTooltipText":":_akatomoKusa:","src":"https://yt3.ggpht.com/x-x6eiuM72FVTg7oEQUM7OyknokWmZ1RksyuUFtccculMo5WpGsn01Qr5W9gF0Lu8OWTiFto=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCEIMvzf3R9d3_2A3IAajvHg/pGuwZYuVBe-B_9EP1eOMmAU","alt":"akatomoKusa","sharedTooltipText":":_akatomoKusa:","src":"https://yt3.ggpht.com/x-x6eiuM72FVTg7oEQUM7OyknokWmZ1RksyuUFtccculMo5WpGsn01Qr5W9gF0Lu8OWTiFto=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCEIMvzf3R9d3_2A3IAajvHg/svOEYo_7EIe_8wSNq5OoDw","alt":"akatomoNise","sharedTooltipText":":_akatomoNise:","src":"https://yt3.ggpht.com/LMwsn85NkLrj97ng0nzEQrlIiiKtsEEps6wPT0WZrkkK-LKkseMh5kBtiZY_K_TJgue-fWw5=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCEIMvzf3R9d3_2A3IAajvHg/svOEYo_7EIe_8wSNq5OoDw","alt":"akatomoNise","sharedTooltipText":":_akatomoNise:","src":"https://yt3.ggpht.com/LMwsn85NkLrj97ng0nzEQrlIiiKtsEEps6wPT0WZrkkK-LKkseMh5kBtiZY_K_TJgue-fWw5=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー"}], "scope": "channel" }
+  ]
+}

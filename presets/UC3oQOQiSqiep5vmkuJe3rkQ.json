@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "さくま りる / Sakuma Riru",
+  "note": "歌枠0配信・通常10配信のチャットから10枚",
+  "channel": "UC3oQOQiSqiep5vmkuJe3rkQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC3oQOQiSqiep5vmkuJe3rkQ/g_mFZe_CHcqo_9EPk6-qyAk","alt":"hello","sharedTooltipText":":_hello:","src":"https://yt3.ggpht.com/WkKqsrLG5NLVZJf4ZDJq8e0JnX1ISfNmaNrvrWIDDuW6euKi9Cxj7s3Cglp7a2O7t0d_WPWGyw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC3oQOQiSqiep5vmkuJe3rkQ/u_mFZZf9Fsqo_9EPk6-qyAk","alt":"nice","sharedTooltipText":":_nice:","src":"https://yt3.ggpht.com/DHL-nRwtE6a7vqnd8yLGZXlcnQ5kejW3Rie5Vxr160RJMngFKIccEO0abnGVclK3AXW7wzWJzzs=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC3oQOQiSqiep5vmkuJe3rkQ/u_mFZZf9Fsqo_9EPk6-qyAk","alt":"nice","sharedTooltipText":":_nice:","src":"https://yt3.ggpht.com/DHL-nRwtE6a7vqnd8yLGZXlcnQ5kejW3Rie5Vxr160RJMngFKIccEO0abnGVclK3AXW7wzWJzzs=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC3oQOQiSqiep5vmkuJe3rkQ/g_mFZePGHcqo_9EPk6-qyAk","alt":"lol","sharedTooltipText":":_lol:","src":"https://yt3.ggpht.com/B47rIFD2q-AbfJsyRmyJ2KOHFs0wzXyUXrpppFmQ3By6o6PWhwBL8cKQSKXeYzcvyZuvJxXk0Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"},{"type":"youtubeEmoji","emojiId":"UC3oQOQiSqiep5vmkuJe3rkQ/g_mFZe_CHcqo_9EPk6-qyAk","alt":"hello","sharedTooltipText":":_hello:","src":"https://yt3.ggpht.com/WkKqsrLG5NLVZJf4ZDJq8e0JnX1ISfNmaNrvrWIDDuW6euKi9Cxj7s3Cglp7a2O7t0d_WPWGyw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" }
+  ]
+}

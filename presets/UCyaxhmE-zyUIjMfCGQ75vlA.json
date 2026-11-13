@@ -1,0 +1,12 @@
+{
+  "format": 2,
+  "name": "ヘスティアハピネス HESTIA HAPPINESS",
+  "note": "歌枠0配信・通常13配信のチャットから4枚",
+  "channel": "UCyaxhmE-zyUIjMfCGQ75vlA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCyaxhmE-zyUIjMfCGQ75vlA/nUV_ab-_EKT4rtoPmpm3sQM","alt":"こんはぴ","sharedTooltipText":":_こんはぴ:","src":"https://yt3.ggpht.com/9CprTiRyF_E1lipwkdrxaIA5uHD4Duae7vNK9oADcK-sxGcDkT-P4x66SCC6Z8vSj8VA-IlWAo0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyaxhmE-zyUIjMfCGQ75vlA/nUV_ab-_EKT4rtoPmpm3sQM","alt":"こんはぴ","sharedTooltipText":":_こんはぴ:","src":"https://yt3.ggpht.com/9CprTiRyF_E1lipwkdrxaIA5uHD4Duae7vNK9oADcK-sxGcDkT-P4x66SCC6Z8vSj8VA-IlWAo0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyaxhmE-zyUIjMfCGQ75vlA/nUV_ab-_EKT4rtoPmpm3sQM","alt":"こんはぴ","sharedTooltipText":":_こんはぴ:","src":"https://yt3.ggpht.com/9CprTiRyF_E1lipwkdrxaIA5uHD4Duae7vNK9oADcK-sxGcDkT-P4x66SCC6Z8vSj8VA-IlWAo0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんはぴ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCyaxhmE-zyUIjMfCGQ75vlA/nUV_adLBEKT4rtoPmpm3sQM","alt":"わらう","sharedTooltipText":":_わらう:","src":"https://yt3.ggpht.com/0iFib56WziJvOw8iDaMeDOMcIWbgH8g5Rexj-6BZ6pefmhHt8nfLpkR2l8SoHcdSKmsiK99AdQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyaxhmE-zyUIjMfCGQ75vlA/nUV_adLBEKT4rtoPmpm3sQM","alt":"わらう","sharedTooltipText":":_わらう:","src":"https://yt3.ggpht.com/0iFib56WziJvOw8iDaMeDOMcIWbgH8g5Rexj-6BZ6pefmhHt8nfLpkR2l8SoHcdSKmsiK99AdQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCyaxhmE-zyUIjMfCGQ75vlA/nUV_adLBEKT4rtoPmpm3sQM","alt":"わらう","sharedTooltipText":":_わらう:","src":"https://yt3.ggpht.com/0iFib56WziJvOw8iDaMeDOMcIWbgH8g5Rexj-6BZ6pefmhHt8nfLpkR2l8SoHcdSKmsiK99AdQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

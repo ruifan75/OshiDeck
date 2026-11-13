@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Uruca ch /うるか",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UChrTMfNcD1eN2ENGWBD7lUQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんうる〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChrTMfNcD1eN2ENGWBD7lUQ/7fCtYbzFAYjj8gSGx5eYDg","alt":"urucaoha","sharedTooltipText":":_urucaoha:","src":"https://yt3.ggpht.com/VM02LgwYA6REaisPo-V7EmWMgNViBJanLy3gAF0cC7p_GrUFqelan3leSMU7_qRI5Gu8Edvg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChrTMfNcD1eN2ENGWBD7lUQ/7fCtYbzFAYjj8gSGx5eYDg","alt":"urucaoha","sharedTooltipText":":_urucaoha:","src":"https://yt3.ggpht.com/VM02LgwYA6REaisPo-V7EmWMgNViBJanLy3gAF0cC7p_GrUFqelan3leSMU7_qRI5Gu8Edvg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChrTMfNcD1eN2ENGWBD7lUQ/VvglYNGlHs2_-gPk_bWICA","alt":"urucanf","sharedTooltipText":":_urucanf:","src":"https://yt3.ggpht.com/i_xD1P5VvcoUpABmHKNQQxK4hgAchliUUEAymJTPau2MmR_7Bjg_5TIy6HQV0V3RpkKfLuDc6c4=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChrTMfNcD1eN2ENGWBD7lUQ/VvglYNGlHs2_-gPk_bWICA","alt":"urucanf","sharedTooltipText":":_urucanf:","src":"https://yt3.ggpht.com/i_xD1P5VvcoUpABmHKNQQxK4hgAchliUUEAymJTPau2MmR_7Bjg_5TIy6HQV0V3RpkKfLuDc6c4=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UChrTMfNcD1eN2ENGWBD7lUQ/VvglYK-lHs2_-gPk_bWICA","alt":"urucanaisu","sharedTooltipText":":_urucanaisu:","src":"https://yt3.ggpht.com/P8u4ULrhkEnzftEx8tDvYMAS7-xLd8REFiy5qz5bN5Q2Q2n0rOGD_pTuxPJ5Yho7ixMZhZyd=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChrTMfNcD1eN2ENGWBD7lUQ/VvglYK-lHs2_-gPk_bWICA","alt":"urucanaisu","sharedTooltipText":":_urucanaisu:","src":"https://yt3.ggpht.com/P8u4ULrhkEnzftEx8tDvYMAS7-xLd8REFiy5qz5bN5Q2Q2n0rOGD_pTuxPJ5Yho7ixMZhZyd=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UChrTMfNcD1eN2ENGWBD7lUQ/VvglYK-lHs2_-gPk_bWICA","alt":"urucanaisu","sharedTooltipText":":_urucanaisu:","src":"https://yt3.ggpht.com/P8u4ULrhkEnzftEx8tDvYMAS7-xLd8REFiy5qz5bN5Q2Q2n0rOGD_pTuxPJ5Yho7ixMZhZyd=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おじさん！？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" }
+  ]
+}

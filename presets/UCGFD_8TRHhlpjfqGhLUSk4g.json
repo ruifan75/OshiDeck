@@ -1,0 +1,14 @@
+{
+  "format": 2,
+  "name": "ico通夜の黄泉巡りch",
+  "note": "歌枠0配信・通常13配信のチャットから6枚",
+  "channel": "UCGFD_8TRHhlpjfqGhLUSk4g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかれさまでした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わこつ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"それはそう"}], "scope": "channel" }
+  ]
+}

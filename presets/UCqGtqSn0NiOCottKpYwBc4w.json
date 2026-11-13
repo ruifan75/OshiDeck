@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Futakuchi Mana | 二口魔菜",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCqGtqSn0NiOCottKpYwBc4w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCqGtqSn0NiOCottKpYwBc4w/V75fZJ79DM3DgwPhj5OIAg","alt":"ManaWheeze","sharedTooltipText":":_ManaWheeze:","src":"https://yt3.ggpht.com/tq8lKrZE8ap8ahpaCUrBmjgZCIRiZZ2CGtIZHhmmyXOzeGXH0PNnSxv95isCbRr0-IpD0uAOiA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCqGtqSn0NiOCottKpYwBc4w/V75fZJ79DM3DgwPhj5OIAg","alt":"ManaWheeze","sharedTooltipText":":_ManaWheeze:","src":"https://yt3.ggpht.com/tq8lKrZE8ap8ahpaCUrBmjgZCIRiZZ2CGtIZHhmmyXOzeGXH0PNnSxv95isCbRr0-IpD0uAOiA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCqGtqSn0NiOCottKpYwBc4w/V75fZJ79DM3DgwPhj5OIAg","alt":"ManaWheeze","sharedTooltipText":":_ManaWheeze:","src":"https://yt3.ggpht.com/tq8lKrZE8ap8ahpaCUrBmjgZCIRiZZ2CGtIZHhmmyXOzeGXH0PNnSxv95isCbRr0-IpD0uAOiA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCqGtqSn0NiOCottKpYwBc4w/TmPKYq-jJaGJ_9EPz52yyAw","alt":"ManApple","sharedTooltipText":":_ManApple:","src":"https://yt3.ggpht.com/zRK18ZeK2uV9R5zYap28oFM9fq4pvlaRsny4nsncPhBgg7R5BMGSaL9ONixSNj8yVScV4bqfjus=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"byeee"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Mana"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wooooo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LETSGO"}], "scope": "channel" }
+  ]
+}

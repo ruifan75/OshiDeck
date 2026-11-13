@@ -1,0 +1,12 @@
+{
+  "format": 2,
+  "name": "MAHA5JAPAN",
+  "note": "歌枠0配信・通常13配信のチャットから4枚",
+  "channel": "UC3BJY6I0IBn14NTBNnwKncw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"w"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わー"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" }
+  ]
+}

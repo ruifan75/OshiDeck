@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "鷲美大笑 / Washimi Taisho - UltraLMTM",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC8wbgnQSyIZ_F16m5GuT8Gw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"く、くる"}], "scope": "channel" }
+  ]
+}

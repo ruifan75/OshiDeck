@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "rocchi / ろっち",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCfZlSUOVlHqGwoflo6xju2g",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCfZlSUOVlHqGwoflo6xju2g/fri1YbagAojj8gSsqrzIBQ","alt":"roroLights","sharedTooltipText":":_roroLights:","src":"https://yt3.ggpht.com/g3ojEejY0qBojF_Lbnaz4QMidL2CiTNZ2VYE8V42g4D3UZk7WExBd7eVn24Dc8DXjcdIyo1D=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCfZlSUOVlHqGwoflo6xju2g/fri1YbagAojj8gSsqrzIBQ","alt":"roroLights","sharedTooltipText":":_roroLights:","src":"https://yt3.ggpht.com/g3ojEejY0qBojF_Lbnaz4QMidL2CiTNZ2VYE8V42g4D3UZk7WExBd7eVn24Dc8DXjcdIyo1D=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCfZlSUOVlHqGwoflo6xju2g/fri1YbagAojj8gSsqrzIBQ","alt":"roroLights","sharedTooltipText":":_roroLights:","src":"https://yt3.ggpht.com/g3ojEejY0qBojF_Lbnaz4QMidL2CiTNZ2VYE8V42g4D3UZk7WExBd7eVn24Dc8DXjcdIyo1D=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCfZlSUOVlHqGwoflo6xju2g/fri1YZqeAojj8gSsqrzIBQ","alt":"roroHeart","sharedTooltipText":":_roroHeart:","src":"https://yt3.ggpht.com/aYrBseUayQSakgFhJsQDNQMO2v2jPwFL1dddRomD-onxf-TbQIiEReiKneB12p0_kLuzwG3sNA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi roro"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bwai"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCfZlSUOVlHqGwoflo6xju2g/_vajYofhEMPp8wS4iqHYBw","alt":"roroExcited","sharedTooltipText":":_roroExcited:","src":"https://yt3.ggpht.com/DMV2U3KeYwVrr4BZFFu2WX6NxkK8sBF8NFYXtdjy0CKqR92SiQO63i8NOYzE5E8CiZFpyLI0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi"}], "scope": "channel" }
+  ]
+}

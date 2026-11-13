@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "甘噛あめ / Amagami Ame",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCSiTkTBwIMwsAetwwzgFyBg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはむー"},{"type":"text","value":"🍬"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCSiTkTBwIMwsAetwwzgFyBg/AGrtZJ-PF6SQ_9EP8oKmkAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/2UEr4z5YxNGdJyGyD1B0M-THjkfIWbZUVPqve1dIuWK2GGhwAuzCl0OVw-spePJwPoYRKN3ftUU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSiTkTBwIMwsAetwwzgFyBg/AGrtZJ-PF6SQ_9EP8oKmkAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/2UEr4z5YxNGdJyGyD1B0M-THjkfIWbZUVPqve1dIuWK2GGhwAuzCl0OVw-spePJwPoYRKN3ftUU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSiTkTBwIMwsAetwwzgFyBg/AGrtZJ-PF6SQ_9EP8oKmkAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/2UEr4z5YxNGdJyGyD1B0M-THjkfIWbZUVPqve1dIuWK2GGhwAuzCl0OVw-spePJwPoYRKN3ftUU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSiTkTBwIMwsAetwwzgFyBg/AGrtZJ-PF6SQ_9EP8oKmkAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/2UEr4z5YxNGdJyGyD1B0M-THjkfIWbZUVPqve1dIuWK2GGhwAuzCl0OVw-spePJwPoYRKN3ftUU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSiTkTBwIMwsAetwwzgFyBg/AGrtZJ-PF6SQ_9EP8oKmkAg","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/2UEr4z5YxNGdJyGyD1B0M-THjkfIWbZUVPqve1dIuWK2GGhwAuzCl0OVw-spePJwPoYRKN3ftUU=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぱーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはむー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほう"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Rie Ch. 姫宮りえ【Phase Connect】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCJ4O6PWA47f6XbCgrLQNqEQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCJ4O6PWA47f6XbCgrLQNqEQ/GYDzZoDPNPWo_9EP6eKniA4","alt":"HimeBitoCheer","sharedTooltipText":":_HimeBitoCheer:","src":"https://yt3.ggpht.com/3J_wFFgZEBqJPlNL0hi1Bvp17P8aOqMqOY_AIi30AjviN4M0DMFNRk_642jDYFXRRSjxRtid=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJ4O6PWA47f6XbCgrLQNqEQ/GYDzZoDPNPWo_9EP6eKniA4","alt":"HimeBitoCheer","sharedTooltipText":":_HimeBitoCheer:","src":"https://yt3.ggpht.com/3J_wFFgZEBqJPlNL0hi1Bvp17P8aOqMqOY_AIi30AjviN4M0DMFNRk_642jDYFXRRSjxRtid=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJ4O6PWA47f6XbCgrLQNqEQ/GYDzZoDPNPWo_9EP6eKniA4","alt":"HimeBitoCheer","sharedTooltipText":":_HimeBitoCheer:","src":"https://yt3.ggpht.com/3J_wFFgZEBqJPlNL0hi1Bvp17P8aOqMqOY_AIi30AjviN4M0DMFNRk_642jDYFXRRSjxRtid=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCJ4O6PWA47f6XbCgrLQNqEQ/U30wY9ytAoa9gwOTioroBA","alt":"HimeLightstick","sharedTooltipText":":_HimeLightstick:","src":"https://yt3.ggpht.com/3JTDz7arCV3svZu0Tk6wJ4xId0mSXgjt3NGsgsNd2bQ5-rtgaNzfbF1w83CZZB9ATxQh-5ov=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJ4O6PWA47f6XbCgrLQNqEQ/U30wY9ytAoa9gwOTioroBA","alt":"HimeLightstick","sharedTooltipText":":_HimeLightstick:","src":"https://yt3.ggpht.com/3JTDz7arCV3svZu0Tk6wJ4xId0mSXgjt3NGsgsNd2bQ5-rtgaNzfbF1w83CZZB9ATxQh-5ov=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJ4O6PWA47f6XbCgrLQNqEQ/U30wY9ytAoa9gwOTioroBA","alt":"HimeLightstick","sharedTooltipText":":_HimeLightstick:","src":"https://yt3.ggpht.com/3JTDz7arCV3svZu0Tk6wJ4xId0mSXgjt3NGsgsNd2bQ5-rtgaNzfbF1w83CZZB9ATxQh-5ov=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCJ4O6PWA47f6XbCgrLQNqEQ/kg4nY87ZI8z08gTWr7ygAQ","alt":"HimePat","sharedTooltipText":":_HimePat:","src":"https://yt3.ggpht.com/LKhryCOxwzG2lJKj5bHnXISFT6FFiD47XtTo7FqWj7I8L8ziD3zVhcfErXAlvZlNGp-o-qX9=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJ4O6PWA47f6XbCgrLQNqEQ/kg4nY87ZI8z08gTWr7ygAQ","alt":"HimePat","sharedTooltipText":":_HimePat:","src":"https://yt3.ggpht.com/LKhryCOxwzG2lJKj5bHnXISFT6FFiD47XtTo7FqWj7I8L8ziD3zVhcfErXAlvZlNGp-o-qX9=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCJ4O6PWA47f6XbCgrLQNqEQ/kg4nY87ZI8z08gTWr7ygAQ","alt":"HimePat","sharedTooltipText":":_HimePat:","src":"https://yt3.ggpht.com/LKhryCOxwzG2lJKj5bHnXISFT6FFiD47XtTo7FqWj7I8L8ziD3zVhcfErXAlvZlNGp-o-qX9=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LABUBU"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"PWIE"}], "scope": "channel" }
+  ]
+}

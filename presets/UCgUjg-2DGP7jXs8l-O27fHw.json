@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "無日縫ねこ / なにぬねこ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCgUjg-2DGP7jXs8l-O27fHw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんねこ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつねこ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんねこ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやすみなさい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様です"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "飯田ぽち。【Iida Pochi.】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC22BVlBsZc6ta3Dqz75NU6Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC22BVlBsZc6ta3Dqz75NU6Q/uXskZcDLLqOA_9EPmcqqsA8","alt":"beer","sharedTooltipText":":_beer:","src":"https://yt3.ggpht.com/zYTXPr3ZzIWPK3tcPaESv_MnPgAmbVmdMjyRynOVNwzFiAdqhsoFX9hqMlrTXOPLbU0gAPNM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC22BVlBsZc6ta3Dqz75NU6Q/uXskZcDLLqOA_9EPmcqqsA8","alt":"beer","sharedTooltipText":":_beer:","src":"https://yt3.ggpht.com/zYTXPr3ZzIWPK3tcPaESv_MnPgAmbVmdMjyRynOVNwzFiAdqhsoFX9hqMlrTXOPLbU0gAPNM=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おめでとうございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あっ"}], "scope": "channel" }
+  ]
+}

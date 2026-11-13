@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Menace 穏 ASMR",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCfcizLIjD-OMeWbdeC8UPUw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"💜"},{"type":"text","value":"🎶"},{"type":"text","value":"💜"},{"type":"text","value":"🎶"},{"type":"text","value":"💜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💜"},{"type":"text","value":"💜"},{"type":"text","value":"💜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hic"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💢"},{"type":"text","value":"💢"},{"type":"text","value":"💢"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😭"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"HEY"}], "scope": "channel" }
+  ]
+}

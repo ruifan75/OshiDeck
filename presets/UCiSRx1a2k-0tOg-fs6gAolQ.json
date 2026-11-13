@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "飛鳥ひな【にじさんじ所属】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCiSRx1a2k-0tOg-fs6gAolQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"8888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCiSRx1a2k-0tOg-fs6gAolQ/RN5dXaSsD4fa-gPn44H4BQ","alt":"piyoPii","sharedTooltipText":":_piyoPii:","src":"https://yt3.ggpht.com/2pRZnBBYUUuqfcgrh6fHV1E5tV58j6VJnyVfENjwwDzQc1UXNN9qD52JmZFAI-YOhSrzyKcZ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCiSRx1a2k-0tOg-fs6gAolQ/RN5dXaSsD4fa-gPn44H4BQ","alt":"piyoPii","sharedTooltipText":":_piyoPii:","src":"https://yt3.ggpht.com/2pRZnBBYUUuqfcgrh6fHV1E5tV58j6VJnyVfENjwwDzQc1UXNN9qD52JmZFAI-YOhSrzyKcZ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ぴーぴー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCiSRx1a2k-0tOg-fs6gAolQ/Qd5dXeHZH4fa-gPn44H4BQ","alt":"piyoPiyo","sharedTooltipText":":_piyoPiyo:","src":"https://yt3.ggpht.com/Vz6sCL3HurJokDZc8FTau_z_wOqY2AgDkIuJzpqPEzNYYwkcoxIEvpdlF6VJSPVs73F9NIKuNQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCiSRx1a2k-0tOg-fs6gAolQ/Qd5dXeHZH4fa-gPn44H4BQ","alt":"piyoPiyo","sharedTooltipText":":_piyoPiyo:","src":"https://yt3.ggpht.com/Vz6sCL3HurJokDZc8FTau_z_wOqY2AgDkIuJzpqPEzNYYwkcoxIEvpdlF6VJSPVs73F9NIKuNQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCiSRx1a2k-0tOg-fs6gAolQ/Pt5dXb7kIYfa-gPn44H4BQ","alt":"piyoHiyoko","sharedTooltipText":":_piyoHiyoko:","src":"https://yt3.ggpht.com/4708FKe-oTxH0IFlWxCE8JWsOkWtJhUy2RPkkQRpAnd13P_kNY5ORSZ_PYVTVPh6NCXJsBjY9A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCiSRx1a2k-0tOg-fs6gAolQ/Pt5dXb7kIYfa-gPn44H4BQ","alt":"piyoHiyoko","sharedTooltipText":":_piyoHiyoko:","src":"https://yt3.ggpht.com/4708FKe-oTxH0IFlWxCE8JWsOkWtJhUy2RPkkQRpAnd13P_kNY5ORSZ_PYVTVPh6NCXJsBjY9A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCiSRx1a2k-0tOg-fs6gAolQ/Pt5dXb7kIYfa-gPn44H4BQ","alt":"piyoHiyoko","sharedTooltipText":":_piyoHiyoko:","src":"https://yt3.ggpht.com/4708FKe-oTxH0IFlWxCE8JWsOkWtJhUy2RPkkQRpAnd13P_kNY5ORSZ_PYVTVPh6NCXJsBjY9A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ぴよぴよ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" }
+  ]
+}

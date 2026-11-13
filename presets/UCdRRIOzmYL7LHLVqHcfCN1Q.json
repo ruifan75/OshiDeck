@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "常世モコ Tokoyo Moko",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCdRRIOzmYL7LHLVqHcfCN1Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCdRRIOzmYL7LHLVqHcfCN1Q/HR9wYYKlDtDRgwPz34Z4","alt":"pen","sharedTooltipText":":_pen:","src":"https://yt3.ggpht.com/ZwvXpOaEAyhnVrY-qb9mdv59IgloDQjClutJXbxVVepqj5pZy6d3IsofVrKU3-rd52ILiMTGGcU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdRRIOzmYL7LHLVqHcfCN1Q/HR9wYYKlDtDRgwPz34Z4","alt":"pen","sharedTooltipText":":_pen:","src":"https://yt3.ggpht.com/ZwvXpOaEAyhnVrY-qb9mdv59IgloDQjClutJXbxVVepqj5pZy6d3IsofVrKU3-rd52ILiMTGGcU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCdRRIOzmYL7LHLVqHcfCN1Q/HR9wYYKlDtDRgwPz34Z4","alt":"pen","sharedTooltipText":":_pen:","src":"https://yt3.ggpht.com/ZwvXpOaEAyhnVrY-qb9mdv59IgloDQjClutJXbxVVepqj5pZy6d3IsofVrKU3-rd52ILiMTGGcU=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎬"},{"type":"text","value":"✨"},{"type":"text","value":"🎶"},{"type":"text","value":"🎬"},{"type":"text","value":"✨"},{"type":"text","value":"🎶"},{"type":"text","value":"🎬"},{"type":"text","value":"✨"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやす"},{"type":"text","value":"🍊"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おやす"},{"type":"youtubeEmoji","emojiId":"UCdRRIOzmYL7LHLVqHcfCN1Q/9d6RX5bmMNPn-gPhirToCQ","alt":"mikan","sharedTooltipText":":_mikan:","src":"https://yt3.ggpht.com/2bfB97lnjxAkEkvGnLv2uj62x1s_BhfAHCGyI_0uPBs3b7kUVAjfiOG3Lo37EaODpc3QUg5vQQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

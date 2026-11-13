@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "おじきちゃん / Ojiki-Channel",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC_HrzgYmapddmGSfn2UMHTA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんじきー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_HrzgYmapddmGSfn2UMHTA/l_fgXa76Eobe-QPvv7XoDw","alt":"kusa","sharedTooltipText":":_kusa:","src":"https://yt3.ggpht.com/gDWX9sbxTA-dIdw6jSg1HeYrB8Fr285Bat0Uv3Hfvmewrk3Z38fFYL6CLbo-gTr9L4nXF4cR4Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつじきー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"えぇ…"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイスゥ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんじきーこんあまねー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" }
+  ]
+}

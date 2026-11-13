@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "유우양",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCfErRnESYXp86XRZVNZYK_g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"ㅋㅋ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"하요하요"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"안녕하세요"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"아하"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"오"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"와"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"유하"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ㅠㅠ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"감사합니다"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"아"}], "scope": "channel" }
+  ]
+}

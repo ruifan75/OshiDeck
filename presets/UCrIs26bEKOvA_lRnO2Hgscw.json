@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Unnämed",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCrIs26bEKOvA_lRnO2Hgscw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"YES"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OMG"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💙"},{"type":"text","value":"🤍"},{"type":"text","value":"💙"},{"type":"text","value":"🤍"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🫂"},{"type":"text","value":"🫂"},{"type":"text","value":"🫂"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hiii"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💙"},{"type":"text","value":"💜"},{"type":"text","value":"💙"},{"type":"text","value":"💜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🤍"},{"type":"text","value":"💙"},{"type":"text","value":"🤍"},{"type":"text","value":"💙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" }
+  ]
+}

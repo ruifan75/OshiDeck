@@ -1,0 +1,17 @@
+{
+  "format": 2,
+  "name": "ToraNaNeko - とらなねこ - ",
+  "note": "歌枠0配信・通常13配信のチャットから9枚",
+  "channel": "UCVGcTlGxcf67I6YUrdwDXeQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"対局ありがとうございました"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"対ありでした〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"そろそろ寝ます、おやすみなさい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"対局よろしくお願いします〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"たいよろです"}], "scope": "channel" }
+  ]
+}

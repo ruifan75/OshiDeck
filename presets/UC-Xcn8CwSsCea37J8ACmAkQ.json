@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Eru CH.百目鬼える",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC-Xcn8CwSsCea37J8ACmAkQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💜"},{"type":"text","value":"🎬"},{"type":"text","value":"🎶"},{"type":"text","value":"💜"},{"type":"text","value":"🎬"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-Xcn8CwSsCea37J8ACmAkQ/6ekIZ7WlEaeB_9EPsZTdgA4","alt":"サイリウム紫","sharedTooltipText":":_サイリウム紫:","src":"https://yt3.ggpht.com/F8l7ET5ox9PPKjhymtgx4o1vKNS7lE745bmqlZ38_6eTfDIUVWPCJWydNQ5pPSP7kUhZBw7cyA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC-Xcn8CwSsCea37J8ACmAkQ/6ekIZ7WlEaeB_9EPsZTdgA4","alt":"サイリウム紫","sharedTooltipText":":_サイリウム紫:","src":"https://yt3.ggpht.com/F8l7ET5ox9PPKjhymtgx4o1vKNS7lE745bmqlZ38_6eTfDIUVWPCJWydNQ5pPSP7kUhZBw7cyA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC-Xcn8CwSsCea37J8ACmAkQ/6ekIZ7WlEaeB_9EPsZTdgA4","alt":"サイリウム紫","sharedTooltipText":":_サイリウム紫:","src":"https://yt3.ggpht.com/F8l7ET5ox9PPKjhymtgx4o1vKNS7lE745bmqlZ38_6eTfDIUVWPCJWydNQ5pPSP7kUhZBw7cyA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC-Xcn8CwSsCea37J8ACmAkQ/6ekIZ7WlEaeB_9EPsZTdgA4","alt":"サイリウム紫","sharedTooltipText":":_サイリウム紫:","src":"https://yt3.ggpht.com/F8l7ET5ox9PPKjhymtgx4o1vKNS7lE745bmqlZ38_6eTfDIUVWPCJWydNQ5pPSP7kUhZBw7cyA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんめき〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつえるー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんめき～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはめきー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんかるてっとー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" }
+  ]
+}

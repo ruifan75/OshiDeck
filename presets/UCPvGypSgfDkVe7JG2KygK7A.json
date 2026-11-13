@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "竜胆 尊 / Rindou Mikoto",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCPvGypSgfDkVe7JG2KygK7A",
   "cards": [
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCPvGypSgfDkVe7JG2KygK7A/8IDjY_WfO-eH_9EP2uergAg","alt":"MikoPurple","sharedTooltipText":":_MikoPurple:","src":"https://yt3.ggpht.com/Q2JYSYIrcES6zL226QqkSAaoEBnUAFUZuRIdRMbeqZTll2h45VV-LshaqYDwa_9mcbHacTDpXQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPvGypSgfDkVe7JG2KygK7A/8IDjY_WfO-eH_9EP2uergAg","alt":"MikoPurple","sharedTooltipText":":_MikoPurple:","src":"https://yt3.ggpht.com/Q2JYSYIrcES6zL226QqkSAaoEBnUAFUZuRIdRMbeqZTll2h45VV-LshaqYDwa_9mcbHacTDpXQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPvGypSgfDkVe7JG2KygK7A/8IDjY_WfO-eH_9EP2uergAg","alt":"MikoPurple","sharedTooltipText":":_MikoPurple:","src":"https://yt3.ggpht.com/Q2JYSYIrcES6zL226QqkSAaoEBnUAFUZuRIdRMbeqZTll2h45VV-LshaqYDwa_9mcbHacTDpXQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPvGypSgfDkVe7JG2KygK7A/8IDjY_WfO-eH_9EP2uergAg","alt":"MikoPurple","sharedTooltipText":":_MikoPurple:","src":"https://yt3.ggpht.com/Q2JYSYIrcES6zL226QqkSAaoEBnUAFUZuRIdRMbeqZTll2h45VV-LshaqYDwa_9mcbHacTDpXQ=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"あっ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCPvGypSgfDkVe7JG2KygK7A/C2kyYvigBpSI_9EP9IWsoAo","alt":"MikoCheers","sharedTooltipText":":_MikoCheers:","src":"https://yt3.ggpht.com/5aWWEK7aGuqKgnCxhRzdYcDEvUj5RaEfEgrgoHxmE3Xhtxyql1ZuE3DvU_peapVgk1aymIp7=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPvGypSgfDkVe7JG2KygK7A/C2kyYvigBpSI_9EP9IWsoAo","alt":"MikoCheers","sharedTooltipText":":_MikoCheers:","src":"https://yt3.ggpht.com/5aWWEK7aGuqKgnCxhRzdYcDEvUj5RaEfEgrgoHxmE3Xhtxyql1ZuE3DvU_peapVgk1aymIp7=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPvGypSgfDkVe7JG2KygK7A/C2kyYvigBpSI_9EP9IWsoAo","alt":"MikoCheers","sharedTooltipText":":_MikoCheers:","src":"https://yt3.ggpht.com/5aWWEK7aGuqKgnCxhRzdYcDEvUj5RaEfEgrgoHxmE3Xhtxyql1ZuE3DvU_peapVgk1aymIp7=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"わかる"}], "scope": "channel" }
   ]
 }

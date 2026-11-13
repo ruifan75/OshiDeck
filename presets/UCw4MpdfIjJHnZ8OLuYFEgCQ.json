@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Roy Chiato",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCw4MpdfIjJHnZ8OLuYFEgCQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"2"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"1"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"3"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Aloooo!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"appol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"popopop"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OH"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "神成きゅぴ / Kaminari Qpi",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCMp55EbT_ZlqiMS3lCj01BQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCMp55EbT_ZlqiMS3lCj01BQ/S7DkYo-0EsPp8wS-ypawDw","alt":"GlowStick","sharedTooltipText":":_GlowStick:","src":"https://yt3.ggpht.com/6gtZymKW4njdLdluNhlkRp8ooG2N-8OIOp6hoK4_5Hj67cTZFKWOWYuIiBjqzFjzX11UTUgpgA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCMp55EbT_ZlqiMS3lCj01BQ/S7DkYo-0EsPp8wS-ypawDw","alt":"GlowStick","sharedTooltipText":":_GlowStick:","src":"https://yt3.ggpht.com/6gtZymKW4njdLdluNhlkRp8ooG2N-8OIOp6hoK4_5Hj67cTZFKWOWYuIiBjqzFjzX11UTUgpgA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCMp55EbT_ZlqiMS3lCj01BQ/S7DkYo-0EsPp8wS-ypawDw","alt":"GlowStick","sharedTooltipText":":_GlowStick:","src":"https://yt3.ggpht.com/6gtZymKW4njdLdluNhlkRp8ooG2N-8OIOp6hoK4_5Hj67cTZFKWOWYuIiBjqzFjzX11UTUgpgA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCMp55EbT_ZlqiMS3lCj01BQ/S7DkYo-0EsPp8wS-ypawDw","alt":"GlowStick","sharedTooltipText":":_GlowStick:","src":"https://yt3.ggpht.com/6gtZymKW4njdLdluNhlkRp8ooG2N-8OIOp6hoK4_5Hj67cTZFKWOWYuIiBjqzFjzX11UTUgpgA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCMp55EbT_ZlqiMS3lCj01BQ/2comYLGyNZfE-QON5IvYBw","alt":"黄色いハート","sharedTooltipText":":_黄色いハート:","src":"https://yt3.ggpht.com/Eg35Q3ChefjC0dzHvg6GXgWdHs42Apjl3AvH3A42qdJV-DNBGLky3CecT1-pCpdeBcslD1cknQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCMp55EbT_ZlqiMS3lCj01BQ/S7DkYo-0EsPp8wS-ypawDw","alt":"GlowStick","sharedTooltipText":":_GlowStick:","src":"https://yt3.ggpht.com/6gtZymKW4njdLdluNhlkRp8ooG2N-8OIOp6hoK4_5Hj67cTZFKWOWYuIiBjqzFjzX11UTUgpgA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCMp55EbT_ZlqiMS3lCj01BQ/2comYLGyNZfE-QON5IvYBw","alt":"黄色いハート","sharedTooltipText":":_黄色いハート:","src":"https://yt3.ggpht.com/Eg35Q3ChefjC0dzHvg6GXgWdHs42Apjl3AvH3A42qdJV-DNBGLky3CecT1-pCpdeBcslD1cknQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCMp55EbT_ZlqiMS3lCj01BQ/S7DkYo-0EsPp8wS-ypawDw","alt":"GlowStick","sharedTooltipText":":_GlowStick:","src":"https://yt3.ggpht.com/6gtZymKW4njdLdluNhlkRp8ooG2N-8OIOp6hoK4_5Hj67cTZFKWOWYuIiBjqzFjzX11UTUgpgA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" }
+  ]
+}

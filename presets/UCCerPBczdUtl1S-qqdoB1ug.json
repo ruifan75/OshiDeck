@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "藍ノ宮あさひ-Asahi Ch-【はつレジ】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCCerPBczdUtl1S-qqdoB1ug",
+  "cards": [
+    { "tokens": [{"type":"text","value":"ご不満よう〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ご不満よう～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お名前呼びありがとうございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ご不満よう"},{"type":"text","value":"❤"}], "scope": "channel" }
+  ]
+}

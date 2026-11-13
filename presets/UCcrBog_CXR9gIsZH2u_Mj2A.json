@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "コマチ ガブ / Komachi Gabu",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCcrBog_CXR9gIsZH2u_Mj2A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんがぶー"},{"type":"text","value":"🍔"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぱーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ごちそうさまでした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"狛犬なんでねー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いただきまーす"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんがぶー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" }
+  ]
+}

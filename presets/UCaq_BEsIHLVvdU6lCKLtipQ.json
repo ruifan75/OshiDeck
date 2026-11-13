@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Igusa / 妖怪･花琴いぐさ",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCaq_BEsIHLVvdU6lCKLtipQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaq_BEsIHLVvdU6lCKLtipQ/G0-iZIjGOPSI_9EP-sihiAE","alt":"dor","sharedTooltipText":":_dor:","src":"https://yt3.ggpht.com/_Fh0kn3zr9ai2ZbTpIrfV9vxuEgLdCZHxoKoXwCfK79BwKt3_E5ookt4iqtkOxAhQ4bZZoaA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaq_BEsIHLVvdU6lCKLtipQ/G0-iZKrGOPSI_9EP-sihiAE","alt":"tai","sharedTooltipText":":_tai:","src":"https://yt3.ggpht.com/2i-EvJsbFbdlKIrGP3s__8MG8j8DWqLRq2Savipeprdh9_tNfwAHFecvpzxy6hv5gCNrjzsc-zE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaq_BEsIHLVvdU6lCKLtipQ/G0-iZM7GOPSI_9EP-sihiAE","alt":"kii","sharedTooltipText":":_kii:","src":"https://yt3.ggpht.com/ZfsVSMIBaFf7vwerNvrU6CB8Y_8H_hxJarlcpo5ur0fYt53rnfqF9yQCKSnvHMcBw0XVhrnDWQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaq_BEsIHLVvdU6lCKLtipQ/r2-iZOvgK62T_9EP7bO08As","alt":"bik","sharedTooltipText":":_bik:","src":"https://yt3.ggpht.com/NgZDW9fhJt4bgnL1qwqYb9nRKua0aouyb2HHyQBy5NwPUwUMEMDfdxNPk8QlMfXJCrRxxZAdeuk=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" }
+  ]
+}

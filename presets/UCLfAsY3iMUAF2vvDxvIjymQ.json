@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "カガセ・ウノ / Kagase Uno",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCLfAsY3iMUAF2vvDxvIjymQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんうのー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"またね"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｱﾆｶﾞﾄ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつうのー"}], "scope": "channel" }
+  ]
+}

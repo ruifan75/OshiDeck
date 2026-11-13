@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ただのれゐ-Rei Tadano-",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCN84kddLj2J6OTgKl6Kkt7Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはれゐ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCN84kddLj2J6OTgKl6Kkt7Q/wX02avClJ-eq7OsPwKfK8A0","alt":"reiNICE","sharedTooltipText":":_reiNICE:","src":"https://yt3.ggpht.com/ctt5j2K9W_YlP3vqPwAhPDOjfKFt4vCf_6QST-mQqrSlLQ7vMaDOTCq83SRsNKxn8GD478_KSA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCN84kddLj2J6OTgKl6Kkt7Q/wX02avClJ-eq7OsPwKfK8A0","alt":"reiNICE","sharedTooltipText":":_reiNICE:","src":"https://yt3.ggpht.com/ctt5j2K9W_YlP3vqPwAhPDOjfKFt4vCf_6QST-mQqrSlLQ7vMaDOTCq83SRsNKxn8GD478_KSA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCN84kddLj2J6OTgKl6Kkt7Q/wX02avClJ-eq7OsPwKfK8A0","alt":"reiNICE","sharedTooltipText":":_reiNICE:","src":"https://yt3.ggpht.com/ctt5j2K9W_YlP3vqPwAhPDOjfKFt4vCf_6QST-mQqrSlLQ7vMaDOTCq83SRsNKxn8GD478_KSA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おみくじ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんれゐ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おは"},{"type":"youtubeEmoji","emojiId":"UCN84kddLj2J6OTgKl6Kkt7Q/M0x6Y4KGLviN_9EPm7qB4Ag","alt":"reiRei","sharedTooltipText":":_reiRei:","src":"https://yt3.ggpht.com/RKQtJ1VoaCOtBwcvsxbX9EH6c2v4ew9cfheim1lCSoTfS5_VXISawFjB0tSFDllMUaDk-0w1Rg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCN84kddLj2J6OTgKl6Kkt7Q/M0x6Y4eHLviN_9EPm7qB4Ag","alt":"reiIii","sharedTooltipText":":_reiIii:","src":"https://yt3.ggpht.com/_QNU7KbdzWw0nqBk0ou21fKRo2PXE7H9T9MpzOuz5eygS8GTD6T0kYtfeV_MSFEgWh_rFj68=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCN84kddLj2J6OTgKl6Kkt7Q/wX02aoaYJ-eq7OsPwKfK8A0","alt":"reiReisupa","sharedTooltipText":":_reiReisupa:","src":"https://yt3.ggpht.com/_V-mSWaDG2xJslm5_XuqvVRcrUjlelMyoud55B4AxyKgh7iQr7HcDN_auA854vdU59aiQPSiJog=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCN84kddLj2J6OTgKl6Kkt7Q/wX02aoaYJ-eq7OsPwKfK8A0","alt":"reiReisupa","sharedTooltipText":":_reiReisupa:","src":"https://yt3.ggpht.com/_V-mSWaDG2xJslm5_XuqvVRcrUjlelMyoud55B4AxyKgh7iQr7HcDN_auA854vdU59aiQPSiJog=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCN84kddLj2J6OTgKl6Kkt7Q/wX02aq2SJ-eq7OsPwKfK8A0","alt":"reiWelcome","sharedTooltipText":":_reiWelcome:","src":"https://yt3.ggpht.com/oPmkuDUzPnnJ0wJNwIgaHM3xFTaik7MBurZ3o8PyIS5DgAqDjYwtpLPyMOMJQmGfhXpMJ9Yitw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCN84kddLj2J6OTgKl6Kkt7Q/wX02aq2SJ-eq7OsPwKfK8A0","alt":"reiWelcome","sharedTooltipText":":_reiWelcome:","src":"https://yt3.ggpht.com/oPmkuDUzPnnJ0wJNwIgaHM3xFTaik7MBurZ3o8PyIS5DgAqDjYwtpLPyMOMJQmGfhXpMJ9Yitw=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

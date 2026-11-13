@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "猫乃ユキノ／NekonoYukino",
-  "note": "過去13配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCoFEbNyIRUS26-hf2AucwFw",
   "cards": [
-    { "tokens": [{"type":"text","value":"おはゆきのん"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"こんゆきのん"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おつのん"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"A"}], "scope": "channel" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCoFEbNyIRUS26-hf2AucwFw/GB81YbuJNIGT8gTbp4ToDg","alt":"くさもじ","sharedTooltipText":":_くさもじ:","src":"https://yt3.ggpht.com/0vU15kxRDPFFC7QNO4ABkKBe8KRwx1J8Dzw5kJJkuxLJ-XzpqrWGEba3nq1L-WYWuHIVqPwI9Q=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCoFEbNyIRUS26-hf2AucwFw/dfBvY5uNBPiN_9EPx8mkuAU","alt":"ぺんらいと","sharedTooltipText":":_ぺんらいと:","src":"https://yt3.ggpht.com/2s0Rq7UMHDmVQRxNbZ4DnRwg0fJApss2QbKaLK01wez_2AqlFSgADvUfuuQ7gROXO3Rjpcc_=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCoFEbNyIRUS26-hf2AucwFw/dfBvY5uNBPiN_9EPx8mkuAU","alt":"ぺんらいと","sharedTooltipText":":_ぺんらいと:","src":"https://yt3.ggpht.com/2s0Rq7UMHDmVQRxNbZ4DnRwg0fJApss2QbKaLK01wez_2AqlFSgADvUfuuQ7gROXO3Rjpcc_=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCoFEbNyIRUS26-hf2AucwFw/dfBvY5uNBPiN_9EPx8mkuAU","alt":"ぺんらいと","sharedTooltipText":":_ぺんらいと:","src":"https://yt3.ggpht.com/2s0Rq7UMHDmVQRxNbZ4DnRwg0fJApss2QbKaLK01wez_2AqlFSgADvUfuuQ7gROXO3Rjpcc_=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCoFEbNyIRUS26-hf2AucwFw/dfBvY5uNBPiN_9EPx8mkuAU","alt":"ぺんらいと","sharedTooltipText":":_ぺんらいと:","src":"https://yt3.ggpht.com/2s0Rq7UMHDmVQRxNbZ4DnRwg0fJApss2QbKaLK01wez_2AqlFSgADvUfuuQ7gROXO3Rjpcc_=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんゆきのん"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCoFEbNyIRUS26-hf2AucwFw/ZiE1YeWuHInY8wSPtqigAg","alt":"たいき","sharedTooltipText":":_たいき:","src":"https://yt3.ggpht.com/FgqGdQkuWETSdrS9MkL1_depXH0q6J_mekfCzcgJ78aZsL2RynwSDFQ1Y-ncQwZjTi50RUFYcA=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCoFEbNyIRUS26-hf2AucwFw/aj3KX533Go6b-QOc34qgAg","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/G66D4p9sMx60y1lrfz1tYSpmsQrVIZBJJvp8TiqcxqTgnSN0osjbONrutjlhkYvtqT8fZ_0Fps0=w48-h48-c-k-nd"}], "scope": "channel" }
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCoFEbNyIRUS26-hf2AucwFw/GB81YbuJNIGT8gTbp4ToDg","alt":"くさもじ","sharedTooltipText":":_くさもじ:","src":"https://yt3.ggpht.com/0vU15kxRDPFFC7QNO4ABkKBe8KRwx1J8Dzw5kJJkuxLJ-XzpqrWGEba3nq1L-WYWuHIVqPwI9Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはゆきのん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつのん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおお"}], "scope": "channel" }
   ]
 }

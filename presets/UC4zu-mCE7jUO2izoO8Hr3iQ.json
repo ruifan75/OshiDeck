@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Rakkun ★",
+  "note": "歌枠0配信・通常4配信のチャットから10枚",
+  "channel": "UC4zu-mCE7jUO2izoO8Hr3iQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"si"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"jajajaja"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"F"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"a"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hola"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"xD"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😆"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"uwu"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"YEIIII"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "format": 2,
+  "name": "Ccio Ch. 勝七ちお",
+  "note": "歌枠2配信・通常13配信のチャットから11枚",
+  "channel": "UC0vAS7_q_wvHzxjFJegsOfA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おつなちお〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつなちお～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちお〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"♦"},{"type":"text","value":"💫"},{"type":"text","value":"🎶"},{"type":"text","value":"♦"},{"type":"text","value":"💫"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちお～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ええええええ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/b8IfY7zOK9iVkNAP_I2A-AY","alt":"face-purple-crying","sharedTooltipText":":face-purple-crying:","src":"https://yt3.ggpht.com/g6_km98AfdHbN43gvEuNdZ2I07MmzVpArLwEvNBwwPqpZYzszqhRzU_DXALl11TchX5_xFE=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"KP!"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "七峰ニナ【電脳無職旅団】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCJMLq6i8piYf0AClqg8vsfA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんにーなー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつにーなー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCJMLq6i8piYf0AClqg8vsfA/Mzz-Y9qVAcKS_9EPwf6aWA","alt":"ninaKusa","sharedTooltipText":":_ninaKusa:","src":"https://yt3.ggpht.com/d-2CN5vgfE2OQ5Z7UxZ7HQkwBz5eMv6ztDJWmu9-C5hKjx61QZBuBnb0IA4y8i2kNur1Rp85=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" }
+  ]
+}

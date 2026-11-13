@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Neonoah Ch. 碧生ねの",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC9XmtaWbavinTxsZPEvgzlg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎵"},{"type":"text","value":"🎶"},{"type":"text","value":"🪽"},{"type":"text","value":"🩵"},{"type":"text","value":"🎶"},{"type":"text","value":"🎵"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんねの〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんねの～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💲"},{"type":"text","value":"💲"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつねの〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつねの～"}], "scope": "channel" }
+  ]
+}

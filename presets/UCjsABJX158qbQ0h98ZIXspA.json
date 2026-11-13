@@ -1,0 +1,11 @@
+{
+  "format": 2,
+  "name": "Kate Lovelymomo",
+  "note": "歌枠0配信・通常13配信のチャットから3枚",
+  "channel": "UCjsABJX158qbQ0h98ZIXspA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"lool"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi, Kate"}], "scope": "channel" }
+  ]
+}

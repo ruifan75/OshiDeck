@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Iana【CRIMS:on】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCbwIX7MLfRsMdbP7yzyRoEg",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCbwIX7MLfRsMdbP7yzyRoEg/vn5raavzJt2n88EP9YaY2AI","alt":"IanaLightstick","sharedTooltipText":":_IanaLightstick:","src":"https://yt3.ggpht.com/x3b2uKAIQ2IKBgq97jdvVakLpl3n6a0HkwVVcB_KywSD06M0e_GetCDnk42JZvZLW-1SPxJ0TQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCbwIX7MLfRsMdbP7yzyRoEg/vn5raavzJt2n88EP9YaY2AI","alt":"IanaLightstick","sharedTooltipText":":_IanaLightstick:","src":"https://yt3.ggpht.com/x3b2uKAIQ2IKBgq97jdvVakLpl3n6a0HkwVVcB_KywSD06M0e_GetCDnk42JZvZLW-1SPxJ0TQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCbwIX7MLfRsMdbP7yzyRoEg/vn5raavzJt2n88EP9YaY2AI","alt":"IanaLightstick","sharedTooltipText":":_IanaLightstick:","src":"https://yt3.ggpht.com/x3b2uKAIQ2IKBgq97jdvVakLpl3n6a0HkwVVcB_KywSD06M0e_GetCDnk42JZvZLW-1SPxJ0TQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gass"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😭"},{"type":"text","value":"😭"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hah"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"otsuuu"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCbwIX7MLfRsMdbP7yzyRoEg/vn5raa3vJt2n88EP9YaY2AI","alt":"IanaPat","sharedTooltipText":":_IanaPat:","src":"https://yt3.ggpht.com/fA0XbAsiNlIF9p7hn9eAXjwrbyNNKXftNmvYFoFXh8syHKLZ8kJgIifLP3inTR9IU_MRSJmzLg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCbwIX7MLfRsMdbP7yzyRoEg/vn5raa3vJt2n88EP9YaY2AI","alt":"IanaPat","sharedTooltipText":":_IanaPat:","src":"https://yt3.ggpht.com/fA0XbAsiNlIF9p7hn9eAXjwrbyNNKXftNmvYFoFXh8syHKLZ8kJgIifLP3inTR9IU_MRSJmzLg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"deym"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"demm"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥺"},{"type":"text","value":"🥺"}], "scope": "channel" }
+  ]
+}

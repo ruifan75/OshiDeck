@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "H.Midori Ch🍃葉山翠",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCa_QYqKVEOE_EIZWgiOEZ5A",
   "cards": [
     { "tokens": [{"type":"text","value":"こんちゃか茶〜"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"🍃"},{"type":"text","value":"✨"},{"type":"text","value":"🎶"},{"type":"text","value":"🍃"},{"type":"text","value":"✨"},{"type":"text","value":"🎶"},{"type":"text","value":"🍃"},{"type":"text","value":"✨"},{"type":"text","value":"🎶"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"茶乙〜"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"🍙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"ほぇー"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"ノ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"お？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ノ"}], "scope": "channel" }
   ]
 }

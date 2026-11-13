@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "蜂蜜ぷりん / Hachimitsu Purin",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC-FPAg1abIzzaXuxGKLUVXQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんぷりー"},{"type":"text","value":"🍮"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぱーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ふわハニー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でしたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんぷりー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC-FPAg1abIzzaXuxGKLUVXQ/VpWRaLqCLqPA_9EPgcrc-AQ","alt":"ぴえん","sharedTooltipText":":_ぴえん:","src":"https://yt3.ggpht.com/G1ZTVX9IYj9iStQBrt1bwvbNq14ktC27gQVTtMtR8ifBIgVmCFPMAW8s-lvPgUUCfRmOYmvO4A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC-FPAg1abIzzaXuxGKLUVXQ/VpWRaLqCLqPA_9EPgcrc-AQ","alt":"ぴえん","sharedTooltipText":":_ぴえん:","src":"https://yt3.ggpht.com/G1ZTVX9IYj9iStQBrt1bwvbNq14ktC27gQVTtMtR8ifBIgVmCFPMAW8s-lvPgUUCfRmOYmvO4A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC-FPAg1abIzzaXuxGKLUVXQ/VpWRaLqCLqPA_9EPgcrc-AQ","alt":"ぴえん","sharedTooltipText":":_ぴえん:","src":"https://yt3.ggpht.com/G1ZTVX9IYj9iStQBrt1bwvbNq14ktC27gQVTtMtR8ifBIgVmCFPMAW8s-lvPgUUCfRmOYmvO4A=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

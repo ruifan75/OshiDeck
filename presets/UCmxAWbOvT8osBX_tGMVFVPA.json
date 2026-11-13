@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ヒラ",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCmxAWbOvT8osBX_tGMVFVPA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCmxAWbOvT8osBX_tGMVFVPA/3HPFXKHhC4nG8gTjnY-YCg","alt":"hiraWatch","sharedTooltipText":":_hiraWatch:","src":"https://yt3.ggpht.com/-gO7MYfpu1uGXg7RP5ox0294QBlKgb3SKSpFHEzuprE3e9lADYYXHUb9GEDCyXTdxm90ccy0AQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmxAWbOvT8osBX_tGMVFVPA/3HPFXKHhC4nG8gTjnY-YCg","alt":"hiraWatch","sharedTooltipText":":_hiraWatch:","src":"https://yt3.ggpht.com/-gO7MYfpu1uGXg7RP5ox0294QBlKgb3SKSpFHEzuprE3e9lADYYXHUb9GEDCyXTdxm90ccy0AQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmxAWbOvT8osBX_tGMVFVPA/3HPFXKHhC4nG8gTjnY-YCg","alt":"hiraWatch","sharedTooltipText":":_hiraWatch:","src":"https://yt3.ggpht.com/-gO7MYfpu1uGXg7RP5ox0294QBlKgb3SKSpFHEzuprE3e9lADYYXHUb9GEDCyXTdxm90ccy0AQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCmxAWbOvT8osBX_tGMVFVPA/FXU3atiIKtTb7OsPheiNsAk","alt":"hiraGoodGame","sharedTooltipText":":_hiraGoodGame:","src":"https://yt3.ggpht.com/9yDezPfuXAOupjiAqYVA5AKcr1iqAmM79yaUEuvx40Kfd_EtE0zezmzfY8PLxJK-HLl3ur9v=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmxAWbOvT8osBX_tGMVFVPA/FXU3atiIKtTb7OsPheiNsAk","alt":"hiraGoodGame","sharedTooltipText":":_hiraGoodGame:","src":"https://yt3.ggpht.com/9yDezPfuXAOupjiAqYVA5AKcr1iqAmM79yaUEuvx40Kfd_EtE0zezmzfY8PLxJK-HLl3ur9v=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

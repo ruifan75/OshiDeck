@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "あんずちゃんねる/Anzu channel",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCerH0KOGyPaC5WueExiicZQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCerH0KOGyPaC5WueExiicZQ/iCpuXuH0O4vt-gPD_p7YCQ","alt":"kusa2","sharedTooltipText":":_kusa2:","src":"https://yt3.ggpht.com/Au-3o8_2dDzv27ESBWAUyJkmUuvOrfCzHvYHulxOyFsyI0WBzeNTL0cZZhy1bylVlIJ7ZeYLRg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCerH0KOGyPaC5WueExiicZQ/bhMFYvOoJr6J_9EP9_6RkA8","alt":"doya","sharedTooltipText":":_doya:","src":"https://yt3.ggpht.com/fl4wwUcq7M3ZvD2OpnXjKBZKp_ybLL6fe9-UDhjrr-VfjYfJNyRXGHueRV2P29q_efa92OhsWA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCerH0KOGyPaC5WueExiicZQ/bhMFYvOoJr6J_9EP9_6RkA8","alt":"doya","sharedTooltipText":":_doya:","src":"https://yt3.ggpht.com/fl4wwUcq7M3ZvD2OpnXjKBZKp_ybLL6fe9-UDhjrr-VfjYfJNyRXGHueRV2P29q_efa92OhsWA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCerH0KOGyPaC5WueExiicZQ/bhMFYvOoJr6J_9EP9_6RkA8","alt":"doya","sharedTooltipText":":_doya:","src":"https://yt3.ggpht.com/fl4wwUcq7M3ZvD2OpnXjKBZKp_ybLL6fe9-UDhjrr-VfjYfJNyRXGHueRV2P29q_efa92OhsWA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかれさまでしたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

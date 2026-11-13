@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Sakuya Ch. 木花サクヤ",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCAgYPad1QNRcTIzZEZPrKpQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌸"},{"type":"text","value":"🎶"},{"type":"text","value":"🌸"},{"type":"text","value":"🎶"},{"type":"text","value":"🌸"},{"type":"text","value":"🎶"},{"type":"text","value":"🌸"},{"type":"text","value":"🎶"},{"type":"text","value":"🌸"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCAgYPad1QNRcTIzZEZPrKpQ/2GFdY4WXJviN_9EP38S8gAU","alt":"草ｗｗｗ","sharedTooltipText":":_草ｗｗｗ:","src":"https://yt3.ggpht.com/GGz6VdGert5OL7JCTanSsMtWRJ7-isY05n6KMcktMdMeChMOu3KKDsYAZv8zsG8xLUBiuMom=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんサクヤー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍶"},{"type":"text","value":"🎶"},{"type":"text","value":"🍶"},{"type":"text","value":"🎶"},{"type":"text","value":"🍶"},{"type":"text","value":"🎶"},{"type":"text","value":"🍶"},{"type":"text","value":"🎶"},{"type":"text","value":"🍶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんサクヤ〜"},{"type":"youtubeEmoji","emojiId":"UCAgYPad1QNRcTIzZEZPrKpQ/2GFdY_-UJviN_9EP38S8gAU","alt":"なのです","sharedTooltipText":":_なのです:","src":"https://yt3.ggpht.com/wYrTsRRqoHvQNR46kG3WyqMCwvbehylVH6th03t8bBPQEhyTjMNRUoURh0gEXdn7zY3dzUu8zA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんふろ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" }
+  ]
+}

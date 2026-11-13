@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "焼まゆるのお絵かきちゃんねる",
+  "note": "歌枠0配信・通常8配信のチャットから10枚",
+  "channel": "UCg7aL_drCGzlPCrV6Hys_-w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつまゆー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"すごい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつまゆ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"88888888"}], "scope": "channel" }
+  ]
+}

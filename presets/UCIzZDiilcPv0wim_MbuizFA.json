@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Ryoma Barrenwort 【NIJISANJI EN】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCIzZDiilcPv0wim_MbuizFA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIzZDiilcPv0wim_MbuizFA/68lkZvvIMv-V_9EPn9qS6As","alt":"ryoLUL","sharedTooltipText":":_ryoLUL:","src":"https://yt3.ggpht.com/E5jxwZEPKfENnzzo-Y9cKa9d6iyfyjGg3XndtQX4tmWNqMaIvxFFttZwKOLLCMSaj5GgSRct=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"willy raid"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ntnt"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi ryoma"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIzZDiilcPv0wim_MbuizFA/0KdbZsC4Gbmd_9EP_4qUkQs","alt":"ryoHype","sharedTooltipText":":_ryoHype:","src":"https://yt3.ggpht.com/H9v79Y3mk0CSWaM5YhZWglx074vuDkbseIOdBM2Z7y2Mhq8GMmzi9BH6bG1NiSGEu-G1QZ7z9Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIzZDiilcPv0wim_MbuizFA/0KdbZsC4Gbmd_9EP_4qUkQs","alt":"ryoHype","sharedTooltipText":":_ryoHype:","src":"https://yt3.ggpht.com/H9v79Y3mk0CSWaM5YhZWglx074vuDkbseIOdBM2Z7y2Mhq8GMmzi9BH6bG1NiSGEu-G1QZ7z9Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIzZDiilcPv0wim_MbuizFA/0KdbZsC4Gbmd_9EP_4qUkQs","alt":"ryoHype","sharedTooltipText":":_ryoHype:","src":"https://yt3.ggpht.com/H9v79Y3mk0CSWaM5YhZWglx074vuDkbseIOdBM2Z7y2Mhq8GMmzi9BH6bG1NiSGEu-G1QZ7z9Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIzZDiilcPv0wim_MbuizFA/0KdbZoC3Gbmd_9EP_4qUkQs","alt":"ryoHeart","sharedTooltipText":":_ryoHeart:","src":"https://yt3.ggpht.com/_sSqB3FzZoRDeLD2K1fWMl8bP7lw4ntXVsKww59uqQsRripPn8QTvxkq-yGZpueAJPNUSGml=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIzZDiilcPv0wim_MbuizFA/0KdbZoC3Gbmd_9EP_4qUkQs","alt":"ryoHeart","sharedTooltipText":":_ryoHeart:","src":"https://yt3.ggpht.com/_sSqB3FzZoRDeLD2K1fWMl8bP7lw4ntXVsKww59uqQsRripPn8QTvxkq-yGZpueAJPNUSGml=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ryohayo"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCIzZDiilcPv0wim_MbuizFA/dctkZrPeMLe7_9EPpoOMsAo","alt":"ryoGGs","sharedTooltipText":":_ryoGGs:","src":"https://yt3.ggpht.com/vimfuA6FPYz7w5QT4CrPTCSYzibpGhhz0iraLhOf6LlRIrDxpZLbIQWZAXXPc59y3G1FoMmm=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCIzZDiilcPv0wim_MbuizFA/dctkZrPeMLe7_9EPpoOMsAo","alt":"ryoGGs","sharedTooltipText":":_ryoGGs:","src":"https://yt3.ggpht.com/vimfuA6FPYz7w5QT4CrPTCSYzibpGhhz0iraLhOf6LlRIrDxpZLbIQWZAXXPc59y3G1FoMmm=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

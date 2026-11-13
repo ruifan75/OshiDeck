@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "橙里セイ / Sei Channel【ななしいんく】",
+  "note": "歌枠0配信・通常4配信のチャットから10枚",
+  "channel": "UCBxw5bdrbKO7E60E4s3KgQg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎶"},{"type":"text","value":"🎹"},{"type":"text","value":"🧡"},{"type":"text","value":"🎶"},{"type":"text","value":"🎹"},{"type":"text","value":"🧡"},{"type":"text","value":"🎶"},{"type":"text","value":"🎹"},{"type":"text","value":"🧡"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いええええええい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

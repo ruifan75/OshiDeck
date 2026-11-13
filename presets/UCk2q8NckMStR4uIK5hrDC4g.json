@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Riikami Ch.",
+  "note": "歌枠0配信・通常4配信のチャットから10枚",
+  "channel": "UCk2q8NckMStR4uIK5hrDC4g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"Hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no "}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Oh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Ooo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi kami"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/egJ1XufTKYfegwOo57ewAg","alt":"shelterin","sharedTooltipText":":shelterin:","src":"https://yt3.ggpht.com/gjC5x98J4BoVSEPfFJaoLtc4tSBGSEdIlfL2FV4iJG9uGNykDP9oJC_QxAuBTJy6dakPxVeC=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

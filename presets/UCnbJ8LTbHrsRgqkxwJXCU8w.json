@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "立伝都々 / Tachitsute Toto【にじさんじ】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCnbJ8LTbHrsRgqkxwJXCU8w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"やほー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCnbJ8LTbHrsRgqkxwJXCU8w/H-nkafnGCqz7s8IPit_SuAQ","alt":"やほー","sharedTooltipText":":_やほー:","src":"https://yt3.ggpht.com/bKxo--YpB9YKeRYuPWi1OTIzY8iyDZyf5vSP2VgiWAXmmUbfRwE0GGWj633vqg4vrGdVyJh0aA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCnbJ8LTbHrsRgqkxwJXCU8w/H-nkafnGCqz7s8IPit_SuAQ","alt":"やほー","sharedTooltipText":":_やほー:","src":"https://yt3.ggpht.com/bKxo--YpB9YKeRYuPWi1OTIzY8iyDZyf5vSP2VgiWAXmmUbfRwE0GGWj633vqg4vrGdVyJh0aA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCnbJ8LTbHrsRgqkxwJXCU8w/H-nkafnGCqz7s8IPit_SuAQ","alt":"やほー","sharedTooltipText":":_やほー:","src":"https://yt3.ggpht.com/bKxo--YpB9YKeRYuPWi1OTIzY8iyDZyf5vSP2VgiWAXmmUbfRwE0GGWj633vqg4vrGdVyJh0aA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCnbJ8LTbHrsRgqkxwJXCU8w/H-nkaZ66Cqz7s8IPit_SuAQ","alt":"ひらがなのい","sharedTooltipText":":_ひらがなのい:","src":"https://yt3.ggpht.com/BDRtu6G2R6_j23kJ0xD9pyJz91XK8EHu0aTyQllSK02XFbXRWT-YSMCLblWfmL7_xc4gSFgB=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCnbJ8LTbHrsRgqkxwJXCU8w/H-nkaZ66Cqz7s8IPit_SuAQ","alt":"ひらがなのい","sharedTooltipText":":_ひらがなのい:","src":"https://yt3.ggpht.com/BDRtu6G2R6_j23kJ0xD9pyJz91XK8EHu0aTyQllSK02XFbXRWT-YSMCLblWfmL7_xc4gSFgB=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCnbJ8LTbHrsRgqkxwJXCU8w/H-nkadG8Cqz7s8IPit_SuAQ","alt":"ひらがなのと","sharedTooltipText":":_ひらがなのと:","src":"https://yt3.ggpht.com/en0Oa-zG-yJTIXgx5HwoVv8Rd7feOdb8_owLmfhAW2PR_dzsqlJrArO97ykfVrxvpwV1yhuVHWM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCnbJ8LTbHrsRgqkxwJXCU8w/H-nkadG8Cqz7s8IPit_SuAQ","alt":"ひらがなのと","sharedTooltipText":":_ひらがなのと:","src":"https://yt3.ggpht.com/en0Oa-zG-yJTIXgx5HwoVv8Rd7feOdb8_owLmfhAW2PR_dzsqlJrArO97ykfVrxvpwV1yhuVHWM=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCnbJ8LTbHrsRgqkxwJXCU8w/H-nkabK7Cqz7s8IPit_SuAQ","alt":"ひらがなのた","sharedTooltipText":":_ひらがなのた:","src":"https://yt3.ggpht.com/wcAohk8B981q-mrzdlh2ynbRI8BLIBrOxLwfgtHxkNXcxuoRBpKg4UJbFx-IyqDaGzz9M5cMzQ=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

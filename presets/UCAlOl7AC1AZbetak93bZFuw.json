@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "園原あいりちゃんねる【PinkPunkPro】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCAlOl7AC1AZbetak93bZFuw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おいっすー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつれーさまー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💛"},{"type":"text","value":"🍒"},{"type":"text","value":"💛"},{"type":"text","value":"🍒"},{"type":"text","value":"💛"},{"type":"text","value":"🍒"},{"type":"text","value":"💛"},{"type":"text","value":"🍒"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おいっす～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえりー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" }
+  ]
+}

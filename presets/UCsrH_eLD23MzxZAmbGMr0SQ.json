@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "まるげりちゃ / Margher Richa",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCsrH_eLD23MzxZAmbGMr0SQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おはちゃむー"},{"type":"text","value":"🍕"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCsrH_eLD23MzxZAmbGMr0SQ/mTvAZ96iAoy__9EP6MzrgAQ","alt":"うおーりちゃまる","sharedTooltipText":":_うおーりちゃまる:","src":"https://yt3.ggpht.com/sJmjG3nicYXkQ0NYWnSWUryKO-OwokJuRE4PYcZ9WiDG2_iochMafFurEms694mi4BjIXt1RVg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCsrH_eLD23MzxZAmbGMr0SQ/mTvAZ96iAoy__9EP6MzrgAQ","alt":"うおーりちゃまる","sharedTooltipText":":_うおーりちゃまる:","src":"https://yt3.ggpht.com/sJmjG3nicYXkQ0NYWnSWUryKO-OwokJuRE4PYcZ9WiDG2_iochMafFurEms694mi4BjIXt1RVg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCsrH_eLD23MzxZAmbGMr0SQ/mTvAZ96iAoy__9EP6MzrgAQ","alt":"うおーりちゃまる","sharedTooltipText":":_うおーりちゃまる:","src":"https://yt3.ggpht.com/sJmjG3nicYXkQ0NYWnSWUryKO-OwokJuRE4PYcZ9WiDG2_iochMafFurEms694mi4BjIXt1RVg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはちゃむー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCsrH_eLD23MzxZAmbGMr0SQ/5kHAZ5f1KLem_9EPtKnA8Qw","alt":"ではな文字","sharedTooltipText":":_ではな文字:","src":"https://yt3.ggpht.com/1zUZw8bK9PMC1vjEl1diBthGIm9xxJQ8neJklL9ZrgoqF1uOrConDUyFX3PtTBEiAC9VvWIVYg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCsrH_eLD23MzxZAmbGMr0SQ/VGgHavL8JL_3s8IPnYLF-Ac","alt":"ないすりちゃまる","sharedTooltipText":":_ないすりちゃまる:","src":"https://yt3.ggpht.com/BXUBsBG3nLK8VZ2GKlPlc1WdYJONJr6o379YQ7mWEvXMcnpqizUZhF1b8okaW-pcfEMdBFjGoA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCsrH_eLD23MzxZAmbGMr0SQ/VGgHavL8JL_3s8IPnYLF-Ac","alt":"ないすりちゃまる","sharedTooltipText":":_ないすりちゃまる:","src":"https://yt3.ggpht.com/BXUBsBG3nLK8VZ2GKlPlc1WdYJONJr6o379YQ7mWEvXMcnpqizUZhF1b8okaW-pcfEMdBFjGoA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCsrH_eLD23MzxZAmbGMr0SQ/VGgHavL8JL_3s8IPnYLF-Ac","alt":"ないすりちゃまる","sharedTooltipText":":_ないすりちゃまる:","src":"https://yt3.ggpht.com/BXUBsBG3nLK8VZ2GKlPlc1WdYJONJr6o379YQ7mWEvXMcnpqizUZhF1b8okaW-pcfEMdBFjGoA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"がんばれー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちゃむー"},{"type":"text","value":"🍕"}], "scope": "channel" }
+  ]
+}

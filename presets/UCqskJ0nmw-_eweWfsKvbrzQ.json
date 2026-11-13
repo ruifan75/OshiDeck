@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "月野木ちろる / Tirol Channel 【ななしいんく】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCqskJ0nmw-_eweWfsKvbrzQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌙"},{"type":"text","value":"🌲"},{"type":"text","value":"🎶"},{"type":"text","value":"🌙"},{"type":"text","value":"🌲"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCqskJ0nmw-_eweWfsKvbrzQ/VU5RZ7yQJea0_9EPrvzR4AQ","alt":"ehe","sharedTooltipText":":_ehe:","src":"https://yt3.ggpht.com/LpbN2wC64ASHvXYfgVFbS0SspExB1-YS7GlXGGVRAHXoWeVLfiUGfe9J3uNJu7vyMsuiDCzutQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCqskJ0nmw-_eweWfsKvbrzQ/VU5RZ7yQJea0_9EPrvzR4AQ","alt":"ehe","sharedTooltipText":":_ehe:","src":"https://yt3.ggpht.com/LpbN2wC64ASHvXYfgVFbS0SspExB1-YS7GlXGGVRAHXoWeVLfiUGfe9J3uNJu7vyMsuiDCzutQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCqskJ0nmw-_eweWfsKvbrzQ/VU5RZ7yQJea0_9EPrvzR4AQ","alt":"ehe","sharedTooltipText":":_ehe:","src":"https://yt3.ggpht.com/LpbN2wC64ASHvXYfgVFbS0SspExB1-YS7GlXGGVRAHXoWeVLfiUGfe9J3uNJu7vyMsuiDCzutQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"よいよるー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"よいひるー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"よいよる～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Cheers,mate!! ななSee-ya!!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ななしーやー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり"}], "scope": "channel" }
+  ]
+}

@@ -45,6 +45,12 @@ const DOWNLOAD = "download-test.mjs";
 const RECOVERY = "recovery-test.mjs";
 const SAVE_MENU = "save-menu-test.mjs";
 const SCOPE_FILTER = "scope-filter-test.mjs";
+const CHANNEL_MARK = "channel-mark-test.mjs";
+const BUILDER_COLOUR = "builder-colour-test.mjs";
+const DIAGNOSTICS = "diagnostics-test.mjs";
+const JOURNAL = "journal-test.mjs";
+const OPTIONS_NOTICE = "options-notice-test.mjs";
+const RELEASE = "release-test.mjs";
 
 // Which file a mutation edits, and how its test is told to load the copy.
 const CONTENT = { file: "content.js", env: "OD_SOURCE" };
@@ -52,9 +58,14 @@ const TRENDING = { file: "src/trending.js", env: "OD_TRENDING" };
 const LAYOUT = { file: "src/layout.js", env: "OD_LAYOUT" };
 const TOKENS = { file: "src/tokens.js", env: "OD_TOKENS" };
 const OPTIONS = { file: "options.js", env: "OD_OPTIONS" };
+const OPTIONS_STYLE = { file: "options.css", env: "OD_OPTIONS_CSS", js: false };
 const STORE = { file: "src/store.js", env: "OD_STORE" };
+const JOURNALSRC = { file: "src/journal.js", env: "OD_JOURNAL" };
+const BACKGROUND = { file: "background.js", env: "OD_BACKGROUND" };
 const PRESETS = { file: "src/presets.js", env: "OD_PRESETS" };
 const I18NSRC = { file: "src/i18n.js", env: "OD_I18N" };
+const MARKS = { file: "src/channel-marks.js", env: "OD_MARKS" };
+const MARK_STYLE = { file: "src/channel-marks.css", env: "OD_MARK_CSS", js: false };
 // Not shipped, but it is the only thing that can say whether the English
 // fits a 400px bar without opening one.
 const WIDTHSRC = { file: "tools/check-width.mjs", env: "OD_WIDTH" };
@@ -65,6 +76,7 @@ const MINERSRC = { file: "tools/mine-chat.mjs", env: "OD_MINER" };
 const SCOPESRC = { file: "tools/scope.mjs", env: "OD_SCOPE" };
 const PRODSRC = { file: "tools/produce-presets.mjs", env: "OD_PRODUCTION" };
 const CHATLINES = { file: "tools/chat-lines.mjs", env: "OD_CHAT_LINES" };
+const RELEASESRC = { file: "tools/build-release.mjs", env: "OD_RELEASE" };
 // Not JavaScript, so `node --check` has nothing to say about it. Twice now a
 // decision made correctly in JS was painted over by a rule in CSS, which no
 // test could see.
@@ -79,6 +91,217 @@ const read = ({ file }) => {
 // [test, subject, name, find, replace] — `find` must appear exactly once, so a
 // mutation cannot quietly stop applying when the code around it moves.
 const MUTATIONS = [
+  [RELEASE, RELEASESRC, "a stylesheet checked by its irrelevant src attribute",
+    'node.tagName === "script" ? getAttr(node, "src") : getAttr(node, "href")',
+    'getAttr(node, "src") ?? getAttr(node, "href")'],
+  [RELEASE, RELEASESRC, "HTML audited with scripting-disabled noscript grammar",
+    'scriptingEnabled: true, sourceCodeLocationInfo: true',
+    'scriptingEnabled: false, sourceCodeLocationInfo: true'],
+  [RELEASE, RELEASESRC, "a noscript stylesheet escape hidden by scripting-disabled grammar",
+    'scriptingEnabled: true, sourceCodeLocationInfo: true',
+    'scriptingEnabled: false, sourceCodeLocationInfo: true'],
+  [RELEASE, RELEASESRC, "a noscript base escape hidden by scripting-disabled grammar",
+    'scriptingEnabled: true, sourceCodeLocationInfo: true',
+    'scriptingEnabled: false, sourceCodeLocationInfo: true'],
+  [RELEASE, RELEASESRC, "base ordering checked only against earlier DOM nodes",
+    'firstReference = Math.min(firstReference, at);',
+    'if (!base) firstReference = Math.min(firstReference, at);'],
+  [RELEASE, RELEASESRC, "an inert template base used as the document base",
+    'if (inTemplate || base) fail("UNSUPPORTED_RUNTIME_HTML", file);',
+    'if (base) fail("UNSUPPORTED_RUNTIME_HTML", file);'],
+  [RELEASE, RELEASESRC, "HTML tags discarded by the parser left unchecked",
+    'if (startNodes.get(at) !== name.toLowerCase())', 'if (false)'],
+  [RELEASE, RELEASESRC, "template contents omitted from the HTML audit",
+    'if (node.content) stack.push({ node: node.content, inTemplate: true });', 'void node.content;'],
+  [RELEASE, RELEASESRC, "SVG scripts checked through the HTML src attribute",
+    'getAttr(node, "href") ?? getAttr(node, "href", html.NS.XLINK)', 'getAttr(node, "src")'],
+  [RELEASE, RELEASESRC, "legacy SVG script hrefs left unchecked",
+    '?? getAttr(node, "href", html.NS.XLINK)', '?? undefined'],
+  [RELEASE, RELEASESRC, "an SVG fallback overriding its primary href",
+    'getAttr(node, "href") ?? getAttr(node, "href", html.NS.XLINK)',
+    'getAttr(node, "href", html.NS.XLINK) ?? getAttr(node, "href")'],
+  [RELEASE, RELEASESRC, "invalid HTML UTF-8 silently repaired",
+    'new TextDecoder("utf-8", { fatal: true }).decode(bytes)', 'new TextDecoder("utf-8").decode(bytes)'],
+  [RELEASE, RELEASESRC, "a URL scheme mistaken for a relative resource",
+    'new URL("http://oshideck-check.invalid/")', 'new URL("https://oshideck-check.invalid/")'],
+  [RELEASE, RELEASESRC, "a build ignoring static module dependencies",
+    "for (const specifier of imports) requireFile(specifier, file, true);", "void imports;"],
+  [RELEASE, RELEASESRC, "a build ignoring options resource dependencies",
+    'for (const reference of result.references) requireFile(reference, file, false, bases);',
+    'void result.references;'],
+  [RELEASE, RELEASESRC, "an HTML base ignored while resolving resources",
+    'false, bases)', 'false, documentURLs(file))'],
+  [RELEASE, RELEASESRC, "an external resource mistaken for a local parser URL",
+    'urls.some((url, i) => url.origin !== origins[i].origin)', 'urls[0].origin !== origins[0].origin'],
+  [RELEASE, RELEASESRC, "a checksum report with a fabricated archive hash",
+    'sha256: sha256(zip), files: files.length', 'sha256: "0".repeat(64), files: files.length'],
+  [CHANNEL_MARK, MARK_STYLE, "a neutral picker pointing at a chromatic hue",
+    '  visibility: hidden;', '  visibility: visible;'],
+  [DIAGNOSTICS, JOURNALSRC, "the export omitting its identifier disclosure",
+    '      OD.i18n.t("ui.journalPrivacy"),', '      "",'],
+  [COLOUR, STORE, "a rounded hue escaping as 360 degrees",
+    "return Math.round((Math.atan2(bb, a) * 180 / Math.PI + 360) % 360) % 360;",
+    "return Math.round((Math.atan2(bb, a) * 180 / Math.PI + 360) % 360);"],
+  [RELEASE, RELEASESRC, "a private subscription file bundled with the runtime",
+    'const fileList = [...RUNTIME_FILES, "presets/index.json", ...presetFiles].sort();',
+    'const fileList = [...RUNTIME_FILES, "presets/index.json", ...presetFiles, "YT_subscribe.csv"].sort();'],
+  [RELEASE, RELEASESRC, "an unlisted manifest dependency accepted for release",
+    'if (!RUNTIME.has(file)) fail("UNLISTED_MANIFEST_RESOURCE");',
+    'if (false) fail("UNLISTED_MANIFEST_RESOURCE");'],
+  [RELEASE, RELEASESRC, "runtime sources followed through a symlink",
+    'if (realpathSync(path) !== path) fail("SYMLINK_RUNTIME_FILE", file);',
+    'if (false) fail("SYMLINK_RUNTIME_FILE", file);'],
+  [RELEASE, RELEASESRC, "the release build skipping preset validation",
+    'if (problem) fail("INVALID_PRESET", file);',
+    'if (false) fail("INVALID_PRESET", file);'],
+  [RELEASE, RELEASESRC, "a configured key copied into a release",
+    'if (secrets.some((value) => bytes.includes(Buffer.from(value)))) fail("PRIVATE_CONTENT", file);',
+    'if (false) fail("PRIVATE_CONTENT", file);'],
+  [RELEASE, RELEASESRC, "local file permissions changing the release bytes",
+    "      chmodSync(target, 0o644);", "      // (keep the process umask)"],
+  [RELEASE, RELEASESRC, "native build errors exposing private filesystem paths",
+    'console.error(`FAIL ${error instanceof ReleaseBuildError ? error.message : error.code || "BUILD_FAILED"}`);',
+    'console.error(`FAIL ${error.message}`);'],
+  [RELEASE, RELEASESRC, "the release CLI silently skipping a path alias",
+    "realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)",
+    "resolve(process.argv[1]) === fileURLToPath(import.meta.url)"],
+  [OPTIONS_NOTICE, OPTIONS_STYLE, "an undo notice left in the document flow",
+    "  position: fixed;", "  position: static;"],
+  [OPTIONS_NOTICE, OPTIONS, "an undo disappearing after eight seconds",
+    "function status(message, actionLabel, action, duration = 10000)",
+    "function status(message, actionLabel, action, duration = 8000)"],
+  [OPTIONS_NOTICE, OPTIONS, "hover not pausing an undo notice",
+    'statusBox.addEventListener("pointerenter",', 'statusBox.addEventListener("unused",'],
+  [OPTIONS_NOTICE, OPTIONS, "keyboard focus not pausing an undo notice",
+    'statusBox.addEventListener("focusin",', 'statusBox.addEventListener("unused",'],
+  [OPTIONS_NOTICE, OPTIONS, "a resumed notice getting a fresh full countdown",
+    "state.remaining = Math.max(0, state.remaining - (performance.now() - state.startedAt));",
+    "state.remaining = 10000;"],
+  [OPTIONS_NOTICE, OPTIONS, "an expired Undo still restoring its captured card",
+    "if (state !== currentStatus || state.running) return;", "if (state.running) return;"],
+  [OPTIONS_NOTICE, OPTIONS, "a stale Close dismissing a later notice",
+    "if (!expected || expected !== currentStatus) return;", "if (!expected) return;"],
+  [OPTIONS_NOTICE, OPTIONS, "the notice close button doing nothing",
+    'close.addEventListener("click", () => dismissStatus(state));', 'close.addEventListener("click", () => {});'],
+  [OPTIONS_NOTICE, OPTIONS, "settings replacing an active Undo",
+    'if (!undo) status(t("opt.saved"), null, null, 1200);', 'status(t("opt.saved"), null, null, 1200);'],
+  [OPTIONS_NOTICE, OPTIONS, "a settings timer clearing a later Undo",
+    'if (!undo) status(t("opt.saved"), null, null, 1200);',
+    'if (!undo) status(t("opt.saved"), null, null, 1200);\n  setTimeout(() => document.querySelector("#saved").replaceChildren(), 1200);'],
+  [OPTIONS_NOTICE, OPTIONS, "Undo losing the snapshot it was created for",
+    "const reply = await run();", "const reply = await undo?.();"],
+  [OPTIONS_NOTICE, OPTIONS, "a slow Undo reply replacing a newer notice",
+    'if (state === currentStatus && isUndo) status(reply?.ok ? t("opt.undone") : t("toast.saveFailed"));',
+    'if (isUndo) status(reply?.ok ? t("opt.undone") : t("toast.saveFailed"));'],
+  [DIAGNOSTICS, BACKGROUND, "worker mutations bypassing diagnostics",
+    "enqueue(() => mutate(message))", "enqueue(() => store.runOp(message.op, message.args))"],
+  [DIAGNOSTICS, BACKGROUND, "a rejected operation logged as successful",
+    'status: reply.ok ? "ok" : "failed", reason: reply.reason,', 'status: "ok", reason: reply.reason,'],
+  [DIAGNOSTICS, BACKGROUND, "a log write stalling the card queue",
+    "enqueueLog(flushLog);", "enqueue(flushLog);"],
+  [DIAGNOSTICS, BACKGROUND, "a failed log batch discarded",
+    "pendingLog = [...batch, ...pendingLog].slice(-journal.LIMIT);", "pendingLog = [];"],
+  [DIAGNOSTICS, BACKGROUND, "last observations discarded beside a busy timeline",
+    "journal.states(raw[journal.STATE_KEY], batch)", "[]"],
+  [DIAGNOSTICS, BACKGROUND, "clearing the timeline but retaining its snapshots",
+    "chrome.storage.local.remove([journal.KEY, journal.STATE_KEY])", "chrome.storage.local.remove(journal.KEY)"],
+  [DIAGNOSTICS, BACKGROUND, "a clear discarding newly arrived operations",
+    "        journal.reset();", "        pendingLog = [];\n        journal.reset();"],
+  [DIAGNOSTICS, BACKGROUND, "an inherited worker operation treated as a real operation",
+    "Object.hasOwn(store.OPS, op)", "op in store.OPS"],
+  [DIAGNOSTICS, JOURNALSRC, "diagnostics accepting arbitrary string fields",
+    "if (enums[key]?.has(value)) out[key] = value;", 'if (typeof value === "string") out[key] = value;'],
+  [DIAGNOSTICS, JOURNALSRC, "prototype fields preventing an otherwise valid diagnostic",
+    "Object.assign(Object.create(null), {", "Object.assign({}, {"],
+  [DIAGNOSTICS, JOURNALSRC, "unchanged states repeated after another event",
+    "if (STATE_KINDS.has(full.kind) && last?.sig === sig) return;", "if (false) return;"],
+  [DIAGNOSTICS, JOURNALSRC, "draw counters logged on every update",
+    'if (full.kind === "draw" && last?.decision === decision && full.at - last.at < 30000) return;', 'if (false) return;'],
+  [DIAGNOSTICS, JOURNALSRC, "different draws suppressed as the same decision",
+    'last?.decision === decision', 'JSON.parse(last?.decision || "[]")[0] === full.reason'],
+  [DIAGNOSTICS, OPTIONS, "diagnostic counts ignoring new entries",
+    'if (area !== "local" || !Object.hasOwn(changes, journal.KEY)) return;', 'if (true) return;'],
+  [DIAGNOSTICS, OPTIONS, "an old read overwriting the latest diagnostic count",
+    'if (revision !== journalRevision) return;', 'if (false) return;'],
+  [DIAGNOSTICS, JOURNALSRC, "unexpected errors not observed",
+    'globalThis.addEventListener?.("error",', 'globalThis.addEventListener?.("unused",'],
+  [DIAGNOSTICS, CONTENT, "filled input logged as a clicked send button",
+    'journal.record({ kind: "play", status: "filled", channelId: here,',
+    'journal.record({ kind: "play", status: "clicked", channelId: here,'],
+  [DIAGNOSTICS, CONTENT, "send button timeouts missing from the log",
+    'journal.record({ kind: "play", stage: "send", status: "timeout", channelId: getChannel()?.id });', 'void 0;'],
+  [DIAGNOSTICS, TRENDING, "burst counters lost before diagnostics can read them",
+    "lastBurst = stats;", "lastBurst = {};"],
+  [DIAGNOSTICS, CONTENT, "a membership refusal counted as an owned card",
+    'if (why === "membership") { drawBlocks.membershipBlocked += 1; return false; }',
+    'if (why === "membership") { drawBlocks.owned += 1; return false; }'],
+  [DIAGNOSTICS, CONTENT, "an owned card omitted from draw refusals",
+    'if (mine.has(seen.key)) { drawBlocks.owned += 1; return false; }',
+    'if (mine.has(seen.key)) { drawBlocks.owned += 0; return false; }'],
+  [JOURNAL, JOURNALSRC, "an unavailable store described as empty in the export",
+    '    if (!data) return clean({ kind: "environment", surface, session, at: Date.now(), status: "failed", reason: "storage-read", ...extra });',
+    '    if (false) return null;'],
+  [DIAGNOSTICS, OPTIONS, "the export missing its current snapshot",
+    "journal.format(entries, chrome.runtime.getManifest().version, journal.snapshot(data), states)",
+    "journal.format(entries, chrome.runtime.getManifest().version)"],
+  [DIAGNOSTICS, OPTIONS, "invalid backup JSON not recorded",
+    'journal.record({ kind: "file", source: "backup", stage: "read", status: "rejected", reason: "invalid-json" });', 'void 0;'],
+  [COLOUR, STORE, "the neutral catalogue left empty",
+    "const OSHI_NEUTRALS = Object.assign(Object.create(null), {",
+    "const OSHI_NEUTRALS = Object.assign(Object.create(null), false && {"],
+  [COLOUR, STORE, "a neutral default overriding a saved hue of zero",
+    "    if (meta?.hue != null) return null;", "    if (meta?.hue) return null;"],
+  [COLOUR, STORE, "loading a starting deck discarding its neutral default",
+    "          ...(channelColor(channelId, existing) ? { color: channelColor(channelId, existing) } : {}),",
+    "          ...{},"],
+  [COLOUR, STORE, "a new hue retaining the old neutral selection",
+    "        ...(chosen ? { color: chosen } : {}),", "        ...(existing.color ? { color: existing.color } : chosen ? { color: chosen } : {}),"],
+  [CHANNEL_MARK, CONTENT, "a neutral-only change missing from the panel signature",
+    '      data.channelMeta?.[channel?.id]?.color ?? "",', '      "",'],
+  [CHANNEL_MARK, CONTENT, "the panel losing its neutral stripe colour",
+    '      rootEl.style.setProperty("--od-neutral", color);', '      rootEl.style.removeProperty("--od-neutral");'],
+  [CHANNEL_MARK, MARKS, "the badge discarding its neutral colour",
+    '    if (color) mark.style.setProperty("--od-neutral", color);',
+    '    if (color) mark.style.removeProperty("--od-neutral");'],
+  [CHANNEL_MARK, STYLE, "the common dot inheriting the channel colour",
+    ".od-dot.od-dot-common {", ".od-dot-common {"],
+  [BUILDER_COLOUR, OPTIONS, "the native chooser saving grey as a red hue",
+    '    if (hue != null) saveHue(hue, store.neutralFromHex(event.target.value));',
+    '    if (hue != null) saveHue(hue);'],
+  [BUILDER_COLOUR, OPTIONS, "the builder slider not previewing the selected hue",
+    "previewHue(Number(event.target.value), slider)", "previewHue(current, slider)"],
+  [BUILDER_COLOUR, OPTIONS, "the native chooser waiting until release to preview",
+    'picker.addEventListener("input",', 'picker.addEventListener("unused",'],
+  [BUILDER_COLOUR, OPTIONS, "a colour preview writing storage on every movement",
+    "    channelMarks.update(mark, hue, color);", "    channelMarks.update(mark, hue, color);\n    saveHue(hue);"],
+  [BUILDER_COLOUR, OPTIONS, "a colour change saved onto the wrong channel",
+    "    return setHue(channelId, hue, color);", '    return setHue("UCj63OWl-HQ-I6ORzUWF1EDg", hue, color);'],
+  [BUILDER_COLOUR, OPTIONS, "a detached chooser overwriting its old channel",
+    "  function saveHue(hue, color = null) {\n    if (selected !== channelId || !swatches.isConnected) return;",
+    "  function saveHue(hue, color = null) {\n    if (false) return;"],
+  [CHANNEL_MARK, MARKS, "the heart staying at one hue",
+    'orbit.style.transform = `rotate(${angle}deg)`;',
+    'orbit.style.transform = "rotate(0deg)";'],
+  [CHANNEL_MARK, MARK_STYLE, "the hair ornament wheel starting on the wrong colour",
+    "conic-gradient(from -60deg,", "conic-gradient(from -30deg,"],
+  [CHANNEL_MARK, MARKS, "an OKLCH angle used directly on the RGB wheel",
+    "const angle = angleOfColor(OD.store.hexOfHue(hue ?? 320, 0.74));",
+    "const angle = (hue ?? 320) - 60;"],
+  [CHANNEL_MARK, MARK_STYLE, "the heart pointing out of the ring",
+    "  transform: translate(-50%, -50%);\n  color: white;",
+    "  transform: translate(-50%, -50%) rotate(180deg);\n  color: white;"],
+  [CHANNEL_MARK, CONTENT, "the bar forgetting the channel's special badge",
+    "      const dot = channelMark(channel.id, hue);",
+    "      const dot = channelMark(null, hue);"],
+  [CHANNEL_MARK, MARKS, "the badge ignoring a newly chosen channel colour",
+    '    mark.style.setProperty("--od-scope-hue", hue ?? 320);',
+    '    mark.style.setProperty("--od-scope-hue", 320);'],
+  [CHANNEL_MARK, CONTENT, "the save menu forgetting the channel's special badge",
+    'scope === "channel" ? channelMark(barContext?.channel?.id, hue)',
+    'scope === "channel" ? channelMark(null, hue)'],
+  [CHANNEL_MARK, MARK_STYLE, "the picker too small to recognise",
+    '.od-channel-mark[data-mark="picker"] {\n  width: 14px;\n  height: 14px;',
+    '.od-channel-mark[data-mark="picker"] {\n  width: 8px;\n  height: 8px;'],
   [SCOPE_FILTER, CONTENT, "the deck bypassing its scope filter",
     '    const shown = poolOpen ? (poolTab === "offered" ? offered : mine) : filteredDeck(deck);',
     '    const shown = poolOpen ? (poolTab === "offered" ? offered : mine) : deck;'],
@@ -286,19 +509,19 @@ const MUTATIONS = [
     "    for (let k = 1; k < n; k++) {"],
 
   [DRAW, CONTENT, "a reaction already in the deck offered again",
-    "    !mine.has(seen.key) &&",
-    "    true &&"],
+    "    if (mine.has(seen.key)) { drawBlocks.owned += 1; return false; }",
+    "    if (false) return false;"],
 
   [DRAW, CONTENT, "a drawn card replaced the moment anything louder arrives",
     "    if (drawn) return drawn.card;",
     "    if (false) return drawn.card;"],
 
   [TREND, TRENDING, "a burst with no floor under it",
-    "        if (seen.count < floor) continue;",
+    "        if (seen.count < floor) { stats.belowMin += 1; continue; }",
     "        if (false) continue;"],
 
   [TREND, TRENDING, "a burst that ignores how busy the chat is",
-    "        if (seen.count < said * share) continue;",
+    "        if (seen.count < said * share) { stats.belowShare += 1; continue; }",
     "        if (false) continue;"],
 
   // A membership gift puts out one announcement per recipient, all naming the
@@ -386,6 +609,13 @@ const MUTATIONS = [
     "  if (!held.length) return deleteCardNow(card);",
     "  return deleteCardNow(card);"],
 
+  [COLOUR, STORE, "the bundled colour catalogue left empty",
+    "const OSHI_HUES = Object.assign(Object.create(null), {",
+    "const OSHI_HUES = Object.assign(Object.create(null), false && {"],
+  [COLOUR, STORE, "a stale HSV hue used for the Hololive brand",
+    '"UCJFZiqLMntJufDCHc6bQixg": 223,', '"UCJFZiqLMntJufDCHc6bQixg": 193,'],
+  [COLOUR, STORE, "a catalogue hue of zero mistaken for no colour",
+    "    if (known != null) return known;", "    if (known) return known;"],
   [COLOUR, STORE, "a hand-picked colour ignored in favour of the hash",
     "    const known = OSHI_HUES[channelId];\n    if (known != null) return known;",
     "    const known = undefined;\n    if (known != null) return known;"],
@@ -457,11 +687,25 @@ const MUTATIONS = [
     "        id: card.id,\n        tokens: card.tokens,\n        scope:"],
 
   [PRESET, STORE, "a card that works only elsewhere counted as a match",
-    "        const existing = family.find((held) => usableOn(held, channelId));",
+    "        const existing = presetMatch(family, channelId);",
     "        const existing = family[0];"],
 
+  [PRESET, STORE, "storage order choosing the start deck's existing card",
+    "return cards.find((card) => scopeOf(card) === GLOBAL && usableOn(card, channelId)) ||",
+    "return undefined ||"],
+  [MEMBER, CONTENT, "a start-deck preview choosing the first owned copy",
+    "...store.presetMatch(family, channelId)", "...family[0]"],
+  [KARAOKE, SCOPESRC, "a mined starting deck creating universal cards",
+    'scope: "channel"', 'scope: "global"'],
+  [I18N, I18NSRC, "the Japanese start-deck label reverting to preset",
+    'ja: "スタートデッキ$1"', 'ja: "プリセット$1"'],
+
+  [PRESET, STORE, "an old page's global scope trusted by the worker",
+    "card.scope = allowedScope(card.tokens, channelId, channelId);", "// old declaration trusted"],
+  [PRESET, PRESETS, "a starting deck creating unbound cards without a channel",
+    "    if (!channelId) return [];", "    // missing channel accepted"],
   [PRESET, PRESETS, "channel-only losing its meaning on the way in",
-    'scope: card.scope === "channel" && channelId ? channelId : OD.store.GLOBAL,',
+    'scope: channelId,',
     "scope: OD.store.GLOBAL,"],
 
   [DRAW, STORE, "a card held for a different time than anyone was told",
@@ -633,8 +877,8 @@ const MUTATIONS = [
     "    if (drawn && (now >= drawn.until || mine.has(drawn.key))) drawn = null;"],
 
   [DRAW, CONTENT, "member emoji offered to someone who cannot send them",
-    "    !whyNotSendable(seen.tokens, channelId, member);",
-    "    true;"],
+    '    if (why === "membership") { drawBlocks.membershipBlocked += 1; return false; }',
+    '    if (false) return false;'],
 
   // The callers again, and the fixtures that were letting them through.
   [MEMBER, CONTENT, "a chip that has to be hidden to count",
@@ -686,6 +930,7 @@ const MUTATIONS = [
   [MEMBER, CONTENT, "the card checked and the comment sent",
     `    if (willSend && whyNotSendable(tokens.collectTokens(input), here, member)) {
       sending = false;
+      journal.record({ kind: "play", status: "refused", reason: "leftover", channelId: here });
       return showToast(t("toast.leftover"));
     }
 `, ""],
@@ -1021,12 +1266,12 @@ const MUTATIONS = [
     "    if (!reply?.ok || !Array.isArray(reply.value)) { bundled.set(channelId, []); return []; }"],
 
   [PRESET, OPTIONS, "a file taken in without asking whose it is",
-    "  if (!presets.offeredOn(raw, selected)) return status(t(\"opt.importNotForHere\"));",
-    "  if (false) return status(t(\"opt.importNotForHere\"));"],
+    "  if (!presets.offeredOn(raw, selected)) {",
+    "  if (false) {"],
 
   [PRESET, OPTIONS, "a file taken in without being read first",
-    "  if (problem) return status(t(\"opt.cannotRead\", problem));",
-    "  if (false) return status(t(\"opt.cannotRead\", problem));"],
+    '  if (problem) {\n    journal.record({ kind: "file", source: "preset", stage: "validate", status: "rejected", code: problem[0] });',
+    '  if (false) {\n    journal.record({ kind: "file", source: "preset", stage: "validate", status: "rejected", code: problem[0] });'],
 
   [EMOJI, TOKENS, "an owner prefix read as a membership on its own",
     "      if (!needsMembership(token)) continue;",
@@ -1159,8 +1404,8 @@ const MUTATIONS = [
     "      for (const source of []) {"],
 
   [MEMBER, CONTENT, "a card you own offered as a copy of itself",
-    "        if (family) { offered.push({ ...family[0] }); continue; }",
-    "        if (family) { offered.push({ ...family[0], id: `preset:${key}` }); continue; }"],
+    "        if (family) { offered.push({ ...store.presetMatch(family, channelId) }); continue; }",
+    "        if (family) { offered.push({ ...store.presetMatch(family, channelId), id: `preset:${key}` }); continue; }"],
 
   // Asked by id, the preset went on offering the other copy of something the
   // deck already said — and pressing it put the same words in twice.
@@ -1320,6 +1565,102 @@ const MUTATIONS = [
 // assertion, so deleting the reorder case would have left the checker green —
 // naming the assertion is what makes each mutation answer for its own.
 const KILLS = {
+  "a stylesheet checked by its irrelevant src attribute": "unlisted stylesheet hrefs with misleading src attributes prevent publishing",
+  "HTML audited with scripting-disabled noscript grammar": "scripting-enabled noscript comments attributes and raw text stay inert",
+  "a noscript stylesheet escape hidden by scripting-disabled grammar": "noscript comment escape cannot hide a release dependency",
+  "a noscript base escape hidden by scripting-disabled grammar": "noscript base escape cannot hide a release dependency",
+  "base ordering checked only against earlier DOM nodes": "foster-parented base cannot hide a preceding script dependency",
+  "an inert template base used as the document base": "template base cannot hide a release dependency",
+  "HTML tags discarded by the parser left unchecked": "select stylesheet cannot hide a release dependency",
+  "template contents omitted from the HTML audit": "local template shadow and SVG dependencies remain supported",
+  "SVG scripts checked through the HTML src attribute": "SVG href script cannot hide a release dependency",
+  "legacy SVG script hrefs left unchecked": "SVG xlink script cannot hide a release dependency",
+  "an SVG fallback overriding its primary href": "SVG href precedence cannot hide a release dependency",
+  "invalid HTML UTF-8 silently repaired": "invalid UTF-8 HTML is explicitly refused",
+  "a URL scheme mistaken for a relative resource": "unlisted same-scheme references prevent publishing",
+  "a build ignoring static module dependencies": "unlisted transitive imports prevent publishing",
+  "a build ignoring options resource dependencies": "unlisted options scripts prevent publishing",
+  "an HTML base ignored while resolving resources": "unlisted relative HTML base paths prevent publishing",
+  "an external resource mistaken for a local parser URL": "unlisted C0-prefixed script URLs prevent publishing",
+  "a checksum report with a fabricated archive hash": "the checksum report identifies the actual archive and files",
+  "a neutral picker pointing at a chromatic hue": "Nuhu's #808080 has its actual neutral colour without a false hue indicator",
+  "the export omitting its identifier disclosure": "the options page and actual export disclose identifiers and membership",
+  "a rounded hue escaping as 360 degrees": "rounding across the hue origin wraps to zero",
+  "a private subscription file bundled with the runtime": "private workspace files stay out of a successful build",
+  "an unlisted manifest dependency accepted for release": "unlisted manifest resources are refused",
+  "runtime sources followed through a symlink": "symlinked runtime directories cannot supply package files",
+  "the release build skipping preset validation": "empty cards are refused by the shipped preset validator",
+  "a configured key copied into a release": "a locally configured key never enters a package",
+  "local file permissions changing the release bytes": "the same inputs produce the same ZIP bytes",
+  "native build errors exposing private filesystem paths": "unexpected CLI failures do not expose filesystem paths",
+  "the release CLI silently skipping a path alias": "the CLI builds when invoked through a path alias",
+  "an undo notice left in the document flow": "the notice is anchored to the viewport outside the page flow",
+  "an undo disappearing after eight seconds": "an undo remains available for ten seconds",
+  "hover not pausing an undo notice": "hovering pauses the remaining lifetime",
+  "keyboard focus not pausing an undo notice": "keyboard focus pauses the countdown",
+  "a resumed notice getting a fresh full countdown": "the resumed hover countdown expires on schedule",
+  "an expired Undo still restoring its captured card": "a detached expired Undo cannot restore a card",
+  "a stale Close dismissing a later notice": "a replaced Close cannot dismiss the current notice",
+  "the notice close button doing nothing": "Close dismisses the notice without restoring the card",
+  "settings replacing an active Undo": "saving settings preserves an active Undo",
+  "a settings timer clearing a later Undo": "a settings acknowledgement cannot expire a later Undo",
+  "Undo losing the snapshot it was created for": "Undo restores the deleted card exactly once",
+  "a slow Undo reply replacing a newer notice": "a slow Undo reply cannot replace a newer Undo",
+  "worker mutations bypassing diagnostics": "the real worker records successful and reused saves",
+  "a rejected operation logged as successful": "operation refusal and failed storage writes have distinct reasons",
+  "a log write stalling the card queue": "a stalled diagnostic write cannot block the next card operation",
+  "a failed log batch discarded": "an unpersisted diagnostic is still exportable",
+  "last observations discarded beside a busy timeline": "the expanded log is capped and keeps its last state separately",
+  "clearing the timeline but retaining its snapshots": "clearing diagnostics clears entries snapshots and pending data",
+  "a clear discarding newly arrived operations": "clearing diagnostics preserves operations that arrive during the clear",
+  "an inherited worker operation treated as a real operation": "prototype operation names cannot select an inherited branch",
+  "diagnostics accepting arbitrary string fields": "diagnostics whitelist fields even for prototype names",
+  "prototype fields preventing an otherwise valid diagnostic": "diagnostics whitelist fields even for prototype names",
+  "unchanged states repeated after another event": "alternating unchanged observations do not flood the log",
+  "draw counters logged on every update": "draw counter changes are sampled but changed decisions are immediate",
+  "different draws suppressed as the same decision": "a new held card or changed threshold bypasses draw sampling",
+  "diagnostic counts ignoring new entries": "new diagnostics update the count without rebuilding the builder",
+  "an old read overwriting the latest diagnostic count": "the initial diagnostic count cannot be overwritten by an older read",
+  "unexpected errors not observed": "hand: unexpected errors keep the code location without their message",
+  "filled input logged as a clicked send button": "hand: playing records input without claiming delivery",
+  "send button timeouts missing from the log": "hand: an unavailable send button records a timeout",
+  "burst counters lost before diagnostics can read them": "hand: the draw log explains a wave below its minimum",
+  "a membership refusal counted as an owned card": "membership and wrong-channel refusals have separate counters",
+  "an owned card omitted from draw refusals": "an existing card is named as the reason a burst was refused",
+  "an unavailable store described as empty in the export": "an unavailable store is not described as an empty deck",
+  "the export missing its current snapshot": "the real export includes a current settings snapshot",
+  "invalid backup JSON not recorded": "the real file reader logs invalid JSON without the filename",
+  "the neutral catalogue left empty": "white and black starting colours remain white and black",
+  "a neutral default overriding a saved hue of zero": "an old selected hue of zero takes priority over the new neutral default",
+  "loading a starting deck discarding its neutral default": "loading a starting deck keeps its neutral colour after saving the name",
+  "a new hue retaining the old neutral selection": "choosing a hue clears the old neutral even at zero",
+  "a neutral-only change missing from the panel signature": "hand: changing only a neutral HEX repaints the badge",
+  "the panel losing its neutral stripe colour": "hand: the panel uses the white default for both badge and card stripe",
+  "the badge discarding its neutral colour": "hand: the panel uses the white default for both badge and card stripe",
+  "the common dot inheriting the channel colour": "Nono: the common marker stays plain grey",
+  "the native chooser saving grey as a red hue": "native grey survives rebuilding the builder and reopening its picker",
+  "a catalogue hue of zero mistaken for no colour": "a catalogue hue of zero is a real colour",
+  "the bundled colour catalogue left empty": "the bundled Hololive brand hue comes from its selected HEX",
+  "a stale HSV hue used for the Hololive brand": "the bundled Hololive brand hue comes from its selected HEX",
+  "an old page's global scope trusted by the worker": "the worker also binds an old page's global suggestion to this channel",
+  "a starting deck creating unbound cards without a channel": "a starting deck cannot make unbound cards without a channel",
+  "storage order choosing the start deck's existing card": "an existing universal card wins in either storage order (false)",
+  "a start-deck preview choosing the first owned copy": "the start-deck preview prefers the universal copy (false)",
+  "a mined starting deck creating universal cards": "mined starting decks stay in their channel even for shared phrases",
+  "the Japanese start-deck label reverting to preset": "Japanese calls the offered cards a start deck",
+  "the builder slider not previewing the selected hue": "dragging to hue 120 immediately rotates the builder's heart",
+  "the native chooser waiting until release to preview": "native colour input immediately rotates the same badge",
+  "a colour preview writing storage on every movement": "dragging previews without writing storage",
+  "a colour change saved onto the wrong channel": "new colour selection is saved for the new channel",
+  "a detached chooser overwriting its old channel": "a detached chooser cannot overwrite either channel",
+  "the heart staying at one hue": "Nuhu's heart follows hue 120 around the ring",
+  "the hair ornament wheel starting on the wrong colour": "the hair ornament wheel puts yellow at twelve",
+  "an OKLCH angle used directly on the RGB wheel": "Nuhu's heart follows hue 120 around the ring",
+  "the heart pointing out of the ring": "Nuhu's heart starts at the top of its orbit with its tip inward",
+  "the bar forgetting the channel's special badge": "Nono: the badge is selected by channel id",
+  "the badge ignoring a newly chosen channel colour": "Nuhu: recolouring keeps the style and updates its hue",
+  "the save menu forgetting the channel's special badge": "Nono: the save menu uses the same badge without adding a line",
+  "the picker too small to recognise": "Nuhu: its native size stays readable",
   "the deck bypassing its scope filter": "channel alone shows only channel cards",
   "both selected treated as channel only": "both selected show the full deck",
   "turning off the last scope hiding part of the deck": "turning off the last scope returns to the full deck",
@@ -1661,7 +2002,8 @@ const dir = mkdtempSync(join(tmpdir(), "oshideck-mutation-"));
 const testPath = (name) => join(root, "tools", "tests", name);
 
 function run(file, mutant, subject) {
-  const env = mutant ? { ...process.env, [subject.env]: mutant } : process.env;
+  const env = mutant ? { ...process.env, [subject.env]: mutant,
+    ...(subject === RELEASESRC ? { NODE_PATH: join(root, "node_modules") } : {}) } : process.env;
   try {
     execFileSync(process.execPath, [testPath(file)], { stdio: "pipe", env });
     return { failed: false, broke: [] };
@@ -1676,9 +2018,10 @@ function run(file, mutant, subject) {
 }
 
 let failed = 0;
+let caughtCount = 0;
 
 // A suite already red would make every mutation look caught.
-for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM, COLOUR, PRESET, MEMBER, I18N, EMOJI, STORED, MINER, KARAOKE, PRODUCTION, DOWNLOAD, RECOVERY, SAVE_MENU, SCOPE_FILTER]) {
+for (const file of [CHANNEL, VISIBILITY, TREND, DRAW, CONFIRM, COLOUR, PRESET, MEMBER, I18N, EMOJI, STORED, MINER, KARAOKE, PRODUCTION, DOWNLOAD, RECOVERY, SAVE_MENU, SCOPE_FILTER, CHANNEL_MARK, BUILDER_COLOUR, DIAGNOSTICS, JOURNAL, OPTIONS_NOTICE, RELEASE]) {
   if (run(file, null).failed) {
     console.log(`FAIL ${file} is red before any mutation`);
     failed = 1;
@@ -1717,6 +2060,7 @@ for (const [file, subject, name, find, replace] of MUTATIONS) {
 
   const { broke } = run(file, mutant, subject);
   const caught = broke.some((line) => line.includes(target));
+  if (caught) caughtCount++;
 
   console.log(`${caught ? "ok  " : "FAIL"} ${file.padEnd(20)} caught: ${name}`);
   if (!caught) {
@@ -1725,4 +2069,5 @@ for (const [file, subject, name, find, replace] of MUTATIONS) {
   }
 }
 
+console.log(`mutations: ${caughtCount}/${MUTATIONS.length} caught`);
 process.exit(failed);

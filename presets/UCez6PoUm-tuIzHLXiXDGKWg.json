@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "星屑ぷらね / Planei Hoshikuzu",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCez6PoUm-tuIzHLXiXDGKWg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCez6PoUm-tuIzHLXiXDGKWg/k2bLZv21DN6X_9EP8fGBeA","alt":"sairiumu","sharedTooltipText":":_sairiumu:","src":"https://yt3.ggpht.com/gIeWNnYTABBXTop6SOTlX71YWyA12dHMwD-Z2toEcvMKg2LvwvdpXz9fJcsCP7ZdDqQep15MzQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCez6PoUm-tuIzHLXiXDGKWg/k2bLZv21DN6X_9EP8fGBeA","alt":"sairiumu","sharedTooltipText":":_sairiumu:","src":"https://yt3.ggpht.com/gIeWNnYTABBXTop6SOTlX71YWyA12dHMwD-Z2toEcvMKg2LvwvdpXz9fJcsCP7ZdDqQep15MzQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCez6PoUm-tuIzHLXiXDGKWg/k2bLZv21DN6X_9EP8fGBeA","alt":"sairiumu","sharedTooltipText":":_sairiumu:","src":"https://yt3.ggpht.com/gIeWNnYTABBXTop6SOTlX71YWyA12dHMwD-Z2toEcvMKg2LvwvdpXz9fJcsCP7ZdDqQep15MzQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんぷらね〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんぷらね～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぷらね〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCez6PoUm-tuIzHLXiXDGKWg/k2bLZtuzDN6X_9EP8fGBeA","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/VW3xnQUBSIg86XIaeNv9awghxCkG8B-FAH1g0h_fs1hcM0SAXs-pOnsrJcTT_Fcmb5vPLkfm=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCez6PoUm-tuIzHLXiXDGKWg/k2bLZtuzDN6X_9EP8fGBeA","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/VW3xnQUBSIg86XIaeNv9awghxCkG8B-FAH1g0h_fs1hcM0SAXs-pOnsrJcTT_Fcmb5vPLkfm=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCez6PoUm-tuIzHLXiXDGKWg/k2bLZtuzDN6X_9EP8fGBeA","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/VW3xnQUBSIg86XIaeNv9awghxCkG8B-FAH1g0h_fs1hcM0SAXs-pOnsrJcTT_Fcmb5vPLkfm=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🛸"},{"type":"text","value":"✨"},{"type":"text","value":"🚀"},{"type":"text","value":"✨"},{"type":"text","value":"🛸"},{"type":"text","value":"✨"},{"type":"text","value":"🚀"},{"type":"text","value":"✨"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCez6PoUm-tuIzHLXiXDGKWg/XO3WZtHZFYGp_9EPp82OsQ0","alt":"naissu","sharedTooltipText":":_naissu:","src":"https://yt3.ggpht.com/7gcFQmddSeWGUol-kn0C02xKJpi-H8qU9gCYcneJJu1jpnvVnMyl4aN1BPCDRV1c1jvOzinQqw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCez6PoUm-tuIzHLXiXDGKWg/XO3WZtHZFYGp_9EPp82OsQ0","alt":"naissu","sharedTooltipText":":_naissu:","src":"https://yt3.ggpht.com/7gcFQmddSeWGUol-kn0C02xKJpi-H8qU9gCYcneJJu1jpnvVnMyl4aN1BPCDRV1c1jvOzinQqw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCez6PoUm-tuIzHLXiXDGKWg/XO3WZtHZFYGp_9EPp82OsQ0","alt":"naissu","sharedTooltipText":":_naissu:","src":"https://yt3.ggpht.com/7gcFQmddSeWGUol-kn0C02xKJpi-H8qU9gCYcneJJu1jpnvVnMyl4aN1BPCDRV1c1jvOzinQqw=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

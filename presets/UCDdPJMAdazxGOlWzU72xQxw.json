@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ゆう。2nd channel",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCDdPJMAdazxGOlWzU72xQxw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCDdPJMAdazxGOlWzU72xQxw/UKjAZZitNbGg_9EP0uuMgAE","alt":"はろー","sharedTooltipText":":_はろー:","src":"https://yt3.ggpht.com/4hOMhDqupxAchFfEnQ-2QLiJG24utU9wYbuYkZETg0L0Oyv0Ld73Vkh3JlRItb7MuV425ixh=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDdPJMAdazxGOlWzU72xQxw/UKjAZZitNbGg_9EP0uuMgAE","alt":"はろー","sharedTooltipText":":_はろー:","src":"https://yt3.ggpht.com/4hOMhDqupxAchFfEnQ-2QLiJG24utU9wYbuYkZETg0L0Oyv0Ld73Vkh3JlRItb7MuV425ixh=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDdPJMAdazxGOlWzU72xQxw/UKjAZZitNbGg_9EP0uuMgAE","alt":"はろー","sharedTooltipText":":_はろー:","src":"https://yt3.ggpht.com/4hOMhDqupxAchFfEnQ-2QLiJG24utU9wYbuYkZETg0L0Oyv0Ld73Vkh3JlRItb7MuV425ixh=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きた！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱ！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCDdPJMAdazxGOlWzU72xQxw/UKjAZbewNbGg_9EP0uuMgAE","alt":"ばいばい","sharedTooltipText":":_ばいばい:","src":"https://yt3.ggpht.com/xBZovElI_Ka8JjbWNvuyM-p9gZRWL7NqCBbZThSHkxXh_vCKafstX_-iue0rrlCBg10DH9Pnung=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDdPJMAdazxGOlWzU72xQxw/UKjAZbewNbGg_9EP0uuMgAE","alt":"ばいばい","sharedTooltipText":":_ばいばい:","src":"https://yt3.ggpht.com/xBZovElI_Ka8JjbWNvuyM-p9gZRWL7NqCBbZThSHkxXh_vCKafstX_-iue0rrlCBg10DH9Pnung=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCDdPJMAdazxGOlWzU72xQxw/UKjAZbewNbGg_9EP0uuMgAE","alt":"ばいばい","sharedTooltipText":":_ばいばい:","src":"https://yt3.ggpht.com/xBZovElI_Ka8JjbWNvuyM-p9gZRWL7NqCBbZThSHkxXh_vCKafstX_-iue0rrlCBg10DH9Pnung=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機！"}], "scope": "channel" }
+  ]
+}

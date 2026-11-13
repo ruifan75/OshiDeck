@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "まいたけ -Maitake-",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCgIHvyZWE6Ny7pfRpya86Yw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"わこまい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつまい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないす！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きたー！"}], "scope": "channel" }
+  ]
+}

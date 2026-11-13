@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ElyzaEVE",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCNKf15eqoAhxJ6CalqgVSCA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNKf15eqoAhxJ6CalqgVSCA/o08bZ5PRA6eB_9EPttiNuAE","alt":"ElyBaby","sharedTooltipText":":_ElyBaby:","src":"https://yt3.ggpht.com/d3b-lXc5OcQQRH1bEbJIvActhe9JyMdmNEWeK2g1Zkfdh3tazq_7-U0eA5yoS5il17X9ojbY4Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNKf15eqoAhxJ6CalqgVSCA/yh_Pau3MFY2itvkPuaHsoAU","alt":"ElyWheeze","sharedTooltipText":":_ElyWheeze:","src":"https://yt3.ggpht.com/E_r_VhodTqD9Qed9w8H-_tnAqdAnt2pWDLAdAnn8P5rEduwXuRwWaNjzgbvAien-m4S99wo=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNKf15eqoAhxJ6CalqgVSCA/yh_PasjDFY2itvkPuaHsoAU","alt":"ElyLove","sharedTooltipText":":_ElyLove:","src":"https://yt3.ggpht.com/0LQ0Xxv4jY4Fcom8L-BbU3DLpWq74HiuXqxi9Qu7_-anQig-95sdmd2jnNEmnLdsaxVjunQZQpk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNKf15eqoAhxJ6CalqgVSCA/yh_PasjDFY2itvkPuaHsoAU","alt":"ElyLove","sharedTooltipText":":_ElyLove:","src":"https://yt3.ggpht.com/0LQ0Xxv4jY4Fcom8L-BbU3DLpWq74HiuXqxi9Qu7_-anQig-95sdmd2jnNEmnLdsaxVjunQZQpk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNKf15eqoAhxJ6CalqgVSCA/yh_PasjDFY2itvkPuaHsoAU","alt":"ElyLove","sharedTooltipText":":_ElyLove:","src":"https://yt3.ggpht.com/0LQ0Xxv4jY4Fcom8L-BbU3DLpWq74HiuXqxi9Qu7_-anQig-95sdmd2jnNEmnLdsaxVjunQZQpk=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Elyza"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"welcome back"}], "scope": "channel" }
+  ]
+}

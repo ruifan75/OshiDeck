@@ -1,0 +1,15 @@
+{
+  "format": 2,
+  "name": "Feyre Miari 🌿⌛️ 女神VTuber",
+  "note": "歌枠1配信・通常13配信のチャットから7枚",
+  "channel": "UC4TbMZUg3PnxtR1AuCQK8hQ",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC4TbMZUg3PnxtR1AuCQK8hQ/0pq5Z_n7GYy__9EP9sWlsQw","alt":"FeyGlowsticks","sharedTooltipText":":_FeyGlowsticks:","src":"https://yt3.ggpht.com/uOHwnSj2fMbCqQ4dt2hvkT3fpais5A4Rm67i74sUvNu4ywwKGt7OU1fzsfW7lIL23K8_ltB9Jg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC4TbMZUg3PnxtR1AuCQK8hQ/0pq5Z_n7GYy__9EP9sWlsQw","alt":"FeyGlowsticks","sharedTooltipText":":_FeyGlowsticks:","src":"https://yt3.ggpht.com/uOHwnSj2fMbCqQ4dt2hvkT3fpais5A4Rm67i74sUvNu4ywwKGt7OU1fzsfW7lIL23K8_ltB9Jg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC4TbMZUg3PnxtR1AuCQK8hQ/0pq5Z_n7GYy__9EP9sWlsQw","alt":"FeyGlowsticks","sharedTooltipText":":_FeyGlowsticks:","src":"https://yt3.ggpht.com/uOHwnSj2fMbCqQ4dt2hvkT3fpais5A4Rm67i74sUvNu4ywwKGt7OU1fzsfW7lIL23K8_ltB9Jg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/G8AfY6yWGuKuhL0PlbiA2AE","alt":"hand-pink-waving","sharedTooltipText":":hand-pink-waving:","src":"https://yt3.ggpht.com/KOxdr_z3A5h1Gb7kqnxqOCnbZrBmxI2B_tRQ453BhTWUhYAlpg5ZP8IKEBkcvRoY8grY91Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/G8AfY6yWGuKuhL0PlbiA2AE","alt":"hand-pink-waving","sharedTooltipText":":hand-pink-waving:","src":"https://yt3.ggpht.com/KOxdr_z3A5h1Gb7kqnxqOCnbZrBmxI2B_tRQ453BhTWUhYAlpg5ZP8IKEBkcvRoY8grY91Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"NICE"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ベルモンド・バンデラス",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCbc8fwhdUNlqi-J99ISYu4A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"おばんです"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"みっちゃん！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おバンです"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" }
+  ]
+}

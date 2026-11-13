@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Maple【GlitchStars】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCPEBV-1VoZvjYpgp8aFAQ0Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"!punt"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCPEBV-1VoZvjYpgp8aFAQ0Q/RiWaZtGBPdah_9EP9N7YiAk","alt":"MapleHeart","sharedTooltipText":":_MapleHeart:","src":"https://yt3.ggpht.com/aw9zlwgwyrk03cH2mUr35G7_ehLdRhLXTPAQFTjx4Nt963q2qaHBli1v43KdVmZSpUkz4I3L=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPEBV-1VoZvjYpgp8aFAQ0Q/RiWaZtGBPdah_9EP9N7YiAk","alt":"MapleHeart","sharedTooltipText":":_MapleHeart:","src":"https://yt3.ggpht.com/aw9zlwgwyrk03cH2mUr35G7_ehLdRhLXTPAQFTjx4Nt963q2qaHBli1v43KdVmZSpUkz4I3L=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPEBV-1VoZvjYpgp8aFAQ0Q/RiWaZtGBPdah_9EP9N7YiAk","alt":"MapleHeart","sharedTooltipText":":_MapleHeart:","src":"https://yt3.ggpht.com/aw9zlwgwyrk03cH2mUr35G7_ehLdRhLXTPAQFTjx4Nt963q2qaHBli1v43KdVmZSpUkz4I3L=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPEBV-1VoZvjYpgp8aFAQ0Q/RiWaZtGBPdah_9EP9N7YiAk","alt":"MapleHeart","sharedTooltipText":":_MapleHeart:","src":"https://yt3.ggpht.com/aw9zlwgwyrk03cH2mUr35G7_ehLdRhLXTPAQFTjx4Nt963q2qaHBli1v43KdVmZSpUkz4I3L=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi maple"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"!yeet"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Huntail doko!!!!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wuh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" }
+  ]
+}

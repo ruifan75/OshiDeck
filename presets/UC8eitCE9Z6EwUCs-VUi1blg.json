@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "Mela Ch. 熱千めら‐ アソビ★まわり隊!",
-  "note": "過去11配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UC8eitCE9Z6EwUCs-VUi1blg",
   "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"のじゃー"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"🌀"},{"type":"text","value":"🌀"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"わかる"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいいのじゃ"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC8eitCE9Z6EwUCs-VUi1blg/BsPYavSWF4mp9fwPnICiqAQ","alt":"noja","sharedTooltipText":":_noja:","src":"https://yt3.ggpht.com/iKk2BvGCnAJk4kuaEIIBXBzfoGO94-7i2G9jCpkdZG7sc1lhBxiKWnOSS7j5uYo-S0GCrI0IhP8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8eitCE9Z6EwUCs-VUi1blg/BsPYavSWF4mp9fwPnICiqAQ","alt":"noja","sharedTooltipText":":_noja:","src":"https://yt3.ggpht.com/iKk2BvGCnAJk4kuaEIIBXBzfoGO94-7i2G9jCpkdZG7sc1lhBxiKWnOSS7j5uYo-S0GCrI0IhP8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8eitCE9Z6EwUCs-VUi1blg/BsPYavSWF4mp9fwPnICiqAQ","alt":"noja","sharedTooltipText":":_noja:","src":"https://yt3.ggpht.com/iKk2BvGCnAJk4kuaEIIBXBzfoGO94-7i2G9jCpkdZG7sc1lhBxiKWnOSS7j5uYo-S0GCrI0IhP8=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC8eitCE9Z6EwUCs-VUi1blg/BsPYatKYF4mp9fwPnICiqAQ","alt":"warota","sharedTooltipText":":_warota:","src":"https://yt3.ggpht.com/wzaZrlXkBI5Y3jWkp-QaUQ0ZOLi8WPJz1MMQx8KU4KdqoewkRkSK3QwPXNxFi_YV9DjyAUuQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8eitCE9Z6EwUCs-VUi1blg/BsPYatKYF4mp9fwPnICiqAQ","alt":"warota","sharedTooltipText":":_warota:","src":"https://yt3.ggpht.com/wzaZrlXkBI5Y3jWkp-QaUQ0ZOLi8WPJz1MMQx8KU4KdqoewkRkSK3QwPXNxFi_YV9DjyAUuQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8eitCE9Z6EwUCs-VUi1blg/BsPYatKYF4mp9fwPnICiqAQ","alt":"warota","sharedTooltipText":":_warota:","src":"https://yt3.ggpht.com/wzaZrlXkBI5Y3jWkp-QaUQ0ZOLi8WPJz1MMQx8KU4KdqoewkRkSK3QwPXNxFi_YV9DjyAUuQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC8eitCE9Z6EwUCs-VUi1blg/wRPbavfkDZOM7OsPlvaN-Ag","alt":"doniji","sharedTooltipText":":_doniji:","src":"https://yt3.ggpht.com/yH81iyzitT2NiLVud3u99gG3oT5esBOBllfJIpqo8RvpCAbfSqPM30kjgi1lFRbcwEPeQk78SGk=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8eitCE9Z6EwUCs-VUi1blg/wRPbapTnDZOM7OsPlvaN-Ag","alt":"paniji","sharedTooltipText":":_paniji:","src":"https://yt3.ggpht.com/FixXL2Z1hH4h9vkAlt_goXR6pPpHuO8Zl1hilEjG2zGrJyVZ-ssJ-Vk9YtL-85Gwb_Thf6eDmmI=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC8eitCE9Z6EwUCs-VUi1blg/TxDbapKnKJOM7OsPlvaN-Ag","alt":"wine","sharedTooltipText":":_wine:","src":"https://yt3.ggpht.com/-YCsHJhG5vNyA7mX8h0LNqhc8xXddlIwoM75zSaFsyU9muEUUFAwKy2WiiWaW-Gzv0ZsGMU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8eitCE9Z6EwUCs-VUi1blg/TxDbapKnKJOM7OsPlvaN-Ag","alt":"wine","sharedTooltipText":":_wine:","src":"https://yt3.ggpht.com/-YCsHJhG5vNyA7mX8h0LNqhc8xXddlIwoM75zSaFsyU9muEUUFAwKy2WiiWaW-Gzv0ZsGMU=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8eitCE9Z6EwUCs-VUi1blg/TxDbapKnKJOM7OsPlvaN-Ag","alt":"wine","sharedTooltipText":":_wine:","src":"https://yt3.ggpht.com/-YCsHJhG5vNyA7mX8h0LNqhc8xXddlIwoM75zSaFsyU9muEUUFAwKy2WiiWaW-Gzv0ZsGMU=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" }
   ]
 }

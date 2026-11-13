@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "泡清みる / Awasuzu Miru【ぷろのゔぁ】",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC0pz1TaDyqeO5p8_gbdeunw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんみる〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつみる〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いいね"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつみる～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんみる～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" }
+  ]
+}

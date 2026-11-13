@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Minami Nami / 美波七海",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCrwJvtphcyux30pAgoX68jA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"\\373/\\373/\\373/"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"8888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"晚上好"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんみなみー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"w"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"晚安"}], "scope": "channel" }
+  ]
+}

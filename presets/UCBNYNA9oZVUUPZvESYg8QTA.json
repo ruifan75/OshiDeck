@@ -1,0 +1,16 @@
+{
+  "format": 2,
+  "name": "LineChu",
+  "note": "歌枠0配信・通常6配信のチャットから8枚",
+  "channel": "UCBNYNA9oZVUUPZvESYg8QTA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":":3"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"XD"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ayo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi :3"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"meow"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"fr"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "format": 2,
+  "name": "現想少女らぶぱにっ!",
+  "note": "歌枠1配信・通常13配信のチャットから21枚",
+  "channel": "UCy5aIkRAdFp0Lml3s1ap-pA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🪐"},{"type":"text","value":"🧡"},{"type":"text","value":"🎤"},{"type":"text","value":"🪐"},{"type":"text","value":"🧡"},{"type":"text","value":"🎤"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"どっせーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌎"},{"type":"text","value":"🪐"},{"type":"text","value":"🎤"},{"type":"text","value":"🌎"},{"type":"text","value":"🪐"},{"type":"text","value":"🎤"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぱにー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌏"},{"type":"text","value":"💙"},{"type":"text","value":"🎤"},{"type":"text","value":"🌏"},{"type":"text","value":"💙"},{"type":"text","value":"🎤"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつぱに～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌏"},{"type":"text","value":"🪐"},{"type":"text","value":"🎤"},{"type":"text","value":"🌏"},{"type":"text","value":"🪐"},{"type":"text","value":"🎤"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機ぱに"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌎"},{"type":"text","value":"💙"},{"type":"text","value":"🎤"},{"type":"text","value":"🌎"},{"type":"text","value":"💙"},{"type":"text","value":"🎤"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにぱに～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにぱにー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いえええええい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いいよー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"楽しかったー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえりー"}], "scope": "channel" }
+  ]
+}

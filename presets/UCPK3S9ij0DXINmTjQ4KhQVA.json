@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Hiyori Mokami Ch. 桃神日和",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCPK3S9ij0DXINmTjQ4KhQVA",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCPK3S9ij0DXINmTjQ4KhQVA/LnQGZp2_Htyr_9EP7fSB6Ao","alt":"hiyoCheer","sharedTooltipText":":_hiyoCheer:","src":"https://yt3.ggpht.com/QHto5A5U2JUOJAejBgnmbDz-FSL0LS5c5ceusyvttge1Ia0rHeqXkcsxyoTEMYjU1LCRVPm9Jzg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPK3S9ij0DXINmTjQ4KhQVA/LnQGZp2_Htyr_9EP7fSB6Ao","alt":"hiyoCheer","sharedTooltipText":":_hiyoCheer:","src":"https://yt3.ggpht.com/QHto5A5U2JUOJAejBgnmbDz-FSL0LS5c5ceusyvttge1Ia0rHeqXkcsxyoTEMYjU1LCRVPm9Jzg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPK3S9ij0DXINmTjQ4KhQVA/LnQGZp2_Htyr_9EP7fSB6Ao","alt":"hiyoCheer","sharedTooltipText":":_hiyoCheer:","src":"https://yt3.ggpht.com/QHto5A5U2JUOJAejBgnmbDz-FSL0LS5c5ceusyvttge1Ia0rHeqXkcsxyoTEMYjU1LCRVPm9Jzg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCPK3S9ij0DXINmTjQ4KhQVA/LnQGZufAHtyr_9EP7fSB6Ao","alt":"hiyoLaugh","sharedTooltipText":":_hiyoLaugh:","src":"https://yt3.ggpht.com/L8UzsUvDuWG45PCwPA2GoozFCBClO_Vc2CptyZJQpesRp9oLnufd_iwYUs2SqrwRfpi72BAqMg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPK3S9ij0DXINmTjQ4KhQVA/LnQGZufAHtyr_9EP7fSB6Ao","alt":"hiyoLaugh","sharedTooltipText":":_hiyoLaugh:","src":"https://yt3.ggpht.com/L8UzsUvDuWG45PCwPA2GoozFCBClO_Vc2CptyZJQpesRp9oLnufd_iwYUs2SqrwRfpi72BAqMg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPK3S9ij0DXINmTjQ4KhQVA/LnQGZufAHtyr_9EP7fSB6Ao","alt":"hiyoLaugh","sharedTooltipText":":_hiyoLaugh:","src":"https://yt3.ggpht.com/L8UzsUvDuWG45PCwPA2GoozFCBClO_Vc2CptyZJQpesRp9oLnufd_iwYUs2SqrwRfpi72BAqMg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" }
+  ]
+}

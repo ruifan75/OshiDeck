@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "LuicA",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC_eTRw69ofSNFq9UMI8-o2Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🧢"},{"type":"text","value":"🎮"},{"type":"text","value":"🎶"},{"type":"text","value":"🧢"},{"type":"text","value":"🎮"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちはー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_eTRw69ofSNFq9UMI8-o2Q/GTrnad-oA6z7s8IPit_SuAQ","alt":"LuicATaiki","sharedTooltipText":":_LuicATaiki:","src":"https://yt3.ggpht.com/vKHOPUoucaA_kNjOGo3_ZZdcExk0Jsuf6w_hrdanSgp-3AsKcc2ZIrunNoC8pZbYDulAH-nV3yA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_eTRw69ofSNFq9UMI8-o2Q/GTrnad-oA6z7s8IPit_SuAQ","alt":"LuicATaiki","sharedTooltipText":":_LuicATaiki:","src":"https://yt3.ggpht.com/vKHOPUoucaA_kNjOGo3_ZZdcExk0Jsuf6w_hrdanSgp-3AsKcc2ZIrunNoC8pZbYDulAH-nV3yA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_eTRw69ofSNFq9UMI8-o2Q/GTrnad-oA6z7s8IPit_SuAQ","alt":"LuicATaiki","sharedTooltipText":":_LuicATaiki:","src":"https://yt3.ggpht.com/vKHOPUoucaA_kNjOGo3_ZZdcExk0Jsuf6w_hrdanSgp-3AsKcc2ZIrunNoC8pZbYDulAH-nV3yA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_eTRw69ofSNFq9UMI8-o2Q/GTrnab-pA6z7s8IPit_SuAQ","alt":"LuicAKusa","sharedTooltipText":":_LuicAKusa:","src":"https://yt3.ggpht.com/4pw2kngFuEHVKvrOM1hZFmjrqFzrG8n0m5ZLsjYmt7cDl8P3mTgnZFbHrVPdCREb5kDHKaSU3t0=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_eTRw69ofSNFq9UMI8-o2Q/GTrnab-pA6z7s8IPit_SuAQ","alt":"LuicAKusa","sharedTooltipText":":_LuicAKusa:","src":"https://yt3.ggpht.com/4pw2kngFuEHVKvrOM1hZFmjrqFzrG8n0m5ZLsjYmt7cDl8P3mTgnZFbHrVPdCREb5kDHKaSU3t0=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" }
+  ]
+}

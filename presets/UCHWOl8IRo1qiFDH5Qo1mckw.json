@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Снежа",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCHWOl8IRo1qiFDH5Qo1mckw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"5"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"привет"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"всем привет! "}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"привет снежа"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"привет всем"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"пока"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"всем ку"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ку"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"снежа"}], "scope": "channel" }
+  ]
+}

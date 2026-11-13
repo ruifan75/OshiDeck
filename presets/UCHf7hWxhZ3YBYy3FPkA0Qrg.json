@@ -1,0 +1,14 @@
+{
+  "format": 2,
+  "name": "天が淵おろち",
+  "note": "歌枠0配信・通常13配信のチャットから6枚",
+  "channel": "UCHf7hWxhZ3YBYy3FPkA0Qrg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"お疲れ様でしたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイスー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様です。"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは〜"}], "scope": "channel" }
+  ]
+}

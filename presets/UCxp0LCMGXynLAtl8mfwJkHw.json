@@ -1,0 +1,13 @@
+{
+  "format": 2,
+  "name": "すず音 / Suzune",
+  "note": "歌枠0配信・通常13配信のチャットから5枚",
+  "channel": "UCxp0LCMGXynLAtl8mfwJkHw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こーんねー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こ〜んね"},{"type":"youtubeEmoji","emojiId":"UCxp0LCMGXynLAtl8mfwJkHw/PYRFYZfwC4nY8wSSvo_4Dg","alt":"ぴーちゃん","sharedTooltipText":":_ぴーちゃん:","src":"https://yt3.ggpht.com/V27oVmWX122sHztzugPqhrP59lZAF3hlp1jSIBW80VDB5TtSJpB1NcTGIr7xJ0tTzzPwmKDX=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxp0LCMGXynLAtl8mfwJkHw/e91kZPLnM6aJ_9EP27ex2Ag","alt":"いまきた","sharedTooltipText":":_いまきた:","src":"https://yt3.ggpht.com/UFPDXtoSe0b4o6JGiC06obpSE4CDg8qr8cN6PHr-UVDSKkSj-OymXxNZHh-moGshOenpK9UVbg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんね〜"},{"type":"youtubeEmoji","emojiId":"UCxp0LCMGXynLAtl8mfwJkHw/PYRFYZfwC4nY8wSSvo_4Dg","alt":"ぴーちゃん","sharedTooltipText":":_ぴーちゃん:","src":"https://yt3.ggpht.com/V27oVmWX122sHztzugPqhrP59lZAF3hlp1jSIBW80VDB5TtSJpB1NcTGIr7xJ0tTzzPwmKDX=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxp0LCMGXynLAtl8mfwJkHw/PYRFYZfwC4nY8wSSvo_4Dg","alt":"ぴーちゃん","sharedTooltipText":":_ぴーちゃん:","src":"https://yt3.ggpht.com/V27oVmWX122sHztzugPqhrP59lZAF3hlp1jSIBW80VDB5TtSJpB1NcTGIr7xJ0tTzzPwmKDX=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCxp0LCMGXynLAtl8mfwJkHw/PYRFYZfwC4nY8wSSvo_4Dg","alt":"ぴーちゃん","sharedTooltipText":":_ぴーちゃん:","src":"https://yt3.ggpht.com/V27oVmWX122sHztzugPqhrP59lZAF3hlp1jSIBW80VDB5TtSJpB1NcTGIr7xJ0tTzzPwmKDX=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

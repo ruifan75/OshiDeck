@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "rachie 🎀💌",
-  "note": "過去9配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCRbsmnDTHD9-4pEIuG7zYRw",
   "cards": [
     { "tokens": [{"type":"text","value":"happy birthday"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"woooo"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"awooga"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yay"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"Happy birthday rachie!"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"hi"}], "scope": "global" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"hi rachie"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"yes"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"hello"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"lol"}], "scope": "global" },
     { "tokens": [{"type":"text","value":"bye"}], "scope": "channel" }
   ]
 }

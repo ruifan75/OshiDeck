@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "電脳無職旅団【1年後にみんなで3D化を目指すVTuberユニット】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCDj3SEJ5226cjj5dkt1PiIQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"初見です"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにーと"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは初見です"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつにーと"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" }
+  ]
+}

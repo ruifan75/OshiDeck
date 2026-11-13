@@ -1,0 +1,21 @@
+{
+  "format": 2,
+  "name": "星ノ音コロン Koron Ch.",
+  "note": "歌枠2配信・通常13配信のチャットから13枚",
+  "channel": "UCXuXvC53isoiOUJKpUMSfLQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"⭐"},{"type":"text","value":"✨"},{"type":"text","value":"🎵"},{"type":"text","value":"⭐"},{"type":"text","value":"✨"},{"type":"text","value":"🎵"},{"type":"text","value":"⭐"},{"type":"text","value":"✨"},{"type":"text","value":"🎵"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんのねー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXuXvC53isoiOUJKpUMSfLQ/MN9FYvO5EYSG8wSvmKWYDw","alt":"penraito","sharedTooltipText":":_penraito:","src":"https://yt3.ggpht.com/UWCv_Q1Rp0sL104KS-vnpLmqivnlQgaoZkiZawviYkWRbYI98UTXd1LOJN1GclvZqZnuAQj9=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXuXvC53isoiOUJKpUMSfLQ/MN9FYvO5EYSG8wSvmKWYDw","alt":"penraito","sharedTooltipText":":_penraito:","src":"https://yt3.ggpht.com/UWCv_Q1Rp0sL104KS-vnpLmqivnlQgaoZkiZawviYkWRbYI98UTXd1LOJN1GclvZqZnuAQj9=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXuXvC53isoiOUJKpUMSfLQ/MN9FYvO5EYSG8wSvmKWYDw","alt":"penraito","sharedTooltipText":":_penraito:","src":"https://yt3.ggpht.com/UWCv_Q1Rp0sL104KS-vnpLmqivnlQgaoZkiZawviYkWRbYI98UTXd1LOJN1GclvZqZnuAQj9=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXuXvC53isoiOUJKpUMSfLQ/DftKYpWqGISG8wSomojoBA","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/5uztZ1RbvBHhUyInaID19hswHdy2meaMCbFes2DdDpLpE38hQ9BysZpQup-7lsrFsycOtUR4og=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXuXvC53isoiOUJKpUMSfLQ/DftKYpWqGISG8wSomojoBA","alt":"www","sharedTooltipText":":_www:","src":"https://yt3.ggpht.com/5uztZ1RbvBHhUyInaID19hswHdy2meaMCbFes2DdDpLpE38hQ9BysZpQup-7lsrFsycOtUR4og=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXuXvC53isoiOUJKpUMSfLQ/tQVtY9SmCMqK_9EPlt-boAk","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/-Q_-ZZ50b3b0LopGhZmOznIsiRW4KVTTwF49VceUdQ0Ws2RIfCtMlAJ3dYcEZAiK0TW5LuR0xQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんのね～"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXuXvC53isoiOUJKpUMSfLQ/aQHDYubpDJqO_9EPpP262AE","alt":"kawaii","sharedTooltipText":":_kawaii:","src":"https://yt3.ggpht.com/Iy7uDyV3p-HBZaQjoV6yIweEkMs2DhcAoT78ZVmcl21awXUGuXqug9bUFa9TpAJ5TzlggJcE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXuXvC53isoiOUJKpUMSfLQ/aQHDYubpDJqO_9EPpP262AE","alt":"kawaii","sharedTooltipText":":_kawaii:","src":"https://yt3.ggpht.com/Iy7uDyV3p-HBZaQjoV6yIweEkMs2DhcAoT78ZVmcl21awXUGuXqug9bUFa9TpAJ5TzlggJcE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXuXvC53isoiOUJKpUMSfLQ/aQHDYubpDJqO_9EPpP262AE","alt":"kawaii","sharedTooltipText":":_kawaii:","src":"https://yt3.ggpht.com/Iy7uDyV3p-HBZaQjoV6yIweEkMs2DhcAoT78ZVmcl21awXUGuXqug9bUFa9TpAJ5TzlggJcE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXuXvC53isoiOUJKpUMSfLQ/aQHDYubpDJqO_9EPpP262AE","alt":"kawaii","sharedTooltipText":":_kawaii:","src":"https://yt3.ggpht.com/Iy7uDyV3p-HBZaQjoV6yIweEkMs2DhcAoT78ZVmcl21awXUGuXqug9bUFa9TpAJ5TzlggJcE=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつのねー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あい！あい！あい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お？"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はい！はい！はい！はい！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXuXvC53isoiOUJKpUMSfLQ/DftKYuurGISG8wSomojoBA","alt":"gusun","sharedTooltipText":":_gusun:","src":"https://yt3.ggpht.com/GRTxBWP67UQTmkBhz_TdAPNT8V17lqb9A8iXm9vfl8edDwnhB9IhQe3ZSy15MgCCUrg_U9WK=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXuXvC53isoiOUJKpUMSfLQ/DftKYuurGISG8wSomojoBA","alt":"gusun","sharedTooltipText":":_gusun:","src":"https://yt3.ggpht.com/GRTxBWP67UQTmkBhz_TdAPNT8V17lqb9A8iXm9vfl8edDwnhB9IhQe3ZSy15MgCCUrg_U9WK=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

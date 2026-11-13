@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Nanako Niku Ch.",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCVgTBOPtDwnpxLSkrLcv9gQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVgTBOPtDwnpxLSkrLcv9gQ/4hyQZ4XlBri8_9EP-oC80Ac","alt":"nanaLove","sharedTooltipText":":_nanaLove:","src":"https://yt3.ggpht.com/dzgZvfxgIO3zNJgbSIh-QTkTT2bJWyhCnZWGC3kKBO8xJ6CrlcuqMw-Vf3REg-iD6PPwhYX09w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVgTBOPtDwnpxLSkrLcv9gQ/4hyQZ4XlBri8_9EP-oC80Ac","alt":"nanaLove","sharedTooltipText":":_nanaLove:","src":"https://yt3.ggpht.com/dzgZvfxgIO3zNJgbSIh-QTkTT2bJWyhCnZWGC3kKBO8xJ6CrlcuqMw-Vf3REg-iD6PPwhYX09w=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVgTBOPtDwnpxLSkrLcv9gQ/4hyQZ4XlBri8_9EP-oC80Ac","alt":"nanaLove","sharedTooltipText":":_nanaLove:","src":"https://yt3.ggpht.com/dzgZvfxgIO3zNJgbSIh-QTkTT2bJWyhCnZWGC3kKBO8xJ6CrlcuqMw-Vf3REg-iD6PPwhYX09w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVgTBOPtDwnpxLSkrLcv9gQ/4hyQZ_rnBri8_9EP-oC80Ac","alt":"nanaPat","sharedTooltipText":":_nanaPat:","src":"https://yt3.ggpht.com/HN8dEZViGHRQRyQOZt4Qc2ft6tcmmpMP1IDt2DU7x_RnfQMsr2cvpwfDbCD82tKH3iq1SI-JLg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVgTBOPtDwnpxLSkrLcv9gQ/4hyQZ_rnBri8_9EP-oC80Ac","alt":"nanaPat","sharedTooltipText":":_nanaPat:","src":"https://yt3.ggpht.com/HN8dEZViGHRQRyQOZt4Qc2ft6tcmmpMP1IDt2DU7x_RnfQMsr2cvpwfDbCD82tKH3iq1SI-JLg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVgTBOPtDwnpxLSkrLcv9gQ/4hyQZ_rnBri8_9EP-oC80Ac","alt":"nanaPat","sharedTooltipText":":_nanaPat:","src":"https://yt3.ggpht.com/HN8dEZViGHRQRyQOZt4Qc2ft6tcmmpMP1IDt2DU7x_RnfQMsr2cvpwfDbCD82tKH3iq1SI-JLg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVgTBOPtDwnpxLSkrLcv9gQ/o2xyZ8y3FaC8_9EP19PD4Qs","alt":"nanaEye","sharedTooltipText":":_nanaEye:","src":"https://yt3.ggpht.com/QFg431McfIKTZiocZtyC4GYFlrP3eapfKnSdmqaJBsKFUttDTnb1TKIwW0mC_rJdzmCnPQf_=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCVgTBOPtDwnpxLSkrLcv9gQ/KqSVZ8fSB7i8_9EPs_-N4AQ","alt":"nanaLCHEER","sharedTooltipText":":_nanaLCHEER:","src":"https://yt3.ggpht.com/uXtK5NrZuheGhwgl4YMUbinFZ7IBNhY5G8GQH-JlGd0ySqpC1oi5lDX9Ghrop3GOtTX8ege0DA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVgTBOPtDwnpxLSkrLcv9gQ/o2xyZ420FaC8_9EP19PD4Qs","alt":"nanaSillyjuice","sharedTooltipText":":_nanaSillyjuice:","src":"https://yt3.ggpht.com/HXsbL_noxSAvf6Ez8G1x-JGzqJQT2vPbQpNT0CKfzUpTQvWQUxqU0_FlJr2MLPgPbXl7fiVAkw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCVgTBOPtDwnpxLSkrLcv9gQ/xKSVZ6yMCqC8_9EP5JassQs","alt":"nanaRCHEER","sharedTooltipText":":_nanaRCHEER:","src":"https://yt3.ggpht.com/G9jXGJajEsuWx2y7CIP5dOuqFZEWM2DjqtgCDHN85_LoWURORnmmlermpGX0UC7Z3mQl6ap3=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WAKE ME UP"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Nana!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"omg..."}], "scope": "channel" }
+  ]
+}

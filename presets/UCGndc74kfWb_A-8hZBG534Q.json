@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ことはちゃんねる / 藤宮コトハ【パレプロ】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCGndc74kfWb_A-8hZBG534Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍀"},{"type":"text","value":"💖"},{"type":"text","value":"🍀"},{"type":"text","value":"💖"},{"type":"text","value":"🍀"},{"type":"text","value":"💖"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCGndc74kfWb_A-8hZBG534Q/K7S_X6zRBYbl-gONzZqgCQ","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/x2D9U3YReScRfrhBQxf8uvqs3Z3Nbir6ff1Cw6lgq_8ER5qauCMTXxOzty4QNr1Pvm0rbqTTsw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGndc74kfWb_A-8hZBG534Q/K7S_X6zRBYbl-gONzZqgCQ","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/x2D9U3YReScRfrhBQxf8uvqs3Z3Nbir6ff1Cw6lgq_8ER5qauCMTXxOzty4QNr1Pvm0rbqTTsw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGndc74kfWb_A-8hZBG534Q/K7S_X6zRBYbl-gONzZqgCQ","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/x2D9U3YReScRfrhBQxf8uvqs3Z3Nbir6ff1Cw6lgq_8ER5qauCMTXxOzty4QNr1Pvm0rbqTTsw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGndc74kfWb_A-8hZBG534Q/K7S_X6zRBYbl-gONzZqgCQ","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/x2D9U3YReScRfrhBQxf8uvqs3Z3Nbir6ff1Cw6lgq_8ER5qauCMTXxOzty4QNr1Pvm0rbqTTsw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんこぱ〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCGndc74kfWb_A-8hZBG534Q/e9OuX9TDE8qB_AOd6oDABw","alt":"こぱのぱ","sharedTooltipText":":_こぱのぱ:","src":"https://yt3.ggpht.com/mOByulCir995L7vNSMWDOiZupTkxHby9fkrBTZakeIbFVeC29tOcFl7pgB1xnwsPeDZN7Z22=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCGndc74kfWb_A-8hZBG534Q/e9OuX6DEE8qB_AOd6oDABw","alt":"はーと","sharedTooltipText":":_はーと:","src":"https://yt3.ggpht.com/EbHrWyFuPGIl6P-CXuOEIRJmmFbkBzmyw29w5Ffd6M1sZGaukD7s7hzcmTZKZNpj4O-MZqBscWc=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんこぱ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつこぱー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

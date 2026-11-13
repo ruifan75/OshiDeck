@@ -1,6 +1,6 @@
 // The single writer.
 //
-// Content scripts and the options page both want to change stored state, and
+// Content scripts and the options page both want to change cards/settings, and
 // chrome.storage has no compare-and-set: two contexts can each finish reading
 // before either writes, and the loser's change vanishes. So neither writes.
 // They send a named operation here, and this worker — one context, one queue —
@@ -24,6 +24,71 @@ function enqueue(work) {
   return result;
 }
 
+// Diagnostics touch separate keys and have their own queue. Even a log write
+// that never settles cannot hold up the queue for cards/settings.
+// Several observations can share a write. A failed write keeps the bounded
+// batch in memory, available to an export or the next retry.
+let pendingLog = [];
+let logQueued = false;
+let logQueue = Promise.resolve();
+function enqueueLog(work) {
+  const result = logQueue.then(work, work);
+  logQueue = result.then(() => {}, () => {});
+  return result;
+}
+async function flushLog() {
+  logQueued = false;
+  if (!pendingLog.length) return;
+  const batch = pendingLog;
+  pendingLog = [];
+  try {
+    const raw = await chrome.storage.local.get([journal.KEY, journal.STATE_KEY]);
+    await chrome.storage.local.set({
+      [journal.KEY]: batch.reduce(journal.append, raw[journal.KEY]),
+      [journal.STATE_KEY]: journal.states(raw[journal.STATE_KEY], batch)
+    });
+  } catch (_) {
+    pendingLog = [...batch, ...pendingLog].slice(-journal.LIMIT);
+  }
+}
+function queueLog(entry) {
+  const clean = journal.clean(entry);
+  if (!clean) return;
+  pendingLog.push(clean);
+  pendingLog = pendingLog.slice(-journal.LIMIT);
+  if (!logQueued) {
+    logQueued = true;
+    enqueueLog(flushLog);
+  }
+}
+journal.setSink(queueLog);
+journal.observe("worker");
+
+async function mutate(message) {
+  const op = message.op;
+  const args = message.args && typeof message.args === "object" ? message.args : {};
+  const started = performance.now();
+  let reply;
+  try {
+    reply = Object.hasOwn(store.OPS, op)
+      ? await store.runOp(op, args) : { ok: false, reason: "unknown-op" };
+  } catch (error) {
+    reply = { ok: false, reason: "exception" };
+    journal.record({ kind: "error", op, reason: "exception", stage: "apply", errorType: error?.name });
+  }
+  if (op !== "decksHolding") {
+    journal.record({ kind: "operation", op, channelId: args.channelId,
+      card: journal.cardId(reply.value?.id ?? args.id ?? args.cardId ?? args.movedId ?? args.card?.id ?? args.snapshot?.card?.id),
+      status: reply.ok ? "ok" : "failed", reason: reply.reason,
+      added: typeof reply.value?.added === "number" ? reply.value.added : undefined,
+      duplicate: reply.value?.duplicate, reused: reply.value?.reused, count: reply.value?.count,
+      linked: reply.value?.linked, importMode: op === "importBackup" ? args.mode : undefined,
+      durationMs: Math.round(performance.now() - started) });
+    if (reply.ok && op === "setSettings") journal.record({ kind: "settings", settings: reply.value });
+  }
+  return reply;
+}
+
 // One file per channel, and an index naming them.
 //
 // It was a single file holding every preset, fetched and parsed whole on
@@ -44,8 +109,11 @@ async function readIndex() {
     const response = await fetch(chrome.runtime.getURL("presets/index.json"));
     const raw = await response.json();
     index = Array.isArray(raw?.presets) ? raw.presets : [];
+    journal.record({ kind: "preset", source: "bundled", stage: "read",
+      status: Array.isArray(raw?.presets) ? "loaded" : "index-invalid", count: index.length });
   } catch (_) {
     index = [];
+    journal.record({ kind: "preset", source: "bundled", stage: "read", status: "index-unreadable" });
   }
   return index;
 }
@@ -67,8 +135,17 @@ async function readPreset(file) {
       const raw = await response.json();
       // Hand-edited, so a broken one is skipped rather than taking the rest
       // down with it.
-      preset = presets.validate(raw) ? null : raw;
-    } catch (_) { /* missing or unreadable */ }
+      const problem = presets.validate(raw);
+      preset = problem ? null : raw;
+      journal.record({ kind: "preset", source: "bundled", channelId: raw?.channel,
+        stage: "validate", status: problem ? "invalid" : "loaded", code: problem?.[0],
+        cards: preset?.cards.length });
+    } catch (_) {
+      journal.record({ kind: "preset", source: "bundled", stage: "fetch", status: "unreadable",
+        channelId: file.slice(0, -5) });
+    }
+  } else {
+    journal.record({ kind: "preset", source: "bundled", stage: "validate", status: "invalid" });
   }
 
   bundled.set(file, preset);
@@ -81,6 +158,7 @@ async function readPresets(channelId) {
   const wanted = (await readIndex())
     .filter((entry) => entry && (!entry.channel || entry.channel === channelId));
   const got = await Promise.all(wanted.map((entry) => readPreset(entry.file)));
+  if (!wanted.length) journal.record({ kind: "preset", source: "bundled", channelId, status: "absent" });
   return got.filter(Boolean);
 }
 
@@ -102,23 +180,44 @@ chrome.runtime.onMessage.addListener((message, _sender, respond) => {
     return false;
   }
 
-  // Through the same queue as everything else: a log entry written beside a
-  // card operation could otherwise drop it.
+  // Only diagnostics use these keys. Card mutations never write them.
   if (message?.type === "journal") {
-    enqueue(async () => {
+    if (message.read === true) {
+      enqueueLog(async () => {
+        let raw = {};
+        try { raw = await chrome.storage.local.get([journal.KEY, journal.STATE_KEY]); } catch (_) { /* use pending */ }
+        const entries = (Array.isArray(raw[journal.KEY]) ? raw[journal.KEY] : []).reduce(journal.append, []);
+        return { ok: true, value: pendingLog.reduce(journal.append, entries),
+          states: journal.states(raw[journal.STATE_KEY], pendingLog) };
+      }).then(respond, () => respond({ ok: false }));
+      return true;
+    }
+    enqueueLog(async () => {
       // Exactly true. `clear: "false"` is a string, and a string is enough to
       // throw the diagnostics away on the way to asking for them.
-      if (message.clear === true) return chrome.storage.local.remove(journal.KEY);
-      const raw = await chrome.storage.local.get(journal.KEY);
-      return chrome.storage.local.set({
-        [journal.KEY]: journal.append(raw[journal.KEY], message.entry)
-      });
+      if (message.clear === true) {
+        const before = pendingLog;
+        pendingLog = [];
+        try {
+          await chrome.storage.local.remove([journal.KEY, journal.STATE_KEY]);
+        } catch (error) {
+          pendingLog = [...before, ...pendingLog].slice(-journal.LIMIT);
+          throw error;
+        }
+        journal.reset();
+        return;
+      }
+      const entry = journal.clean(message.entry);
+      if (!entry) return;
+      pendingLog.push(entry);
+      pendingLog = pendingLog.slice(-journal.LIMIT);
+      await flushLog();
     }).then(() => respond({ ok: true }), (error) => respond({ ok: false, error: String(error) }));
     return true; // respond asynchronously
   }
 
   if (message?.type === "mutate") {
-    enqueue(() => store.runOp(message.op, message.args))
+    enqueue(() => mutate(message))
       .then(respond, (error) => respond({ ok: false, error: String(error) }));
     return true; // respond asynchronously
   }

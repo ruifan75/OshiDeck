@@ -1,0 +1,16 @@
+{
+  "format": 2,
+  "name": "Bellmona Ch. ベルモナ",
+  "note": "歌枠2配信・通常13配信のチャットから8枚",
+  "channel": "UCaoat2Vz9i1_wbR7_ctv3bA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんべる"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCaoat2Vz9i1_wbR7_ctv3bA/mGaxY9OkFtKS_9EP-OK84Ac","alt":"sairiumu","sharedTooltipText":":_sairiumu:","src":"https://yt3.ggpht.com/564lqRdzV3_gJAD63T1Wxe1VS4I4dt8JMGNCMXYAGjsy6UJ-GV78026r8ng_W2wS2XrMly-dSQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaoat2Vz9i1_wbR7_ctv3bA/mGaxY9OkFtKS_9EP-OK84Ac","alt":"sairiumu","sharedTooltipText":":_sairiumu:","src":"https://yt3.ggpht.com/564lqRdzV3_gJAD63T1Wxe1VS4I4dt8JMGNCMXYAGjsy6UJ-GV78026r8ng_W2wS2XrMly-dSQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCaoat2Vz9i1_wbR7_ctv3bA/mGaxY9OkFtKS_9EP-OK84Ac","alt":"sairiumu","sharedTooltipText":":_sairiumu:","src":"https://yt3.ggpht.com/564lqRdzV3_gJAD63T1Wxe1VS4I4dt8JMGNCMXYAGjsy6UJ-GV78026r8ng_W2wS2XrMly-dSQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🔔"},{"type":"text","value":"🎶"},{"type":"text","value":"⚔"},{"type":"text","value":"🔔"},{"type":"text","value":"🎶"},{"type":"text","value":"⚔"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはよう"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" }
+  ]
+}

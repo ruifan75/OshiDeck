@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "明透 - CLEAR ASU",
+  "note": "歌枠0配信・通常8配信のチャットから10枚",
+  "channel": "UCfzP3R8QQ77ryTnHeEiBVMw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんはー！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCfzP3R8QQ77ryTnHeEiBVMw/zRb7Y66RDLWK_9EPt5yC8Ag","alt":"clap","sharedTooltipText":":_clap:","src":"https://yt3.ggpht.com/T3vFv1bAKnrSdjKLMvBtmo7NkhRRKRx5_yIjdIPfnN9BbXVS8213B0lwIGAZec9HDguE_BMmBw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCfzP3R8QQ77ryTnHeEiBVMw/zRb7Y66RDLWK_9EPt5yC8Ag","alt":"clap","sharedTooltipText":":_clap:","src":"https://yt3.ggpht.com/T3vFv1bAKnrSdjKLMvBtmo7NkhRRKRx5_yIjdIPfnN9BbXVS8213B0lwIGAZec9HDguE_BMmBw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCfzP3R8QQ77ryTnHeEiBVMw/zRb7Y66RDLWK_9EPt5yC8Ag","alt":"clap","sharedTooltipText":":_clap:","src":"https://yt3.ggpht.com/T3vFv1bAKnrSdjKLMvBtmo7NkhRRKRx5_yIjdIPfnN9BbXVS8213B0lwIGAZec9HDguE_BMmBw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCfzP3R8QQ77ryTnHeEiBVMw/zRb7Y66RDLWK_9EPt5yC8Ag","alt":"clap","sharedTooltipText":":_clap:","src":"https://yt3.ggpht.com/T3vFv1bAKnrSdjKLMvBtmo7NkhRRKRx5_yIjdIPfnN9BbXVS8213B0lwIGAZec9HDguE_BMmBw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCfzP3R8QQ77ryTnHeEiBVMw/zRb7Y66RDLWK_9EPt5yC8Ag","alt":"clap","sharedTooltipText":":_clap:","src":"https://yt3.ggpht.com/T3vFv1bAKnrSdjKLMvBtmo7NkhRRKRx5_yIjdIPfnN9BbXVS8213B0lwIGAZec9HDguE_BMmBw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCfzP3R8QQ77ryTnHeEiBVMw/hQb2Y7iZNcKS_9EPnMCP-AE","alt":"あすあす","sharedTooltipText":":_あすあす:","src":"https://yt3.ggpht.com/4GhN1H6HfOlpfRYl-hKzz-lE5Yvk2QW3qT9HVPWroiD3JjKbU9xZIlnGnEjigByMV-YnBK9S=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCfzP3R8QQ77ryTnHeEiBVMw/hQb2Y7iZNcKS_9EPnMCP-AE","alt":"あすあす","sharedTooltipText":":_あすあす:","src":"https://yt3.ggpht.com/4GhN1H6HfOlpfRYl-hKzz-lE5Yvk2QW3qT9HVPWroiD3JjKbU9xZIlnGnEjigByMV-YnBK9S=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"いえーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ありがとうございました！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

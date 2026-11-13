@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "える / Elu【にじさんじ】",
-  "note": "過去15配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
   "channel": "UCYKP16oMX9KKPbrNgo_Kgag",
   "cards": [
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"サーターン！サーターン！"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"あ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"え？"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCYKP16oMX9KKPbrNgo_Kgag/6tpjXuKGDM2c-gPA7oow","alt":"eluサイリウム","sharedTooltipText":":_eluサイリウム:","src":"https://yt3.ggpht.com/OokV0UId23nDpchPwOujX1Km_HaQRy_A27W_ex_sftRQ6MxxyAeAnc8kjfNI3627h_o4vSC6WNw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCYKP16oMX9KKPbrNgo_Kgag/6tpjXuKGDM2c-gPA7oow","alt":"eluサイリウム","sharedTooltipText":":_eluサイリウム:","src":"https://yt3.ggpht.com/OokV0UId23nDpchPwOujX1Km_HaQRy_A27W_ex_sftRQ6MxxyAeAnc8kjfNI3627h_o4vSC6WNw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCYKP16oMX9KKPbrNgo_Kgag/6tpjXuKGDM2c-gPA7oow","alt":"eluサイリウム","sharedTooltipText":":_eluサイリウム:","src":"https://yt3.ggpht.com/OokV0UId23nDpchPwOujX1Km_HaQRy_A27W_ex_sftRQ6MxxyAeAnc8kjfNI3627h_o4vSC6WNw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCYKP16oMX9KKPbrNgo_Kgag/6tpjXuKGDM2c-gPA7oow","alt":"eluサイリウム","sharedTooltipText":":_eluサイリウム:","src":"https://yt3.ggpht.com/OokV0UId23nDpchPwOujX1Km_HaQRy_A27W_ex_sftRQ6MxxyAeAnc8kjfNI3627h_o4vSC6WNw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんばんえるえる〜"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"うおおおおおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつえるえる〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんえるえる～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんにちえるえる〜"}], "scope": "channel" }
   ]
 }

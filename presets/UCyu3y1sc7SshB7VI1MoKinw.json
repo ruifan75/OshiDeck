@@ -1,0 +1,15 @@
+{
+  "format": 2,
+  "name": "Severina Soda",
+  "note": "歌枠0配信・通常13配信のチャットから7枚",
+  "channel": "UCyu3y1sc7SshB7VI1MoKinw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"привет"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"АХАХ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/KsIfY6LzFoLM6AKanYDQAg","alt":"face-blue-smiling","sharedTooltipText":":face-blue-smiling:","src":"https://yt3.ggpht.com/cktIaPxFwnrPwn-alHvnvedHLUJwbHi8HCK3AgbHpphrMAW99qw0bDfxuZagSY5ieE9BBrA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"0____0"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"стрим"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"привет всем"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"хахахаахахах"}], "scope": "channel" }
+  ]
+}

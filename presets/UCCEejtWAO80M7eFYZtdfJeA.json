@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "リネット・キャンディーRinetto Kyandie",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCCEejtWAO80M7eFYZtdfJeA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"8888888"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"kyanbanwa"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🌞"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oyasukyan"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きゃんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" }
+  ]
+}

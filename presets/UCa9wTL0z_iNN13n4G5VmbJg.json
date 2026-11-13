@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "ゆんちゃむちゃんねる",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCa9wTL0z_iNN13n4G5VmbJg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんちゃむー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつちゃむー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"KP"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんちゃむ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつちゃむ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" }
+  ]
+}

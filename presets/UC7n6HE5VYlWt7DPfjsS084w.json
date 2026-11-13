@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "まつん",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC7n6HE5VYlWt7DPfjsS084w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7n6HE5VYlWt7DPfjsS084w/WCFnasugMvvDweoPiLurkQ8","alt":"わらい","sharedTooltipText":":_わらい:","src":"https://yt3.ggpht.com/vjzwVCSF-ejXAuMYdWHKATk1bUSaCPGQ3jabdk_pU7q9qOa56Jb-n8fIy9NuUtuWSs5X3Yf9pw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7n6HE5VYlWt7DPfjsS084w/WCFnapOhMvvDweoPiLurkQ8","alt":"ないす","sharedTooltipText":":_ないす:","src":"https://yt3.ggpht.com/zg_JSAJPAuAl4AZyiC459cCWuKgC9-sFGCX6v5YsalkN-0KntvF_hs4Wnx7FW8oXdjWiDq9zGA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7n6HE5VYlWt7DPfjsS084w/FYpxao7wHJ6i7OsP6ovCuA0","alt":"わくわく","sharedTooltipText":":_わくわく:","src":"https://yt3.ggpht.com/da12Vn28bGEkTrCg-CHRF9VbtqxJJcezpwkf2NqaQuSbej5Stzhp7SbAK8JYnNgq3lAdrikX=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7n6HE5VYlWt7DPfjsS084w/FYpxauTvHJ6i7OsP6ovCuA0","alt":"はてな","sharedTooltipText":":_はてな:","src":"https://yt3.ggpht.com/aqpwVM3SwYcU-_uqxq4CWA1upX1frNNUl7wrkPWSQt979xyXEZvqCOuF91_5xaWN6nDlv8LX4A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7n6HE5VYlWt7DPfjsS084w/WCFnavqgMvvDweoPiLurkQ8","alt":"かなしい","sharedTooltipText":":_かなしい:","src":"https://yt3.ggpht.com/Gl06bgxULgyh4CfFsUChhmsS0XNxmtDBYNt5lvzDfUbtiF6bypbLdaRDgfVL7WZD1ABg89KELw=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

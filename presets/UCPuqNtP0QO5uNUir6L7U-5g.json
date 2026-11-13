@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "独身貴族リンネの宴",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCPuqNtP0QO5uNUir6L7U-5g",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCPuqNtP0QO5uNUir6L7U-5g/bVxhYPKzOoio-gPf0IL4Dw","alt":"GGなのじゃ","sharedTooltipText":":_GGなのじゃ:","src":"https://yt3.ggpht.com/sz8z-R0y6TeqYu1WieaqN67k-2n6jdsGm1kp4rGs6mx2-GQ6LKIT81QGZfrvHqtipH8_d3FP8GE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPuqNtP0QO5uNUir6L7U-5g/bVxhYPKzOoio-gPf0IL4Dw","alt":"GGなのじゃ","sharedTooltipText":":_GGなのじゃ:","src":"https://yt3.ggpht.com/sz8z-R0y6TeqYu1WieaqN67k-2n6jdsGm1kp4rGs6mx2-GQ6LKIT81QGZfrvHqtipH8_d3FP8GE=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCPuqNtP0QO5uNUir6L7U-5g/bVxhYPKzOoio-gPf0IL4Dw","alt":"GGなのじゃ","sharedTooltipText":":_GGなのじゃ:","src":"https://yt3.ggpht.com/sz8z-R0y6TeqYu1WieaqN67k-2n6jdsGm1kp4rGs6mx2-GQ6LKIT81QGZfrvHqtipH8_d3FP8GE=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"GG"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんわ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"え"}], "scope": "channel" }
+  ]
+}

@@ -1,7 +1,13 @@
 {
   "name": "oshideck",
   "private": true,
+  "scripts": {
+    "test": "sh tools/run-tests.sh",
+    "build": "node tools/build-release.mjs"
+  },
   "devDependencies": {
-    "jsdom": "26.1.0"
+    "html-encoding-sniffer": "4.0.0",
+    "jsdom": "26.1.0",
+    "parse5": "7.3.0"
   }
 }

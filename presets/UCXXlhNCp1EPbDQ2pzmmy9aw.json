@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "むじなch / あおぎり高校",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCXXlhNCp1EPbDQ2pzmmy9aw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXXlhNCp1EPbDQ2pzmmy9aw/BkmyaZLrFv2Z88EP9IyMwQw","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/468nAFT1leWLjvbGFiW5iTTnfO_z1wQfViHELNflTzlE5JjgD8MsDZWR5mG2hDOJlHYFvOypmA8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXXlhNCp1EPbDQ2pzmmy9aw/BkmyaZLrFv2Z88EP9IyMwQw","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/468nAFT1leWLjvbGFiW5iTTnfO_z1wQfViHELNflTzlE5JjgD8MsDZWR5mG2hDOJlHYFvOypmA8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXXlhNCp1EPbDQ2pzmmy9aw/BkmyaZLrFv2Z88EP9IyMwQw","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/468nAFT1leWLjvbGFiW5iTTnfO_z1wQfViHELNflTzlE5JjgD8MsDZWR5mG2hDOJlHYFvOypmA8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXXlhNCp1EPbDQ2pzmmy9aw/BkmyaZLrFv2Z88EP9IyMwQw","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/468nAFT1leWLjvbGFiW5iTTnfO_z1wQfViHELNflTzlE5JjgD8MsDZWR5mG2hDOJlHYFvOypmA8=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXXlhNCp1EPbDQ2pzmmy9aw/BkmyaZLrFv2Z88EP9IyMwQw","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/468nAFT1leWLjvbGFiW5iTTnfO_z1wQfViHELNflTzlE5JjgD8MsDZWR5mG2hDOJlHYFvOypmA8=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXXlhNCp1EPbDQ2pzmmy9aw/zp6VaI3iFved_9EPg8WouQQ","alt":"こんむじ","sharedTooltipText":":_こんむじ:","src":"https://yt3.ggpht.com/XcUakRMjbUYTCJYRxitFV09pVSjgOLSHbeXf6c4INi0I3aU4wVvNGBOg3FFrYB0L28IeRm1lxxg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXXlhNCp1EPbDQ2pzmmy9aw/zp6VaO_gFved_9EPg8WouQQ","alt":"むじむじ","sharedTooltipText":":_むじむじ:","src":"https://yt3.ggpht.com/MS9O0WIUDro2QS3u0fNGgOqEsmLE6_1LLnIBEcMbeFsZZ_j-oLWNkgCSBrp9oHVKI7QszExtOQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCXXlhNCp1EPbDQ2pzmmy9aw/BkmyafLtFv2Z88EP9IyMwQw","alt":"おつかれ","sharedTooltipText":":_おつかれ:","src":"https://yt3.ggpht.com/IIurgSgXIX5AbhjiZ3Vex23DmrHwnBcpJ0pXMwofv2pdE32WrasENE1AdDGDy-fAWl8gB4X-HiQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCXXlhNCp1EPbDQ2pzmmy9aw/zp6VaO_gFved_9EPg8WouQQ","alt":"むじむじ","sharedTooltipText":":_むじむじ:","src":"https://yt3.ggpht.com/MS9O0WIUDro2QS3u0fNGgOqEsmLE6_1LLnIBEcMbeFsZZ_j-oLWNkgCSBrp9oHVKI7QszExtOQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お大事に"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんむじー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"KP"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "KamiyaJuu VTUBER",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCiAONpBlBxxtKD4YE6K-ckw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"HAHAHAHA"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WTF"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"AHAHAHAH"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WHAT"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OMG"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "正義なぐる / Naguru Seigi【平成VTuber】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCm8nQX91wYRpkMiZWLly3GQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんじゃす"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🐝"},{"type":"text","value":"👊"},{"type":"text","value":"💚"},{"type":"text","value":"🐝"},{"type":"text","value":"👊"},{"type":"text","value":"💚"},{"type":"text","value":"🐝"},{"type":"text","value":"👊"},{"type":"text","value":"💚"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつじゃすこー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはじゃす"}], "scope": "channel" }
+  ]
+}

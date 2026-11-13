@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "Choco Ch. 癒月ちょこ",
-  "note": "過去8配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
   "channel": "UC1suqwovbL1kzsoaZgFZLKg",
   "cards": [
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1suqwovbL1kzsoaZgFZLKg/5vACZvLpKuyP_9EPobyi0AY","alt":"ちょこ先生草手書きスタンプ","sharedTooltipText":":_ちょこ先生草手書きスタンプ:","src":"https://yt3.ggpht.com/RvuEop7YQEuE7zOatkPCnR2OIjW3aqNd82bqXFseQekmzUKXqNy6aUmmOtx64bf120nakcNx7AY=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"ちょこん"},{"type":"text","value":"🍫"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"はーい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"うまい"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おつかれいと"},{"type":"text","value":"🍫"}], "scope": "channel" }
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1suqwovbL1kzsoaZgFZLKg/F4UhX7GkF470-gP6gKn4BQ","alt":"ちょこ先生サイリウムピンク","sharedTooltipText":":_ちょこ先生サイリウムピンク:","src":"https://yt3.ggpht.com/ztjznsNJ3tXldjJ-6BMdV3qVh_tDL7-6kW0T1k5WrqN9VLumaSXdM3qb6pW5WYqpnYcT5jHfp1k=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1suqwovbL1kzsoaZgFZLKg/F4UhX66gF470-gP6gKn4BQ","alt":"ちょこ先生サイリウム白","sharedTooltipText":":_ちょこ先生サイリウム白:","src":"https://yt3.ggpht.com/lFiIBxVMpzNiK7BnLq8DtpXP0y-9BdO_OL89iztVwszuYL8cZ3-6cKAJimk7cBnLuuYXGhGjOw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1suqwovbL1kzsoaZgFZLKg/F4UhX7GkF470-gP6gKn4BQ","alt":"ちょこ先生サイリウムピンク","sharedTooltipText":":_ちょこ先生サイリウムピンク:","src":"https://yt3.ggpht.com/ztjznsNJ3tXldjJ-6BMdV3qVh_tDL7-6kW0T1k5WrqN9VLumaSXdM3qb6pW5WYqpnYcT5jHfp1k=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC1suqwovbL1kzsoaZgFZLKg/F4UhX66gF470-gP6gKn4BQ","alt":"ちょこ先生サイリウム白","sharedTooltipText":":_ちょこ先生サイリウム白:","src":"https://yt3.ggpht.com/lFiIBxVMpzNiK7BnLq8DtpXP0y-9BdO_OL89iztVwszuYL8cZ3-6cKAJimk7cBnLuuYXGhGjOw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"w"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC1suqwovbL1kzsoaZgFZLKg/5vACZvLpKuyP_9EPobyi0AY","alt":"ちょこ先生草手書きスタンプ","sharedTooltipText":":_ちょこ先生草手書きスタンプ:","src":"https://yt3.ggpht.com/RvuEop7YQEuE7zOatkPCnR2OIjW3aqNd82bqXFseQekmzUKXqNy6aUmmOtx64bf120nakcNx7AY=w48-h48-c-k-nd"}], "scope": "channel" }
   ]
 }

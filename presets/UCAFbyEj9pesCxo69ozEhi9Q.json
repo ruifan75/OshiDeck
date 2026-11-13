@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Aishii Ai Ch. - AMA\\\\[error] -",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCAFbyEj9pesCxo69ozEhi9Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Ai"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCAFbyEj9pesCxo69ozEhi9Q/BsT0ZtzDG4iY_9EPq-m0oAU","alt":"aishiiCheer","sharedTooltipText":":_aishiiCheer:","src":"https://yt3.ggpht.com/5dX_1cZhGjpNRsIcHRFIAPgCvWCqGvb3_J8ICT3rAuiCkgLoEiD3yCeXgxOq4Ub_h1-pO8Bzfg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCAFbyEj9pesCxo69ozEhi9Q/BsT0ZtzDG4iY_9EPq-m0oAU","alt":"aishiiCheer","sharedTooltipText":":_aishiiCheer:","src":"https://yt3.ggpht.com/5dX_1cZhGjpNRsIcHRFIAPgCvWCqGvb3_J8ICT3rAuiCkgLoEiD3yCeXgxOq4Ub_h1-pO8Bzfg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCAFbyEj9pesCxo69ozEhi9Q/BsT0ZtzDG4iY_9EPq-m0oAU","alt":"aishiiCheer","sharedTooltipText":":_aishiiCheer:","src":"https://yt3.ggpht.com/5dX_1cZhGjpNRsIcHRFIAPgCvWCqGvb3_J8ICT3rAuiCkgLoEiD3yCeXgxOq4Ub_h1-pO8Bzfg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"bye ai!"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" }
+  ]
+}

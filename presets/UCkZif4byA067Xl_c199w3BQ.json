@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "春歌みこと Mikoto Haruka【シアーミュージックV】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCkZif4byA067Xl_c199w3BQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎵"},{"type":"text","value":"🎶"},{"type":"text","value":"🎵"},{"type":"text","value":"🎶"},{"type":"text","value":"🎵"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはリア充〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつリア充〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎵"},{"type":"text","value":"🎶"},{"type":"text","value":"🎃"},{"type":"text","value":"👻"},{"type":"text","value":"🎵"},{"type":"text","value":"🎶"},{"type":"text","value":"🎃"},{"type":"text","value":"👻"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはリア充～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつリア充～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"✌"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ww"}], "scope": "channel" }
+  ]
+}

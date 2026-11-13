@@ -1,0 +1,19 @@
+{
+  "format": 2,
+  "name": "島村シャルロット / Charlotte Channel【ななしいんく】",
+  "note": "歌枠2配信・通常13配信のチャットから11枚",
+  "channel": "UCYTz3uIgwVY3ZU-IQJS8r3A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCYTz3uIgwVY3ZU-IQJS8r3A/92INXuP9HYfh-gP06Ki4CA","alt":"シャルペンライト右","sharedTooltipText":":_シャルペンライト右:","src":"https://yt3.ggpht.com/ES01gJlqDDXzKUYyW3iilkNOVSzJ7EkeQmQGCXo7Ty2xZFvJiqh0sWV7695VvuqxQjmKZ2n4gA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCYTz3uIgwVY3ZU-IQJS8r3A/92INXuP9HYfh-gP06Ki4CA","alt":"シャルペンライト右","sharedTooltipText":":_シャルペンライト右:","src":"https://yt3.ggpht.com/ES01gJlqDDXzKUYyW3iilkNOVSzJ7EkeQmQGCXo7Ty2xZFvJiqh0sWV7695VvuqxQjmKZ2n4gA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCYTz3uIgwVY3ZU-IQJS8r3A/92INXuP9HYfh-gP06Ki4CA","alt":"シャルペンライト右","sharedTooltipText":":_シャルペンライト右:","src":"https://yt3.ggpht.com/ES01gJlqDDXzKUYyW3iilkNOVSzJ7EkeQmQGCXo7Ty2xZFvJiqh0sWV7695VvuqxQjmKZ2n4gA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんシャル〜"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんシャル～"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCYTz3uIgwVY3ZU-IQJS8r3A/qr9fXvyyC4fh-gOJwZWQAw","alt":"シャルどどど","sharedTooltipText":":_シャルどどど:","src":"https://yt3.ggpht.com/-4c2KLRGtECM01PuQ2cLwkzHlHMF_mHQTYBK8RE7NaYlaaMLg6bV5AfbDc9PCFQdXFoQdgpmSw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCYTz3uIgwVY3ZU-IQJS8r3A/qr9fXvyyC4fh-gOJwZWQAw","alt":"シャルどどど","sharedTooltipText":":_シャルどどど:","src":"https://yt3.ggpht.com/-4c2KLRGtECM01PuQ2cLwkzHlHMF_mHQTYBK8RE7NaYlaaMLg6bV5AfbDc9PCFQdXFoQdgpmSw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCYTz3uIgwVY3ZU-IQJS8r3A/qr9fXvyyC4fh-gOJwZWQAw","alt":"シャルどどど","sharedTooltipText":":_シャルどどど:","src":"https://yt3.ggpht.com/-4c2KLRGtECM01PuQ2cLwkzHlHMF_mHQTYBK8RE7NaYlaaMLg6bV5AfbDc9PCFQdXFoQdgpmSw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいいｗ"}], "scope": "channel" }
+  ]
+}

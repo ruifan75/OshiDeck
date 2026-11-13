@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "龍巻ちせ / Tatsumaki Chise",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCoW8qQy80mKH0RJTKAK-nNA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCoW8qQy80mKH0RJTKAK-nNA/tMeEaZX-OMLc7OsP9rKQmAY","alt":"ふれーふれー","sharedTooltipText":":_ふれーふれー:","src":"https://yt3.ggpht.com/dZDHCl9Z1TurKyBS9iJ2j5lQbm0woYOGPeBQiQAs4zJwZIKRiTdBMlIqsNp8SLDIex1WAgOT0dM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCoW8qQy80mKH0RJTKAK-nNA/tMeEaZX-OMLc7OsP9rKQmAY","alt":"ふれーふれー","sharedTooltipText":":_ふれーふれー:","src":"https://yt3.ggpht.com/dZDHCl9Z1TurKyBS9iJ2j5lQbm0woYOGPeBQiQAs4zJwZIKRiTdBMlIqsNp8SLDIex1WAgOT0dM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCoW8qQy80mKH0RJTKAK-nNA/tMeEaZX-OMLc7OsP9rKQmAY","alt":"ふれーふれー","sharedTooltipText":":_ふれーふれー:","src":"https://yt3.ggpht.com/dZDHCl9Z1TurKyBS9iJ2j5lQbm0woYOGPeBQiQAs4zJwZIKRiTdBMlIqsNp8SLDIex1WAgOT0dM=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCoW8qQy80mKH0RJTKAK-nNA/tMeEabj9OMLc7OsP9rKQmAY","alt":"GOODGAME","sharedTooltipText":":_GOODGAME:","src":"https://yt3.ggpht.com/0Fx1hzqxuguwX-3S15X9AHwaPJypNtwT7Eokz-tfwuH3fbkOO0inVvRwdBUKNUC-pRGK4LupkQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCoW8qQy80mKH0RJTKAK-nNA/tMeEabj9OMLc7OsP9rKQmAY","alt":"GOODGAME","sharedTooltipText":":_GOODGAME:","src":"https://yt3.ggpht.com/0Fx1hzqxuguwX-3S15X9AHwaPJypNtwT7Eokz-tfwuH3fbkOO0inVvRwdBUKNUC-pRGK4LupkQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCoW8qQy80mKH0RJTKAK-nNA/tMeEaef9OMLc7OsP9rKQmAY","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/1Yq4YEyZqOTBs8qB4_ODuELTBhV8niD4tmVE8pb0EZ7o5EpyCdm-4ka-mRfYP9pyL2AlWtTl_g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCoW8qQy80mKH0RJTKAK-nNA/tMeEaef9OMLc7OsP9rKQmAY","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/1Yq4YEyZqOTBs8qB4_ODuELTBhV8niD4tmVE8pb0EZ7o5EpyCdm-4ka-mRfYP9pyL2AlWtTl_g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCoW8qQy80mKH0RJTKAK-nNA/tMeEaef9OMLc7OsP9rKQmAY","alt":"ナイス","sharedTooltipText":":_ナイス:","src":"https://yt3.ggpht.com/1Yq4YEyZqOTBs8qB4_ODuELTBhV8niD4tmVE8pb0EZ7o5EpyCdm-4ka-mRfYP9pyL2AlWtTl_g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"GG"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ふぁいてぃーん！"}], "scope": "channel" }
+  ]
+}

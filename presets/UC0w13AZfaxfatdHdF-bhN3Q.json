@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "佳鏡院 -KAKYOIN- / 心世紀 from 少女革命計画",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UC0w13AZfaxfatdHdF-bhN3Q",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"},{"type":"text","value":"💙"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC0w13AZfaxfatdHdF-bhN3Q/riFvaKnvNu-X_9EPwYK54Q4","alt":"かきょ","sharedTooltipText":":_かきょ:","src":"https://yt3.ggpht.com/mcEWv5ycg81bJKYUVUGLXUNa4IKYZ6h7bKLCFXWs6QJbr5XQwuFdoE9-m1nHc6OakzeHy02s1A=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC0w13AZfaxfatdHdF-bhN3Q/riFvaKnvNu-X_9EPwYK54Q4","alt":"かきょ","sharedTooltipText":":_かきょ:","src":"https://yt3.ggpht.com/mcEWv5ycg81bJKYUVUGLXUNa4IKYZ6h7bKLCFXWs6QJbr5XQwuFdoE9-m1nHc6OakzeHy02s1A=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは〜"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC0w13AZfaxfatdHdF-bhN3Q/Ex5yaLSYINmW_9EP-aWN0Qg","alt":"かわいい","sharedTooltipText":":_かわいい:","src":"https://yt3.ggpht.com/m2Rn_ZkxYfYxjhj1V-LWYlys-3q-HPaTXE3bPwTF81HMeVcS0kQNAGRUycoByfA8jYQrABAW=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC0w13AZfaxfatdHdF-bhN3Q/Ex5yaLSYINmW_9EP-aWN0Qg","alt":"かわいい","sharedTooltipText":":_かわいい:","src":"https://yt3.ggpht.com/m2Rn_ZkxYfYxjhj1V-LWYlys-3q-HPaTXE3bPwTF81HMeVcS0kQNAGRUycoByfA8jYQrABAW=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC0w13AZfaxfatdHdF-bhN3Q/Ex5yaLSYINmW_9EP-aWN0Qg","alt":"かわいい","sharedTooltipText":":_かわいい:","src":"https://yt3.ggpht.com/m2Rn_ZkxYfYxjhj1V-LWYlys-3q-HPaTXE3bPwTF81HMeVcS0kQNAGRUycoByfA8jYQrABAW=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うおおおおお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほう"}], "scope": "channel" }
+  ]
+}

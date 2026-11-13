@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Watson Amelia Ch. hololive-EN",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCyl1z3jo3XHR1riLFKG5UAg",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"💛"},{"type":"text","value":"💛"},{"type":"text","value":"💛"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"AMEEEEE"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"o7"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"HIC"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"nice"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ame doko"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "火狩夜れんま / Renma Kagariya",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UC_mXkuKyIkO1hYjSeMvbt5g",
+  "cards": [
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_mXkuKyIkO1hYjSeMvbt5g/ESH7aN-rNIWQ7OsPm9OQoQc","alt":"RenmaHi","sharedTooltipText":":_RenmaHi:","src":"https://yt3.ggpht.com/_-9Gm9yFwD_ribTgPh0ZR3PGg1fQ7Gu71AYGl4x_mozlWFBj6Q7GknasNQHMmmGOAzaeYAbC6w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_mXkuKyIkO1hYjSeMvbt5g/ESH7aJCxNIWQ7OsPm9OQoQc","alt":"RenmaOtu","sharedTooltipText":":_RenmaOtu:","src":"https://yt3.ggpht.com/onlHrZ5rqZhAMkiY96xBP_wijOSM3_PEDIyA1lF7jceOpgADSHj-QCQkzUhrwCv3zoJeHAiCfw=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_mXkuKyIkO1hYjSeMvbt5g/ESH7aJCxNIWQ7OsPm9OQoQc","alt":"RenmaOtu","sharedTooltipText":":_RenmaOtu:","src":"https://yt3.ggpht.com/onlHrZ5rqZhAMkiY96xBP_wijOSM3_PEDIyA1lF7jceOpgADSHj-QCQkzUhrwCv3zoJeHAiCfw=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_mXkuKyIkO1hYjSeMvbt5g/IG_7aKuSBpTa7OsP1favkAg","alt":"RenmaNC","sharedTooltipText":":_RenmaNC:","src":"https://yt3.ggpht.com/msLLmyciFJsW_O5ZDNarHFeiQMa3EPRTAOWcnciHLvddHJ4mpYY9156BKa4TubLNir-chYLT5g=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_mXkuKyIkO1hYjSeMvbt5g/IG_7aKuSBpTa7OsP1favkAg","alt":"RenmaNC","sharedTooltipText":":_RenmaNC:","src":"https://yt3.ggpht.com/msLLmyciFJsW_O5ZDNarHFeiQMa3EPRTAOWcnciHLvddHJ4mpYY9156BKa4TubLNir-chYLT5g=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC_mXkuKyIkO1hYjSeMvbt5g/IG_7aM-UBpTa7OsP1favkAg","alt":"RenmaW","sharedTooltipText":":_RenmaW:","src":"https://yt3.ggpht.com/LZbIxEJGV0gT7YfpXMQojtfRS8sviC24G-jwj6sSO8g2HZsNXlymF4gOak-JU1aRIGxGeY3xJQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC_mXkuKyIkO1hYjSeMvbt5g/IG_7aM-UBpTa7OsP1favkAg","alt":"RenmaW","sharedTooltipText":":_RenmaW:","src":"https://yt3.ggpht.com/LZbIxEJGV0gT7YfpXMQojtfRS8sviC24G-jwj6sSO8g2HZsNXlymF4gOak-JU1aRIGxGeY3xJQ=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でしたー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"},{"type":"youtubeEmoji","emojiId":"UC_mXkuKyIkO1hYjSeMvbt5g/ESH7aN-rNIWQ7OsPm9OQoQc","alt":"RenmaHi","sharedTooltipText":":_RenmaHi:","src":"https://yt3.ggpht.com/_-9Gm9yFwD_ribTgPh0ZR3PGg1fQ7Gu71AYGl4x_mozlWFBj6Q7GknasNQHMmmGOAzaeYAbC6w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" }
+  ]
+}

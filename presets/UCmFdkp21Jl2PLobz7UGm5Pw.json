@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "栞奈 / Kanna Ch.",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCmFdkp21Jl2PLobz7UGm5Pw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCmFdkp21Jl2PLobz7UGm5Pw/_wTvY6yVKOeH_9EPpZeSiAI","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/cnpBPLfr151e1AOddEycCtiZapyKxKB-_YozfZtnpJuPSYwa0GOMYXmB9cJI81AkhyIj5Aeg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmFdkp21Jl2PLobz7UGm5Pw/_wTvY6yVKOeH_9EPpZeSiAI","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/cnpBPLfr151e1AOddEycCtiZapyKxKB-_YozfZtnpJuPSYwa0GOMYXmB9cJI81AkhyIj5Aeg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmFdkp21Jl2PLobz7UGm5Pw/_wTvY6yVKOeH_9EPpZeSiAI","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/cnpBPLfr151e1AOddEycCtiZapyKxKB-_YozfZtnpJuPSYwa0GOMYXmB9cJI81AkhyIj5Aeg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmFdkp21Jl2PLobz7UGm5Pw/_wTvY6yVKOeH_9EPpZeSiAI","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/cnpBPLfr151e1AOddEycCtiZapyKxKB-_YozfZtnpJuPSYwa0GOMYXmB9cJI81AkhyIj5Aeg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCmFdkp21Jl2PLobz7UGm5Pw/_wTvY6yVKOeH_9EPpZeSiAI","alt":"ペンライト","sharedTooltipText":":_ペンライト:","src":"https://yt3.ggpht.com/cnpBPLfr151e1AOddEycCtiZapyKxKB-_YozfZtnpJuPSYwa0GOMYXmB9cJI81AkhyIj5Aeg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ん？"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCmFdkp21Jl2PLobz7UGm5Pw/_wTvY5ySKOeH_9EPpZeSiAI","alt":"草生える","sharedTooltipText":":_草生える:","src":"https://yt3.ggpht.com/FVCEDsI6wCtGApnMpSwr3cPeq6DWRed78fw5Dwy-ERuPK3DdhzVzpRgP7nJGKJ1qhafuonVV=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんかんな"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつかんな"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCmFdkp21Jl2PLobz7UGm5Pw/Zg3vY-C4OtOk8gT_9begBg","alt":"やるやん","sharedTooltipText":":_やるやん:","src":"https://yt3.ggpht.com/RCh7FZfzuKbhcnsTjBLLcAbmQbJj2p1qbshnFa6IpHyScSLReD52MPv-X5GoEGLQfHGkbuIV9w=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
+  ]
+}

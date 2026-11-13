@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "たくぼん感激ぃ!",
+  "note": "歌枠0配信・通常11配信のチャットから10枚",
+  "channel": "UCg9_f0eR1KuqAb86Lj7xNew",
+  "cards": [
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おはようございます"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCg9_f0eR1KuqAb86Lj7xNew/c5h5X9OsOZGS-gP_9qpY","alt":"感激スタンプ","sharedTooltipText":":_感激スタンプ:","src":"https://yt3.ggpht.com/3baGBKPMnNLGhJlIcNPL6_6teJRPdCAtFWfYy-7Xqz3T7zk2rkG_t_xje2cTsEhPPdDgimHZug=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCg9_f0eR1KuqAb86Lj7xNew/c5h5X9OsOZGS-gP_9qpY","alt":"感激スタンプ","sharedTooltipText":":_感激スタンプ:","src":"https://yt3.ggpht.com/3baGBKPMnNLGhJlIcNPL6_6teJRPdCAtFWfYy-7Xqz3T7zk2rkG_t_xje2cTsEhPPdDgimHZug=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCg9_f0eR1KuqAb86Lj7xNew/c5h5X9OsOZGS-gP_9qpY","alt":"感激スタンプ","sharedTooltipText":":_感激スタンプ:","src":"https://yt3.ggpht.com/3baGBKPMnNLGhJlIcNPL6_6teJRPdCAtFWfYy-7Xqz3T7zk2rkG_t_xje2cTsEhPPdDgimHZug=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ナイス"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "KoziiChu",
+  "note": "歌枠1配信・通常13配信のチャットから10枚",
+  "channel": "UCk4-LUmzFMETLt4Sn1J82Cw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👑"},{"type":"text","value":" MieRaid "},{"type":"text","value":"👑"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"oh"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hi kozi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"WHAT"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LMAO"}], "scope": "channel" }
+  ]
+}

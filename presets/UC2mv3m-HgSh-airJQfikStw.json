@@ -1,0 +1,21 @@
+{
+  "format": 2,
+  "name": "病冥しえる",
+  "note": "歌枠2配信・通常1配信のチャットから13枚",
+  "channel": "UC2mv3m-HgSh-airJQfikStw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"⚔"},{"type":"text","value":"🐾"},{"type":"text","value":"🎶"},{"type":"text","value":"⚔"},{"type":"text","value":"🐾"},{"type":"text","value":"🎶"},{"type":"text","value":"⚔"},{"type":"text","value":"🐾"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"うん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きちゃ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC2mv3m-HgSh-airJQfikStw/zIPkasvTM_TS7OsP3c6n0Ao","alt":"あむあむ","sharedTooltipText":":_あむあむ:","src":"https://yt3.ggpht.com/u8fcZ4aW1zQtaza3-JKzDerKTbsDge52IjmAe6PewtjYATO5zVA_hg5IeZLa-8LtbjmqpU7v-Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2mv3m-HgSh-airJQfikStw/zIPkasvTM_TS7OsP3c6n0Ao","alt":"あむあむ","sharedTooltipText":":_あむあむ:","src":"https://yt3.ggpht.com/u8fcZ4aW1zQtaza3-JKzDerKTbsDge52IjmAe6PewtjYATO5zVA_hg5IeZLa-8LtbjmqpU7v-Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2mv3m-HgSh-airJQfikStw/zIPkasvTM_TS7OsP3c6n0Ao","alt":"あむあむ","sharedTooltipText":":_あむあむ:","src":"https://yt3.ggpht.com/u8fcZ4aW1zQtaza3-JKzDerKTbsDge52IjmAe6PewtjYATO5zVA_hg5IeZLa-8LtbjmqpU7v-Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC2mv3m-HgSh-airJQfikStw/zIPkao_TM_TS7OsP3c6n0Ao","alt":"ほっぺ","sharedTooltipText":":_ほっぺ:","src":"https://yt3.ggpht.com/ogNfeGGtHVN9yXyn7HGuRiHCzhXnpa2vEO6SMSgwQVHe7RJbbiOPVTl5sxSvhl3s8YJc-QSH=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2mv3m-HgSh-airJQfikStw/zIPkao_TM_TS7OsP3c6n0Ao","alt":"ほっぺ","sharedTooltipText":":_ほっぺ:","src":"https://yt3.ggpht.com/ogNfeGGtHVN9yXyn7HGuRiHCzhXnpa2vEO6SMSgwQVHe7RJbbiOPVTl5sxSvhl3s8YJc-QSH=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC2mv3m-HgSh-airJQfikStw/zIPkao_TM_TS7OsP3c6n0Ao","alt":"ほっぺ","sharedTooltipText":":_ほっぺ:","src":"https://yt3.ggpht.com/ogNfeGGtHVN9yXyn7HGuRiHCzhXnpa2vEO6SMSgwQVHe7RJbbiOPVTl5sxSvhl3s8YJc-QSH=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おかえり！"}], "scope": "channel" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Derem Kado  - にじさんじ / NIJISANJI",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCMzVa7B8UEdrvUGsPmSgyjA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"Otsukado~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hello derem"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Derem~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"wkwk"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCMzVa7B8UEdrvUGsPmSgyjA/svBKYOqWJMXf_APi-LHAAQ","alt":"uwa","sharedTooltipText":":_uwa:","src":"https://yt3.ggpht.com/uNnz5TWrraEmGutvEiyOKyGnl0LwINC6cGE7uIJRROhP-CDdB6vFLfmrA_kUg7JQ_XAjkJR6LiI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCMzVa7B8UEdrvUGsPmSgyjA/svBKYOqWJMXf_APi-LHAAQ","alt":"uwa","sharedTooltipText":":_uwa:","src":"https://yt3.ggpht.com/uNnz5TWrraEmGutvEiyOKyGnl0LwINC6cGE7uIJRROhP-CDdB6vFLfmrA_kUg7JQ_XAjkJR6LiI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCMzVa7B8UEdrvUGsPmSgyjA/svBKYOqWJMXf_APi-LHAAQ","alt":"uwa","sharedTooltipText":":_uwa:","src":"https://yt3.ggpht.com/uNnz5TWrraEmGutvEiyOKyGnl0LwINC6cGE7uIJRROhP-CDdB6vFLfmrA_kUg7JQ_XAjkJR6LiI=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCMzVa7B8UEdrvUGsPmSgyjA/R-UXZK6pBMKI9wa07InYBQ","alt":"gudgame","sharedTooltipText":":_gudgame:","src":"https://yt3.ggpht.com/DmWUtDMr9BSn8iY57Ffz2qo9E0PMvDUS-RjPHFK9dEdJPhFFCFmXQwHwfTB6L1Q3Y5j9tzum0Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/G8AfY6yWGuKuhL0PlbiA2AE","alt":"hand-pink-waving","sharedTooltipText":":hand-pink-waving:","src":"https://yt3.ggpht.com/KOxdr_z3A5h1Gb7kqnxqOCnbZrBmxI2B_tRQ453BhTWUhYAlpg5ZP8IKEBkcvRoY8grY91Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"niceee"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

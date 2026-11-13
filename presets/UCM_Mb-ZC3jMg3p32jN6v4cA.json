@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Mino Mieko Ch. - AMA\\\\[error] -",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCM_Mb-ZC3jMg3p32jN6v4cA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCM_Mb-ZC3jMg3p32jN6v4cA/9SGdYofxGomH8gTF-5-ICA","alt":"mieLightstick","sharedTooltipText":":_mieLightstick:","src":"https://yt3.ggpht.com/81uizE2VNZSLIGMcagRoTLbiZyVs-qdfLg3di8SmxsCJoIN5MfIqfCOd5vxkcHw_msONftugBvM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCM_Mb-ZC3jMg3p32jN6v4cA/9SGdYofxGomH8gTF-5-ICA","alt":"mieLightstick","sharedTooltipText":":_mieLightstick:","src":"https://yt3.ggpht.com/81uizE2VNZSLIGMcagRoTLbiZyVs-qdfLg3di8SmxsCJoIN5MfIqfCOd5vxkcHw_msONftugBvM=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCM_Mb-ZC3jMg3p32jN6v4cA/9SGdYofxGomH8gTF-5-ICA","alt":"mieLightstick","sharedTooltipText":":_mieLightstick:","src":"https://yt3.ggpht.com/81uizE2VNZSLIGMcagRoTLbiZyVs-qdfLg3di8SmxsCJoIN5MfIqfCOd5vxkcHw_msONftugBvM=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"LOL"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Hi Mie"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCM_Mb-ZC3jMg3p32jN6v4cA/kwWPZomiIJOe_9EP4JmHsAc","alt":"mieLol","sharedTooltipText":":_mieLol:","src":"https://yt3.ggpht.com/PLCpRWvyrzsI1Fr2FxI72XVOBZGKvoc-Sqyg97GxZOW0ZiCXsboeBkENjLlEKGxh0P1VEYMTQHA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👑"},{"type":"text","value":"🧋"},{"type":"text","value":"Mie Raid"},{"type":"text","value":"🧋"},{"type":"text","value":"👑"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCM_Mb-ZC3jMg3p32jN6v4cA/kwWPZtWWIJOe_9EP4JmHsAc","alt":"miePeek","sharedTooltipText":":_miePeek:","src":"https://yt3.ggpht.com/_AfPkjpTmPatgVRqLDhj1zOwLFEwb5uMwbt4qZpTO2hVEdH08PWwAKvuKykQAPaeN3Ijy1dkog=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCM_Mb-ZC3jMg3p32jN6v4cA/kwWPZoWXIJOe_9EP4JmHsAc","alt":"mieLove","sharedTooltipText":":_mieLove:","src":"https://yt3.ggpht.com/tXYeWGrbc1REaBXVqYmSVpjKbw8DHyacSLm5LFLZk4yDpI6MZeuKB2Wxds0u0wrDK_MpEwEbEg=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCM_Mb-ZC3jMg3p32jN6v4cA/kwWPZu2aIJOe_9EP4JmHsAc","alt":"mieHeh","sharedTooltipText":":_mieHeh:","src":"https://yt3.ggpht.com/vhel_K3nihpGN1IOjaZxNt8KE9JzwXzJzWaP2vjZWD2Ox27JhJ01zu37KG7egBqh0dKOg2mVEw=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

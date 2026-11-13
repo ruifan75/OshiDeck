@@ -122,7 +122,7 @@
   display: block;
   box-sizing: border-box;
   width: 100%;
-  padding: 8px 9px 8px 28px;
+  padding: 8px 9px 8px 32px;
   border: 0;
   border-radius: 4px;
   background: none;
@@ -133,19 +133,6 @@
   cursor: pointer;
 }
 
-.od-target::before {
-  content: "";
-  position: absolute;
-  top: 12px;
-  left: 9px;
-  width: 10px;
-  height: 10px;
-  border: 1px solid rgba(128, 128, 128, .7);
-  border-radius: 50%;
-  background: var(--od-common, #8a8a8a);
-}
-
-.od-target[data-scope="channel"]::before { background: oklch(0.74 0.19 var(--od-scope-hue, 320)); }
 .od-target:not(:disabled):hover { background: rgba(128, 128, 128, .18); }
 
 .od-target-label { display: block; }
@@ -168,21 +155,32 @@
   min-height: 24px;
 }
 
-.od-dot {
+.od-dot:not(.od-channel-mark) {
   flex-shrink: 0;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: oklch(0.74 0.19 var(--od-scope-hue));
-  box-shadow: 0 0 6px oklch(0.74 0.19 var(--od-scope-hue) / .75);
+  background: oklch(0.74 var(--od-scope-chroma, 0.19) var(--od-scope-hue));
+  box-shadow: 0 0 6px oklch(0.74 var(--od-scope-chroma, 0.19) var(--od-scope-hue) / .75);
 }
 
-.od-dot-common {
+.od-dot.od-dot-common {
   width: 7px;
   height: 7px;
-  background: var(--od-common);
+  background: var(--od-common, #8a8a8a);
   box-shadow: none;
 }
+
+/* The popup carries the same marks, positioned beside its two text lines. */
+.od-target > .od-dot {
+  position: absolute;
+  top: 12px;
+  left: 9px;
+  border: 1px solid rgba(128, 128, 128, .7);
+}
+
+.od-target > .od-dot:not([data-mark]) { width: 10px; height: 10px; }
+.od-target > .od-dot[data-mark] { top: 10px; left: 8px; border: 0; }
 
 .od-channel {
   min-width: 0;
@@ -366,15 +364,15 @@
 }
 
 .od-save-channel[data-primary] {
-  background: oklch(0.74 0.19 var(--od-scope-hue) / .22);
-  box-shadow: inset 0 0 0 1px oklch(0.74 0.19 var(--od-scope-hue) / .55);
+  background: oklch(0.74 var(--od-scope-chroma, 0.19) var(--od-scope-hue) / .22);
+  box-shadow: inset 0 0 0 1px oklch(0.74 var(--od-scope-chroma, 0.19) var(--od-scope-hue) / .55);
 }
 
 .od-save-channel[data-primary]:hover {
-  background: oklch(0.74 0.19 var(--od-scope-hue) / .34);
+  background: oklch(0.74 var(--od-scope-chroma, 0.19) var(--od-scope-hue) / .34);
 }
 
-.od-save-channel[data-primary] svg { color: oklch(0.84 0.16 var(--od-scope-hue)); }
+.od-save-channel[data-primary] svg { color: oklch(0.84 var(--od-scope-chroma, 0.16) var(--od-scope-hue)); }
 
 /* ---------- hand ---------- */
 
@@ -492,7 +490,14 @@
 }
 
 .od-card[data-scope="channel"]::before,
-.od-listcard[data-scope="channel"]::before { background: oklch(0.74 0.19 var(--od-scope-hue)); }
+.od-listcard[data-scope="channel"]::before {
+  background: var(--od-neutral, oklch(0.74 var(--od-scope-chroma, 0.19) var(--od-scope-hue)));
+}
+
+/* Preserve a black/white stripe while outlining its inner edge on either theme. */
+#oshideck-root[data-neutral] :is(.od-card, .od-listcard)[data-scope="channel"]::before {
+  box-shadow: 0 0 0 1px var(--od-dim);
+}
 
 .od-card::before {
   top: 0;
@@ -585,15 +590,15 @@
 .od-card:focus-within {
   /* Above any depth a row can hand out. */
   z-index: 50;
-  border-color: oklch(0.80 0.16 var(--od-scope-hue) / .95);
+  border-color: oklch(0.80 var(--od-scope-chroma, 0.16) var(--od-scope-hue) / .95);
   box-shadow: 0 6px 16px rgba(0, 0, 0, .6),
-              0 0 14px oklch(0.74 0.19 var(--od-scope-hue) / .32);
+              0 0 14px oklch(0.74 var(--od-scope-chroma, 0.19) var(--od-scope-hue) / .32);
   transform: rotate(var(--od-rot)) translateY(var(--od-lift)) scale(1.06);
 }
 
 .od-card[data-editing] {
-  border-color: oklch(0.74 0.19 var(--od-scope-hue));
-  box-shadow: 0 0 0 1px oklch(0.74 0.19 var(--od-scope-hue)), 0 4px 12px rgba(0, 0, 0, .55);
+  border-color: oklch(0.74 var(--od-scope-chroma, 0.19) var(--od-scope-hue));
+  box-shadow: 0 0 0 1px oklch(0.74 var(--od-scope-chroma, 0.19) var(--od-scope-hue)), 0 4px 12px rgba(0, 0, 0, .55);
 }
 
 .od-card-play {
@@ -700,7 +705,7 @@
 }
 
 .od-listcard:hover { background: rgba(255, 255, 255, .09); }
-.od-listcard[data-editing] { box-shadow: inset 0 0 0 1px oklch(0.74 0.19 var(--od-scope-hue)); }
+.od-listcard[data-editing] { box-shadow: inset 0 0 0 1px oklch(0.74 var(--od-scope-chroma, 0.19) var(--od-scope-hue)); }
 
 .od-listcard-play {
   flex: 1;
@@ -814,8 +819,8 @@
   bottom: 3px;
   width: 3px;
   border-radius: 2px;
-  background: oklch(0.86 0.16 var(--od-scope-hue));
-  box-shadow: 0 0 8px oklch(0.80 0.18 var(--od-scope-hue));
+  background: oklch(0.86 var(--od-scope-chroma, 0.16) var(--od-scope-hue));
+  box-shadow: 0 0 8px oklch(0.80 var(--od-scope-chroma, 0.18) var(--od-scope-hue));
   animation: none;
   z-index: 5;
 }
@@ -835,8 +840,8 @@
 @keyframes od-flash {
   0%, 100% { box-shadow: 0 3px 8px rgba(0, 0, 0, .5); }
   15%, 55% {
-    box-shadow: 0 0 0 2px oklch(0.84 0.16 var(--od-scope-hue)),
-                0 0 16px oklch(0.78 0.18 var(--od-scope-hue) / .7);
+    box-shadow: 0 0 0 2px oklch(0.84 var(--od-scope-chroma, 0.16) var(--od-scope-hue)),
+                0 0 16px oklch(0.78 var(--od-scope-chroma, 0.18) var(--od-scope-hue) / .7);
   }
 }
 
@@ -861,7 +866,7 @@
   .od-card[data-flash],
   .od-listcard[data-flash] {
     animation: none;
-    box-shadow: 0 0 0 2px oklch(0.84 0.16 var(--od-scope-hue));
+    box-shadow: 0 0 0 2px oklch(0.84 var(--od-scope-chroma, 0.16) var(--od-scope-hue));
   }
 }
 
@@ -876,8 +881,8 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: oklch(0.80 0.16 var(--od-scope-hue));
-  box-shadow: 0 0 6px oklch(0.80 0.16 var(--od-scope-hue) / .9);
+  background: oklch(0.80 var(--od-scope-chroma, 0.16) var(--od-scope-hue));
+  box-shadow: 0 0 6px oklch(0.80 var(--od-scope-chroma, 0.16) var(--od-scope-hue) / .9);
   animation: od-pulse 1.8s ease-in-out infinite;
 }
 
@@ -926,7 +931,7 @@
   border: 0;
   border-radius: 7px;
   background: rgba(255, 255, 255, .14);
-  color: oklch(0.86 0.14 var(--od-scope-hue));
+  color: oklch(0.86 var(--od-scope-chroma, 0.14) var(--od-scope-hue));
   font: inherit;
   font-size: 11px;
   font-weight: 700;

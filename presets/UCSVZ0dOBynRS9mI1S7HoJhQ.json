@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "MIKURI Ch. 星衣未空莉",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCSVZ0dOBynRS9mI1S7HoJhQ",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🐹"},{"type":"text","value":"⭐"},{"type":"text","value":"🎶"},{"type":"text","value":"🐹"},{"type":"text","value":"⭐"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんみくりーん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつみくりーん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あい！あい！あい！あい！"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCSVZ0dOBynRS9mI1S7HoJhQ/hxnqac6lN6z7s8IP1KHWqQg","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/5vIN9hmuTkWhQwKnlb7u1ePdIs1Q431a8kLSmyAM5XyxfwxJET-J-QB9G2VBTHE2Rk1MPwJ--Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSVZ0dOBynRS9mI1S7HoJhQ/hxnqac6lN6z7s8IP1KHWqQg","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/5vIN9hmuTkWhQwKnlb7u1ePdIs1Q431a8kLSmyAM5XyxfwxJET-J-QB9G2VBTHE2Rk1MPwJ--Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSVZ0dOBynRS9mI1S7HoJhQ/hxnqac6lN6z7s8IP1KHWqQg","alt":"taiki","sharedTooltipText":":_taiki:","src":"https://yt3.ggpht.com/5vIN9hmuTkWhQwKnlb7u1ePdIs1Q431a8kLSmyAM5XyxfwxJET-J-QB9G2VBTHE2Rk1MPwJ--Q=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おおー"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCSVZ0dOBynRS9mI1S7HoJhQ/XhLqacOxKt-ss8IP_sHV6Q4","alt":"nakimikuri","sharedTooltipText":":_nakimikuri:","src":"https://yt3.ggpht.com/2u6q_qY3MXy8p5UJ-vSLSBIyqiPfENtbdL40-QX6bGleKVcwkKw0EoO6kdvmlkerM6XyjDWVcw=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

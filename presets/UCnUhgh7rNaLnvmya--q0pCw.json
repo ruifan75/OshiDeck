@@ -1,0 +1,20 @@
+{
+  "format": 2,
+  "name": "タオシャン / taoshan【スナックにり】",
+  "note": "歌枠2配信・通常13配信のチャットから12枚",
+  "channel": "UCnUhgh7rNaLnvmya--q0pCw",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こん"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんタオ～"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんタオー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🍇"},{"type":"text","value":"🎵"},{"type":"text","value":"🍇"},{"type":"text","value":"🎵"},{"type":"text","value":"🍇"},{"type":"text","value":"🎵"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"アンコール！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"はーい"}], "scope": "channel" }
+  ]
+}

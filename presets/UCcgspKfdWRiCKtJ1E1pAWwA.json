@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "苑楽アソビ【びじぱと】",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCcgspKfdWRiCKtJ1E1pAWwA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🖤"},{"type":"text","value":"🥖"},{"type":"text","value":"🖤"},{"type":"text","value":"🥖"},{"type":"text","value":"🖤"},{"type":"text","value":"🥖"},{"type":"text","value":"🖤"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🇯🇵"},{"type":"text","value":"🇯🇵"},{"type":"text","value":"🇯🇵"},{"type":"text","value":"🇯🇵"},{"type":"text","value":"🇯🇵"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないすぱ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないぎふ！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"お！"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"きたー！"}], "scope": "channel" }
+  ]
+}

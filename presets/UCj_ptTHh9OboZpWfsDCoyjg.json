@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "【Re:AcT Gaming】公式チャンネル",
-  "note": "過去5配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠0配信・通常6配信のチャットから10枚",
   "channel": "UCj_ptTHh9OboZpWfsDCoyjg",
   "cards": [
-    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"www"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"おつらぐー"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"ぎゅっぎゅっ"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"草"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"おつらぐ～"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"待機"}], "scope": "global" }
+    { "tokens": [{"type":"text","value":"すごい"}], "scope": "channel" }
   ]
 }

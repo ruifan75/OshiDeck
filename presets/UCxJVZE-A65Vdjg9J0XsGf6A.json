@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "MerryMa 메리마",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "channel": "UCxJVZE-A65Vdjg9J0XsGf6A",
+  "cards": [
+    { "tokens": [{"type":"text","value":"메하"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ㅋㅋㅋ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"저요"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"2"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"메리마구독"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"메하ㅏ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"3"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"오"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"메바"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ㅠㅠ"}], "scope": "channel" }
+  ]
+}

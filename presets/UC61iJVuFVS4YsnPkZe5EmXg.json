@@ -1,18 +1,18 @@
 {
   "format": 2,
   "name": "Akemi Ch. 猫町アケミ",
-  "note": "過去12配信のチャットから、常連が多い順に10枚",
+  "note": "歌枠0配信・通常13配信のチャットから10枚",
   "channel": "UC61iJVuFVS4YsnPkZe5EmXg",
   "cards": [
-    { "tokens": [{"type":"text","value":"GG"}], "scope": "global" },
-    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "global" },
+    { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"aku"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"absen"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"😭"},{"type":"text","value":"😭"},{"type":"text","value":"😭"}], "scope": "channel" },
-    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC61iJVuFVS4YsnPkZe5EmXg/K2k8YqqgE8jm8wSon6b4Bg","alt":"akeLol","sharedTooltipText":":_akeLol:","src":"https://yt3.ggpht.com/OOUf26gBPsGZNY0QPbtiJQ3swBZqJW2_1EC1FURPlk6suyQg53XfLi5KqA9ckekZ4JXTyRDSsbA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC61iJVuFVS4YsnPkZe5EmXg/K2k8YqqgE8jm8wSon6b4Bg","alt":"akeLol","sharedTooltipText":":_akeLol:","src":"https://yt3.ggpht.com/OOUf26gBPsGZNY0QPbtiJQ3swBZqJW2_1EC1FURPlk6suyQg53XfLi5KqA9ckekZ4JXTyRDSsbA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC61iJVuFVS4YsnPkZe5EmXg/K2k8YqqgE8jm8wSon6b4Bg","alt":"akeLol","sharedTooltipText":":_akeLol:","src":"https://yt3.ggpht.com/OOUf26gBPsGZNY0QPbtiJQ3swBZqJW2_1EC1FURPlk6suyQg53XfLi5KqA9ckekZ4JXTyRDSsbA=w48-h48-c-k-nd"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"wkwkwkw"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"halo bang"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"wow"}], "scope": "channel" }
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UC61iJVuFVS4YsnPkZe5EmXg/K2k8YqqgE8jm8wSon6b4Bg","alt":"akeLol","sharedTooltipText":":_akeLol:","src":"https://yt3.ggpht.com/OOUf26gBPsGZNY0QPbtiJQ3swBZqJW2_1EC1FURPlk6suyQg53XfLi5KqA9ckekZ4JXTyRDSsbA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC61iJVuFVS4YsnPkZe5EmXg/K2k8YqqgE8jm8wSon6b4Bg","alt":"akeLol","sharedTooltipText":":_akeLol:","src":"https://yt3.ggpht.com/OOUf26gBPsGZNY0QPbtiJQ3swBZqJW2_1EC1FURPlk6suyQg53XfLi5KqA9ckekZ4JXTyRDSsbA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC61iJVuFVS4YsnPkZe5EmXg/K2k8YqqgE8jm8wSon6b4Bg","alt":"akeLol","sharedTooltipText":":_akeLol:","src":"https://yt3.ggpht.com/OOUf26gBPsGZNY0QPbtiJQ3swBZqJW2_1EC1FURPlk6suyQg53XfLi5KqA9ckekZ4JXTyRDSsbA=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"😭"},{"type":"text","value":"😭"},{"type":"text","value":"😭"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"hahaha"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"iya"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"halo bang"}], "scope": "channel" }
   ]
 }

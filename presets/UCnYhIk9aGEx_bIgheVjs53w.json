@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Luto Araka / 新火ると",
+  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "channel": "UCnYhIk9aGEx_bIgheVjs53w",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🥖"},{"type":"text","value":"🥖"},{"type":"text","value":"🥖"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🐇"},{"type":"text","value":"buddy bunnies bouncing in to raid your fridge "},{"type":"text","value":"🐇"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"Konhallooooooooooooooo~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"OtsuBoinBoin~"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"no"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCnYhIk9aGEx_bIgheVjs53w/QWUqYY3pFonY8wSnvKTwAw","alt":"lutoHappy","sharedTooltipText":":_lutoHappy:","src":"https://yt3.ggpht.com/1xA8Nwm2TGeGAOnUneZaDEykjw25R5YcV3SxXiR43-_CNPY5E0Ybhvi5mSi3Jp1M1Bm5LCh7CeE=w48-h48-c-k-nd"}], "scope": "channel" },
+    { "tokens": [{"type":"youtubeEmoji","emojiId":"UCnYhIk9aGEx_bIgheVjs53w/sZkzY4z4I5ipwgXT34-gDg","alt":"lutoDoko","sharedTooltipText":":_lutoDoko:","src":"https://yt3.ggpht.com/eE-RPWftpV_6l3QrsO8VWU5JkUAc9VY_YzVPhA2uhfxt9asMiyL-9FS3yTKlfm1FdifQB91n=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCnYhIk9aGEx_bIgheVjs53w/sZkzY4z4I5ipwgXT34-gDg","alt":"lutoDoko","sharedTooltipText":":_lutoDoko:","src":"https://yt3.ggpht.com/eE-RPWftpV_6l3QrsO8VWU5JkUAc9VY_YzVPhA2uhfxt9asMiyL-9FS3yTKlfm1FdifQB91n=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCnYhIk9aGEx_bIgheVjs53w/sZkzY4z4I5ipwgXT34-gDg","alt":"lutoDoko","sharedTooltipText":":_lutoDoko:","src":"https://yt3.ggpht.com/eE-RPWftpV_6l3QrsO8VWU5JkUAc9VY_YzVPhA2uhfxt9asMiyL-9FS3yTKlfm1FdifQB91n=w48-h48-c-k-nd"}], "scope": "channel" }
+  ]
+}

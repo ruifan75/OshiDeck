@@ -1,0 +1,18 @@
+{
+  "format": 2,
+  "name": "Alva / アルバ",
+  "note": "歌枠2配信・通常9配信のチャットから10枚",
+  "channel": "UC2C3HWDnQXb1U-oM7UbtssA",
+  "cards": [
+    { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"🎭"},{"type":"text","value":"♟"},{"type":"text","value":"🎶"},{"type":"text","value":"🎭"},{"type":"text","value":"♟"},{"type":"text","value":"🎶"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"こんるばー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ないぎふ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"待機"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"草"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ｗｗ"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"おつるばー"}], "scope": "channel" },
+    { "tokens": [{"type":"text","value":"ほうほう"}], "scope": "channel" }
+  ]
+}

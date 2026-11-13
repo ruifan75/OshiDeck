@@ -1484,3 +1484,33 @@ tools/add-preset.mjs  書き出したスタートデッキを presets/ に入れ
 tools/selftest.js     YouTubeのDOMセレクタの自己診断
 tools/tests/          上のテスト本体（`page.mjs` はチャット画面の模型）
 ```
+
+### ローカルの作業データ
+
+配布に必要なファイルは `tools/build-release.mjs` の許可リストと `presets/index.json` で決まります。
+配布対象でなくても、設計の原本と色の出典は残しています。
+完了済みの採掘データ、古い生成物、参考画像、個人用の入力・バックアップは整理時に削除しました。
+
+| パス | 用途と整理の目安 |
+| --- | --- |
+| `src/`、ルートのJS・CSS・HTML、`manifest.json`、`presets/` | 拡張機能本体。同梱セットはindexから読み込むので、個別のファイル名をJSで検索して見つからなくても未使用ではありません |
+| `icons/*.svg` と `icons/*.png` | SVGは生成元、PNGは配布用。`tools/make-icons.sh` が両方をつなぎます |
+| `tools/` と `tools/tests/` | 採掘、検証、ビルド、手動診断。拡張機能から呼ばれないCLIも使います |
+| `design/*.dc.html` と `design/canvas.json` | 設計の原本。canvas.jsonにアートボードが登録されています |
+| `design/oshideck-card-deck-ui.html` | 設計ツールが生成する画面。生成物は削除済みで、設計原本は残しています |
+| `dist/` | 再生成できるZIPとSHA-256一覧。現在の0.51.2を残し、古い版は削除済みです |
+| `node_modules/` | テスト・ビルドの依存。削除後は `npm ci` で再インストールが必要です |
+| `chat-*/` | 採掘バッチの候補・計画・結果・コードのスナップショット・取得データ。前回の完了済みバッチと専用の再開スクリプトは削除済みです。次回は `produce-presets.mjs --run` で新しいバッチを作ります |
+| `tools/candidates/` | 旧方式の候補と生成セットは削除済みです。`scope.mjs` と `emoji-src.mjs` の既定の入力先でもあるため、使う場合は先に候補を採掘し直します |
+| `oshideck-channel-colours-v53.csv`、`oshideck-channel-colours-extra.csv` | 初期色と出典の記録。CSV自体は実行時に読みませんが、`src/store.js` の色表を検証するために残します |
+| 古い色表、色表の確認用HTML・抜き出しCSV | 調査の中間資料は削除済みです。v53とextraの出典記録を残しています |
+| `image*.png`、`nijipuka.jpg`、`nijipuka2.webp` | 開発時の参考画像は削除済みです。現在のUIはこれらを読み込まず、JS・CSSで描画します |
+| `channels`、`YT_subscribe*.csv`、`tools/subscriptions.json` | 本人の登録チャンネルを調べる入力と結果は削除済みです。次回取り込む場合も公開ファイルに混ぜません |
+| `oshideck-*.json` | 過去に書き出した個人用バックアップは削除済みです。今後書き出すバックアップもGitには収録しません |
+| `.env` | 採掘用APIキーと、ビルド時に秘密値の混入を検出するための入力。公開しません |
+| `.claude/worktrees/` | Gitの別作業ツリー。未反映のcommitや変更を確認し、整理には `git worktree` を使います |
+| `.DS_Store`、空の `chat/` | OSの補助情報と空の作業先は削除済みです。再生成されてもGitには収録しません |
+
+バックアップや作業データの除外規則は `.gitignore` に残しています。色の出典CSVを公開するかは別途判断する対象です。
+今回の整理では採掘の原データとコードのスナップショットも削除しており、過去のバッチは再開できません。
+配布用の2,671セットと色表は残しているため、拡張機能の実行・ビルドには影響しません。

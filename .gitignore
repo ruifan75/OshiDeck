@@ -32,7 +32,7 @@ chat/
 chat-*/
 
 # What came out of mining it. A working note: re-made by one command, and
-# what survives curation goes into presets/presets.json instead.
+# what survives curation goes into the per-channel files under presets/.
 tools/candidates/
 
 # The saved YouTube subscriptions page — 7MB of someone's signed-in session —

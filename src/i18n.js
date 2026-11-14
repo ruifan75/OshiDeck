@@ -36,13 +36,11 @@
 
     /* ---------- buttons ---------- */
     "action.close":          { ja: "閉じる", "zh-TW": "收起", en: "Close" },
-    "action.collapse":       { ja: "たたむ", "zh-TW": "收起", en: "Collapse" },
     "action.build":          { ja: "編成", "zh-TW": "組牌", en: "Build" },
     "action.update":         { ja: "更新", "zh-TW": "更新", en: "Update" },
     "action.cancel":         { ja: "やめる", "zh-TW": "取消", en: "Cancel" },
     "action.undo":           { ja: "元に戻す", "zh-TW": "復原", en: "Undo" },
     "action.undoSave":       { ja: "取り消す", "zh-TW": "取消", en: "Undo" },
-    "action.more":           { ja: "あと$1枚", "zh-TW": "還有 $1 張", en: "$1 more" },
 
     "aria.closePool":        { ja: "プールを閉じる", "zh-TW": "收起卡池", en: "Close the pool" },
     "aria.dismissNotice":    { ja: "通知を閉じる", "zh-TW": "關閉提示", en: "Dismiss notification" },
@@ -50,7 +48,6 @@
     "aria.updateCard":       { ja: "編集中の札を更新", "zh-TW": "更新編輯中的牌",
                                en: "Update the card being edited" },
     "aria.cancelEdit":       { ja: "編集をやめる", "zh-TW": "取消編輯", en: "Stop editing" },
-    "aria.showRest":         { ja: "残りの札を出す", "zh-TW": "顯示其餘的牌", en: "Show the rest of the hand" },
     "aria.addFromPool":      { ja: "プールから札を追加する", "zh-TW": "從卡池加入牌",
                                en: "Add a card from the pool" },
     "aria.fold":             { ja: "デッキをたたむ", "zh-TW": "收起牌組", en: "Fold the deck away" },
@@ -283,9 +280,9 @@
     "opt.undone":            { ja: "元に戻しました", "zh-TW": "已復原", en: "Undone" },
     "opt.addedTo":           { ja: "「$1」を $2 に入れました", "zh-TW": "已把「$1」加進 $2",
                                en: "Added “$1” to $2" },
-    "opt.reordered":         { ja: "並べ替えました（表示に反映するには並び順を「自分で並べた順」に）",
-                               "zh-TW": "已排序（要在直播頁看到，排序方式要選「自己排的順序」）",
-                               en: "Reordered (to see it on the stream page, set the order to “The order I set”)" },
+    "opt.reordered":         { ja: "並べ替えました（重みが同じ札も、この順に並びます）",
+                               "zh-TW": "已調整順序（權重相同時也會依此排列）",
+                               en: "Deck order updated (also used when weights are tied)" },
     "opt.ejected":           { ja: "「$1」をデッキから外しました（プールに残っています）",
                                "zh-TW": "已把「$1」移出牌組（牌還留在卡池裡）",
                                en: "Took “$1” out of the deck (it is still in the pool)" },
@@ -500,9 +497,9 @@
     "ui.quick":              { ja: "はやい", "zh-TW": "快", en: "Quick" },
 
     "ui.sortBy":             { ja: "並び順", "zh-TW": "排序方式", en: "Order" },
-    "ui.sortNoteDefault":    { ja: "「最近よく使う順」は、古い使用ほど軽く数えます（半減期1週間）。",
-                               "zh-TW": "「最近常用」是越久以前用過的算得越輕（半衰期一週）。",
-                               en: "“Recently used” counts older use for less (half-life one week)." },
+    "ui.sortNoteDefault":    { ja: "重みが同じ札は、編成ページで決めた順に並びます。",
+                               "zh-TW": "權重相同時，依牌組編輯頁決定的順序排列。",
+                               en: "Cards with equal weights follow the order set in the builder." },
 
     "ui.drawFromChat":       { ja: "チャットから引く", "zh-TW": "從聊天室抽牌", en: "Draw from the chat" },
     "ui.suggest":            { ja: "いま多い反応を1枚だけ手札に出す",

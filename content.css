@@ -425,8 +425,6 @@
   cursor: pointer;
 }
 
-.od-more svg { width: 11px; height: 11px; transition: transform .15s ease; }
-.od-more[data-expanded="true"] svg { transform: rotate(180deg); }
 .od-more:hover { color: var(--od-text); }
 
 .od-row {

@@ -110,7 +110,7 @@ const deck = [
 ];
 
 const ranking = watcher.ranking();
-const fallback = new Map(store.sortCards(deck, "heat").map((c, i) => [c.id, i]));
+const fallback = new Map(deck.map((c, i) => [c.id, i]));
 const score = (c, rank) => {
   c.signature ||= trending.signature(c.tokens);
   const seen = rank.get(c.signature);

@@ -1281,7 +1281,7 @@ if (sigFrom < 0 || sigTo < 0 || sigTo <= sigFrom) {
 // changed. Getting this wrong in one direction redraws constantly — which made
 // the drawn card lurch — and in the other leaves the panel stale, which is
 // worse. So both directions are pinned.
-function signature({ pool = false, tab = "mine", more = false, editing = null, flash = null,
+function signature({ pool = false, tab = "mine", editing = null, flash = null,
                      typing = false, pinned = false, settings = {}, channel = "UCaaa", name = "さくら",
                      hue = 320, width = 400, presets = 1,
                      shown = [], mine = [], offered = [], drawn = null,
@@ -1289,11 +1289,11 @@ function signature({ pool = false, tab = "mine", more = false, editing = null, f
   // Worked out by the panel's own line, not by this file.
   const waiting = cardsWaiting(mine, offered);
   return new Function(
-    "poolOpen", "poolTab", "expanded", "editingId", "flashId", "inputHasContent", "inputIsPinned",
+    "poolOpen", "poolTab", "editingId", "flashId", "inputHasContent", "inputIsPinned",
     "tokens", "presetsOnHand", "rootEl", "flashKind", "scopeFilter",
     `${src.slice(sigFrom, sigTo)} return panelSignature;`
   )(
-    pool, tab, more, editing, flash, typing, pinned,
+    pool, tab, editing, flash, typing, pinned,
     { cardKey: (t) => (t || []).map((x) => x.value ?? x.emojiId).join("") },
     () => new Array(presets),
     { clientWidth: width },
@@ -1359,7 +1359,6 @@ for (const [label, over] of [
   ["opening the pool", { pool: true }],
   // The cards swap under the pointer and nothing else about the panel moves.
   ["switching to the other half of it", { pool: true, tab: "offered" }],
-  ["expanding", { more: true }],
   ["editing a card", { editing: "a" }],
   ["flashing one", { flash: "a" }],
   ["typing", { typing: true }],

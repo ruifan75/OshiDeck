@@ -29,7 +29,6 @@
   let grabEl = null;
   let grabRow = null;
   let saveMenu = null;
-  let expanded = false;
   let flashId = null;
   let flashKind = "found";
   let drag = null;
@@ -598,9 +597,9 @@
     }
 
     const ranking = watcher.ranking();
-    // Personal habit is the tiebreak, so a quiet chat still gives a sane order.
+    // The saved deck order breaks ties, including cards with no chat weight.
     const fallback = new Map(
-      store.sortCards(cards, "heat", channelId).map((card, index) => [card.id, index])
+      cards.map((card, index) => [card.id, index])
     );
 
     const ordered = cards
@@ -1736,7 +1735,7 @@
       channel?.id || "", channel?.name || "", hue ?? "",
       data.channelMeta?.[channel?.id]?.color ?? "",
       rootEl?.clientWidth || 0,
-      poolOpen ? `pool:${poolTab}` : "deck", expanded ? "more" : "",
+      poolOpen ? `pool:${poolTab}` : "deck",
       scopeFilter.channel ? "channel" : "", scopeFilter.global ? "global" : "",
       editingId || "", flashId ? `${flashId}:${flashKind}` : "", inputHasContent ? "typing" : "",
       // The two halves counted apart. Together they were one number, and a
@@ -1774,10 +1773,9 @@
     const hand = document.createElement("div");
     hand.className = "od-hand";
     hand.style.setProperty("--od-visible-rows", visibleRows);
-    if (expanded) hand.dataset.expanded = "true";
     // Only cap and scroll when there is genuinely more than fits; otherwise a
     // hovered card would be clipped by an overflow container it never needed.
-    else if (rows.length > visibleRows) hand.dataset.scrollable = "true";
+    if (rows.length > visibleRows) hand.dataset.scrollable = "true";
 
     let cursor = 0;
     let firstRow = null;
@@ -1824,14 +1822,12 @@
     }
 
     container.appendChild(hand);
-    return Math.max(0, deck.length - perRow * visibleRows);
   }
 
   function renderList(container, deck, settings, hue, drawn) {
     const list = document.createElement("div");
     list.className = "od-list";
-    if (expanded) list.dataset.expanded = "true";
-    else if (deck.length > LIST_VISIBLE) list.dataset.scrollable = "true";
+    if (deck.length > LIST_VISIBLE) list.dataset.scrollable = "true";
 
     // A row rather than a card: the list has no fan to squeeze, so the drawn
     // reaction simply sits at the top in the same dashed hand as the pool.
@@ -1862,7 +1858,6 @@
     }
 
     container.appendChild(list);
-    return Math.max(0, deck.length - LIST_VISIBLE);
   }
 
   // The bar has two states. Idle it identifies the deck; the moment there is
@@ -2116,7 +2111,6 @@
   async function setScopeFilter(scope) {
     const held = rootEl?.contains(document.activeElement);
     scopeFilter[scope] = !scopeFilter[scope];
-    expanded = false;
     await render();
     const loose = !document.activeElement || document.activeElement === document.body;
     if (held && loose) rootEl?.querySelector(`[data-filter="${scope}"]`)?.focus({ preventScroll: true });
@@ -2539,26 +2533,9 @@
         return;
       }
 
-      const hidden =
-        data.settings.mode === "list"
-          ? renderList(rootEl, shown, data.settings, hue, drawn)
-          : renderHand(rootEl, shown, data.settings, hue, drawn);
-
-      if (hidden > 0 || expanded) {
-        const more = document.createElement("button");
-        more.type = "button";
-        more.className = "od-more";
-        more.dataset.expanded = String(expanded);
-        more.setAttribute("aria-label", expanded ? t("action.collapse") : t("aria.showRest"));
-        more.append(svgIcon("chevron"));
-
-        const label = document.createElement("span");
-        label.textContent = expanded ? t("action.collapse") : t("action.more", hidden);
-        more.appendChild(label);
-
-        more.addEventListener("click", () => { expanded = !expanded; render(); });
-        rootEl.appendChild(more);
-      }
+      data.settings.mode === "list"
+        ? renderList(rootEl, shown, data.settings, hue, drawn)
+        : renderHand(rootEl, shown, data.settings, hue, drawn);
 
       // A card the chat held out is in the panel but not in the deck: it is
       // on loan, it goes when the hold runs out, and nobody owns it until it

@@ -30,6 +30,7 @@ const CHANNEL = "channel-test.mjs";
 const VISIBILITY = "visibility-test.mjs";
 const TREND = "trend-test.js";
 const DRAW = "draw-test.mjs";
+const ORDER_SCROLL = "order-scroll-test.mjs";
 const CONFIRM = "confirm-test.mjs";
 const COLOUR = "colour-test.mjs";
 const PRESET = "preset-test.mjs";
@@ -91,6 +92,19 @@ const read = ({ file }) => {
 // [test, subject, name, find, replace] — `find` must appear exactly once, so a
 // mutation cannot quietly stop applying when the code around it moves.
 const MUTATIONS = [
+  [ORDER_SCROLL, CONTENT, "quiet chat falling back to historical heat",
+    '      cards.map((card, index) => [card.id, index])',
+    '      store.sortCards(cards, "heat", channelId).map((card, index) => [card.id, index])'],
+  [ORDER_SCROLL, CONTENT, "overflowing hands losing their scroll container",
+    '    if (rows.length > visibleRows) hand.dataset.scrollable = "true";',
+    '    if (false) hand.dataset.scrollable = "true";'],
+  [ORDER_SCROLL, CONTENT, "overflowing lists losing their scroll container",
+    '    if (deck.length > LIST_VISIBLE) list.dataset.scrollable = "true";',
+    '    if (false) list.dataset.scrollable = "true";'],
+  [ORDER_SCROLL, CONTENT, "hand cards truncated at the visible row limit",
+    '    const allRows = Math.max(1, Math.ceil(deck.length / perRow));',
+    '    const allRows = visibleRows;'],
+
   [COLOUR, STORE, "the v52 HEX catalogue ignored",
     "return OSHI_COLORS[channelId] ?? OSHI_NEUTRALS[channelId] ?? null;",
     "return OSHI_NEUTRALS[channelId] ?? null;"],
@@ -1589,6 +1603,11 @@ const MUTATIONS = [
 // assertion, so deleting the reorder case would have left the checker green —
 // naming the assertion is what makes each mutation answer for its own.
 const KILLS = {
+  "quiet chat falling back to historical heat": "hand: quiet chat uses manual order instead of historical heat",
+  "overflowing hands losing their scroll container": "hand: all cards are rendered in a capped scroll container",
+  "overflowing lists losing their scroll container": "list: all cards are rendered in a capped scroll container",
+  "hand cards truncated at the visible row limit": "hand: all cards are rendered in a capped scroll container",
+
   "the v52 HEX catalogue ignored": "all 807 selected v52 colours preserve their complete HEX",
   "native chromatic HEX reduced to its hue": "completing native selection saves the previewed colour",
 

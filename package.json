@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "test": "sh tools/run-tests.sh",
-    "build": "node tools/build-release.mjs"
+    "build": "node tools/build-release.mjs",
+    "test:theme": "node tools/check-theme-browser.mjs"
   },
   "devDependencies": {
     "html-encoding-sniffer": "4.0.0",

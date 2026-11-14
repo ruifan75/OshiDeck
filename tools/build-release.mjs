@@ -1,10 +1,10 @@
-// Build from an explicit runtime allowlist, never from the working directory.
+// Build a reproducible ZIP from explicitly listed runtime inputs.
 // node tools/build-release.mjs [--out <directory>]
 import { chmodSync, copyFileSync, existsSync, lstatSync, mkdirSync, mkdtempSync, readFileSync,
   realpathSync, renameSync, rmSync, utimesSync, writeFileSync } from "node:fs";
 import { createHash, randomUUID } from "node:crypto";
-import { tmpdir } from "node:os";
-import { dirname, join, relative, resolve } from "node:path";
+import { homedir, tmpdir } from "node:os";
+import { basename, dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
 import { createContext, runInContext } from "node:vm";
@@ -242,7 +242,36 @@ function knownSecrets(root) {
   return values;
 }
 
-function checkPrivateContent(snapshot, secrets) {
+function publicNameRules(root) {
+  let source;
+  try { source = readFileSync(join(root, "tools/hooks/public-names.tsv"), "utf8"); }
+  catch { fail("INVALID_PUBLIC_NAME_RULES"); }
+  const rules = new Set();
+  for (const line of source.split("\n")) {
+    if (!line || line.startsWith("#")) continue;
+    const match = /^([A-Za-z0-9_.\/-]+)\t([0-9a-f]{64})$/.exec(line);
+    if (!match || match[1].startsWith("/") || /(^|\/)\.\.(\/|$)/.test(match[1])) fail("INVALID_PUBLIC_NAME_RULES");
+    rules.add(line);
+  }
+  return rules;
+}
+
+function saysAccount(text, account) {
+  if (!account) return false;
+  const lower = text.toLowerCase();
+  let at = lower.indexOf(account);
+  while (at >= 0) {
+    if (at === 0 || !/[A-Za-z]/.test(lower[at - 1])) return true;
+    at = lower.indexOf(account, at + 1);
+  }
+  return false;
+}
+
+function checkPrivateContent(snapshot, secrets, publicNames) {
+  // Match the commit hook: a literal, case-insensitive account name bounded
+  // on the left by a non-ASCII-letter. Very short names are too ambiguous.
+  const login = basename(homedir()).toLowerCase();
+  const account = login.length >= 4 ? login : "";
   const address = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
   const publicAddress = /^(?:[^@]+@users\.noreply\.github\.com|noreply@anthropic\.com)$/i;
   const home = /(?:\/Users\/|\/home\/|[A-Z]:[\\/]Users[\\/])[^/\\\s"'`]+/i;
@@ -253,6 +282,17 @@ function checkPrivateContent(snapshot, secrets) {
     const text = bytes.toString("utf8");
     if (home.test(text) || credential.test(text) ||
         [...text.matchAll(address)].some(([value]) => !publicAddress.test(value))) fail("PRIVATE_CONTENT", file);
+    if (saysAccount(text, account)) {
+      for (let start = 0; start < bytes.length;) {
+        const newline = bytes.indexOf(10, start);
+        const end = newline < 0 ? bytes.length : newline;
+        const line = bytes.subarray(start, end);
+        // Only the name check has an exception, bound to this path and the
+        // original line bytes. Decoding/normalising must never grant approval.
+        if (saysAccount(line.toString("utf8"), account) && !publicNames.has(file + "\t" + sha256(line))) fail("PRIVATE_CONTENT", file);
+        start = end + 1;
+      }
+    }
   }
 }
 
@@ -327,7 +367,7 @@ export function buildRelease({ root = DEFAULT_ROOT, out = join(root, "dist") } =
   const fileList = [...RUNTIME_FILES, "presets/index.json", ...presetFiles].sort();
   if (fileList.length >= 65535) fail("PACKAGE_TOO_MANY_FILES");
   for (const file of fileList) readRuntime(root, file, snapshot);
-  checkPrivateContent(snapshot, knownSecrets(root));
+  checkPrivateContent(snapshot, knownSecrets(root), publicNameRules(root));
   const validate = presetValidator(snapshot);
   let cards = 0;
   for (const entry of index.presets) {

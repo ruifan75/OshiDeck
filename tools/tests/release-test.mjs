@@ -9,6 +9,8 @@ import { dirname, join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { execFileSync, spawnSync } from "node:child_process";
 import { JSDOM } from "jsdom";
+import os from "node:os";
+import { syncBuiltinESMExports } from "node:module";
 
 const root = new URL("../..", import.meta.url).pathname;
 const subject = process.env.OD_RELEASE || new URL("../build-release.mjs", import.meta.url).pathname;
@@ -33,6 +35,7 @@ function fixture() {
   for (const el of dom.window.document.querySelectorAll("script[src], link[rel=stylesheet]")) files.add(el.getAttribute("src") || el.getAttribute("href"));
   dom.window.close();
   for (const file of files) { mkdirSync(dirname(join(dir, file)), { recursive: true }); copyFileSync(join(root, file), join(dir, file)); }
+  write(dir, "tools/hooks/public-names.tsv", readFileSync(join(root, "tools/hooks/public-names.tsv")));
   write(dir, "presets/index.json", { format: 2, presets: [{ channel, file: `${channel}.json` }] });
   write(dir, `presets/${channel}.json`, { format: 2, name: "Example channel", channel,
     cards: [{ scope: "channel", tokens: [{ type: "text", value: "hello" }] }] });
@@ -44,12 +47,31 @@ function refused(dir, code) {
   catch (error) { return error.code === code; }
 }
 const unpack = (zip, file) => execFileSync("unzip", ["-p", zip, file]);
+// Stub the OS lookup only; never replace HOME or write the real account name.
+function asAccount(account, work) {
+  const original = os.homedir;
+  os.homedir = () => join(base, account);
+  syncBuiltinESMExports();
+  try { return work(); }
+  finally { os.homedir = original; syncBuiltinESMExports(); }
+}
+const approve = (dir, file, line) => write(dir, "tools/hooks/public-names.tsv",
+  `${file}\t${createHash("sha256").update(line).digest("hex")}\n`);
+function publicNameFixture(name = "FixturePerson") {
+  const dir = fixture(), file = `presets/${channel}.json`;
+  const raw = JSON.parse(readFileSync(join(dir, file), "utf8"));
+  raw.name = name;
+  const text = JSON.stringify(raw, null, 2) + "\n";
+  write(dir, file, text);
+  approve(dir, file, text.split("\n")[2]);
+  return { dir, file, text };
+}
 
 try {
   const dir = fixture();
   const built = buildRelease({ root: dir, out: join(dir, "first") });
   const names = execFileSync("unzip", ["-Z1", built.archive], { encoding: "utf8" }).trim().split("\n");
-  const privateNames = ["YT_subscribe.csv", ".DS_Store", "nijipuka.jpg", "chat-private/", "node_modules/", ".git/", "src/private-notes.txt", "presets/unindexed.json"];
+  const privateNames = ["YT_subscribe.csv", ".DS_Store", "nijipuka.jpg", "chat-private/", "node_modules/", ".git/", "tools/", "src/private-notes.txt", "presets/unindexed.json"];
   check("private workspace files stay out of a successful build", privateNames.every((p) => !names.some((n) => n === p || n.startsWith(p))));
   check("the manifest lives at the ZIP root", names.includes("manifest.json") && JSON.parse(unpack(built.archive, "manifest.json")).version === built.report.version);
   const index = JSON.parse(unpack(built.archive, "presets/index.json"));
@@ -260,6 +282,58 @@ try {
   const address = ["reader", "example.invalid"].join("@");
   write(personal, "content.js", readFileSync(join(root, "content.js"), "utf8") + `\n// ${address}\n`);
   check("private-looking addresses cannot enter the ZIP", refused(personal, "PRIVATE_CONTENT"));
+
+  asAccount("fixtureperson", () => {
+    const named = fixture(), accountText = "FixturePerson42";
+    write(named, "options.js", readFileSync(join(named, "options.js"), "utf8") + `\n// ${accountText}\n`);
+    let error;
+    try { buildRelease({ root: named }); } catch (caught) { error = caught; }
+    check("an uncommitted account name is refused before creating a ZIP", error?.code === "PRIVATE_CONTENT" && !existsSync(join(named, "dist")));
+    check("an account-name refusal does not reveal the name", !!error && !error.message.toLowerCase().includes("fixtureperson"));
+
+    const ordinary = fixture();
+    write(ordinary, "options.js", readFileSync(join(ordinary, "options.js"), "utf8") + '\n// myfixtureperson is a longer word\n');
+    let built;
+    try { built = buildRelease({ root: ordinary }); } catch { /* named assertion below */ }
+    check("an account substring inside a longer word stays allowed", !!built);
+
+    const allowed = publicNameFixture();
+    let approved;
+    try { approved = buildRelease({ root: allowed.dir }); } catch { /* named assertion below */ }
+    check("a reviewed public name remains allowed at its exact path and line", !!approved);
+
+    const changed = publicNameFixture();
+    const raw = JSON.parse(changed.text);
+    raw.cards[0].tokens[0].value = "FixturePerson private note";
+    write(changed.dir, changed.file, JSON.stringify(raw, null, 2) + "\n");
+    check("a reviewed name line does not approve other lines in its preset", refused(changed.dir, "PRIVATE_CONTENT"));
+
+    const moved = publicNameFixture();
+    write(moved.dir, "options.js", readFileSync(join(moved.dir, "options.js"), "utf8") +
+      '\nconst publicExample = {\n' + moved.text.split("\n")[2] + '\n};\n');
+    check("a public-name approval cannot move to a different file", refused(moved.dir, "PRIVATE_CONTENT"));
+
+    const bytes = fixture(), line = "// FixturePerson public example";
+    approve(bytes, "options.js", line);
+    write(bytes, "options.js", readFileSync(join(bytes, "options.js"), "utf8") + "\n" + line.replace("// ", "//\0") + "\n");
+    check("public-name approval uses raw bytes before NUL normalisation", refused(bytes, "PRIVATE_CONTENT"));
+
+    const withAddress = publicNameFixture("FixturePerson " + ["reader", "example.invalid"].join("@"));
+    check("a public-name approval never exempts a private address", refused(withAddress.dir, "PRIVATE_CONTENT"));
+  });
+  asAccount("r.indev+", () => {
+    const literal = fixture();
+    write(literal, "options.js", readFileSync(join(literal, "options.js"), "utf8") + '\n// rXindevvv\n');
+    let built;
+    try { built = buildRelease({ root: literal }); } catch { /* named assertion below */ }
+    check("account punctuation is literal rather than a regular expression", !!built);
+    write(literal, "options.js", readFileSync(join(literal, "options.js"), "utf8") + '\n// r.indev+\n');
+    check("a literal account with punctuation is still refused", refused(literal, "PRIVATE_CONTENT"));
+  });
+  const missingRules = fixture(); unlinkSync(join(missingRules, "tools/hooks/public-names.tsv"));
+  check("missing public-name rules refuse the build", refused(missingRules, "INVALID_PUBLIC_NAME_RULES"));
+  const badRules = fixture(); write(badRules, "tools/hooks/public-names.tsv", "not a valid rule\n");
+  check("malformed public-name rules refuse the build", refused(badRules, "INVALID_PUBLIC_NAME_RULES"));
 
   const cli = fixture(), marker = `private-output-${randomUUID()}`, output = join(cli, marker);
   write(cli, "tools/build-release.mjs", readFileSync(subject, "utf8"));

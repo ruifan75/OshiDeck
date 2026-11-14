@@ -44,6 +44,10 @@ channels
 tools/subscriptions.json
 /YT_subscribe*.csv
 
+# Local colour research inputs and review exports, removed after import.
+/oshideck-channel-colours-*.csv
+/oshideck-channel-colours-*-review.html
+
 # Browserless integration-test dependencies
 node_modules/
 

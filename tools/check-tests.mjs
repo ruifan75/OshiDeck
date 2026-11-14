@@ -91,6 +91,23 @@ const read = ({ file }) => {
 // [test, subject, name, find, replace] — `find` must appear exactly once, so a
 // mutation cannot quietly stop applying when the code around it moves.
 const MUTATIONS = [
+  [RELEASE, RELEASESRC, "an uncommitted account name admitted to the ZIP",
+    'if (saysAccount(text, account)) {', 'if (false) {'],
+  [RELEASE, RELEASESRC, "an account name checked with case sensitivity",
+    'const lower = text.toLowerCase();', 'const lower = text;'],
+  [RELEASE, RELEASESRC, "a public-name approval detached from its path",
+    '!publicNames.has(file + "\\t" + sha256(line))',
+    '![...publicNames].some((entry) => entry.endsWith("\\t" + sha256(line)))'],
+  [RELEASE, RELEASESRC, "one public-name line approving an entire file",
+    '!publicNames.has(file + "\\t" + sha256(line))',
+    '![...publicNames].some((entry) => entry.startsWith(file + "\\t"))'],
+  [RELEASE, RELEASESRC, "public-name hashes calculated after NUL normalisation",
+    '!publicNames.has(file + "\\t" + sha256(line))',
+    '!publicNames.has(file + "\\t" + sha256(Buffer.from(line.toString("utf8").replaceAll("\\0", " "))))'],
+  [RELEASE, RELEASESRC, "missing public-name rules silently treated as empty",
+    'catch { fail("INVALID_PUBLIC_NAME_RULES"); }', 'catch { return new Set(); }'],
+  [RELEASE, RELEASESRC, "a public-name allowance also allowing its private address",
+    '!publicAddress.test(value)', 'false'],
   [RELEASE, RELEASESRC, "a stylesheet checked by its irrelevant src attribute",
     'node.tagName === "script" ? getAttr(node, "src") : getAttr(node, "href")',
     'getAttr(node, "src") ?? getAttr(node, "href")'],
@@ -1565,6 +1582,13 @@ const MUTATIONS = [
 // assertion, so deleting the reorder case would have left the checker green —
 // naming the assertion is what makes each mutation answer for its own.
 const KILLS = {
+  "an uncommitted account name admitted to the ZIP": "an uncommitted account name is refused before creating a ZIP",
+  "an account name checked with case sensitivity": "an uncommitted account name is refused before creating a ZIP",
+  "a public-name approval detached from its path": "a public-name approval cannot move to a different file",
+  "one public-name line approving an entire file": "a reviewed name line does not approve other lines in its preset",
+  "public-name hashes calculated after NUL normalisation": "public-name approval uses raw bytes before NUL normalisation",
+  "missing public-name rules silently treated as empty": "missing public-name rules refuse the build",
+  "a public-name allowance also allowing its private address": "a public-name approval never exempts a private address",
   "a stylesheet checked by its irrelevant src attribute": "unlisted stylesheet hrefs with misleading src attributes prevent publishing",
   "HTML audited with scripting-disabled noscript grammar": "scripting-enabled noscript comments attributes and raw text stay inert",
   "a noscript stylesheet escape hidden by scripting-disabled grammar": "noscript comment escape cannot hide a release dependency",

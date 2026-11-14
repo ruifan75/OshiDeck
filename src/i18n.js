@@ -232,6 +232,7 @@
                                en: "Delete this deck (the cards saved for this channel go with it)" },
     "aria.deleteDeck":       { ja: "$1 のデッキを削除", "zh-TW": "刪除 $1 的牌組",
                                en: "Delete the deck for $1" },
+    "opt.resetColour":       { ja: "チャンネルの初期色に戻す", "zh-TW": "使用頻道預設色", en: "Use channel colour" },
     "opt.oshiColour":        { ja: "推し色", "zh-TW": "應援色", en: "Oshi colour" },
     "opt.oshiColourHue":     { ja: "推し色 $1", "zh-TW": "應援色 $1", en: "Oshi colour $1" },
     "opt.hueSlider":         { ja: "推し色を細かく選ぶ", "zh-TW": "細調應援色", en: "Fine-tune the oshi colour" },

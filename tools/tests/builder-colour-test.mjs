@@ -46,12 +46,13 @@ try {
   const green = p.window.OshiDeck.store.hueFromHex("#00ff00");
   check("native colour input immediately rotates the same badge",
     picker() === currentPicker && badge().style.getPropertyValue("--od-scope-hue") === String(green) &&
-    badge().querySelector(".od-mark-orbit").style.transform === "rotate(55.04deg)");
+    badge().querySelector(".od-mark-orbit").style.transform === "rotate(60deg)");
   check("preview leaves the native chooser's value and focus alone",
     currentPicker.value === "#00ff00" && p.document.activeElement === currentPicker && slider().value === String(green));
   check("native colour preview does not save or rebuild", p.ops.length === before && currentPicker.isConnected);
   await input(currentPicker, "#00ff00", "change");
-  check("completing native selection saves the previewed colour", p.read().channelMeta[NUHU].hue === green && p.ops.length === before + 1);
+  check("completing native selection saves the previewed colour", p.read().channelMeta[NUHU].hue === green && p.read().channelMeta[NUHU].color === "#00FF00" &&
+    !badge().hasAttribute("data-neutral") && picker().value === "#00ff00" && p.ops.length === before + 1);
 
   const swatch = [...p.document.querySelectorAll("#deckHeader .swatch")]
     .find((button) => button.style.getPropertyValue("--hue") === "250");
@@ -122,4 +123,26 @@ try {
     n.document.querySelector(".browse-card").style.getPropertyValue("--od-neutral") === "#FFFFFF");
 } catch (error) { check(error.stack, false); }
 finally { n.close(); }
+const SUU = "UCeqIMtLuGc3YgwkhEaG8oDg";
+const restored = await optionsPage({ channel: SUU, channelMeta: { [SUU]: { name: "Sample", hue: 286 } } });
+try {
+  const reset = restored.document.querySelector(".colour-reset");
+  reset.click(); await restored.settle();
+  check("the builder can reset an old purple selection to Suu's original HEX",
+    restored.document.querySelector(".hue-pick").value === "#27272a" &&
+    restored.document.querySelector(".deck-dot").style.getPropertyValue("--od-neutral") === "#27272A");
+  await restored.window.OshiDeck.store.runOp("loadPreset", { channelId: SUU, name: "Sample", cards: [
+    { id: "hex-sample", scope: "channel", tokens: [{ type: "text", value: "sample card" }] }
+  ] });
+  await restored.settle();
+  const chooser = restored.document.querySelector(".hue-pick");
+  chooser.value = "#1234ab";
+  chooser.dispatchEvent(new restored.window.Event("change", { bubbles: true }));
+  await restored.settle();
+  check("the builder preserves dark chromatic HEX after saving and repainting",
+    restored.read().channelMeta[SUU].color === "#1234AB" &&
+    restored.document.querySelector(".hue-pick").value === "#1234ab" &&
+    restored.document.querySelector(".browse-card").style.getPropertyValue("--od-neutral") === "#1234AB");
+} catch (error) { check(error.stack, false); }
+finally { restored.close(); }
 process.exitCode = failures ? 1 : 0;

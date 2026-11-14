@@ -178,4 +178,11 @@ for (const mode of ["hand", "list"]) {
   finally { p.close(); }
 }
 
+const hexPage = await contentPage({ preset: false });
+try {
+  await hexPage.update({ channelMeta: { [CHANNEL]: { hue: 270, color: "#1234AB" } } });
+  check("chat keeps a full chromatic HEX without treating it as grey",
+    hexPage.root.style.getPropertyValue("--od-neutral") === "#1234AB" &&
+    !hexPage.root.hasAttribute("data-neutral"));
+} finally { hexPage.close(); }
 process.exitCode = failures ? 1 : 0;

@@ -91,6 +91,12 @@ const read = ({ file }) => {
 // [test, subject, name, find, replace] — `find` must appear exactly once, so a
 // mutation cannot quietly stop applying when the code around it moves.
 const MUTATIONS = [
+  [COLOUR, STORE, "the v52 HEX catalogue ignored",
+    "return OSHI_COLORS[channelId] ?? OSHI_NEUTRALS[channelId] ?? null;",
+    "return OSHI_NEUTRALS[channelId] ?? null;"],
+  [BUILDER_COLOUR, OPTIONS, "native chromatic HEX reduced to its hue",
+    "saveHue(hue, event.target.value.toUpperCase())", "saveHue(hue, store.neutralFromHex(event.target.value))"],
+
   [RELEASE, RELEASESRC, "an uncommitted account name admitted to the ZIP",
     'if (saysAccount(text, account)) {', 'if (false) {'],
   [RELEASE, RELEASESRC, "an account name checked with case sensitivity",
@@ -283,7 +289,7 @@ const MUTATIONS = [
   [CHANNEL_MARK, STYLE, "the common dot inheriting the channel colour",
     ".od-dot.od-dot-common {", ".od-dot-common {"],
   [BUILDER_COLOUR, OPTIONS, "the native chooser saving grey as a red hue",
-    '    if (hue != null) saveHue(hue, store.neutralFromHex(event.target.value));',
+    '    if (hue != null) saveHue(hue, event.target.value.toUpperCase());',
     '    if (hue != null) saveHue(hue);'],
   [BUILDER_COLOUR, OPTIONS, "the builder slider not previewing the selected hue",
     "previewHue(Number(event.target.value), slider)", "previewHue(current, slider)"],
@@ -302,7 +308,7 @@ const MUTATIONS = [
   [CHANNEL_MARK, MARK_STYLE, "the hair ornament wheel starting on the wrong colour",
     "conic-gradient(from -60deg,", "conic-gradient(from -30deg,"],
   [CHANNEL_MARK, MARKS, "an OKLCH angle used directly on the RGB wheel",
-    "const angle = angleOfColor(OD.store.hexOfHue(hue ?? 320, 0.74));",
+    "const angle = angleOfColor(color || OD.store.hexOfHue(hue ?? 320, 0.74));",
     "const angle = (hue ?? 320) - 60;"],
   [CHANNEL_MARK, MARK_STYLE, "the heart pointing out of the ring",
     "  transform: translate(-50%, -50%);\n  color: white;",
@@ -629,8 +635,9 @@ const MUTATIONS = [
   [COLOUR, STORE, "the bundled colour catalogue left empty",
     "const OSHI_HUES = Object.assign(Object.create(null), {",
     "const OSHI_HUES = Object.assign(Object.create(null), false && {"],
-  [COLOUR, STORE, "a stale HSV hue used for the Hololive brand",
-    '"UCJFZiqLMntJufDCHc6bQixg": 223,', '"UCJFZiqLMntJufDCHc6bQixg": 193,'],
+  [COLOUR, STORE, "a full HEX default taking its hue from the old table",
+    "    if (OSHI_COLORS[channelId]) return hueFromHex(OSHI_COLORS[channelId]);",
+    "    if (OSHI_COLORS[channelId]) return OSHI_HUES[channelId] ?? 0;"],
   [COLOUR, STORE, "a catalogue hue of zero mistaken for no colour",
     "    if (known != null) return known;", "    if (known) return known;"],
   [COLOUR, STORE, "a hand-picked colour ignored in favour of the hash",
@@ -1582,6 +1589,9 @@ const MUTATIONS = [
 // assertion, so deleting the reorder case would have left the checker green —
 // naming the assertion is what makes each mutation answer for its own.
 const KILLS = {
+  "the v52 HEX catalogue ignored": "all 807 selected v52 colours preserve their complete HEX",
+  "native chromatic HEX reduced to its hue": "completing native selection saves the previewed colour",
+
   "an uncommitted account name admitted to the ZIP": "an uncommitted account name is refused before creating a ZIP",
   "an account name checked with case sensitivity": "an uncommitted account name is refused before creating a ZIP",
   "a public-name approval detached from its path": "a public-name approval cannot move to a different file",
@@ -1664,8 +1674,8 @@ const KILLS = {
   "the common dot inheriting the channel colour": "Nono: the common marker stays plain grey",
   "the native chooser saving grey as a red hue": "native grey survives rebuilding the builder and reopening its picker",
   "a catalogue hue of zero mistaken for no colour": "a catalogue hue of zero is a real colour",
-  "the bundled colour catalogue left empty": "the bundled Hololive brand hue comes from its selected HEX",
-  "a stale HSV hue used for the Hololive brand": "the bundled Hololive brand hue comes from its selected HEX",
+  "the bundled colour catalogue left empty": "MUZU starts with the approved blue from her channel artwork",
+  "a full HEX default taking its hue from the old table": "the full HEX catalogue also takes priority for the hue control",
   "an old page's global scope trusted by the worker": "the worker also binds an old page's global suggestion to this channel",
   "a starting deck creating unbound cards without a channel": "a starting deck cannot make unbound cards without a channel",
   "storage order choosing the start deck's existing card": "an existing universal card wins in either storage order (false)",

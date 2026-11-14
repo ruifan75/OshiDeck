@@ -16,7 +16,7 @@
     mode: values("hand list"), cardSize: values("small medium large"),
     sortBy: values("manual uses heat trend"), language: new Set(["", "ja", "zh-TW", "en"]),
     draw: values("shy normal eager"), hold: values("short normal long"), pace: values("quick normal slow"),
-    colourSource: values("stored-neutral stored-hue representative-neutral representative-hue automatic"),
+    colourSource: values("stored-neutral stored-hex stored-hue representative-neutral representative-hex representative-hue automatic"),
     filter: values("all channel global"), poolTab: values("mine offered"),
     membership: values("yes no unknown"),
     via: values("meta owner-link card-by-handle cards-agree player-response"),

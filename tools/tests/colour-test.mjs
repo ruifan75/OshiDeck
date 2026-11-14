@@ -97,9 +97,25 @@ check("prototype names do not become catalogue colours",
 const WHITE = "UCF_U2GCKHvDz52jWdizppIA";
 const BLACK = "UCLlJpxXt6L5d-XQ0cDdIyDQ";
 check("white and black starting colours remain white and black",
-  channelColor(WHITE) === "#FFFFFF" && channelColor(BLACK) === "#000000");
+  channelColor(WHITE) === "#FFFFFF" && channelColor(BLACK) === "#000000" &&
+  channelColor("UC--zuEfONeFXPvLqX0Kvbuw") === "#FFFFFF");
 check("the neutral catalogue contains valid bundled colours",
   Object.entries(OSHI_NEUTRALS).every(([id, hex]) => bundled.has(id) && neutralFromHex(hex) === hex && !(id in OSHI_HUES)));
+const sourceColours = JSON.parse(readFileSync(new URL("../data/channel-colours-v52.json", import.meta.url))).colours;
+check("all 807 selected v52 colours preserve their complete HEX",
+  sourceColours.length === 807 && Object.keys(store.OSHI_COLORS).length === 807 &&
+  sourceColours.every(({ channel, hex }) => channelColor(channel) === hex));
+const fullBrand = "UCJFZiqLMntJufDCHc6bQixg", originalBrandHex = store.OSHI_COLORS[fullBrand];
+store.OSHI_COLORS[fullBrand] = "#00FF00";
+check("the full HEX catalogue also takes priority for the hue control",
+  defaultHue(fullBrand) === hueFromHex("#00FF00") && channelColor(fullBrand) === "#00FF00");
+store.OSHI_COLORS[fullBrand] = originalBrandHex;
+check("Suu keeps her selected near-black rather than an amplified purple hue",
+  channelColor("UCeqIMtLuGc3YgwkhEaG8oDg") === "#27272A");
+check("a saved custom hue still overrides the full HEX catalogue",
+  channelColor("UCeqIMtLuGc3YgwkhEaG8oDg", { hue: 0 }) === null);
+check("a saved chromatic HEX keeps its own lightness and saturation",
+  channelColor("UCeqIMtLuGc3YgwkhEaG8oDg", { hue: 0, color: "#1234ab" }) === "#1234AB");
 // Aibare's colour remains unresolved.
 const uncoloured = ["UCjjIr39JMBz7RpgAa0XhqwA"];
 check("every bundled channel has a catalogue colour or an explicit fallback",
@@ -111,7 +127,7 @@ check("an old selected hue of zero takes priority over the new neutral default",
 check("a selected neutral overrides a chromatic starting colour",
   channelColor("UCCzUftO8KOVkV4wQG1vkUvg", { hue: 26, color: "#808080" }) === "#808080");
 check("invalid stored colours never become CSS",
-  ["red", "#ff0000", "#fff", "var(--other)", {}, 0].every((color) => channelColor(A, { hue: 0, color }) === null));
+  ["red", "#fff", "var(--other)", {}, 0].every((color) => channelColor(A, { hue: 0, color }) === null));
 check("native neutral selections preserve their lightness",
   ["#000000", "#808080", "#ffffff", "#DBE2E5"].every((hex) => neutralFromHex(hex) === hex.toUpperCase()));
 check("native chromatic selections still use a hue",
@@ -140,6 +156,17 @@ disk = { cards: [], decks: {}, channelMeta: {}, settings: {} };
 await store.runOp("importBackup", { raw: payload, mode: "replace" });
 check("a backup round trip keeps a chosen neutral colour",
   channelColor(WHITE, disk.channelMeta[WHITE]) === "#000000");
+
+await store.runOp("setChannel", { channelId: WHITE, hue: 270, color: "#1234ab" });
+check("native chromatic HEX is stored intact", disk.channelMeta[WHITE].color === "#1234AB");
+const hexBackup = OshiDeck.backup.toPayload(disk, "test");
+disk = { cards: [], decks: {}, channelMeta: {}, settings: {} };
+await store.runOp("importBackup", { raw: hexBackup, mode: "replace" });
+check("backup import preserves the complete chromatic HEX", channelColor(WHITE, disk.channelMeta[WHITE]) === "#1234AB");
+await store.runOp("setChannel", { channelId: WHITE, resetColor: true });
+check("reset restores the current channel default without retaining a custom hue",
+  !Object.hasOwn(disk.channelMeta[WHITE], "hue") && !Object.hasOwn(disk.channelMeta[WHITE], "color") &&
+  channelColor(WHITE, disk.channelMeta[WHITE]) === "#FFFFFF" && disk.channelMeta[WHITE].name === "Renamed");
 
 // Existing preferences, including zero, stay owned by the viewer.
 const brand = "UCJFZiqLMntJufDCHc6bQixg";

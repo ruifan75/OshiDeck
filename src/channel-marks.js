@@ -17,12 +17,12 @@
 
   function update(mark, hue, color = null) {
     mark.style.setProperty("--od-scope-hue", hue ?? 320);
-    mark.toggleAttribute("data-neutral", !!color);
+    mark.toggleAttribute("data-neutral", !!color && !!OD.store.neutralFromHex(color));
     if (color) mark.style.setProperty("--od-neutral", color);
     else mark.style.removeProperty("--od-neutral");
     if (mark.dataset.mark === "picker") {
       const orbit = mark.querySelector(".od-mark-orbit");
-      const angle = angleOfColor(OD.store.hexOfHue(hue ?? 320, 0.74));
+      const angle = angleOfColor(color || OD.store.hexOfHue(hue ?? 320, 0.74));
       if (orbit) orbit.style.transform = `rotate(${angle}deg)`;
     }
   }

@@ -2392,17 +2392,18 @@
     if (channel?.id) {
       const meta = data.channelMeta[channel.id];
       journal.record({ kind: "colour", channelId: channel.id, hue, color,
-        colourSource: store.neutralFromHex(meta?.color) && color ? "stored-neutral" : meta?.hue != null ? "stored-hue"
-          : color ? "representative-neutral" : Object.hasOwn(store.OSHI_HUES, channel.id) ? "representative-hue" : "automatic" });
+        colourSource: store.neutralFromHex(meta?.color) && color ? "stored-neutral" : meta?.color && color ? "stored-hex" : meta?.hue != null ? "stored-hue"
+          : color ? (store.neutralFromHex(color) ? "representative-neutral" : "representative-hex") : Object.hasOwn(store.OSHI_HUES, channel.id) ? "representative-hue" : "automatic" });
     }
     if (color) {
       rootEl.style.setProperty("--od-neutral", color);
-      rootEl.style.setProperty("--od-scope-chroma", "0");
+      if (store.neutralFromHex(color)) rootEl.style.setProperty("--od-scope-chroma", "0");
+      else rootEl.style.removeProperty("--od-scope-chroma");
     } else {
       rootEl.style.removeProperty("--od-neutral");
       rootEl.style.removeProperty("--od-scope-chroma");
     }
-    rootEl.toggleAttribute("data-neutral", !!color);
+    rootEl.toggleAttribute("data-neutral", !!store.neutralFromHex(color));
     const deck = buildDeck(data, channel?.id);
     if (filterChannel !== channel?.id) {
       filterChannel = channel?.id;

@@ -280,8 +280,8 @@ function paintHeader() {
   const currentColor = colorOf(selected);
   const meta = decks.channelMeta[channelId];
   journal.record({ kind: "colour", channelId, hue: current, color: currentColor,
-    colourSource: store.neutralFromHex(meta?.color) && currentColor ? "stored-neutral" : meta?.hue != null ? "stored-hue"
-      : currentColor ? "representative-neutral" : Object.hasOwn(store.OSHI_HUES, channelId) ? "representative-hue" : "automatic" });
+    colourSource: store.neutralFromHex(meta?.color) && currentColor ? "stored-neutral" : meta?.color && currentColor ? "stored-hex" : meta?.hue != null ? "stored-hue"
+      : currentColor ? (store.neutralFromHex(currentColor) ? "representative-neutral" : "representative-hex") : Object.hasOwn(store.OSHI_HUES, channelId) ? "representative-hue" : "automatic" });
   const mark = channelMarks.create(channelId, current, document, currentColor);
 
   for (const hue of HUES) {
@@ -299,7 +299,7 @@ function paintHeader() {
   }
 
   // The slider and swatches choose a hue at the palette's lightness/chroma.
-  // The native picker also accepts black, white and low-chroma tinted greys.
+  // The native picker preserves the complete HEX, including lightness/chroma.
   const slider = document.createElement("input");
   slider.type = "range";
   slider.className = "hue-slider";
@@ -326,17 +326,24 @@ function paintHeader() {
   picker.setAttribute("aria-label", t("opt.colourPicker"));
   picker.addEventListener("input", (event) => {
     const hue = store.hueFromHex(event.target.value);
-    if (hue != null) previewHue(hue, picker, store.neutralFromHex(event.target.value));
+    if (hue != null) previewHue(hue, picker, event.target.value.toUpperCase());
   });
   picker.addEventListener("change", (event) => {
     const hue = store.hueFromHex(event.target.value);
-    if (hue != null) saveHue(hue, store.neutralFromHex(event.target.value));
+    if (hue != null) saveHue(hue, event.target.value.toUpperCase());
   });
 
   const pickerWrap = document.createElement("label");
   pickerWrap.className = "hue-picker";
   pickerWrap.append(mark, picker);
-  swatches.append(slider, pickerWrap);
+  const reset = document.createElement("button");
+  reset.type = "button";
+  reset.className = "colour-reset";
+  reset.textContent = t("opt.resetColour");
+  reset.addEventListener("click", () => {
+    if (selected === channelId && swatches.isConnected) mutate("setChannel", { channelId, resetColor: true });
+  });
+  swatches.append(slider, pickerWrap, reset);
 
   function saveHue(hue, color = null) {
     if (selected !== channelId || !swatches.isConnected) return;
@@ -435,7 +442,7 @@ function buildCard(card, where) {
   el.style.setProperty("--hue", hueOf(selected));
   if (colorOf(selected)) {
     el.style.setProperty("--od-neutral", colorOf(selected));
-    el.dataset.neutral = "true";
+    if (store.neutralFromHex(colorOf(selected))) el.dataset.neutral = "true";
   }
 
   const body = document.createElement("div");

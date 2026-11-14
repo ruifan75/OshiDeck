@@ -794,3 +794,6 @@ kbd {
 .deck-action svg { width: 15px; height: 15px; }
 .deck-action:hover { opacity: 1; background: #ffffff14; }
 .deck-action:focus-visible { opacity: 1; outline: 2px solid #8ab4ff; outline-offset: 1px; }
+
+.colour-reset { border: 0; background: none; padding: 4px 6px; color: var(--muted, #aaa); font: inherit; font-size: 11px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.colour-reset:focus-visible { outline: 2px solid #c789e6; outline-offset: 2px; }

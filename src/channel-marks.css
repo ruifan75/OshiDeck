@@ -26,7 +26,43 @@
 .od-channel-mark[data-mark="rainbow"] {
   width: 12px;
   height: 12px;
-  box-shadow: 0 0 5px #e590af55;
+  /* The channel colour is the bubble's body; a translucent rainbow film
+     and small reflections sit over it. Resolve the colour here so previews
+     of either an exact HEX or a slider hue repaint the same bubble. */
+  background:
+    radial-gradient(circle at 30% 25%, #ffffff66, transparent 38%),
+    radial-gradient(circle at 75% 80%, #ba6ee84d, transparent 55%),
+    linear-gradient(135deg,
+      #e75b8a99 8%, #e7b93899 26%, #43b47499 43%,
+      #36aad199 60%, #8162d599 78%, #ca59b499 100%),
+    var(--od-neutral, oklch(0.74 0.19 var(--od-scope-hue, 320)));
+  box-shadow:
+    inset 0 0 0 .65px #ffffff73,
+    inset -1px -1px 2px #6351a640,
+    0 0 0 .5px #947da652,
+    0 0 4px #d8b5ef40;
+}
+
+.od-channel-mark[data-mark="rainbow"]::before {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 18%;
+  width: 28%;
+  height: 17%;
+  border-radius: 50%;
+  background: #ffffffb3;
+  transform: rotate(-35deg);
+}
+
+.od-channel-mark[data-mark="rainbow"]::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border: .65px solid transparent;
+  border-bottom-color: #ffffff73;
+  border-radius: 50%;
+  transform: rotate(-35deg);
 }
 
 .od-channel-mark[data-mark="picker"] {

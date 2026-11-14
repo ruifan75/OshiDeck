@@ -96,6 +96,11 @@ check("prototype names do not become catalogue colours",
 
 const WHITE = "UCF_U2GCKHvDz52jWdizppIA";
 const BLACK = "UCLlJpxXt6L5d-XQ0cDdIyDQ";
+const NONO = "UCVKWgVm8BSlMkGZIDGaoElw";
+check("Nono's default colour is #F1F2F4",
+  channelColor(NONO) === "#F1F2F4");
+check("Nono's new default preserves a saved white or a custom hue",
+  channelColor(NONO, { color: "#FFFFFF" }) === "#FFFFFF" && channelColor(NONO, { hue: 100 }) === null);
 check("white and black starting colours remain white and black",
   channelColor(WHITE) === "#FFFFFF" && channelColor(BLACK) === "#000000" &&
   channelColor("UC--zuEfONeFXPvLqX0Kvbuw") === "#FFFFFF");

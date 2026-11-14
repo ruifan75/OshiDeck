@@ -6,6 +6,7 @@ const root = new URL("../../", import.meta.url);
 export function backgroundPage({ files = {} } = {}) {
   let disk = { cards: [], decks: {}, settings: {}, channelMeta: {} };
   const writes = [], events = new Map();
+  const opened = [];
   let listener;
   let heldLog = null;
   let heldClear = null;
@@ -14,9 +15,10 @@ export function backgroundPage({ files = {} } = {}) {
   const chrome = {
     action: { onClicked: { addListener() {} } },
     runtime: { id: "fixture", getURL: (path) => `chrome-extension://fixture/${path}`,
-      getManifest: () => ({ version: "test" }), openOptionsPage() {},
+      getManifest: () => ({ version: "test" }), openOptionsPage() { opened.push({ options: true }); },
       onMessage: { addListener(fn) { listener = fn; } },
       sendMessage: (message) => send(message) },
+    tabs: { create: async (details) => { opened.push(clone(details)); return { id: opened.length }; } },
     storage: { local: {
       get: async () => { if (faults.read) throw new Error("read failed"); return clone(disk); },
       set: async (patch) => {
@@ -51,7 +53,7 @@ export function backgroundPage({ files = {} } = {}) {
     });
   }
   async function settle() { for (let i = 0; i < 15; i++) await new Promise((done) => setImmediate(done)); }
-  return { send, settle, faults, writes, journal: context.OshiDeck.journal,
+  return { send, settle, faults, writes, opened, journal: context.OshiDeck.journal,
     pauseLog() {
       let release;
       heldLog = new Promise((done) => { release = done; });

@@ -2197,7 +2197,8 @@
 
   function openOptions() {
     try {
-      chrome.runtime.sendMessage({ type: "openOptions" });
+      const channel = getChannel();
+      chrome.runtime.sendMessage({ type: "openOptions", channelId: channel?.id, name: channel?.name });
     } catch (_) {
       shutdown();
     }

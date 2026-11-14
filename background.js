@@ -167,6 +167,22 @@ async function readPresets(channelId) {
 // want, since everything this extension has to configure lives on one page.
 chrome.action.onClicked.addListener(() => chrome.runtime.openOptionsPage());
 
+async function openDeckOptions(message) {
+  const { channelId, name } = message;
+  if (typeof channelId !== "string" || !/^UC[A-Za-z0-9_-]{22}$/.test(channelId)) {
+    await chrome.runtime.openOptionsPage();
+    return { ok: true };
+  }
+  // A channel with no saved cards still needs a deck to edit. Use the same
+  // writer queue as card saves, so opening it cannot overwrite a concurrent save.
+  const reply = await enqueue(() => mutate({ op: "ensureDeck", args: { channelId, name } }));
+  if (!reply.ok) return reply;
+  await chrome.tabs.create({
+    url: `${chrome.runtime.getURL("options.html")}?channel=${encodeURIComponent(channelId)}`
+  });
+  return { ok: true };
+}
+
 chrome.runtime.onMessage.addListener((message, _sender, respond) => {
   if (message?.type === "presets") {
     readPresets(message.channelId)
@@ -175,9 +191,8 @@ chrome.runtime.onMessage.addListener((message, _sender, respond) => {
   }
 
   if (message?.type === "openOptions") {
-    chrome.runtime.openOptionsPage();
-    respond({ ok: true });
-    return false;
+    openDeckOptions(message).then(respond, () => respond({ ok: false }));
+    return true;
   }
 
   // Only diagnostics use these keys. Card mutations never write them.

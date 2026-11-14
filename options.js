@@ -181,7 +181,8 @@ load();
 /* ---------------- deck browser ---------------- */
 
 let decks = null;
-let selected = null;   // channel id, or null when nothing is saved yet
+const linkedChannel = new URLSearchParams(location.search).get("channel");
+let selected = /^UC[A-Za-z0-9_-]{22}$/.test(linkedChannel || "") ? linkedChannel : null;
 let undo = null;
 let query = "";
 let dragging = null;   // { card, from: "deck" | "pool" }

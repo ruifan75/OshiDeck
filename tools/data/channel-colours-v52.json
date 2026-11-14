@@ -5395,9 +5395,10 @@
     {
       "channel": "UCVKWgVm8BSlMkGZIDGaoElw",
       "name": "Ayamo Nono",
-      "hex": "#FFFFFF",
+      "hex": "#F1F2F4",
       "source": "https://wikiwiki.jp/react/%E5%BD%A9%E9%9B%B2%E3%81%AE%E3%81%AE",
-      "status": "已選定／使用者暫定白色／非官方"
+      "status": "已選定／使用者指定微灰白／非官方",
+      "selection_note": "2026-11-15 使用者將原選色 #FFFFFF 改為 #F1F2F4。"
     },
     {
       "channel": "UCJ0PCT2OVrvWGfSdrpG5Stw",

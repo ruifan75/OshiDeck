@@ -23,7 +23,7 @@
     player: values("fresh stale-or-absent"),
     ownerBlock: new Set(["none", "ytd-video-owner-renderer", "ytd-watch-metadata #owner", "#owner"]),
     errorType: values("Error TypeError RangeError ReferenceError SyntaxError URIError EvalError AggregateError DOMException QuotaExceededError SecurityError NotFoundError AbortError InvalidStateError InvalidAccessError NetworkError TimeoutError DataCloneError NotAllowedError"),
-    op: values("addCard loadPreset editCard markUsed addToDeck removeFromDeck insertIntoDeck addToDeckAt reorderDeck deleteCard restoreCard deleteDeck restoreDeck setScope setSettings setChannel importBackup"),
+    op: values("addCard loadPreset editCard markUsed addToDeck removeFromDeck insertIntoDeck addToDeckAt reorderDeck deleteCard restoreCard deleteDeck restoreDeck setScope setSettings ensureDeck setChannel importBackup"),
     importMode: values("merge replace")
   });
   const numbers = values("at firstAt repeat seq cards decks count added reused linked shown offered mine waiting width height dpr min share messages candidates belowMin belowShare ineligible qualified maxCount owned noSubstance membershipBlocked elsewhereBlocked holdMs paceMs hits hue line column durationMs rows");

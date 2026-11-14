@@ -9,12 +9,13 @@ export const NUHU = "UCj63OWl-HQ-I6ORzUWF1EDg";
 export const NONO = "UCVKWgVm8BSlMkGZIDGaoElw";
 const overrides = { "src/channel-marks.js": "OD_MARKS", "src/journal.js": "OD_JOURNAL", "options.js": "OD_OPTIONS" };
 
-export async function optionsPage({ channel = NUHU, channelMeta, fakeTime = false } = {}) {
+export async function optionsPage({ channel = NUHU, channelMeta, fakeTime = false,
+                                    url = "https://extension.test/options.html", initialData } = {}) {
   const errors = [];
   const output = new VirtualConsole();
   output.on("jsdomError", (error) => errors.push(error));
   const dom = new JSDOM(readFileSync(new URL("options.html", root), "utf8"), {
-    url: "https://extension.test/options.html", runScripts: "outside-only", virtualConsole: output
+    url, runScripts: "outside-only", virtualConsole: output
   });
   const { window } = dom;
   const { document } = window;
@@ -35,6 +36,7 @@ export async function optionsPage({ channel = NUHU, channelMeta, fakeTime = fals
   let stored = { settings: { language: "zh-TW" }, cards: [], decks: { [channel]: [], [NONO]: [] },
     channelMeta: { [channel]: { name: "虹深°ぬふ", hue: 30 }, [NONO]: { name: "彩雲のの", hue: 100 } } };
   if (channelMeta) stored.channelMeta = clone(channelMeta);
+  if (initialData) stored = { ...stored, ...clone(initialData) };
   const listeners = new Set();
   const ops = [];
   const logs = [];

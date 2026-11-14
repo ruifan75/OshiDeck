@@ -58,6 +58,7 @@ export async function contentPage({ source, mode = "hand", cards = [], folded = 
 
   const changed = new Set();
   const logs = [];
+  const messages = [];
   const stored = { settings: { mode, folded, sortBy: "manual", suggest: true, language: "en" },
     cards: cards.map((value, i) => ({ id: `card-${i}`, tokens: [{ type: "text", value }],
       scope: "global", createdAt: clock, by: {} })),
@@ -79,6 +80,7 @@ export async function contentPage({ source, mode = "hand", cards = [], folded = 
     i18n: { getUILanguage: () => "en" },
     runtime: { get id() { return alive ? "fixture" : undefined; },
       sendMessage: async (message) => {
+        messages.push(clone(message));
         if (message.type === "journal") {
           if (message.read === true) return { ok: true, value: logs };
           if (message.entry) logs.push(clone(message.entry));
@@ -133,7 +135,7 @@ export async function contentPage({ source, mode = "hand", cards = [], folded = 
     return document.querySelector(".od-grab")?.parentElement || null;
   }
   if (start) await advance();
-  return { window, document, advance, comment, point, logs,
+  return { window, document, advance, comment, point, logs, messages,
     get root() { return document.querySelector("#oshideck-root"); },
     async update(patch) { await write(patch); await advance(); },
     async settings(patch) { await write({ settings: { ...stored.settings, ...patch } }); await advance(); },

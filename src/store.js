@@ -517,7 +517,7 @@
     "UCV0YFbQEkDoWewu-LOlLwdA": "#FEEAD3",
     "UCV5ZZlLjk5MKGg3L0n0vbzw": "#CC3D7B",
     "UCVEvMzXlpobF6hhfwfAYKJg": "#A582C6",
-    "UCVKWgVm8BSlMkGZIDGaoElw": "#FFFFFF",
+    "UCVKWgVm8BSlMkGZIDGaoElw": "#F1F2F4",
     "UCVZcw2SMyL6h5CfKSCs42_A": "#AECEA9",
     "UCVbRXkQP-LumaBzfw-wsrrg": "#34B8E6",
     "UCVo_KgPNsDKxHwzib7uarCw": "#A5D3C7",
@@ -3561,7 +3561,7 @@
     "UCUERxnZSjCq-G7OfYL7Nukg": "#C8D4DB",
     "UCV5jFxqHWDppyzznOBJbvVg": "#B3ADA0",
     "UCVKWJcuZlcaiF8_oUXuixPw": "#000000",
-    "UCVKWgVm8BSlMkGZIDGaoElw": "#FFFFFF",
+    "UCVKWgVm8BSlMkGZIDGaoElw": "#F1F2F4",
     "UCVct2_K-PjRJASohALRLetg": "#FFFFFF",
     "UCWU7kvLd_JBaBqO_ilTYd_A": "#66786F",
     "UCX74Y5S5x3ir1CvP1Atd8rg": "#FFFFFF",
@@ -4392,6 +4392,17 @@
     setSettings(data, { patch }) {
       data.settings = { ...data.settings, ...cleanSettings(patch) };
       return data.settings;
+    },
+
+    ensureDeck(data, { channelId, name }) {
+      if (typeof channelId !== "string" || !/^UC[A-Za-z0-9_-]{22}$/.test(channelId)) return false;
+      data.decks[channelId] ||= [];
+      const existing = data.channelMeta[channelId] || {};
+      data.channelMeta[channelId] = {
+        ...existing,
+        name: existing.name || (typeof name === "string" ? name : "")
+      };
+      return true;
     },
 
     setChannel(data, { channelId, hue, color, name, resetColor }) {

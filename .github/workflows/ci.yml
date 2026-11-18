@@ -1,0 +1,101 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test and package
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Install dependencies and hooks
+        run: |
+          npm ci
+          git config --local core.hooksPath tools/hooks
+      - name: Run tests
+        run: npm test
+      - name: Check light and dark theme contrast
+        run: npm run test:theme
+      - name: Build the extension ZIP
+        id: package
+        run: |
+          version="$(node -p 'require("./manifest.json").version')"
+          if [[ "$GITHUB_REF_TYPE" == tag && "$GITHUB_REF_NAME" != "v$version" ]]; then
+            echo "Tag $GITHUB_REF_NAME does not match manifest version $version." >&2
+            exit 1
+          fi
+          npm run build
+          printf 'version=%s\n' "$version" >> "$GITHUB_OUTPUT"
+          if [[ "$GITHUB_REF_TYPE" == tag ]]; then
+            git for-each-ref --format='%(contents)' "$GITHUB_REF" > dist/release-notes.md
+          fi
+      - name: Save the release files
+        if: github.ref_type == 'tag'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: oshideck-release
+          path: |
+            dist/oshideck-${{ steps.package.outputs.version }}.zip
+            dist/oshideck-${{ steps.package.outputs.version }}.manifest.json
+            dist/release-notes.md
+          if-no-files-found: error
+
+  release:
+    name: Draft the GitHub Release
+    if: github.event_name == 'push' && github.ref_type == 'tag'
+    needs: test
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    concurrency:
+      group: release-${{ github.ref }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: oshideck-release
+      - name: Create draft and attach checked files
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="$GITHUB_REF_NAME"
+          version="${tag#v}"
+          package="oshideck-$version.zip"
+          report="oshideck-$version.manifest.json"
+          printf '%s  %s\n' "$(jq -er .sha256 "$report")" "$package" | sha256sum --check --strict
+
+          if ! release="$(gh release view "$tag" --repo "$GITHUB_REPOSITORY" --json isDraft,assets)"; then
+            gh release create "$tag" --repo "$GITHUB_REPOSITORY" --draft --verify-tag \
+              --title "OshiDeck $version" --notes-file release-notes.md
+            release="$(gh release view "$tag" --repo "$GITHUB_REPOSITORY" --json isDraft,assets)"
+          fi
+          if ! jq -e .isDraft <<< "$release" > /dev/null; then
+            echo "The release $tag has already been published." >&2
+            exit 1
+          fi
+
+          for file in "$package" "$report"; do
+            digest="$(jq -r --arg name "$file" '.assets[] | select(.name == $name) | .digest // "unavailable"' <<< "$release")"
+            if [[ -z "$digest" ]]; then
+              gh release upload "$tag" "$file" --repo "$GITHUB_REPOSITORY"
+            elif [[ "$digest" != "sha256:$(sha256sum "$file" | cut -d ' ' -f 1)" ]]; then
+              echo "The draft already has a different $file. Use a new version for changed release files." >&2
+              exit 1
+            fi
+          done

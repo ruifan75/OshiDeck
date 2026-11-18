@@ -83,6 +83,20 @@ HTMLの検査には `parse5` と `html-encoding-sniffer` を使うため、先�
 参照より後のbaseなど、解釈を保証できない書き方は明示的に拒否します。
 HTMLは1 MiB・開始／終了タグ合計20,000個までに制限します。これらの開発用依存はZIPには入りません。
 
+### GitHub Actions
+
+`main` への push と pull request では、Node.js 24 でテストと Chrome のテーマ検査を実行し、
+配布用 ZIP を作って検証します。リリース時は `manifest.json` と同じバージョンのタグを push します。
+
+```sh
+git tag -a v1.0.0 -m 'OshiDeck 1.0.0'
+git push origin refs/tags/v1.0.0
+```
+
+タグの検査が通ると、GitHub Actions がタグの注釈をリリースノートに使い、
+ZIP と SHA-256 が入ったファイル一覧を添付した Release の下書きを作ります。
+公開する前に下書きの内容を確認してください。
+
 直近の配布内容の変更は次のとおりです。
 
 - 抽札では繰り返し回数だけが違う反応を既存の札として扱う（👏×5を持っていれば👏×6は引かない）。保存内容と送信時の回数は変更しない

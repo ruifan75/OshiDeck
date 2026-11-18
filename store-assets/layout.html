@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>OshiDeck · Store artwork</title>
+  <!-- render-store.mjs copies this template beside the selected version's captures. -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,body {
+      margin: 0;
+      background: #25222a;
+      color: #f3eff7;
+      font-family: -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .art {
+      position: relative;
+      width: 1280px;
+      height: 800px;
+      overflow: hidden;
+      background: #101013;
+    }
+
+    .brand {
+      position: absolute;
+      z-index: 2;
+      left: 58px;
+      top: 38px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 25px;
+      letter-spacing: -.6px;
+      font-weight: 750;
+    }
+
+    .brand img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .accent {
+      color: #e4b3ff;
+    }
+
+    .title {
+      font-size: 45px;
+      line-height: 1.4;
+      letter-spacing: -.04em;
+      margin: 0;
+      font-weight: 720;
+    }
+
+    .sub {
+      font-size: 18px;
+      line-height: 1.85;
+      color: #bcb4c6;
+    }
+
+    .hero {
+      background: radial-gradient(ellipse at 72% 72%,#4b305527,transparent 65%),#101013;
+    }
+
+    .hero .copy {
+      position: absolute;
+      left: 60px;
+      top: 157px;
+    }
+
+    .hero h1 {
+      font-size: 61px;
+      line-height: 1.4;
+      letter-spacing: -.055em;
+      margin: 20px 0 22px;
+      font-weight: 730;
+    }
+
+    .hero .sub {
+      max-width: 580px;
+      margin: 0;
+    }
+
+    .hero .hand {
+      position: absolute;
+      left: 46px;
+      top: 544px;
+      width: 570px;
+      filter: drop-shadow(0 20px 28px #0006);
+    }
+
+    .chat-shell {
+      position: absolute;
+      right: 60px;
+      top: 110px;
+      width: 390px;
+      border: 1px solid #4b4055;
+      border-radius: 13px;
+      overflow: hidden;
+      box-shadow: 0 20px 48px #0007;
+      background: #101010;
+    }
+
+    .chat-shell img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .section-head {
+      position: absolute;
+      left: 60px;
+      top: 130px;
+    }
+
+    .section-head .sub {
+      margin: 10px 0 0;
+    }
+
+    .flow {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      top: 277px;
+      bottom: 79px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+    }
+
+    .step {
+      position: relative;
+      min-width: 0;
+      border-top: 1px solid #51415e;
+      padding-top: 19px;
+    }
+
+    .step-head {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .step-num {
+      font-size: 14px;
+      color: #d6a4ee;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .step h2 {
+      font-size: 23px;
+      letter-spacing: -.025em;
+      margin: 0;
+      font-weight: 650;
+    }
+
+    .step .desc {
+      font-size: 14px;
+      color: #bcb4c6;
+      line-height: 1.8;
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+      max-width: 330px;
+    }
+
+    .save-window {
+      height: 280px;
+      border: 1px solid #3f3748;
+      border-radius: 9px;
+      overflow: hidden;
+      position: relative;
+      background: #101010;
+    }
+
+    .save-window img {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: -176px;
+    }
+
+    .step .single-ui {
+      border: 1px solid #3f3748;
+      border-radius: 9px;
+      overflow: hidden;
+      background: #101010;
+      width: 100%;
+      margin-top: 47px;
+    }
+
+    .step .single-ui img {
+      display: block;
+      width: 100%;
+    }
+
+    .step:nth-child(3) .single-ui {
+      margin-top: 8px;
+    }
+
+    .flow-arrow {
+      position: absolute;
+      top: 199px;
+      right: -21px;
+      width: 18px;
+      color: #a481b8;
+      font-size: 22px;
+      z-index: 3;
+    }
+
+    .builder-view {
+      position: absolute;
+      left: 100px;
+      right: 100px;
+      top: 270px;
+      border: 1px solid #494052;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 48px #0005;
+      background: #101010;
+    }
+
+    .builder-view img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .builder .section-head .sub {
+      font-size: 17px;
+    }
+
+    .promo {
+      width: 440px;
+      height: 280px;
+      background: radial-gradient(ellipse at 88% 86%,#68457660,transparent 70%),#17121d;
+    }
+
+    .promo .brand {
+      left: 28px;
+      top: 25px;
+      gap: 10px;
+      font-size: 28px;
+    }
+
+    .promo .brand img {
+      width: 39px;
+      height: 39px;
+    }
+
+    .promo .tagline {
+      position: absolute;
+      left: 29px;
+      top: 108px;
+      font-size: 30px;
+      line-height: 1.55;
+      letter-spacing: -.06em;
+      font-weight: 680;
+      margin: 0;
+      z-index: 2;
+    }
+
+    .promo .fan {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      right: -12px;
+      bottom: -3px;
+      transform: rotate(8deg);
+    }
+
+    .promo .fan svg {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <section class="art hero" data-capture="01-hand-ja">
+    <div class="brand"><img src="../../icons/fan.svg" alt="">OshiDeck</div>
+    <div class="copy">
+      <h1>推しへの一言を、<br><span class="accent">あなたの手札に。</span></h1>
+      <p class="sub">よく使うコメントをカードに保存。<br>クリックひとつで、チャットの入力欄へ。</p>
+    </div>
+    <img class="hand" src="raw/ja-hand.png" alt="OshiDeckの手札">
+    <div class="chat-shell"><img src="raw/ja-chat.png" alt="ライブチャットのサンプル"></div>
+  </section>
+
+  <section class="art workflow" data-capture="02-save-play-ja">
+    <div class="brand"><img src="../../icons/fan.svg" alt="">OshiDeck</div>
+    <div class="section-head">
+      <h1 class="title">保存して、並べて、また使う。</h1>
+      <p class="sub">チャットの「＋」から保存。次に使うときは、手札をクリック。</p>
+    </div>
+    <div class="flow">
+      <div class="step">
+        <div class="step-head"><span class="step-num">01</span><h2>コメントを保存</h2></div>
+        <div class="save-window"><img src="raw/ja-save.png" alt="カードの保存先を選ぶメニュー"></div>
+        <p class="desc">「＋」を押して保存先を選択。<br>このチャンネル専用にも、共通にも。</p>
+        <span class="flow-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-head"><span class="step-num">02</span><h2>自分の手札になる</h2></div>
+        <div class="single-ui"><img src="raw/ja-saved.png" alt="保存したカードが追加された手札"></div>
+        <p class="desc">保存したコメントはカードに。<br>次の反応を、すぐ取り出せます。</p>
+        <span class="flow-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-head"><span class="step-num">03</span><h2>クリックで入力</h2></div>
+        <div class="single-ui"><img src="raw/ja-filled.png" alt="コメントが入った入力欄"></div>
+        <p class="desc">まず入力欄へ。送信前に確認できます。<br>初期設定では自動送信しません。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="art builder" data-capture="03-builder-ja">
+    <div class="brand"><img src="../../icons/fan.svg" alt="">OshiDeck</div>
+    <div class="section-head">
+      <h1 class="title">チャンネルごとに、デッキを編成。</h1>
+      <p class="sub">プールからドラッグして追加。手札を並べ替えて、自分の使いやすい順番に。</p>
+    </div>
+    <div class="builder-view"><img src="raw/ja-builder.png" alt="チャンネルごとのデッキ編集画面"></div>
+  </section>
+
+  <section class="art promo" data-capture="04-promo-ja">
+    <div class="brand"><img src="../../icons/fan.svg" alt="">OshiDeck</div>
+    <p class="tagline">チャットに、<br>手札を。</p>
+    <div class="fan">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" aria-hidden="true">
+        <g transform="translate(64 84)">
+          <g transform="rotate(-24) translate(-20 -40)">
+            <rect width="40" height="60" rx="8" fill="#cfd2d8"/>
+            <path d="M0 8a8 8 0 0 1 8-8h24a8 8 0 0 1 8 8v6H0z" fill="#52a9fe"/>
+          </g>
+          <g transform="rotate(24) translate(-20 -40)">
+            <rect width="40" height="60" rx="8" fill="#cfd2d8"/>
+            <path d="M0 8a8 8 0 0 1 8-8h24a8 8 0 0 1 8 8v6H0z" fill="#fd7277"/>
+          </g>
+          <g transform="translate(-21 -48)">
+            <rect width="42" height="62" rx="8" fill="#f2f3f6"/>
+            <path d="M0 8a8 8 0 0 1 8-8h26a8 8 0 0 1 8 8v6H0z" fill="#d777ed"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </section>
+</body>
+</html>

@@ -53,3 +53,8 @@ node_modules/
 
 # Release ZIPs and their file/hash reports, rebuilt from the runtime allowlist.
 /dist/
+
+# Track the store artwork template. Captures and exports stay local.
+/store-assets/*
+!/store-assets/layout.html
+/tools/redact-store-screenshot.mjs

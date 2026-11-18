@@ -113,7 +113,7 @@ const MUTATIONS = [
 
   ["a NUL left to hide what follows it", "private.sh",
    "    $text =~ s/\\0/ /g;\n", "",
-   "a NUL does not hide what comes after it"],
+   "the reader replaces NUL with a space"],
 
   ["the scan forced to ASCII case folding", "private.sh",
    "export LC_ALL=\"$utf8_locale\"", "export LC_ALL=C",
@@ -121,7 +121,7 @@ const MUTATIONS = [
 
   ["invalid bytes handed straight to the text scanner", "private.sh",
    '    my $text = decode("UTF-8", $raw);', '    print $raw; exit;',
-   "a binary file with nothing private in it goes through"],
+   "the reader repairs invalid UTF-8"],
 
   ["a reader that stops short taken for a clean read", "private.sh",
    "{ read_text hashed || printf '\\n%s\\n' \"$UNREAD\"; } |", "read_text hashed |",

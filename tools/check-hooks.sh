@@ -397,7 +397,24 @@ fresh
 staged_is R "a rename that changes nothing still lands under a name"
 staged "a rename that changes nothing still lands under a name" 1
 
-# awk stops at a NUL, and --text hands it lines that have them.
+# Check the reader's exact output as awk implementations accept different
+# inputs. Keep the staged cases to exercise the complete hook as well.
+normalized_text() {
+  got=0
+  ( . "$hooks/private.sh"; read_text ) < "$lab/input" > "$lab/decoded" &&
+    cmp -s "$lab/expected" "$lab/decoded" || got=$?
+  expect "$1" 0
+}
+
+printf 'x\000y\n' > "$lab/input"
+printf 'x y\n' > "$lab/expected"
+normalized_text "the reader replaces NUL with a space"
+
+printf 'GIF89a\377\376\375\n' > "$lab/input"
+printf 'GIF89a\357\277\275\357\277\275\357\277\275\n' > "$lab/expected"
+normalized_text "the reader repairs invalid UTF-8"
+
+# A binary diff can contain NUL bytes.
 fresh
 printf 'x\000pilot@private.example.com\n' > "$repo/notes.txt"
 add notes.txt

@@ -306,6 +306,20 @@
                                en: "it goes from $1's deck as well" },
     "action.delete":         { ja: "削除", "zh-TW": "刪除", en: "Delete" },
 
+    /* ---------- change a saved card's scope ---------- */
+    "opt.scopeToChannel":    { ja: "専用にする", "zh-TW": "改為頻道專用", en: "Make channel-only" },
+    "opt.scopeToGlobal":     { ja: "共通にする", "zh-TW": "改為通用", en: "Make universal" },
+    "opt.scopeChannelHint":  { ja: "$1専用に変更します。他のチャンネルのデッキからは外れます。",
+                               "zh-TW": "改為 $1 專用，會從其他頻道的牌組移除。",
+                               en: "Make this card exclusive to $1. It will leave other channels' decks." },
+    "opt.scopeConfirmTitle": { ja: "$1専用にしますか？", "zh-TW": "改為 $1 專用？", en: "Make this card exclusive to $1?" },
+    "opt.scopeConfirmWarning": { ja: "この札は次のチャンネルのデッキから外れ、そこでは使えなくなります。札の内容と使用履歴は残ります。",
+                                 "zh-TW": "這張牌會從以下頻道的牌組移除，之後無法在這些頻道使用。卡牌內容與使用紀錄會保留。",
+                                 en: "This card will be removed from the following channels' decks and can no longer be used there. Its contents and usage history will be kept." },
+    "opt.scopeConfirm":      { ja: "専用にして外す", "zh-TW": "轉換並移除", en: "Convert and remove" },
+    "opt.scopeNowGlobal":    { ja: "共通の札に変更しました", "zh-TW": "已改為通用牌", en: "Card is now universal" },
+    "opt.scopeNowChannel":   { ja: "$1専用の札に変更しました", "zh-TW": "已改為 $1 專用牌", en: "Card is now exclusive to $1" },
+
     /* ---------- export and import ---------- */
     "opt.exported":          { ja: "$1枚を書き出しました", "zh-TW": "已匯出 $1 張", en: "Wrote out $1 cards" },
     "opt.notJson":           { ja: "JSONとして読めませんでした", "zh-TW": "無法解析這個 JSON 檔案",

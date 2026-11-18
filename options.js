@@ -468,6 +468,27 @@ function buildCard(card, where) {
   // were striped in the panel and grey in here.
   if (store.scopeOf(card) === store.GLOBAL) el.dataset.universal = "true";
 
+  const universal = store.scopeOf(card) === store.GLOBAL;
+  const scopeButton = document.createElement("button");
+  scopeButton.type = "button";
+  scopeButton.className = "browse-scope";
+  scopeButton.textContent = "⇄";
+  const scopeLabel = universal ? t("opt.scopeToChannel") : t("opt.scopeToGlobal");
+  const forced = tokens.requiredChannels(card.tokens || []).length > 0;
+  scopeButton.disabled = forced || !selected;
+  const scopeHint = forced ? t("save.globalBlocked")
+    : universal ? t("opt.scopeChannelHint", nameOf(selected)) : t("save.globalWhy");
+  scopeButton.title = `${scopeLabel} — ${scopeHint}`;
+  scopeButton.setAttribute("aria-label", scopeButton.title);
+  const channelId = selected;
+  scopeButton.addEventListener("click", async (event) => {
+    event.stopPropagation();
+    scopeButton.disabled = true;
+    await changeScope(card.id, universal ? channelId : store.GLOBAL, channelId);
+    if (scopeButton.isConnected) scopeButton.disabled = forced || !channelId;
+  });
+  el.appendChild(scopeButton);
+
   // Every card has a pool to fall back to now, so leaving a deck always means
   // the same thing wherever you do it.
   if (where === "deck") {
@@ -478,6 +499,61 @@ function buildCard(card, where) {
       () => removeCard(card, el)));
   }
   return el;
+}
+
+async function changeScope(id, scope, channelId, confirmedDecks = []) {
+  const reply = await mutate("setScope", { id, scope, channelId, confirmedDecks }, { reportFailure: false });
+  if (!reply.ok) {
+    if (reply.reason === "scope-confirmation") {
+      askScopeChange(id, scope, channelId, reply.value.held);
+    } else status(t("toast.saveFailed"));
+    return;
+  }
+  status(scope === store.GLOBAL ? t("opt.scopeNowGlobal") : t("opt.scopeNowChannel", nameOf(channelId)));
+}
+
+// Keep the full warning outside the 104px card so every affected channel is
+// visible. The worker checks this list again when confirmation is submitted.
+function askScopeChange(id, scope, channelId, held) {
+  document.querySelector(".scope-dialog")?.remove();
+  const dialog = document.createElement("dialog");
+  dialog.className = "scope-dialog";
+  dialog.setAttribute("aria-labelledby", "scope-title");
+  dialog.setAttribute("aria-describedby", "scope-warning");
+
+  const title = document.createElement("h2");
+  title.id = "scope-title";
+  title.textContent = t("opt.scopeConfirmTitle", nameOf(channelId));
+  const warning = document.createElement("p");
+  warning.id = "scope-warning";
+  warning.textContent = t("opt.scopeConfirmWarning");
+  const list = document.createElement("ul");
+  for (const deckId of held) {
+    const item = document.createElement("li");
+    item.textContent = nameOf(deckId);
+    list.appendChild(item);
+  }
+  const actions = document.createElement("div");
+  actions.className = "scope-dialog-actions";
+  const close = () => { dialog.close(); dialog.remove(); };
+  const cancel = document.createElement("button");
+  cancel.type = "button";
+  cancel.textContent = t("action.cancel");
+  cancel.addEventListener("click", close);
+  const confirm = document.createElement("button");
+  confirm.type = "button";
+  confirm.textContent = t("opt.scopeConfirm");
+  confirm.addEventListener("click", () => {
+    confirm.disabled = true;
+    close();
+    changeScope(id, scope, channelId, held);
+  });
+  dialog.addEventListener("close", () => dialog.remove());
+  actions.append(cancel, confirm);
+  dialog.append(title, warning, list, actions);
+  document.body.appendChild(dialog);
+  dialog.showModal();
+  cancel.focus();
 }
 
 // An empty deck is the one place a preset is worth offering: a starting hand

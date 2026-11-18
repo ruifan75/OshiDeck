@@ -273,8 +273,8 @@ const MUTATIONS = [
     'if (why === "membership") { drawBlocks.membershipBlocked += 1; return false; }',
     'if (why === "membership") { drawBlocks.owned += 1; return false; }'],
   [DIAGNOSTICS, CONTENT, "an owned card omitted from draw refusals",
-    'if (mine.has(seen.key)) { drawBlocks.owned += 1; return false; }',
-    'if (mine.has(seen.key)) { drawBlocks.owned += 0; return false; }'],
+    'if (mine.has(drawMatchKey(seen.tokens))) { drawBlocks.owned += 1; return false; }',
+    'if (mine.has(drawMatchKey(seen.tokens))) { drawBlocks.owned += 0; return false; }'],
   [JOURNAL, JOURNALSRC, "an unavailable store described as empty in the export",
     '    if (!data) return clean({ kind: "environment", surface, session, at: Date.now(), status: "failed", reason: "storage-read", ...extra });',
     '    if (false) return null;'],
@@ -546,8 +546,14 @@ const MUTATIONS = [
     "    for (let k = 1; k < n; k++) {"],
 
   [DRAW, CONTENT, "a reaction already in the deck offered again",
-    "    if (mine.has(seen.key)) { drawBlocks.owned += 1; return false; }",
+    "    if (mine.has(drawMatchKey(seen.tokens))) { drawBlocks.owned += 1; return false; }",
     "    if (false) return false;"],
+
+  [DRAW, CONTENT, "repeat counts treated as different drawn reactions",
+    "tokens.cardKey(tokens.repeated(list)?.unit || list)", "tokens.cardKey(list)"],
+
+  [DRAW, CONTENT, "a held repeat variant kept after joining the deck",
+    "mine.has(drawMatchKey(drawn.card.tokens))", "mine.has(drawn.key)"],
 
   [DRAW, CONTENT, "a drawn card replaced the moment anything louder arrives",
     "    if (drawn) return drawn.card;",
@@ -910,7 +916,7 @@ const MUTATIONS = [
     "    return;"],
 
   [DRAW, CONTENT, "a held card exempt from the membership ending",
-    `    if (drawn && (now >= drawn.until || mine.has(drawn.key) ||
+    `    if (drawn && (now >= drawn.until || mine.has(drawMatchKey(drawn.card.tokens)) ||
         whyNotSendable(drawn.card.tokens, channelId, member))) drawn = null;`,
     "    if (drawn && (now >= drawn.until || mine.has(drawn.key))) drawn = null;"],
 
@@ -1874,6 +1880,8 @@ const KILLS = {
   "tooltips read as part of the comment": "and carries no shortcode text",
 
   "a reaction already in the deck offered again": "a reaction already in the deck is not offered again",
+  "repeat counts treated as different drawn reactions": "owning 5 claps covers a burst of 6",
+  "a held repeat variant kept after joining the deck": "adding a different repeat count also retires an already-held offer",
   "a drawn card replaced the moment anything louder arrives": "a louder burst does not replace it while it is held",
   "a hand that refuses to squeeze": "by tightening the overlap",
   "a drawn card costed as if it overlapped the hand": "and the row, drawn card and all, still fits",

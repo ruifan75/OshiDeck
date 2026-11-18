@@ -56,6 +56,7 @@ const stamp = (owner) => [{ type: "youtubeEmoji", emojiId: `${owner}/heart`, alt
 
 const tokenStub = {
   cardKey: key,
+  repeated: globalThis.OshiDeck.tokens.repeated,
   hasSubstance: (t) => (t || []).some((x) => x.type === "youtubeEmoji" || x.value?.trim()),
   requiredChannels: (t) =>
     [...new Set((t || []).filter((x) => x.emojiId).map((x) => x.emojiId.split("/")[0]))]
@@ -216,12 +217,37 @@ check(
   draw({ chat: wave, deck: [{ id: "k", tokens: text("かわいい") }] }) === null
 );
 
-// The sort collapses repeats on purpose; offering must not.
+// Ordinary words remain distinct even if the sort groups them together.
 check(
   "holding きちゃ does not cover きちゃきちゃ",
   draw({ chat: { tokens: text("きちゃきちゃ"), count: 6 }, deck: [{ id: "k", tokens: text("きちゃ") }] })
     ?.tokens[0].value === "きちゃきちゃ"
 );
+
+for (const [owned, incoming] of [[5, 6], [6, 5], [1, 6], [6, 1]]) {
+  check(`owning ${owned} claps covers a burst of ${incoming}`,
+    draw({ chat: { tokens: text("👏".repeat(incoming)), count: 9 },
+      deck: [{ id: "claps", tokens: text("👏".repeat(owned)) }] }) === null);
+}
+check("a repeated emoji sequence is already covered by the same sequence",
+  draw({ chat: { tokens: text("🦢✨".repeat(3)), count: 9 },
+    deck: [{ id: "sequence", tokens: text("🦢✨".repeat(2)) }] }) === null);
+check("a different emoji sequence is still worth offering",
+  !!draw({ chat: { tokens: text("🦢🎶".repeat(3)), count: 9 },
+    deck: [{ id: "sequence", tokens: text("🦢✨".repeat(2)) }] }));
+check("different skin tones are different reactions",
+  !!draw({ chat: { tokens: text("👏🏻".repeat(6)), count: 9 },
+    deck: [{ id: "claps", tokens: text("👏".repeat(5)) }] }));
+check("repeated member emoji are covered regardless of count",
+  draw({ chat: { tokens: Array.from({ length: 6 }, () => stamp(SAKURA_ID)[0]), count: 9 },
+    channelId: SAKURA_ID, member: true,
+    deck: [{ id: "hearts", tokens: Array.from({ length: 5 }, () => stamp(SAKURA_ID)[0]) }] }) === null);
+
+const repeatedOffer = panel({ hold: 45_000 });
+check("an unowned repeated reaction can still be drawn",
+  !!repeatedOffer.chat({ tokens: text("👏".repeat(6)), count: 9 }).draw());
+check("adding a different repeat count also retires an already-held offer",
+  repeatedOffer.draw([{ id: "claps", tokens: text("👏".repeat(5)) }]) === null);
 
 /* ---------- it stays put once drawn ---------- */
 

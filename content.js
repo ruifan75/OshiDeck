@@ -621,10 +621,10 @@
   // reactions, and a card that changes under the pointer is worth less than no
   // card.
   //
-  // Matching is by exact wording, not by the loose signature that orders the
-  // hand. That signature deliberately treats `きちゃ` and `きちゃきちゃ` as one
-  // reaction, which is right for sorting and wrong for offering: they are
-  // different things to say.
+  // Use the same repeated unit the card face shows: five claps and six claps
+  // already offer the same reaction. Keep ordinary wording exact; the sort's
+  // loose signature also merges distinct words such as `きちゃきちゃ`.
+  const drawMatchKey = (list) => tokens.cardKey(tokens.repeated(list)?.unit || list);
   let drawn = null;       // { key, card, until }
   let holdTimer = null;   // wakes the panel when the hold runs out
   let watching = null;    // the channel the drawn card and the chat counts are about
@@ -641,7 +641,7 @@
   // else's are offered to anyone.
   let drawBlocks = {};
   const worthOffering = (mine, channelId, member) => (seen) => {
-    if (mine.has(seen.key)) { drawBlocks.owned += 1; return false; }
+    if (mine.has(drawMatchKey(seen.tokens))) { drawBlocks.owned += 1; return false; }
     if (!tokens.hasSubstance(seen.tokens)) { drawBlocks.noSubstance += 1; return false; }
     const why = whyNotSendable(seen.tokens, channelId, member);
     if (why === "membership") { drawBlocks.membershipBlocked += 1; return false; }
@@ -661,15 +661,14 @@
     const now = Date.now();
     const mine = new Set();
     for (const card of deck) {
-      card.key ||= tokens.cardKey(card.tokens || []);
-      mine.add(card.key);
+      mine.add(drawMatchKey(card.tokens || []));
     }
 
     // Taking it into the deck ends the offer, and so does its time running
     // out — and so does losing the right to send it. A held card was checked
     // only when it was drawn, so a membership ending mid-hold left an
     // unplayable card sitting there, unlocked, until the hold ran out.
-    if (drawn && (now >= drawn.until || mine.has(drawn.key) ||
+    if (drawn && (now >= drawn.until || mine.has(drawMatchKey(drawn.card.tokens)) ||
         whyNotSendable(drawn.card.tokens, channelId, member))) drawn = null;
     if (drawn) return drawn.card;
 

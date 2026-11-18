@@ -713,7 +713,8 @@ kbd {
    whether it could live anywhere else. The label says which. */
 .browse-card { position: relative; }
 
-.browse-remove {
+.browse-remove,
+.browse-scope {
   position: absolute;
   top: 2px;
   right: 2px;
@@ -732,7 +733,9 @@ kbd {
 }
 
 .browse-card:hover .browse-remove,
-.browse-remove:focus-visible { opacity: .6; }
+.browse-card:hover .browse-scope,
+.browse-remove:focus-visible,
+.browse-scope:focus-visible { opacity: .6; }
 
 .browse-remove:hover {
   opacity: 1;
@@ -762,6 +765,42 @@ kbd {
 /* Grey stripe means the card works on any channel — same meaning as the
    chat panel, so the two read alike. */
 .browse-card[data-universal] { border-top-color: #8a8a8a; }
+
+.browse-scope {
+  right: 24px;
+}
+.browse-scope:hover:enabled { opacity: 1; background: color-mix(in srgb, CanvasText 12%, transparent); }
+.browse-scope:disabled { cursor: not-allowed; }
+.browse-scope:disabled:hover { opacity: .35; background: transparent; }
+.browse-scope:focus-visible,
+.scope-dialog button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.scope-dialog {
+  box-sizing: border-box;
+  width: min(440px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: Canvas;
+  color: CanvasText;
+  overflow-wrap: anywhere;
+}
+.scope-dialog::backdrop { background: rgb(0 0 0 / .45); }
+.scope-dialog p,
+.scope-dialog li { font-size: 13px; line-height: 1.6; }
+.scope-dialog-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+.scope-dialog button {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: Canvas;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
 
 /* The two per-deck actions, beside the deck's own name — not down in the
    backup section, which is about the whole store. Small and quiet: they are

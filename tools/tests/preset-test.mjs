@@ -443,13 +443,13 @@ check("and says which kind of no it is", got.said.join("").includes("opt.importN
   };
 
   const build = new Function(
-    "document", "store", "tokens", "t", "hueOf", "colorOf", "selected", "wireDrag", "cardAction",
+    "document", "store", "tokens", "t", "hueOf", "colorOf", "selected", "wireDrag", "cardAction", "nameOf",
     `${optionsSrc.slice(cardFrom, cardTo)} return buildCard;`
   )(
     { createElement: node },
     store, tokens,
     (key) => key,
-    () => 42, () => null, CH, () => {}, () => ({})
+    () => 42, () => null, CH, () => {}, () => ({}), (id) => id
   );
 
   const scoped = (scope, tokenList, where = "pool") =>

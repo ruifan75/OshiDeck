@@ -4368,12 +4368,22 @@
 
     // Changing scope can strand a card: made channel-only, it leaves every
     // other deck, since those decks could no longer send it.
-    setScope(data, { id, scope, channelId }) {
+    setScope(data, { id, scope, channelId, confirmedDecks }) {
       const card = data.cards.find((c) => c.id === id);
       if (!card) return false;
 
       const next = allowedScope(card.tokens, scope, channelId);
       if (next !== GLOBAL && next !== channelId) return false;
+      if (next !== scope || (next !== GLOBAL && !/^UC[A-Za-z0-9_-]{22}$/.test(channelId))) return false;
+
+      // A new deck may have taken this card while the warning was open.
+      // Ask again before removing any membership the viewer has not seen.
+      if (next !== GLOBAL && Array.isArray(confirmedDecks)) {
+        const held = decksHolding(data, id).filter((deckId) => deckId !== next);
+        if (held.some((deckId) => !confirmedDecks.includes(deckId))) {
+          return { needsConfirmation: true, held };
+        }
+      }
 
       const dropped = {};
       card.scope = next;
@@ -4460,6 +4470,9 @@
 
     const value = op(data, args || {});
     if (value === false) return { ok: false, value, reason: "rejected" };
+    if (name === "setScope" && value.needsConfirmation) {
+      return { ok: false, value, reason: "scope-confirmation" };
+    }
     // A question, not a change: answering it should not rewrite storage.
     if (readOnly.has(name)) return { ok: true, value };
 

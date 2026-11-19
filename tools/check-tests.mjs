@@ -241,7 +241,7 @@ const MUTATIONS = [
   [DIAGNOSTICS, BACKGROUND, "last observations discarded beside a busy timeline",
     "journal.states(raw[journal.STATE_KEY], batch)", "[]"],
   [DIAGNOSTICS, BACKGROUND, "clearing the timeline but retaining its snapshots",
-    "chrome.storage.local.remove([journal.KEY, journal.STATE_KEY])", "chrome.storage.local.remove(journal.KEY)"],
+    "localData.remove([journal.KEY, journal.STATE_KEY])", "localData.remove(journal.KEY)"],
   [DIAGNOSTICS, BACKGROUND, "a clear discarding newly arrived operations",
     "        journal.reset();", "        pendingLog = [];\n        journal.reset();"],
   [DIAGNOSTICS, BACKGROUND, "an inherited worker operation treated as a real operation",

@@ -8,7 +8,20 @@
   <link rel="stylesheet" href="options.css">
 </head>
 <body>
-  <main>
+  <main id="privacySetup" hidden>
+    <header><h1>OshiDeck</h1></header>
+    <section class="card privacy-copy" aria-labelledby="privacyTitle">
+      <h2 id="privacyTitle" data-i18n="opt.privacyTitle"></h2>
+      <p data-i18n="opt.privacyChat"></p>
+      <p data-i18n="opt.privacyLocal"></p>
+      <p data-i18n="opt.privacyExternal"></p>
+      <p><a href="https://oshideck.setori.app/ja/privacy/" id="privacyPolicy" target="_blank"
+          rel="noreferrer" data-i18n="opt.privacyPolicy"></a></p>
+      <button type="button" id="privacyEnable" class="action" data-i18n="opt.privacyEnable"></button>
+      <p id="privacyStatus" role="status"></p>
+    </section>
+  </main>
+  <main id="appSettings">
     <header>
       <h1>OshiDeck</h1>
       <p class="lede" data-i18n="ui.lede"></p>
@@ -250,6 +263,7 @@
   <div id="saved" role="status" aria-live="polite" aria-atomic="true"></div>
 
   <script src="src/i18n.js"></script>
+  <script src="src/privacy.js"></script>
   <script src="src/layout.js"></script>
   <script src="src/store.js"></script>
   <script src="src/tokens.js"></script>

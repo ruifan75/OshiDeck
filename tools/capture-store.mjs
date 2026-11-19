@@ -136,12 +136,19 @@ try {
   const { sessionId: options } = await page(1184);
   await send('Page.navigate', { url: `chrome-extension://${id}/options.html?channel=${channel}` }, options);
   await waitFor(options, '!!globalThis.OshiDeck?.store', 'options');
+  if (await evaluate(options, '!!OshiDeck.privacy')) {
+    await waitFor(options, "!document.querySelector('#privacySetup').hidden", 'privacy disclosure');
+    await evaluate(options, "document.querySelector('#privacyEnable').click()");
+    await waitFor(options, "!document.querySelector('#appSettings').hidden", 'consent accepted');
+  }
 
   for (const language of languages) {
     const patch = { mode: 'hand', cardSize: 'large', rows: 2, autoSend: false, suggest: false, sortBy: 'manual', language };
     await evaluate(options, `(async () => {
-      await chrome.storage.local.clear();
       const store = OshiDeck.store;
+      const blank = { cards: [], decks: {}, channelMeta: {}, settings: {} };
+      const raw = OshiDeck.backup.toPayload(blank, chrome.runtime.getManifest().version);
+      if (!(await store.apply('importBackup', { raw, mode: 'replace' })).ok) throw Error('Could not reset sample data');
       const channelId = ${JSON.stringify(channel)};
       await store.apply('setSettings', { patch: ${JSON.stringify(patch)} });
       const cards = OshiDeck.presets.cardsFor(${JSON.stringify(preset)}, channelId);

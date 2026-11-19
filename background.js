@@ -11,8 +11,12 @@ import "./src/backup.js";
 import "./src/store.js";
 import "./src/journal.js";
 import "./src/presets.js";
+import "./src/privacy.js";
+import "./src/vault.js";
 
-const { store, journal, presets } = globalThis.OshiDeck;
+const { store, journal, presets, privacy, vault } = globalThis.OshiDeck;
+const localData = vault || chrome.storage.local;
+const storeKeys = Object.values(store.KEYS);
 
 let queue = Promise.resolve();
 
@@ -42,8 +46,8 @@ async function flushLog() {
   const batch = pendingLog;
   pendingLog = [];
   try {
-    const raw = await chrome.storage.local.get([journal.KEY, journal.STATE_KEY]);
-    await chrome.storage.local.set({
+    const raw = await localData.get([journal.KEY, journal.STATE_KEY]);
+    await localData.set({
       [journal.KEY]: batch.reduce(journal.append, raw[journal.KEY]),
       [journal.STATE_KEY]: journal.states(raw[journal.STATE_KEY], batch)
     });
@@ -62,7 +66,13 @@ function queueLog(entry) {
   }
 }
 journal.setSink(queueLog);
-journal.observe("worker");
+let recording = false;
+function observeWorker() {
+  if (recording) return;
+  recording = true;
+  journal.observe("worker");
+}
+if (!privacy) observeWorker();
 
 async function mutate(message) {
   const op = message.op;
@@ -166,6 +176,11 @@ async function readPresets(channelId) {
 // press, and with no popup declared the press arrives here — which is what we
 // want, since everything this extension has to configure lives on one page.
 chrome.action.onClicked.addListener(() => chrome.runtime.openOptionsPage());
+chrome.runtime.onInstalled?.addListener(async ({ reason }) => {
+  if (["install", "update"].includes(reason) && !await privacy.enabled()) {
+    await chrome.runtime.openOptionsPage();
+  }
+});
 
 async function openDeckOptions(message) {
   const { channelId, name } = message;
@@ -183,7 +198,7 @@ async function openDeckOptions(message) {
   return { ok: true };
 }
 
-chrome.runtime.onMessage.addListener((message, _sender, respond) => {
+function handleMessage(message, respond) {
   if (message?.type === "presets") {
     readPresets(message.channelId)
       .then((list) => respond({ ok: true, value: list }), () => respond({ ok: false }));
@@ -200,7 +215,7 @@ chrome.runtime.onMessage.addListener((message, _sender, respond) => {
     if (message.read === true) {
       enqueueLog(async () => {
         let raw = {};
-        try { raw = await chrome.storage.local.get([journal.KEY, journal.STATE_KEY]); } catch (_) { /* use pending */ }
+        try { raw = await localData.get([journal.KEY, journal.STATE_KEY]); } catch (_) { /* use pending */ }
         const entries = (Array.isArray(raw[journal.KEY]) ? raw[journal.KEY] : []).reduce(journal.append, []);
         return { ok: true, value: pendingLog.reduce(journal.append, entries),
           states: journal.states(raw[journal.STATE_KEY], pendingLog) };
@@ -214,7 +229,7 @@ chrome.runtime.onMessage.addListener((message, _sender, respond) => {
         const before = pendingLog;
         pendingLog = [];
         try {
-          await chrome.storage.local.remove([journal.KEY, journal.STATE_KEY]);
+          await localData.remove([journal.KEY, journal.STATE_KEY]);
         } catch (error) {
           pendingLog = [...before, ...pendingLog].slice(-journal.LIMIT);
           throw error;
@@ -238,4 +253,30 @@ chrome.runtime.onMessage.addListener((message, _sender, respond) => {
   }
 
   return false;
+}
+
+chrome.runtime.onMessage.addListener((message, sender, respond) => {
+  if (!privacy) return handleMessage(message, respond);
+  const failed = () => respond({ ok: false });
+  if (message?.type === "enablePrivacy") {
+    if (sender.url?.split(/[?#]/)[0] !== chrome.runtime.getURL("options.html")) return false;
+    enqueue(async () => {
+      await vault.enable([...storeKeys, journal.KEY, journal.STATE_KEY]);
+      observeWorker();
+      return { ok: true };
+    }).then(respond, failed);
+    return true;
+  }
+  privacy.enabled().then((allowed) => {
+    if (!allowed) return failed();
+    observeWorker();
+    if (message?.type === "readStorage") {
+      const keys = Array.isArray(message.keys) ? message.keys : [message.keys];
+      if (!keys.every((key) => storeKeys.includes(key))) return failed();
+      vault.get(keys).then((value) => respond({ ok: true, value }), failed);
+    } else if (!handleMessage(message, respond)) {
+      failed();
+    }
+  }, failed);
+  return true;
 });

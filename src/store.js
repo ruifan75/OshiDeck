@@ -3888,12 +3888,14 @@
     }
   };
 
+  const storage = () => OD.vault || OD.privacy || chrome.storage.local;
+
   async function read() {
     if (!alive()) return null;
 
     let raw;
     try {
-      raw = await chrome.storage.local.get(Object.values(KEYS));
+      raw = await storage().get(Object.values(KEYS));
     } catch (error) {
       OD.journal?.record({ kind: "error", what: "storage-read", stage: "read", errorType: error?.name });
       return null;
@@ -3919,7 +3921,7 @@
   async function write(patch) {
     if (!alive()) return false;
     try {
-      await chrome.storage.local.set(patch);
+      await storage().set(patch);
       return true;
     } catch (error) {
       OD.journal?.record({ kind: "error", what: "storage-write", stage: "apply", errorType: error?.name });
@@ -4510,7 +4512,7 @@
   // now goes through the same gate.
   async function readSettings() {
     try {
-      const raw = await chrome.storage.local.get(KEYS.SETTINGS);
+      const raw = await storage().get(KEYS.SETTINGS);
       return { ...DEFAULT_SETTINGS, ...cleanSettings(raw?.[KEYS.SETTINGS]) };
     } catch (_) {
       return { ...DEFAULT_SETTINGS };

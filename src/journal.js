@@ -147,7 +147,9 @@
       };
     } catch (_) { /* try the persisted report if the worker is unavailable */ }
     let raw = {};
-    try { raw = await chrome.storage.local.get([KEY, STATE_KEY]); } catch (_) { /* local memory still helps */ }
+    if (!OD.privacy) {
+      try { raw = await chrome.storage.local.get([KEY, STATE_KEY]); } catch (_) { /* local memory still helps */ }
+    }
     return { entries: [...(Array.isArray(raw[KEY]) ? raw[KEY] : []), ...fallback].reduce(append, []), states: states(raw[STATE_KEY], []) };
   }
   const read = async () => (await report()).entries;

@@ -1,5 +1,6 @@
-const { i18n, store, tokens, channelMarks } = globalThis.OshiDeck;
-globalThis.OshiDeck.journal.observe("options");
+const { i18n, store, tokens, channelMarks, privacy } = globalThis.OshiDeck;
+let settingsEnabled = !privacy;
+if (privacy) document.querySelector("#appSettings").hidden = true;
 const t = (...args) => i18n.t(...args);
 
 // One list, in store.js. It had been written out here as well, so every
@@ -174,9 +175,6 @@ document.querySelector("#suggest").addEventListener("change", (event) => {
 document.querySelector("#autoSend").addEventListener("change", (event) => {
   commit({ autoSend: event.target.checked });
 });
-
-buildLanguageChoice();
-load();
 
 /* ---------------- deck browser ---------------- */
 
@@ -1010,14 +1008,12 @@ document.querySelector("#deckSearch").addEventListener("input", (event) => {
 });
 
 chrome.storage.onChanged.addListener((changes, area) => {
-  if (area !== "local") return;
+  if (!settingsEnabled || area !== "local") return;
   // The journal is written while a stream is open. Only the keys the builder
   // actually draws from should redraw it.
   const watched = [store.KEYS.SETTINGS, store.KEYS.CARDS, store.KEYS.DECKS, store.KEYS.CHANNELS];
   if (watched.some((key) => changes[key])) loadDecks();
 });
-
-loadDecks();
 
 /* ---------------- backup ---------------- */
 
@@ -1241,9 +1237,11 @@ async function showJournalCount() {
 
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area !== "local" || !Object.hasOwn(changes, journal.KEY)) return;
+  if (!settingsEnabled) return;
   journalRevision += 1;
   const entries = changes[journal.KEY].newValue;
-  if (Array.isArray(entries)) journalStatus(entries.length ? t("opt.journalCount", entries.length) : t("opt.journalEmpty"));
+  if (privacy) showJournalCount();
+  else if (Array.isArray(entries)) journalStatus(entries.length ? t("opt.journalCount", entries.length) : t("opt.journalEmpty"));
 });
 
 async function saveJournal() {
@@ -1283,4 +1281,39 @@ async function clearJournal() {
 
 document.querySelector("#journalBtn").addEventListener("click", saveJournal);
 document.querySelector("#journalClear").addEventListener("click", clearJournal);
-showJournalCount();
+
+function openSettings() {
+  journal.observe("options");
+  buildLanguageChoice();
+  load();
+  loadDecks();
+  showJournalCount();
+}
+
+if (privacy) {
+  const setup = document.querySelector("#privacySetup");
+  const enable = document.querySelector("#privacyEnable");
+  const message = document.querySelector("#privacyStatus");
+  enable.addEventListener("click", async () => {
+    enable.disabled = true;
+    message.textContent = "";
+    let reply;
+    try { reply = await chrome.runtime.sendMessage({ type: "enablePrivacy" }); } catch (_) { /* report below */ }
+    if (!reply?.ok) {
+      enable.disabled = false;
+      message.textContent = t("opt.privacyFailed");
+    }
+  });
+  privacy.whenEnabled(() => {
+    setup.hidden = true;
+    document.querySelector("#appSettings").hidden = false;
+    settingsEnabled = true;
+    openSettings();
+  }, () => {
+    applyLanguage();
+    document.querySelector("#privacyPolicy").href = `https://oshideck.setori.app/${i18n.current()}/privacy/`;
+    setup.hidden = false;
+  });
+} else {
+  openSettings();
+}

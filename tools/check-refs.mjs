@@ -27,7 +27,7 @@ const GLOBALS = new Set([
   "setTimeout", "clearTimeout", "setInterval", "clearInterval", "queueMicrotask",
   "requestAnimationFrame", "cancelAnimationFrame", "fetch", "structuredClone",
   "Object", "Array", "String", "Number", "Boolean", "Math", "JSON", "Date", "RegExp",
-  "Map", "Set", "WeakMap", "WeakSet", "Promise", "Error", "TypeError", "Symbol",
+  "Map", "Set", "WeakMap", "WeakSet", "Promise", "Error", "TypeError", "Symbol", "Uint8Array",
   "Proxy", "Reflect", "BigInt", "Intl", "URL", "URLSearchParams", "Blob", "File",
   "FileReader", "FormData", "Headers", "Request", "Response", "AbortController",
   "MutationObserver", "ResizeObserver", "IntersectionObserver", "PerformanceObserver",

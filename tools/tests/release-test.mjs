@@ -30,7 +30,7 @@ function fixture() {
   const manifest = JSON.parse(readFileSync(join(root, "manifest.json"), "utf8"));
   const files = new Set(["manifest.json", manifest.background.service_worker, manifest.options_page,
     ...Object.values(manifest.icons), ...Object.values(manifest.action.default_icon),
-    ...manifest.content_scripts.flatMap((s) => [...s.js, ...s.css]), "src/backup.js"]);
+    ...manifest.content_scripts.flatMap((s) => [...s.js, ...s.css]), "src/backup.js", "src/vault.js"]);
   const dom = new JSDOM(readFileSync(join(root, "options.html"), "utf8"));
   for (const el of dom.window.document.querySelectorAll("script[src], link[rel=stylesheet]")) files.add(el.getAttribute("src") || el.getAttribute("href"));
   dom.window.close();
@@ -92,14 +92,17 @@ try {
       import {pathToFileURL,fileURLToPath} from 'node:url';
       import {webcrypto} from 'node:crypto';
       if(!globalThis.crypto)globalThis.crypto=webcrypto;
-      const folder=${JSON.stringify(folder)}, base=pathToFileURL(folder+'/');let listener;
+      const folder=${JSON.stringify(folder)}, base=pathToFileURL(folder+'/');let listener, consent;
       globalThis.chrome={runtime:{id:'release-fixture',getURL:p=>new URL(p,base).href,
         getManifest:()=>JSON.parse(readFileSync(new URL('manifest.json',base))),
         onMessage:{addListener:fn=>listener=fn}},action:{onClicked:{addListener(){}}},
-        storage:{local:{get:async()=>({}),set:async()=>{},remove:async()=>{}}}};
+        storage:{local:{get:async()=>({privacyConsent:consent}),set:async()=>{},remove:async()=>{}}}};
       globalThis.fetch=async url=>({ok:true,json:async()=>JSON.parse(readFileSync(fileURLToPath(url)))});
       await import(new URL('background.js',base));
-      const reply=await new Promise(done=>listener({type:'presets',channelId:${JSON.stringify(channel)}},{},done));
+      const request=()=>new Promise(done=>listener({type:'presets',channelId:${JSON.stringify(channel)}},{},done));
+      if((await request()).ok)throw Error('Worker data was available before consent');
+      consent=1;
+      const reply=await request();
       if(!reply.ok||reply.value.length!==1||reply.value[0].channel!==${JSON.stringify(channel)})throw Error('Preset not loaded');
     `], { stdio: "pipe" });
     workerOpened = true;

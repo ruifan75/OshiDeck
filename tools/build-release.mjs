@@ -16,6 +16,7 @@ export const RUNTIME_FILES = [
   "options.html", "options.js", "options.css",
   "src/i18n.js", "src/layout.js", "src/store.js", "src/tokens.js",
   "src/backup.js", "src/journal.js", "src/presets.js", "src/trending.js",
+  "src/privacy.js", "src/vault.js",
   "src/channel-marks.js", "src/channel-marks.css",
   "icons/16.png", "icons/32.png", "icons/48.png", "icons/128.png"
 ];

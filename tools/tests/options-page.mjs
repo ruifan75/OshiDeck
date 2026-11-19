@@ -10,7 +10,8 @@ export const NONO = "UCVKWgVm8BSlMkGZIDGaoElw";
 const overrides = { "src/channel-marks.js": "OD_MARKS", "src/journal.js": "OD_JOURNAL", "options.js": "OD_OPTIONS" };
 
 export async function optionsPage({ channel = NUHU, channelMeta, fakeTime = false,
-                                    url = "https://extension.test/options.html", initialData } = {}) {
+                                    url = "https://extension.test/options.html", initialData,
+                                    consent = true, readJournal = (entries) => entries } = {}) {
   const errors = [];
   const output = new VirtualConsole();
   output.on("jsdomError", (error) => errors.push(error));
@@ -33,28 +34,41 @@ export async function optionsPage({ channel = NUHU, channelMeta, fakeTime = fals
     window.clearTimeout = (id) => timers.delete(id);
   }
   const clone = (value) => JSON.parse(JSON.stringify(value));
-  let stored = { settings: { language: "zh-TW" }, cards: [], decks: { [channel]: [], [NONO]: [] },
+  let stored = { privacyConsent: consent ? 1 : 0,
+    settings: { language: "zh-TW" }, cards: [], decks: { [channel]: [], [NONO]: [] },
     channelMeta: { [channel]: { name: "虹深°ぬふ", hue: 30 }, [NONO]: { name: "彩雲のの", hue: 100 } } };
   if (channelMeta) stored.channelMeta = clone(channelMeta);
   if (initialData) stored = { ...stored, ...clone(initialData) };
   const listeners = new Set();
   const ops = [];
   const logs = [];
+  const reads = [];
   const set = async (patch) => {
     const changes = {};
     for (const [key, value] of Object.entries(patch)) changes[key] = { oldValue: stored[key], newValue: clone(value) };
     stored = { ...stored, ...clone(patch) };
     for (const listener of listeners) listener(changes, "local");
   };
+  const get = async (keys) => {
+    const names = Array.isArray(keys) ? keys : [keys];
+    reads.push(...names);
+    return Object.fromEntries(names.filter((key) => Object.hasOwn(stored, key))
+      .map((key) => [key, clone(stored[key])]));
+  };
+  window.OshiDeck = { vault: { get, set } };
   window.chrome = {
     i18n: { getUILanguage: () => "zh-TW" },
     runtime: { id: "fixture", getManifest: () => ({ version: "test" }), sendMessage: async (message) => {
+      if (message.type === "enablePrivacy") {
+        await set({ privacyConsent: 1 });
+        return { ok: true };
+      }
       if (message.type === "journal") {
-        if (message.read === true) return { ok: true, value: clone(logs), states: [] };
+        if (message.read === true) return { ok: true, value: await readJournal(clone(logs)), states: [] };
         if (message.clear === true) logs.length = 0;
         else if (message.entry) {
           logs.push(clone(message.entry));
-          await set({ journal: clone(logs) });
+          await set({ journal: randomUUID() });
         }
         return { ok: true };
       }
@@ -64,8 +78,9 @@ export async function optionsPage({ channel = NUHU, channelMeta, fakeTime = fals
       }
       return { ok: true, value: [] };
     } },
-    storage: { local: { get: async () => clone(stored), set },
-      onChanged: { addListener: (listener) => listeners.add(listener) } }
+    storage: { local: { get, set },
+      onChanged: { addListener: (listener) => listeners.add(listener),
+        removeListener: (listener) => listeners.delete(listener) } }
   };
   for (const script of document.querySelectorAll("script[src]")) {
     const path = script.getAttribute("src");
@@ -92,5 +107,5 @@ export async function optionsPage({ channel = NUHU, channelMeta, fakeTime = fals
     throw new Error("options page did not settle");
   }
   await settle();
-  return { window, document, settle, advance, ops, logs, read: () => clone(stored), close: () => { timers.clear(); window.close(); } };
+  return { window, document, settle, advance, ops, logs, reads, read: () => clone(stored), close: () => { timers.clear(); window.close(); } };
 }

@@ -226,11 +226,24 @@ try {
 } catch (error) { check(`membership: ${error.stack}`, false); }
 finally { member.close(); }
 
-const o = await optionsPage();
+let finishInitialJournalRead;
+const o = await optionsPage({
+  readJournal(entries) {
+    if (finishInitialJournalRead) return entries;
+    return new Promise((resolve) => {
+      finishInitialJournalRead = () => resolve(entries);
+    });
+  }
+});
 try {
   const originalPicker = o.document.querySelector(".hue-pick");
   const countSays = () => o.document.querySelector("#journalStatus").textContent === o.window.OshiDeck.i18n.t("opt.journalCount", o.logs.length);
-  check("the initial diagnostic count cannot be overwritten by an older read", countSays());
+  o.window.OshiDeck.journal.record({ kind: "note", what: "stepped-aside" });
+  await o.settle();
+  const latestCountWasShown = countSays();
+  finishInitialJournalRead();
+  await o.settle();
+  check("the initial diagnostic count cannot be overwritten by an older read", latestCountWasShown && countSays());
   const input = o.document.querySelector("#importFile");
   Object.defineProperty(input, "files", { configurable: true, value: [{ name: secret, text: async () => "not json" }] });
   input.dispatchEvent(new o.window.Event("change", { bubbles: true })); await o.settle();

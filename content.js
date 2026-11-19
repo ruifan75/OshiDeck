@@ -1,5 +1,9 @@
 // OshiDeck — card deck for YouTube Live Chat.
-(() => {
+((start) => {
+  const { privacy } = globalThis.OshiDeck;
+  if (privacy) privacy.whenEnabled(start);
+  else start();
+})(() => {
   const OD = globalThis.OshiDeck;
   const { i18n, journal, layout, presets, store, tokens, trending } = OD;
   const t = (...args) => i18n.t(...args);
@@ -2759,4 +2763,4 @@
 
   log("Loaded.", location.href);
   scheduleRender();
-})();
+});

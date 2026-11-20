@@ -2,6 +2,8 @@
 
 YouTube Live Chatのコメントやメンバー絵文字の組み合わせを保存し、ワンクリックで呼び出せるChrome拡張機能です。
 
+<a href="https://chromewebstore.google.com/detail/oshideck/cdjfhnopkneggihpcamooghfbnljlhmg"><img src=".github/chrome-web-store-badge.png" width="204" alt="Chrome ウェブストアで OshiDeck をインストール"></a>
+
 バージョンは `manifest.json` にあります ── ここに書き写すと、片方だけ古くなるので。
 直した挙動は patch、見える変化は minor。配布されるファイルを変えて version を
 据え置いたコミットは `tools/hooks/pre-commit` が止めます ── 一度、十四コミット
@@ -37,6 +39,12 @@ YouTube Live Chatのコメントやメンバー絵文字の組み合わせを保
 - 初回の同意後にチャットを読み取り、札・設定・診断ログをブラウザ内に暗号化して保存
 
 ## Install
+
+1. [Chrome ウェブストア](https://chromewebstore.google.com/detail/oshideck/cdjfhnopkneggihpcamooghfbnljlhmg)で「Chrome に追加」を選びます。
+2. OshiDeck の設定でデータの利用方法を確認し、「同意して有効にする」を選びます。
+3. YouTube Live / Premiere のチャットを開きます。
+
+### 開発用の手動インストール
 
 1. このリポジトリをCloneまたはDownloadします。
 2. Chromeで `chrome://extensions/` を開きます。

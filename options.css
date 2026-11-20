@@ -277,6 +277,7 @@ kbd {
 
 .deck-row {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   gap: 9px;
   padding: 8px 10px;
@@ -642,6 +643,15 @@ kbd {
 .deck-main { grid-area: deck; }
 .pool { grid-area: pool; }
 
+.deck-list,
+.pool-cards {
+  max-height: 320px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+}
+
 /* Reacts to the section, not the window: `main` is capped well below the
    viewport, so a media query would never fire. */
 @container (max-width: 780px) {
@@ -687,12 +697,6 @@ kbd {
      the second column, so the layout changed the moment the pool filled up. */
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
-  max-height: 320px;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  /* Reserve the gutter so appearing and disappearing does not shift anything. */
-  scrollbar-gutter: stable;
-  scrollbar-width: thin;
 }
 
 /* The deck pane accepts drops anywhere, not only onto a card. */

@@ -211,6 +211,9 @@ function paintDecks() {
   const ids = deckIds();
 
   const list = document.querySelector("#deckList");
+  const firstPaint = !list.firstChild;
+  const scrollTop = list.scrollTop;
+  let selectedRow;
   list.replaceChildren();
 
   if (!ids.length) {
@@ -224,7 +227,10 @@ function paintDecks() {
     const row = document.createElement("button");
     row.type = "button";
     row.className = "deck-row";
-    if (id === selected) row.dataset.on = "true";
+    if (id === selected) {
+      row.dataset.on = "true";
+      selectedRow = row;
+    }
 
     const dot = document.createElement("span");
     dot.className = "deck-dot";
@@ -251,8 +257,19 @@ function paintDecks() {
     });
 
     row.append(dot, name, count, drop);
-    row.addEventListener("click", () => { selected = id; paintDecks(); });
+    row.addEventListener("click", () => {
+      selected = id;
+      paintDecks();
+      list.querySelector("[data-on]")?.focus({ preventScroll: true });
+    });
     list.appendChild(row);
+  }
+
+  list.scrollTop = scrollTop;
+  if (firstPaint && selectedRow) {
+    // Open links to a channel with that row visible inside the list.
+    const below = selectedRow.getBoundingClientRect().bottom - list.getBoundingClientRect().bottom;
+    list.scrollTop += Math.max(0, below);
   }
 
   paintHeader();

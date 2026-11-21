@@ -618,30 +618,39 @@ kbd {
 
 /* ---------- three panes: decks, the selected deck, the pool ---------- */
 
-.decks { container-type: inline-size; }
-
-.deck-heading {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  min-height: 26px;
-  margin-bottom: 16px;
-  background: Canvas;
+.decks {
+  container-type: inline-size;
+  --channel-list-width: 170px;
+  --pane-gap: 18px;
 }
 
-.deck-heading h2 { flex: 0 0 auto; margin: 0; }
-
 .deck-card-preview {
-  flex: 1;
-  min-width: 0;
+  position: sticky;
+  bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+  z-index: 2;
+  box-sizing: border-box;
+  height: 32px;
+  margin-top: 8px;
+  margin-inline-start: calc(var(--channel-list-width) + var(--pane-gap));
+  padding: 3px 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
   font-size: 13px;
   line-height: 24px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  pointer-events: none;
+}
+
+.deck-card-preview:not(:empty) {
+  border-color: var(--line);
+  background: Canvas;
+}
+
+/* Keep both messages readable while the Undo notice is on screen. */
+body:has(#saved:not(:empty)) .deck-card-preview {
+  bottom: calc(80px + env(safe-area-inset-bottom, 0px));
 }
 
 .deck-card-preview .od-emoji { width: 18px; height: 18px; }
@@ -649,10 +658,10 @@ kbd {
 .browser {
   --pane-height: 400px;
   display: grid;
-  grid-template-columns: 170px minmax(0, 1fr) 252px;
+  grid-template-columns: var(--channel-list-width) minmax(0, 1fr) 252px;
   grid-template-rows: var(--pane-height);
   grid-template-areas: "list deck pool";
-  gap: 18px;
+  gap: var(--pane-gap);
 }
 
 .deck-list { grid-area: list; }
@@ -682,7 +691,7 @@ kbd {
    viewport, so a media query would never fire. */
 @container (max-width: 780px) {
   .browser {
-    grid-template-columns: 170px minmax(0, 1fr);
+    grid-template-columns: var(--channel-list-width) minmax(0, 1fr);
     grid-template-rows: repeat(2, var(--pane-height));
     grid-template-areas: "list deck" "list pool";
   }
@@ -698,6 +707,8 @@ kbd {
   .deck-list,
   .deck-cards,
   .pool-cards { overscroll-behavior: auto; }
+
+  .deck-card-preview { margin-inline-start: 0; }
 }
 
 .pool {

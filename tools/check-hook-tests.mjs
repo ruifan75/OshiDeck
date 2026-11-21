@@ -174,7 +174,19 @@ const MUTATIONS = [
    "  was=$(git show HEAD:manifest.json 2>/dev/null | version || true)",
    `  at=HEAD\n  case "$(ps -o args= -p "$PPID" 2>/dev/null)" in *--amend*) at=HEAD^ ;; esac\n` +
    `  was=$(git show "$at:manifest.json" 2>/dev/null | version || true)`,
-   "a message that merely mentions --amend is not an amend"]
+   "a message that merely mentions --amend is not an amend"],
+
+  ["a pending version compared with the previous commit", "pre-commit",
+   '  if [ -z "$was" ]; then', "  if true; then",
+   "a follow-up for an unreleased version keeps its version"],
+
+  ["an older version accepted as a new release", "pre-commit",
+   "exit (next_part > last_part ? 0 : 1)", "exit 0",
+   "a version older than the release is refused"],
+
+  ["the oldest release taken as the baseline", "pre-commit",
+   "--sort=-version:refname", "--sort=version:refname",
+   "the numerically latest release is reserved"]
 ];
 
 const run = (label, file, before, after, breaks) => new Promise((done) => {

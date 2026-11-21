@@ -65,26 +65,28 @@ if ident_is_private; then
   exit 1
 fi
 
-# The version has to move with the thing it names.
-#
-# It stopped: fourteen commits — everything the review turned up, the preset
-# split, 290 presets — all went out as 0.39.0, because bumping it was a habit
-# and habits lapse quietly. Chrome is the one that notices: an extension whose
-# files changed under the same version is an extension nobody is offered an
-# update to.
-#
-# Only what is actually shipped counts. Hooks, tests and the mining scripts
-# are not in the package and have no version to move.
-#
-# HEAD, with no exception made for `--amend`. There was one: it read the
-# parent process's command line, which meant a commit whose *message*
-# mentioned --amend was taken for an amend and waved through — an exception
-# anybody could ask for by typing it. Git tells a hook nothing that separates
-# the two (only GIT_AUTHOR_DATE differs, and only by being reused, which an
-# ordinary commit in the same second reproduces). So amending a release means
-# moving the version again, which is honest: it is a different commit, and
-# what it publishes is different.
+# A release tag reserves its version. Follow-up commits can keep using the
+# same next version while it is still untagged. Only changes to shipped files
+# need this check.
 version() { sed -n 's/.*"version"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p'; }
+
+newer_version() {
+  awk -v candidate="$1" -v baseline="$2" '
+    BEGIN {
+      pattern = "^[0-9]+([.][0-9]+){0,3}$"
+      if (candidate !~ pattern) exit 1
+      if (baseline == "") exit 0
+      if (baseline !~ pattern) exit 1
+      split(candidate, next_parts, ".")
+      split(baseline, last_parts, ".")
+      for (i = 1; i <= 4; i++) {
+        next_part = next_parts[i] + 0
+        last_part = last_parts[i] + 0
+        if (next_part != last_part) exit (next_part > last_part ? 0 : 1)
+      }
+      exit 1
+    }'
+}
 
 # Both ends of a rename. --name-only names where a file landed, so moving a
 # shipped file out of the package read as nothing shipped having changed:
@@ -104,12 +106,19 @@ shipped=$(
   grep -E '^(manifest\.json|background\.js|content\.js|options\.js|options\.html|[^/]*\.css)$|^(src|presets|icons)/' || true)
 
 if [ -n "$shipped" ]; then
-  was=$(git show HEAD:manifest.json 2>/dev/null | version || true)
+  if ! tags=$(git tag --list --sort=-version:refname 'v[0-9]*'); then
+    echo "FAIL リリースタグを確認できませんでした。"
+    exit 1
+  fi
+  was=$(printf '%s\n' "$tags" | sed -En 's/^v([0-9]+(\.[0-9]+){0,3})$/\1/p' | head -n 1)
+  if [ -z "$was" ]; then
+    # Checkouts without release tags still use the previous committed version.
+    was=$(git show HEAD:manifest.json 2>/dev/null | version || true)
+  fi
   now=$(git show :manifest.json 2>/dev/null | version || true)
-  if [ -n "$was" ] && [ "$was" = "$now" ]; then
-    echo "FAIL 配布されるファイルが変わったのに manifest.json の version は $was のままです。"
-    echo "     直した挙動なら patch、見える変化なら minor を上げてください。"
-    echo "     リリースを --amend で直す場合もこれは同じです（もう一段上げるか --no-verify）。"
+  if ! newer_version "$now" "$was"; then
+    echo "FAIL 配布ファイルを変更するには、manifest.json に基準版より新しい version が必要です。"
+    echo "     基準版 [$was]、ステージ済み [$now]"
     echo "$shipped" | sed 's|^|     |'
     exit 1
   fi

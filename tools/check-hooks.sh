@@ -90,29 +90,47 @@ try "a shipped file moved out beside a name with a newline in it" 1
 printf 'x\n' > "$lab/$(printf 'notes\ncontent.js')"
 try "a newline in an unshipped name does not invent a shipped one" 0
 
-# --amend is not detected at all, on purpose: the only thing a hook can read
-# about it is somebody else's command line, and a commit whose message said
-# --amend was waved through. So a release being amended is refused like
-# anything else, and the refusal says what to do about it.
+# A checkout without tags still compares against HEAD. A commit message
+# containing --amend must not change that baseline.
 (cd "$lab" && git reset -q --hard && git clean -qfd)
 sed -i.bak 's/1\.2\.4/1.2.5/' "$lab/manifest.json" && rm -f "$lab/manifest.json.bak"
 echo "e" >> "$lab/content.js"
 (cd "$lab" && git add -- manifest.json content.js && git -c core.hooksPath="$hooks" commit -qm release)
 
-echo "f" >> "$lab/content.js"
-got=0
-(cd "$lab" && git add -- content.js &&
- git -c core.hooksPath="$hooks" commit -q --amend --no-edit) >/dev/null 2>&1 || got=$?
-expect "amending a release is still a shipped change without a version" 1
-
-# And the way that exception used to be asked for: the rule read the parent
-# process's command line, so saying the word was enough to be believed.
-(cd "$lab" && git reset -q --hard && git clean -qfd)
 echo "g" >> "$lab/content.js"
 got=0
 (cd "$lab" && git add -- content.js &&
  git -c core.hooksPath="$hooks" commit -q -m "Fix --amend detection") >/dev/null 2>&1 || got=$?
 expect "a message that merely mentions --amend is not an amend" 1
+
+# A tag reserves the release version even when the tagged commit is amended.
+(cd "$lab" && git reset -q --hard && git tag v1.2.5)
+echo "f" >> "$lab/content.js"
+got=0
+(cd "$lab" && git add -- content.js &&
+ git -c core.hooksPath="$hooks" commit -q --amend --no-edit) >/dev/null 2>&1 || got=$?
+expect "amending a release cannot reuse the tagged version" 1
+
+manifest_version() {
+  printf '{\n  "version": "%s"\n}\n' "$1" > "$lab/manifest.json"
+}
+
+manifest_version 1.2.6
+try "a version newer than the release is accepted" 0
+(cd "$lab" && git -c core.hooksPath="$hooks" commit -qm "start next version")
+echo "follow-up" >> "$lab/content.js"
+try "a follow-up for an unreleased version keeps its version" 0
+
+manifest_version 1.2.4
+try "a version older than the release is refused" 1
+manifest_version 1.2.5.0
+try "a trailing zero does not make a released version new" 1
+
+(cd "$lab" && git tag v1.2.9 && git tag v1.2.10 && git tag v1.2.99-preview)
+manifest_version 1.2.10
+try "the numerically latest release is reserved" 1
+manifest_version 1.2.11
+try "a prerelease tag does not set the release baseline" 0
 
 if [ "$fails" != 0 ]; then exit 1; fi
 echo "ok   version rule ($tries)"

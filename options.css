@@ -688,6 +688,10 @@ kbd {
     grid-template-rows: repeat(2, var(--pane-height));
     grid-template-areas: "list deck" "list pool";
   }
+
+  .deck-list,
+  .deck-cards,
+  .pool-cards { overscroll-behavior: auto; }
 }
 
 @container (max-width: 520px) {
@@ -701,10 +705,6 @@ kbd {
     grid-template-rows: 180px repeat(2, var(--pane-height));
     grid-template-areas: "list" "deck" "pool";
   }
-
-  .deck-list,
-  .deck-cards,
-  .pool-cards { overscroll-behavior: auto; }
 }
 
 .pool {

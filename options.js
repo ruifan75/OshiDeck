@@ -207,12 +207,23 @@ const hueOf = (id) => (id ? decks.channelMeta[id]?.hue ?? store.defaultHue(id) :
 const colorOf = (id) => store.channelColor(id, decks.channelMeta[id]);
 const nameOf = (id) => (id ? decks.channelMeta[id]?.name || id : "");
 const deckCardPreview = document.querySelector("#deckCardPreview");
-let previewOwner = null;
+let hoveredCardPreview = null;
+let focusedCardPreview = null;
+let visibleCardPreview = null;
 
-function clearCardPreview(owner) {
-  if (previewOwner !== owner) return;
-  previewOwner = null;
-  deckCardPreview.replaceChildren();
+function showCardPreview(preview) {
+  if (visibleCardPreview === preview) return;
+  visibleCardPreview = preview;
+  if (preview) deckCardPreview.replaceChildren(tokens.toFragment(preview.tokens, { preview: true }));
+  else deckCardPreview.replaceChildren();
+}
+
+function clearCardPreviewsWithin(holder) {
+  if (holder.contains(hoveredCardPreview?.element ?? null)) hoveredCardPreview = null;
+  if (holder.contains(focusedCardPreview?.element ?? null)) focusedCardPreview = null;
+  if (holder.contains(visibleCardPreview?.element ?? null)) {
+    showCardPreview(hoveredCardPreview ?? focusedCardPreview);
+  }
 }
 
 function paintDecks() {
@@ -494,16 +505,24 @@ function buildCard(card, where) {
 
   el.append(body, meta);
   wireDrag(el, card, where);
-  const showPreview = () => {
-    if (previewOwner === el) return;
-    previewOwner = el;
-    deckCardPreview.replaceChildren(tokens.toFragment(card.tokens || [], { preview: true }));
-  };
-  el.addEventListener("pointerenter", showPreview);
-  el.addEventListener("pointerleave", () => clearCardPreview(el));
-  el.addEventListener("focusin", showPreview);
+  const preview = { element: el, tokens: card.tokens || [] };
+  el.addEventListener("pointerenter", () => {
+    hoveredCardPreview = preview;
+    showCardPreview(preview);
+  });
+  el.addEventListener("pointerleave", () => {
+    if (hoveredCardPreview !== preview) return;
+    hoveredCardPreview = null;
+    showCardPreview(focusedCardPreview);
+  });
+  el.addEventListener("focusin", () => {
+    focusedCardPreview = preview;
+    showCardPreview(preview);
+  });
   el.addEventListener("focusout", (event) => {
-    if (!el.contains(event.relatedTarget)) clearCardPreview(el);
+    if (focusedCardPreview !== preview || el.contains(event.relatedTarget)) return;
+    focusedCardPreview = null;
+    showCardPreview(hoveredCardPreview);
   });
 
   // What the stripe means is scope, which is the same question the panel
@@ -686,7 +705,7 @@ function paintCards() {
   const hint = document.querySelector("#deckHint");
   const scrollTop = holder.dataset.channel === selected ? holder.scrollTop : 0;
   holder.dataset.channel = selected || "";
-  if (holder.contains(previewOwner)) clearCardPreview(previewOwner);
+  clearCardPreviewsWithin(holder);
   holder.replaceChildren();
   holder.scrollTop = 0;
 
@@ -726,7 +745,7 @@ function paintPool(resetScroll = false) {
   const channel = selected || "";
   const scrollTop = !resetScroll && holder.dataset.channel === channel ? holder.scrollTop : 0;
   holder.dataset.channel = channel;
-  if (holder.contains(previewOwner)) clearCardPreview(previewOwner);
+  clearCardPreviewsWithin(holder);
   holder.replaceChildren();
   holder.scrollTop = 0;
 

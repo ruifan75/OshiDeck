@@ -31,16 +31,38 @@ try {
   pointer(spare, "pointerleave");
   assert.equal(preview.childElementCount, 0);
 
-  held.querySelector(".browse-remove").focus();
-  assert.deepEqual(images(), ["👏", "👏", "👏"], "Focusing a card's controls also shows its complete contents");
+  const remove = held.querySelector(".browse-remove");
   const search = document.querySelector("#deckSearch");
+  remove.focus();
+  assert.deepEqual(images(), ["👏", "👏", "👏"], "Focusing a card's controls also shows its complete contents");
+  pointer(held, "pointerenter");
+  pointer(held, "pointerleave");
+  assert.deepEqual(images(), ["👏", "👏", "👏"], "A card keeps its preview while its button has focus");
+
+  pointer(spare, "pointerenter");
+  assert.deepEqual(images(), ["🎀", "🎀", "🎀"]);
+  pointer(spare, "pointerleave");
+  assert.deepEqual(images(), ["👏", "👏", "👏"], "Leaving the hovered card returns to the focused card");
+
+  pointer(spare, "pointerenter");
   search.focus();
+  assert.deepEqual(images(), ["🎀", "🎀", "🎀"], "Blurring the focused card keeps the hovered card's preview");
+  pointer(spare, "pointerleave");
   assert.equal(preview.childElementCount, 0);
 
+  pointer(held, "pointerenter");
+  remove.focus();
+  search.focus();
+  assert.deepEqual(images(), ["👏", "👏", "👏"], "A card keeps its preview while the pointer remains over it");
+  pointer(held, "pointerleave");
+
+  remove.focus();
   pointer(spare, "pointerenter");
   search.value = "no matches";
   search.dispatchEvent(new window.Event("input"));
-  assert.equal(preview.childElementCount, 0, "A pool redraw clears the preview of a removed card");
+  assert.deepEqual(images(), ["👏", "👏", "👏"], "A pool redraw returns to the focused deck card");
+  search.focus();
+  assert.equal(preview.childElementCount, 0, "The removed card cannot become the preview again");
   assert.equal(page.ops.length, 0, "Previewing a card does not write to storage");
   console.log("ok   compact tiles show the full card in the status row on hover and focus");
 } finally {

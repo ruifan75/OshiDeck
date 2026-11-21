@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { NONO, optionsPage } from "./options-page.mjs";
+import { NONO, NUHU, optionsPage } from "./options-page.mjs";
 
 const url = `https://extension.test/options.html?channel=${NONO}`;
 const { document, window, settle, close } = await optionsPage({ url });
@@ -32,7 +32,24 @@ try {
   search.focus();
   await redraw();
   assert.equal(document.activeElement, search, "A list redraw leaves focus outside the list alone");
-  console.log("ok   the linked channel gets keyboard focus and list redraws preserve it");
+
+  // Model a one-row viewport. Removing the first channel moves the focused
+  // row above the viewport if the saved scroll position is restored unchanged.
+  const rowHeight = 36;
+  list.getBoundingClientRect = () => ({ top: 0, bottom: rowHeight });
+  const getBounds = window.HTMLElement.prototype.getBoundingClientRect;
+  window.HTMLElement.prototype.getBoundingClientRect = function () {
+    if (this.parentElement !== list) return getBounds.call(this);
+    const top = Array.from(list.children).indexOf(this) * rowHeight - list.scrollTop;
+    return { top, bottom: top + rowHeight };
+  };
+  list.scrollTop = rowHeight;
+  deleteButton().focus();
+  assert.equal((await window.OshiDeck.store.apply("deleteDeck", { channelId: NUHU })).ok, true);
+  await settle();
+  assert.equal(list.scrollTop, 0, "The list reveals the focused row if another channel is removed above it");
+  assert.equal(document.activeElement, deleteButton());
+  console.log("ok   linked and restored keyboard focus stays visible in the channel list");
 } finally {
   close();
 }

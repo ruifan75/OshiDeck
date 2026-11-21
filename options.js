@@ -271,11 +271,16 @@ function paintDecks() {
   }
 
   list.scrollTop = scrollTop;
-  if (firstPaint && selectedRow) {
-    // Open links to a channel with that row visible inside the list.
-    const below = selectedRow.getBoundingClientRect().bottom - list.getBoundingClientRect().bottom;
-    list.scrollTop += Math.max(0, below);
-    if (selected === linkedChannel && document.activeElement === document.body) focusTarget = selectedRow;
+  if (firstPaint && selected === linkedChannel && document.activeElement === document.body) {
+    focusTarget = selectedRow;
+  }
+  const rowToReveal = focusTarget?.closest(".deck-row") ?? (firstPaint ? selectedRow : undefined);
+  if (rowToReveal) {
+    // A redraw can move the focused row when another tab changes the list.
+    const listBounds = list.getBoundingClientRect();
+    const rowBounds = rowToReveal.getBoundingClientRect();
+    if (rowBounds.top < listBounds.top) list.scrollTop += rowBounds.top - listBounds.top;
+    else if (rowBounds.bottom > listBounds.bottom) list.scrollTop += rowBounds.bottom - listBounds.bottom;
   }
   focusTarget?.focus({ preventScroll: true });
 

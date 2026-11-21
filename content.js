@@ -10,10 +10,7 @@
   journal.observe(location.pathname.startsWith("/live_chat")
     ? new URLSearchParams(location.search).get("is_popout") === "1" ? "popout" : "chat" : "watch");
 
-  const MAX_ROWS_CAP = 2;
-  const PANEL_PADDING = 24;    // matches #oshideck-root horizontal padding in content.css
-  const SCROLLBAR_GUTTER = 8;  // matches the ::-webkit-scrollbar width, plus slack
-  const LIST_VISIBLE = 12;     // rows shown before the list starts scrolling
+  const { MAX_ROWS_CAP, PANEL_PADDING, SCROLLBAR_GUTTER, LIST_VISIBLE } = layout;
 
   let rootEl = null;
   let currentInput = null;
@@ -790,7 +787,7 @@
     play.type = "button";
     play.className = "od-card-play";
     play.addEventListener("click", (event) => playCard(card, { send: event.shiftKey }));
-    play.appendChild(cardBody(card, size).body);
+    play.appendChild(tokens.cardBody(card, size).body);
     el.appendChild(play);
 
     // Keeping it cannot go through playing it. With auto-send on, pressing the
@@ -1562,73 +1559,6 @@
     return el;
   }
 
-  // How much a card at this size can show before it fades out.
-  const BUDGET = { small: 6, medium: 9, large: 12 };
-
-  // How much room a card's contents want, in characters.
-  //
-  // Not the length of their names, which is what measuring the plain text
-  // does: three `:_tadaima:` came to 21 characters, because that is
-  // `tadaimatadaimatadaima`, and a card of three small pictures was shrunk
-  // and faded for being too long.
-  //
-  // But not two either, which is only how wide a stamp is. The budget
-  // decides when the contents stop fitting, and fitting is an area: a stamp
-  // is also about one and a half lines tall, so a small card holds four of
-  // them where it holds eight characters. At two, the third row of stamps
-  // was being cut off at the card's edge while the budget still said there
-  // was room — the shrink arrived at ten stamps and the fade never did.
-  const EMOJI_WIDTH = 3;
-
-  // An emoji sitting inside a text token is a picture too — the card draws it
-  // as one — and counting its characters instead made two cards of the same
-  // six pictures measure differently: 🦢✨🦢✨🦢✨ came to nine, because ✨ is
-  // one UTF-16 unit and 🦢 is two.
-  const textWidth = (value) =>
-    tokens.splitEmoji((value || "").trim())
-      .reduce((wide, part) => wide + (part.emoji ? EMOJI_WIDTH : part.value.length), 0);
-
-  // The `×5`, which takes room on the card like anything else.
-  const TIMES_WIDTH = 2;
-
-  // What a card draws, which is not always what it says. A card that is one
-  // picture said five times draws the picture once and counts — the stamps
-  // are the whole point of a card like that, and five of them on a small
-  // card means shrinking them until they cannot be told apart. The bar still
-  // shows every one of them; that is where you check what is about to be
-  // sent.
-  const shownAs = (card) =>
-    tokens.repeated(card.tokens || []) || { unit: card.tokens || [], times: 0 };
-
-  const widthOf = (card) => {
-    const { unit, times } = shownAs(card);
-    return unit.reduce(
-      (wide, token) => wide + (token.type === "text" ? textWidth(token.value) : EMOJI_WIDTH),
-      0
-    ) + (times ? TIMES_WIDTH : 0);
-  };
-
-  function cardBody(card, size) {
-    const body = document.createElement("div");
-    body.className = "od-card-body";
-
-    const { unit, times } = shownAs(card);
-    body.appendChild(tokens.toFragment(unit, { preview: true }));
-    if (times) {
-      const count = document.createElement("span");
-      count.className = "od-times";
-      count.textContent = `×${times}`;
-      body.appendChild(count);
-    }
-
-    // Long text shrinks a step and fades out rather than overflowing.
-    const width = widthOf(card);
-    const budget = BUDGET[size] || BUDGET.small;
-    if (width > budget * 3) body.dataset.length = "long";
-    else if (width > budget) body.dataset.length = "medium";
-    return { body };
-  }
-
   function buildCard(card, { size, hue }) {
     const el = document.createElement("div");
     el.className = "od-card";
@@ -1640,7 +1570,7 @@
     if (card.hits > 0) el.dataset.trending = "true";
     if (card.id === flashId) el.dataset.flash = flashKind;
 
-    const { body } = cardBody(card, size);
+    const { body } = tokens.cardBody(card, size);
 
     const play = document.createElement("button");
     play.type = "button";

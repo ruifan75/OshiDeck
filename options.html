@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-i18n="ui.title">OshiDeck 設定</title>
   <link rel="stylesheet" href="src/channel-marks.css">
+  <link rel="stylesheet" href="content.css">
   <link rel="stylesheet" href="options.css">
 </head>
 <body>
@@ -259,6 +260,24 @@
     </section>
 
   </main>
+
+  <dialog id="deckPreview" class="deck-preview" aria-labelledby="deckPreviewTitle">
+    <div class="deck-preview-header">
+      <div>
+        <h2 id="deckPreviewTitle" data-i18n="opt.deckPreview"></h2>
+        <p id="deckPreviewMode" class="muted"></p>
+      </div>
+      <form method="dialog">
+        <button type="submit" class="action" data-i18n="opt.closePreview" autofocus></button>
+      </form>
+    </div>
+    <div id="oshideck-root">
+      <div class="od-bar"><strong id="deckPreviewChannel" class="od-channel"></strong></div>
+      <div id="deckPreviewCards"></div>
+    </div>
+    <div id="deckPreviewMessage" class="deck-preview-message" hidden></div>
+    <p id="deckPreviewTrend" class="muted" data-i18n="opt.previewTrend" hidden></p>
+  </dialog>
 
   <div id="saved" role="status" aria-live="polite" aria-atomic="true"></div>
 

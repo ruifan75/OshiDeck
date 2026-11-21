@@ -1032,10 +1032,14 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
 {
   const from = src.indexOf("  function cardPeek(card) {");
   const to = src.indexOf("  function trackPeek(");
-  const sizes = src.indexOf("  // How much a card at this size can show");
-  const sizesTo = src.indexOf("  function buildCard(");
-  if (from < 0 || sizes < 0) {
-    console.log("FAIL could not lift cardPeek out of content.js");
+  const tokenSource = process.env.OD_TOKENS
+    ? new URL(`file://${process.env.OD_TOKENS}`)
+    : new URL("../../src/tokens.js", import.meta.url);
+  const tokenCode = readFileSync(tokenSource, "utf8");
+  const sizes = tokenCode.indexOf("  // How much a card at this size can show");
+  const sizesTo = tokenCode.indexOf("  OD.tokens = {", sizes);
+  if (from < 0 || sizes < 0 || sizesTo < 0) {
+    console.log("FAIL could not lift the card and its readout");
     process.exit(1);
   }
 
@@ -1043,11 +1047,7 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
   // drawn on it are the same count, and a copy written here would only ever
   // agree with itself.
   globalThis.OshiDeck ||= {};
-  await import(
-    process.env.OD_TOKENS
-      ? `file://${process.env.OD_TOKENS}`
-      : new URL("../../src/tokens.js", import.meta.url).href
-  );
+  await import(tokenSource.href);
   const { splitEmoji, repeated } = globalThis.OshiDeck.tokens;
 
   const drawFrom = src.indexOf("  function peekReadout({");
@@ -1059,7 +1059,8 @@ check("and redraws rather than only rebuilding the bar", e.seen.renders === 1);
 
   const api = new Function(
     "tokens", "settingsCache", "watcher", "t", "document",
-    `${src.slice(sizes, sizesTo)}
+    `const { splitEmoji, repeated, toFragment } = tokens;
+     ${tokenCode.slice(sizes, sizesTo)}
      ${src.slice(from, to)}
      ${src.slice(drawFrom, drawTo)}
      return { cardPeek, cardBody, widthOf, peekReadout };`

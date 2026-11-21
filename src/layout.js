@@ -4,6 +4,10 @@
 
   const CARD_SIZE = { large: 74, medium: 66, small: 58 };
   const OVERLAP = 8;
+  const MAX_ROWS_CAP = 2;
+  const PANEL_PADDING = 24;
+  const SCROLLBAR_GUTTER = 8;
+  const LIST_VISIBLE = 12;
 
   // How tightly the hand may be squeezed to take one more card. Past this the
   // cards stop reading as separate, so a row that still will not fit goes
@@ -68,6 +72,7 @@
   }
 
   OD.layout = {
+    MAX_ROWS_CAP, PANEL_PADDING, SCROLLBAR_GUTTER, LIST_VISIBLE,
     CARD_SIZE, OVERLAP, MAX_OVERLAP,
     cardsPerRow, overlapFor, fitsSqueezed, besideDrawn, splitRows, tilt
   };

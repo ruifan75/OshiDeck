@@ -1,4 +1,4 @@
-const { i18n, store, tokens, channelMarks, privacy } = globalThis.OshiDeck;
+const { i18n, store, tokens, layout, channelMarks, privacy } = globalThis.OshiDeck;
 let settingsEnabled = !privacy;
 if (privacy) document.querySelector("#appSettings").hidden = true;
 const t = (...args) => i18n.t(...args);
@@ -33,7 +33,7 @@ const sortNote = (sortBy) =>
   : sortBy === "uses" ? t("sort.usesNote")
   : t("sort.manualNote");
 const SIDEBAR_WIDTH = 400;
-const PANEL_PADDING = 24;
+const { MAX_ROWS_CAP, PANEL_PADDING, SCROLLBAR_GUTTER, LIST_VISIBLE } = layout;
 
 let settings = { ...DEFAULTS };
 
@@ -64,8 +64,7 @@ function paint() {
   }
 
   // Show what the current size and row count actually buy in a 400px sidebar.
-  const { CARD_SIZE, cardsPerRow } = globalThis.OshiDeck.layout;
-  const perRow = cardsPerRow(SIDEBAR_WIDTH - PANEL_PADDING, CARD_SIZE[settings.cardSize]);
+  const perRow = layout.cardsPerRow(SIDEBAR_WIDTH - PANEL_PADDING - SCROLLBAR_GUTTER, layout.CARD_SIZE[settings.cardSize]);
   document.querySelector("#capacity").textContent =
     t("opt.capacity", sizeLabel(settings.cardSize), settings.rows, perRow * settings.rows);
 
@@ -287,6 +286,7 @@ function paintDecks() {
   paintHeader();
   paintCards();
   paintPool();
+  if (deckPreview.open) paintDeckPreview();
 }
 
 function paintHeader() {
@@ -399,8 +399,18 @@ function paintHeader() {
   // to read all four labels.
   const line = document.createElement("div");
   line.className = "deck-title";
+  const preview = document.createElement("button");
+  preview.id = "openDeckPreview";
+  preview.className = "action deck-preview-button";
+  preview.type = "button";
+  preview.textContent = t("opt.deckPreview");
+  preview.addEventListener("click", () => {
+    deckPreview.showModal();
+    paintDeckPreview();
+  });
   line.append(
     title,
+    preview,
     deckAction("download", t("opt.deckExport"), exportDeck),
     deckAction("upload", t("opt.deckImport"), () => document.querySelector("#deckFile").click())
   );
@@ -475,7 +485,7 @@ function buildCard(card, where) {
 
   const body = document.createElement("div");
   body.className = "browse-body";
-  body.appendChild(tokens.toFragment(card.tokens || [], { preview: true }));
+  body.appendChild(tokens.cardBody(card, "large").body);
 
   const meta = document.createElement("div");
   meta.className = "browse-meta";
@@ -665,7 +675,10 @@ function cardAction(glyph, label, onClick) {
 function paintCards() {
   const holder = document.querySelector("#deckCards");
   const hint = document.querySelector("#deckHint");
+  const scrollTop = holder.dataset.channel === selected ? holder.scrollTop : 0;
+  holder.dataset.channel = selected || "";
   holder.replaceChildren();
+  holder.scrollTop = 0;
 
   if (!selected) {
     hint.textContent = "";
@@ -691,15 +704,20 @@ function paintCards() {
   }
 
   for (const card of cards) holder.appendChild(buildCard(card, "deck"));
+  holder.scrollTop = scrollTop;
 }
 
 // The pool holds what this deck could take and has not: cards that work
 // anywhere, and cards tied to this channel — including the ones carrying its
 // member emoji, which send here and nowhere else. Somebody else's never
 // appear, because they could not be added.
-function paintPool() {
+function paintPool(resetScroll = false) {
   const holder = document.querySelector("#poolCards");
+  const channel = selected || "";
+  const scrollTop = !resetScroll && holder.dataset.channel === channel ? holder.scrollTop : 0;
+  holder.dataset.channel = channel;
   holder.replaceChildren();
+  holder.scrollTop = 0;
 
   const all = selected ? store.poolFor(decks, selected) : store.universal(decks);
   const shown = query
@@ -721,6 +739,106 @@ function paintPool() {
   }
 
   for (const card of shown) holder.appendChild(buildCard(card, "pool"));
+  holder.scrollTop = scrollTop;
+}
+
+/* ---------------- deck preview ---------------- */
+
+const deckPreview = document.querySelector("#deckPreview");
+const previewTheme = window.matchMedia?.("(prefers-color-scheme: dark)");
+const updatePreviewTheme = () => document.documentElement.toggleAttribute("dark", !!previewTheme?.matches);
+previewTheme?.addEventListener("change", updatePreviewTheme);
+deckPreview.addEventListener("close", () => {
+  document.querySelector("#openDeckPreview")?.focus({ preventScroll: true });
+});
+window.addEventListener("resize", () => { if (deckPreview.open) paintDeckPreview(); });
+
+function previewCard(card, size) {
+  const el = document.createElement("div");
+  el.className = size ? "od-card" : "od-listcard";
+  if (size) el.dataset.size = size;
+  el.dataset.scope = store.scopeOf(card);
+
+  const play = document.createElement("button");
+  play.type = "button";
+  play.className = size ? "od-card-play" : "od-listcard-play";
+  const full = () => tokens.toFragment(card.tokens || [], { preview: true });
+  play.appendChild(size ? tokens.cardBody(card, size).body : full());
+  function reveal() {
+    const message = document.querySelector("#deckPreviewMessage");
+    message.replaceChildren(full());
+    message.hidden = false;
+  }
+  play.addEventListener("focus", reveal);
+  play.addEventListener("pointerenter", reveal);
+  play.addEventListener("click", reveal);
+  el.appendChild(play);
+  return el;
+}
+
+function paintDeckPreview() {
+  updatePreviewTheme();
+  const { mode, cardSize, rows, sortBy } = decks.settings;
+  const cards = store.sortCards(cardsOf(selected), sortBy === "trend" ? "manual" : sortBy, selected);
+  const panel = document.querySelector("#oshideck-root");
+  const holder = document.querySelector("#deckPreviewCards");
+  const message = document.querySelector("#deckPreviewMessage");
+  const color = colorOf(selected);
+  panel.dataset.mode = mode;
+  panel.toggleAttribute("data-empty", !cards.length);
+  panel.toggleAttribute("data-neutral", !!store.neutralFromHex(color));
+  panel.style.setProperty("--od-scope-hue", hueOf(selected));
+  if (color) panel.style.setProperty("--od-neutral", color);
+  else panel.style.removeProperty("--od-neutral");
+  document.querySelector("#deckPreviewChannel").textContent = nameOf(selected);
+  document.querySelector("#deckPreviewMode").textContent = mode === "list" ? t("ui.modeList") : t("ui.modeHand");
+  document.querySelector("#deckPreviewTrend").hidden = sortBy !== "trend" || !cards.length;
+  message.hidden = true;
+  message.replaceChildren();
+  holder.replaceChildren();
+
+  if (!cards.length) {
+    const empty = document.createElement("div");
+    empty.className = "od-empty";
+    empty.textContent = t("opt.previewEmpty");
+    holder.appendChild(empty);
+    return;
+  }
+
+  const view = document.createElement("div");
+  if (mode === "list") {
+    view.className = "od-list";
+    if (cards.length > LIST_VISIBLE) view.dataset.scrollable = "true";
+    view.append(...cards.map((card) => previewCard(card)));
+  } else {
+    view.className = "od-hand";
+    const visibleRows = Math.min(MAX_ROWS_CAP, Math.max(1, rows));
+    view.style.setProperty("--od-visible-rows", visibleRows);
+    const width = (panel.clientWidth || SIDEBAR_WIDTH) - PANEL_PADDING - SCROLLBAR_GUTTER;
+    const perRow = layout.cardsPerRow(width, layout.CARD_SIZE[cardSize]);
+    const allRows = Math.ceil(cards.length / perRow);
+    const { rows: counts } = layout.splitRows(cards.length, perRow, allRows);
+    if (counts.length > visibleRows) view.dataset.scrollable = "true";
+    let cursor = 0;
+    for (const count of counts) {
+      const row = document.createElement("div");
+      row.className = "od-row";
+      const fan = document.createElement("div");
+      fan.className = "od-fan";
+      for (let i = 0; i < count; i++) {
+        const el = previewCard(cards[cursor++], cardSize);
+        const { rot, lift } = layout.tilt(i, count);
+        el.style.setProperty("--od-rot", `${rot.toFixed(2)}deg`);
+        el.style.setProperty("--od-lift", `${lift.toFixed(2)}px`);
+        el.style.setProperty("--od-depth", count - i);
+        if (i > 0) el.style.setProperty("--od-overlap", `-${layout.OVERLAP}px`);
+        fan.appendChild(el);
+      }
+      row.appendChild(fan);
+      view.appendChild(row);
+    }
+  }
+  holder.appendChild(view);
 }
 
 /* ---------------- dragging ---------------- */
@@ -1033,7 +1151,7 @@ wirePoolDrop(document.querySelector("#pool"));
 
 document.querySelector("#deckSearch").addEventListener("input", (event) => {
   query = event.target.value.trim().toLowerCase();
-  paintPool();
+  paintPool(true);
 });
 
 chrome.storage.onChanged.addListener((changes, area) => {

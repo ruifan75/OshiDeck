@@ -213,7 +213,10 @@ function paintDecks() {
   const list = document.querySelector("#deckList");
   const firstPaint = !list.firstChild;
   const scrollTop = list.scrollTop;
+  const active = document.activeElement;
+  const focusedChannel = list.contains(active) ? active.closest(".deck-row")?.dataset.channel : null;
   let selectedRow;
+  let focusTarget;
   list.replaceChildren();
 
   if (!ids.length) {
@@ -227,6 +230,7 @@ function paintDecks() {
     const row = document.createElement("button");
     row.type = "button";
     row.className = "deck-row";
+    row.dataset.channel = id;
     if (id === selected) {
       row.dataset.on = "true";
       selectedRow = row;
@@ -257,10 +261,11 @@ function paintDecks() {
     });
 
     row.append(dot, name, count, drop);
+    if (id === focusedChannel) focusTarget = active.classList.contains("deck-delete") ? drop : row;
     row.addEventListener("click", () => {
       selected = id;
+      row.focus({ preventScroll: true });
       paintDecks();
-      list.querySelector("[data-on]")?.focus({ preventScroll: true });
     });
     list.appendChild(row);
   }
@@ -270,7 +275,9 @@ function paintDecks() {
     // Open links to a channel with that row visible inside the list.
     const below = selectedRow.getBoundingClientRect().bottom - list.getBoundingClientRect().bottom;
     list.scrollTop += Math.max(0, below);
+    if (selected === linkedChannel && document.activeElement === document.body) focusTarget = selectedRow;
   }
+  focusTarget?.focus({ preventScroll: true });
 
   paintHeader();
   paintCards();

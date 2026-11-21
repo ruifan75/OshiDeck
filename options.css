@@ -666,6 +666,9 @@ kbd {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "list" "deck" "pool";
   }
+
+  .deck-list,
+  .pool-cards { overscroll-behavior: auto; }
 }
 
 .pool {

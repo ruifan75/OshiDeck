@@ -618,50 +618,41 @@ kbd {
 
 /* ---------- three panes: decks, the selected deck, the pool ---------- */
 
-.decks {
-  container-type: inline-size;
-  --channel-list-width: 170px;
-  --pane-gap: 18px;
+.decks { container-type: inline-size; }
+
+.deck-heading,
+.browser {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr) 252px;
+  gap: 18px;
 }
 
-.deck-card-preview {
+.deck-heading {
   position: sticky;
-  bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+  top: 0;
   z-index: 2;
-  box-sizing: border-box;
-  height: 32px;
-  margin-top: 8px;
-  margin-inline-start: calc(var(--channel-list-width) + var(--pane-gap));
-  padding: 3px 10px;
-  border: 1px solid transparent;
-  border-radius: 8px;
+  align-items: center;
+  min-height: 24px;
+  margin-bottom: 16px;
+  background: Canvas;
+}
+
+.deck-heading h2 { margin: 0; }
+
+.deck-card-preview {
   font-size: 13px;
   line-height: 24px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  pointer-events: none;
-}
-
-.deck-card-preview:not(:empty) {
-  border-color: var(--line);
-  background: Canvas;
-}
-
-/* Keep both messages readable while the Undo notice is on screen. */
-body:has(#saved:not(:empty)) .deck-card-preview {
-  bottom: calc(80px + env(safe-area-inset-bottom, 0px));
 }
 
 .deck-card-preview .od-emoji { width: 18px; height: 18px; }
 
 .browser {
   --pane-height: 400px;
-  display: grid;
-  grid-template-columns: var(--channel-list-width) minmax(0, 1fr) 252px;
   grid-template-rows: var(--pane-height);
   grid-template-areas: "list deck pool";
-  gap: var(--pane-gap);
 }
 
 .deck-list { grid-area: list; }
@@ -690,14 +681,21 @@ body:has(#saved:not(:empty)) .deck-card-preview {
 /* Reacts to the section, not the window: `main` is capped well below the
    viewport, so a media query would never fire. */
 @container (max-width: 780px) {
+  .deck-heading,
+  .browser { grid-template-columns: 170px minmax(0, 1fr); }
+
   .browser {
-    grid-template-columns: var(--channel-list-width) minmax(0, 1fr);
     grid-template-rows: repeat(2, var(--pane-height));
     grid-template-areas: "list deck" "list pool";
   }
 }
 
 @container (max-width: 520px) {
+  .deck-heading {
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 14px;
+  }
+
   .browser {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: 180px repeat(2, var(--pane-height));
@@ -707,8 +705,6 @@ body:has(#saved:not(:empty)) .deck-card-preview {
   .deck-list,
   .deck-cards,
   .pool-cards { overscroll-behavior: auto; }
-
-  .deck-card-preview { margin-inline-start: 0; }
 }
 
 .pool {

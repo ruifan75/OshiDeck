@@ -29,7 +29,10 @@
     </header>
 
     <section class="card decks">
-      <h2 data-i18n="ui.decks"></h2>
+      <div class="deck-heading">
+        <h2 data-i18n="ui.decks"></h2>
+        <div id="deckCardPreview" class="deck-card-preview" role="status"></div>
+      </div>
 
       <div class="browser">
         <nav id="deckList" class="deck-list" data-i18n-aria-label="aria.deckList"></nav>
@@ -55,7 +58,6 @@
           <div id="poolCards" class="pool-cards"></div>
         </aside>
       </div>
-      <div id="deckCardPreview" class="deck-card-preview" role="status"></div>
     </section>
 
     <section class="card">

@@ -4,12 +4,11 @@ YouTube Live Chatのコメントやメンバー絵文字の組み合わせを保
 
 <a href="https://chromewebstore.google.com/detail/oshideck/cdjfhnopkneggihpcamooghfbnljlhmg"><img src=".github/chrome-web-store-badge.png" width="204" alt="Chrome ウェブストアで OshiDeck をインストール"></a>
 
-バージョンは `manifest.json` にあります ── ここに書き写すと、片方だけ古くなるので。
-直した挙動は patch、見える変化は minor。配布されるファイルを変えて version を
-据え置いたコミットは `tools/hooks/pre-commit` が止めます ── 一度、十四コミット
-ぶん据え置いたままにしたので。
-試用ZIPを渡した後の更新も、未commitの作業中であってもversionを上げます。
-一度渡したバージョン名で別の内容を再配布しません。
+バージョンは `manifest.json` にあります。修正は patch、機能追加は minor を上げます。
+同じ PR のレビュー修正では、次に配布するバージョンを使い続けられます。
+配布ファイルを変更するコミットでは、`tools/hooks/pre-commit` が手元の最新リリースタグより新しいバージョンかを確認します。
+別の環境で作ったタグは `git fetch --tags` で取得してください。
+試用 ZIP を配布したあとの更新でも、配布済みの内容と区別できるようバージョンを上げます。
 
 ## Features
 

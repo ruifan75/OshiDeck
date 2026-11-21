@@ -1383,11 +1383,11 @@ const MUTATIONS = [
     "tokens.toFragment(list, { preview: true })",
     "tokens.toFragment(list)"],
 
-  [VISIBILITY, CONTENT, "a card drawn in full when it is one thing repeated",
-    "    tokens.repeated(card.tokens || []) || { unit: card.tokens || [], times: 0 };",
+  [VISIBILITY, TOKENS, "a card drawn in full when it is one thing repeated",
+    "    repeated(card.tokens || []) || { unit: card.tokens || [], times: 0 };",
     "    ({ unit: card.tokens || [], times: 0 });"],
 
-  [VISIBILITY, CONTENT, "the count not taking any room on the card",
+  [VISIBILITY, TOKENS, "the count not taking any room on the card",
     "    ) + (times ? TIMES_WIDTH : 0);",
     "    ) + 0;"],
 
@@ -1411,16 +1411,16 @@ const MUTATIONS = [
     "    for (let size = 1; size <= atoms.length / 2; size++) {",
     "    for (let size = Math.floor(atoms.length / 2); size >= 1; size--) {"],
 
-  [VISIBILITY, CONTENT, "a stamp measured by its width alone, not the room it takes",
+  [VISIBILITY, TOKENS, "a stamp measured by its width alone, not the room it takes",
     "  const EMOJI_WIDTH = 3;",
     "  const EMOJI_WIDTH = 2;"],
 
-  [VISIBILITY, CONTENT, "an emoji measured by the length of its name",
+  [VISIBILITY, TOKENS, "an emoji measured by the length of its name",
     "      (wide, token) => wide + (token.type === \"text\" ? textWidth(token.value) : EMOJI_WIDTH),",
     "      (wide, token) => wide + (token.type === \"text\" ? textWidth(token.value) : (token.alt || \"\").length),"],
 
-  [VISIBILITY, CONTENT, "an emoji in a sentence counted by its characters",
-    "    tokens.splitEmoji((value || \"\").trim())\n      .reduce((wide, part) => wide + (part.emoji ? EMOJI_WIDTH : part.value.length), 0);",
+  [VISIBILITY, TOKENS, "an emoji in a sentence counted by its characters",
+    "    splitEmoji((value || \"\").trim())\n      .reduce((wide, part) => wide + (part.emoji ? EMOJI_WIDTH : part.value.length), 0);",
     "    (value || \"\").trim().length;"],
 
   [VISIBILITY, CONTENT, "an empty description treated as something to say",

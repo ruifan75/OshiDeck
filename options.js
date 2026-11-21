@@ -206,11 +206,36 @@ const cardsOf = (id) => (id ? store.deckOf(decks, id) : []);
 const hueOf = (id) => (id ? decks.channelMeta[id]?.hue ?? store.defaultHue(id) : 320);
 const colorOf = (id) => store.channelColor(id, decks.channelMeta[id]);
 const nameOf = (id) => (id ? decks.channelMeta[id]?.name || id : "");
+const deckCardPreview = document.querySelector("#deckCardPreview");
+let hoveredCardPreview = null;
+let focusedCardPreview = null;
+let visibleCardPreview = null;
+
+function showCardPreview(preview) {
+  if (visibleCardPreview === preview) return;
+  visibleCardPreview = preview;
+  if (preview) deckCardPreview.replaceChildren(tokens.toFragment(preview.tokens, { preview: true }));
+  else deckCardPreview.replaceChildren();
+}
+
+function clearCardPreviewsWithin(holder) {
+  if (holder.contains(hoveredCardPreview?.element ?? null)) hoveredCardPreview = null;
+  if (holder.contains(focusedCardPreview?.element ?? null)) focusedCardPreview = null;
+  if (holder.contains(visibleCardPreview?.element ?? null)) {
+    showCardPreview(hoveredCardPreview ?? focusedCardPreview);
+  }
+}
 
 function paintDecks() {
   const ids = deckIds();
 
   const list = document.querySelector("#deckList");
+  const firstPaint = !list.firstChild;
+  const scrollTop = list.scrollTop;
+  const active = document.activeElement;
+  const focusedChannel = list.contains(active) ? active.closest(".deck-row")?.dataset.channel : null;
+  let selectedRow;
+  let focusTarget;
   list.replaceChildren();
 
   if (!ids.length) {
@@ -224,7 +249,11 @@ function paintDecks() {
     const row = document.createElement("button");
     row.type = "button";
     row.className = "deck-row";
-    if (id === selected) row.dataset.on = "true";
+    row.dataset.channel = id;
+    if (id === selected) {
+      row.dataset.on = "true";
+      selectedRow = row;
+    }
 
     const dot = document.createElement("span");
     dot.className = "deck-dot";
@@ -251,9 +280,28 @@ function paintDecks() {
     });
 
     row.append(dot, name, count, drop);
-    row.addEventListener("click", () => { selected = id; paintDecks(); });
+    if (id === focusedChannel) focusTarget = active.classList.contains("deck-delete") ? drop : row;
+    row.addEventListener("click", () => {
+      selected = id;
+      row.focus({ preventScroll: true });
+      paintDecks();
+    });
     list.appendChild(row);
   }
+
+  list.scrollTop = scrollTop;
+  if (firstPaint && selected === linkedChannel && document.activeElement === document.body) {
+    focusTarget = selectedRow;
+  }
+  const rowToReveal = focusTarget?.closest(".deck-row") ?? (firstPaint ? selectedRow : undefined);
+  if (rowToReveal) {
+    // A redraw can move the focused row when another tab changes the list.
+    const listBounds = list.getBoundingClientRect();
+    const rowBounds = rowToReveal.getBoundingClientRect();
+    if (rowBounds.top < listBounds.top) list.scrollTop += rowBounds.top - listBounds.top;
+    else if (rowBounds.bottom > listBounds.bottom) list.scrollTop += rowBounds.bottom - listBounds.bottom;
+  }
+  focusTarget?.focus({ preventScroll: true });
 
   paintHeader();
   paintCards();
@@ -446,7 +494,7 @@ function buildCard(card, where) {
 
   const body = document.createElement("div");
   body.className = "browse-body";
-  body.appendChild(tokens.toFragment(card.tokens || [], { preview: true }));
+  body.appendChild(tokens.cardBody(card, "large").body);
 
   const meta = document.createElement("div");
   meta.className = "browse-meta";
@@ -457,6 +505,25 @@ function buildCard(card, where) {
 
   el.append(body, meta);
   wireDrag(el, card, where);
+  const preview = { element: el, tokens: card.tokens || [] };
+  el.addEventListener("pointerenter", () => {
+    hoveredCardPreview = preview;
+    showCardPreview(preview);
+  });
+  el.addEventListener("pointerleave", () => {
+    if (hoveredCardPreview !== preview) return;
+    hoveredCardPreview = null;
+    showCardPreview(focusedCardPreview);
+  });
+  el.addEventListener("focusin", () => {
+    focusedCardPreview = preview;
+    showCardPreview(preview);
+  });
+  el.addEventListener("focusout", (event) => {
+    if (focusedCardPreview !== preview || el.contains(event.relatedTarget)) return;
+    focusedCardPreview = null;
+    showCardPreview(hoveredCardPreview);
+  });
 
   // What the stripe means is scope, which is the same question the panel
   // asks — and it was being answered differently here. Reading the member
@@ -636,7 +703,11 @@ function cardAction(glyph, label, onClick) {
 function paintCards() {
   const holder = document.querySelector("#deckCards");
   const hint = document.querySelector("#deckHint");
+  const scrollTop = holder.dataset.channel === selected ? holder.scrollTop : 0;
+  holder.dataset.channel = selected || "";
+  clearCardPreviewsWithin(holder);
   holder.replaceChildren();
+  holder.scrollTop = 0;
 
   if (!selected) {
     hint.textContent = "";
@@ -662,15 +733,21 @@ function paintCards() {
   }
 
   for (const card of cards) holder.appendChild(buildCard(card, "deck"));
+  holder.scrollTop = scrollTop;
 }
 
 // The pool holds what this deck could take and has not: cards that work
 // anywhere, and cards tied to this channel — including the ones carrying its
 // member emoji, which send here and nowhere else. Somebody else's never
 // appear, because they could not be added.
-function paintPool() {
+function paintPool(resetScroll = false) {
   const holder = document.querySelector("#poolCards");
+  const channel = selected || "";
+  const scrollTop = !resetScroll && holder.dataset.channel === channel ? holder.scrollTop : 0;
+  holder.dataset.channel = channel;
+  clearCardPreviewsWithin(holder);
   holder.replaceChildren();
+  holder.scrollTop = 0;
 
   const all = selected ? store.poolFor(decks, selected) : store.universal(decks);
   const shown = query
@@ -692,6 +769,7 @@ function paintPool() {
   }
 
   for (const card of shown) holder.appendChild(buildCard(card, "pool"));
+  holder.scrollTop = scrollTop;
 }
 
 /* ---------------- dragging ---------------- */
@@ -1004,7 +1082,7 @@ wirePoolDrop(document.querySelector("#pool"));
 
 document.querySelector("#deckSearch").addEventListener("input", (event) => {
   query = event.target.value.trim().toLowerCase();
-  paintPool();
+  paintPool(true);
 });
 
 chrome.storage.onChanged.addListener((changes, area) => {

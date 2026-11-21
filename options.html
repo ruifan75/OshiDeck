@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-i18n="ui.title">OshiDeck 設定</title>
   <link rel="stylesheet" href="src/channel-marks.css">
+  <link rel="stylesheet" href="content.css">
   <link rel="stylesheet" href="options.css">
 </head>
 <body>
@@ -28,7 +29,10 @@
     </header>
 
     <section class="card decks">
-      <h2 data-i18n="ui.decks"></h2>
+      <div class="deck-heading">
+        <h2 data-i18n="ui.decks"></h2>
+        <div id="deckCardPreview" class="deck-card-preview" role="status"></div>
+      </div>
 
       <div class="browser">
         <nav id="deckList" class="deck-list" data-i18n-aria-label="aria.deckList"></nav>

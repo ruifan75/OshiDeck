@@ -277,6 +277,7 @@ kbd {
 
 .deck-row {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   gap: 9px;
   padding: 8px 10px;
@@ -426,12 +427,16 @@ kbd {
 .deck-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, 104px);
+  align-content: start;
   gap: 10px;
 }
 
 .browse-card {
+  --od-dim: color-mix(in srgb, CanvasText 75%, Canvas);
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  height: 96px;
   gap: 6px;
   padding: 8px;
   overflow: hidden;
@@ -489,36 +494,21 @@ kbd {
 }
 
 .browse-body {
+  flex: 1;
+  min-height: 0;
   display: flex;
-  /* Without wrapping, a run of stamps stays on one line and pushes straight
-     out of the card — five 22px stamps need 110px in an 88px box. */
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 2px;
-  min-height: 46px;
-  /* Two rows of stamps, then fade rather than grow the card without limit. */
-  max-height: 58px;
-  overflow: hidden;
-  font-size: 13px;
-  line-height: 1.35;
-  text-align: center;
-  overflow-wrap: anywhere;
-  white-space: pre-wrap;
-  mask-image: linear-gradient(180deg, #000 calc(100% - 10px), transparent);
-}
-
-.browse-body .od-emoji {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-  vertical-align: middle;
 }
 
 .browse-meta {
+  flex: 0 0 auto;
   font-size: 10px;
   opacity: .55;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .browse-actions {
@@ -630,30 +620,89 @@ kbd {
 
 .decks { container-type: inline-size; }
 
+.deck-heading,
 .browser {
   display: grid;
   grid-template-columns: 170px minmax(0, 1fr) 252px;
-  grid-template-areas: "list deck pool";
   gap: 18px;
-  align-items: start;
+}
+
+.deck-heading {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  align-items: center;
+  min-height: 24px;
+  margin-bottom: 16px;
+  background: Canvas;
+}
+
+.deck-heading h2 { margin: 0; }
+
+.deck-card-preview {
+  font-size: 13px;
+  line-height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deck-card-preview .od-emoji { width: 18px; height: 18px; }
+
+.browser {
+  --pane-height: 400px;
+  grid-template-rows: var(--pane-height);
+  grid-template-areas: "list deck pool";
 }
 
 .deck-list { grid-area: list; }
 .deck-main { grid-area: deck; }
 .pool { grid-area: pool; }
 
+.deck-list,
+.deck-cards,
+.pool-cards {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+}
+
+.deck-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.deck-main .deck-cards,
+.pool .pool-cards { flex: 1; }
+
 /* Reacts to the section, not the window: `main` is capped well below the
    viewport, so a media query would never fire. */
 @container (max-width: 780px) {
+  .deck-heading,
+  .browser { grid-template-columns: 170px minmax(0, 1fr); }
+
   .browser {
-    grid-template-columns: 170px minmax(0, 1fr);
+    grid-template-rows: repeat(2, var(--pane-height));
     grid-template-areas: "list deck" "list pool";
   }
+
+  .deck-list,
+  .deck-cards,
+  .pool-cards { overscroll-behavior: auto; }
 }
 
 @container (max-width: 520px) {
+  .deck-heading {
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 14px;
+  }
+
   .browser {
     grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 180px repeat(2, var(--pane-height));
     grid-template-areas: "list" "deck" "pool";
   }
 }
@@ -686,18 +735,12 @@ kbd {
   /* Fixed at two. With auto-fill the scrollbar took just enough width to drop
      the second column, so the layout changed the moment the pool filled up. */
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
   gap: 8px;
-  max-height: 320px;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  /* Reserve the gutter so appearing and disappearing does not shift anything. */
-  scrollbar-gutter: stable;
-  scrollbar-width: thin;
 }
 
 /* The deck pane accepts drops anywhere, not only onto a card. */
 .deck-cards {
-  min-height: 96px;
   padding: 4px;
   border: 1px dashed transparent;
   border-radius: 10px;

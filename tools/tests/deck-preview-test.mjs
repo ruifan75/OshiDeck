@@ -1,54 +1,48 @@
 import assert from "node:assert/strict";
 import { NUHU, optionsPage } from "./options-page.mjs";
 
-const repeated = "👏👏👏";
 const card = (id, value) => ({ id, scope: "global", tokens: [{ type: "text", value }] });
 const page = await optionsPage({
   initialData: {
-    cards: [card("held", repeated), card("spare", "🎀🎀🎀")],
-    decks: { [NUHU]: ["held"] },
-    settings: { language: "zh-TW", mode: "hand", cardSize: "medium", rows: 1, sortBy: "manual" }
+    cards: [card("held", "👏👏👏"), card("spare", "🎀🎀🎀")],
+    decks: { [NUHU]: ["held"] }
   }
 });
 
 try {
   const { document, window } = page;
-  const dialog = document.querySelector("#deckPreview");
-  // The real options event path with jsdom's missing modal methods supplied.
-  dialog.showModal = () => { dialog.open = true; };
-  dialog.close = () => { dialog.open = false; dialog.dispatchEvent(new window.Event("close")); };
+  const preview = document.querySelector("#deckCardPreview");
+  const held = document.querySelector("#deckCards .browse-card");
+  const spare = document.querySelector("#poolCards .browse-card");
+  const pointer = (card, type) => card.dispatchEvent(new window.Event(type));
+  const images = () => [...preview.querySelectorAll(".od-emoji")].map((img) => img.alt);
 
-  for (const id of ["deckCards", "poolCards"]) {
-    const tile = document.querySelector(`#${id} .browse-body`);
-    assert.equal(tile.querySelector(".od-times").textContent, "×3");
-    assert.equal(tile.querySelectorAll(".od-emoji").length, 1);
+  for (const tile of [held, spare]) {
+    assert.equal(tile.querySelector(".browse-body .od-times").textContent, "×3");
+    assert.equal(tile.querySelectorAll(".browse-body .od-emoji").length, 1);
   }
 
-  const open = () => document.querySelector("#openDeckPreview").click();
-  open();
-  assert(dialog.open);
-  const hand = dialog.querySelector(".od-hand");
-  assert.equal(hand.style.getPropertyValue("--od-visible-rows"), "1");
-  assert.equal(hand.querySelector(".od-card").dataset.size, "medium");
-  assert.equal(hand.querySelector(".od-times").textContent, "×3");
+  pointer(held, "pointerenter");
+  assert.deepEqual(images(), ["👏", "👏", "👏"]);
+  assert.equal(preview.querySelector(".od-times"), null);
+  pointer(spare, "pointerenter");
+  pointer(held, "pointerleave");
+  assert.deepEqual(images(), ["🎀", "🎀", "🎀"], "Leaving a previous card does not clear the current preview");
+  pointer(spare, "pointerleave");
+  assert.equal(preview.childElementCount, 0);
 
-  hand.querySelector(".od-card-play").click();
-  const inspected = dialog.querySelector("#deckPreviewMessage");
-  assert.equal(inspected.hidden, false);
-  assert.equal(inspected.querySelectorAll(".od-emoji").length, 3, "Inspecting the preview shows the entire message");
-  assert.equal(page.ops.length, 0, "Previewing a card never writes to the store");
-  dialog.close();
-  assert.equal(document.activeElement.id, "openDeckPreview");
+  held.querySelector(".browse-remove").focus();
+  assert.deepEqual(images(), ["👏", "👏", "👏"], "Focusing a card's controls also shows its complete contents");
+  const search = document.querySelector("#deckSearch");
+  search.focus();
+  assert.equal(preview.childElementCount, 0);
 
-  const listMode = document.querySelector('input[name="mode"][value="list"]');
-  listMode.checked = true;
-  listMode.dispatchEvent(new window.Event("change"));
-  await page.settle();
-  open();
-  assert.equal(dialog.querySelector("#oshideck-root").dataset.mode, "list");
-  assert.equal(dialog.querySelectorAll(".od-listcard-play .od-emoji").length, 3);
-  assert.equal(page.read().cards[0].tokens[0].value, repeated);
-  console.log("ok   builder tiles use compact faces and the preview follows the selected mode");
+  pointer(spare, "pointerenter");
+  search.value = "no matches";
+  search.dispatchEvent(new window.Event("input"));
+  assert.equal(preview.childElementCount, 0, "A pool redraw clears the preview of a removed card");
+  assert.equal(page.ops.length, 0, "Previewing a card does not write to storage");
+  console.log("ok   compact tiles show the full card in the status row on hover and focus");
 } finally {
   page.close();
 }

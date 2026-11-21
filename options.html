@@ -29,7 +29,10 @@
     </header>
 
     <section class="card decks">
-      <h2 data-i18n="ui.decks"></h2>
+      <div class="deck-heading">
+        <h2 data-i18n="ui.decks"></h2>
+        <div id="deckCardPreview" class="deck-card-preview" role="status"></div>
+      </div>
 
       <div class="browser">
         <nav id="deckList" class="deck-list" data-i18n-aria-label="aria.deckList"></nav>
@@ -260,24 +263,6 @@
     </section>
 
   </main>
-
-  <dialog id="deckPreview" class="deck-preview" aria-labelledby="deckPreviewTitle">
-    <div class="deck-preview-header">
-      <div>
-        <h2 id="deckPreviewTitle" data-i18n="opt.deckPreview"></h2>
-        <p id="deckPreviewMode" class="muted"></p>
-      </div>
-      <form method="dialog">
-        <button type="submit" class="action" data-i18n="opt.closePreview" autofocus></button>
-      </form>
-    </div>
-    <div id="oshideck-root">
-      <div class="od-bar"><strong id="deckPreviewChannel" class="od-channel"></strong></div>
-      <div id="deckPreviewCards"></div>
-    </div>
-    <div id="deckPreviewMessage" class="deck-preview-message" hidden></div>
-    <p id="deckPreviewTrend" class="muted" data-i18n="opt.previewTrend" hidden></p>
-  </dialog>
 
   <div id="saved" role="status" aria-live="polite" aria-atomic="true"></div>
 

@@ -10,7 +10,10 @@
   journal.observe(location.pathname.startsWith("/live_chat")
     ? new URLSearchParams(location.search).get("is_popout") === "1" ? "popout" : "chat" : "watch");
 
-  const { MAX_ROWS_CAP, PANEL_PADDING, SCROLLBAR_GUTTER, LIST_VISIBLE } = layout;
+  const MAX_ROWS_CAP = 2;
+  const PANEL_PADDING = 24;    // matches #oshideck-root horizontal padding in content.css
+  const SCROLLBAR_GUTTER = 8;  // matches the ::-webkit-scrollbar width, plus slack
+  const LIST_VISIBLE = 12;     // rows shown before the list starts scrolling
 
   let rootEl = null;
   let currentInput = null;

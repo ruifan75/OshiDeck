@@ -1,12 +1,11 @@
 {
   "format": 2,
   "name": "字ぴろぱる / AZANA PIROPARU",
-  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "note": "歌枠2配信・通常13配信のチャットから9枚",
   "channel": "UCSCmu_VjL4RR7rBjrvSAwSg",
   "cards": [
     { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"🖌"},{"type":"text","value":"✨"},{"type":"text","value":"🎴"},{"type":"text","value":"✨"},{"type":"text","value":"🖌"},{"type":"text","value":"✨"},{"type":"text","value":"🎴"},{"type":"text","value":"✨"},{"type":"text","value":"🖌"},{"type":"text","value":"✨"},{"type":"text","value":"🎴"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"ないすぱー！"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCSCmu_VjL4RR7rBjrvSAwSg/kiznZaa9Av-3_9EPz_C90Ak","alt":"piroPallo","sharedTooltipText":":_piroPallo:","src":"https://yt3.ggpht.com/Vjll-vyfJLcw-bWS6jQTOqL3jfpM16JLFHpcDMITCyQkf8oBjkI89fLfDcRi6IVIzCp7rr701vI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSCmu_VjL4RR7rBjrvSAwSg/kiznZaa9Av-3_9EPz_C90Ak","alt":"piroPallo","sharedTooltipText":":_piroPallo:","src":"https://yt3.ggpht.com/Vjll-vyfJLcw-bWS6jQTOqL3jfpM16JLFHpcDMITCyQkf8oBjkI89fLfDcRi6IVIzCp7rr701vI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSCmu_VjL4RR7rBjrvSAwSg/kiznZaa9Av-3_9EPz_C90Ak","alt":"piroPallo","sharedTooltipText":":_piroPallo:","src":"https://yt3.ggpht.com/Vjll-vyfJLcw-bWS6jQTOqL3jfpM16JLFHpcDMITCyQkf8oBjkI89fLfDcRi6IVIzCp7rr701vI=w48-h48-c-k-nd"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCSCmu_VjL4RR7rBjrvSAwSg/kiznZYa9Av-3_9EPz_C90Ak","alt":"piroKusa","sharedTooltipText":":_piroKusa:","src":"https://yt3.ggpht.com/RVjnzIjsIvZEtrqgaVuES8gk1IWCNOw5k5TemLCmCmgn0mGHDsarJu7yN_kZ9d_yUAhFREBHZQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSCmu_VjL4RR7rBjrvSAwSg/kiznZYa9Av-3_9EPz_C90Ak","alt":"piroKusa","sharedTooltipText":":_piroKusa:","src":"https://yt3.ggpht.com/RVjnzIjsIvZEtrqgaVuES8gk1IWCNOw5k5TemLCmCmgn0mGHDsarJu7yN_kZ9d_yUAhFREBHZQ=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCSCmu_VjL4RR7rBjrvSAwSg/kiznZYa9Av-3_9EPz_C90Ak","alt":"piroKusa","sharedTooltipText":":_piroKusa:","src":"https://yt3.ggpht.com/RVjnzIjsIvZEtrqgaVuES8gk1IWCNOw5k5TemLCmCmgn0mGHDsarJu7yN_kZ9d_yUAhFREBHZQ=w48-h48-c-k-nd"}], "scope": "channel" },

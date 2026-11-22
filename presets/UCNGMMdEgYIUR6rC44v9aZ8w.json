@@ -1,7 +1,7 @@
 {
   "format": 2,
   "name": "瀬尾カザリ / Ceo Kazari",
-  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "note": "歌枠2配信・通常13配信のチャットから9枚",
   "channel": "UCNGMMdEgYIUR6rC44v9aZ8w",
   "cards": [
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNGMMdEgYIUR6rC44v9aZ8w/OiiDZJn7J9GK_9EPlvemgAQ","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/UP3AWz8k3-9qxJeYp3L8xYfw2C6gz8pJcnA9aAoH_Ew8Xg1Wr4x5aHGdCRKii2L6wMrbO_Ol=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNGMMdEgYIUR6rC44v9aZ8w/OiiDZJn7J9GK_9EPlvemgAQ","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/UP3AWz8k3-9qxJeYp3L8xYfw2C6gz8pJcnA9aAoH_Ew8Xg1Wr4x5aHGdCRKii2L6wMrbO_Ol=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNGMMdEgYIUR6rC44v9aZ8w/OiiDZJn7J9GK_9EPlvemgAQ","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/UP3AWz8k3-9qxJeYp3L8xYfw2C6gz8pJcnA9aAoH_Ew8Xg1Wr4x5aHGdCRKii2L6wMrbO_Ol=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNGMMdEgYIUR6rC44v9aZ8w/OiiDZJn7J9GK_9EPlvemgAQ","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/UP3AWz8k3-9qxJeYp3L8xYfw2C6gz8pJcnA9aAoH_Ew8Xg1Wr4x5aHGdCRKii2L6wMrbO_Ol=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCNGMMdEgYIUR6rC44v9aZ8w/OiiDZJn7J9GK_9EPlvemgAQ","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/UP3AWz8k3-9qxJeYp3L8xYfw2C6gz8pJcnA9aAoH_Ew8Xg1Wr4x5aHGdCRKii2L6wMrbO_Ol=w48-h48-c-k-nd"}], "scope": "channel" },
@@ -10,7 +10,6 @@
     { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"いてらー"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"おお！"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCNGMMdEgYIUR6rC44v9aZ8w/AMpKaMOUJ46O_9EPuPjDuQc","alt":"こんち","sharedTooltipText":":_こんち:","src":"https://yt3.ggpht.com/_43-zQLARODSOSJmdzZXqRdFJIilZcM9GUdMIA6xqepDMbq0IU2Tz6g6kAR1LxuJoE7gdQ0ZreI=w48-h48-c-k-nd"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんー"},{"type":"youtubeEmoji","emojiId":"UCNGMMdEgYIUR6rC44v9aZ8w/AMpKaMOUJ46O_9EPuPjDuQc","alt":"こんち","sharedTooltipText":":_こんち:","src":"https://yt3.ggpht.com/_43-zQLARODSOSJmdzZXqRdFJIilZcM9GUdMIA6xqepDMbq0IU2Tz6g6kAR1LxuJoE7gdQ0ZreI=w48-h48-c-k-nd"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" }

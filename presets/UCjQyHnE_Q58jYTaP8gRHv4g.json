@@ -1,10 +1,9 @@
 {
   "format": 2,
   "name": "Rena Anggraeni",
-  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "note": "歌枠2配信・通常13配信のチャットから9枚",
   "channel": "UCjQyHnE_Q58jYTaP8gRHv4g",
   "cards": [
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"wkwkwk"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"aamiin"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"otsu rena"}], "scope": "channel" },

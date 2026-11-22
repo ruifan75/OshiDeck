@@ -1,12 +1,11 @@
 {
   "format": 2,
   "name": "ファム・ファタル - (f)EMME FATALE music-channel",
-  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "note": "歌枠2配信・通常13配信のチャットから9枚",
   "channel": "UCjooy4G0O8D-4KkE1SWr5Jg",
   "cards": [
     { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"🐍"},{"type":"text","value":"💄"},{"type":"text","value":"🎶"},{"type":"text","value":"🐍"},{"type":"text","value":"💄"},{"type":"text","value":"🎶"},{"type":"text","value":"🐍"},{"type":"text","value":"💄"},{"type":"text","value":"🎶"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんふぁむ〜"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },

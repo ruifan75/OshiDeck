@@ -1,7 +1,7 @@
 {
   "format": 2,
   "name": "Cereus-セレウス-",
-  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "note": "歌枠2配信・通常13配信のチャットから9枚",
   "channel": "UCoinyAuvhTzmJKv12IIkMFA",
   "cards": [
     { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
@@ -11,7 +11,6 @@
     { "tokens": [{"type":"text","value":"お疲れ様でした"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"🤍"},{"type":"text","value":"🪼"},{"type":"text","value":"🎧"},{"type":"text","value":"🤍"},{"type":"text","value":"🪼"},{"type":"text","value":"🎧"},{"type":"text","value":"🤍"},{"type":"text","value":"🪼"},{"type":"text","value":"🎧"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"🪼"},{"type":"text","value":"🎵"},{"type":"text","value":"🎶"},{"type":"text","value":"🪼"},{"type":"text","value":"🎵"},{"type":"text","value":"🎶"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" }
   ]

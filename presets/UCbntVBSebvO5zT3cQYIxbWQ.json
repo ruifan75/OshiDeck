@@ -1,14 +1,13 @@
 {
   "format": 2,
   "name": "甘狼このみ / AmakamiKonomi🐺🍫",
-  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "note": "歌枠2配信・通常13配信のチャットから9枚",
   "channel": "UCbntVBSebvO5zT3cQYIxbWQ",
   "cards": [
     { "tokens": [{"type":"text","value":"こんがお"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"かわいい"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"ありがとうございました！"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"よろしくお願いします！"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCbntVBSebvO5zT3cQYIxbWQ/90rgZPCpD9-J_9EPiLafoA8","alt":"kon","sharedTooltipText":":_kon:","src":"https://yt3.ggpht.com/mC91oW8N1GwjhrsS4xKBR_EvnslOiaTkXS4SZLaB8MNlqYXwyuZ-2jvzVdDWQ93KP8mMSlhLKFI=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCbntVBSebvO5zT3cQYIxbWQ/QUbgZNPgK4KH_9EPs76s4A8","alt":"gao","sharedTooltipText":":_gao:","src":"https://yt3.ggpht.com/NpIdidh-XgGAWO6CxJZLqdCq_J-HxwlDGfjtClDvI06lW_n5lxRWtePYu4pr_cx_h-PT_Uns=w48-h48-c-k-nd"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },

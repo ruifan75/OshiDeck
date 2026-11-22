@@ -1,11 +1,10 @@
 {
   "format": 2,
   "name": "ダラク・オブ・ジ・エンド／Darak of the end",
-  "note": "歌枠0配信・通常13配信のチャットから9枚",
+  "note": "歌枠0配信・通常13配信のチャットから8枚",
   "channel": "UCau_fNwGpa63HqagqqWMIZw",
   "cards": [
     { "tokens": [{"type":"text","value":"こんだら〜"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"お？"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"それはそう"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },

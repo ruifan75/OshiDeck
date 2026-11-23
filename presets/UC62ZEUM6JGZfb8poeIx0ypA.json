@@ -1,11 +1,10 @@
 {
   "format": 2,
   "name": "TsunamiCat",
-  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "note": "歌枠0配信・通常13配信のチャットから9枚",
   "channel": "UC62ZEUM6JGZfb8poeIx0ypA",
   "cards": [
     { "tokens": [{"type":"text","value":"Hi"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"Hello"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"Hi tsu"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },

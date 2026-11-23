@@ -1,7 +1,7 @@
 {
   "format": 2,
   "name": "Mikazuki Arion",
-  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "note": "歌枠0配信・通常13配信のチャットから9枚",
   "channel": "UCz_9zqgFPUYQBhDiZBFc00w",
   "cards": [
     { "tokens": [{"type":"text","value":"aku"}], "scope": "channel" },
@@ -12,7 +12,6 @@
     { "tokens": [{"type":"text","value":"aman"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"hah"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCz_9zqgFPUYQBhDiZBFc00w/mXEQZbKJNoWO_9EPtpGigAw","alt":"arionGoodgame","sharedTooltipText":":_arionGoodgame:","src":"https://yt3.ggpht.com/J-T7_Drx__6wELV7qKmWYa5v3_KBB3c0d9IPV1afCvzxYubqfb-qUWeEvPC5hKkFgzeU9UQG=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCz_9zqgFPUYQBhDiZBFc00w/mXEQZbKJNoWO_9EPtpGigAw","alt":"arionGoodgame","sharedTooltipText":":_arionGoodgame:","src":"https://yt3.ggpht.com/J-T7_Drx__6wELV7qKmWYa5v3_KBB3c0d9IPV1afCvzxYubqfb-qUWeEvPC5hKkFgzeU9UQG=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"/salim"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"gg"}], "scope": "channel" }
   ]
 }

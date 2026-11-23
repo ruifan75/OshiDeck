@@ -1,11 +1,10 @@
 {
   "format": 2,
   "name": "Airi Cordelia🐠🌊",
-  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "note": "歌枠2配信・通常13配信のチャットから9枚",
   "channel": "UCMCBdyUhjf372hVCKDxoh8w",
   "cards": [
     { "tokens": [{"type":"text","value":"halo"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"halo airi"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/G8AfY6yWGuKuhL0PlbiA2AE","alt":"hand-pink-waving","sharedTooltipText":":hand-pink-waving:","src":"https://yt3.ggpht.com/KOxdr_z3A5h1Gb7kqnxqOCnbZrBmxI2B_tRQ453BhTWUhYAlpg5ZP8IKEBkcvRoY8grY91Q=w48-h48-c-k-nd"}], "scope": "channel" },

@@ -1,13 +1,12 @@
 {
   "format": 2,
   "name": "MariYumeReacts",
-  "note": "歌枠0配信・通常11配信のチャットから10枚",
+  "note": "歌枠0配信・通常11配信のチャットから9枚",
   "channel": "UCzSn2NDLngzhEnLNI9yZZaQ",
   "cards": [
     { "tokens": [{"type":"text","value":"hi"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"hello"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"hi mari"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"Yeah"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"No"}], "scope": "channel" },

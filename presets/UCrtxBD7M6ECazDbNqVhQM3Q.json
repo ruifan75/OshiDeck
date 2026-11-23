@@ -1,10 +1,9 @@
 {
   "format": 2,
   "name": "ながやまめめ / Nagayama Meme",
-  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "note": "歌枠2配信・通常13配信のチャットから9枚",
   "channel": "UCrtxBD7M6ECazDbNqVhQM3Q",
   "cards": [
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんにちは"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"初見です"}], "scope": "channel" },

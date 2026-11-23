@@ -1,7 +1,7 @@
 {
   "format": 2,
   "name": "Mira Mayheme",
-  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "note": "歌枠2配信・通常13配信のチャットから9枚",
   "channel": "UC44UTXb_8AL3bUoC-BR189g",
   "cards": [
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UC44UTXb_8AL3bUoC-BR189g/vnhYaZTyJt6ijMwP0IWewQI","alt":"MiraHype","sharedTooltipText":":_MiraHype:","src":"https://yt3.ggpht.com/gG3OAKPPUcG8eD24Ro_2B03AjJzwPGzHrHXvaOBf6BGSuE6fAZSZOiDn6o5GgKeCjM7nLaSqsDo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC44UTXb_8AL3bUoC-BR189g/vnhYaZTyJt6ijMwP0IWewQI","alt":"MiraHype","sharedTooltipText":":_MiraHype:","src":"https://yt3.ggpht.com/gG3OAKPPUcG8eD24Ro_2B03AjJzwPGzHrHXvaOBf6BGSuE6fAZSZOiDn6o5GgKeCjM7nLaSqsDo=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC44UTXb_8AL3bUoC-BR189g/vnhYaZTyJt6ijMwP0IWewQI","alt":"MiraHype","sharedTooltipText":":_MiraHype:","src":"https://yt3.ggpht.com/gG3OAKPPUcG8eD24Ro_2B03AjJzwPGzHrHXvaOBf6BGSuE6fAZSZOiDn6o5GgKeCjM7nLaSqsDo=w48-h48-c-k-nd"}], "scope": "channel" },
@@ -10,7 +10,6 @@
     { "tokens": [{"type":"text","value":"lol"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"Hi Mira "}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UCkszU2WH9gy1mb0dV-11UJg/m8MfY4jbFsWJhL0PyouA2Ak","alt":"face-red-heart-shape","sharedTooltipText":":face-red-heart-shape:","src":"https://yt3.ggpht.com/I0Mem9dU_IZ4a9cQPzR0pUJ8bH-882Eg0sDQjBmPcHA6Oq0uXOZcsjPvPbtormx91Ha2eRA=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"!honk"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"yes"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"lmao"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"Welcome raiders!"}], "scope": "channel" }

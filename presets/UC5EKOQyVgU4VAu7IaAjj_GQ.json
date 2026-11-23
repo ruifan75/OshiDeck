@@ -1,10 +1,9 @@
 {
   "format": 2,
   "name": "兎晴エナ / Ena Usabara",
-  "note": "歌枠2配信・通常8配信のチャットから10枚",
+  "note": "歌枠2配信・通常8配信のチャットから9枚",
   "channel": "UC5EKOQyVgU4VAu7IaAjj_GQ",
   "cards": [
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UC5EKOQyVgU4VAu7IaAjj_GQ/qUxQaJL5He-X_9EP5-vWiAM","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/WQocMFJ8N9_E0QB6kUXGQ6edtCa0WHSwKyZlsHPy2rJYkp3DU1VzErGF7ilmcTWkrnCocHOO6Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5EKOQyVgU4VAu7IaAjj_GQ/qUxQaJL5He-X_9EP5-vWiAM","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/WQocMFJ8N9_E0QB6kUXGQ6edtCa0WHSwKyZlsHPy2rJYkp3DU1VzErGF7ilmcTWkrnCocHOO6Q=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5EKOQyVgU4VAu7IaAjj_GQ/qUxQaJL5He-X_9EP5-vWiAM","alt":"サイリウム","sharedTooltipText":":_サイリウム:","src":"https://yt3.ggpht.com/WQocMFJ8N9_E0QB6kUXGQ6edtCa0WHSwKyZlsHPy2rJYkp3DU1VzErGF7ilmcTWkrnCocHOO6Q=w48-h48-c-k-nd"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UC5EKOQyVgU4VAu7IaAjj_GQ/qUxQaPH4He-X_9EP5-vWiAM","alt":"こんえな","sharedTooltipText":":_こんえな:","src":"https://yt3.ggpht.com/fCQM-c0ij8rEcCodr7prEJuBfdBWMayDF2wBJr4wvxtZLD3l_TIkB7U70qXU8mZI7_Omq-d7=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5EKOQyVgU4VAu7IaAjj_GQ/qUxQaPH4He-X_9EP5-vWiAM","alt":"こんえな","sharedTooltipText":":_こんえな:","src":"https://yt3.ggpht.com/fCQM-c0ij8rEcCodr7prEJuBfdBWMayDF2wBJr4wvxtZLD3l_TIkB7U70qXU8mZI7_Omq-d7=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC5EKOQyVgU4VAu7IaAjj_GQ/qUxQaPH4He-X_9EP5-vWiAM","alt":"こんえな","sharedTooltipText":":_こんえな:","src":"https://yt3.ggpht.com/fCQM-c0ij8rEcCodr7prEJuBfdBWMayDF2wBJr4wvxtZLD3l_TIkB7U70qXU8mZI7_Omq-d7=w48-h48-c-k-nd"}], "scope": "channel" },

@@ -1,12 +1,11 @@
 {
   "format": 2,
   "name": "那和ツムグ",
-  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "note": "歌枠2配信・通常13配信のチャットから9枚",
   "channel": "UCRY2TC7xV6N_q9Fsx4Mp2Pw",
   "cards": [
     { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"🍎"},{"type":"text","value":"🎶"},{"type":"text","value":"✨"},{"type":"text","value":"🍎"},{"type":"text","value":"🎶"},{"type":"text","value":"✨"},{"type":"text","value":"🍎"},{"type":"text","value":"🎶"},{"type":"text","value":"✨"},{"type":"text","value":"🍎"},{"type":"text","value":"🎶"},{"type":"text","value":"✨"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"www"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんばんはー"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"おおお！"}], "scope": "channel" },

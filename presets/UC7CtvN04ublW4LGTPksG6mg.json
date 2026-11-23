@@ -1,7 +1,7 @@
 {
   "format": 2,
   "name": "Figaro",
-  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "note": "歌枠2配信・通常13配信のチャットから9枚",
   "channel": "UC7CtvN04ublW4LGTPksG6mg",
   "cards": [
     { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
@@ -12,7 +12,6 @@
     { "tokens": [{"type":"text","value":"こんばんは"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんばんは～"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UC7CtvN04ublW4LGTPksG6mg/8WhdYpejN4P48gTfmKKgDg","alt":"heart","sharedTooltipText":":_heart:","src":"https://yt3.ggpht.com/owMwu9lMiOqZ3dQJCuayDKFPB_BhOJLLZXJoleYiIa1NFN4KHoUwYvQ31EMlPQkG9nhLWaZ5pg=w48-h48-c-k-nd"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" }
+    { "tokens": [{"type":"text","value":"おお"}], "scope": "channel" }
   ]
 }

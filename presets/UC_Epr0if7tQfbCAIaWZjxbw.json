@@ -1,11 +1,9 @@
 {
   "format": 2,
   "name": "Dionysus🍷🍇Mythos",
-  "note": "歌枠1配信・通常13配信のチャットから21枚",
+  "note": "歌枠1配信・通常13配信のチャットから18枚",
   "channel": "UC_Epr0if7tQfbCAIaWZjxbw",
   "cards": [
-    { "tokens": [{"type":"text","value":"Make sure to check out Dio's latest video here! "},{"type":"text","value":"https://youtu.be/uwij3DIHnao?si=4Yaqd..."}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"BotRix has correctly joined the channel!"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"HI DIO <3"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"Heya Dio! Hang in there, & feel better!! *tight hugs* "},{"type":"text","value":"❤"},{"type":"text","value":" "}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"I mean your already a DILF: Drunk I'd like to friend. lol jk "},{"type":"text","value":"😆"},{"type":"text","value":" "}], "scope": "channel" },
@@ -13,7 +11,6 @@
     { "tokens": [{"type":"text","value":"pun tastic!"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"Grape Straw by DioCorp."}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"I'll be your personal puke bag. lol"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"https://www.streamersonglist.com/t/di..."}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"Been lurking but got to go. Wish you Dio and Chat a goodnight! Hope your stomach feels better. -tips hat and tap dances off into the night-"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"Yes. Sweet Caroline. Its something we use to sing for my grandmother. RIP gran"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"alright. heading out! Later"}], "scope": "channel" },

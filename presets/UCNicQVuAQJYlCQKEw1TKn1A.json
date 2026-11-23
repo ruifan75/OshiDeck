@@ -1,12 +1,11 @@
 {
   "format": 2,
   "name": "けんき",
-  "note": "歌枠0配信・通常13配信のチャットから10枚",
+  "note": "歌枠0配信・通常13配信のチャットから9枚",
   "channel": "UCNicQVuAQJYlCQKEw1TKn1A",
   "cards": [
     { "tokens": [{"type":"text","value":"お"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんけんき"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"ｗｗｗ"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"あ"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"w"}], "scope": "channel" },

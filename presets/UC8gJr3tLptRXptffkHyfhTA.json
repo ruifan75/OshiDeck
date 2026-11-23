@@ -1,7 +1,7 @@
 {
   "format": 2,
   "name": "炉なる@新人VTuber",
-  "note": "歌枠2配信・通常13配信のチャットから10枚",
+  "note": "歌枠2配信・通常13配信のチャットから9枚",
   "channel": "UC8gJr3tLptRXptffkHyfhTA",
   "cards": [
     { "tokens": [{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"},{"type":"text","value":"👏"}], "scope": "channel" },
@@ -12,7 +12,6 @@
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UC8gJr3tLptRXptffkHyfhTA/hsPwaO2eDLW23rsPhdWSgQQ","alt":"おつスタンプ","sharedTooltipText":":_おつスタンプ:","src":"https://yt3.ggpht.com/NieGNDsch0QgIBtAtJqubezIbxq3i86-Z6y5ZpDGr4mDQbTR4ciyA9EZ2OhD2RsYnR_lG1EzDBg=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8gJr3tLptRXptffkHyfhTA/hsPwaIefDLW23rsPhdWSgQQ","alt":"なるスタンプ","sharedTooltipText":":_なるスタンプ:","src":"https://yt3.ggpht.com/YRUFkhLdB3si1GO9jcWAp4xICMPcwdoHdXBGyduRF83HgoPysjAQYxivV_IbGsaNdVftNVYfaQ=w48-h48-c-k-nd"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"🔷"},{"type":"text","value":"🎶"},{"type":"text","value":"💎"},{"type":"text","value":"🩵"},{"type":"text","value":"🎶"},{"type":"text","value":"🩶"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"こんなる"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"said hi"}], "scope": "channel" },
     { "tokens": [{"type":"youtubeEmoji","emojiId":"UC8gJr3tLptRXptffkHyfhTA/hsPwaL2fDLW23rsPhdWSgQQ","alt":"待機スタンプ","sharedTooltipText":":_待機スタンプ:","src":"https://yt3.ggpht.com/e50Q3UpGX-Ff99rLFkY33xleIH3ahypWNf6VQ1SqmkmoZOC1yaOOyQP9syQJoSg-nB_1Fe6nog=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8gJr3tLptRXptffkHyfhTA/hsPwaL2fDLW23rsPhdWSgQQ","alt":"待機スタンプ","sharedTooltipText":":_待機スタンプ:","src":"https://yt3.ggpht.com/e50Q3UpGX-Ff99rLFkY33xleIH3ahypWNf6VQ1SqmkmoZOC1yaOOyQP9syQJoSg-nB_1Fe6nog=w48-h48-c-k-nd"},{"type":"youtubeEmoji","emojiId":"UC8gJr3tLptRXptffkHyfhTA/hsPwaL2fDLW23rsPhdWSgQQ","alt":"待機スタンプ","sharedTooltipText":":_待機スタンプ:","src":"https://yt3.ggpht.com/e50Q3UpGX-Ff99rLFkY33xleIH3ahypWNf6VQ1SqmkmoZOC1yaOOyQP9syQJoSg-nB_1Fe6nog=w48-h48-c-k-nd"}], "scope": "channel" }
   ]
 }

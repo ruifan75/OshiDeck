@@ -1,7 +1,7 @@
 {
   "format": 2,
   "name": "牙音舞米-Gaon Maimai-",
-  "note": "歌枠1配信・通常13配信のチャットから129枚",
+  "note": "歌枠1配信・通常13配信のチャットから128枚",
   "channel": "UCKAeNMLH_zCv-pSVjWLyHYw",
   "cards": [
     { "tokens": [{"type":"text","value":"8888888"}], "scope": "channel" },
@@ -92,7 +92,6 @@
     { "tokens": [{"type":"text","value":"ロト"},{"type":"text","value":"...w"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"よく頑張りました"},{"type":"text","value":"👏"},{"type":"text","value":" "},{"type":"text","value":"👏"},{"type":"text","value":" "},{"type":"text","value":"👏"},{"type":"text","value":" "},{"type":"text","value":"👏"},{"type":"text","value":" "},{"type":"text","value":"👏"},{"type":"text","value":"✨"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"8888惚れる"}], "scope": "channel" },
-    { "tokens": [{"type":"text","value":"https://www.youtube.com/watch?v=uarse..."}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"あぁ"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"歌おう～～～！！！"},{"type":"text","value":"🎤"},{"type":"text","value":"🎵"},{"type":"text","value":"みんな聴きたいよぉっ"},{"type":"text","value":"👂"},{"type":"text","value":"💓"}], "scope": "channel" },
     { "tokens": [{"type":"text","value":"カッコえぇ..."}], "scope": "channel" },
